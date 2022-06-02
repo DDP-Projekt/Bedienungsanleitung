@@ -1,0 +1,49 @@
+/*table code taken from github*/
+
+.markdown-body * {
+	box-sizing: border-box;
+}
+
+.markdown-body table {
+	border-spacing: 0;
+    border-collapse: collapse;
+}
+
+.markdown-body th {
+	font-weight: 600;
+	padding: 6px 13px;
+    border: 1px solid var(--table-border-color);
+}
+
+.markdown-body tr {
+	background-color: var(--table-fill-dark);
+    border-top: 1px solid var(--table-fill-dark);
+	display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+
+.markdown-body table tr:nth-child(2n) {
+    background-color: var(--table-fill-light);
+}
+
+.markdown-body tbody {
+	display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+.markdown-body td {
+	padding: 6px 13px;
+    border: 1px solid var(--table-border-color);
+	display: table-cell;
+    vertical-align: inherit;
+}
+
+.markdown-body code {
+	padding: 0.2em 0.4em;
+    margin: 0;
+    font-size: 85%;
+    background-color: rgba(27,31,35,.5);
+    border-radius: 3px;
+}

@@ -3,19 +3,28 @@
 	--content-size: calc(100% - var(--sidebar-size));
 
 	--text-color: antiquewhite;
+	--link-color: aliceblue;
 	--bg-color: #444;
 	--sidebar-color:#3d3d3d;
+	--table-border-color: #303336;
+	--table-fill-dark: #3b3c3e;
+	--table-fill-light: #3f4043;
 }
 
 @font-face {
-	font-family: 'Antiqua';
-	src: url('./fonts/ModernAntiqua-Regular.ttf');
+	font-family: 'Trump Bold';
+	src: url('./fonts/FetteTrumpDeutsch.ttf');
+}
+
+@font-face {
+	font-family: 'Futura';
+	src: url('./fonts/futura.ttf');
 }
 
 html, body {
 	height: 100%;
 	margin: 0;
-	font-family: 'Antiqua';
+	font-family: 'Futura';
 	background-color: var(--bg-color);
 	color:var(--text-color);
 	overflow: hidden;
@@ -37,17 +46,17 @@ html, body {
 }
 
 /* For 1.1, 1.2, 1.3, ect. counting in ol's*/
-ol {
+#seitenleiste ol {
 	padding-inline-start: 10px;
 	counter-reset: item;
 }
 
-li {
+#seitenleiste li {
 	display: block;
 	margin: 7px;
 }
 
-li:before {
+#seitenleiste li:before {
 	font-weight: bolder;
 	content: counters(item, ".") ". ";
 	counter-increment: item;
@@ -60,16 +69,19 @@ a {
 
 a:hover {
 	font-weight: bold;
-	color: aliceblue;
+	color: var(--link-color);
 }
 
 #content {
 	width: var(--content-size);
 	left: 20%;
 	padding: 10px;
+	overflow: scroll;
+	overflow-x: auto;
 }
 
 #kopf {
+	font-family: 'Trump Bold';
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -95,7 +107,7 @@ a:hover {
 }
 
 /* dünne linien neben dem Untertitel */
-#linie {
+.linie {
 	width: 30px;
 	height: 1px;
 	border: none;
@@ -108,8 +120,9 @@ a:hover {
 }
 
 #artikel {
-	width: 70%;
-	height: 100px;
+	width: auto;
+	height: 90%;
+	margin-top: 20px;
 }
 
 footer {
@@ -123,3 +136,27 @@ footer {
     text-align: center;
     padding-top: 10px;
 }
+
+/* scrollbar */
+
+/* width */
+::-webkit-scrollbar {
+	width: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+	background: #333;
+	border-radius: 10px;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+	background: #666;
+	border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+	background: #555;
+  }
