@@ -18,15 +18,15 @@
 					<li>
 						<a href="?p=Einrichten">Einrichten</a>
 						<ol>
-							<li><a href="?p=Intallieren">Installieren</a></li>
+							<li><a href="?p=Installieren">Installieren</a></li>
 							<li><a href="?p=Erstes Programm">Erstes Programm</a></li>
 						</ol>
 					</li>
 					<li>
-						<a href="">Programmierung</a>
+						<a href="?p=Programmierung">Programmierung</a>
 						<ol>
 							<li><a href="?p=Datentypen">Datentypen</a></li>
-							<li><a href="?p=Typkonvertierungen">Typkonvertierung</a></li>
+							<li><a href="?p=Typkonvertierung">Typkonvertierung</a></li>
 							<li><a href="?p=Mathematische Operatoren">Mathematische Operatoren</a></li>
 							<li><a href="?p=Bool'sche- und Vergleichsoperatoren">Bool'sche- und Vergleichsoperatoren</a></li>
 							<li><a href="?p=Verzweigungen & Schleifen">Verzweigungen & Schleifen</a></li>
@@ -54,7 +54,8 @@
 					</zero-md>
 				</article>
 				<script defer>
-					document.getElementsByTagName("zero-md")[0].setAttribute("src", !window.location.search
+					const mdElm = document.getElementsByTagName("zero-md")[0];
+					mdElm.setAttribute("src", !window.location.search
 						? "Artikel/Startseite.md"
 						: "Artikel/" + window.location.search.slice(3) + ".md");
 				</script>

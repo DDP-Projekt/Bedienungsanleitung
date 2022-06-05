@@ -1,3 +1,25 @@
+.markdown-body a {
+	text-decoration: none;
+	color:var(--md-link-color);
+}
+
+.markdown-body a:hover {
+	font-weight: bold;
+	color: var(--md-link-hover-color);
+}
+
+.markdown-body pre {
+	padding: 16px;
+	overflow: auto;
+	line-height: 1.45;
+	border-radius: 6px;
+	background-color: rgba(27,31,35,.5);
+}
+
+.markdown-body .language-js code {
+	background-color: transparent;
+}
+
 /*table code taken from github*/
 
 .markdown-body * {

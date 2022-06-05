@@ -3,12 +3,14 @@
 	--content-size: calc(100% - var(--sidebar-size));
 
 	--text-color: antiquewhite;
-	--link-color: aliceblue;
+	--link-hover-color: aliceblue;
 	--bg-color: #444;
 	--sidebar-color:#3d3d3d;
 	--table-border-color: #303336;
 	--table-fill-dark: #3b3c3e;
 	--table-fill-light: #3f4043;
+	--md-link-color: #4fa2dd;
+	--md-link-hover-color: #81bfeb;
 }
 
 @font-face {
@@ -45,7 +47,7 @@ html, body {
 	flex-direction: column;
 }
 
-/* For 1.1, 1.2, 1.3, ect. counting in ol's*/
+/* Für 1.1, 1.2, 1.3, ect. Nummerierung in ol's*/
 #seitenleiste ol {
 	padding-inline-start: 10px;
 	counter-reset: item;
@@ -69,7 +71,7 @@ a {
 
 a:hover {
 	font-weight: bold;
-	color: var(--link-color);
+	color: var(--link-hover-color);
 }
 
 #content {
@@ -90,9 +92,12 @@ a:hover {
 
 #kopf h1 {
 	margin-bottom: 0;
+	line-height: 1;
+	background: bottom url("img/de-flagge.png") no-repeat;
+	background-size: 100% 2px;
+	padding-bottom: 2px;
 
-	border-bottom: 1px solid var(--text-color);
-	line-height: 0.85;
+	/* um den unterstrich bei buchstaben, die drüber gehen würden abzubrechen */
 	text-shadow:
 		2px 2px var(--bg-color),
 		2px -2px var(--bg-color),
@@ -121,7 +126,7 @@ a:hover {
 
 #artikel {
 	width: auto;
-	height: 90%;
+	height: calc(100% - 100px - 20px); /* kopf ist 100px, kann sich aber vielleicht Ändern!*/
 	margin-top: 20px;
 }
 
