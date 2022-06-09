@@ -8,6 +8,8 @@
 	color: var(--md-link-hover-color);
 }
 
+/* Code blocks */
+
 .markdown-body pre {
 	padding: 16px;
 	overflow: auto;
@@ -16,8 +18,16 @@
 	background-color: rgba(27,31,35,.5);
 }
 
-.markdown-body .language-js code {
+.markdown-body pre code {
 	background-color: transparent;
+}
+
+.markdown-body .token.tag {
+	color: lightskyblue;
+}
+
+.markdown-body .token.string {
+	color: rgb(230, 164, 89);
 }
 
 /*table code taken from github*/
