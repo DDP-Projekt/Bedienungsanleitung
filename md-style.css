@@ -31,6 +31,10 @@
 .markdown-body table {
 	border-spacing: 0;
     border-collapse: collapse;
+	width: max-content;
+	overflow: auto;
+	max-width: 100%;
+	display: block;
 }
 
 .markdown-body th {
