@@ -1,5 +1,5 @@
 :root {
-	--sidebar-size: 300px;
+	--sidebar-size: 250px;
 	--content-size: calc(100% - var(--sidebar-size));
 
 	--text-color: antiquewhite;
@@ -27,6 +27,7 @@ html, body {
 	height: 100%;
 	margin: 0;
 	font-family: 'Futura';
+	font-size: small;
 	background-color: var(--bg-color);
 	color:var(--text-color);
 	overflow: hidden;
@@ -45,6 +46,13 @@ html, body {
 	height: 100%;
 	padding: 10px;
 	flex-direction: column;
+}
+
+#pfeil {
+	position: fixed;
+	left: calc(var(--sidebar-size) - 20px);
+	top: -10px;
+	font-size: 2em;
 }
 
 /* Für 1.1, 1.2, 1.3, ect. Nummerierung in ol's*/
@@ -75,9 +83,8 @@ a:hover {
 }
 
 #content {
-	width: var(--content-size);
+	width: 100%;
 	left: 20%;
-	padding: 10px;
 	overflow: scroll;
 	overflow-x: auto;
 }
@@ -128,6 +135,7 @@ a:hover {
 	width: auto;
 	height: calc(100% - 100px - 20px); /* kopf ist 100px, kann sich aber vielleicht Ändern!*/
 	margin-top: 20px;
+	padding: 0 10px 0 10px;
 }
 
 footer {
