@@ -28,7 +28,7 @@ und von Oben nach Unten) ausgeführt werden.
 Ein Anweisungsblock ist eine Folge von Answeisungen, die nacheinander ausgeführt werden.
 Er beginnt mit einem Doppelpunkt (:) und einer neuen Zeile, und alle zugehörigen Anweisungen
 müssen mindestens eine Einrückung (ein Tab-Zeichen oder 4 Leerzeichen) tiefer eingerückt sein als der Doppelpunkt.
-```
+```ddp
 :
 	Schreibe den Text "Ich bin in einem Anweisungsblock!".
 	Schreibe den Text "Ich auch!".
@@ -45,12 +45,12 @@ Um den Quellcode eines DDP Programms zu erklären und verständlicher zu machen 
 Kommentare werden zwischen eckigen Klammern geschrieben ([]) und sind nur zum erklären des Quellcodes da, 
 sie verändern nicht was er tut.
 
-```
+```ddp
 Schreibe den Text "test". [schreibt den Text "test" in die Konsole]
 ```
 
 Kommentare können auch mitten in Anweisungen und Ausdrücken stehen.
-```
+```ddp
 Wenn x [wahr] ist, Schreibe den Text "x ist wahr".
 ```
 

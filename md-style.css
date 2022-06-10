@@ -22,14 +22,6 @@
 	background-color: transparent;
 }
 
-.markdown-body .token.tag {
-	color: lightskyblue;
-}
-
-.markdown-body .token.string {
-	color: rgb(230, 164, 89);
-}
-
 /*table code taken from github*/
 
 .markdown-body * {

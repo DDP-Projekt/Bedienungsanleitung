@@ -1,18 +1,17 @@
 # Verzweigungen
 Verzweigungen werden genutzt um Anweisungen basierend auf Bedingungen auszuführen.
-Jede Verzweigung ist eine leicht variierte 'Wenn' Anweisung.
 
 ## Einseitige Verzweigung
 Bei einer einseitigen Verzweigung wird ein Anweisungs-Block nur dann ausgeführt, wenn die angegebene Bedingung `wahr` ergibt, ansonsten wird nichts getan und die nachfolgenden Anweisungen ausgeführt.
 
 ### Aufbau:
-```
+```ddp
 Wenn <Bedingung> ist, dann:
 	<Anweisung>.
 ```
 
-### Bespiel:
-```
+### Beispiel:
+```ddp
 Wenn 1 gleich 1 ist, dann:
 	Schreibe den Text "Bedingung erfüllt!".
 ```
@@ -22,7 +21,7 @@ Eine zweiseitige Verzweigung funktioniert wie die einseitige, mit dem Unterschie
 Sollte die Bedingung `falsch` ergeben, wird der Code im `sonst`-Block ausgeführt.
 
 ### Aufbau:
-```
+```ddp
 Wenn <Bedingung>, dann:
 	<Anweisung>.
 Sonst:
@@ -30,11 +29,11 @@ Sonst:
 ```
 
 ### Bespiel:
-```
+```ddp
 Wenn 1 gleich 2 ist, dann:
-Schreibe den Text "Bedingung erfüllt!" auf eine Zeile.
+	Schreibe den Text "Bedingung erfüllt!" auf eine Zeile.
 Sonst:
-Schreibe den Text "Bedingung nicht erfüllt!" auf eine Zeile.
+	Schreibe den Text "Bedingung nicht erfüllt!" auf eine Zeile.
 ```
 
 ## Mehrseitige Verzweigung
@@ -45,7 +44,7 @@ Wenn alle Bedingungen falsch sein sollten wird, falls vorhanden, der `sonst`-Blo
 Sobald ein Block ausgeführt wurde werden alle folgenden Blöcke übersprungen.
 
 ### Aufbau:
-```
+```ddp
 Wenn <Bedingung>, dann:
 	<Anweisung>
 Wenn aber <2. Bedingung>, dann:
@@ -55,7 +54,7 @@ Sonst:
 ```
 
 ### Bespiel:
-```
+```ddp
 Wenn 1 gleich 2 ist, dann:
 	Schreibe den Text "Bedingung erfüllt!" auf eine Zeile.
 Wenn aber 2 gleich 2 ist, dann:
@@ -71,14 +70,14 @@ Schleifen werden genutzt um Code basierend auf Bedingungen mehrmals auszuführen
 Kopfgesteuerte Schleifen sind die einfachste Art von Schleifen.
 Wenn die Bedingung 'wahr' ergibt wird der Code-Block ausgeführt.
 Das wiederholt sich so lange, wie die Bedingung 'wahr' ergibt.
-```
+```ddp
 Solange i gleich 5 ist, mache:
 	<Anweisung>.
 ```
 
 ## Fußgesteuerte Schleife
 Fußgesteuerte Schleifen ähneln stark den Kopfgesteuerten, mit dem einzigen Unterschied, dass der Code-Block mindestens einmal ausgeführt wird, und dann erst das Prüfen der Bedingung beginnt.
-```
+```ddp
 Mache:
 	<Anweisung>.
 solange i gleich 5 ist.
@@ -97,13 +96,13 @@ Das wird solange wiederholt wie der Zähler den Endwert nicht überschreitet.
 Im Code-Block kann der Zähler wie eine normale lokale Variable benutzt werden.
 
 ### Aufbau
-```
+```ddp
 Für jede Zahl <Zähler> von <Startwert> bis <Endwert>, mache:
 	<Anweisung>.
 ```
 
 ### Beispiel
-```
+```ddp
 Für jede Zahl i von 1 bis 100, mache:
 	Schreibe die Zahl i auf eine Zeile.
 ```
@@ -112,13 +111,13 @@ Eine Runterzählende Schleife funktioniert wie die Hochzählende, bloß mit dem 
 Natürlich muss hierbei der Startwert größer als der Endwert sein, da es sonst eine Endlosschleife wird.
 
 ### Aufbau
-```
+```ddp
 Für jede Zahl <Zähler> von <Startwert> bis <Endwert> mit Schrittgröße -1, mache:
 	<Anweisung>.
 ```
 
 ### Beispiel
-```
+```ddp
 Für jede Zahl i von 100 bis 1 mit Schrittgröße -1, mache:
 	Schreibe die Zahl i auf eine Zeile.
 ```
@@ -128,13 +127,13 @@ Wie oben erwähnt, kann auch eine Beliebige Schrittgröße n angegeben werden. D
 `mit Schrittgröße n` ist optional. Standartmäßig ist die Schrittgröße +1. 
 
 ### Aufbau
-```
+```ddp
 Für jede Zahl <Zähler> von <Startwert> bis <Endwert> mit Schrittgröße <n>, mache:
 	<Anweisung>.
 ```
 
 ### Beispiel
-```
+```ddp
 Für jede Zahl i von 1 bis 100 mit Schrittgröße 5, mache:
 	<Anweisung>.
 ```

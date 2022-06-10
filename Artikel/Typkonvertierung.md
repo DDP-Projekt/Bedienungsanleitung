@@ -1,7 +1,7 @@
 # Typkonvertierung
 Eine Typkonvertierung ist die Umwandlung von einem Typ in ein anderes. In DDP kann eine Typkonvertierung mit folgendem Befehl erreicht werden:
 
-```
+```ddp
 <Ausdruck von einem Typ> als <anderer typ>.
 ```
 
@@ -27,7 +27,7 @@ Es können nur bestimmte Typen in andere Umgewandelt werden.
 Eine implizite Typkonvertierung ist die Umwandlung eines Datentyps ohne eine im Quelltext stehende Anweisung, die diese Umwandlung ausführt. Nur bestimmte Datentypen haben implizite Typkonvertierungen, da sie in manchen Fällen Fehlerquellen sein können.
 
 ### Beispiel:
-```
+```ddp
 Die Zahl a ist 2.
 Die Kommazahl b ist a. [a wird implizit zur Kommazahl umgewandelt]
-```
+``` 

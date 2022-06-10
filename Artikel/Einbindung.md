@@ -4,7 +4,7 @@
 ## Beispiel:
 
 #### Beispiel/test1.ddp
-```
+```ddp
 die Funktion foo() macht:
   schreibeZeile("Hallo Welt!").
 
@@ -12,7 +12,7 @@ schreibeZeile("test").
 ```
 
 #### Beispiel/test2.ddp
-```
+```ddp
 binde "test1" ein.
 
 foo().
@@ -23,7 +23,7 @@ lese().
 ## `> test2 wird ausgeführt`
 
 ### Ausgabe:
-```
+```ddp
 test
 Hallo Welt!
 Tschüss Welt!
