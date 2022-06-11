@@ -20,7 +20,7 @@
 	</head>
 	<body>
 		<div id="main">
-			<a id="pfeil" onclick="toggleNav()" href="#">←</a>
+			<a id="hamburger" onclick="toggleNav()" href="#">≡</a>
 			<nav id="seitenleiste">
 				<h2 style="margin-bottom: 40px;text-decoration: underline;">Inhaltsverzeichnis</h2>
 				<a href="index.html">Die Deutsche Programmiersprache</a>
@@ -49,7 +49,7 @@
 					<li><a href="?p=Beispielprogramme">Beispielprogramme</a></li>
 				</ol>
 			</nav>
-			<div id="content">
+			<div id="content" onclick="closeNav()">
 				<div id="kopf">
 					<h1>Die Deutsche Programmiersprache</h1>
 					<div id="untertitel">

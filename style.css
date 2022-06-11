@@ -29,7 +29,7 @@ html, body {
 	font-family: 'Futura';
 	font-size: small;
 	background-color: var(--bg-color);
-	color:var(--text-color);
+	color: var(--text-color);
 	overflow: hidden;
 }
 
@@ -48,11 +48,16 @@ html, body {
 	flex-direction: column;
 }
 
-#pfeil {
-	position: fixed;
+#hamburger {
+	position: absolute;
 	left: calc(var(--sidebar-size) - 20px);
-	top: -10px;
+	top: 10px;
 	font-size: 2em;
+	width: 30px;
+	height: 30px;
+	text-align: center;
+	background-color: var(--table-fill-dark);
+	border-radius: 50%;
 }
 
 /* Für 1.1, 1.2, 1.3, ect. Nummerierung in ol's*/
@@ -74,7 +79,7 @@ html, body {
 
 a {
 	text-decoration: none;
-	color:var(--text-color);
+	color: var(--text-color);
 }
 
 a:hover {
@@ -98,6 +103,7 @@ a:hover {
 }
 
 #kopf h1 {
+	font-size: min(2em, 4vw);
 	margin-bottom: 0;
 	line-height: 1;
 	background: bottom url("img/de-flagge.png") no-repeat;
@@ -114,13 +120,14 @@ a:hover {
 
 /* "Bedienungsanleitung" */
 #untertitel {
+	font-size: min(1em, 2.5vw);
 	display: flex;
 	align-items: center;
 }
 
 /* dünne linien neben dem Untertitel */
 .linie {
-	width: 30px;
+	width: 3vmin;
 	height: 1px;
 	border: none;
 	margin: 0.5em;
@@ -136,18 +143,6 @@ a:hover {
 	height: calc(100% - 100px - 20px); /* kopf ist 100px, kann sich aber vielleicht Ändern!*/
 	margin-top: 20px;
 	padding: 0 10px 0 10px;
-}
-
-footer {
-    background-color: #393939;
-    width: var(--content-size);
-    height: 2%;
-    position: fixed;
-    bottom: 0;
-    left: var(--sidebar-size);
-	margin-left: 20px;
-    text-align: center;
-    padding-top: 10px;
 }
 
 /* scrollbar */
