@@ -1,3 +1,4 @@
+/* links */
 .markdown-body a {
 	text-decoration: none;
 	color:var(--md-link-color);
@@ -9,7 +10,6 @@
 }
 
 /* Code blocks */
-
 .markdown-body pre {
 	padding: 16px;
 	overflow: auto;
@@ -23,7 +23,6 @@
 }
 
 /*table code taken from github*/
-
 .markdown-body * {
 	box-sizing: border-box;
 }
@@ -74,4 +73,36 @@
     font-size: 85%;
     background-color: rgba(27,31,35,.5);
     border-radius: 3px;
+}
+
+/* Syntax Highlighting */
+.markdown-body .language-ddp span.token.control-statement {
+	color:#d38ecd;
+}
+.markdown-body .language-ddp span.token.number {
+	color:#B5CEA8;
+}
+.markdown-body .language-ddp span.token.comment {
+	color:#5b8449;
+}
+.markdown-body .language-ddp span.token.operator {
+	color:#cdd8ff;
+}
+.markdown-body .language-ddp span.token.placeholder {
+	color: #d7a09d;
+}
+.markdown-body .language-ddp span.token.boolean-literal {
+	color: #569CD6;
+}
+.markdown-body .language-ddp span.token.string-literal {
+	color: #ecb878;
+}
+.markdown-body .language-ddp span.token.char-literal {
+	color: #f7a94b;
+}
+.markdown-body .language-ddp span.token.type {
+	color:#80bc80;
+}
+.markdown-body .language-ddp span.token.builtins {
+	color:#f7f774;
 }

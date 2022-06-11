@@ -58,18 +58,12 @@
 					</div>
 				</div>
 				<article id="artikel">
-					<zero-md src="Artikel/Startseite.md">
+					<zero-md id="md" src="Artikel/Startseite.md">
 						<template>
 							<link rel="stylesheet" href="md-style.css" />
 						</template>
 					</zero-md>
 				</article>
-				<script defer>
-					const mdElm = document.getElementsByTagName("zero-md")[0];
-					mdElm.setAttribute("src", !window.location.search
-						? "Artikel/Startseite.md"
-						: "Artikel/" + window.location.search.slice(3) + ".md");
-				</script>
 			</div>
 		</div>
 	</body>
