@@ -1,5 +1,5 @@
 # Typkonvertierung
-Eine Typkonvertierung ist die Umwandlung von einem Typ in ein anderes. In DDP kann eine Typkonvertierung mit folgendem Befehl erreicht werden:
+Eine Typkonvertierung ist die Umwandlung von einem Typ in einen anderen. In DDP sieht eine Typkonvertierung wie folgt aus:
 
 ```ddp
 <Ausdruck von einem Typ> als <anderer typ>.

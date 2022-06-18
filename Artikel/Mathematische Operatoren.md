@@ -1,5 +1,5 @@
 # Mathematische Operatoren
-Zur vereinfachung bezeichne ich die Datentypen "Zahl oder Kommazahl" als "numerisch".
+Zur Vereinfachung werden in diesem Artikel die Typen *Zahl* und *Kommazahl* als *Numerisch* zusammengefasst.
 
 ## Mit einem Operand
 |Funktion|Verwendung|Typ vom Operanden|Rückgabetyp|Beispiel|Ergebnis|
