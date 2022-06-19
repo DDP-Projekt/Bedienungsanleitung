@@ -30,6 +30,6 @@ Zur Vereinfachung werden in diesem Artikel die Typen *Zahl* und *Kommazahl* als 
 |Logarithmus|der Logarithmus mit der Basis a von b|numerisch|numerisch|numerisch|`der Logarithmus mit der Basis 10 von 100`|2|
 |Bit verschiebung nach links|a um b Bit nach links verschoben|Zahl|Zahl|Zahl|`7 um 3 Bit nach links verschoben`|56|
 |Bit verschiebung nach Rechts|a um b Bit nach rechts verschoben|Zahl|Zahl|Zahl|`70 um 2 Bit nach links verschoben`|17|
-|Logische UND verknüpfung|a logisch und b|Zahl|Zahl|Zahl|`5 logisch und 2`|1|
+|Logische UND verknüpfung|a logisch und b|Zahl|Zahl|Zahl|`5 logisch und 2`|0|
 |Logische ODER verknüpfung|a logisch oder b|Zahl|Zahl|Zahl|`5 logisch oder 2`|7|
 |Logische XOR verknüpfung|a logisch kontra b|Zahl|Zahl|Zahl|`8 logisch kontra 5`|13|
