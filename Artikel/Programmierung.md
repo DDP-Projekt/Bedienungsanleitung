@@ -54,6 +54,19 @@ Kommentare können auch mitten in Anweisungen und Ausdrücken stehen.
 Wenn x [wahr] ist, Schreibe den Text "x ist wahr".
 ```
 
+Außerdem können Kommentare über mehrere Zeilen gehen.
+```ddp
+[
+	Aufgabe: Diese Funktion schreibt "Hallo Welt!" in die Konsole.
+	Parameter: keine Parameter.
+	Rückgabe: keine Rückgabe.
+]
+Die Funktion hi gibt nichts zurück, macht:
+	Schreibe den Text "Hallo Welt!" auf eine Zeile.
+und kann so benutzt werden:
+	"Schreibe Hallo Welt"
+```
+
 ## Literale
 
 Ein Literal ist eine Schreibweise im Quellcode die einen (in DDP konstanten) Wert repräsentiert.
