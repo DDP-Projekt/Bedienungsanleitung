@@ -49,7 +49,7 @@ function applySyntaxHighlighting() {
     // regex rules for syntax highlighting
     Prism.languages['ddp'] = {
         'placeholder': /<[^<>]+>/,
-        'comment': /\[[\s\S]*\]/,
+        'comment': /\[[\s\S]*?\]/,
         'builtins': /Schreibe (den|die) (Zahl(en)?|Kommazahl(en)?|Buchstaben?|Texte?)|auf eine Zeile/,
         'string-literal': /\".*\"/,
         'char-literal': /\'.*\'/,
