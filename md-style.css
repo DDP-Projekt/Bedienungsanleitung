@@ -103,3 +103,25 @@
 .markdown-body .language-ddp span.token.builtins {
 	color:#f7f774;
 }
+
+.markdown-body ::-webkit-scrollbar {
+	width: 5px;
+	height: 5px;
+}
+
+/* Track */
+.markdown-body ::-webkit-scrollbar-track {
+	background: #333;
+	border-radius: 10px;
+}
+
+/* Handle */
+.markdown-body ::-webkit-scrollbar-thumb {
+	background: #666;
+	border-radius: 10px;
+}
+
+/* Handle on hover */
+.markdown-body ::-webkit-scrollbar-thumb:hover {
+	background: #555;
+}
