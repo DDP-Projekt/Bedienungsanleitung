@@ -68,8 +68,9 @@
 }
 
 .markdown-body code {
-    margin: 0;
-    font-size: 85%;
+	padding: 4px;
+	line-height: 1.85em;
+	white-space: nowrap;
     background-color: rgba(27,31,35,.5);
     border-radius: 3px;
 }
