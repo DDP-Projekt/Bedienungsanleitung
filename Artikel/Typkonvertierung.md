@@ -14,7 +14,7 @@ Es können nur bestimmte Typen in andere Umgewandelt werden.
 |-------------|-------------|----------------|
 | Zahl | Kommazahl <br> Text <br> Boolean <br> Buchstabe | auch implizit <br>-<br> 0 => falsch; nicht 0 => wahr <br> benutzt ASCII wert |
 | Kommazahl | Zahl <br> Text | Kommazahl wird trunkiert <br> - |
-| Boolean | Zahl | falsch => 0; wahr => 2 |
+| Boolean | Zahl | falsch => 0; wahr => 1 |
 | Text | Zahl <br> Kommazahl <br> Buchstaben | -<br>-<br>-<br> |
 | Buchstabe | Zahl <br> Text | benutzt ASCII wert <br> - |
 | Buchstaben | Text | - |
