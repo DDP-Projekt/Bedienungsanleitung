@@ -15,7 +15,7 @@ Für jede Zahl i von 1 bis 100, mache:
 
 ## Fibonacci
 ```ddp
-Die Funktion fib mit den Parametern n vom Typ Zahl, gibt eine Zahl zurück und macht:
+Die Funktion fib mit den Parametern n vom Typ Zahl, gibt eine Zahl zurück, macht:
 	Wenn n kleiner als, oder 1 ist, dann:
         Gib n zurück.
 
@@ -32,7 +32,7 @@ Schreibe die Zahl num.
 Die Buchstaben brett sind 9 mal ' '.
 Der Boolean Spieler1 ist wahr.
 
-Die Funktion zeichneBrett gibt nichts zurück und macht:
+Die Funktion zeichneBrett gibt nichts zurück, macht:
 	Für jede Zahl i von 1 bis 9, mache:
 		Schreibe den Buchstaben brett an der Stelle i.
 		Schreibe den Buchstaben ' '.
@@ -40,7 +40,7 @@ Die Funktion zeichneBrett gibt nichts zurück und macht:
 und kann so benutzt werden:
 	"Zeichne das Brett"
 
-Die Funktion überprüfe mit den Parametern spieler vom Typ Buchstabe, gibt einen Boolean zurück und macht:
+Die Funktion überprüfe mit den Parametern spieler vom Typ Buchstabe, gibt einen Boolean zurück, macht:
 	Wenn brett an der Stelle 1 gleich spieler und brett an der Stelle 2 gleich spieler und brett an der Stelle 3 gleich spieler ist, dann gib wahr zurück.
 	Wenn brett an der Stelle 4 gleich spieler und brett an der Stelle 5 gleich spieler und brett an der Stelle 6 gleich spieler ist, dann gib wahr zurück.
 	Wenn brett an der Stelle 7 gleich spieler und brett an der Stelle 8 gleich spieler und brett an der Stelle 9 gleich spieler ist, dann gib wahr zurück.

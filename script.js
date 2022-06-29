@@ -49,13 +49,13 @@ function applySyntaxHighlighting() {
     // regex rules for syntax highlighting
     Prism.languages['ddp'] = {
         'placeholder': /<[^<>]+>/,
-        'comment': /\[[\s\S]*\]/,
+        'comment': /\[[\s\S]*?\]/,
         'builtins': /Schreibe (den|die) (Zahl(en)?|Kommazahl(en)?|Buchstaben?|Texte?)|auf eine Zeile/,
         'string-literal': /\".*\"/,
         'char-literal': /\'.*\'/,
         'boolean-literal': /wahr|falsch/,
         'number': /-?\d+(,\d)?/,
-        'control-statement': /[Ww]enn|aber|dann|Sonst|[Ss]olange|[Mm]ache|Für|jede|mit Schrittgröße|[Gg]ibt?|zurück|und macht|einen?|mit den Parametern|vom|und kann so benutzt werden/,
+        'control-statement': /[Ww]enn|aber|dann|Sonst|[Ss]olange|[Mm]ache|Für|jede|mit Schrittgröße|[Gg]ibt?|zurück|macht|einen?|mit den Parametern|vom|und kann so benutzt werden/,
         'punctuation': /\.|\:/,
         'operator': /\b(ist|sind|oder|und|nicht|plus|minus|mal|durch|modulo|hoch|. wurzel von|logisch|kontra|gleich|ungleich|kleiner als|größer als|kleiner als, oder|größer als, oder|natürlicher Logarithmus von|Betrag|Stück|von|bis|als|an der Stelle)\b/,
         'type': /nichts|Typ|Funktion|Zahl(en)?|Kommazahl(en)?|Booleans?|Texte?|Buchstaben?|[Dd]er|[Dd]ie|[Dd]as/,
