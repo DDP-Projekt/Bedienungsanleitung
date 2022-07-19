@@ -1,6 +1,8 @@
 # Beispielprogramme
 ## Fizzbuzz
 ```ddp
+Binde "Duden/Ausgabe" ein.
+
 Für jede Zahl i von 1 bis 100, mache:
 	Wenn i modulo 3 gleich 0 und i modulo 5 gleich 0 ist, dann:
 		Schreibe den Text "FizzBuzz" auf eine Zeile.
@@ -15,6 +17,8 @@ Für jede Zahl i von 1 bis 100, mache:
 
 ## Fibonacci
 ```ddp
+Binde "Duden/Ausgabe" ein.
+
 Die Funktion fib mit den Parametern n vom Typ Zahl, gibt eine Zahl zurück, macht:
 	Wenn n kleiner als, oder 1 ist, dann:
         Gib n zurück.
@@ -29,6 +33,8 @@ Schreibe die Zahl num.
 
 ## Tic Tac Toe
 ```ddp
+Binde "Duden/Ausgabe" ein.
+
 Die Buchstaben brett sind 9 mal ' '.
 Der Boolean Spieler1 ist wahr.
 

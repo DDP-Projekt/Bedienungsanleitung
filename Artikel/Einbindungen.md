@@ -5,7 +5,9 @@ Größere und komplexere Programme bestehen oft aus mehreren Quelldateien, auf d
 DDP stellt hier für Einbindungen zur Verfügung.
 
 ## Syntax
-  `Binde "<relativer Dateipfad>" ein.`
+```ddp
+Binde "<relativer Dateipfad>" ein.
+```
 
 Wobei der angegebene Dateipfad relativ zur ausgeführten Datei sein muss.
 
@@ -15,16 +17,20 @@ An die Stelle der Einbindung wird nun einfach der Inhalt der angegebenen .ddp Da
 
 #### Beispiel/test1.ddp
 ```ddp
-Schreibe den Text "test1.ddp\n".
+Binde "Duden/Ausgabe" ein.
+
+Schreibe den Text "test1.ddp" auf eine Zeile.
 Die Zahl z ist 22.
 ```
 
 #### Beispiel/test2.ddp
+
 ```ddp
+Binde "Duden/Ausgabe" ein.
 Binde "test1" ein.
 
 Schreibe die Zahl z.
-schreibeZeile("\ntest2.ddp").
+Schreibe den Text "test2.ddp" auf eine Zeile.
 ```
 
 Wenn nun test2.ddp ausgeführt wird, ist die Ausgabe wie folgt.
