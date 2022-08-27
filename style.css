@@ -33,6 +33,12 @@ html, body {
 	overflow: hidden;
 }
 
+.language-picker {
+	position: absolute;
+	right: 50px;
+	top: 10px;
+}
+
 #main {
 	height: 100%;
 	display: flex;
