@@ -9,6 +9,8 @@ if (searchParams.get('lang') === null) {
 	window.location.search = searchParams.toString();
 }
 
+customElements.define('to-do', TODOElement);
+
 document.addEventListener("DOMContentLoaded", () => {
 	populateListItems();
 
