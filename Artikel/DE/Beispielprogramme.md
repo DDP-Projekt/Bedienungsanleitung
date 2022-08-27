@@ -33,70 +33,99 @@ Schreibe die Zahl num.
 
 ## Tic Tac Toe
 ```ddp
+Binde "Duden/Eingabe" ein.
 Binde "Duden/Ausgabe" ein.
+Binde "Duden/Laufzeit" ein.
 
-Die Buchstaben brett sind 9 mal ' '.
-Der Boolean Spieler1 ist wahr.
+Der Boolean ist_Spieler_1_dran ist wahr.
+Die Zahlen Liste Spielfeld ist 9 Mal 0.
 
-Die Funktion zeichneBrett gibt nichts zurück, macht:
-	Für jede Zahl i von 1 bis 9, mache:
-		Schreibe den Buchstaben brett an der Stelle i.
-		Schreibe den Buchstaben ' '.
-		Wenn i modulo 3 gleich 0 ist, dann überspringe eine Zeile.
-und kann so benutzt werden:
-	"Zeichne das Brett"
+Die Funktion spieler1dran gibt einen Boolean zurück, macht:
+	Gib ist_Spieler_1_dran zurück.
+Und kann so benutzt werden:
+	"Spieler 1 dran"
 
-Die Funktion überprüfe mit den Parametern spieler vom Typ Buchstabe, gibt einen Boolean zurück, macht:
-	Wenn brett an der Stelle 1 gleich spieler und brett an der Stelle 2 gleich spieler und brett an der Stelle 3 gleich spieler ist, dann gib wahr zurück.
-	Wenn brett an der Stelle 4 gleich spieler und brett an der Stelle 5 gleich spieler und brett an der Stelle 6 gleich spieler ist, dann gib wahr zurück.
-	Wenn brett an der Stelle 7 gleich spieler und brett an der Stelle 8 gleich spieler und brett an der Stelle 9 gleich spieler ist, dann gib wahr zurück.
+Die Funktion wechsel_spieler gibt nichts zurück, macht:
+	Negiere ist_Spieler_1_dran.
+Und kann so benutzt werden:
+	"Wechsel den Spieler"
 
-	Wenn brett an der Stelle 1 gleich spieler und brett an der Stelle 4 gleich spieler und brett an der Stelle 7 gleich spieler ist, dann gib wahr zurück.
-	Wenn brett an der Stelle 2 gleich spieler und brett an der Stelle 5 gleich spieler und brett an der Stelle 8 gleich spieler ist, dann gib wahr zurück.
-	Wenn brett an der Stelle 3 gleich spieler und brett an der Stelle 6 gleich spieler und brett an der Stelle 9 gleich spieler ist, dann gib wahr zurück.
+Die Funktion momentane_Spieler gibt eine Zahl zurück, macht:
+	Wenn (Spieler 1 dran) ist, gib 1 zurück.
+	[Ansonsten] Gib 2 zurück.
+Und kann so benutzt werden:
+	"die Zahl für den aktuellen Spieler"
 
-	Wenn brett an der Stelle 1 gleich spieler und brett an der Stelle 5 gleich spieler und brett an der Stelle 9 gleich spieler ist, dann gib wahr zurück.
-	Wenn brett an der Stelle 3 gleich spieler und brett an der Stelle 5 gleich spieler und brett an der Stelle 7 gleich spieler ist, dann gib wahr zurück.
+Die Funktion spiel_nicht_gewonnen gibt einen Boolean zurück, macht:
+	Die Zahl Spieler_zahl ist 0.
+	Wenn (Spieler 1 dran) ist, speichere 2 in Spieler_zahl.
+	Sonst speichere 1 in Spieler_zahl.
 
-	Gib falsch zurück.
-und kann so benutzt werden:
-	"Spieler *1 gewonnen hat"
-
-
-Der Buchstabe eingabe ist die nächste Taste.
-solange eingabe ungleich 'v' ist, mache:
-	Die Zahl feld ist eingabe als Zahl.
-	Wenn brett an der Stelle feld gleich ' ' ist, dann:
-		Wenn Spieler1 gleich wahr ist, dann:
-			brett an der Stelle feld ist 'X'.
-		Sonst:
-			brett an der Stelle feld ist 'O'.
-	Sonst:
-		Solange brett an der Stelle feld ungleich ' ' ist, mache:
-			Schreibe den Text "Dieses Feld ist bereits belegt, gib ein anderes ein: ".
-			eingabe ist die nächste Benutzereingabe.
-			feld ist eingabe als Zahl.
-			Überspringe eine Zeile.
-
-		Wenn Spieler1 gleich wahr ist, dann:
-			brett an der Stelle feld ist 'X'.
-		Sonst:
-			brett an der Stelle feld ist 'O'.
+	Der Boolean Gewonnen ist wahr wenn
+		Spielfeld an der Stelle 1 gleich Spielfeld an der Stelle 2 und Spielfeld an der Stelle 1 gleich Spielfeld an der Stelle 3 und Spielfeld an der Stelle 1 gleich Spieler_zahl oder
+		Spielfeld an der Stelle 4 gleich Spielfeld an der Stelle 5 und Spielfeld an der Stelle 4 gleich Spielfeld an der Stelle 6 und Spielfeld an der Stelle 4 gleich Spieler_zahl oder
+		Spielfeld an der Stelle 7 gleich Spielfeld an der Stelle 8 und Spielfeld an der Stelle 7 gleich Spielfeld an der Stelle 9 und Spielfeld an der Stelle 7 gleich Spieler_zahl oder
+		Spielfeld an der Stelle 1 gleich Spielfeld an der Stelle 4 und Spielfeld an der Stelle 1 gleich Spielfeld an der Stelle 7 und Spielfeld an der Stelle 1 gleich Spieler_zahl oder
+		Spielfeld an der Stelle 2 gleich Spielfeld an der Stelle 5 und Spielfeld an der Stelle 2 gleich Spielfeld an der Stelle 8 und Spielfeld an der Stelle 2 gleich Spieler_zahl oder
+		Spielfeld an der Stelle 3 gleich Spielfeld an der Stelle 6 und Spielfeld an der Stelle 3 gleich Spielfeld an der Stelle 9 und Spielfeld an der Stelle 3 gleich Spieler_zahl oder
+		Spielfeld an der Stelle 1 gleich Spielfeld an der Stelle 5 und Spielfeld an der Stelle 1 gleich Spielfeld an der Stelle 9 und Spielfeld an der Stelle 1 gleich Spieler_zahl oder
+		Spielfeld an der Stelle 3 gleich Spielfeld an der Stelle 5 und Spielfeld an der Stelle 3 gleich Spielfeld an der Stelle 7 und Spielfeld an der Stelle 3 gleich Spieler_zahl ist.
 	
-	Wenn Spieler 'X' gewonnen hat, dann:
-		Schreibe den Text "Spieler 1 hat gewonnen".
-		Warte auf die nächste Benutzereingabe.
-		Beende das Programm.
-	Wenn aber Spieler 'O' gewonnen hat, dann:
-		Schreibe den Text "Spieler 2 hat gewonnen".
-		Warte auf die nächste Benutzereingabe.
-		Beende das Programm.
-	Wenn aber nicht brett ' ' enthält, dann:
-		Schreibe den Text "Unentschieden".
-		Warte auf die nächste Benutzereingabe.
+	Gib nicht Gewonnen zurück.
+Und kann so benutzt werden:
+	"das Spiel nicht gewonnen"
+
+Die Funktion spiel_unendschieden gibt einen Boolean zurück, macht:
+	Für jede Zahl feld in Spielfeld, wenn feld gleich 0 ist, gib falsch zurück.
+	[ Falls alle felder belegt sind ] Gib wahr zurück.
+Und kann so benutzt werden:
+	"das Spiel unendschieden"
+
+Die Funktion schreibe_spielfeld gibt nichts zurück, macht:
+	Für jede Zahl i von 0 bis 2, mache:
+		Schreibe den Text "+-+-+-+" auf eine Zeile.
+		Für jede Zahl j von 0 bis 2, mache:
+			Schreibe den Buchstaben '|'.
+			Die Zahl Feld ist Spielfeld an der Stelle (i mal 3 plus j plus 1).
+
+			Wenn Feld gleich 0 ist, Schreibe den Buchstaben ' '.
+			Wenn aber Feld gleich 1 ist, Schreibe den Buchstaben 'X'.
+			Wenn aber Feld gleich 2 ist, Schreibe den Buchstaben 'O'.
+		Schreibe den Buchstaben '|' auf eine Zeile.
+	Schreibe den Text "+-+-+-+" auf eine Zeile.
+Und kann so benutzt werden:
+	"Zeige das Spielfeld"
+
+[ Programm anfang ]
+Solange (das Spiel nicht gewonnen) ist, mache:
+	Wenn (das Spiel unendschieden) ist, dann:
+		Zeige das Spielfeld.
+		Schreibe den Text "Das Spiel ist unendschieden" auf eine Zeile.
 		Beende das Programm.
 
-	Zeichne das Brett.
-	Negiere Spieler1.
-	eingabe ist die nächste Taste.
+	Schreibe den Text "Bitte nehme einen Zug, Spieler ".
+	Schreibe (die Zahl für den aktuellen Spieler) auf eine Zeile.
+	Schreibe den Text "Das Spielfeld sieht so aus:" auf eine Zeile.
+	Zeige das Spielfeld.
+	Schreibe den Text "Schreibe die Position, wo du dein Zeichen setzen willst. [1-9]" auf eine Zeile.
+
+	[Nutzereingabe validieren]
+	Die Zahl Eingabe ist die nächste Benutzereingabe als Zahl.
+	Solange Eingabe kleiner als 1 oder Eingabe größer als 9 ist, mache:
+		Schreibe den Text "Ungültige Eingabe! Bitte schreibe nur Zahlen von 1 bis 9!" auf eine Zeile.
+		Speichere die nächste Benutzereingabe als Zahl in Eingabe.
+
+	[Spielfeld aktualisieren und Spieler welchseln]
+	Wenn Spielfeld an der Stelle Eingabe gleich 0 ist, dann:
+		Speichere (die Zahl für den aktuellen Spieler) in Spielfeld an der Stelle Eingabe.
+		Wechsel den Spieler.
+
+Zeige das Spielfeld.
+
+Wechsel den Spieler.
+Schreibe den Text "Spieler ".
+Schreibe (die Zahl für den aktuellen Spieler).
+Schreibe den Text " hat gewonnen!" auf eine Zeile.
+
+Beende das Programm.
 ```
