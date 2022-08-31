@@ -71,7 +71,7 @@ Kopfgesteuerte Schleifen sind die einfachste Art von Schleifen.
 Wenn die Bedingung 'wahr' ergibt wird der Code-Block ausgeführt.
 Das wiederholt sich so lange, wie die Bedingung 'wahr' ergibt.
 ```ddp
-Solange i gleich 5 ist, mache:
+Solange <Bedingung> ist, mache:
 	<Anweisung>.
 ```
 
@@ -80,7 +80,7 @@ Fußgesteuerte Schleifen ähneln stark den Kopfgesteuerten, mit dem einzigen Unt
 ```ddp
 Mache:
 	<Anweisung>.
-solange i gleich 5 ist.
+Solange <Bedingung> ist.
 ```
 
 ## Wiederholung
@@ -90,7 +90,7 @@ wenn man die Zähler-Variable nicht benötigt.
 ```ddp
 Mache:
 	<Anweisung>.
-(<Anzahl>) mal.
+<Anzahl> Mal.
 ```
 
 ## Zählende Schleife
@@ -166,7 +166,7 @@ Sonst Schreibe den Text "Bedingung nicht erfüllt".
 
 Solange i gleich 5 ist, Rufe eine Funktion auf, die i erhöht.
 
-Schreibe den Text "Hi!" (5) mal.
+Schreibe den Text "Hi!" 5 Mal.
 
 
 Für jede Zahl i von 1 bis 100, Schreibe die Zahl i.

@@ -42,6 +42,11 @@ test1.ddp
 test2.ddp
 ```
 
+### Duden Einbindungen
+
+Um Dateien aus der Standardbibliothek (dem sog. Duden) einzubinden, genügt der relative Pfad `Duden/x`.
+Das 'Duden' im Pfad wird erkannt, und DDP sucht die entsprechende Datei automatisch im Duden.
+
 ### Relative Pfade
 Einbindungen erlauben relative Pfade.
 

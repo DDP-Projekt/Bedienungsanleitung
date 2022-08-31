@@ -4,31 +4,25 @@
 Binde "Duden/Ausgabe" ein.
 
 Für jede Zahl i von 1 bis 100, mache:
-	Wenn i modulo 3 gleich 0 und i modulo 5 gleich 0 ist, dann:
-		Schreibe den Text "FizzBuzz" auf eine Zeile.
+	Wenn i modulo 3 gleich 0 und i modulo 5 gleich 0 ist, Schreibe den Text "FizzBuzz" auf eine Zeile.
 	Sonst:
-		Wenn i modulo 3 gleich 0 ist, dann:
-			Schreibe den Text "Fizz" auf eine Zeile.
-		Wenn aber i modulo 5 gleich 0 ist, dann:
-			Schreibe den Text "Buzz" auf eine Zeile.
-		Sonst:
-			Schreibe die Zahl i auf eine Zeile.
+		Wenn i modulo 3 gleich 0 ist, Schreibe den Text "Fizz" auf eine Zeile.
+		Wenn aber i modulo 5 gleich 0 ist, Schreibe den Text "Buzz" auf eine Zeile.
+		Sonst Schreibe die Zahl i auf eine Zeile.
 ```
 
 ## Fibonacci
 ```ddp
 Binde "Duden/Ausgabe" ein.
 
-Die Funktion fib mit den Parametern n vom Typ Zahl, gibt eine Zahl zurück, macht:
-	Wenn n kleiner als, oder 1 ist, dann:
-        Gib n zurück.
+Die Funktion fib mit dem Parameter n vom Typ Zahl, gibt eine Zahl zurück, macht:
+	Wenn n kleiner als, oder 1 ist, gib n zurück.
 
-    Gib die (n minus 2). Fibonacci nummer plus die (n minus 1). Fibonacci nummer zurück.
-und kann so benutzt werden:
-	"die *1. Fibonacci nummer"
+    Gib die (n minus 2). Fibonacci Nummer plus die (n minus 1). Fibonacci Nummer zurück.
+Und kann so benutzt werden:
+	"die <n>. Fibonacci Nummer"
 
-Die Zahl num ist die 5. Fibonacci nummer.
-Schreibe die Zahl num.
+Schreibe (die 6. Fibonacci Nummer).
 ```
 
 ## Tic Tac Toe
@@ -126,6 +120,4 @@ Wechsel den Spieler.
 Schreibe den Text "Spieler ".
 Schreibe (die Zahl für den aktuellen Spieler).
 Schreibe den Text " hat gewonnen!" auf eine Zeile.
-
-Beende das Programm.
 ```
