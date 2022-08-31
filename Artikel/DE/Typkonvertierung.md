@@ -18,10 +18,6 @@ Es können nur bestimmte Typen in andere Umgewandelt werden.
 | Text | Zahl <br> Kommazahl <br> Buchstaben | -<br>-<br>-<br> |
 | Buchstabe | Zahl <br> Text | benutzt ASCII wert <br> - |
 | Buchstaben | Text | - |
-| Ansammlung | Liste | auch implizit |
-| Ansammlung | Ansammlung anderen Typs | gleiche Regeln wie oben |
-| Liste | Ansammlung | - |
-| Liste | Liste anderen Typs | gleiche Regeln wie oben |
 
 ## Implizite Typkonvertierung
 Eine implizite Typkonvertierung ist die Umwandlung eines Datentyps ohne eine im Quelltext stehende Anweisung, die diese Umwandlung ausführt. Nur bestimmte Datentypen haben implizite Typkonvertierungen, da sie in manchen Fällen Fehlerquellen sein können.
