@@ -2,14 +2,14 @@
 
 Da Die Deutsche Programmiersprache statisch typisiert ist, hat jeder Ausdruck (z.B. mathematische Ausdrücke), jede Variable und jede Funktion einen festen Datentyp.
 
-Der Typ von Variablen, Funktionen und Ausdrücken kann sich nicht zur Laufzeit ändern, er wird zur Kompilerzeit festgelegt.
+Der Typ von Variablen, Funktionen und Ausdrücken kann sich nicht zur Laufzeit ändern, er wird zur Kompilierzeit festgelegt.
 
 ## Einfache Datentypen
 
 | Typname | Beschreibung | Wertebereich | Literal | Beispiel |
 | ------- | ------------ | ------------ | ------- | -------- |
 | Zahl | Eine 64 Bit große, ganze Zahl | *-2.147.483.648* bis *2.147.483.647* | Eine Abfolge von Ziffern, z.B. 42 | `Die Zahl x ist 69.`, <br>`1 plus -7` |
-| Kommazahl | Eine 64 Bit große, rationale Zahl |*-1,79769313486232x10^308* bis <br>*1,79769313486232x10^308* mit 16 Dezimalstellen | Ein Zahlenliteral mit Nachkommastellen, z.B. 3,1415 | `Die Kommazahl x ist 6,5.`, <br>`2 durch 0,5` | |
+| Kommazahl | Eine 64 Bit große, reellen Zahl |*-1,79769313486232x10^308* bis <br>*1,79769313486232x10^308* mit 16 Dezimalstellen | Ein Zahlenliteral mit Nachkommastellen, z.B. 3,1415 | `Die Kommazahl x ist 6,5.`, <br>`2 durch 0,5` | |
 | Boolean | Ein Wahrheitswert (8 Bit groß) | *wahr* oder *falsch* | *wahr* oder *falsch* | `Der Boolean x ist wahr.`, <br>`1 plus 1 gleich 2` |
 | Buchstabe | Ein 1-4 Bit großes, mit utf-8 kodiertes Zeichen | *0* - *65535* | Ein utf8 Zeichen zwischen einfachen Anführungszeichen, z.B. 'a' oder '\n' | `Der Buchstabe x ist 'd'.` |
 | Text | Eine Aneinanderreihung mehrerer Buchstaben | *beliebig groß* | Beliebig viele Buchstaben zwischen <br>(englischen) Anführungszeichen, z.B. "Hallo\n" | `Der Text x ist "abc".`, <br>`"Hallo" verkettet mit " du da"` |
@@ -24,18 +24,42 @@ Der Typ von Variablen, Funktionen und Ausdrücken kann sich nicht zur Laufzeit �
 
 Listen sind beliebig große Ansammlungen von Werten.
 Da DDP statisch typisiert ist kann eine Liste nur Werte eines Datentyps enthalten.
-Der Typname einer Liste ist im Allgemeinen der Plural des Typs den sie enhält (z.B. Zahl -> Zahlen).
+Der Typname einer Liste ist im Allgemeinen der Element-Typname entsprechend dekliniert mit *Liste* angehängt (Zahl -> Zahlen Liste, Text -> Text Liste).
 Eine Liste kann zur Laufzeit wachsen und schrumpfen.
 Wie man mit Listen arbeitet wird in dem Artikel [Listen Operatoren](?p=Listen%20Operatoren) beschrieben.
 
+### Listen Literale
+
+Ein Listen Literal sieht ähnlich wie eine gewöhnliche Aufzählung aus, allerdings in einen kleinen Satzbaustein verpackt um Mehrdeutigkeiten beim Programmieren zu verhindern.
+Die Allgemeine Form sieht so aus: `eine[r] Liste, die aus x[, y, z] besteht`.
+Es kann `eine` oder `einer` je nach grammatischem Kontext benutzt werden und auf das `aus` müssen einer oder mehrere
+Ausdrücke desselben Typs folgen.
+
+Leere Listen können so erstellt werden: `eine[r] leere[n] (Typname) Liste`.
+
+Listen mit einem einzigen Element können auch einfach durch `(Wert) als (Typname)` erstellt werden.
+
+#### Beispiele
+```ddp
+Die Zahlen Liste z ist eine Liste, die aus 1, 2, 3 besteht.
+Die Text Liste t ist eine Liste, die aus "Hallo", "Welt" besteht.
+
+Die Zahlen Liste z2 ist eine leere Zahlen Liste.
+Die Text Liste t2 ist "Hallo" als Text Liste.
+```
+
 | Typname | Beschreibung | Literal | Beispiel |
 | ------- | ------------ | ------- | -------- |
-| Zahlen | Eine Liste von Zahlen | Eine Aufzählung von Zahlen, z.B. 1, 2 und 3 | `Die Zahlen x sind 1, 2 und 3.` |
-| Kommazahlen | Eine Liste von Kommazahlen | Eine Aufzählung von Kommazahlen, z.B. 1,2, 3,1415 und 42,42 | `Die Kommazahlen x sind 6,5 und 2,5.` | |
-| Booleans | Eine Liste von Booleans | Eine Aufzählung von Booleans, z.B. wahr, falsch und wahr | `Die Booleans x sind wahr und falsch.` |
-| Buchstaben | Eine Liste von Buchstaben | Eine Aufzählung von Buchstaben, z.B. '1' und 'h' | `Die Buchstaben x sind 'd', und '\n'.` |
-| Texte | Eine Liste von Texten | Eine Aufzählung von Texten, z.B. "Hallo", "test" und "Tschüss" | `Die Texte t sind "hi" und "bye"` |
+| Zahlen Liste | Eine Liste von Zahlen | Ein Listen Literal wie oben beschrieben | `Die Zahlen Liste z ist eine Liste, die aus 1, 2, 3 besteht.` |
+| Kommazahlen Liste | Eine Liste von Kommazahlen | Ein Listen Literal wie oben beschrieben | `Die Kommazahlen Liste z ist eine Liste, die aus 1,2, 3,2, 3,1415 besteht.` | |
+| Boolean Liste | Eine Liste von Booleans | Ein Listen Literal wie oben beschrieben | `Die Boolean Liste b ist eine Liste, die aus wahr, falsch, wahr besteht.` |
+| Buchstaben Liste | Eine Liste von Buchstaben | Ein Listen Literal wie oben beschrieben | `Die Buchstaben Liste b ist eine Liste, die aus 'b', 'h', 'z' besteht.` |
+| Text Liste | Eine Liste von Texten | Ein Listen Literal wie oben beschrieben | `Die Text Liste t ist eine Liste, die aus "Hallo", "du", "da" besteht.` |
 ***
+
+### Bemerkung
+
+Eigentlich würde man ja erwarten, dass in der Aufzählung eines Listen Literals noch ein 'und' vorkommen müsste (`eine Liste, die aus 1, 2 und 3 besteht`). Das würde aber zu Mehrdeutigkeiten in Boolschen Ausdrücken führen (`eine Liste, die aus wahr und falsch besteht`), und da die Aufzählung, grammatisch gesehen, kein 'und' braucht wird es in Listen Literalen weggelassen.
 
 ## Strukturen
 
