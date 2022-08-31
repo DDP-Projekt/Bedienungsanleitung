@@ -69,11 +69,11 @@ Die Funktion spiel_nicht_gewonnen gibt einen Boolean zurück, macht:
 Und kann so benutzt werden:
 	"das Spiel nicht gewonnen"
 
-Die Funktion spiel_unendschieden gibt einen Boolean zurück, macht:
+Die Funktion spiel_unentschieden gibt einen Boolean zurück, macht:
 	Für jede Zahl feld in Spielfeld, wenn feld gleich 0 ist, gib falsch zurück.
 	[ Falls alle felder belegt sind ] Gib wahr zurück.
 Und kann so benutzt werden:
-	"das Spiel unendschieden"
+	"das Spiel unentschieden"
 
 Die Funktion schreibe_spielfeld gibt nichts zurück, macht:
 	Für jede Zahl i von 0 bis 2, mache:
@@ -92,9 +92,9 @@ Und kann so benutzt werden:
 
 [ Programm anfang ]
 Solange (das Spiel nicht gewonnen) ist, mache:
-	Wenn (das Spiel unendschieden) ist, dann:
+	Wenn (das Spiel unentschieden) ist, dann:
 		Zeige das Spielfeld.
-		Schreibe den Text "Das Spiel ist unendschieden" auf eine Zeile.
+		Schreibe den Text "Das Spiel ist unentschieden" auf eine Zeile.
 		Beende das Programm.
 
 	Schreibe den Text "Bitte nehme einen Zug, Spieler ".
