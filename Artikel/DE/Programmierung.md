@@ -71,3 +71,9 @@ und kann so benutzt werden:
 
 Ein Literal ist eine Schreibweise im Quellcode die einen (in DDP konstanten) Wert repräsentiert.
 Eine Liste von Literalen für die ensprechenden Datentypen kann im Artikel [Datentypen](?p=Datentypen) gefunden werden.
+
+
+## Bemerkung
+
+Viele, wenn nicht gar alle, der Features die in den nachfolgenden Artikeln beschrieben werden sollten jedem der schon einmal programmiert hat bereits bekannt sein.
+Dennoch lohnt es sich, wenn auch nur für die Syntax, alles genaustens zu lesen, da DDP oftmals einige Details abändert um der Deutschen Sprache gerecht zu werden.

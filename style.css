@@ -5,7 +5,7 @@
 	--text-color: antiquewhite;
 	--link-hover-color: aliceblue;
 	--bg-color: #444;
-	--sidebar-color:#3d3d3d;
+	--sidebar-color: #3d3d3d;
 	--table-border-color: #303336;
 	--table-fill-dark: #3b3c3e;
 	--table-fill-light: #3f4043;
@@ -23,11 +23,12 @@
 	src: url('./fonts/Futura.ttf');
 }
 
-html, body {
+html,
+body {
 	height: 100%;
 	margin: 0;
 	font-family: 'Futura';
-	font-size: small;
+	font-size: medium;
 	background-color: var(--bg-color);
 	color: var(--text-color);
 	overflow: hidden;
@@ -146,7 +147,8 @@ a:hover {
 
 #artikel {
 	width: auto;
-	height: calc(100% - 100px - 20px); /* kopf ist 100px, kann sich aber vielleicht Ändern!*/
+	height: calc(100% - 100px - 20px);
+	/* kopf ist 100px, kann sich aber vielleicht Ändern!*/
 	margin-top: 20px;
 	padding: 0 10px 0 10px;
 }
