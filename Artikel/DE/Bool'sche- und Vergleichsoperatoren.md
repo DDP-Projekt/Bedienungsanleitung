@@ -5,7 +5,7 @@ Mithilfe von Bool'schen Operatoren können komplexe Bedingungen ausgedrückt und
 | Operator | Beschreibung | C Equivalent | Beispiel | Ergebnis |
 | -------- | ------------ | ------------ | -------- | -------- |
 | und | Wahr, wenn beide Argumente wahr sind. | `true && false` | `wahr und wahr`<br>`wahr und falsch`<br>`falsch und wahr`<br>`falsch und falsch` | `wahr`<br>`falsch`<br>`falsch`<br>`falsch` |
-| oder | Wahr, wenn eines der Beiden Argumente wahr ist. | `true || false` | `wahr oder wahr`<br>`wahr oder falsch`<br>`falsch oder wahr`<br>`falsch oder falsch` | `wahr`<br>`wahr`<br>`wahr`<br>`falsch` |
+| oder | Wahr, wenn eines der Beiden Argumente wahr ist. | `true \|\| false` | `wahr oder wahr`<br>`wahr oder falsch`<br>`falsch oder wahr`<br>`falsch oder falsch` | `wahr`<br>`wahr`<br>`wahr`<br>`falsch` |
 | nicht | Der Wert des Arguments wird umgekehrt. | `!true` | `nicht wahr` <br>`nicht falsch` | `falsch`<br>`wahr` |
 
 # Vergleichsoperatoren

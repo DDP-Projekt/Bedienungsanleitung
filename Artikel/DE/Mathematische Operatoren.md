@@ -8,7 +8,7 @@ in diesen und späteren Tabellen jeweils der C-Operator dabei.
 |Funktion|Verwendung|C Equivalent|Typ vom Operanden|Rückgabetyp|Beispiel|Ergebnis|
 |-|-|-|-|-|-|-|
 |Logische NICHT verknüpfung|`logisch nicht a`|`~a`|Zahl|Zahl|`logisch nicht 1|-2|
-|Listen/Text Element/Buchstaben Anzahl|`die Länge von a`| - |Liste, Text|Zahl|`Die Länge von "Hallo"`|6|
+|Listen/Text Element/Buchstaben Anzahl|`die Länge von a`| - |Liste, Text|Zahl|`Die Länge von "Hallo"`|5|
 |Byte Größe|`die Größe von a`|`sizeof(a)`|alles|Zahl|`Die Größe von 1`|8|
 |Sinus|`der Sinus von a`|`sin(a)`|numerisch|numerisch|`der Sinus von pi`|0|
 |Kosinus|`der Kosinus von a`|`cos(a)`|numerisch|numerisch|`der Kosinus von pi`|-1|
@@ -34,5 +34,5 @@ in diesen und späteren Tabellen jeweils der C-Operator dabei.
 |Bit verschiebung nach links|`a um b Bit nach links verschoben`|`a << b`|Zahl|Zahl|Zahl|`7 um 3 Bit nach links verschoben`|56|
 |Bit verschiebung nach Rechts|`a um b Bit nach rechts verschoben`|`a >> b`|Zahl|Zahl|Zahl|`70 um 2 Bit nach rechts verschoben`|17|
 |Logische UND verknüpfung|`a logisch und b`|`a&b`|Zahl|Zahl|Zahl|`5 logisch und 2`|0|
-|Logische ODER verknüpfung|`a logisch oder b`|`a|b`|Zahl|Zahl|Zahl|`5 logisch oder 2`|7|
+|Logische ODER verknüpfung|`a logisch oder b`|`a\|b`|Zahl|Zahl|Zahl|`5 logisch oder 2`|7|
 |Logische XOR verknüpfung|`a logisch kontra b`|`a^b`|Zahl|Zahl|Zahl|`8 logisch kontra 5`|13|
