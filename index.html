@@ -1,105 +1,103 @@
 <!DOCTYPE html>
 <html>
+	<head>
+		<!-- favicon -->
+		<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+		<link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="theme-color" content="#ffffff">
 
-<head>
-	<!-- favicon -->
-	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
-	<link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#5bbad5">
-	<meta name="msapplication-TileColor" content="#da532c">
-	<meta name="theme-color" content="#ffffff">
+		<meta charset="utf8">
+		<title>DDP Bedienungsanleitung</title>
+		<link rel="stylesheet" href="style.css">
+		<script src="elements/todoElement.js"></script>
+		<script src="script.js"></script>
+		<!-- for viewport size responsive webpage -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<meta charset="utf8">
-	<title>DDP Bedienungsanleitung</title>
-	<link rel="stylesheet" href="style.css">
-	<script src="elements/todoElement.js"></script>
-	<script src="script.js"></script>
-	<!-- for viewport size responsive webpage -->
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- Load the element definition -->
+		<script type="module" src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@2/dist/zero-md.min.js"></script>
+	</head>
 
-	<!-- Load the element definition -->
-	<script type="module" src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@2/dist/zero-md.min.js"></script>
-</head>
-
-<body>
-	<div class="language-picker js-language-picker" data-trigger-class="btn btn--subtle js-tab-focus">
-		<form action="" class="language-picker__form">
-			<select name="language-picker-select" id="language-picker-select"
-				onchange="changeLanguage(this.selectedIndex);" onfocus="this.selectedIndex = -1;">
-				<option lang="de" value="deutsch" selected>Deutsch</option>
-				<option lang="en" value="english">English</option>
-			</select>
-		</form>
-	</div>
-
-	<div id="main">
-		<!-- Hamburger button to toggle sidebar -->
-		<a id="hamburger" onclick="toggleNav()" href="#">≡</a>
-		<nav id="seitenleiste">
-			<h2 style="margin-bottom: 40px;text-decoration: underline;">Inhaltsverzeichnis</h2>
-			<!-- Sidebar links -->
-			<a href="index.html?p=Startseite">Die Deutsche Programmiersprache</a>
-			<ol>
-				<!-- href attibutes get filled using javascript -->
-				<li>
-					<a>Einrichten</a>
-					<ol>
-						<li><a>Installieren</a></li>
-						<li><a>Erstes Programm</a></li>
-					</ol>
-				</li>
-				<li>
-					<a>Programmierung</a>
-					<ol>
-						<li><a>Datentypen</a></li>
-						<li><a>Typkonvertierung</a></li>
-						<li><a>Mathematische Konstanten</a></li>
-						<li><a>Mathematische Operatoren</a></li>
-						<li><a>Bool'sche- und Vergleichsoperatoren</a></li>
-						<li><a>Verzweigungen und Schleifen</a></li>
-						<li><a>Variablen</a></li>
-						<li>
-							<a>Funktionen</a>
-							<ol>
-								<li><a>Anwendung</a></li>
-								<li><a>Referenzen</a></li>
-								<li><a>Externe Funktionen</a></li>
-								<li><a>Beispiele</a></li>
-							</ol>
-						</li>
-						<li>
-							<a>Listen</a>
-							<ol>
-								<li><a>Listen Operatoren</a></li>
-							</ol>
-						</li>
-						<li><a>Strukturen</a></li>
-						<li><a>Einbindungen</a></li>
-					</ol>
-				</li>
-				<li><a>Beispielprogramme</a></li>
-			</ol>
-		</nav>
-		<div id="content" onclick="closeNav()">
-			<div id="kopf">
-				<h1>Die Deutsche Programmiersprache</h1>
-				<div id="untertitel">
-					<hr class="linie">
-					<h4>Bedienungsanleitung</h4>
-					<hr class="linie">
-				</div>
-			</div>
-			<article id="artikel">
-				<!-- src attibute gets filled using javascript -->
-				<zero-md id="md" src="Artikel/Startseite.md">
-					<template>
-						<link rel="stylesheet" href="md-style.css" />
-					</template>
-				</zero-md>
-			</article>
+	<body>
+		<div class="language-picker js-language-picker" data-trigger-class="btn btn--subtle js-tab-focus">
+			<form action="" class="language-picker__form">
+				<select name="language-picker-select" id="language-picker-select"
+					onchange="changeLanguage(this.selectedIndex);" onfocus="this.selectedIndex = -1;">
+					<option lang="de" value="deutsch" selected>Deutsch</option>
+					<option lang="en" value="english">English</option>
+				</select>
+			</form>
 		</div>
-	</div>
-</body>
 
+		<div id="main">
+			<!-- Hamburger button to toggle sidebar -->
+			<a id="hamburger" onclick="toggleNav()" href="#">≡</a>
+			<nav id="seitenleiste">
+				<h2 style="margin-bottom: 40px;text-decoration: underline;">Inhaltsverzeichnis</h2>
+				<!-- Sidebar links -->
+				<a href="index.html?p=Startseite">Die Deutsche Programmiersprache</a>
+				<ol id="article-links">
+					<!-- href attibutes get filled using javascript -->
+					<li>
+						<a>Einrichten</a>
+						<ol>
+							<li><a>Installieren</a></li>
+							<li><a>Erstes Programm</a></li>
+						</ol>
+					</li>
+					<li>
+						<a>Programmierung</a>
+						<ol>
+							<li><a>Datentypen</a></li>
+							<li><a>Typkonvertierung</a></li>
+							<li><a>Mathematische Konstanten</a></li>
+							<li><a>Mathematische Operatoren</a></li>
+							<li><a>Bool'sche- und Vergleichsoperatoren</a></li>
+							<li><a>Verzweigungen und Schleifen</a></li>
+							<li><a>Variablen</a></li>
+							<li>
+								<a>Funktionen</a>
+								<ol>
+									<li><a>Anwendung</a></li>
+									<li><a>Referenzen</a></li>
+									<li><a>Externe Funktionen</a></li>
+									<li><a>Beispiele</a></li>
+								</ol>
+							</li>
+							<li>
+								<a>Listen</a>
+								<ol>
+									<li><a>Listen Operatoren</a></li>
+								</ol>
+							</li>
+							<li><a>Strukturen</a></li>
+							<li><a>Einbindungen</a></li>
+						</ol>
+					</li>
+					<li><a>Beispielprogramme</a></li>
+				</ol>
+			</nav>
+			<div id="content" onclick="closeNav()">
+				<div id="kopf">
+					<h1>Die Deutsche Programmiersprache</h1>
+					<div id="untertitel">
+						<hr class="linie">
+						<h4>Bedienungsanleitung</h4>
+						<hr class="linie">
+					</div>
+				</div>
+				<article id="artikel">
+					<!-- src attibute gets filled using javascript -->
+					<zero-md id="md" src="Artikel/Startseite.md">
+						<template>
+							<link rel="stylesheet" href="md-style.css" />
+						</template>
+					</zero-md>
+				</article>
+			</div>
+		</div>
+	</body>
 </html>
