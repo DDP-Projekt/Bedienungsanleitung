@@ -37,11 +37,11 @@ Sonst:
 ```
 
 ## Mehrseitige Verzweigung
-Mehrseitige Verzweigungen erweitern die Zweiseitige Verzweigung um beliebig viele Verzweigungen.
+Mehrseitige Verzweigungen erweitern die zweiseitige Verzweigung um beliebig viele Verzweigungen.
 Nach dem `Wenn`-Block können beliebig viele `Wenn aber`-Blöcke angefügt werden.
 Sollte die erste Bedingung im `Wenn`-Block `falsch` ergeben wird die Bedingung im ersten `Wenn aber`-Block überprüft, sollte diese `falsch` sein wird die nächste überprüft und so weiter.
 Wenn alle Bedingungen falsch sein sollten wird, falls vorhanden, der `sonst`-Block ausgeführt.
-Sobald ein Block ausgeführt wurde werden alle folgenden Blöcke übersprungen.
+Sobald ein Block ausgeführt wurde, werden alle folgenden Blöcke übersprungen.
 
 ### Aufbau:
 ```ddp
@@ -53,7 +53,7 @@ Sonst:
 	<Anweisung>.
 ```
 
-### Bespiel:
+### Beispiel:
 ```ddp
 Wenn 1 gleich 2 ist, dann:
 	Schreibe den Text "Bedingung erfüllt!".
@@ -68,7 +68,7 @@ Schleifen werden genutzt um Code basierend auf Bedingungen mehrmals auszuführen
 
 ## Kopfgesteuerte Schleife
 Kopfgesteuerte Schleifen sind die einfachste Art von Schleifen.
-Wenn die Bedingung 'wahr' ergibt wird der Code-Block ausgeführt.
+Wenn die Bedingung 'wahr' ergibt, wird der Code-Block ausgeführt.
 Das wiederholt sich so lange, wie die Bedingung 'wahr' ergibt.
 ```ddp
 Solange <Bedingung> ist, mache:
@@ -85,7 +85,7 @@ Solange <Bedingung> ist.
 
 ## Wiederholung
 Wiederholungen werden genutzt um einen Code-Block mehrere Male auszuführen.
-Sie sind eine gekürzte Version von Zählenden Schleifen, sparen Text und erhöhen die Lesbarkeit des Codes
+Sie sind eine gekürzte Version von zählenden Schleifen, sparen Text und erhöhen die Lesbarkeit des Codes
 wenn man die Zähler-Variable nicht benötigt.
 ```ddp
 Mache:
@@ -100,7 +100,7 @@ Optional kann auch eine Schrittgröße angegeben werden, mit der gezählt wird.
 
 ### Hochzählende Schleife
 Zuerst wird der Zähler benannt und mit dem Startwert initialisiert.
-Dann wird (wie bei jeder Iteration) überprüft ob der Wert des Zählers kleiner oder gleich wie der des Endwerts ist.
+Dann wird (wie bei jeder Iteration) überprüft, ob der Wert des Zählers kleiner oder gleich wie der des Endwerts ist.
 Sollte diese Bedingung erfüllt sein, wird der Code-Block ausgeführt, und danach der Zähler um 1 erhöht.
 Das wird solange wiederholt wie der Zähler den Endwert nicht überschreitet.
 Im Code-Block kann der Zähler wie eine normale lokale Variable benutzt werden.
@@ -132,9 +132,9 @@ Für jede Zahl i von 100 bis 1 mit Schrittgröße -1, mache:
 	Schreibe die Zahl i.
 ```
 ### Eigene Schrittgröße
-Wie oben erwähnt, kann auch eine Beliebige Schrittgröße n angegeben werden. Das sorgt dafür, das anstatt 1 der angegebene Wert zum Zähler addiert wird.
+Wie oben erwähnt, kann auch eine beliebige Schrittgröße n angegeben werden. Das sorgt dafür, das anstatt 1 der angegebene Wert zum Zähler addiert wird.
 
-`mit Schrittgröße n` ist optional. Standartmäßig ist die Schrittgröße +1. 
+`mit Schrittgröße n` ist optional. Standardmäßig ist die Schrittgröße +1. 
 
 ### Aufbau
 ```ddp

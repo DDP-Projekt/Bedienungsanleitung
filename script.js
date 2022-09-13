@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	populateMDElement();
 
+    const md = document.getElementById("md"); // zero-md element
     // apply syntax highlighting once zero-md and Prism.js are loaded
     md.addEventListener('zero-md-ready', () => {
         applySyntaxHighlighting();

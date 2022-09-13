@@ -9,4 +9,4 @@ In DDP werden Funktionen genauso verwendet wie in anderen Sprachen, allerdings s
 
 Funktionen sind auf wichtig um APIs und Bibliotheken von Betriebssystemen oder anderen Sprachen zu verwenden, denn sie bilden einen Weg mit C-Code zu sprechen, und erlauben so zugriff auf z.B. die WinAPI oder viele Grafik-Bibliotheken.
 
-Allgemein sind Funktionen ein Zentraler Bestandteil der DDP-Programmierung und dürfen nicht übersehen werden.
+Allgemein sind Funktionen ein zentraler Bestandteil der DDP-Programmierung und dürfen nicht übersehen werden.

@@ -14,18 +14,18 @@ Die verschiedenen Datentypen sind im Artikel [Datentypen](?p=Datentypen) beschri
 
 ## Anweisungen
 
-Eine Anweisung (Englisch *statement*) ist ein Quellcode Abschnitt der etwas tut.
+Eine Anweisung (Englisch *statement*) ist ein Quellcode Abschnitt, der etwas tut.
 Anweisungen werden immer mit einem Punkt (.) beendet.
 Die Anweisung `Schreibe den Text "Hallo".` gibt zum Beispiel "Hallo" in die Konsole aus.
 Ausdrücke mit einem nachfolgenden Punkt sind auch Anweisungen. Ihr Ergebnis wird verworfen.
 `1 plus 1.` beispielsweise wird ausgewertet, aber das Ergebnis wird nie benutzt.
 
-Ein DDP Programm besteht aus beliebig vielen Anweisungen, die nacheinander (im Quelltext von Links nach Rechts 
+Ein DDP Programm besteht aus beliebig vielen Anweisungen, die nacheinander (im Quelltext von links nach rechts 
 und von Oben nach Unten) ausgeführt werden.
 
 ## Anweisungsblock
 
-Ein Anweisungsblock ist eine Folge von Answeisungen, die nacheinander ausgeführt werden.
+Ein Anweisungsblock ist eine Folge von Anweisungen, die nacheinander ausgeführt werden.
 Er beginnt mit einem Doppelpunkt (:) und einer neuen Zeile, und alle zugehörigen Anweisungen
 müssen mindestens eine Einrückung (ein Tab-Zeichen oder 4 Leerzeichen) tiefer eingerückt sein als der Doppelpunkt.
 ```ddp
@@ -42,8 +42,7 @@ Mehr dazu in den nachfolgenden Artikeln.
 ## Kommentare
 
 Um den Quellcode eines DDP Programms zu erklären und verständlicher zu machen kann man Kommentare benutzen.
-Kommentare werden zwischen eckigen Klammern geschrieben ([]) und sind nur zum erklären des Quellcodes da, 
-sie verändern nicht was er tut.
+Kommentare werden zwischen eckigen Klammern geschrieben ([]) und sind nur zum Erklären des Quellcodes da, sie verändern nicht was er tut.
 
 ```ddp
 Schreibe den Text "test". [schreibt den Text "test" in die Konsole]
@@ -70,10 +69,10 @@ und kann so benutzt werden:
 ## Literale
 
 Ein Literal ist eine Schreibweise im Quellcode die einen (in DDP konstanten) Wert repräsentiert.
-Eine Liste von Literalen für die ensprechenden Datentypen kann im Artikel [Datentypen](?p=Datentypen) gefunden werden.
+Eine Liste von Literalen für die entsprechenden Datentypen kann im Artikel [Datentypen](?p=Datentypen) gefunden werden.
 
 
 ## Bemerkung
 
-Viele, wenn nicht gar alle, der Features die in den nachfolgenden Artikeln beschrieben werden sollten jedem der schon einmal programmiert hat bereits bekannt sein.
-Dennoch lohnt es sich, wenn auch nur für die Syntax, alles genaustens zu lesen, da DDP oftmals einige Details abändert um der Deutschen Sprache gerecht zu werden.
+Viele, wenn nicht gar alle, der Features die in den nachfolgenden Artikeln beschrieben werden sollten jedem, der schon einmal programmiert hat, bereits bekannt sein.
+Dennoch lohnt es sich, wenn auch nur für die Syntax, alles genaustens zu lesen, da DDP oftmals einige Details abändert, um der Deutschen Sprache gerecht zu werden.

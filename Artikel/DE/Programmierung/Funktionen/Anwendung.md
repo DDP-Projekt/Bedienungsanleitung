@@ -1,6 +1,6 @@
 <to-do></to-do>
 
-# Funktions Deklarationen
+# Funktionsdeklarationen
 
 Jede Funktion muss deklariert werden bevor man sie benutzen kann. In DDP gibt es nur globale Funktionen, also solche, die sich nicht innerhalb eines Anweisungsblocks befinden.
 Jede Funktion braucht einen einzigartigen **Namen**, eine Liste von **Parametern** und deren **Typen**, einen **Rückgabetyp** und einen oder mehrere **Aliase**.
@@ -22,7 +22,7 @@ einer Funktion muss einmalig sein und sollte die Funktion gut beschreiben, ist a
 ## Die Parameter
 
 einer Funktion sind optional. Es können zwischen 0 und unendlich viele vorhanden sein. Jeder Parameter benötigt einen Typ.
-Beim schreiben der Parameter sind der Numerus (Singular, Plural) und die Aufzählungsregeln zu beachten.
+Beim Schreiben der Parameter sind der Numerus (Singular, Plural) und die Aufzählungsregeln zu beachten.
 
 Bei einem einzigen Parameter schreibt man 
 ```ddp
@@ -32,7 +32,7 @@ Bei zweien schreibt man
 ```ddp
 ... mit den Parametern x und y vom Typ T1 und T2, ...
 ```
-Und bei N Paramtern 
+Und bei N Parameter 
 ```ddp
 ... mit den Parametern a, b, ... und z vom Typ T1, T2, ... und T26, ...
 ```
@@ -68,7 +68,7 @@ Die Aliase sind alle in der Form `"Schreibe <p1>"`.
 Das ist möglich, da p1 immer einen anderen Typ besitzt, der beim Funktionsaufruf erkannt wird.
 
 Jede Funktion braucht mindestens einen Alias, es wird aber empfohlen mehrere zu erstellen um grammatischen Kontexten gerecht zu werden.<br>
-Die Allgemeine Form der Alias Deklaration am Ende einer Funktionsdeklaration sieht so aus:
+Die allgemeine Form der Alias Deklaration am Ende einer Funktionsdeklaration sieht so aus:
 ```ddp
 ...
 Und kann so benutzt werden:
@@ -79,7 +79,7 @@ Und kann so benutzt werden:
 Das Komma und 'oder' können darin synonym verwendet werden.
 Wenn eine Funktion Parameter besitzt, müssen diese alle im Alias vorhanden sein in der Form `<parameter-name>`.
 
-Aliase können auch Außerhalb der Funktionsdeklaration definiert werden, mit der Form:
+Aliase können auch außerhalb der Funktionsdeklaration definiert werden, mit der Form:
 ```ddp
 Der Alias "<Alias>" steht für die Funktion <Funktionsname>.
 ```
@@ -90,12 +90,12 @@ In solchen späten Aliasdeklarationen, müssen eventuelle Parameter denselben Na
 Möchte man also z.B. einer Funktion aus dem Duden einen Alias hinzufügen, muss man nachschauen wie die Parameter der Funktion heißen.
 
 
-# Funktions Aufrufe
+# Funktionsaufrufe
 
 Funktionen werden ausschließlich durch ihre Aliase aufgerufen.<br>
 Ein Funktionsaufruf ist technisch gesehen ein Ausdruck, und kann daher überall wo ein Ausdruck stehen kann verwendet werden.
 
-Beim übergeben von Parametern gibt es einige simple Regeln zu beachten:
+Beim Übergeben von Parametern gibt es einige simple Regeln zu beachten:
 - Parameter, die nur 1 Token lang sind (z.B. Literale wie "hi", 22 oder wahr) können einfach an der Stelle des Parameters stehen
 - Parameter, die mehr als 1 Token lang sind (z.B. ein anderer Funktionsaufruf oder ein Listen Literal) müssen in Klammern gefasst werden
 - Eine Ausnahme bildet der `-` Operator, da es schöner aussieht `-22` nicht in Klammern fassen zu müssen.
