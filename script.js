@@ -22,6 +22,8 @@ document.addEventListener("DOMContentLoaded", () => {
     md.addEventListener('zero-md-ready', () => {
         applySyntaxHighlighting();
     });
+
+    closeNav(); // automatically close nav
 });
 
 function populateListItems() {
@@ -87,17 +89,22 @@ function openNav() {
     
     // push the hamburger button to the end of the sidebar.
     const burger = document.getElementById("hamburger");
-    burger.style.left = "calc(var(--sidebar-size) - 20px)";
+    burger.style.left = "calc(var(--sidebar-size) - 15px)";
 }
 
 function closeNav() {
+    // only close nav if on mobile
+    if (visualViewport.width > 830) {
+        return;
+    }
+
     // hide sidebar
     sidebarHidden = true;
     document.getElementById("seitenleiste").style.display = "none";
     
     // set hamburger button to the left of the screen
     const burger = document.getElementById("hamburger");
-    burger.style.left = "10px";
+    burger.style.left = "0";
 }
 
 function toggleNav() {

@@ -12,7 +12,7 @@
 	--md-link-color: #4fa2dd;
 	--md-link-hover-color: #81bfeb;
 }
-
+/* fonts */
 @font-face {
 	font-family: 'Trump Bold';
 	src: url('./fonts/FetteTrumpDeutsch.ttf');
@@ -23,11 +23,42 @@
 	src: url('./fonts/Futura.ttf');
 }
 
-html,
-body {
+/* screen width larger than 830px (desktop/tablet) */
+@media screen and (min-width: 830px) {
+	#hamburger {
+		display: none; /* eat hamburger */
+	}
+	#content {
+		left: 0; /* move content */
+	}
+	#seitenleiste {
+		display: flex !important; /* make sidebar reappear */
+	}
+}
+
+/* screen width smaller than 830px (phone) */
+@media screen and (max-width: 830px) {
+	#hamburger {
+		position: absolute;
+		left: var(--sidebar-size);
+		font-size: 1.5em;
+		width: 30px;
+		height: 30px;
+		text-align: center;
+		background-color: black;
+		z-index: 2; /* make the hamburger on top of everything */
+		font-weight: normal; /* to prevent the hamburger from going bold on click*/
+	}
+	#seitenleiste {
+		position: fixed; /* make sidebar an overlay */
+		z-index: 1; /* make sidebar on top of content */
+	}
+}
+
+html, body {
 	height: 100%;
 	margin: 0;
-	font-family: 'Futura';
+	font-family: 'Futura', sans-serif;
 	font-size: medium;
 	background-color: var(--bg-color);
 	color: var(--text-color);
@@ -45,6 +76,11 @@ body {
 	display: flex;
 }
 
+#seitenleiste h2#überschrift {
+	margin-bottom: 40px;
+	text-decoration: underline;
+}
+
 #seitenleiste {
 	display: flex;
 	background-color: var(--sidebar-color);
@@ -53,18 +89,7 @@ body {
 	height: 100%;
 	padding: 10px;
 	flex-direction: column;
-}
-
-#hamburger {
-	position: absolute;
-	left: calc(var(--sidebar-size) - 20px);
-	top: 10px;
-	font-size: 2em;
-	width: 30px;
-	height: 30px;
-	text-align: center;
-	background-color: var(--table-fill-dark);
-	border-radius: 50%;
+	overflow: auto;
 }
 
 /* Für 1.1, 1.2, 1.3, ect. Nummerierung in ol's*/
@@ -102,7 +127,7 @@ a:hover {
 }
 
 #kopf {
-	font-family: 'Trump Bold';
+	font-family: 'Trump Bold', serif;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
