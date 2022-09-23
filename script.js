@@ -13,6 +13,10 @@ if (searchParams.get('lang') === null) {
 
 customElements.define('to-do', TODOElement);
 document.addEventListener("DOMContentLoaded", () => {
+	closeNav(); // automatically close nav
+	
+	changeLangSelectFlag();
+
 	populateListItems();
 
 	populateMDElement();
@@ -22,8 +26,6 @@ document.addEventListener("DOMContentLoaded", () => {
     md.addEventListener('zero-md-ready', () => {
         applySyntaxHighlighting();
     });
-
-    closeNav(); // automatically close nav
 });
 
 function populateListItems() {
@@ -133,10 +135,28 @@ function applySyntaxHighlighting() {
     };
 }
 
-function changeLanguage(lang) {
-	const languages = ['DE', 'EN']
+function changeLangSelectFlag() {
+	const searchParams = new URLSearchParams(window.location.search);
+	const lang = searchParams.get("lang");
 
-    const searchParams = new URLSearchParams(window.location.search);
-    searchParams.set("lang", languages[lang]);
-    window.location.search = searchParams.toString();
+	const elm = document.getElementById('lang-select');
+	if (lang === "DE") {
+		elm.setAttribute('src', 'img/flags/EN.png')
+	}
+	else {
+		elm.setAttribute('src', 'img/flags/DE.png')
+	}
+}
+
+function toggleLang() {
+	const searchParams = new URLSearchParams(window.location.search);
+	const lang = searchParams.get("lang");
+
+	if (lang === "DE") {
+		searchParams.set("lang", "EN");
+	}
+	else {
+		searchParams.set("lang", "DE");
+	}
+	window.location.search = searchParams.toString();
 }

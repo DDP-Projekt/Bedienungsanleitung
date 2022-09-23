@@ -22,16 +22,6 @@
 	</head>
 
 	<body>
-		<div class="language-picker js-language-picker" data-trigger-class="btn btn--subtle js-tab-focus">
-			<form action="" class="language-picker__form">
-				<select name="language-picker-select" id="language-picker-select"
-					onchange="changeLanguage(this.selectedIndex);" onfocus="this.selectedIndex = -1;">
-					<option lang="de" value="deutsch" selected>Deutsch</option>
-					<option lang="en" value="english">English</option>
-				</select>
-			</form>
-		</div>
-
 		<div id="main">
 			<!-- Hamburger button to toggle sidebar -->
 			<a id="hamburger" onclick="toggleNav()" href="#">≡</a>
@@ -87,6 +77,7 @@
 						<h4>Bedienungsanleitung</h4>
 						<hr class="linie">
 					</div>
+					<a href="#"><img id="lang-select" onclick="toggleLang()"></img></a>
 				</div>
 				<article id="artikel">
 					<!-- src attribute gets filled using javascript -->
