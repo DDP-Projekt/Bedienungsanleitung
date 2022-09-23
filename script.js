@@ -160,3 +160,28 @@ function toggleLang() {
 	}
 	window.location.search = searchParams.toString();
 }
+
+function gotoNextArticle() {
+	path = "";
+	let searchParams = new URLSearchParams(window.location.search);
+    let articleLinks = document.getElementById('article-links')
+	let found = false;
+
+    traverseListElement(articleLinks, function (element) {
+        // only allow <a> tags
+        if (element.nodeName !== "A") {
+            return;
+        }
+
+		// if found, change window location and set flag to false
+		if (found) {
+			window.location.href = `?p=${path}${element.innerHTML}&lang=${searchParams.get('lang')}`;
+			found = false; // setting flag to false, so it doesn't continously set the location
+			return;
+		}
+
+		if (`${path}${element.innerHTML}` === searchParams.get('p')) {
+			found = true; // set flag to true, so it recurses one more time
+		}
+    })
+}
