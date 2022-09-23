@@ -175,7 +175,7 @@ a:hover {
 	height: calc(100% - 100px - 20px);
 	/* kopf ist 100px, kann sich aber vielleicht Ändern!*/
 	margin-top: 20px;
-	padding: 0 10px 0 10px;
+	padding-left: 10px;
 }
 
 /* scrollbar */
