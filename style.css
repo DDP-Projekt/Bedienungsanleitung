@@ -135,7 +135,7 @@ a:hover {
 	color: var(--link-hover-color);
 }
 
-#content {
+#inhalt {
 	width: 100%;
 	left: 20%;
 	overflow: scroll;
@@ -186,7 +186,7 @@ a:hover {
 	margin: 5px 0 5px 0;
 }
 
-#lang-select {
+#sprach-toggle {
 	width: 15px;
 	height: 10px
 }

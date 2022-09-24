@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function populateListItems() {
 	let searchParams = new URLSearchParams(window.location.search);
-    let articleLinks = document.getElementById('article-links')
+    let articleLinks = document.getElementById('artikel-links')
 
     traverseListElement(articleLinks, function (element) {
         // only allow <a> tags without a href attribute
@@ -141,7 +141,7 @@ function changeLangSelectFlag() {
 	const searchParams = new URLSearchParams(window.location.search);
 	const lang = searchParams.get("lang");
 
-	const elm = document.getElementById('lang-select');
+	const elm = document.getElementById('sprach-toggle');
 	if (lang === "DE") {
 		elm.setAttribute('src', 'img/flags/EN.png')
 	}
@@ -166,7 +166,7 @@ function toggleLang() {
 function gotoNextArticle() {
 	path = "";
 	let searchParams = new URLSearchParams(window.location.search);
-    let articleLinks = document.getElementById('article-links')
+    let articleLinks = document.getElementById('artikel-links')
 	let found = false;
 
     traverseListElement(articleLinks, function (element) {
@@ -178,7 +178,7 @@ function gotoNextArticle() {
 		// if found, change window location and set flag to false
 		if (found) {
 			window.location.href = `?p=${path}${element.innerHTML}&lang=${searchParams.get('lang')}`;
-			found = false; // setting flag to false, so it doesn't continously set the location
+			found = false; // setting flag to false, so it doesn't continuously set the location
 			return;
 		}
 
