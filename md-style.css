@@ -125,3 +125,15 @@
 .markdown-body ::-webkit-scrollbar-thumb:hover {
 	background: #555;
 }
+
+to-do {
+	display: flex;
+	padding: 5px;
+	margin: 5px;
+	border: 5px solid #df5e5e;
+	background-color: #303336;
+	justify-content: center;
+	align-content: center;
+	text-align: center;
+	border-radius: 15px;
+}
