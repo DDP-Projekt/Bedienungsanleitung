@@ -64,7 +64,9 @@
 }
 
 html, body {
+	display: flex;
 	height: 100%;
+	width: 100%;
 	margin: 0;
 	font-family: 'Futura', sans-serif;
 	font-size: medium;
@@ -77,11 +79,6 @@ html, body {
 	position: absolute;
 	right: 50px;
 	top: 10px;
-}
-
-#main {
-	height: 100%;
-	display: flex;
 }
 
 #seitenleiste h2#überschrift {
