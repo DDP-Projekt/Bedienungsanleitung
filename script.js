@@ -89,15 +89,10 @@ function openNav() {
     sidebarHidden = false;
 
     const sidebar = document.getElementById("seitenleiste");
-    sidebar.style.display = "flex";
-    sidebar.style.animation = "resize-sidebar-anim ease-in-out 350ms";
-    sidebar.style.boxShadow = "0 0 0 100vmax rgba(16, 16, 16, 0.6)";
+    sidebar.classList.toggle('opened', true)
 
-    // push the hamburger button to the end of the sidebar.
     const burger = document.getElementById("hamburger");
-    burger.style.animation = "move-hamburger-anim ease-in-out 350ms";
-    burger.style.left = "calc(var(--sidebar-size) - 10px)";
-
+    burger.classList.toggle('opened', true)
 }
 
 function closeNav() {
@@ -108,14 +103,12 @@ function closeNav() {
 
     // hide sidebar
     sidebarHidden = true;
+
     const sidebar = document.getElementById("seitenleiste");
-    sidebar.style.display = "none";
-    sidebar.style.boxShadow = "unset";
-    
-    // set hamburger button to the left of the screen
+    sidebar.classList.toggle('opened', false)
+
     const burger = document.getElementById("hamburger");
-    burger.style.animation = "";
-    burger.style.left = "0";
+    burger.classList.toggle('opened', false)
 }
 
 function toggleNav() {

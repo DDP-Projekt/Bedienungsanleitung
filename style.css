@@ -23,33 +23,16 @@
 	src: url('./fonts/Futura.ttf');
 }
 
-@keyframes resize-sidebar-anim {
-	from {
-		min-width: 0;
-		max-width: 0;
-	}
-	to {
-		min-width: var(--sidebar-size);
-		max-width: var(--sidebar-size);
-	}
-}
-
-@keyframes move-hamburger-anim {
-	from { left: 0; }
-	to { left: calc(var(--sidebar-size) - 10px) }
-}
-
 /* screen width larger than 830px (desktop/tablet) */
 @media screen and (min-width: 830px) {
 	#hamburger {
 		display: none; /* eat hamburger */
 	}
-	#content {
-		left: 0; /* move content */
-	}
 	#seitenleiste {
 		display: flex !important; /* make sidebar reappear */
-		animation: resize-sidebar-anim ease-in-out 350ms;
+		padding: 10px !important;
+		max-width: var(--sidebar-size);
+		min-width: var(--sidebar-size);
 		box-shadow: unset !important;
 	}
 }
@@ -66,10 +49,16 @@
 		background-color: black;
 		z-index: 2; /* make the hamburger on top of everything */
 		font-weight: normal; /* to prevent the hamburger from going bold on click*/
-		transition: ease-in-out;
+		transition: left 350ms ease-in-out;
+	}
+	#hamburger.opened {
+		left: calc(var(--sidebar-size) - 10px);
+	}
+	#hamburger:not(.opened) {
+		left: 0;
 	}
 	#seitenleiste {
-		position: fixed; /* make sidebar an overlay */
+		position: absolute; /* make sidebar an overlay */
 		z-index: 1; /* make sidebar on top of content */
 	}
 }
@@ -103,12 +92,23 @@ html, body {
 #seitenleiste {
 	display: flex;
 	background-color: var(--sidebar-color);
-	max-width: var(--sidebar-size);
-	min-width: var(--sidebar-size);
+	width: var(--sidebar-size);
 	height: 100%;
 	padding: 10px;
 	flex-direction: column;
 	overflow: auto;
+	transition: width 350ms ease-in-out;
+}
+
+#seitenleiste.opened {
+	padding: 10px;
+	width: var(--sidebar-size);
+	box-shadow: 0 0 0 100vmax rgba(16, 16, 16, 0.6);
+}
+
+#seitenleiste:not(.opened) {
+	padding: 0;
+	width: 0;
 }
 
 /* Für 1.1, 1.2, 1.3, ect. Nummerierung in ol's*/
