@@ -138,8 +138,8 @@ a:hover {
 #inhalt {
 	width: 100%;
 	left: 20%;
-	overflow: scroll;
-	overflow-x: auto;
+	overflow: auto;
+	padding: 10px;
 }
 
 #kopf {
@@ -147,7 +147,6 @@ a:hover {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	padding: 10px;
 }
 
 #kopf h1 {
@@ -195,7 +194,6 @@ a:hover {
 	width: auto;
 	height: calc(100% - 100px - 20px);
 	/* kopf ist 100px, kann sich aber vielleicht Ändern!*/
-	padding-left: 10px;
 }
 
 /* scrollbar */
