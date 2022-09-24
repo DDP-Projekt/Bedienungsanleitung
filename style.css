@@ -97,7 +97,7 @@ html, body {
 	padding: 10px;
 	flex-direction: column;
 	overflow: auto;
-	transition: width 350ms ease-in-out;
+	transition: width 350ms ease-in-out, padding 350ms ease-in-out;
 }
 
 #seitenleiste.opened {
@@ -186,7 +186,7 @@ a:hover {
 }
 
 #kopf h4 {
-	margin: 5px 0px 5px 0px;
+	margin: 5px 0 5px 0;
 }
 
 #lang-select {
