@@ -87,11 +87,17 @@ let sidebarHidden = false;
 function openNav() {
     // show sidebar
     sidebarHidden = false;
-    document.getElementById("seitenleiste").style.display = "flex";
-    
+
+    const sidebar = document.getElementById("seitenleiste");
+    sidebar.style.display = "flex";
+    sidebar.style.animation = "resize-sidebar-anim ease-in-out 350ms";
+    sidebar.style.boxShadow = "0 0 0 100vmax rgba(16, 16, 16, 0.6)";
+
     // push the hamburger button to the end of the sidebar.
     const burger = document.getElementById("hamburger");
-    burger.style.left = "calc(var(--sidebar-size) - 15px)";
+    burger.style.animation = "move-hamburger-anim ease-in-out 350ms";
+    burger.style.left = "calc(var(--sidebar-size) - 10px)";
+
 }
 
 function closeNav() {
@@ -102,10 +108,13 @@ function closeNav() {
 
     // hide sidebar
     sidebarHidden = true;
-    document.getElementById("seitenleiste").style.display = "none";
+    const sidebar = document.getElementById("seitenleiste");
+    sidebar.style.display = "none";
+    sidebar.style.boxShadow = "unset";
     
     // set hamburger button to the left of the screen
     const burger = document.getElementById("hamburger");
+    burger.style.animation = "";
     burger.style.left = "0";
 }
 
