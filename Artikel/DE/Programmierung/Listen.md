@@ -26,13 +26,13 @@ Die Zahlen Liste z2 ist eine leere Zahlen Liste.
 Die Text Liste t2 ist "Hallo" als Text Liste.
 ```
 
-| Typname | Beschreibung | Literal | Beispiel |
-| ------- | ------------ | ------- | -------- |
-| Zahlen Liste | Eine Liste von Zahlen | Ein Listen Literal wie oben beschrieben | `Die Zahlen Liste z ist eine Liste, die aus 1, 2, 3 besteht.` |
-| Kommazahlen Liste | Eine Liste von Kommazahlen | Ein Listen Literal wie oben beschrieben | `Die Kommazahlen Liste z ist eine Liste, die aus 1,2, 3,2, 3,1415 besteht.` | |
-| Boolean Liste | Eine Liste von Booleans | Ein Listen Literal wie oben beschrieben | `Die Boolean Liste b ist eine Liste, die aus wahr, falsch, wahr besteht.` |
-| Buchstaben Liste | Eine Liste von Buchstaben | Ein Listen Literal wie oben beschrieben | `Die Buchstaben Liste b ist eine Liste, die aus 'b', 'h', 'z' besteht.` |
-| Text Liste | Eine Liste von Texten | Ein Listen Literal wie oben beschrieben | `Die Text Liste t ist eine Liste, die aus "Hallo", "du", "da" besteht.` |
+| Typname           | Beschreibung               | Literal                                 | Beispiel                                                                    |
+|-------------------|----------------------------|-----------------------------------------|-----------------------------------------------------------------------------|
+| Zahlen Liste      | Eine Liste von Zahlen      | Ein Listen Literal wie oben beschrieben | `Die Zahlen Liste z ist eine Liste, die aus 1, 2, 3 besteht.`               |
+| Kommazahlen Liste | Eine Liste von Kommazahlen | Ein Listen Literal wie oben beschrieben | `Die Kommazahlen Liste z ist eine Liste, die aus 1,2, 3,2, 3,1415 besteht.` |
+| Boolean Liste     | Eine Liste von Booleans    | Ein Listen Literal wie oben beschrieben | `Die Boolean Liste b ist eine Liste, die aus wahr, falsch, wahr besteht.`   |
+| Buchstaben Liste  | Eine Liste von Buchstaben  | Ein Listen Literal wie oben beschrieben | `Die Buchstaben Liste b ist eine Liste, die aus 'b', 'h', 'z' besteht.`     |
+| Text Liste        | Eine Liste von Texten      | Ein Listen Literal wie oben beschrieben | `Die Text Liste t ist eine Liste, die aus "Hallo", "du", "da" besteht.`     |
 ***
 
 ## Bemerkung

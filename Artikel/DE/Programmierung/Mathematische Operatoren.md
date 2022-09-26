@@ -27,3 +27,24 @@ in diesen und späteren Tabellen jeweils der C-Operator dabei.
 |Logische UND verknüpfung|`a logisch und b`|`a&b`|Zahl|Zahl|Zahl|`5 logisch und 2`|0|
 |Logische ODER verknüpfung|`a logisch oder b`|`a\|b`|Zahl|Zahl|Zahl|`5 logisch oder 2`|7|
 |Logische XOR verknüpfung|`a logisch kontra b`|`a^b`|Zahl|Zahl|Zahl|`8 logisch kontra 5`|13|
+
+## Zuweisungsoperatoren
+
+Mathematische Zuweisungsoperatoren sind Operatoren, die das Ergebnis einer Mathematischen operation direkt einer Variable zuweist.
+
+### Addition
+- `Addiere <a> mit <b> und speichere das Ergebnis in <variable>`
+- `Erhöhe <variable> um <a>`
+
+### Subktraktion
+- `Subtrahiere <a> von <b> und speichere das Ergebnis in <variable>`
+- `Verringere <variable> um <a>`
+
+### Multiplikation
+
+- `Multipliziere <a> mit <b> und speichere das Ergebnis in <variable>.`
+- `Vervielfache <variable> um <a>.`
+
+### Division
+- `Dividiere <a> durch <b> und speichere das Ergebnis in <variable>.`
+- `Teile <variable> durch <a>.`
