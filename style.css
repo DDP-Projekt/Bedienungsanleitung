@@ -199,8 +199,8 @@ a:hover {
 
 #artikel-navigation {
 	position: fixed;
-	bottom: 0;
 	display: flex;
+	bottom: 0;
 	width: var(--content-size);
 	height: 40px;
 	margin-left: -10px;
@@ -209,9 +209,18 @@ a:hover {
 	align-items: center;
 }
 
-#artikel-navigation a {
+#artikel-navigation div {
+	width: 50%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	font-size: large;
 	font-weight: 900;
+}
+
+#artikel-navigation div:hover {
+	background-color: #3b3d41;
 }
 
 /* scrollbar */
