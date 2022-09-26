@@ -23,9 +23,4 @@ Der Typ von Variablen, Funktionen und Ausdrücken kann sich nicht zur Laufzeit �
 ## Listen
 
 Listen sind beliebig große Ansammlungen von Werten.
-Mehr zu Listen ist in dem Artikel [Listen](?p=Listen) zu finden.
-
-## Strukturen
-
-Strukturen sind zusammengesetzte Datentypen, das heißt sie bestehen aus mehreren Variablen, die zu einer Einheit zusammengefasst sind.
-Wie man Strukturen benutzt wird in dem Artikel [Strukturen](?p=Strukturen) beschrieben.
+Mehr zu Listen ist in dem Artikel [Listen](?p=Programmierung/Listen) zu finden.

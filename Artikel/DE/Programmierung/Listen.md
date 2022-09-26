@@ -4,7 +4,7 @@ Listen sind beliebig große Ansammlungen von Werten.
 Da DDP statisch typisiert ist kann eine Liste nur Werte eines Datentyps enthalten.
 Der Typname einer Liste ist im Allgemeinen der Element-Typname entsprechend dekliniert mit *Liste* angehängt (Zahl -> Zahlen Liste, Text -> Text Liste).
 Eine Liste kann zur Laufzeit wachsen und schrumpfen.
-Wie man mit Listen arbeitet, wird in dem Artikel [Listen Operatoren](?p=Listen%20Operatoren) beschrieben.
+Wie man mit Listen arbeitet, wird in dem Artikel [Listen Operatoren](?p=Programmierung/Listen/Listen%20Operatoren) beschrieben.
 
 ## Listen Literale
 
