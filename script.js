@@ -40,7 +40,7 @@ function populateListItems() {
 
         // add href attribute
         element.setAttribute("href", `?p=${path}${element.innerHTML}&lang=${searchParams.get('lang')}`)
-    })
+    }, false)
 }
 
 let path = "";
@@ -49,22 +49,37 @@ let path = "";
  * Super janky lol
  * @param {Element} element The Element
  * @param {function(Element)} callback
+ * @param {boolean} reverse if the Element should be traversed in reverse order
  */
-function traverseListElement(element, callback) {
+function traverseListElement(element, callback, reverse) {
     // only allow elements with children
     if (element == null || element.children.length === 0) {
         return;
     }
 
     // loop through children
-    for (const child of element.children) {
-        if (child.nodeName === "OL") {
-            // add the innerHTML of the <a> tag above the <ol> tag to the path
-            path += child.parentElement.firstElementChild.innerHTML + "/";
-        }
+    if (reverse) {
+        for (let i = element.children.length - 1; i >= 0; i--) {
+            let child = element.children[i];
+            if (child.nodeName === "OL") {
+                // add the innerHTML of the <a> tag above the <ol> tag to the path
+                path += child.parentElement.firstElementChild.innerHTML + "/";
+            }
 
-        callback(child);
-        traverseListElement(child, callback);
+            callback(child);
+            traverseListElement(child, callback, reverse);
+        }
+    }
+    else {
+        for (const child of element.children) {
+            if (child.nodeName === "OL") {
+                // add the innerHTML of the <a> tag above the <ol> tag to the path
+                path += child.parentElement.firstElementChild.innerHTML + "/";
+            }
+
+            callback(child);
+            traverseListElement(child, callback, reverse);
+        }
     }
 
     // remove old path
@@ -163,27 +178,38 @@ function toggleLang() {
 	window.location.search = searchParams.toString();
 }
 
+let found;
 function gotoNextArticle() {
 	path = "";
-	let searchParams = new URLSearchParams(window.location.search);
+    found = false;
+
     let articleLinks = document.getElementById('artikel-links')
-	let found = false;
+    traverseListElement(articleLinks, gotoArticle, false)
+}
 
-    traverseListElement(articleLinks, function (element) {
-        // only allow <a> tags
-        if (element.nodeName !== "A") {
-            return;
-        }
+function gotoPrevArticle() {
+    path = "";
+    found = false;
 
-		// if found, change window location and set flag to false
-		if (found) {
-			window.location.href = `?p=${path}${element.innerHTML}&lang=${searchParams.get('lang')}`;
-			found = false; // setting flag to false, so it doesn't continuously set the location
-			return;
-		}
+    let articleLinks = document.getElementById('artikel-links')
+    traverseListElement(articleLinks, gotoArticle, true)
+}
 
-		if (`${path}${element.innerHTML}` === searchParams.get('p')) {
-			found = true; // set flag to true, so it recurses one more time
-		}
-    })
+function gotoArticle(element) {
+    // only allow <a> tags
+    if (element.nodeName !== "A") {
+        return;
+    }
+
+    // if found, change window location and set flag to false
+    if (found) {
+        window.location.href = `?p=${path}${element.innerHTML}&lang=${searchParams.get('lang')}`;
+        found = false; // setting flag to false, so it doesn't continuously set the location
+        return;
+    }
+
+    // if the traversing article is the current article
+    if (`${path}${element.innerHTML}` === searchParams.get('p')) {
+        found = true; // set flag to true, so it recurses one more time
+    }
 }
