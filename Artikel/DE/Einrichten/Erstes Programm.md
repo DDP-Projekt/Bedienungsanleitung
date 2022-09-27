@@ -14,6 +14,5 @@ Das muss nun als `.ddp` Datei gespeichert werden.
 
 Um das Programm schließlich auszuführen, müssen Sie diese Befehle in die Befehlszeile eingeben:
 ```ddp
-kddp build <Pfad zu der .ddp Datei>
-./<Pfad zu der .ddp Datei>.exe
+kddp starte <Pfad zu der .ddp Datei>
 ```
