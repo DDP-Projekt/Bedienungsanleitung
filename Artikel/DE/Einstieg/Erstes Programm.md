@@ -9,10 +9,18 @@ Binde "Duden/Ausgabe" ein.
 
 Schreibe den Text "Hallo Welt!".
 ```
+<h6 style="margin-top: 0; margin-left: 10px">Datei: HalloWelt.ddp </h6>
+
 
 Das muss nun als `.ddp` Datei gespeichert werden.
 
 Um das Programm schließlich auszuführen, müssen Sie diese Befehle in die Befehlszeile eingeben:
-```ddp
-kddp starte <Pfad zu der .ddp Datei>
+```terminal
+$ kddp kompiliere HalloWelt.ddp
+$ ./HalloWelt
+```
+
+Alternativ kann man den Befehl `kddp starte` benutzen:
+```terminal
+$ kddp starte HalloWelt.ddp
 ```
