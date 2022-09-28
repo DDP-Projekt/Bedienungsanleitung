@@ -150,6 +150,13 @@ function applySyntaxHighlighting() {
         'operator': /\b(ist|sind|oder|und|nicht|plus|minus|mal|durch|modulo|hoch|. wurzel von|logisch|kontra|gleich|ungleich|kleiner als|größer als|kleiner als, oder|größer als, oder|natürlicher Logarithmus von|Betrag|Stück|von|bis|als|an der Stelle)\b/,
         'type': /nichts|Typ|Funktion|Zahl(en)?|Kommazahl(en)?|Booleans?|Texte?|Buchstaben?|[Dd]er|[Dd]ie|[Dd]as/,
     };
+
+    Prism.languages['terminal'] = {
+        'file': /(\w+)\.(\w+)/,
+        'command': /(?<=\$\s+)(\w+)|\.\/(\w+)/,
+        'option': /(\w+)/,
+        'string-literal': /".*"/,
+    };
 }
 
 function changeLangSelectFlag() {

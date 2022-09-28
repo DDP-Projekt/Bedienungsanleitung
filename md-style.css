@@ -73,6 +73,8 @@
 }
 
 /* Syntax Highlighting */
+
+/* DDP */
 .markdown-body .language-ddp span.token.control-statement {
 	color: #d38ecd;
 }
@@ -104,6 +106,24 @@
 	color:#f7f774;
 }
 
+/* terminal */
+.markdown-body .language-terminal span.token.command {
+	color: #d38ecd;
+}
+
+.markdown-body .language-terminal span.token.option {
+	color: #569CD6;
+}
+
+.markdown-body .language-terminal span.token.file {
+	color: #80bc80;
+}
+
+.markdown-body .language-terminal span.token.string-literal {
+	color: #ecb878;
+}
+
+/* scrollbar */
 .markdown-body ::-webkit-scrollbar {
 	width: 5px;
 	height: 5px;
@@ -125,6 +145,8 @@
 .markdown-body ::-webkit-scrollbar-thumb:hover {
 	background: #555;
 }
+
+/* custom elements */
 
 to-do {
 	display: flex;
