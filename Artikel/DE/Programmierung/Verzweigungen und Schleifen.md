@@ -7,7 +7,7 @@ Bei einer einseitigen Verzweigung wird ein Anweisungs-Block nur dann ausgeführt
 ### Aufbau:
 ```ddp
 Wenn <Bedingung> ist, dann:
-	<Anweisung>.
+	<Anweisungen>.
 ```
 
 ### Beispiel:
@@ -23,9 +23,9 @@ Sollte die Bedingung `falsch` ergeben, wird der Code im `sonst`-Block ausgeführ
 ### Aufbau:
 ```ddp
 Wenn <Bedingung> ist, dann:
-	<Anweisung>.
+	<Anweisungen>.
 Sonst:
-	<Anweisung>.
+	<Anweisungen>.
 ```
 
 ### Bespiel:
@@ -46,11 +46,11 @@ Sobald ein Block ausgeführt wurde, werden alle folgenden Blöcke übersprungen.
 ### Aufbau:
 ```ddp
 Wenn <Bedingung> ist, dann:
-	<Anweisung>
+	<Anweisungen>
 Wenn aber <2. Bedingung> ist, dann:
-	<Anweisung>.
+	<Anweisungen>.
 Sonst:
-	<Anweisung>.
+	<Anweisungen>.
 ```
 
 ### Beispiel:
@@ -72,14 +72,14 @@ Wenn die Bedingung 'wahr' ergibt, wird der Code-Block ausgeführt.
 Das wiederholt sich so lange, wie die Bedingung 'wahr' ergibt.
 ```ddp
 Solange <Bedingung> ist, mache:
-	<Anweisung>.
+	<Anweisungen>.
 ```
 
 ## Fußgesteuerte Schleife
 Fußgesteuerte Schleifen ähneln stark den Kopfgesteuerten, mit dem einzigen Unterschied, dass der Code-Block mindestens einmal ausgeführt wird, und dann erst das Prüfen der Bedingung beginnt.
 ```ddp
 Mache:
-	<Anweisung>.
+	<Anweisungen>.
 Solange <Bedingung> ist.
 ```
 
@@ -89,7 +89,7 @@ Sie sind eine gekürzte Version von zählenden Schleifen, sparen Text und erhöh
 wenn man die Zähler-Variable nicht benötigt.
 ```ddp
 Mache:
-	<Anweisung>.
+	<Anweisungen>.
 <Anzahl> Mal.
 ```
 
@@ -108,7 +108,7 @@ Im Code-Block kann der Zähler wie eine normale lokale Variable benutzt werden.
 ### Aufbau
 ```ddp
 Für jede Zahl <Zähler> von <Startwert> bis <Endwert>, mache:
-	<Anweisung>.
+	<Anweisungen>.
 ```
 
 ### Beispiel
@@ -123,7 +123,7 @@ Natürlich muss hierbei der Startwert größer als der Endwert sein, da es sonst
 ### Aufbau
 ```ddp
 Für jede Zahl <Zähler> von <Startwert> bis <Endwert> mit Schrittgröße -1, mache:
-	<Anweisung>.
+	<Anweisungen>.
 ```
 
 ### Beispiel
@@ -139,17 +139,26 @@ Wie oben erwähnt, kann auch eine beliebige Schrittgröße n angegeben werden. D
 ### Aufbau
 ```ddp
 Für jede Zahl <Zähler> von <Startwert> bis <Endwert> mit Schrittgröße <n>, mache:
-	<Anweisung>.
+	<Anweisungen>.
 ```
 
 ### Beispiel
 ```ddp
 Für jede Zahl i von 1 bis 100 mit Schrittgröße 5, mache:
-	<Anweisung>.
+	<Anweisungen>.
+```
+
+## Iterierende Schleifen
+Es ist auch möglich mit Schleifen durch jedes Element einer Liste durchzulaufen. 
+```ddp
+Die Zahlen Liste liste ist eine leere Zahlen Liste.
+
+Für jede Zahl element in liste, mache:
+	<Anweisungen>.
 ```
 
 # Tipp
-Fast Jede der hier aufgelisteten Verzweigungen und Schleifen kann auch auf einer einzigen Zeile geschrieben werden,
+Fast jede der hier aufgelisteten Verzweigungen und Schleifen kann auch auf einer einzigen Zeile geschrieben werden,
 falls nur eine Anweisung ausgeführt werden muss.
 
 ## Beispiele

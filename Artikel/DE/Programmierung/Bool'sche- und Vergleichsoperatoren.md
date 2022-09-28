@@ -1,6 +1,6 @@
 # Bool'sche Operatoren
 
-Mithilfe von Bool'schen Operatoren können komplexe Bedingungen ausgedrückt und zusammengefasst werden und z.B. für Schleifen verwendet werden.
+Mithilfe von Bool'schen Operatoren können komplexe Bedingungen ausgedrückt und zusammengefasst werden und z.B. für Verzweigungen oder Schleifen verwendet werden.
 
 | Operator | Beschreibung | C Equivalent | Beispiel | Ergebnis |
 | -------- | ------------ | ------------ | -------- | -------- |
