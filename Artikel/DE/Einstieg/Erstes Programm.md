@@ -14,7 +14,7 @@ Schreibe den Text "Hallo Welt!".
 
 Das muss nun als `.ddp` Datei gespeichert werden.
 
-Um das Programm schließlich auszuführen, müssen Sie diese Befehle in die Befehlszeile eingeben:
+Um das Programm schließlich auszuführen, verwendet man diese Befehle:
 ```terminal
 $ kddp kompiliere HalloWelt.ddp
 $ ./HalloWelt
