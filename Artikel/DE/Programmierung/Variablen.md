@@ -40,4 +40,4 @@ Um einer Variable das Ergebnis eines Ausdrucks zuzuweisen, muss `Speichere ... i
 Speichere pi durch 2 in b.
 ```
 
-Es gibt noch besondere Zuweisungsoperatoren, die nur bei Variablen vom Typ Zahl oder Kommazahl benutzt werden können. Weiteres dazu erfährst du in [Mathematische Operatoren](?p=Programmierung/Mathematische%20Operatoren#zuweisungsoperatoren)
+Es gibt noch besondere Zuweisungsoperatoren, die nur bei Variablen vom Typ Zahl oder Kommazahl benutzt werden können. Weiteres dazu erfährst du in [Operatoren](?p=Programmierung/Operatoren)
