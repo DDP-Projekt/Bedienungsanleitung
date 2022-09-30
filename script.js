@@ -190,6 +190,12 @@ function gotoNextArticle() {
 	path = "";
     found = false;
 
+    // Special condition for the first link
+    if (searchParams.get('p') === "Startseite") {
+        window.location.href = `?p=Einstieg&lang=${searchParams.get('lang')}`;
+        return;
+    }
+
     let articleLinks = document.getElementById('artikel-links')
     traverseListElement(articleLinks, gotoArticle, false)
 }
@@ -197,6 +203,12 @@ function gotoNextArticle() {
 function gotoPrevArticle() {
     path = "";
     found = false;
+
+    // Special condition for the first link
+    if (searchParams.get('p') === "Einstieg") {
+        window.location.href = `?p=Startseite&lang=${searchParams.get('lang')}`;
+        return;
+    }
 
     let articleLinks = document.getElementById('artikel-links')
     traverseListElement(articleLinks, gotoArticle, true)
