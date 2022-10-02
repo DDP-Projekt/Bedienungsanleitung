@@ -73,7 +73,14 @@ Mithilfe von Bool'schen Operatoren können komplexe Bedingungen ausgedrückt und
 # Listen und Text Operatoren
 <to-do></to-do>
 
-# Operator Reihenfolge
+# Operator Priorisierung
+
+Verschiedene Operatoren werden verschieden Priorisiert.
+Das bedeutet, dass manche Operatoren bei der Auswertung Vorrang vor anderen haben.
+In der Mathematik haben z.B. Multiplikation und Division Vorrang vor Addition und Subtraktion, und
+Potenzen haben wiederrum Vorrang vor Multiplikationen und Divisionen.
+Bei den mathemathischen Operatoren hält DDP sich weitestgehend an die mathemathische Reihenfolge.
+Hier ist eine Tabelle mit allen Operatoren und ihrer Priorisierung (hoch priorisierte Operatoren oben):
 
 | Rang | Operator                                          |
 |------|---------------------------------------------------|
@@ -95,3 +102,16 @@ Mithilfe von Bool'schen Operatoren können komplexe Bedingungen ausgedrückt und
 | 16   | Logische ODER Verknüpfung                         |
 | 17   | Bool'sches UND                                    |
 | 18   | Bool'sches ODER                                   |
+
+## Operator Priorisierung Beispiel
+
+```ddp
+Die Zahlen Liste z ist eine Liste, die aus 1, 2, 3 besteht.
+Schreibe (z an der Stelle 2 hoch 3). [Zeigt 8 in der Konsole]
+```
+
+Hier sieht man die Priorisierung des `an der Stelle` Operators über den `hoch` Operator.
+Es wird erst `z an der Stelle 2` ausgewertet und dann das Ergebnis mit 3 potenziert.
+Hätte der `hoch` Operator Vorrang vor `an der Stelle`, würde erst `2 hoch 3` ausgerechnet werden
+und dann das Element an der Stelle 8 von z benutzt, was zu einem Laufzeitfehler führen würde, da z
+nur 3 Elemente besitzt.
