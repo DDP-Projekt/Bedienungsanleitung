@@ -1,91 +1,94 @@
 <!DOCTYPE html>
 <html lang="de">
-	<head>
-		<!-- favicon -->
-		<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
-		<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
-		<link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#5bbad5">
-		<meta name="msapplication-TileColor" content="#da532c">
-		<meta name="theme-color" content="#ffffff">
 
-		<meta charset="utf8">
-		<title>DDP Bedienungsanleitung</title>
-		<link rel="stylesheet" href="style.css">
-		<script src="elements/todoElement.js"></script>
-		<script src="script.js"></script>
-		<!-- for viewport size responsive webpage -->
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+	<!-- favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+	<link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="theme-color" content="#ffffff">
 
-		<!-- Load the element definition -->
-		<script type="module" src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@2/dist/zero-md.min.js"></script>
-	</head>
+	<meta charset="utf8">
+	<title>DDP Bedienungsanleitung</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="elements/todoElement.js"></script>
+	<script src="script.js"></script>
+	<!-- for viewport size responsive webpage -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<body>
-		<!-- Hamburger button to toggle sidebar -->
-		<a id="hamburger" onclick="toggleNav()" href="#">≡</a>
-		<nav id="seitenleiste">
-			<h2 id="überschrift">Inhaltsverzeichnis</h2>
-			<!-- Sidebar links -->
-			<a href="index.html?p=Startseite">Die Deutsche Programmiersprache</a>
-			<ol id="artikel-links">
-				<!-- href attributes get filled using javascript -->
-				<li>
-					<a>Einstieg</a>
-					<ol>
-						<li><a>Installieren</a></li>
-						<li><a>Entwicklungs-umgebung einrichten</a></li>
-						<li><a>Erstes Programm</a></li>
-					</ol>
-				</li>
-				<li>
-					<a>Programmierung</a>
-					<ol>
-						<li><a>Datentypen</a></li>
-						<li><a>Listen</a></li>
-						<li><a>Typkonvertierung</a></li>
-						<li><a>Mathematische Konstanten</a></li>
-						<li><a>Operatoren</a></li>
-						<li><a>Variablen</a></li>
-						<li><a>Verzweigungen und Schleifen</a></li>
-						<li>
-							<a>Funktionen</a>
-							<ol>
-								<li><a>Anwendung</a></li>
-								<li><a>Referenzen</a></li>
-								<li><a>Externe Funktionen</a></li>
-								<li><a>Beispiele</a></li>
-							</ol>
-						</li>
-						<li><a>Einbindungen</a></li>
-					</ol>
-				</li>
-				<li><a>Beispielprogramme</a></li>
-			</ol>
-		</nav>
-		<main id="inhalt" onclick="closeNav()">
-			<div id="kopf">
-				<h1>Die Deutsche Programmiersprache</h1>
-				<div id="untertitel">
-					<hr class="linie">
-					<h4>Bedienungsanleitung</h4>
-					<hr class="linie">
-				</div>
-				<a href="#"><img id="sprach-toggle" onclick="toggleLang()"></a>
+	<!-- Load the element definition -->
+	<script type="module" src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@2/dist/zero-md.min.js"></script>
+</head>
+
+<body>
+	<!-- Hamburger button to toggle sidebar -->
+	<a id="hamburger" onclick="toggleNav()" href="#">≡</a>
+	<nav id="seitenleiste">
+		<h2 id="überschrift">Inhaltsverzeichnis</h2>
+		<!-- Sidebar links -->
+		<a href="index.html?p=Startseite">Die Deutsche Programmiersprache</a>
+		<ol id="artikel-links">
+			<!-- href attributes get filled using javascript -->
+			<li>
+				<a>Einstieg</a>
+				<ol>
+					<li><a>Installieren</a></li>
+					<li><a>Entwicklungs-umgebung einrichten</a></li>
+					<li><a>Erstes Programm</a></li>
+				</ol>
+			</li>
+			<li>
+				<a>Programmierung</a>
+				<ol>
+					<li><a>Datentypen</a></li>
+					<li><a>Typkonvertierung</a></li>
+					<li><a>Mathematische Konstanten</a></li>
+					<li><a>Operatoren</a></li>
+					<li><a>Variablen</a></li>
+					<li><a>Verzweigungen und Schleifen</a></li>
+					<li>
+						<a>Funktionen</a>
+						<ol>
+							<li><a>Anwendung</a></li>
+							<li><a>Referenzen</a></li>
+							<li><a>Externe Funktionen</a></li>
+							<li><a>Beispiele</a></li>
+						</ol>
+					</li>
+					<li><a>Einbindungen</a></li>
+				</ol>
+			</li>
+			<li><a>Beispielprogramme</a></li>
+		</ol>
+	</nav>
+	<main id="inhalt" onclick="closeNav()">
+		<div id="kopf">
+			<h1>Die Deutsche Programmiersprache</h1>
+			<div id="untertitel">
+				<hr class="linie">
+				<h4>Bedienungsanleitung</h4>
+				<hr class="linie">
 			</div>
-			<article id="artikel">
-				<!-- src attribute gets filled using javascript -->
-				<zero-md id="md" src="Artikel/Startseite.md">
-					<template>
-						<link rel="stylesheet" href="md-style.css" />
-					</template>
-					<script type="text/markdown"><h1 align=center>Diese Seite konnte nicht gefunden werde!</h1><h3 align=center>This page could not be found!</h3></script>
-				</zero-md>
-			</article>
-			<div id="artikel-navigation">
-				<div onclick="gotoPrevArticle()"><</div>
-				<div onclick="gotoNextArticle()">></div>
+			<a href="#"><img id="sprach-toggle" onclick="toggleLang()"></a>
+		</div>
+		<article id="artikel">
+			<!-- src attribute gets filled using javascript -->
+			<zero-md id="md" src="Artikel/Startseite.md">
+				<template>
+					<link rel="stylesheet" href="md-style.css" />
+				</template>
+				<script
+					type="text/markdown"><h1 align=center>Diese Seite konnte nicht gefunden werde!</h1><h3 align=center>This page could not be found!</h3></script>
+			</zero-md>
+		</article>
+		<div id="artikel-navigation">
+			<div onclick="gotoPrevArticle()">
+				<< /div>
+					<div onclick="gotoNextArticle()">></div>
 			</div>
-		</main>
-	</body>
+	</main>
+</body>
+
 </html>
