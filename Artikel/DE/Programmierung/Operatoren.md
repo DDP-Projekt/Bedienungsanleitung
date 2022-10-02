@@ -1,10 +1,12 @@
 # Mathematische Operatoren
+
 Zur Vereinfachung werden in diesem Artikel die Typen *Zahl* und *Kommazahl* als *Numerisch* zusammengefasst.
 
 Um das Finden eines bestimmten Operators für Leser, die bereits eine Programmiersprache beherschen einfacher zu machen ist
 in diesen und späteren Tabellen jeweils der C-Operator dabei.
 
 ## Unäre Operatoren
+
 | Funktion                              | Verwendung        | C Equivalent | Typ vom Operanden | Rückgabetyp | Beispiel                | Ergebnis |
 |---------------------------------------|-------------------|--------------|-------------------|-------------|-------------------------|----------|
 | Logische NICHT verknüpfung            | `logisch nicht a` | `~a`         | Zahl              | Zahl        | `logisch nicht 1`       | -2       |
@@ -12,6 +14,7 @@ in diesen und späteren Tabellen jeweils der C-Operator dabei.
 | Byte Größe                            | `die Größe von a` | `sizeof(a)`  | alles             | Zahl        | `Die Größe von 1`       | 8        |
 
 ## Binäre Operatoren
+
 | Funktion                     | Verwendung                              | C Equivalent          | Typ vom 1. Operand | Typ vom 2. Operand | Rückgabetyp    | Beispiel                              | Ergebnis |
 |------------------------------|-----------------------------------------|-----------------------|--------------------|--------------------|----------------|---------------------------------------|----------|
 | Addition                     | `a plus b`                              | `a + b`               | numerisch          | numerisch          | numerisch      | `1 plus 1`                            | 2    |
@@ -33,10 +36,12 @@ in diesen und späteren Tabellen jeweils der C-Operator dabei.
 Mathematische Zuweisungsoperatoren sind Operatoren, die das Ergebnis einer Mathematischen operation direkt einer Variable zuweist.
 
 ### Addition
+
 - `Addiere <a> mit <b> und speichere das Ergebnis in <variable>`
 - `Erhöhe <variable> um <a>`
 
 ### Subktraktion
+
 - `Subtrahiere <a> von <b> und speichere das Ergebnis in <variable>`
 - `Verringere <variable> um <a>`
 
@@ -46,6 +51,7 @@ Mathematische Zuweisungsoperatoren sind Operatoren, die das Ergebnis einer Mathe
 - `Vervielfache <variable> um <a>.`
 
 ### Division
+
 - `Dividiere <a> durch <b> und speichere das Ergebnis in <variable>.`
 - `Teile <variable> durch <a>.`
 
@@ -71,7 +77,43 @@ Mithilfe von Bool'schen Operatoren können komplexe Bedingungen ausgedrückt und
 | größer als, oder  | Wahr, wenn das Linke Argument einen größeren oder denselben Wert wie das Rechte hat.  | `7 >= 3`     | `7 größer als, oder 3`<br>`5 größer als, oder 8`<br>`5 größer als, oder 5`       | `wahr`<br>`falsch`<br>`wahr` |
 
 # Listen und Text Operatoren
-<to-do></to-do>
+
+| Funktion                     | Verwendung                              | C Equivalent          | Typ vom 1. Operanden | Typ vom 2. Operanden | Typ vom 3. Operanden | Rückgabetyp    | Beispiel                              | Ergebnis |
+|------------------------------|-----------------------------------------|-----------------------|--------------------|--------------------|----------------|---------------------------------------|----------|--------|
+| Verkettung                     | `a verkettet mit b`                              | -               | Text/Liste/Buchstabe          | Text/Liste/Buchstabe |   -      | Text/Liste      | `"Hallo" verkettet mit " Welt"`                            | `"Hallo Welt"`    |
+| Indizierung                  | `a an der Stelle b`                             | `a[b]`               | Text/Liste          | Zahl   | -      | Buchstabe/Element Typ      | `"Hallo" an der Stelle 1`                           | 'H'   |
+| `... von ... bis ...`               | `a von b bis c`                               | -               | Text/Liste          | Zahl          | Zahl |  Text/Liste    | `"Hallo Welt" von 1 bis 5`                             | "Hallo"   |
+
+## Bemerkungen
+
+Die Operanden Typen einer Verkettung können nicht beliebig kombiniert werden.
+
+- Verkettet man 2 beliebige Werte desselben Typs entsteht eine Liste.
+- Verkettet man 2 Texte entsteht ein neuer Text.
+- Verkettet man einen Text mit einem Buchstaben oder umgekehrt entsteht ein Text.
+- Verkettet man eine Liste und einen beliebigen Wert vom Element Typ der Liste oder umgekehrt entsteht eine Liste.
+
+Bei Indizierungen und `von ... bis` sind die Indizes immer inklusiv und fangen bei 1 an.
+Eine Liste von 1 bis 5 sind also das erste, das fünfte und alle Element dazwischen.
+Eine Liste an der Stelle 0 wäre ein Laufzeitfehler, genauso wie ein Index, der die Länge der Liste überschreitet.
+
+Bei `von ... bis` gibt es keine Laufzeitfehler bei zu kleinen oder zu großen Indizes.
+Die Indizes werden automatisch in den Bereich [1, Länge der Liste/Text] gebracht.
+Sollte danach der 2. Index kleiner als der 1. sein, so gibt es einen Laufzeitfehler.
+Wenn also beide Indizes größer als die Länge der Liste sind, so ist das Ergebnis also das Letzte Element der Liste.
+
+## Beispiele
+
+```ddp
+Die Zahlen Liste z ist eine Liste, die aus 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 besteht.
+Schreibe (z an der Stelle 5). [Zeigt 5 in der Konsole]
+Schreibe (z von 3 bis 7). [Zeigt "3, 4, 5, 6, 7" in der Konsole]
+Schreibe (z von 3 bis 7 verkettet mit z von 1 bis 4). [Zeigt "3, 4, 5, 6, 7, 1, 2, 3, 4" in der Konsole]
+
+Schreibe ("Hallo" verkettet mit 'Ü'). [Zeigt "HalloÜ" in der Konsole]
+Schreibe ("Hallo" von 1 bis 3 verkettet mit 'ö'). [Zeigt "Halö" in der Konsole]
+Schreibe ('b' verkettet mit 'a'). [Zeigt "b, a" in der Konsole]
+```
 
 # Operator Priorisierung
 
