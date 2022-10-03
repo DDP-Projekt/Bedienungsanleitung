@@ -119,6 +119,10 @@
 	color: #80bc80;
 }
 
+.markdown-body .language-terminal span.token.placeholder {
+	color: #d7a09d;
+}
+
 .markdown-body .language-terminal span.token.string-literal {
 	color: #ecb878;
 }

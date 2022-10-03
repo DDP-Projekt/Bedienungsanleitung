@@ -8,8 +8,8 @@ In diesem Artikel wird der Kompilierer der Deutschen Programmiersprache (kurz kd
 KDDP ist ein Konsolen Programm, das über eine Befehlszeile (wie Powershell, bash, etc.) benutzt wird.
 Die Nutzung des kddp Befehls sieht allgemein so aus:
 
-```
-$kddp <Befehl> <Eingabedatei> <Optionen>
+```terminal
+$ kddp <Befehl> <Eingabedatei> <Optionen>
 ```
 
 Nicht alle Befehle brauchen eine Eingabedatei, und die möglichen Optionen sind immer optional.
@@ -27,10 +27,10 @@ Details folgen unten.
 
 ### hilfe
 
-Der `$kddp hilfe <Befehl>` Befehl zeigt einfach die Informationen aus der Tabelle über den gegebenen Befehl, oder die gesamte Tabelle, falls kein Befehl angegeben wurde.
+Der `$ kddp hilfe <Befehl>` Befehl zeigt einfach die Informationen aus der Tabelle über den gegebenen Befehl, oder die gesamte Tabelle, falls kein Befehl angegeben wurde.
 
 ### kompiliere
 
-`$kddp kompiliere <Eingabedatei> <Optionen>` ist der wichtigste Befehl, und wird am meisten genutzt.
+`$ kddp kompiliere <Eingabedatei> <Optionen>` ist der wichtigste Befehl, und wird am meisten genutzt.
 
 Die Eingabedatei muss eine .ddp Datei sein.

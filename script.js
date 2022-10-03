@@ -152,6 +152,7 @@ function applySyntaxHighlighting() {
     };
 
     Prism.languages['terminal'] = {
+		'placeholder': /<[^<>]+>/,
         'file': /(\w+)\.(\w+)/,
         'command': /(?<=\$\s+)(\w+)|\.\/(\w+)/,
         'option': /(\w+)/,
