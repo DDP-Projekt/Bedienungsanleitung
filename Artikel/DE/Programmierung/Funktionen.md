@@ -1,5 +1,3 @@
-<to-do></to-do>
-
 # Funktionen
 
 Funktionen sind ein wichtiges Konzept, das einem in so gut wie jeder Programmiersprache begegnet.

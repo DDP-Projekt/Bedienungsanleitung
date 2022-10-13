@@ -1,5 +1,3 @@
-<to-do></to-do>
-
 # Beispiele
 
 ## keine Parameter, kein Rückgabewert
@@ -73,7 +71,7 @@ und kann so benutzt werden:
 ```
 ### C:
 ```c
-#include "ddptypes.h"
+#include "DDP-Runtime/include/ddptypes.h"
 #include <math.h>
 
 ddpfloat Arkushyperbelsinus(ddpfloat wert) {

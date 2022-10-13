@@ -1,5 +1,3 @@
-<to-do></to-do>
-
 # Funktionsdeklarationen
 
 Jede Funktion muss deklariert werden bevor man sie benutzen kann. In DDP gibt es nur globale Funktionen, also solche, die sich nicht innerhalb eines Anweisungsblocks befinden.
@@ -10,8 +8,8 @@ Hier ist die allgemeine Form einer Funktionsdeklaration (optionale Bestandteile 
 Die Funktion <Name> (mit den Parametern x, y und z vom Typ T1, T2 und T3,) gibt <Rückgabetyp> zurück, macht:
 	<Funktionskörper>
 Und kann so benutzt werden:
-	"Alias mit Parameter <x> <y> und <z>" (
-	"<z> Noch ein Alias mit allen Parametern <y> <x>
+	"Alias mit Parameter <x> <y> und <z>" (,
+	"<z> Noch ein Alias mit allen Parametern <y> <x>" oder
 	...)
 ```
 
