@@ -88,7 +88,7 @@ Wiederholungen werden genutzt um einen Code-Block mehrere Male auszuführen.
 Sie sind eine gekürzte Version von zählenden Schleifen, sparen Text und erhöhen die Lesbarkeit des Codes
 wenn man die Zähler-Variable nicht benötigt.
 ```ddp
-Mache:
+Wiederhole:
 	<Anweisungen>.
 <Anzahl> Mal.
 ```
