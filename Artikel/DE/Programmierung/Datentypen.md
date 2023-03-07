@@ -14,10 +14,29 @@ Der Typ von Variablen, Funktionen und Ausdrücken kann sich nicht zur Laufzeit �
 | Buchstabe | Ein 1-4 Bit großes, mit utf-8 kodiertes Zeichen | *0* - *65535*                                                                      | Ein utf8 Zeichen zwischen einfachen Anführungszeichen, z.B. 'a' oder '\n'             | `Der Buchstabe x ist 'd'.`                                    |
 | Text      | Eine Aneinanderreihung mehrerer Buchstaben      | *beliebig groß*                                                                    | Beliebig viele Buchstaben zwischen <br>(englischen) Anführungszeichen, z.B. "Hallo\n" | `Der Text x ist "abc".`, <br>`"Hallo" verkettet mit " du da"` |
 
-## **Anders als in anderen Programmiersprachen:**
+### Anders als in anderen Programmiersprachen:
 
 * **Das Dezimaltrennzeichen ist kein Punkt, sondern ein Komma!**
 * **Es gibt keinen null/nil Typ**
+
+### Escape-Sequenzen
+Escape-Sequenzen sind Zeichenkombinationen, die für Zeichen stehen, 
+welche man nicht normalerweise in Text- oder Buchstabenliterale schreiben kann.
+
+| Name                          | Escape-Sequenz | ASCII Code |
+|-------------------------------|----------------|------------|
+| Zeilenvorschub                | `\n`           | 10         |
+| Wagenrücklauf                 | `\r`           | 13         |
+| Rückschritt                   | `\b`           | 8          |
+| Tabulator                     | `\t`           | 9          |
+| Akustisches Signal            | `\a`           | 7          |
+| Rückstrich                    | `\\`           | 92         |
+| Einfaches Anführungszeichen*  | `\'`           | 39         |
+| Doppeltes Anführungszeichen** | `\"`           | 34         |
+
+*: Nur innerhalb eines Buchstaben-Literals.\
+**: Nur innerhalb eines Text-Literals.
+
 ***
 
 ## Listen
