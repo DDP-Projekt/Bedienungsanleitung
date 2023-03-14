@@ -5,6 +5,7 @@
 Variablen sind in DDP, wie in anderen Sprachen, "Container" mit Namen in denen Werte gespeichert werden.
 
 # Deklaration
+
 Variablen können folgendermaßen erstellt (oder deklariert) werden:
 
 ```ddp
@@ -19,6 +20,7 @@ Der Boolean <Variablenname> ist <wahr oder falsch> wenn <Ausdruck> ist.
 Eine Liste von allen Datentypen findest du im Artikel [Datentypen](?p=Programmierung/Datentypen)
 
 ## Beispiele:
+
 ```dpp
 Die Zahl a ist 10.
 Die Kommazahl b ist 4,32.
@@ -28,6 +30,7 @@ Der Boolean e ist falsch wenn 1 gleich 1 ist.
 ```
 
 # Zuweisung
+
 Die Zuweisung ist die änderung des Wertes einer Variable. In DDP gibt es mehrere Wege Variablen zu ändern.
 
 Mit dem Schlüsselwort `ist` kann man Variablen nur einem Literal zuweisen:
@@ -40,4 +43,48 @@ Um einer Variable das Ergebnis eines Ausdrucks zuzuweisen, muss `Speichere ... i
 Speichere pi durch 2 in b.
 ```
 
-Es gibt noch besondere Zuweisungsoperatoren, die nur bei Variablen vom Typ Zahl oder Kommazahl benutzt werden können. Weiteres dazu erfährst du in [Operatoren](?p=Programmierung/Operatoren)
+# Spezielle Zuweisungen
+
+Es gibt noch eineige Zuweisungsoperatoren mit deren Hilfe Variablen direkt verändert werden können,
+ohne sie selbst in einem Ausdruck verwenden zu müssen.
+In anderen Sprachen sind das sogennatne "compound assignements" also Operatoren wie `+=, -=, *=, etc.` .
+Diese Operatoren können verwendet werden um Code lesbarer zu gestalten.
+
+## Addition
+
+`Erhöhe <variable> um <a>`  
+equivalent zu  
+`Speichere <variable> plus <a> in <variable>`
+
+## Subktraktion
+
+`Verringere <variable> um <a>`  
+equivalent zu  
+`Speichere <variable> minus <a> in <variable>`
+
+## Multiplikation
+
+`Vervielfache <variable> um <a>.`  
+equivalent zu  
+`Speichere <variable> mal <a> in <variable>`
+
+## Division
+
+`Teile <variable> durch <a>.`  
+equivalent zu  
+`Speichere <variable> durch <a> in <variable>`
+
+## Negation
+
+`Negiere <variable>.`  
+equivalent zu  
+`Speichere -<variable> in <variable>` bzw.  
+`Speichere nicht <variable> in <variable>`
+
+## Bitshift
+
+`Verschiebe <variable> um <a> Bit nach Links`  
+`Verschiebe <variable> um <a> Bit nach Rechts`  
+equivalent zu  
+`Speichere <variable> um <a> Bit nach Links verschoben in <variable>`  
+`Speichere <variable> um <a> Bit nach Rechts verschoben in <variable>`

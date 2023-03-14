@@ -6,7 +6,7 @@ Bei einer einseitigen Verzweigung wird ein Anweisungs-Block nur dann ausgeführt
 
 ### Aufbau:
 ```ddp
-Wenn <Bedingung> ist, dann:
+Wenn <Bedingung>, dann:
 	<Anweisungen>.
 ```
 
@@ -22,7 +22,7 @@ Sollte die Bedingung `falsch` ergeben, wird der Code im `sonst`-Block ausgeführ
 
 ### Aufbau:
 ```ddp
-Wenn <Bedingung> ist, dann:
+Wenn <Bedingung>, dann:
 	<Anweisungen>.
 Sonst:
 	<Anweisungen>.
@@ -45,9 +45,9 @@ Sobald ein Block ausgeführt wurde, werden alle folgenden Blöcke übersprungen.
 
 ### Aufbau:
 ```ddp
-Wenn <Bedingung> ist, dann:
+Wenn <Bedingung>, dann:
 	<Anweisungen>
-Wenn aber <2. Bedingung> ist, dann:
+Wenn aber <2. Bedingung>, dann:
 	<Anweisungen>.
 Sonst:
 	<Anweisungen>.
@@ -71,7 +71,7 @@ Kopfgesteuerte Schleifen sind die einfachste Art von Schleifen.
 Wenn die Bedingung 'wahr' ergibt, wird der Code-Block ausgeführt.
 Das wiederholt sich so lange, wie die Bedingung 'wahr' ergibt.
 ```ddp
-Solange <Bedingung> ist, mache:
+Solange <Bedingung>, mache:
 	<Anweisungen>.
 ```
 
@@ -80,7 +80,7 @@ Fußgesteuerte Schleifen ähneln stark den Kopfgesteuerten, mit dem einzigen Unt
 ```ddp
 Mache:
 	<Anweisungen>.
-Solange <Bedingung> ist.
+Solange <Bedingung>.
 ```
 
 ## Wiederholung

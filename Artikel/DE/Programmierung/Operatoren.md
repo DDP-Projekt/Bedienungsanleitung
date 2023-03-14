@@ -31,30 +31,6 @@ in diesen und späteren Tabellen jeweils der C-Operator dabei.
 | Logische ODER verknüpfung    | `a logisch oder b`                      | `a\| b`                 | Zahl               | Zahl           | Zahl             | `5 logisch oder 2`                  |7   |
 | Logische XOR verknüpfung     | `a logisch kontra b`                    | `a^b`                 | Zahl               | Zahl               | Zahl           | `8 logisch kontra 5`                  | 13   |
 
-## Zuweisungsoperatoren
-
-Mathematische Zuweisungsoperatoren sind Operatoren, die das Ergebnis einer Mathematischen operation direkt einer Variable zuweist.
-
-### Addition
-
-- `Addiere <a> mit <b> und speichere das Ergebnis in <variable>`
-- `Erhöhe <variable> um <a>`
-
-### Subktraktion
-
-- `Subtrahiere <a> von <b> und speichere das Ergebnis in <variable>`
-- `Verringere <variable> um <a>`
-
-### Multiplikation
-
-- `Multipliziere <a> mit <b> und speichere das Ergebnis in <variable>.`
-- `Vervielfache <variable> um <a>.`
-
-### Division
-
-- `Dividiere <a> durch <b> und speichere das Ergebnis in <variable>.`
-- `Teile <variable> durch <a>.`
-
 # Bool'sche Operatoren
 
 Mithilfe von Bool'schen Operatoren können komplexe Bedingungen ausgedrückt und zusammengefasst werden und z.B. für Verzweigungen oder Schleifen verwendet werden.
@@ -69,12 +45,14 @@ Mithilfe von Bool'schen Operatoren können komplexe Bedingungen ausgedrückt und
 
 | Operator          | Beschreibung                                                                          | C Equivalent | Beispiel                                                                         | Ergebnis                     |
 |-------------------|---------------------------------------------------------------------------------------|--------------|----------------------------------------------------------------------------------|------------------------------|
-| gleich            | Wahr, wenn beide Argumente den gleichen Wert haben.                                   | `1 == 1`     | `1 gleich 1`<br>`1 gleich 2`                                                     | `wahr`<br>`falsch`           |
-| ungleich          | Wahr, wenn die Beiden Argumente verschiedene Werte haben.                             | `1 != 1`     | `1 ungleich 1`<br>`1 ungleich 2`                                                 | `wahr`<br>`falsch`           |
-| kleiner als       | Wahr, wenn das Linke Argument einen kleineren Wert als das Rechte hat.                | `5 < 10`     | `5 kleiner als 10`<br>`30 kleiner als 15`                                        | `wahr`<br>`falsch`           |
-| größer als        | Wahr, wenn das Linke Argument einen größeren Wert als das Rechte hat.                 | `7 > 3`      | `7 größer als 3`<br>`5 größer als 8`                                             | `wahr`<br>`falsch`           |
-| kleiner als, oder | Wahr, wenn das Linke Argument einen kleineren oder denselben Wert wie das Rechte hat. | `5 <= 10`    | `5 kleiner als, oder 10`<br>`30 kleiner als, oder 15`<br>`5 kleiner als, oder 5` | `wahr`<br>`falsch`<br>`wahr` |
-| größer als, oder  | Wahr, wenn das Linke Argument einen größeren oder denselben Wert wie das Rechte hat.  | `7 >= 3`     | `7 größer als, oder 3`<br>`5 größer als, oder 8`<br>`5 größer als, oder 5`       | `wahr`<br>`falsch`<br>`wahr` |
+| gleich            | Wahr, wenn beide Argumente den gleichen Wert haben.                                   | `1 == 1`     | `1 gleich 1 ist`<br>`1 gleich 2 ist`                                                     | `wahr`<br>`falsch`           |
+| ungleich          | Wahr, wenn die Beiden Argumente verschiedene Werte haben.                             | `1 != 1`     | `1 ungleich 1 ist`<br>`1 ungleich 2 ist`                                                 | `wahr`<br>`falsch`           |
+| kleiner als       | Wahr, wenn das Linke Argument einen kleineren Wert als das Rechte hat.                | `5 < 10`     | `5 kleiner als 10 ist`<br>`30 kleiner als 15 ist`                                        | `wahr`<br>`falsch`           |
+| größer als        | Wahr, wenn das Linke Argument einen größeren Wert als das Rechte hat.                 | `7 > 3`      | `7 größer als 3 ist`<br>`5 größer als 8 ist`                                             | `wahr`<br>`falsch`           |
+| kleiner als, oder | Wahr, wenn das Linke Argument einen kleineren oder denselben Wert wie das Rechte hat. | `5 <= 10`    | `5 kleiner als, oder 10 ist`<br>`30 kleiner als, oder 15 ist`<br>`5 kleiner als, oder 5 ist` | `wahr`<br>`falsch`<br>`wahr` |
+| größer als, oder  | Wahr, wenn das Linke Argument einen größeren oder denselben Wert wie das Rechte hat.  | `7 >= 3`     | `7 größer als, oder 3 ist`<br>`5 größer als, oder 8 ist`<br>`5 größer als, oder 5 ist`       | `wahr`<br>`falsch`<br>`wahr` |
+
+Vergleichsoperatoren haben alle ein "ist" am Ende um der Grammatik in jedem Kontext gerecht zu werden.
 
 # Listen und Text Operatoren
 
