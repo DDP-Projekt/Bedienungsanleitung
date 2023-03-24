@@ -1,5 +1,3 @@
-<to-do></to-do>
-
 # Variablen
 
 Variablen sind in DDP, wie in anderen Sprachen, "Container" mit Namen in denen Werte gespeichert werden.
@@ -15,7 +13,7 @@ Variablen können folgendermaßen erstellt (oder deklariert) werden:
 Es gibt eine Besonderheit bei Variablen mit dem Datentyp "Boolean".\
 Wenn man solche Variablen mit einem Ausdruck deklarieren will, sollte man stattdessen diese Syntax benutzen:
 ```ddp
-Der Boolean <Variablenname> ist <wahr oder falsch> wenn <Ausdruck> ist. 
+Der Boolean <Variablenname> ist <wahr oder falsch>, wenn <Ausdruck>. 
 ```
 Eine Liste von allen Datentypen findest du im Artikel [Datentypen](?p=Programmierung/Datentypen)
 
@@ -38,7 +36,7 @@ Mit dem Schlüsselwort `ist` kann man Variablen nur einem Literal zuweisen:
 a ist 30.
 ```
 
-Um einer Variable das Ergebnis eines Ausdrucks zuzuweisen, muss `Speichere ... in` benutzen:
+Um einer Variable das Ergebnis eines Ausdrucks zuzuweisen, muss `Speichere ... in` verwendet werden:
 ```ddp
 Speichere pi durch 2 in b.
 ```

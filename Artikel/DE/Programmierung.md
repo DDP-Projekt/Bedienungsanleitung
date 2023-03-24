@@ -50,7 +50,7 @@ Schreibe den Text "test". [schreibt den Text "test" in die Konsole]
 
 Kommentare können auch mitten in Anweisungen und Ausdrücken stehen.
 ```ddp
-Wenn x [wahr] ist, Schreibe den Text "x ist wahr".
+Wenn x [wahr ist], Schreibe den Text "x ist wahr".
 ```
 
 Außerdem können Kommentare über mehrere Zeilen gehen.
