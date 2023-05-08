@@ -1,5 +1,12 @@
 # Programmierung
 
+Viele, wenn nicht gar alle, der Features die in den nachfolgenden Artikeln beschrieben werden sollten jedem, der schon einmal programmiert hat, bereits bekannt sein.
+Dennoch lohnt es sich, wenn auch nur für die Syntax, alles genaustens zu lesen, da DDP oftmals einige Details abändert, um der Deutschen Sprache gerecht zu werden.
+
+Um einen groben Überblick über die Sprache zu bekommen reicht es vermutlich aus sich hauptsächlich die Tabellen und Code-Beispiele
+anzusehen. Wer jedoch die Details kennen will, und nicht von komischer Syntax überrascht werden möchte, sollte sich alle Artikel
+ganz durchlesen.
+
 Die nachfolgenden Artikel beschreiben die einzelnen Features und Eigenschaften der Deutschen Programmiersprache und wie man sie benutzt.
 In diesen Artikeln wird eine Fachbezogene Terminologie benutzt, die hier erklärt werden soll.
 
@@ -15,7 +22,7 @@ Die verschiedenen Datentypen sind im Artikel [Datentypen](?p=Programmierung/Date
 ## Anweisungen
 
 Eine Anweisung (Englisch *statement*) ist ein Quellcode Abschnitt, der etwas tut.
-Anweisungen werden immer mit einem Punkt (.) beendet.
+Anweisungen werden meist mit einem Punkt (.) beendet.
 Die Anweisung `Schreibe den Text "Hallo".` gibt zum Beispiel "Hallo" in die Konsole aus.
 Ausdrücke mit einem nachfolgenden Punkt sind auch Anweisungen. Ihr Ergebnis wird verworfen.
 `1 plus 1.` beispielsweise wird ausgewertet, aber das Ergebnis wird nie benutzt.
@@ -70,9 +77,3 @@ und kann so benutzt werden:
 
 Ein Literal ist eine Schreibweise im Quellcode die einen (in DDP konstanten) Wert repräsentiert.
 Eine Liste von Literalen für die entsprechenden Datentypen kann im Artikel [Datentypen](?p=Programmierung/Datentypen) gefunden werden.
-
-
-## Bemerkung
-
-Viele, wenn nicht gar alle, der Features die in den nachfolgenden Artikeln beschrieben werden sollten jedem, der schon einmal programmiert hat, bereits bekannt sein.
-Dennoch lohnt es sich, wenn auch nur für die Syntax, alles genaustens zu lesen, da DDP oftmals einige Details abändert, um der Deutschen Sprache gerecht zu werden.

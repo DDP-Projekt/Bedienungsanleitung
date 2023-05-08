@@ -9,10 +9,10 @@ Der Typ von Variablen, Funktionen und Ausdrücken kann sich nicht zur Laufzeit �
 | Typname   | Beschreibung                                    | Wertebereich                                                                       | Literal                                                                               | Beispiel                                                      |
 |-----------|-------------------------------------------------|------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------|---------------------------------------------------------------|
 | Zahl      | Eine 64 Bit große, ganze Zahl                   | *-2.147.483.648* bis *2.147.483.647*                                               | Eine Abfolge von Ziffern, z.B. 42                                                     | `Die Zahl x ist 69.`, <br>`1 plus -7`                         |
-| Kommazahl | Eine 64 Bit große, reellen Zahl                 | *-1,79769313486232x10^308* bis <br>*1,79769313486232x10^308* mit 16 Dezimalstellen | Ein Zahlenliteral mit Nachkommastellen, z.B. 3,1415                                   | `Die Kommazahl x ist 6,5.`, <br>`2 durch 0,5`                 |
+| Kommazahl | Eine 64 Bit große, gleitkomma Zahl                 | *-1,79769313486232x10^308* bis <br>*1,79769313486232x10^308* mit 16 Dezimalstellen | Ein Zahlenliteral mit Nachkommastellen, z.B. 3,1415                                   | `Die Kommazahl x ist 6,5.`, <br>`2 durch 0,5`                 |
 | Boolean   | Ein Wahrheitswert (8 Bit groß)                  | *wahr* oder *falsch*                                                               | *wahr* oder *falsch*                                                                  | `Der Boolean x ist wahr.`, <br>`1 plus 1 gleich 2`            |
 | Buchstabe | Ein 4 Byte großes, mit utf-8 kodiertes Zeichen | *0* - *65535*                                                                      | Ein utf8 Zeichen zwischen einfachen Anführungszeichen, z.B. 'a' oder '\n'             | `Der Buchstabe x ist 'd'.`                                    |
-| Text      | Eine Aneinanderreihung mehrerer Buchstaben      | *beliebig groß*                                                                    | Beliebig viele Buchstaben zwischen <br>(englischen) Anführungszeichen, z.B. "Hallo\n" | `Der Text x ist "abc".`, <br>`"Hallo" verkettet mit " du da"` |
+| Text      | Eine utf-8 kodierte Aneinanderreihung mehrerer Buchstaben      | *beliebig groß*                                                                    | Beliebig viele Buchstaben zwischen <br>(englischen) Anführungszeichen, z.B. "Hallo\n" | `Der Text x ist "abc".`, <br>`"Hallo" verkettet mit " du da"` |
 
 ### Anders als in anderen Programmiersprachen:
 
@@ -42,7 +42,7 @@ welche man nicht normalerweise in Text- oder Buchstabenliterale schreiben kann.
 ## Listen
 
 Listen sind beliebig große Ansammlungen von Werten.
-Da DDP statisch typisiert ist kann eine Liste nur Werte eines Datentyps enthalten.
+Da DDP statisch typisiert ist kann eine Liste nur Werte desselben Datentyps enthalten.
 Der Typname einer Liste ist im Allgemeinen der Element-Typname entsprechend dekliniert mit *Liste* angehängt (Zahl -> Zahlen Liste, Text -> Text Liste).
 Eine Liste kann zur Laufzeit wachsen und schrumpfen.
 Wie man mit Listen arbeitet, wird in dem Artikel Operatoren unter [Listen Operatoren](?p=Programmierung/Operatoren#listen-und-text-operatoren) beschrieben.

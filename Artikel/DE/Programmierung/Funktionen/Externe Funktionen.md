@@ -1,5 +1,3 @@
-<to-do></to-do>
-
 # Externe Funktionen
 
 Eine externe Funktion ist eine Funktion, deren Körper nicht im DDP-Quellcode, sondern außerhalb (z.B. in anderen Sprachen oder statischen Bibliotheken) definiert ist.
