@@ -1,16 +1,15 @@
-# Duden/Ausgabe Funktionen
+# Funktionen
 ## Zeit_Seit_Programmstart
-* Parameter: keine
-* Parameter Typ(en): keine
-* Rückgabe Typ: eine Zahl
+
+* Rückgabe Typ: Zahl
 
 ## Zeit_Lokal
-* Parameter: keine
-* Parameter Typ(en): keine
-* Rückgabe Typ: einen Text
+
+* Rückgabe Typ: Text
 
 ## Warten
 * Parameter: sekunden
-* Parameter Typ(en): Kommazahl
+* Parameter Typ/en: Kommazahl
 * Rückgabe Typ: nichts
+
 

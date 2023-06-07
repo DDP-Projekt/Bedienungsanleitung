@@ -1,31 +1,26 @@
-# Duden/Ausgabe Funktionen
-## MinZahl
-* Parameter: keine
-* Parameter Typ(en): keine
-* Rückgabe Typ: eine Zahl
-
+# Funktionen
 ## MaxZahl
-* Parameter: keine
-* Parameter Typ(en): keine
-* Rückgabe Typ: eine Zahl
+
+* Rückgabe Typ: Zahl
 
 ## MinKommazahl
-* Parameter: keine
-* Parameter Typ(en): keine
-* Rückgabe Typ: eine Kommazahl
+
+* Rückgabe Typ: Kommazahl
 
 ## MaxKommazahl
-* Parameter: keine
-* Parameter Typ(en): keine
-* Rückgabe Typ: eine Kommazahl
+
+* Rückgabe Typ: Kommazahl
 
 ## Unendlich
-* Parameter: keine
-* Parameter Typ(en): keine
-* Rückgabe Typ: eine Kommazahl
+
+* Rückgabe Typ: Kommazahl
 
 ## KeineZahl
-* Parameter: keine
-* Parameter Typ(en): keine
-* Rückgabe Typ: eine Kommazahl
+
+* Rückgabe Typ: Kommazahl
+
+## MinZahl
+
+* Rückgabe Typ: Zahl
+
 
