@@ -13,6 +13,17 @@ if (searchParams.get('lang') === null) {
 
 customElements.define('to-do', TODOElement);
 document.addEventListener("DOMContentLoaded", () => {
+	const details = document.querySelectorAll('#artikel-links details');
+	for (const detail of details) {
+		detail.addEventListener('toggle', (event) => {
+			window.localStorage.setItem(event.target.id, event.target.open)
+		})
+
+		if (window.localStorage.getItem(detail.id) === "true") {
+			detail.open = true
+		}
+	}
+
 	closeNav(); // automatically close nav
 
 	changeLangSelectFlag();
