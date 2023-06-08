@@ -1,4 +1,4 @@
-# Funktionen
+# Duden/Eingabe Funktionen
 ## War_EOF
 ```
 Gibt wahr zurück wenn ein EOF Zeichen gelesen wurde.

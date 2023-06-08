@@ -1,18 +1,4 @@
-# Funktionen
-## Programm_Beenden
-```
-Beendet das Programm mit dem gegebenen Code.
-```
-* Parameter: `Code`
-* Parameter Typ: `Zahl`
-* Rückgabe Typ: `nichts`
-
-### Aliase
-1. `"Beende das Programm mit Code <Code>"`
-2. `"beende das Programm mit Code <Code>"`
-
-### Implementation
-Implementiert in "libddpstdlib.a"
+# Duden/Laufzeit Funktionen
 ## Programm_Beenden_Standard
 ```
 Beendet das Programm mit Code 0.
@@ -76,6 +62,20 @@ Entspricht C's `isatty` funktion.
 
 ### Aliase
 1. `"die Benutzereingabe eine Befehlszeile ist"`
+
+### Implementation
+Implementiert in "libddpstdlib.a"
+## Programm_Beenden
+```
+Beendet das Programm mit dem gegebenen Code.
+```
+* Parameter: `Code`
+* Parameter Typ: `Zahl`
+* Rückgabe Typ: `nichts`
+
+### Aliase
+1. `"Beende das Programm mit Code <Code>"`
+2. `"beende das Programm mit Code <Code>"`
 
 ### Implementation
 Implementiert in "libddpstdlib.a"

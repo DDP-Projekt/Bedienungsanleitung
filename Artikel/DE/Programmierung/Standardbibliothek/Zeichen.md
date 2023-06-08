@@ -1,85 +1,4 @@
-# Funktionen
-## IstLeerzeichen
-```
-Gibt wahr zurück wenn der Buchstabe b ein Leerzeichen (' ') ist.
-```
-* Parameter: `b`
-* Parameter Typ: `Buchstabe`
-* Rückgabe Typ: `Boolean`
-
-### Aliase
-1. `"<b> ein Leerzeichen ist"`
-
-### Implementation
-```ddp
-	Gib b gleich ' ' ist zurück.
-```
-## IstKlein
-* Parameter: `b`
-* Parameter Typ: `Buchstabe`
-* Rückgabe Typ: `Boolean`
-
-### Aliase
-1. `"<b> ein kleiner Buchstabe ist"`
-
-### Implementation
-```ddp
-	Die Zahl z ist b als Zahl.
-	Der Boolean erg ist 
-		(z größer als, oder 96 ist und z kleiner als, oder 122 ist) oder
-		(z größer als, oder 223 ist und z kleiner als, oder 246 ist) oder
-		(z größer als, oder 248 ist und z kleiner als, oder 255 ist).
-		[... es gibt noch viel mehr ...]
-	Gib erg zurück.
-```
-## IstGroß
-* Parameter: `b`
-* Parameter Typ: `Buchstabe`
-* Rückgabe Typ: `Boolean`
-
-### Aliase
-1. `"<b> ein großer Buchstabe ist"`
-
-### Implementation
-```ddp
-	Die Zahl z ist b als Zahl.
-	Der Boolean erg ist 
-		(z größer als, oder 65 ist und z kleiner als, oder 90 ist) oder
-		(z größer als, oder 192 ist und z kleiner als, oder 214 ist) oder
-		(z größer als, oder 216 ist und z kleiner als, oder 222 ist).
-		[... es gibt noch viel mehr ...]
-	Gib erg zurück.
-```
-## IstZahl
-```
-Gibt wahr zurück wenn der Buchstabe b eine Zahl (Code 48-57) ist.
-```
-* Parameter: `b`
-* Parameter Typ: `Buchstabe`
-* Rückgabe Typ: `Boolean`
-
-### Aliase
-1. `"<b> eine Zahl ist"`
-
-### Implementation
-```ddp
-	Gib b als Zahl größer als, oder 48 ist und b als Zahl kleiner als, oder 57 ist zurück.
-```
-## IstKontroll
-```
-Gibt wahr zurück wenn der Buchstabe b ein Kontrollzeichen (Code 0-31) ist.
-```
-* Parameter: `b`
-* Parameter Typ: `Buchstabe`
-* Rückgabe Typ: `Boolean`
-
-### Aliase
-1. `"<b> ein Kontrollzeichen ist"`
-
-### Implementation
-```ddp
-	Gib b als Zahl größer als, oder 0 ist und b als Zahl kleiner als, oder 31 ist zurück.
-```
+# Duden/Zeichen Funktionen
 ## IstDeutscherBuchstabe
 ```
 Gibt wahr zurück wenn der Buchstabe b ein deutscher Buchstabe (a-Z, äöü, ÄÖÜ und ß) ist.
@@ -168,5 +87,86 @@ Gibt wahr zurück wenn der Buchstabe b ein Leerzeichen (' '), eine neue Zeile ('
 ### Implementation
 ```ddp
 	Gib b gleich ' ' ist oder b gleich '\n' ist oder b gleich '\t' ist oder b gleich '\r' ist zurück.
+```
+## IstGroß
+* Parameter: `b`
+* Parameter Typ: `Buchstabe`
+* Rückgabe Typ: `Boolean`
+
+### Aliase
+1. `"<b> ein großer Buchstabe ist"`
+
+### Implementation
+```ddp
+	Die Zahl z ist b als Zahl.
+	Der Boolean erg ist 
+		(z größer als, oder 65 ist und z kleiner als, oder 90 ist) oder
+		(z größer als, oder 192 ist und z kleiner als, oder 214 ist) oder
+		(z größer als, oder 216 ist und z kleiner als, oder 222 ist).
+		[... es gibt noch viel mehr ...]
+	Gib erg zurück.
+```
+## IstKlein
+* Parameter: `b`
+* Parameter Typ: `Buchstabe`
+* Rückgabe Typ: `Boolean`
+
+### Aliase
+1. `"<b> ein kleiner Buchstabe ist"`
+
+### Implementation
+```ddp
+	Die Zahl z ist b als Zahl.
+	Der Boolean erg ist 
+		(z größer als, oder 96 ist und z kleiner als, oder 122 ist) oder
+		(z größer als, oder 223 ist und z kleiner als, oder 246 ist) oder
+		(z größer als, oder 248 ist und z kleiner als, oder 255 ist).
+		[... es gibt noch viel mehr ...]
+	Gib erg zurück.
+```
+## IstLeerzeichen
+```
+Gibt wahr zurück wenn der Buchstabe b ein Leerzeichen (' ') ist.
+```
+* Parameter: `b`
+* Parameter Typ: `Buchstabe`
+* Rückgabe Typ: `Boolean`
+
+### Aliase
+1. `"<b> ein Leerzeichen ist"`
+
+### Implementation
+```ddp
+	Gib b gleich ' ' ist zurück.
+```
+## IstZahl
+```
+Gibt wahr zurück wenn der Buchstabe b eine Zahl (Code 48-57) ist.
+```
+* Parameter: `b`
+* Parameter Typ: `Buchstabe`
+* Rückgabe Typ: `Boolean`
+
+### Aliase
+1. `"<b> eine Zahl ist"`
+
+### Implementation
+```ddp
+	Gib b als Zahl größer als, oder 48 ist und b als Zahl kleiner als, oder 57 ist zurück.
+```
+## IstKontroll
+```
+Gibt wahr zurück wenn der Buchstabe b ein Kontrollzeichen (Code 0-31) ist.
+```
+* Parameter: `b`
+* Parameter Typ: `Buchstabe`
+* Rückgabe Typ: `Boolean`
+
+### Aliase
+1. `"<b> ein Kontrollzeichen ist"`
+
+### Implementation
+```ddp
+	Gib b als Zahl größer als, oder 0 ist und b als Zahl kleiner als, oder 31 ist zurück.
 ```
 

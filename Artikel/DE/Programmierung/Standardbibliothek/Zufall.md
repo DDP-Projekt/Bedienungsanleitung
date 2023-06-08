@@ -1,4 +1,4 @@
-# Funktionen
+# Duden/Zufall Funktionen
 ## ZufallsKommazahl
 * Parameter: `a`, `b`
 * Parameter Typen: `Kommazahl`, `Kommazahl`

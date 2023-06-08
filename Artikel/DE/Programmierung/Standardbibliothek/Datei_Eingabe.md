@@ -1,4 +1,4 @@
-# Funktionen
+# Duden/Datei_Eingabe Funktionen
 ## Lies_Text_Datei
 ```
 Die Funktion Lies_Text_Datei speichert den Inhalt der Datei, die an dem gegebenen Pfad liegt, in ref und gibt die Anzahl der Bytes der gelesenen Datei zurück.

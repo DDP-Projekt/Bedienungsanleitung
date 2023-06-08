@@ -1,4 +1,4 @@
-# Funktionen
+# Duden/Sortierung Funktionen
 ## Quicksort
 ```
 Eine Funktion, die die Zahlen Liste <liste> mit dem Quick-Sort Algorithmus sortiert und die sortierte Liste zurück gibt.

@@ -1,4 +1,32 @@
-# Funktionen
+# Duden/Extremwerte Funktionen
+## MinZahl
+```
+Gibt -9223372036854775807 zurück.
+```
+
+* Rückgabe Typ: `Zahl`
+
+### Aliase
+1. `"der minimale Wert einer Zahl"`
+
+### Implementation
+```ddp
+	Gib -9223372036854775807 zurück.
+```
+## MaxZahl
+```
+Gibt 9223372036854775807 zurück.
+```
+
+* Rückgabe Typ: `Zahl`
+
+### Aliase
+1. `"der maximale Wert einer Zahl"`
+
+### Implementation
+```ddp
+	Gib 9223372036854775807 zurück.
+```
 ## MinKommazahl
 ```
 Gibt 4,9406564584124654 * 10^-323,6 zurück.
@@ -56,33 +84,5 @@ Gibt NaN (0 durch 0) zurück.
 ### Implementation
 ```ddp
 	Gib 0,0 durch 0,0 zurück.
-```
-## MinZahl
-```
-Gibt -9223372036854775807 zurück.
-```
-
-* Rückgabe Typ: `Zahl`
-
-### Aliase
-1. `"der minimale Wert einer Zahl"`
-
-### Implementation
-```ddp
-	Gib -9223372036854775807 zurück.
-```
-## MaxZahl
-```
-Gibt 9223372036854775807 zurück.
-```
-
-* Rückgabe Typ: `Zahl`
-
-### Aliase
-1. `"der maximale Wert einer Zahl"`
-
-### Implementation
-```ddp
-	Gib 9223372036854775807 zurück.
 ```
 

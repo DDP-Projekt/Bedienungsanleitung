@@ -1,4 +1,4 @@
-# Funktionen
+# Duden/Datei_Ausgabe Funktionen
 ## Schreibe_Text_Datei
 ```
 Die Funktion Schreibe_Text_Datei schreibt einen Text (text) in die Datei an dem gegebenen Text Pfad.

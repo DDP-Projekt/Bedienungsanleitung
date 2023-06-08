@@ -1,4 +1,4 @@
-# Funktionen
+# Duden/Zeit Funktionen
 ## Zeit_Seit_Programmstart
 ```
 Gibt die Zeit seit Programmstart in Millisekunden zurück.

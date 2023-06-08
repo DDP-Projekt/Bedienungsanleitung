@@ -144,12 +144,13 @@ func MakeMdFiles(inputFilePath, outputFilePath string) {
 		}
 	}
 
+	fileName := strings.Replace(filepath.Base(inputFilePath), ".ddp", "", 1)
 	if hasVars {
-		fmt.Fprintf(outputFile, "# Variablen\n")
+		fmt.Fprintf(outputFile, "# Duden/%s Variablen\n", fileName)
 		fmt.Fprintln(outputFile, varBldr)
 	}
 	if hasFuncs {
-		fmt.Fprintf(outputFile, "# Funktionen\n")
+		fmt.Fprintf(outputFile, "# Duden/%s Funktionen\n", fileName)
 		fmt.Fprintln(outputFile, funcBldr)
 	}
 	if !hasFuncs && !hasVars {
