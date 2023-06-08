@@ -3,6 +3,7 @@ package main
 import (
 	"bytes"
 	"fmt"
+	"html"
 	"os"
 	"path/filepath"
 	"strings"
@@ -77,34 +78,36 @@ func MakeMdFiles(inputFilePath, outputFilePath string) {
 		case *ast.FuncDecl:
 			hasFuncs = true
 
+			fmt.Fprintln(funcBldr, "<details>")
 			// Funktionsname
-			fmt.Fprintf(funcBldr, "## %s\n", name)
+			fmt.Fprintf(funcBldr, "<summary><h2>%s</h2></summary>\n", name)
 
+			fmt.Fprintln(funcBldr, "<ul>")
 			// Kommentar/Beschreibung
 			if decl.Comment != nil {
 				descr := strings.Replace(strings.Trim(decl.Comment.String(), "[] \r\n"), "\t", "", -1)
-				fmt.Fprintf(funcBldr, "```\n%s\n```\n", descr)
+				fmt.Fprintf(funcBldr, "<pre>\n%s\n</pre>\n", descr)
 			}
 
 			if len(decl.ParamNames) > 0 {
 				// Parameter Names
-				fmt.Fprintf(funcBldr, "* Parameter: ")
+				fmt.Fprintf(funcBldr, "\t<li>Parameter: ")
 				for i, paramName := range decl.ParamNames {
-					fmt.Fprintf(funcBldr, "`%s`", paramName)
+					fmt.Fprintf(funcBldr, "<code>%s</code>", paramName)
 					if i < len(decl.ParamNames)-1 {
 						fmt.Fprintf(funcBldr, ", ")
 					}
 				}
 
 				// Parameter Types
-				fmt.Fprintf(funcBldr, "\n* Parameter Typ")
+				fmt.Fprintf(funcBldr, "</li>\n\t<li>Parameter Typ")
 				if len(decl.ParamNames) > 1 {
 					fmt.Fprintf(funcBldr, "en")
 				}
 				fmt.Fprintf(funcBldr, ": ")
 
 				for i, paramTypes := range decl.ParamTypes {
-					fmt.Fprintf(funcBldr, "`%s`", paramTypes)
+					fmt.Fprintf(funcBldr, "<code>%s</code>", paramTypes)
 					if i < len(decl.ParamTypes)-1 {
 						fmt.Fprintf(funcBldr, ", ")
 					}
@@ -112,29 +115,33 @@ func MakeMdFiles(inputFilePath, outputFilePath string) {
 			}
 
 			// Rückgabe Typ
-			fmt.Fprintf(funcBldr, "\n* Rückgabe Typ: `%s`\n\n", decl.Type)
+			fmt.Fprintf(funcBldr, "</li>\n\t<li>Rückgabe Typ: <code>%s</code></li>\n", decl.Type)
+			fmt.Fprintln(funcBldr, "</ul>")
 
 			// Aliases
-			fmt.Fprintln(funcBldr, "### Aliase")
-			for i, alias := range decl.Aliases {
-				fmt.Fprintf(funcBldr, "%d. `%s`\n", i+1, alias.Original.Literal)
+			fmt.Fprintln(funcBldr, "\n<h3>Aliase</h3>\n<ol>")
+			for _, alias := range decl.Aliases {
+				fmt.Fprintf(funcBldr, "\t<li><code>%s</code></li>\n", html.EscapeString(alias.Original.Literal))
 			}
-			fmt.Fprintln(funcBldr, "")
+			fmt.Fprintln(funcBldr, "</ol>")
 
 			// Implemetation
-			fmt.Fprintln(funcBldr, "### Implementation")
+			fmt.Fprintln(funcBldr, "\n<h3>Implementation</h3>")
 			if ast.IsExternFunc(decl) {
-				fmt.Fprintf(funcBldr, "Implementiert in %s\n", decl.ExternFile)
+				fmt.Fprintf(funcBldr, "Implementiert in <code>%s</code>\n", decl.ExternFile)
 			} else {
-				fmt.Fprintln(funcBldr, "```ddp")
+				fmt.Fprintln(funcBldr, "<pre class=\"language-ddp\" tabindex=\"0\">\n<code class=\"language-ddp\">")
 
 				inputStr := strings.Split(string(inputFile), "\n")
 				lines := inputStr[decl.Body.Range.Start.Line:decl.Body.Range.End.Line]
-				fmt.Fprintf(funcBldr, "%s", strings.Join(lines, "\n"))
+				for _, line := range lines {
+					fmt.Fprintln(funcBldr, strings.Replace(line, "\t", "", 1))
+				}
 
-				fmt.Fprintln(funcBldr, "\n```")
+				fmt.Fprintln(funcBldr, "\n</code>\n</pre>")
 			}
 
+			fmt.Fprint(funcBldr, "</details>\n\n")
 		case *ast.VarDecl:
 			hasVars = true
 

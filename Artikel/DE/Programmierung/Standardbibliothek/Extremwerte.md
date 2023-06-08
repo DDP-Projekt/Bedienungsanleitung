@@ -1,88 +1,148 @@
 # Duden/Extremwerte Funktionen
-## MinZahl
-```
-Gibt -9223372036854775807 zurück.
-```
-
-* Rückgabe Typ: `Zahl`
-
-### Aliase
-1. `"der minimale Wert einer Zahl"`
-
-### Implementation
-```ddp
-	Gib -9223372036854775807 zurück.
-```
-## MaxZahl
-```
+<details>
+<summary><h2>MaxZahl</h2></summary>
+<ul>
+<pre>
 Gibt 9223372036854775807 zurück.
-```
+</pre>
+</li>
+	<li>Rückgabe Typ: <code>Zahl</code></li>
+</ul>
 
-* Rückgabe Typ: `Zahl`
+<h3>Aliase</h3>
+<ol>
+	<li><code>&#34;der maximale Wert einer Zahl&#34;</code></li>
+</ol>
 
-### Aliase
-1. `"der maximale Wert einer Zahl"`
+<h3>Implementation</h3>
+<pre class="language-ddp" tabindex="0">
+<code class="language-ddp">
+Gib 9223372036854775807 zurück.
 
-### Implementation
-```ddp
-	Gib 9223372036854775807 zurück.
-```
-## MinKommazahl
-```
+</code>
+</pre>
+</details>
+
+<details>
+<summary><h2>MinKommazahl</h2></summary>
+<ul>
+<pre>
 Gibt 4,9406564584124654 * 10^-323,6 zurück.
 ACHTUNG: nicht der echte minimale Wert wegen Rundungsfehler
-```
+</pre>
+</li>
+	<li>Rückgabe Typ: <code>Kommazahl</code></li>
+</ul>
 
-* Rückgabe Typ: `Kommazahl`
+<h3>Aliase</h3>
+<ol>
+	<li><code>&#34;der minimale Wert einer Kommazahl&#34;</code></li>
+</ol>
 
-### Aliase
-1. `"der minimale Wert einer Kommazahl"`
+<h3>Implementation</h3>
+<pre class="language-ddp" tabindex="0">
+<code class="language-ddp">
+Gib 4,9406564584124654 mal 10 hoch -323,6[4] zurück.
 
-### Implementation
-```ddp
-	Gib 4,9406564584124654 mal 10 hoch -323,6[4] zurück.
-```
-## MaxKommazahl
-```
+</code>
+</pre>
+</details>
+
+<details>
+<summary><h2>MaxKommazahl</h2></summary>
+<ul>
+<pre>
 Gibt 1,79769313486231 * 10^308 zurück.
 ACHTUNG: nicht der echte maximale Wert wegen Rundungsfehler
-```
+</pre>
+</li>
+	<li>Rückgabe Typ: <code>Kommazahl</code></li>
+</ul>
 
-* Rückgabe Typ: `Kommazahl`
+<h3>Aliase</h3>
+<ol>
+	<li><code>&#34;der maximale Wert einer Kommazahl&#34;</code></li>
+</ol>
 
-### Aliase
-1. `"der maximale Wert einer Kommazahl"`
+<h3>Implementation</h3>
+<pre class="language-ddp" tabindex="0">
+<code class="language-ddp">
+Gib 1,79769313486231[57] mal 10 hoch 308 zurück.
 
-### Implementation
-```ddp
-	Gib 1,79769313486231[57] mal 10 hoch 308 zurück.
-```
-## Unendlich
-```
+</code>
+</pre>
+</details>
+
+<details>
+<summary><h2>Unendlich</h2></summary>
+<ul>
+<pre>
 Gibt Unendlich (1 durch 0) zurück.
-```
+</pre>
+</li>
+	<li>Rückgabe Typ: <code>Kommazahl</code></li>
+</ul>
 
-* Rückgabe Typ: `Kommazahl`
+<h3>Aliase</h3>
+<ol>
+	<li><code>&#34;Unendlich&#34;</code></li>
+</ol>
 
-### Aliase
-1. `"Unendlich"`
+<h3>Implementation</h3>
+<pre class="language-ddp" tabindex="0">
+<code class="language-ddp">
+Gib 1 durch 0 zurück.
 
-### Implementation
-```ddp
-	Gib 1 durch 0 zurück.
-```
-## KeineZahl
-```
+</code>
+</pre>
+</details>
+
+<details>
+<summary><h2>KeineZahl</h2></summary>
+<ul>
+<pre>
 Gibt NaN (0 durch 0) zurück.
-```
+</pre>
+</li>
+	<li>Rückgabe Typ: <code>Kommazahl</code></li>
+</ul>
 
-* Rückgabe Typ: `Kommazahl`
+<h3>Aliase</h3>
+<ol>
+	<li><code>&#34;keine Zahl&#34;</code></li>
+</ol>
 
-### Aliase
-1. `"keine Zahl"`
+<h3>Implementation</h3>
+<pre class="language-ddp" tabindex="0">
+<code class="language-ddp">
+Gib 0,0 durch 0,0 zurück.
 
-### Implementation
-```ddp
-	Gib 0,0 durch 0,0 zurück.
-```
+</code>
+</pre>
+</details>
+
+<details>
+<summary><h2>MinZahl</h2></summary>
+<ul>
+<pre>
+Gibt -9223372036854775807 zurück.
+</pre>
+</li>
+	<li>Rückgabe Typ: <code>Zahl</code></li>
+</ul>
+
+<h3>Aliase</h3>
+<ol>
+	<li><code>&#34;der minimale Wert einer Zahl&#34;</code></li>
+</ol>
+
+<h3>Implementation</h3>
+<pre class="language-ddp" tabindex="0">
+<code class="language-ddp">
+Gib -9223372036854775807 zurück.
+
+</code>
+</pre>
+</details>
+
 

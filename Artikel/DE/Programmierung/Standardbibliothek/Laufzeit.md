@@ -1,82 +1,127 @@
 # Duden/Laufzeit Funktionen
-## Programm_Beenden_Standard
-```
-Beendet das Programm mit Code 0.
-```
-
-* Rückgabe Typ: `nichts`
-
-### Aliase
-1. `"Beende das Programm"`
-2. `"beende das Programm"`
-
-### Implementation
-```ddp
-	Beende das Programm mit Code 0.
-```
-## Laufzeitfehler
-```
-Wirft einen Laufzeitfehler mit einer Nachricht und einem Code.
-```
-* Parameter: `Nachricht`, `Code`
-* Parameter Typen: `Text`, `Zahl`
-* Rückgabe Typ: `nichts`
-
-### Aliase
-1. `"Löse einen Laufzeitfehler mit der Nachricht <Nachricht> und dem Code <Code> aus"`
-2. `"löse einen Laufzeitfehler mit der Nachricht <Nachricht> und dem Code <Code> aus"`
-
-### Implementation
-Implementiert in "libddpstdlib.a"
-## Befehlszeilenargumente
-```
-Gibt eine Text Liste zurück die alle übergebenen Befehlszeilenargumente enthält.
-```
-
-* Rückgabe Typ: `Text Liste`
-
-### Aliase
-1. `"die Befehlszeilenargumente"`
-2. `"den Befehlszeilenargumenten"`
-
-### Implementation
-Implementiert in "libddpruntime.a"
-## Betriebssystem
-```
-Gibt je nach Betriebssystem entweder "Windows" oder "Linux" zurück.
-```
-
-* Rückgabe Typ: `Text`
-
-### Aliase
-1. `"das Betriebssystem"`
-
-### Implementation
-Implementiert in "libddpruntime.a"
-## Ist_Befehlszeile
-```
-Entspricht C's `isatty` funktion.
-```
-
-* Rückgabe Typ: `Boolean`
-
-### Aliase
-1. `"die Benutzereingabe eine Befehlszeile ist"`
-
-### Implementation
-Implementiert in "libddpstdlib.a"
-## Programm_Beenden
-```
+<details>
+<summary><h2>Programm_Beenden</h2></summary>
+<ul>
+<pre>
 Beendet das Programm mit dem gegebenen Code.
-```
-* Parameter: `Code`
-* Parameter Typ: `Zahl`
-* Rückgabe Typ: `nichts`
+</pre>
+	<li>Parameter: <code>Code</code></li>
+	<li>Parameter Typ: <code>Zahl</code></li>
+	<li>Rückgabe Typ: <code>nichts</code></li>
+</ul>
 
-### Aliase
-1. `"Beende das Programm mit Code <Code>"`
-2. `"beende das Programm mit Code <Code>"`
+<h3>Aliase</h3>
+<ol>
+	<li><code>&#34;Beende das Programm mit Code &lt;Code&gt;&#34;</code></li>
+	<li><code>&#34;beende das Programm mit Code &lt;Code&gt;&#34;</code></li>
+</ol>
 
-### Implementation
-Implementiert in "libddpstdlib.a"
+<h3>Implementation</h3>
+Implementiert in <code>"libddpstdlib.a"</code>
+</details>
+
+<details>
+<summary><h2>Programm_Beenden_Standard</h2></summary>
+<ul>
+<pre>
+Beendet das Programm mit Code 0.
+</pre>
+</li>
+	<li>Rückgabe Typ: <code>nichts</code></li>
+</ul>
+
+<h3>Aliase</h3>
+<ol>
+	<li><code>&#34;Beende das Programm&#34;</code></li>
+	<li><code>&#34;beende das Programm&#34;</code></li>
+</ol>
+
+<h3>Implementation</h3>
+<pre class="language-ddp" tabindex="0">
+<code class="language-ddp">
+Beende das Programm mit Code 0.
+
+</code>
+</pre>
+</details>
+
+<details>
+<summary><h2>Laufzeitfehler</h2></summary>
+<ul>
+<pre>
+Wirft einen Laufzeitfehler mit einer Nachricht und einem Code.
+</pre>
+	<li>Parameter: <code>Nachricht</code>, <code>Code</code></li>
+	<li>Parameter Typen: <code>Text</code>, <code>Zahl</code></li>
+	<li>Rückgabe Typ: <code>nichts</code></li>
+</ul>
+
+<h3>Aliase</h3>
+<ol>
+	<li><code>&#34;Löse einen Laufzeitfehler mit der Nachricht &lt;Nachricht&gt; und dem Code &lt;Code&gt; aus&#34;</code></li>
+	<li><code>&#34;löse einen Laufzeitfehler mit der Nachricht &lt;Nachricht&gt; und dem Code &lt;Code&gt; aus&#34;</code></li>
+</ol>
+
+<h3>Implementation</h3>
+Implementiert in <code>"libddpstdlib.a"</code>
+</details>
+
+<details>
+<summary><h2>Befehlszeilenargumente</h2></summary>
+<ul>
+<pre>
+Gibt eine Text Liste zurück die alle übergebenen Befehlszeilenargumente enthält.
+</pre>
+</li>
+	<li>Rückgabe Typ: <code>Text Liste</code></li>
+</ul>
+
+<h3>Aliase</h3>
+<ol>
+	<li><code>&#34;die Befehlszeilenargumente&#34;</code></li>
+	<li><code>&#34;den Befehlszeilenargumenten&#34;</code></li>
+</ol>
+
+<h3>Implementation</h3>
+Implementiert in <code>"libddpruntime.a"</code>
+</details>
+
+<details>
+<summary><h2>Betriebssystem</h2></summary>
+<ul>
+<pre>
+Gibt je nach Betriebssystem entweder "Windows" oder "Linux" zurück.
+</pre>
+</li>
+	<li>Rückgabe Typ: <code>Text</code></li>
+</ul>
+
+<h3>Aliase</h3>
+<ol>
+	<li><code>&#34;das Betriebssystem&#34;</code></li>
+</ol>
+
+<h3>Implementation</h3>
+Implementiert in <code>"libddpruntime.a"</code>
+</details>
+
+<details>
+<summary><h2>Ist_Befehlszeile</h2></summary>
+<ul>
+<pre>
+Entspricht C's `isatty` funktion.
+</pre>
+</li>
+	<li>Rückgabe Typ: <code>Boolean</code></li>
+</ul>
+
+<h3>Aliase</h3>
+<ol>
+	<li><code>&#34;die Benutzereingabe eine Befehlszeile ist&#34;</code></li>
+</ol>
+
+<h3>Implementation</h3>
+Implementiert in <code>"libddpstdlib.a"</code>
+</details>
+
 

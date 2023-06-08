@@ -19,7 +19,7 @@
 }
 
 /* inline code block */
-.markdown-body :not(pre) code {
+.markdown-body :not(pre)>code {
 	padding: 4px;
 	line-height: 1.85em;
 	white-space: nowrap;
@@ -148,6 +148,19 @@
 /* Handle on hover */
 .markdown-body ::-webkit-scrollbar-thumb:hover {
 	background: #555;
+}
+
+/* summary header inlined */
+.markdown-body summary h2 {
+	display: inline;
+}
+
+.markdown-body details {
+	padding: 5px;
+}
+
+details summary {
+	cursor: pointer;
 }
 
 /* custom elements */

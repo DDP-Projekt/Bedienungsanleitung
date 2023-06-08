@@ -1,17 +1,24 @@
 # Duden/Datei_Eingabe Funktionen
-## Lies_Text_Datei
-```
+<details>
+<summary><h2>Lies_Text_Datei</h2></summary>
+<ul>
+<pre>
 Die Funktion Lies_Text_Datei speichert den Inhalt der Datei, die an dem gegebenen Pfad liegt, in ref und gibt die Anzahl der Bytes der gelesenen Datei zurück.
 Wenn ein Fehler auftreten sollte, ist der zurückgegebene Wert negativ und die Fehler meldung in ref geschrieben
-```
-* Parameter: `Pfad`, `ref`
-* Parameter Typen: `Text`, `Text Referenz`
-* Rückgabe Typ: `Zahl`
+</pre>
+	<li>Parameter: <code>Pfad</code>, <code>ref</code></li>
+	<li>Parameter Typen: <code>Text</code>, <code>Text Referenz</code></li>
+	<li>Rückgabe Typ: <code>Zahl</code></li>
+</ul>
 
-### Aliase
-1. `"Lies den Text in <Pfad> und speichere ihn in <ref>"`
-2. `"die Anzahl der Bytes, die aus <Pfad> gelesen und in <ref> gespeichert wurden"`
+<h3>Aliase</h3>
+<ol>
+	<li><code>&#34;Lies den Text in &lt;Pfad&gt; und speichere ihn in &lt;ref&gt;&#34;</code></li>
+	<li><code>&#34;die Anzahl der Bytes, die aus &lt;Pfad&gt; gelesen und in &lt;ref&gt; gespeichert wurden&#34;</code></li>
+</ol>
 
-### Implementation
-Implementiert in "libddpstdlib.a"
+<h3>Implementation</h3>
+Implementiert in <code>"libddpstdlib.a"</code>
+</details>
+
 

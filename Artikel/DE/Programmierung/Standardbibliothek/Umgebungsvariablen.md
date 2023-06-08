@@ -1,29 +1,43 @@
 # Duden/Umgebungsvariablen Funktionen
-## Hole_Umgebungsvariable
-```
+<details>
+<summary><h2>Hole_Umgebungsvariable</h2></summary>
+<ul>
+<pre>
 Gibt den Wert einer Umgebungsvariable zurück.
-```
-* Parameter: `Name`
-* Parameter Typ: `Text`
-* Rückgabe Typ: `Text`
+</pre>
+	<li>Parameter: <code>Name</code></li>
+	<li>Parameter Typ: <code>Text</code></li>
+	<li>Rückgabe Typ: <code>Text</code></li>
+</ul>
 
-### Aliase
-1. `"der Wert der Umgebungsvariable <Name>"`
-2. `"den Wert der Umgebungsvariable <Name>"`
+<h3>Aliase</h3>
+<ol>
+	<li><code>&#34;der Wert der Umgebungsvariable &lt;Name&gt;&#34;</code></li>
+	<li><code>&#34;den Wert der Umgebungsvariable &lt;Name&gt;&#34;</code></li>
+</ol>
 
-### Implementation
-Implementiert in "libddpstdlib.a"
-## Setze_Umgebungsvariable
-```
+<h3>Implementation</h3>
+Implementiert in <code>"libddpstdlib.a"</code>
+</details>
+
+<details>
+<summary><h2>Setze_Umgebungsvariable</h2></summary>
+<ul>
+<pre>
 Setzt eine Umgebungsvariable zu einem bestimmten Wert, oder erstellt eine falls keine mit dem gegebenen Namen existiert.
-```
-* Parameter: `Name`, `Wert`
-* Parameter Typen: `Text`, `Text`
-* Rückgabe Typ: `nichts`
+</pre>
+	<li>Parameter: <code>Name</code>, <code>Wert</code></li>
+	<li>Parameter Typen: <code>Text</code>, <code>Text</code></li>
+	<li>Rückgabe Typ: <code>nichts</code></li>
+</ul>
 
-### Aliase
-1. `"Setze die Umgebungsvariable <Name> auf den Wert <Wert>"`
+<h3>Aliase</h3>
+<ol>
+	<li><code>&#34;Setze die Umgebungsvariable &lt;Name&gt; auf den Wert &lt;Wert&gt;&#34;</code></li>
+</ol>
 
-### Implementation
-Implementiert in "libddpstdlib.a"
+<h3>Implementation</h3>
+Implementiert in <code>"libddpstdlib.a"</code>
+</details>
+
 
