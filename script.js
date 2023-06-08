@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	changeLangSelectFlag();
 
-	populateListItems();
+	populateListItems()
 
 	populateMDElement();
 
@@ -29,63 +29,44 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function populateListItems() {
-	let searchParams = new URLSearchParams(window.location.search);
-	let articleLinks = document.getElementById('artikel-links')
+	const anchors = document.querySelectorAll('#artikel-links a');
 
-	traverseListElement(articleLinks, function (element) {
-		// only allow <a> tags without a href attribute
-		if (element.nodeName !== "A" || element.getAttribute("href")) {
-			return;
+	anchors.forEach(function(anchor) {
+		const parentPath = getParentPath(anchor);
+		const content = anchor.textContent.trim();
+		let href = '';
+
+		if (parentPath !== "Die Deutsche Programmiersprache") {
+			href = `?p=${parentPath}/${content}`;
+		} else {
+			href = `?p=${content}`;
 		}
 
-		// add href attribute
-		element.setAttribute("href", `?p=${path}${element.innerHTML}&lang=${searchParams.get('lang')}`)
-	}, false)
+		anchor.setAttribute('href', href + `&lang=${searchParams.get('lang')}`);
+	});
 }
 
-let path = "";
-
-/**
- * Super janky lol
- * @param {Element} element The Element
- * @param {function(Element)} callback
- * @param {boolean} reverse if the Element should be traversed in reverse order
- */
-function traverseListElement(element, callback, reverse) {
-	// only allow elements with children
-	if (element == null || element.children.length === 0) {
-		return;
+function getParentPath(element) {
+	if (!element || !element.parentNode) {
+		return '';
 	}
 
-	// loop through children
-	if (reverse) {
-		for (let i = element.children.length - 1; i >= 0; i--) {
-			let child = element.children[i];
-			if (child.nodeName === "OL") {
-				// add the innerHTML of the <a> tag above the <ol> tag to the path
-				path += child.parentElement.firstElementChild.innerHTML + "/";
-			}
+	let parent = element.parentNode;
+	let parentPath = '';
 
-			callback(child);
-			traverseListElement(child, callback, reverse);
+	while (parent) {
+		if (parent.nodeName === 'OL') {
+			const parentAnchor = parent.previousElementSibling.querySelector('a');
+			const parentContent = parentAnchor ? parentAnchor.textContent.trim() : '';
+			const grandParentPath = getParentPath(parentAnchor);
+			parentPath = grandParentPath ? `${grandParentPath}/${parentContent}` : parentContent;
+			break;
 		}
-	}
-	else {
-		for (const child of element.children) {
-			if (child.nodeName === "OL") {
-				// add the innerHTML of the <a> tag above the <ol> tag to the path
-				path += child.parentElement.firstElementChild.innerHTML + "/";
-			}
 
-			callback(child);
-			traverseListElement(child, callback, reverse);
-		}
+		parent = parent.parentNode;
 	}
 
-	// remove old path
-	if (element === element.parentElement.lastElementChild) {
-		path = path.replace(element.parentElement.firstElementChild.innerHTML + "/", "");
-	}
+	return parentPath;
 }
 
 function populateMDElement() {
@@ -186,50 +167,28 @@ function toggleLang() {
 	window.location.search = searchParams.toString();
 }
 
-let found;
-function gotoNextArticle() {
-	path = "";
-	found = false;
+// -1 = prev, 1 = next
+function goToSurroundingLink(dir) {
+	const anchors = document.querySelectorAll('#artikel-links a');
+	let currentIndex = -1;
 
-	// Special condition for the first link
-	if (searchParams.get('p') === "Startseite") {
-		window.location.href = `?p=Einstieg&lang=${searchParams.get('lang')}`;
-		return;
+	// Find the index of the current position
+	anchors.forEach(function(anchor, index) {
+		if (anchor.getAttribute('href') === decodeURIComponent(window.location.search)) {
+			currentIndex = index;
+		}
+	});
+
+	if (dir === -1) {
+		if (currentIndex <= 0) {
+			currentIndex = anchors.length
+		}
+		window.location.href = anchors[currentIndex - 1].getAttribute('href')
 	}
-
-	let articleLinks = document.getElementById('artikel-links')
-	traverseListElement(articleLinks, gotoArticle, false)
-}
-
-function gotoPrevArticle() {
-	path = "";
-	found = false;
-
-	// Special condition for the first link
-	if (searchParams.get('p') === "Einstieg") {
-		window.location.href = `?p=Startseite&lang=${searchParams.get('lang')}`;
-		return;
-	}
-
-	let articleLinks = document.getElementById('artikel-links')
-	traverseListElement(articleLinks, gotoArticle, true)
-}
-
-function gotoArticle(element) {
-	// only allow <a> tags
-	if (element.nodeName !== "A") {
-		return;
-	}
-
-	// if found, change window location and set flag to false
-	if (found) {
-		window.location.href = `?p=${path}${element.innerHTML}&lang=${searchParams.get('lang')}`;
-		found = false; // setting flag to false, so it doesn't continuously set the location
-		return;
-	}
-
-	// if the traversing article is the current article
-	if (`${path}${element.innerHTML}` === searchParams.get('p')) {
-		found = true; // set flag to true, so it recurses one more time
+	else if (dir === 1) {
+		if (currentIndex >= anchors.length - 1) {
+			currentIndex = -1
+		}
+		window.location.href = anchors[currentIndex + 1].getAttribute('href')
 	}
 }

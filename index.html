@@ -31,34 +31,35 @@
 		<a href="index.html?p=Startseite">Die Deutsche Programmiersprache</a>
 		<ol id="artikel-links">
 			<!-- href attributes get filled using javascript -->
-			<li>
-				<a>Einstieg</a>
+
+			<li><details>
+				<summary><a>Einstieg</a></summary>
 				<ol>
 					<li><a>Entwicklungs-umgebung einrichten</a></li>
 					<li><a>Installieren</a></li>
 					<li><a>Erstes Programm</a></li>
 				</ol>
-			</li>
-			<li>
-				<a>Programmierung</a>
+			</details></li>
+			<li><details>
+				<summary><a>Programmierung</a></summary>
 				<ol>
 					<li><a>Datentypen</a></li>
 					<li><a>Typkonvertierung</a></li>
 					<li><a>Operatoren</a></li>
 					<li><a>Variablen</a></li>
 					<li><a>Verzweigungen und Schleifen</a></li>
-					<li>
-						<a>Funktionen</a>
+					<li><details>
+						<summary><a>Funktionen</a></summary>
 						<ol>
 							<li><a>Anwendung</a></li>
 							<li><a>Referenzen</a></li>
 							<li><a>Externe Funktionen</a></li>
 							<li><a>Beispiele</a></li>
 						</ol>
-					</li>
+					</details></li>
 					<li><a>Module</a></li>
-					<li>
-						<a>Standardbibliothek</a>
+					<li><details>
+						<summary><a>Standardbibliothek</a></summary>
 						<ol>
 							<li><a>Ausgabe</a></li>
 							<li><a>Datei_Ausgabe</a></li>
@@ -74,9 +75,9 @@
 							<li><a>Zeit</a></li>
 							<li><a>Zufall</a></li>
 						</ol>
-					</li>
+					</details></li>
 				</ol>
-			</li>
+			</details></li>
 			<li><a>Beispielprogramme</a></li>
 			<li><a>Der Kompilierer</a></li>
 			<li><a>Fehlermeldungen</a></li>
@@ -103,8 +104,8 @@
 			</zero-md>
 		</article>
 		<div id="artikel-navigation">
-			<div onclick="gotoPrevArticle()">&lt;</div>
-			<div onclick="gotoNextArticle()">&gt;</div>
+			<div onclick="goToSurroundingLink(-1)">&lt;</div>
+			<div onclick="goToSurroundingLink(1)">&gt;</div>
 		</div>
 	</main>
 </body>
