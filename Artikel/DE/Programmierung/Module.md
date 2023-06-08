@@ -93,7 +93,7 @@ Speichere 2 in zz. [setzt z aus A.ddp auf 2]
 ## Erläuterung
 
 Wie man im Beispiel sieht gibt man bei Einbindungen entweder einen relativen Pfad zu einer anderen .DDP-Datei an (ohne die .ddp Endung),
-oder einen Pfad zu einer Datei aus der Standardbibliothek.
+oder einen Pfad zu einer Datei aus der Standardbibliothek. Die Dateien aus der Standardbibliothek werden immer mit `Duden/<Datei>` eingebunden.
 
 Es können entweder alle öffentlichen Namen, oder bloß einige spezielle eingebunden werden.
 Das ist nützlich um nicht zu viele unnötige Funktions-Aliase einzubinden, die Eventuell Ärger bereiten.
