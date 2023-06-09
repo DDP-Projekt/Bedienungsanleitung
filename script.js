@@ -24,6 +24,14 @@ document.addEventListener("DOMContentLoaded", () => {
 		}
 	}
 
+	if (window.localStorage.getItem("dark-mode") === "true") {
+		document.querySelector('#dark').media = "all"
+		document.querySelector('#light').media = "not all"
+	} else {
+		document.querySelector('#dark').media = "not all"
+		document.querySelector('#light').media = "all"
+	}
+
 	closeNav(); // automatically close nav
 
 	changeLangSelectFlag();
@@ -176,6 +184,20 @@ function toggleLang() {
 		searchParams.set("lang", "DE");
 	}
 	window.location.search = searchParams.toString();
+}
+
+function toggleDarkMode() {
+	let isDark = document.querySelector('#dark').media === 'all'
+	if (isDark) {
+		document.querySelector('#dark').media = 'not all'
+		document.querySelector('#light').media = 'all'
+		window.localStorage.setItem("dark-mode", "false")
+	}
+	else {
+		document.querySelector('#dark').media = 'all'
+		document.querySelector('#light').media = 'not all'
+		window.localStorage.setItem("dark-mode", "true")
+	}
 }
 
 // -1 = prev, 1 = next

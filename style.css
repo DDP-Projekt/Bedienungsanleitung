@@ -1,17 +1,8 @@
 :root {
 	--sidebar-size: 250px;
 	--content-size: calc(100% - var(--sidebar-size));
-
-	--text-color: antiquewhite;
-	--link-hover-color: aliceblue;
-	--bg-color: #444;
-	--sidebar-color: #3d3d3d;
-	--table-border-color: #303336;
-	--table-fill-dark: #3b3c3e;
-	--table-fill-light: #3f4043;
-	--md-link-color: #4fa2dd;
-	--md-link-hover-color: #81bfeb;
 }
+
 /* fonts */
 @font-face {
 	font-family: 'Trump Bold';
@@ -196,9 +187,9 @@ a:hover {
 	margin: 5px 0 5px 0;
 }
 
-#sprach-toggle {
-	width: 15px;
-	height: 10px
+#kopf #toggles * {
+	width: 30px;
+	height: 20px;
 }
 
 #artikel {
@@ -212,7 +203,7 @@ a:hover {
 	width: var(--content-size);
 	height: 40px;
 	margin-left: -10px;
-	background-color: #303336;
+	background-color: var(--article-nav-bg-color);
 	justify-content: space-around;
 	align-items: center;
 }
@@ -228,7 +219,7 @@ a:hover {
 }
 
 #artikel-navigation div:hover {
-	background-color: #3b3d41;
+	background-color: var(--article-nav-hover-bg-color)
 }
 
 /* scrollbar */
