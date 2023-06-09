@@ -74,6 +74,12 @@
 
 /* Syntax Highlighting */
 
+/* light-mode readability fix */
+.markdown-body .language-ddp code span,
+.markdown-body .language-terminal code span {
+	filter: var(--light-mode-filter);
+}
+
 /* DDP */
 .markdown-body .language-ddp span.token.control-statement {
 	color: #d38ecd;
