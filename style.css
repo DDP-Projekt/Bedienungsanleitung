@@ -216,6 +216,7 @@ a:hover {
 	align-items: center;
 	font-size: large;
 	font-weight: 900;
+	transition: background-color 200ms;
 }
 
 #artikel-navigation div:hover {
@@ -232,17 +233,17 @@ a:hover {
 
 /* Track */
 ::-webkit-scrollbar-track {
-	background: #333;
+	background: var(--scrollbar-track-bg-color);
 	border-radius: 10px;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-	background: #666;
+	background: var(--scrollbar-thumb-bg-color);
 	border-radius: 10px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-	background: #555;
+	background: var(--scrollbar-thumb-hover-bg-color);
 }

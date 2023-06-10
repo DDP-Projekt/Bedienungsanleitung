@@ -141,19 +141,19 @@
 
 /* Track */
 .markdown-body ::-webkit-scrollbar-track {
-	background: #333;
+	background: var(--scrollbar-track-bg-color);
 	border-radius: 10px;
 }
 
 /* Handle */
 .markdown-body ::-webkit-scrollbar-thumb {
-	background: #666;
+	background: var(--scrollbar-thumb-bg-color);
 	border-radius: 10px;
 }
 
 /* Handle on hover */
 .markdown-body ::-webkit-scrollbar-thumb:hover {
-	background: #555;
+	background: var(--scrollbar-thumb-hover-bg-color);
 }
 
 /* summary header inlined */
