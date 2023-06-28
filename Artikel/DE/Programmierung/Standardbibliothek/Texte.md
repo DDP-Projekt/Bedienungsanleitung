@@ -1,384 +1,5 @@
 # Duden/Texte Funktionen
 <details>
-<summary><h2>EnthältBuchstabe</h2></summary>
-<ul>
-	<li>Parameter: <code>text</code>, <code>zeichen</code></li>
-	<li>Parameter Typen: <code>Text</code>, <code>Buchstabe</code></li>
-	<li>Rückgabe Typ: <code>Boolean</code></li>
-</ul>
-
-<h3>Aliase</h3>
-<ol>
-	<li><code>&#34;&lt;text&gt; &lt;zeichen&gt; enthält&#34;</code></li>
-</ol>
-
-<h3>Implementation</h3>
-<pre class="language-ddp" tabindex="0">
-<code class="language-ddp">
-Für jeden Buchstaben b in text, wenn b gleich zeichen ist, gib wahr zurück.
-Gib falsch zurück.
-
-</code>
-</pre>
-</details>
-
-<details>
-<summary><h2>BeginntMitText</h2></summary>
-<ul>
-	<li>Parameter: <code>text</code>, <code>suchText</code></li>
-	<li>Parameter Typen: <code>Text</code>, <code>Text</code></li>
-	<li>Rückgabe Typ: <code>Boolean</code></li>
-</ul>
-
-<h3>Aliase</h3>
-<ol>
-	<li><code>&#34;&lt;suchText&gt; am Anfang von &lt;text&gt; steht&#34;</code></li>
-</ol>
-
-<h3>Implementation</h3>
-<pre class="language-ddp" tabindex="0">
-<code class="language-ddp">
-Gib (text von 1 bis (die Länge von suchText)) gleich suchText ist zurück.
-
-</code>
-</pre>
-</details>
-
-<details>
-<summary><h2>Buchstabe_vor_Text_stellen</h2></summary>
-<ul>
-	<li>Parameter: <code>text</code>, <code>elm</code></li>
-	<li>Parameter Typen: <code>Text Referenz</code>, <code>Buchstabe</code></li>
-	<li>Rückgabe Typ: <code>nichts</code></li>
-</ul>
-
-<h3>Aliase</h3>
-<ol>
-	<li><code>&#34;Stelle &lt;elm&gt; vor &lt;text&gt;&#34;</code></li>
-</ol>
-
-<h3>Implementation</h3>
-<pre class="language-ddp" tabindex="0">
-<code class="language-ddp">
-Speichere elm verkettet mit text in text.
-
-</code>
-</pre>
-</details>
-
-<details>
-<summary><h2>Lösche_Text_Bereich</h2></summary>
-<ul>
-	<li>Parameter: <code>text</code>, <code>start</code>, <code>end</code></li>
-	<li>Parameter Typen: <code>Text Referenz</code>, <code>Zahl</code>, <code>Zahl</code></li>
-	<li>Rückgabe Typ: <code>nichts</code></li>
-</ul>
-
-<h3>Aliase</h3>
-<ol>
-	<li><code>&#34;Lösche alle Elemente von &lt;start&gt; bis &lt;end&gt; aus &lt;text&gt;&#34;</code></li>
-</ol>
-
-<h3>Implementation</h3>
-<pre class="language-ddp" tabindex="0">
-<code class="language-ddp">
-Wenn start gleich 1 ist, dann:
-	Speichere text von end plus 1 bis (die Länge von text) in text.
-Sonst:
-	Speichere text von 1 bis (start minus 1) verkettet mit text von (end plus 1) bis (die Länge von text) in text.
-
-</code>
-</pre>
-</details>
-
-<details>
-<summary><h2>Fülle_Text</h2></summary>
-<ul>
-	<li>Parameter: <code>text</code>, <code>elm</code></li>
-	<li>Parameter Typen: <code>Text Referenz</code>, <code>Buchstabe</code></li>
-	<li>Rückgabe Typ: <code>nichts</code></li>
-</ul>
-
-<h3>Aliase</h3>
-<ol>
-	<li><code>&#34;Fülle &lt;text&gt; mit &lt;elm&gt;&#34;</code></li>
-</ol>
-
-<h3>Implementation</h3>
-<pre class="language-ddp" tabindex="0">
-<code class="language-ddp">
-Der Text neuerText ist "".
-Wiederhole:
-	Speichere neuerText verkettet mit elm in neuerText.
-Die Länge von text Mal.
-
-Speichere neuerText in text.
-
-</code>
-</pre>
-</details>
-
-<details>
-<summary><h2>GroßschreibenWert</h2></summary>
-<ul>
-	<li>Parameter: <code>text</code></li>
-	<li>Parameter Typ: <code>Text</code></li>
-	<li>Rückgabe Typ: <code>Text</code></li>
-</ul>
-
-<h3>Aliase</h3>
-<ol>
-	<li><code>&#34;&lt;text&gt; groß geschrieben&#34;</code></li>
-</ol>
-
-<h3>Implementation</h3>
-<pre class="language-ddp" tabindex="0">
-<code class="language-ddp">
-Der Text neuerText ist "".
-Für jeden Buchstaben b in text, mache:
-	Füge (b als großer Buchstabe) an neuerText an.
-Gib neuerText zurück.
-
-</code>
-</pre>
-</details>
-
-<details>
-<summary><h2>Kleinschreiben</h2></summary>
-<ul>
-	<li>Parameter: <code>text</code></li>
-	<li>Parameter Typ: <code>Text Referenz</code></li>
-	<li>Rückgabe Typ: <code>nichts</code></li>
-</ul>
-
-<h3>Aliase</h3>
-<ol>
-	<li><code>&#34;Schreibe &lt;text&gt; klein&#34;</code></li>
-</ol>
-
-<h3>Implementation</h3>
-<pre class="language-ddp" tabindex="0">
-<code class="language-ddp">
-Speichere text klein geschrieben in text.
-
-</code>
-</pre>
-</details>
-
-<details>
-<summary><h2>TrimEndeWert</h2></summary>
-<ul>
-	<li>Parameter: <code>text</code>, <code>zeichen</code></li>
-	<li>Parameter Typen: <code>Text</code>, <code>Buchstabe</code></li>
-	<li>Rückgabe Typ: <code>Text</code></li>
-</ul>
-
-<h3>Aliase</h3>
-<ol>
-	<li><code>&#34;&lt;text&gt; mit allen &lt;zeichen&gt; danach entfernt&#34;</code></li>
-</ol>
-
-<h3>Implementation</h3>
-<pre class="language-ddp" tabindex="0">
-<code class="language-ddp">
-Entferne alle zeichen nach text.
-Gib text zurück.
-
-</code>
-</pre>
-</details>
-
-<details>
-<summary><h2>Buchstabe_an_Text_fügen</h2></summary>
-<ul>
-	<li>Parameter: <code>text</code>, <code>elm</code></li>
-	<li>Parameter Typen: <code>Text Referenz</code>, <code>Buchstabe</code></li>
-	<li>Rückgabe Typ: <code>nichts</code></li>
-</ul>
-
-<h3>Aliase</h3>
-<ol>
-	<li><code>&#34;Füge &lt;elm&gt; an &lt;text&gt; an&#34;</code></li>
-</ol>
-
-<h3>Implementation</h3>
-<pre class="language-ddp" tabindex="0">
-<code class="language-ddp">
-Speichere text verkettet mit elm in text.
-
-</code>
-</pre>
-</details>
-
-<details>
-<summary><h2>Text_in_Text_einfügen</h2></summary>
-<ul>
-	<li>Parameter: <code>text</code>, <code>index</code>, <code>elm</code></li>
-	<li>Parameter Typen: <code>Text Referenz</code>, <code>Zahl</code>, <code>Text</code></li>
-	<li>Rückgabe Typ: <code>nichts</code></li>
-</ul>
-
-<h3>Aliase</h3>
-<ol>
-	<li><code>&#34;Setze &lt;elm&gt; an die Stelle &lt;index&gt; von &lt;text&gt;&#34;</code></li>
-</ol>
-
-<h3>Implementation</h3>
-<pre class="language-ddp" tabindex="0">
-<code class="language-ddp">
-Speichere text von 1 bis (index minus 1) verkettet mit elm verkettet mit text von index bis (die Länge von text) in text.
-
-</code>
-</pre>
-</details>
-
-<details>
-<summary><h2>Großschreiben</h2></summary>
-<ul>
-	<li>Parameter: <code>text</code></li>
-	<li>Parameter Typ: <code>Text Referenz</code></li>
-	<li>Rückgabe Typ: <code>nichts</code></li>
-</ul>
-
-<h3>Aliase</h3>
-<ol>
-	<li><code>&#34;Schreibe &lt;text&gt; groß&#34;</code></li>
-</ol>
-
-<h3>Implementation</h3>
-<pre class="language-ddp" tabindex="0">
-<code class="language-ddp">
-Speichere text groß geschrieben in text.
-
-</code>
-</pre>
-</details>
-
-<details>
-<summary><h2>KleinschreibenWert</h2></summary>
-<ul>
-	<li>Parameter: <code>text</code></li>
-	<li>Parameter Typ: <code>Text</code></li>
-	<li>Rückgabe Typ: <code>Text</code></li>
-</ul>
-
-<h3>Aliase</h3>
-<ol>
-	<li><code>&#34;&lt;text&gt; klein geschrieben&#34;</code></li>
-</ol>
-
-<h3>Implementation</h3>
-<pre class="language-ddp" tabindex="0">
-<code class="language-ddp">
-Der Text neuerText ist "".
-Für jeden Buchstaben b in text, mache:
-	Füge (b als kleiner Buchstabe) an neuerText an.
-Gib neuerText zurück.
-
-</code>
-</pre>
-</details>
-
-<details>
-<summary><h2>PolsterLinks</h2></summary>
-<ul>
-	<li>Parameter: <code>text</code>, <code>zeichen</code>, <code>endlänge</code></li>
-	<li>Parameter Typen: <code>Text</code>, <code>Buchstabe</code>, <code>Zahl</code></li>
-	<li>Rückgabe Typ: <code>Text</code></li>
-</ul>
-
-<h3>Aliase</h3>
-<ol>
-	<li><code>&#34;&lt;text&gt; mit &lt;endlänge&gt; &lt;zeichen&gt; links gepolstert&#34;</code></li>
-</ol>
-
-<h3>Implementation</h3>
-<pre class="language-ddp" tabindex="0">
-<code class="language-ddp">
-Die Zahl länge ist die Länge von text.
-Die Zahl gesuchteLänge ist endlänge minus länge.
-Wenn gesuchteLänge kleiner als, oder 0 ist, dann:
-	Gib text zurück.
-
-Wiederhole:
-	Stelle zeichen vor text.
-gesuchteLänge Mal.
-
-Gib text zurück.
-
-</code>
-</pre>
-</details>
-
-<details>
-<summary><h2>Text_an_Text_fügen</h2></summary>
-<ul>
-	<li>Parameter: <code>text</code>, <code>elm</code></li>
-	<li>Parameter Typen: <code>Text Referenz</code>, <code>Text</code></li>
-	<li>Rückgabe Typ: <code>nichts</code></li>
-</ul>
-
-<h3>Aliase</h3>
-<ol>
-	<li><code>&#34;Füge &lt;elm&gt; an &lt;text&gt; an&#34;</code></li>
-</ol>
-
-<h3>Implementation</h3>
-<pre class="language-ddp" tabindex="0">
-<code class="language-ddp">
-Speichere text verkettet mit elm in text.
-
-</code>
-</pre>
-</details>
-
-<details>
-<summary><h2>EndetMitText</h2></summary>
-<ul>
-	<li>Parameter: <code>text</code>, <code>suchText</code></li>
-	<li>Parameter Typen: <code>Text</code>, <code>Text</code></li>
-	<li>Rückgabe Typ: <code>Boolean</code></li>
-</ul>
-
-<h3>Aliase</h3>
-<ol>
-	<li><code>&#34;&lt;suchText&gt; am Ende von &lt;text&gt; steht&#34;</code></li>
-</ol>
-
-<h3>Implementation</h3>
-<pre class="language-ddp" tabindex="0">
-<code class="language-ddp">
-Gib (text von die Länge von text minus die Länge von suchText plus 1 bis (die Länge von text)) gleich suchText ist zurück.
-
-</code>
-</pre>
-</details>
-
-<details>
-<summary><h2>IndexVonText</h2></summary>
-<ul>
-	<li>Parameter: <code>text</code>, <code>elm</code></li>
-	<li>Parameter Typen: <code>Text</code>, <code>Buchstabe</code></li>
-	<li>Rückgabe Typ: <code>Zahl</code></li>
-</ul>
-
-<h3>Aliase</h3>
-<ol>
-	<li><code>&#34;der Index von &lt;elm&gt; in &lt;text&gt;&#34;</code></li>
-</ol>
-
-<h3>Implementation</h3>
-<pre class="language-ddp" tabindex="0">
-<code class="language-ddp">
-Wenn die Länge von text gleich 0 ist, gib -1 zurück.
-Für jede Zahl i von 1 bis (die Länge von text), Wenn text an der Stelle i gleich elm ist, gib i zurück.
-Gib -1 zurück.
-
-</code>
-</pre>
-</details>
-
-<details>
 <summary><h2>PolsterRechts</h2></summary>
 <ul>
 	<li>Parameter: <code>text</code>, <code>zeichen</code>, <code>endlänge</code></li>
@@ -435,91 +56,25 @@ Speichere text von 1 bis index in text.
 </details>
 
 <details>
-<summary><h2>TrimWert</h2></summary>
-<ul>
-	<li>Parameter: <code>text</code>, <code>zeichen</code></li>
-	<li>Parameter Typen: <code>Text</code>, <code>Buchstabe</code></li>
-	<li>Rückgabe Typ: <code>Text</code></li>
-</ul>
-
-<h3>Aliase</h3>
-<ol>
-	<li><code>&#34;&lt;text&gt; mit allen &lt;zeichen&gt; davor und danach entfernt&#34;</code></li>
-</ol>
-
-<h3>Implementation</h3>
-<pre class="language-ddp" tabindex="0">
-<code class="language-ddp">
-Entferne alle zeichen vor und nach text.
-Gib text zurück.
-
-</code>
-</pre>
-</details>
-
-<details>
-<summary><h2>BeginntMitBuchstabe</h2></summary>
-<ul>
-	<li>Parameter: <code>text</code>, <code>buchstabe</code></li>
-	<li>Parameter Typen: <code>Text</code>, <code>Buchstabe</code></li>
-	<li>Rückgabe Typ: <code>Boolean</code></li>
-</ul>
-
-<h3>Aliase</h3>
-<ol>
-	<li><code>&#34;&lt;buchstabe&gt; am Anfang von &lt;text&gt; steht&#34;</code></li>
-</ol>
-
-<h3>Implementation</h3>
-<pre class="language-ddp" tabindex="0">
-<code class="language-ddp">
-Wenn die Länge von text gleich 0 ist, gib falsch zurück.
-Gib (text an der Stelle 1) gleich buchstabe ist zurück.
-
-</code>
-</pre>
-</details>
-
-<details>
-<summary><h2>EndetMitBuchstabe</h2></summary>
-<ul>
-	<li>Parameter: <code>text</code>, <code>buchstabe</code></li>
-	<li>Parameter Typen: <code>Text</code>, <code>Buchstabe</code></li>
-	<li>Rückgabe Typ: <code>Boolean</code></li>
-</ul>
-
-<h3>Aliase</h3>
-<ol>
-	<li><code>&#34;&lt;buchstabe&gt; am Ende von &lt;text&gt; steht&#34;</code></li>
-</ol>
-
-<h3>Implementation</h3>
-<pre class="language-ddp" tabindex="0">
-<code class="language-ddp">
-Wenn die Länge von text gleich 0 ist, gib falsch zurück.
-Gib (text an der Stelle (die Länge von text)) gleich buchstabe ist zurück.
-
-</code>
-</pre>
-</details>
-
-<details>
-<summary><h2>Text_vor_Text_stellen</h2></summary>
+<summary><h2>IndexVonText</h2></summary>
 <ul>
 	<li>Parameter: <code>text</code>, <code>elm</code></li>
-	<li>Parameter Typen: <code>Text Referenz</code>, <code>Text</code></li>
-	<li>Rückgabe Typ: <code>nichts</code></li>
+	<li>Parameter Typen: <code>Text</code>, <code>Buchstabe</code></li>
+	<li>Rückgabe Typ: <code>Zahl</code></li>
 </ul>
 
 <h3>Aliase</h3>
 <ol>
-	<li><code>&#34;Stelle &lt;elm&gt; vor &lt;text&gt;&#34;</code></li>
+	<li><code>&#34;der Index von &lt;elm&gt; in &lt;text&gt;&#34;</code></li>
+	<li><code>&#34;den Index von &lt;elm&gt; in &lt;text&gt;&#34;</code></li>
 </ol>
 
 <h3>Implementation</h3>
 <pre class="language-ddp" tabindex="0">
 <code class="language-ddp">
-Speichere elm verkettet mit text in text.
+Wenn die Länge von text gleich 0 ist, gib -1 zurück.
+Für jede Zahl i von 1 bis (die Länge von text), Wenn text an der Stelle i gleich elm ist, gib i zurück.
+Gib -1 zurück.
 
 </code>
 </pre>
@@ -548,32 +103,44 @@ Gib [wahr wenn] die Länge von text gleich 0 ist zurück.
 </details>
 
 <details>
-<summary><h2>Ist_Zahl</h2></summary>
+<summary><h2>Großschreiben</h2></summary>
 <ul>
-<pre>
-ob ein Text in eine Zahl umgewandelt werden kann
-</pre>
-	<li>Parameter: <code>t</code></li>
-	<li>Parameter Typ: <code>Text</code></li>
-	<li>Rückgabe Typ: <code>Boolean</code></li>
+	<li>Parameter: <code>text</code></li>
+	<li>Parameter Typ: <code>Text Referenz</code></li>
+	<li>Rückgabe Typ: <code>nichts</code></li>
 </ul>
 
 <h3>Aliase</h3>
 <ol>
-	<li><code>&#34;&lt;t&gt; eine Zahl ist&#34;</code></li>
+	<li><code>&#34;Schreibe &lt;text&gt; groß&#34;</code></li>
 </ol>
 
 <h3>Implementation</h3>
 <pre class="language-ddp" tabindex="0">
 <code class="language-ddp">
-Die Zahl l ist die Länge von t.
-Wenn l kleiner als 1 ist, gib falsch zurück.
+Speichere text groß geschrieben in text.
 
-Der Buchstabe Vorzeichen ist t an der Stelle 1.
-Wenn Vorzeichen eine Zahl ist, gib wahr zurück.
-Wenn Vorzeichen ungleich '+' ist und Vorzeichen ungleich '-' ist, gib falsch zurück.
-Wenn l kleiner als 2 ist oder nicht (t an der Stelle 2) eine Zahl ist, gib falsch zurück.
-Gib wahr zurück.
+</code>
+</pre>
+</details>
+
+<details>
+<summary><h2>Kleinschreiben</h2></summary>
+<ul>
+	<li>Parameter: <code>text</code></li>
+	<li>Parameter Typ: <code>Text Referenz</code></li>
+	<li>Rückgabe Typ: <code>nichts</code></li>
+</ul>
+
+<h3>Aliase</h3>
+<ol>
+	<li><code>&#34;Schreibe &lt;text&gt; klein&#34;</code></li>
+</ol>
+
+<h3>Implementation</h3>
+<pre class="language-ddp" tabindex="0">
+<code class="language-ddp">
+Speichere text klein geschrieben in text.
 
 </code>
 </pre>
@@ -614,128 +181,98 @@ Gib endliste zurück.
 </details>
 
 <details>
-<summary><h2>EnthältText</h2></summary>
+<summary><h2>Text_an_Text_fügen</h2></summary>
 <ul>
-	<li>Parameter: <code>text</code>, <code>suchText</code></li>
-	<li>Parameter Typen: <code>Text</code>, <code>Text</code></li>
+	<li>Parameter: <code>text</code>, <code>elm</code></li>
+	<li>Parameter Typen: <code>Text Referenz</code>, <code>Text</code></li>
+	<li>Rückgabe Typ: <code>nichts</code></li>
+</ul>
+
+<h3>Aliase</h3>
+<ol>
+	<li><code>&#34;Füge &lt;elm&gt; an &lt;text&gt; an&#34;</code></li>
+</ol>
+
+<h3>Implementation</h3>
+<pre class="language-ddp" tabindex="0">
+<code class="language-ddp">
+Speichere text verkettet mit elm in text.
+
+</code>
+</pre>
+</details>
+
+<details>
+<summary><h2>Buchstabe_an_Text_fügen</h2></summary>
+<ul>
+	<li>Parameter: <code>text</code>, <code>elm</code></li>
+	<li>Parameter Typen: <code>Text Referenz</code>, <code>Buchstabe</code></li>
+	<li>Rückgabe Typ: <code>nichts</code></li>
+</ul>
+
+<h3>Aliase</h3>
+<ol>
+	<li><code>&#34;Füge &lt;elm&gt; an &lt;text&gt; an&#34;</code></li>
+</ol>
+
+<h3>Implementation</h3>
+<pre class="language-ddp" tabindex="0">
+<code class="language-ddp">
+Speichere text verkettet mit elm in text.
+
+</code>
+</pre>
+</details>
+
+<details>
+<summary><h2>Text_in_Text_einfügen</h2></summary>
+<ul>
+	<li>Parameter: <code>text</code>, <code>index</code>, <code>elm</code></li>
+	<li>Parameter Typen: <code>Text Referenz</code>, <code>Zahl</code>, <code>Text</code></li>
+	<li>Rückgabe Typ: <code>nichts</code></li>
+</ul>
+
+<h3>Aliase</h3>
+<ol>
+	<li><code>&#34;Setze &lt;elm&gt; an die Stelle &lt;index&gt; von &lt;text&gt;&#34;</code></li>
+</ol>
+
+<h3>Implementation</h3>
+<pre class="language-ddp" tabindex="0">
+<code class="language-ddp">
+Speichere text von 1 bis (index minus 1) verkettet mit elm verkettet mit text von index bis (die Länge von text) in text.
+
+</code>
+</pre>
+</details>
+
+<details>
+<summary><h2>Ist_Zahl</h2></summary>
+<ul>
+<pre>
+ob ein Text in eine Zahl umgewandelt werden kann
+</pre>
+	<li>Parameter: <code>t</code></li>
+	<li>Parameter Typ: <code>Text</code></li>
 	<li>Rückgabe Typ: <code>Boolean</code></li>
 </ul>
 
 <h3>Aliase</h3>
 <ol>
-	<li><code>&#34;&lt;text&gt; &lt;suchText&gt; enthält&#34;</code></li>
+	<li><code>&#34;&lt;t&gt; eine Zahl ist&#34;</code></li>
 </ol>
 
 <h3>Implementation</h3>
 <pre class="language-ddp" tabindex="0">
 <code class="language-ddp">
-Die Zahl startIndex ist 0.
-Die Zahl endIndex ist die Länge von suchText.
+Die Zahl l ist die Länge von t.
+Wenn l kleiner als 1 ist, gib falsch zurück.
 
-Solange endIndex kleiner als, oder die Länge von text ist, mache:
-	Der Text subtext ist text von startIndex bis endIndex.
-
-	Wenn subtext gleich suchText ist, gib wahr zurück.
-	
-	Speichere startIndex plus die Länge von suchText in endIndex.
-	Erhöhe startIndex um 1.
-Gib falsch zurück.
-
-</code>
-</pre>
-</details>
-
-<details>
-<summary><h2>TrimAnfang</h2></summary>
-<ul>
-	<li>Parameter: <code>text</code>, <code>zeichen</code></li>
-	<li>Parameter Typen: <code>Text Referenz</code>, <code>Buchstabe</code></li>
-	<li>Rückgabe Typ: <code>nichts</code></li>
-</ul>
-
-<h3>Aliase</h3>
-<ol>
-	<li><code>&#34;Entferne alle &lt;zeichen&gt; vor &lt;text&gt;&#34;</code></li>
-</ol>
-
-<h3>Implementation</h3>
-<pre class="language-ddp" tabindex="0">
-<code class="language-ddp">
-Wenn die Länge von text gleich 0 ist, verlasse die Funktion.
-Die Zahl index ist 1.
-Solange (text an der Stelle index) gleich zeichen ist, erhöhe index um 1.
-Speichere text von index bis (die Länge von text) in text.
-
-</code>
-</pre>
-</details>
-
-<details>
-<summary><h2>TrimAnfangWert</h2></summary>
-<ul>
-	<li>Parameter: <code>text</code>, <code>zeichen</code></li>
-	<li>Parameter Typen: <code>Text</code>, <code>Buchstabe</code></li>
-	<li>Rückgabe Typ: <code>Text</code></li>
-</ul>
-
-<h3>Aliase</h3>
-<ol>
-	<li><code>&#34;&lt;text&gt; mit allen &lt;zeichen&gt; davor entfernt&#34;</code></li>
-</ol>
-
-<h3>Implementation</h3>
-<pre class="language-ddp" tabindex="0">
-<code class="language-ddp">
-Entferne alle zeichen vor text.
-Gib text zurück.
-
-</code>
-</pre>
-</details>
-
-<details>
-<summary><h2>Trim</h2></summary>
-<ul>
-	<li>Parameter: <code>text</code>, <code>zeichen</code></li>
-	<li>Parameter Typen: <code>Text Referenz</code>, <code>Buchstabe</code></li>
-	<li>Rückgabe Typ: <code>nichts</code></li>
-</ul>
-
-<h3>Aliase</h3>
-<ol>
-	<li><code>&#34;Entferne alle &lt;zeichen&gt; vor und nach &lt;text&gt;&#34;</code></li>
-</ol>
-
-<h3>Implementation</h3>
-<pre class="language-ddp" tabindex="0">
-<code class="language-ddp">
-Die Zahl startIndex ist 1.
-Die Zahl stopIndex ist die Länge von text.
-Solange (text an der Stelle startIndex) gleich zeichen ist, erhöhe startIndex um 1.
-Solange (text an der Stelle stopIndex) gleich zeichen ist, verringere stopIndex um 1.
-Speichere text von startIndex bis stopIndex in text.
-
-</code>
-</pre>
-</details>
-
-<details>
-<summary><h2>Text_leeren</h2></summary>
-<ul>
-	<li>Parameter: <code>text</code></li>
-	<li>Parameter Typ: <code>Text Referenz</code></li>
-	<li>Rückgabe Typ: <code>nichts</code></li>
-</ul>
-
-<h3>Aliase</h3>
-<ol>
-	<li><code>&#34;Leere &lt;text&gt;&#34;</code></li>
-</ol>
-
-<h3>Implementation</h3>
-<pre class="language-ddp" tabindex="0">
-<code class="language-ddp">
-Speichere "" in text.
+Der Buchstabe Vorzeichen ist t an der Stelle 1.
+Wenn Vorzeichen eine Zahl ist, gib wahr zurück.
+Wenn Vorzeichen ungleich '+' ist und Vorzeichen ungleich '-' ist, gib falsch zurück.
+Wenn l kleiner als 2 ist oder nicht (t an der Stelle 2) eine Zahl ist, gib falsch zurück.
+Gib wahr zurück.
 
 </code>
 </pre>
@@ -779,7 +316,480 @@ Speichere text von 1 bis (index minus 1) verkettet mit elm verkettet mit text vo
 <h3>Implementation</h3>
 <pre class="language-ddp" tabindex="0">
 <code class="language-ddp">
-Speichere text von 1 bis (index minus 1) verkettet mit text von (index plus 1) bis (die Länge von text) in text.
+Wenn die Länge von text gleich 0 ist, verlasse die Funktion.
+
+Wenn index gleich 1 ist und die Länge von text größer als 1 ist, dann:
+	Speichere "" in text.
+Wenn aber index gleich 1 ist, dann:
+	Speichere text von 2 bis (die Länge von text) in text.
+Wenn aber index gleich die Länge von text ist, dann:
+	Speichere text von 1 bis (die Länge von text minus 1) in text.
+Sonst:
+	Speichere text von 1 bis (index minus 1) verkettet mit text von (index plus 1) bis (die Länge von text) in text.
+
+</code>
+</pre>
+</details>
+
+<details>
+<summary><h2>PolsterLinks</h2></summary>
+<ul>
+	<li>Parameter: <code>text</code>, <code>zeichen</code>, <code>endlänge</code></li>
+	<li>Parameter Typen: <code>Text</code>, <code>Buchstabe</code>, <code>Zahl</code></li>
+	<li>Rückgabe Typ: <code>Text</code></li>
+</ul>
+
+<h3>Aliase</h3>
+<ol>
+	<li><code>&#34;&lt;text&gt; mit &lt;endlänge&gt; &lt;zeichen&gt; links gepolstert&#34;</code></li>
+</ol>
+
+<h3>Implementation</h3>
+<pre class="language-ddp" tabindex="0">
+<code class="language-ddp">
+Die Zahl länge ist die Länge von text.
+Die Zahl gesuchteLänge ist endlänge minus länge.
+Wenn gesuchteLänge kleiner als, oder 0 ist, dann:
+	Gib text zurück.
+
+Wiederhole:
+	Stelle zeichen vor text.
+gesuchteLänge Mal.
+
+Gib text zurück.
+
+</code>
+</pre>
+</details>
+
+<details>
+<summary><h2>TrimAnfang</h2></summary>
+<ul>
+	<li>Parameter: <code>text</code>, <code>zeichen</code></li>
+	<li>Parameter Typen: <code>Text Referenz</code>, <code>Buchstabe</code></li>
+	<li>Rückgabe Typ: <code>nichts</code></li>
+</ul>
+
+<h3>Aliase</h3>
+<ol>
+	<li><code>&#34;Entferne alle &lt;zeichen&gt; vor &lt;text&gt;&#34;</code></li>
+</ol>
+
+<h3>Implementation</h3>
+<pre class="language-ddp" tabindex="0">
+<code class="language-ddp">
+Wenn die Länge von text gleich 0 ist, verlasse die Funktion.
+Die Zahl index ist 1.
+Solange (text an der Stelle index) gleich zeichen ist, erhöhe index um 1.
+Speichere text von index bis (die Länge von text) in text.
+
+</code>
+</pre>
+</details>
+
+<details>
+<summary><h2>TrimEndeWert</h2></summary>
+<ul>
+	<li>Parameter: <code>text</code>, <code>zeichen</code></li>
+	<li>Parameter Typen: <code>Text</code>, <code>Buchstabe</code></li>
+	<li>Rückgabe Typ: <code>Text</code></li>
+</ul>
+
+<h3>Aliase</h3>
+<ol>
+	<li><code>&#34;&lt;text&gt; mit allen &lt;zeichen&gt; danach entfernt&#34;</code></li>
+</ol>
+
+<h3>Implementation</h3>
+<pre class="language-ddp" tabindex="0">
+<code class="language-ddp">
+Entferne alle zeichen nach text.
+Gib text zurück.
+
+</code>
+</pre>
+</details>
+
+<details>
+<summary><h2>EnthältText</h2></summary>
+<ul>
+	<li>Parameter: <code>text</code>, <code>suchText</code></li>
+	<li>Parameter Typen: <code>Text</code>, <code>Text</code></li>
+	<li>Rückgabe Typ: <code>Boolean</code></li>
+</ul>
+
+<h3>Aliase</h3>
+<ol>
+	<li><code>&#34;&lt;text&gt; &lt;suchText&gt; enthält&#34;</code></li>
+</ol>
+
+<h3>Implementation</h3>
+<pre class="language-ddp" tabindex="0">
+<code class="language-ddp">
+Die Zahl startIndex ist 0.
+Die Zahl endIndex ist die Länge von suchText.
+
+Solange endIndex kleiner als, oder die Länge von text ist, mache:
+	Der Text subtext ist text von startIndex bis endIndex.
+
+	Wenn subtext gleich suchText ist, gib wahr zurück.
+	
+	Speichere startIndex plus die Länge von suchText in endIndex.
+	Erhöhe startIndex um 1.
+Gib falsch zurück.
+
+</code>
+</pre>
+</details>
+
+<details>
+<summary><h2>EndetMitBuchstabe</h2></summary>
+<ul>
+	<li>Parameter: <code>text</code>, <code>buchstabe</code></li>
+	<li>Parameter Typen: <code>Text</code>, <code>Buchstabe</code></li>
+	<li>Rückgabe Typ: <code>Boolean</code></li>
+</ul>
+
+<h3>Aliase</h3>
+<ol>
+	<li><code>&#34;&lt;buchstabe&gt; am Ende von &lt;text&gt; steht&#34;</code></li>
+</ol>
+
+<h3>Implementation</h3>
+<pre class="language-ddp" tabindex="0">
+<code class="language-ddp">
+Wenn die Länge von text gleich 0 ist, gib falsch zurück.
+Gib (text an der Stelle (die Länge von text)) gleich buchstabe ist zurück.
+
+</code>
+</pre>
+</details>
+
+<details>
+<summary><h2>BeginntMitText</h2></summary>
+<ul>
+	<li>Parameter: <code>text</code>, <code>suchText</code></li>
+	<li>Parameter Typen: <code>Text</code>, <code>Text</code></li>
+	<li>Rückgabe Typ: <code>Boolean</code></li>
+</ul>
+
+<h3>Aliase</h3>
+<ol>
+	<li><code>&#34;&lt;suchText&gt; am Anfang von &lt;text&gt; steht&#34;</code></li>
+</ol>
+
+<h3>Implementation</h3>
+<pre class="language-ddp" tabindex="0">
+<code class="language-ddp">
+Gib (text von 1 bis (die Länge von suchText)) gleich suchText ist zurück.
+
+</code>
+</pre>
+</details>
+
+<details>
+<summary><h2>Fülle_Text</h2></summary>
+<ul>
+	<li>Parameter: <code>text</code>, <code>elm</code></li>
+	<li>Parameter Typen: <code>Text Referenz</code>, <code>Buchstabe</code></li>
+	<li>Rückgabe Typ: <code>nichts</code></li>
+</ul>
+
+<h3>Aliase</h3>
+<ol>
+	<li><code>&#34;Fülle &lt;text&gt; mit &lt;elm&gt;&#34;</code></li>
+</ol>
+
+<h3>Implementation</h3>
+<pre class="language-ddp" tabindex="0">
+<code class="language-ddp">
+Der Text neuerText ist "".
+Wiederhole:
+	Speichere neuerText verkettet mit elm in neuerText.
+Die Länge von text Mal.
+
+Speichere neuerText in text.
+
+</code>
+</pre>
+</details>
+
+<details>
+<summary><h2>TrimAnfangWert</h2></summary>
+<ul>
+	<li>Parameter: <code>text</code>, <code>zeichen</code></li>
+	<li>Parameter Typen: <code>Text</code>, <code>Buchstabe</code></li>
+	<li>Rückgabe Typ: <code>Text</code></li>
+</ul>
+
+<h3>Aliase</h3>
+<ol>
+	<li><code>&#34;&lt;text&gt; mit allen &lt;zeichen&gt; davor entfernt&#34;</code></li>
+</ol>
+
+<h3>Implementation</h3>
+<pre class="language-ddp" tabindex="0">
+<code class="language-ddp">
+Entferne alle zeichen vor text.
+Gib text zurück.
+
+</code>
+</pre>
+</details>
+
+<details>
+<summary><h2>TrimWert</h2></summary>
+<ul>
+	<li>Parameter: <code>text</code>, <code>zeichen</code></li>
+	<li>Parameter Typen: <code>Text</code>, <code>Buchstabe</code></li>
+	<li>Rückgabe Typ: <code>Text</code></li>
+</ul>
+
+<h3>Aliase</h3>
+<ol>
+	<li><code>&#34;&lt;text&gt; mit allen &lt;zeichen&gt; davor und danach entfernt&#34;</code></li>
+</ol>
+
+<h3>Implementation</h3>
+<pre class="language-ddp" tabindex="0">
+<code class="language-ddp">
+Entferne alle zeichen vor und nach text.
+Gib text zurück.
+
+</code>
+</pre>
+</details>
+
+<details>
+<summary><h2>KleinschreibenWert</h2></summary>
+<ul>
+	<li>Parameter: <code>text</code></li>
+	<li>Parameter Typ: <code>Text</code></li>
+	<li>Rückgabe Typ: <code>Text</code></li>
+</ul>
+
+<h3>Aliase</h3>
+<ol>
+	<li><code>&#34;&lt;text&gt; klein geschrieben&#34;</code></li>
+</ol>
+
+<h3>Implementation</h3>
+<pre class="language-ddp" tabindex="0">
+<code class="language-ddp">
+Der Text neuerText ist "".
+Für jeden Buchstaben b in text, mache:
+	Füge (b als kleiner Buchstabe) an neuerText an.
+Gib neuerText zurück.
+
+</code>
+</pre>
+</details>
+
+<details>
+<summary><h2>Trim</h2></summary>
+<ul>
+	<li>Parameter: <code>text</code>, <code>zeichen</code></li>
+	<li>Parameter Typen: <code>Text Referenz</code>, <code>Buchstabe</code></li>
+	<li>Rückgabe Typ: <code>nichts</code></li>
+</ul>
+
+<h3>Aliase</h3>
+<ol>
+	<li><code>&#34;Entferne alle &lt;zeichen&gt; vor und nach &lt;text&gt;&#34;</code></li>
+</ol>
+
+<h3>Implementation</h3>
+<pre class="language-ddp" tabindex="0">
+<code class="language-ddp">
+Die Zahl startIndex ist 1.
+Die Zahl stopIndex ist die Länge von text.
+Solange (text an der Stelle startIndex) gleich zeichen ist, erhöhe startIndex um 1.
+Solange (text an der Stelle stopIndex) gleich zeichen ist, verringere stopIndex um 1.
+Speichere text von startIndex bis stopIndex in text.
+
+</code>
+</pre>
+</details>
+
+<details>
+<summary><h2>BeginntMitBuchstabe</h2></summary>
+<ul>
+	<li>Parameter: <code>text</code>, <code>buchstabe</code></li>
+	<li>Parameter Typen: <code>Text</code>, <code>Buchstabe</code></li>
+	<li>Rückgabe Typ: <code>Boolean</code></li>
+</ul>
+
+<h3>Aliase</h3>
+<ol>
+	<li><code>&#34;&lt;buchstabe&gt; am Anfang von &lt;text&gt; steht&#34;</code></li>
+</ol>
+
+<h3>Implementation</h3>
+<pre class="language-ddp" tabindex="0">
+<code class="language-ddp">
+Wenn die Länge von text gleich 0 ist, gib falsch zurück.
+Gib (text an der Stelle 1) gleich buchstabe ist zurück.
+
+</code>
+</pre>
+</details>
+
+<details>
+<summary><h2>Lösche_Text_Bereich</h2></summary>
+<ul>
+	<li>Parameter: <code>text</code>, <code>start</code>, <code>end</code></li>
+	<li>Parameter Typen: <code>Text Referenz</code>, <code>Zahl</code>, <code>Zahl</code></li>
+	<li>Rückgabe Typ: <code>nichts</code></li>
+</ul>
+
+<h3>Aliase</h3>
+<ol>
+	<li><code>&#34;Lösche alle Elemente von &lt;start&gt; bis &lt;end&gt; aus &lt;text&gt;&#34;</code></li>
+</ol>
+
+<h3>Implementation</h3>
+<pre class="language-ddp" tabindex="0">
+<code class="language-ddp">
+Wenn start gleich 1 ist, dann:
+	Speichere text von end plus 1 bis (die Länge von text) in text.
+Sonst:
+	Speichere text von 1 bis (start minus 1) verkettet mit text von (end plus 1) bis (die Länge von text) in text.
+
+</code>
+</pre>
+</details>
+
+<details>
+<summary><h2>GroßschreibenWert</h2></summary>
+<ul>
+	<li>Parameter: <code>text</code></li>
+	<li>Parameter Typ: <code>Text</code></li>
+	<li>Rückgabe Typ: <code>Text</code></li>
+</ul>
+
+<h3>Aliase</h3>
+<ol>
+	<li><code>&#34;&lt;text&gt; groß geschrieben&#34;</code></li>
+</ol>
+
+<h3>Implementation</h3>
+<pre class="language-ddp" tabindex="0">
+<code class="language-ddp">
+Der Text neuerText ist "".
+Für jeden Buchstaben b in text, mache:
+	Füge (b als großer Buchstabe) an neuerText an.
+Gib neuerText zurück.
+
+</code>
+</pre>
+</details>
+
+<details>
+<summary><h2>Buchstabe_vor_Text_stellen</h2></summary>
+<ul>
+	<li>Parameter: <code>text</code>, <code>elm</code></li>
+	<li>Parameter Typen: <code>Text Referenz</code>, <code>Buchstabe</code></li>
+	<li>Rückgabe Typ: <code>nichts</code></li>
+</ul>
+
+<h3>Aliase</h3>
+<ol>
+	<li><code>&#34;Stelle &lt;elm&gt; vor &lt;text&gt;&#34;</code></li>
+</ol>
+
+<h3>Implementation</h3>
+<pre class="language-ddp" tabindex="0">
+<code class="language-ddp">
+Speichere elm verkettet mit text in text.
+
+</code>
+</pre>
+</details>
+
+<details>
+<summary><h2>EnthältBuchstabe</h2></summary>
+<ul>
+	<li>Parameter: <code>text</code>, <code>zeichen</code></li>
+	<li>Parameter Typen: <code>Text</code>, <code>Buchstabe</code></li>
+	<li>Rückgabe Typ: <code>Boolean</code></li>
+</ul>
+
+<h3>Aliase</h3>
+<ol>
+	<li><code>&#34;&lt;text&gt; &lt;zeichen&gt; enthält&#34;</code></li>
+</ol>
+
+<h3>Implementation</h3>
+<pre class="language-ddp" tabindex="0">
+<code class="language-ddp">
+Für jeden Buchstaben b in text, wenn b gleich zeichen ist, gib wahr zurück.
+Gib falsch zurück.
+
+</code>
+</pre>
+</details>
+
+<details>
+<summary><h2>EndetMitText</h2></summary>
+<ul>
+	<li>Parameter: <code>text</code>, <code>suchText</code></li>
+	<li>Parameter Typen: <code>Text</code>, <code>Text</code></li>
+	<li>Rückgabe Typ: <code>Boolean</code></li>
+</ul>
+
+<h3>Aliase</h3>
+<ol>
+	<li><code>&#34;&lt;suchText&gt; am Ende von &lt;text&gt; steht&#34;</code></li>
+</ol>
+
+<h3>Implementation</h3>
+<pre class="language-ddp" tabindex="0">
+<code class="language-ddp">
+Gib (text von die Länge von text minus die Länge von suchText plus 1 bis (die Länge von text)) gleich suchText ist zurück.
+
+</code>
+</pre>
+</details>
+
+<details>
+<summary><h2>Text_leeren</h2></summary>
+<ul>
+	<li>Parameter: <code>text</code></li>
+	<li>Parameter Typ: <code>Text Referenz</code></li>
+	<li>Rückgabe Typ: <code>nichts</code></li>
+</ul>
+
+<h3>Aliase</h3>
+<ol>
+	<li><code>&#34;Leere &lt;text&gt;&#34;</code></li>
+</ol>
+
+<h3>Implementation</h3>
+<pre class="language-ddp" tabindex="0">
+<code class="language-ddp">
+Speichere "" in text.
+
+</code>
+</pre>
+</details>
+
+<details>
+<summary><h2>Text_vor_Text_stellen</h2></summary>
+<ul>
+	<li>Parameter: <code>text</code>, <code>elm</code></li>
+	<li>Parameter Typen: <code>Text Referenz</code>, <code>Text</code></li>
+	<li>Rückgabe Typ: <code>nichts</code></li>
+</ul>
+
+<h3>Aliase</h3>
+<ol>
+	<li><code>&#34;Stelle &lt;elm&gt; vor &lt;text&gt;&#34;</code></li>
+</ol>
+
+<h3>Implementation</h3>
+<pre class="language-ddp" tabindex="0">
+<code class="language-ddp">
+Speichere elm verkettet mit text in text.
 
 </code>
 </pre>

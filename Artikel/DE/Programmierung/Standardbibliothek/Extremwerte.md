@@ -1,5 +1,29 @@
 # Duden/Extremwerte Funktionen
 <details>
+<summary><h2>MinZahl</h2></summary>
+<ul>
+<pre>
+Gibt -9223372036854775807 zurück.
+</pre>
+</li>
+	<li>Rückgabe Typ: <code>Zahl</code></li>
+</ul>
+
+<h3>Aliase</h3>
+<ol>
+	<li><code>&#34;der minimale Wert einer Zahl&#34;</code></li>
+</ol>
+
+<h3>Implementation</h3>
+<pre class="language-ddp" tabindex="0">
+<code class="language-ddp">
+Gib -9223372036854775807 zurück.
+
+</code>
+</pre>
+</details>
+
+<details>
 <summary><h2>MaxZahl</h2></summary>
 <ul>
 <pre>
@@ -116,30 +140,6 @@ Gibt NaN (0 durch 0) zurück.
 <pre class="language-ddp" tabindex="0">
 <code class="language-ddp">
 Gib 0,0 durch 0,0 zurück.
-
-</code>
-</pre>
-</details>
-
-<details>
-<summary><h2>MinZahl</h2></summary>
-<ul>
-<pre>
-Gibt -9223372036854775807 zurück.
-</pre>
-</li>
-	<li>Rückgabe Typ: <code>Zahl</code></li>
-</ul>
-
-<h3>Aliase</h3>
-<ol>
-	<li><code>&#34;der minimale Wert einer Zahl&#34;</code></li>
-</ol>
-
-<h3>Implementation</h3>
-<pre class="language-ddp" tabindex="0">
-<code class="language-ddp">
-Gib -9223372036854775807 zurück.
 
 </code>
 </pre>
