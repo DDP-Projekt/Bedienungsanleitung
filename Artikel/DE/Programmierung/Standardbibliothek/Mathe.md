@@ -1,178 +1,20 @@
 # Duden/Mathe Funktionen
 <details>
-<summary><h2>min</h2></summary>
+<summary><h2>PI</h2></summary>
 <ul>
-	<li>Parameter: <code>a</code>, <code>b</code></li>
-	<li>Parameter Typen: <code>Zahl</code>, <code>Zahl</code></li>
-	<li>Rückgabe Typ: <code>Zahl</code></li>
-</ul>
-
-<h3>Aliase</h3>
-<ol>
-	<li><code>&#34;die kleinere Zahl von &lt;a&gt; und &lt;b&gt;&#34;</code></li>
-</ol>
-
-<h3>Implementation</h3>
-<pre class="language-ddp" tabindex="0">
-<code class="language-ddp">
-Wenn a kleiner als, oder b ist, gib a zurück.
-Gib b zurück.
-
-</code>
-</pre>
-</details>
-
-<details>
-<summary><h2>clamp</h2></summary>
-<ul>
-	<li>Parameter: <code>wert</code>, <code>max</code>, <code>min</code></li>
-	<li>Parameter Typen: <code>Zahl</code>, <code>Zahl</code>, <code>Zahl</code></li>
-	<li>Rückgabe Typ: <code>Zahl</code></li>
-</ul>
-
-<h3>Aliase</h3>
-<ol>
-	<li><code>&#34;&lt;wert&gt; zwischen &lt;min&gt; und &lt;max&gt;&#34;</code></li>
-</ol>
-
-<h3>Implementation</h3>
-<pre class="language-ddp" tabindex="0">
-<code class="language-ddp">
-Wenn wert größer als max ist, gib max zurück.
-Wenn wert kleiner als min ist, gib min zurück.
-Gib wert zurück.
-
-</code>
-</pre>
-</details>
-
-<details>
-<summary><h2>ceil</h2></summary>
-<ul>
-	<li>Parameter: <code>wert</code></li>
-	<li>Parameter Typ: <code>Kommazahl</code></li>
+</li>
 	<li>Rückgabe Typ: <code>Kommazahl</code></li>
 </ul>
 
 <h3>Aliase</h3>
 <ol>
-	<li><code>&#34;&lt;wert&gt; nach oben gerundet&#34;</code></li>
+	<li><code>&#34;PI&#34;</code></li>
 </ol>
 
 <h3>Implementation</h3>
 <pre class="language-ddp" tabindex="0">
 <code class="language-ddp">
-Gib wert plus (1 minus (wert minus wert als Zahl)) zurück.
-
-</code>
-</pre>
-</details>
-
-<details>
-<summary><h2>atan</h2></summary>
-<ul>
-	<li>Parameter: <code>v</code></li>
-	<li>Parameter Typ: <code>Kommazahl</code></li>
-	<li>Rückgabe Typ: <code>Kommazahl</code></li>
-</ul>
-
-<h3>Aliase</h3>
-<ol>
-	<li><code>&#34;der Arkustangens von &lt;v&gt;&#34;</code></li>
-	<li><code>&#34;den Arkustangens von &lt;v&gt;&#34;</code></li>
-</ol>
-
-<h3>Implementation</h3>
-Implementiert in <code>"libddpstdlib.a"</code>
-</details>
-
-<details>
-<summary><h2>cosh</h2></summary>
-<ul>
-	<li>Parameter: <code>v</code></li>
-	<li>Parameter Typ: <code>Kommazahl</code></li>
-	<li>Rückgabe Typ: <code>Kommazahl</code></li>
-</ul>
-
-<h3>Aliase</h3>
-<ol>
-	<li><code>&#34;der Hyperbelkosinus von &lt;v&gt;&#34;</code></li>
-	<li><code>&#34;den Hyperbelkosinus von &lt;v&gt;&#34;</code></li>
-</ol>
-
-<h3>Implementation</h3>
-Implementiert in <code>"libddpstdlib.a"</code>
-</details>
-
-<details>
-<summary><h2>groesster_gemeinsamer_Teiler</h2></summary>
-<ul>
-<pre>
-Eine Funktion, die den größten gemeinsamen Teiler zweier Zahlen, <a> und <b>, als Zahl zurück gibt.
-Zeitkomplexität: O(n)
-</pre>
-	<li>Parameter: <code>a</code>, <code>b</code></li>
-	<li>Parameter Typen: <code>Zahl</code>, <code>Zahl</code></li>
-	<li>Rückgabe Typ: <code>Zahl</code></li>
-</ul>
-
-<h3>Aliase</h3>
-<ol>
-	<li><code>&#34;der größte gemeinsame Teiler von &lt;a&gt; und &lt;b&gt;&#34;</code></li>
-</ol>
-
-<h3>Implementation</h3>
-<pre class="language-ddp" tabindex="0">
-<code class="language-ddp">
-Die Zahl t ist 0.
-Solange b ungleich 0 ist, mache:
-	Speichere b in t.
-	Speichere (a modulo t) in b.
-	Speichere t in a.
-Gib a zurück.
-
-</code>
-</pre>
-</details>
-
-<details>
-<summary><h2>Primfaktorzerlegung</h2></summary>
-<ul>
-<pre>
-Eine Funktion, die eine Zahlen Liste von allen Primfaktoren der Zahl <z> gibt.  
-Zeitkomplexität: O(sqrt(n))
-</pre>
-	<li>Parameter: <code>z</code></li>
-	<li>Parameter Typ: <code>Zahl</code></li>
-	<li>Rückgabe Typ: <code>Zahlen Liste</code></li>
-</ul>
-
-<h3>Aliase</h3>
-<ol>
-	<li><code>&#34;die Primfaktoren von &lt;z&gt;&#34;</code></li>
-	<li><code>&#34;alle Primfaktoren von &lt;z&gt;&#34;</code></li>
-</ol>
-
-<h3>Implementation</h3>
-<pre class="language-ddp" tabindex="0">
-<code class="language-ddp">
-Die Zahlen Liste faktoren ist eine leere Zahlen Liste.
-
-Solange z durch 2 teilbar ist, mache:
-	Speichere faktoren verkettet mit 2 in faktoren.
-	Speichere (z durch 2) als Zahl in z.
-
-Die Zahl i ist 3.
-Solange i kleiner als, oder die 2. Wurzel von z als Zahl ist, mache:
-	Solange z durch i teilbar ist, mache:
-		Speichere faktoren verkettet mit i in faktoren.
-		Speichere (z durch i) als Zahl in z.
-	Erhöhe i um 2.
-
-Wenn z größer als 2 ist, dann:
-	Speichere faktoren verkettet mit z in faktoren.
-
-Gib faktoren zurück.
+Gib 3,141592654 zurück.
 
 </code>
 </pre>
@@ -200,175 +42,7 @@ Gib 2,718281828 zurück.
 </details>
 
 <details>
-<summary><h2>acos</h2></summary>
-<ul>
-	<li>Parameter: <code>v</code></li>
-	<li>Parameter Typ: <code>Kommazahl</code></li>
-	<li>Rückgabe Typ: <code>Kommazahl</code></li>
-</ul>
-
-<h3>Aliase</h3>
-<ol>
-	<li><code>&#34;der Arkuskosinus von &lt;v&gt;&#34;</code></li>
-	<li><code>&#34;den Arkuskosinus von &lt;v&gt;&#34;</code></li>
-</ol>
-
-<h3>Implementation</h3>
-Implementiert in <code>"libddpstdlib.a"</code>
-</details>
-
-<details>
-<summary><h2>ist_teilbar</h2></summary>
-<ul>
-	<li>Parameter: <code>dividend</code>, <code>divisor</code></li>
-	<li>Parameter Typen: <code>Zahl</code>, <code>Zahl</code></li>
-	<li>Rückgabe Typ: <code>Boolean</code></li>
-</ul>
-
-<h3>Aliase</h3>
-<ol>
-	<li><code>&#34;&lt;dividend&gt; durch &lt;divisor&gt; teilbar ist&#34;</code></li>
-</ol>
-
-<h3>Implementation</h3>
-<pre class="language-ddp" tabindex="0">
-<code class="language-ddp">
-Gib dividend modulo divisor gleich 0 ist zurück.
-
-</code>
-</pre>
-</details>
-
-<details>
-<summary><h2>floor</h2></summary>
-<ul>
-	<li>Parameter: <code>wert</code></li>
-	<li>Parameter Typ: <code>Kommazahl</code></li>
-	<li>Rückgabe Typ: <code>Kommazahl</code></li>
-</ul>
-
-<h3>Aliase</h3>
-<ol>
-	<li><code>&#34;&lt;wert&gt; nach unten gerundet&#34;</code></li>
-</ol>
-
-<h3>Implementation</h3>
-<pre class="language-ddp" tabindex="0">
-<code class="language-ddp">
-Gib wert minus (wert minus wert als Zahl) zurück.
-
-</code>
-</pre>
-</details>
-
-<details>
-<summary><h2>sin</h2></summary>
-<ul>
-<pre>
-Trigonometrische Funktionen
-</pre>
-	<li>Parameter: <code>v</code></li>
-	<li>Parameter Typ: <code>Kommazahl</code></li>
-	<li>Rückgabe Typ: <code>Kommazahl</code></li>
-</ul>
-
-<h3>Aliase</h3>
-<ol>
-	<li><code>&#34;der Sinus von &lt;v&gt;&#34;</code></li>
-	<li><code>&#34;den Sinus von &lt;v&gt;&#34;</code></li>
-</ol>
-
-<h3>Implementation</h3>
-Implementiert in <code>"libddpstdlib.a"</code>
-</details>
-
-<details>
-<summary><h2>cos</h2></summary>
-<ul>
-	<li>Parameter: <code>v</code></li>
-	<li>Parameter Typ: <code>Kommazahl</code></li>
-	<li>Rückgabe Typ: <code>Kommazahl</code></li>
-</ul>
-
-<h3>Aliase</h3>
-<ol>
-	<li><code>&#34;der Kosinus von &lt;v&gt;&#34;</code></li>
-	<li><code>&#34;den Kosinus von &lt;v&gt;&#34;</code></li>
-</ol>
-
-<h3>Implementation</h3>
-Implementiert in <code>"libddpstdlib.a"</code>
-</details>
-
-<details>
-<summary><h2>asin</h2></summary>
-<ul>
-	<li>Parameter: <code>v</code></li>
-	<li>Parameter Typ: <code>Kommazahl</code></li>
-	<li>Rückgabe Typ: <code>Kommazahl</code></li>
-</ul>
-
-<h3>Aliase</h3>
-<ol>
-	<li><code>&#34;der Arkussinus von &lt;v&gt;&#34;</code></li>
-	<li><code>&#34;den Arkussinus von &lt;v&gt;&#34;</code></li>
-</ol>
-
-<h3>Implementation</h3>
-Implementiert in <code>"libddpstdlib.a"</code>
-</details>
-
-<details>
-<summary><h2>sinh</h2></summary>
-<ul>
-	<li>Parameter: <code>v</code></li>
-	<li>Parameter Typ: <code>Kommazahl</code></li>
-	<li>Rückgabe Typ: <code>Kommazahl</code></li>
-</ul>
-
-<h3>Aliase</h3>
-<ol>
-	<li><code>&#34;der Hyperbelsinus von &lt;v&gt;&#34;</code></li>
-	<li><code>&#34;den Hyperbelsinus von &lt;v&gt;&#34;</code></li>
-</ol>
-
-<h3>Implementation</h3>
-Implementiert in <code>"libddpstdlib.a"</code>
-</details>
-
-<details>
-<summary><h2>Teilerzerlegung</h2></summary>
-<ul>
-<pre>
-Gibt eine Zahlen Liste von alle Zahlen, die durch <z> geteilt werden können.
-Zeitkomplexität: O(n)
-</pre>
-	<li>Parameter: <code>z</code></li>
-	<li>Parameter Typ: <code>Zahl</code></li>
-	<li>Rückgabe Typ: <code>Zahlen Liste</code></li>
-</ul>
-
-<h3>Aliase</h3>
-<ol>
-	<li><code>&#34;alle Teiler von &lt;z&gt;&#34;</code></li>
-</ol>
-
-<h3>Implementation</h3>
-<pre class="language-ddp" tabindex="0">
-<code class="language-ddp">
-Die Zahlen Liste teiler ist eine leere Zahlen Liste.
-
-Für jede Zahl i von z bis 1 mit Schrittgröße -1, mache:
-	Wenn z durch i teilbar ist, speichere teiler verkettet mit i in teiler.	
-
-Gib teiler zurück.
-
-</code>
-</pre>
-</details>
-
-<details>
-<summary><h2>PI</h2></summary>
+<summary><h2>TAU</h2></summary>
 <ul>
 </li>
 	<li>Rückgabe Typ: <code>Kommazahl</code></li>
@@ -376,13 +50,13 @@ Gib teiler zurück.
 
 <h3>Aliase</h3>
 <ol>
-	<li><code>&#34;PI&#34;</code></li>
+	<li><code>&#34;TAU&#34;</code></li>
 </ol>
 
 <h3>Implementation</h3>
 <pre class="language-ddp" tabindex="0">
 <code class="language-ddp">
-Gib 3,141592654 zurück.
+Gib 6,283185307 zurück.
 
 </code>
 </pre>
@@ -433,6 +107,53 @@ Gib b zurück.
 </details>
 
 <details>
+<summary><h2>min</h2></summary>
+<ul>
+	<li>Parameter: <code>a</code>, <code>b</code></li>
+	<li>Parameter Typen: <code>Zahl</code>, <code>Zahl</code></li>
+	<li>Rückgabe Typ: <code>Zahl</code></li>
+</ul>
+
+<h3>Aliase</h3>
+<ol>
+	<li><code>&#34;die kleinere Zahl von &lt;a&gt; und &lt;b&gt;&#34;</code></li>
+</ol>
+
+<h3>Implementation</h3>
+<pre class="language-ddp" tabindex="0">
+<code class="language-ddp">
+Wenn a kleiner als, oder b ist, gib a zurück.
+Gib b zurück.
+
+</code>
+</pre>
+</details>
+
+<details>
+<summary><h2>clamp</h2></summary>
+<ul>
+	<li>Parameter: <code>wert</code>, <code>max</code>, <code>min</code></li>
+	<li>Parameter Typen: <code>Zahl</code>, <code>Zahl</code>, <code>Zahl</code></li>
+	<li>Rückgabe Typ: <code>Zahl</code></li>
+</ul>
+
+<h3>Aliase</h3>
+<ol>
+	<li><code>&#34;&lt;wert&gt; zwischen &lt;min&gt; und &lt;max&gt;&#34;</code></li>
+</ol>
+
+<h3>Implementation</h3>
+<pre class="language-ddp" tabindex="0">
+<code class="language-ddp">
+Wenn wert größer als max ist, gib max zurück.
+Wenn wert kleiner als min ist, gib min zurück.
+Gib wert zurück.
+
+</code>
+</pre>
+</details>
+
+<details>
 <summary><h2>sign</h2></summary>
 <ul>
 	<li>Parameter: <code>wert</code></li>
@@ -451,6 +172,50 @@ Gib b zurück.
 Wenn wert kleiner als 0 ist, gib -1 zurück.
 Wenn aber wert größer als 0 ist, gib 1 zurück.
 Gib 0 zurück.
+
+</code>
+</pre>
+</details>
+
+<details>
+<summary><h2>floor</h2></summary>
+<ul>
+	<li>Parameter: <code>wert</code></li>
+	<li>Parameter Typ: <code>Kommazahl</code></li>
+	<li>Rückgabe Typ: <code>Kommazahl</code></li>
+</ul>
+
+<h3>Aliase</h3>
+<ol>
+	<li><code>&#34;&lt;wert&gt; nach unten gerundet&#34;</code></li>
+</ol>
+
+<h3>Implementation</h3>
+<pre class="language-ddp" tabindex="0">
+<code class="language-ddp">
+Gib wert minus (wert minus wert als Zahl) zurück.
+
+</code>
+</pre>
+</details>
+
+<details>
+<summary><h2>ceil</h2></summary>
+<ul>
+	<li>Parameter: <code>wert</code></li>
+	<li>Parameter Typ: <code>Kommazahl</code></li>
+	<li>Rückgabe Typ: <code>Kommazahl</code></li>
+</ul>
+
+<h3>Aliase</h3>
+<ol>
+	<li><code>&#34;&lt;wert&gt; nach oben gerundet&#34;</code></li>
+</ol>
+
+<h3>Implementation</h3>
+<pre class="language-ddp" tabindex="0">
+<code class="language-ddp">
+Gib wert plus (1 minus (wert minus wert als Zahl)) zurück.
 
 </code>
 </pre>
@@ -479,6 +244,45 @@ Gib (wert als Zahl) als Kommazahl zurück.
 </details>
 
 <details>
+<summary><h2>sin</h2></summary>
+<ul>
+<pre>
+Trigonometrische Funktionen
+</pre>
+	<li>Parameter: <code>v</code></li>
+	<li>Parameter Typ: <code>Kommazahl</code></li>
+	<li>Rückgabe Typ: <code>Kommazahl</code></li>
+</ul>
+
+<h3>Aliase</h3>
+<ol>
+	<li><code>&#34;der Sinus von &lt;v&gt;&#34;</code></li>
+	<li><code>&#34;den Sinus von &lt;v&gt;&#34;</code></li>
+</ol>
+
+<h3>Implementation</h3>
+Implementiert in <code>"libddpstdlib.a"</code>
+</details>
+
+<details>
+<summary><h2>cos</h2></summary>
+<ul>
+	<li>Parameter: <code>v</code></li>
+	<li>Parameter Typ: <code>Kommazahl</code></li>
+	<li>Rückgabe Typ: <code>Kommazahl</code></li>
+</ul>
+
+<h3>Aliase</h3>
+<ol>
+	<li><code>&#34;der Kosinus von &lt;v&gt;&#34;</code></li>
+	<li><code>&#34;den Kosinus von &lt;v&gt;&#34;</code></li>
+</ol>
+
+<h3>Implementation</h3>
+Implementiert in <code>"libddpstdlib.a"</code>
+</details>
+
+<details>
 <summary><h2>tan</h2></summary>
 <ul>
 	<li>Parameter: <code>v</code></li>
@@ -490,6 +294,96 @@ Gib (wert als Zahl) als Kommazahl zurück.
 <ol>
 	<li><code>&#34;der Tangens von &lt;v&gt;&#34;</code></li>
 	<li><code>&#34;den Tangens von &lt;v&gt;&#34;</code></li>
+</ol>
+
+<h3>Implementation</h3>
+Implementiert in <code>"libddpstdlib.a"</code>
+</details>
+
+<details>
+<summary><h2>asin</h2></summary>
+<ul>
+	<li>Parameter: <code>v</code></li>
+	<li>Parameter Typ: <code>Kommazahl</code></li>
+	<li>Rückgabe Typ: <code>Kommazahl</code></li>
+</ul>
+
+<h3>Aliase</h3>
+<ol>
+	<li><code>&#34;der Arkussinus von &lt;v&gt;&#34;</code></li>
+	<li><code>&#34;den Arkussinus von &lt;v&gt;&#34;</code></li>
+</ol>
+
+<h3>Implementation</h3>
+Implementiert in <code>"libddpstdlib.a"</code>
+</details>
+
+<details>
+<summary><h2>acos</h2></summary>
+<ul>
+	<li>Parameter: <code>v</code></li>
+	<li>Parameter Typ: <code>Kommazahl</code></li>
+	<li>Rückgabe Typ: <code>Kommazahl</code></li>
+</ul>
+
+<h3>Aliase</h3>
+<ol>
+	<li><code>&#34;der Arkuskosinus von &lt;v&gt;&#34;</code></li>
+	<li><code>&#34;den Arkuskosinus von &lt;v&gt;&#34;</code></li>
+</ol>
+
+<h3>Implementation</h3>
+Implementiert in <code>"libddpstdlib.a"</code>
+</details>
+
+<details>
+<summary><h2>atan</h2></summary>
+<ul>
+	<li>Parameter: <code>v</code></li>
+	<li>Parameter Typ: <code>Kommazahl</code></li>
+	<li>Rückgabe Typ: <code>Kommazahl</code></li>
+</ul>
+
+<h3>Aliase</h3>
+<ol>
+	<li><code>&#34;der Arkustangens von &lt;v&gt;&#34;</code></li>
+	<li><code>&#34;den Arkustangens von &lt;v&gt;&#34;</code></li>
+</ol>
+
+<h3>Implementation</h3>
+Implementiert in <code>"libddpstdlib.a"</code>
+</details>
+
+<details>
+<summary><h2>sinh</h2></summary>
+<ul>
+	<li>Parameter: <code>v</code></li>
+	<li>Parameter Typ: <code>Kommazahl</code></li>
+	<li>Rückgabe Typ: <code>Kommazahl</code></li>
+</ul>
+
+<h3>Aliase</h3>
+<ol>
+	<li><code>&#34;der Hyperbelsinus von &lt;v&gt;&#34;</code></li>
+	<li><code>&#34;den Hyperbelsinus von &lt;v&gt;&#34;</code></li>
+</ol>
+
+<h3>Implementation</h3>
+Implementiert in <code>"libddpstdlib.a"</code>
+</details>
+
+<details>
+<summary><h2>cosh</h2></summary>
+<ul>
+	<li>Parameter: <code>v</code></li>
+	<li>Parameter Typ: <code>Kommazahl</code></li>
+	<li>Rückgabe Typ: <code>Kommazahl</code></li>
+</ul>
+
+<h3>Aliase</h3>
+<ol>
+	<li><code>&#34;der Hyperbelkosinus von &lt;v&gt;&#34;</code></li>
+	<li><code>&#34;den Hyperbelkosinus von &lt;v&gt;&#34;</code></li>
 </ol>
 
 <h3>Implementation</h3>
@@ -512,6 +406,37 @@ Implementiert in <code>"libddpstdlib.a"</code>
 
 <h3>Implementation</h3>
 Implementiert in <code>"libddpstdlib.a"</code>
+</details>
+
+<details>
+<summary><h2>groesster_gemeinsamer_Teiler</h2></summary>
+<ul>
+<pre>
+Eine Funktion, die den größten gemeinsamen Teiler zweier Zahlen, <a> und <b>, als Zahl zurück gibt.
+Zeitkomplexität: O(n)
+</pre>
+	<li>Parameter: <code>a</code>, <code>b</code></li>
+	<li>Parameter Typen: <code>Zahl</code>, <code>Zahl</code></li>
+	<li>Rückgabe Typ: <code>Zahl</code></li>
+</ul>
+
+<h3>Aliase</h3>
+<ol>
+	<li><code>&#34;der größte gemeinsame Teiler von &lt;a&gt; und &lt;b&gt;&#34;</code></li>
+</ol>
+
+<h3>Implementation</h3>
+<pre class="language-ddp" tabindex="0">
+<code class="language-ddp">
+Die Zahl t ist 0.
+Solange b ungleich 0 ist, mache:
+	Speichere b in t.
+	Speichere (a modulo t) in b.
+	Speichere t in a.
+Gib a zurück.
+
+</code>
+</pre>
 </details>
 
 <details>
@@ -541,21 +466,96 @@ Gib (der Betrag von (a mal b) durch (der größte gemeinsame Teiler von a und b)
 </details>
 
 <details>
-<summary><h2>TAU</h2></summary>
+<summary><h2>ist_teilbar</h2></summary>
 <ul>
-</li>
-	<li>Rückgabe Typ: <code>Kommazahl</code></li>
+	<li>Parameter: <code>dividend</code>, <code>divisor</code></li>
+	<li>Parameter Typen: <code>Zahl</code>, <code>Zahl</code></li>
+	<li>Rückgabe Typ: <code>Boolean</code></li>
 </ul>
 
 <h3>Aliase</h3>
 <ol>
-	<li><code>&#34;TAU&#34;</code></li>
+	<li><code>&#34;&lt;dividend&gt; durch &lt;divisor&gt; teilbar ist&#34;</code></li>
 </ol>
 
 <h3>Implementation</h3>
 <pre class="language-ddp" tabindex="0">
 <code class="language-ddp">
-Gib 6,283185307 zurück.
+Gib dividend modulo divisor gleich 0 ist zurück.
+
+</code>
+</pre>
+</details>
+
+<details>
+<summary><h2>Primfaktorzerlegung</h2></summary>
+<ul>
+<pre>
+Eine Funktion, die eine Zahlen Liste von allen Primfaktoren der Zahl <z> gibt.  
+Zeitkomplexität: O(sqrt(n))
+</pre>
+	<li>Parameter: <code>z</code></li>
+	<li>Parameter Typ: <code>Zahl</code></li>
+	<li>Rückgabe Typ: <code>Zahlen Liste</code></li>
+</ul>
+
+<h3>Aliase</h3>
+<ol>
+	<li><code>&#34;die Primfaktoren von &lt;z&gt;&#34;</code></li>
+	<li><code>&#34;alle Primfaktoren von &lt;z&gt;&#34;</code></li>
+</ol>
+
+<h3>Implementation</h3>
+<pre class="language-ddp" tabindex="0">
+<code class="language-ddp">
+Die Zahlen Liste faktoren ist eine leere Zahlen Liste.
+
+Solange z durch 2 teilbar ist, mache:
+	Speichere faktoren verkettet mit 2 in faktoren.
+	Speichere (z durch 2) als Zahl in z.
+
+Die Zahl i ist 3.
+Solange i kleiner als, oder die 2. Wurzel von z als Zahl ist, mache:
+	Solange z durch i teilbar ist, mache:
+		Speichere faktoren verkettet mit i in faktoren.
+		Speichere (z durch i) als Zahl in z.
+	Erhöhe i um 2.
+
+Wenn z größer als 2 ist, dann:
+	Speichere faktoren verkettet mit z in faktoren.
+
+Gib faktoren zurück.
+
+</code>
+</pre>
+</details>
+
+<details>
+<summary><h2>Teilerzerlegung</h2></summary>
+<ul>
+<pre>
+Gibt eine Zahlen Liste von alle Zahlen, die durch <z> geteilt werden können.
+Zeitkomplexität: O(n)
+</pre>
+	<li>Parameter: <code>z</code></li>
+	<li>Parameter Typ: <code>Zahl</code></li>
+	<li>Rückgabe Typ: <code>Zahlen Liste</code></li>
+</ul>
+
+<h3>Aliase</h3>
+<ol>
+	<li><code>&#34;alle Teiler von &lt;z&gt;&#34;</code></li>
+</ol>
+
+<h3>Implementation</h3>
+<pre class="language-ddp" tabindex="0">
+<code class="language-ddp">
+Die Zahlen Liste teiler ist eine leere Zahlen Liste.
+
+Für jede Zahl i von z bis 1 mit Schrittgröße -1, mache:
+	Wenn z durch i teilbar ist, speichere teiler verkettet mit i in teiler.	
+
+Gib teiler zurück.
 
 </code>
 </pre>

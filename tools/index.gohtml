@@ -2,7 +2,7 @@
 <html lang="de">
 
 <head>
-	
+	<!-- favicon -->
 	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
@@ -14,10 +14,10 @@
 	<link rel="stylesheet" href="style.css">
 	<script src="elements/todoElement.js"></script>
 	<script src="script.js"></script>
-	
+	<!-- for viewport size responsive webpage -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	
+	<!-- Load the element definition -->
 	<script type="module" src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@2/dist/zero-md.min.js"></script>
 
 	<style id="dark" media="all">
@@ -67,14 +67,14 @@
 </head>
 
 <body>
-	
+	<!-- Hamburger button to toggle sidebar -->
 	<a id="hamburger" onclick="toggleNav()" href="#">≡</a>
 	<nav id="seitenleiste">
 		<h2 id="überschrift">Inhaltsverzeichnis</h2>
-		
+		<!-- Sidebar links -->
 		<a href="index.html?p=Startseite">Die Deutsche Programmiersprache</a>
 		<ol id="artikel-links">
-			
+			<!-- href attributes get filled using javascript -->
 
 			<li><details id="d1">
 				<summary><a>Einstieg</a></summary>
@@ -105,21 +105,8 @@
 					<li><details id="d4">
 						<summary><a>Standardbibliothek</a></summary>
 						<ol>
-							<li><a>Ausgabe</a></li>
-							<li><a>Dateisystem</a></li>
-							<li><a>Eingabe</a></li>
-							<li><a>Extremwerte</a></li>
-							<li><a>Laufzeit</a></li>
-							<li><a>Listen</a></li>
-							<li><a>Mathe</a></li>
-							<li><a>Sortierung</a></li>
-							<li><a>Texte</a></li>
-							<li><a>Umgebungsvariablen</a></li>
-							<li><a>UnterProzess</a></li>
-							<li><a>Zeichen</a></li>
-							<li><a>Zeit</a></li>
-							<li><a>Zufall</a></li>
-							
+							{{range .StdlibModules}}<li><a>{{.}}</a></li>
+							{{end}}
 						</ol>
 					</details></li>
 				</ol>
@@ -144,7 +131,7 @@
 
 		</div>
 		<article id="artikel">
-			
+			<!-- src attribute gets filled using javascript -->
 			<zero-md id="md" src="Artikel/Startseite.md">
 				<template>
 					<link rel="stylesheet" href="md-style.css" />

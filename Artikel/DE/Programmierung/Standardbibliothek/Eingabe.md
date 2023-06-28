@@ -1,5 +1,78 @@
 # Duden/Eingabe Funktionen
 <details>
+<summary><h2>War_EOF</h2></summary>
+<ul>
+<pre>
+Gibt wahr zurück wenn ein EOF Zeichen gelesen wurde.
+</pre>
+</li>
+	<li>Rückgabe Typ: <code>Boolean</code></li>
+</ul>
+
+<h3>Aliase</h3>
+<ol>
+	<li><code>&#34;die Benutzereingabe zu Ende gewesen ist&#34;</code></li>
+</ol>
+
+<h3>Implementation</h3>
+<pre class="language-ddp" tabindex="0">
+<code class="language-ddp">
+Gib war_eof zurück.
+
+</code>
+</pre>
+</details>
+
+<details>
+<summary><h2>Ist_Nicht_EOF</h2></summary>
+<ul>
+<pre>
+Gibt wahr zurück wenn noch kein EOF Zeichen gelesen wurde.
+</pre>
+</li>
+	<li>Rückgabe Typ: <code>Boolean</code></li>
+</ul>
+
+<h3>Aliase</h3>
+<ol>
+	<li><code>&#34;die Benutzereingabe nicht vorbei ist&#34;</code></li>
+</ol>
+
+<h3>Implementation</h3>
+<pre class="language-ddp" tabindex="0">
+<code class="language-ddp">
+Gib nicht war_eof zurück.
+
+</code>
+</pre>
+</details>
+
+<details>
+<summary><h2>Benutzereingabe_Zuruecksetzten</h2></summary>
+<ul>
+<pre>
+Setzt die interne war_eof variable auf falsch.
+</pre>
+</li>
+	<li>Rückgabe Typ: <code>nichts</code></li>
+</ul>
+
+<h3>Aliase</h3>
+<ol>
+	<li><code>&#34;setzte die Benutzereingabe zurück&#34;</code></li>
+	<li><code>&#34;Setzte die Benutzereingabe zurück&#34;</code></li>
+</ol>
+
+<h3>Implementation</h3>
+<pre class="language-ddp" tabindex="0">
+<code class="language-ddp">
+war_eof ist falsch.
+
+</code>
+</pre>
+</details>
+
+<details>
 <summary><h2>Lies_Token_in_Puffer</h2></summary>
 <ul>
 <pre>
@@ -41,6 +114,41 @@ Gib token zurück.
 </details>
 
 <details>
+<summary><h2>Lies_Token_Gepuffert</h2></summary>
+<ul>
+<pre>
+Wenn Eingabe_Puffer eine Eingabe enthält
+wird diese zurückgegeben und Eingabe_Puffer geleert.
+Ansonsten wird die nächste Eingabe direkt zurückgegeben.
+</pre>
+</li>
+	<li>Rückgabe Typ: <code>Text</code></li>
+</ul>
+
+<h3>Aliase</h3>
+<ol>
+	<li><code>&#34;der nächste Text&#34;</code></li>
+	<li><code>&#34;den nächsten Text&#34;</code></li>
+	<li><code>&#34;der naechste Text&#34;</code></li>
+	<li><code>&#34;den naechsten Text&#34;</code></li>
+</ol>
+
+<h3>Implementation</h3>
+<pre class="language-ddp" tabindex="0">
+<code class="language-ddp">
+Wenn die Länge von Eingabe_Puffer größer als 0 ist, dann:
+	Der Text Rückgabe ist Eingabe_Puffer.
+	Eingabe_Puffer ist "".
+	Gib Rückgabe zurück.
+
+Wenn die Benutzereingabe nicht vorbei ist, gib die nächste Eingabe zurück.
+Gib "" zurück.
+
+</code>
+</pre>
+</details>
+
+<details>
 <summary><h2>Lies_Zahl_Gepuffert</h2></summary>
 <ul>
 <pre>
@@ -62,80 +170,6 @@ Vorher sollte Hat_Zahl überprüft werden.
 <pre class="language-ddp" tabindex="0">
 <code class="language-ddp">
 Gib den nächsten Text als Zahl zurück.
-
-</code>
-</pre>
-</details>
-
-<details>
-<summary><h2>Hat_Buchstabe</h2></summary>
-<ul>
-<pre>
-Gibt an ob ein Buchstabe (direkt oder aus dem Puffer)
-gelesen werden kann.
-</pre>
-</li>
-	<li>Rückgabe Typ: <code>Boolean</code></li>
-</ul>
-
-<h3>Aliase</h3>
-<ol>
-	<li><code>&#34;ein Buchstabe vorhanden ist&#34;</code></li>
-</ol>
-
-<h3>Implementation</h3>
-<pre class="language-ddp" tabindex="0">
-<code class="language-ddp">
-Gib nicht war_eof oder die Länge von Eingabe_Puffer ungleich 0 ist oder Gepufferter_Buchstabe als Zahl ungleich 0 ist zurück.
-
-</code>
-</pre>
-</details>
-
-<details>
-<summary><h2>War_EOF</h2></summary>
-<ul>
-<pre>
-Gibt wahr zurück wenn ein EOF Zeichen gelesen wurde.
-</pre>
-</li>
-	<li>Rückgabe Typ: <code>Boolean</code></li>
-</ul>
-
-<h3>Aliase</h3>
-<ol>
-	<li><code>&#34;die Benutzereingabe zu Ende gewesen ist&#34;</code></li>
-</ol>
-
-<h3>Implementation</h3>
-<pre class="language-ddp" tabindex="0">
-<code class="language-ddp">
-Gib war_eof zurück.
-
-</code>
-</pre>
-</details>
-
-<details>
-<summary><h2>Benutzereingabe_Zuruecksetzten</h2></summary>
-<ul>
-<pre>
-Setzt die interne war_eof variable auf falsch.
-</pre>
-</li>
-	<li>Rückgabe Typ: <code>nichts</code></li>
-</ul>
-
-<h3>Aliase</h3>
-<ol>
-	<li><code>&#34;setzte die Benutzereingabe zurück&#34;</code></li>
-	<li><code>&#34;Setzte die Benutzereingabe zurück&#34;</code></li>
-</ol>
-
-<h3>Implementation</h3>
-<pre class="language-ddp" tabindex="0">
-<code class="language-ddp">
-war_eof ist falsch.
 
 </code>
 </pre>
@@ -312,10 +346,11 @@ Gib eine Eingabe vorhanden ist und Eingabe_Puffer eine Zahl ist zurück.
 </details>
 
 <details>
-<summary><h2>Ist_Nicht_EOF</h2></summary>
+<summary><h2>Hat_Buchstabe</h2></summary>
 <ul>
 <pre>
-Gibt wahr zurück wenn noch kein EOF Zeichen gelesen wurde.
+Gibt an ob ein Buchstabe (direkt oder aus dem Puffer)
+gelesen werden kann.
 </pre>
 </li>
 	<li>Rückgabe Typ: <code>Boolean</code></li>
@@ -323,48 +358,13 @@ Gibt wahr zurück wenn noch kein EOF Zeichen gelesen wurde.
 
 <h3>Aliase</h3>
 <ol>
-	<li><code>&#34;die Benutzereingabe nicht vorbei ist&#34;</code></li>
+	<li><code>&#34;ein Buchstabe vorhanden ist&#34;</code></li>
 </ol>
 
 <h3>Implementation</h3>
 <pre class="language-ddp" tabindex="0">
 <code class="language-ddp">
-Gib nicht war_eof zurück.
-
-</code>
-</pre>
-</details>
-
-<details>
-<summary><h2>Lies_Token_Gepuffert</h2></summary>
-<ul>
-<pre>
-Wenn Eingabe_Puffer eine Eingabe enthält
-wird diese zurückgegeben und Eingabe_Puffer geleert.
-Ansonsten wird die nächste Eingabe direkt zurückgegeben.
-</pre>
-</li>
-	<li>Rückgabe Typ: <code>Text</code></li>
-</ul>
-
-<h3>Aliase</h3>
-<ol>
-	<li><code>&#34;der nächste Text&#34;</code></li>
-	<li><code>&#34;den nächsten Text&#34;</code></li>
-	<li><code>&#34;der naechste Text&#34;</code></li>
-	<li><code>&#34;den naechsten Text&#34;</code></li>
-</ol>
-
-<h3>Implementation</h3>
-<pre class="language-ddp" tabindex="0">
-<code class="language-ddp">
-Wenn die Länge von Eingabe_Puffer größer als 0 ist, dann:
-	Der Text Rückgabe ist Eingabe_Puffer.
-	Eingabe_Puffer ist "".
-	Gib Rückgabe zurück.
-
-Wenn die Benutzereingabe nicht vorbei ist, gib die nächste Eingabe zurück.
-Gib "" zurück.
+Gib nicht war_eof oder die Länge von Eingabe_Puffer ungleich 0 ist oder Gepufferter_Buchstabe als Zahl ungleich 0 ist zurück.
 
 </code>
 </pre>

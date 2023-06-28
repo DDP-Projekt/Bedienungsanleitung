@@ -1,9 +1,9 @@
 # Duden/Zeichen Funktionen
 <details>
-<summary><h2>IstKontroll</h2></summary>
+<summary><h2>IstLeer</h2></summary>
 <ul>
 <pre>
-Gibt wahr zurück wenn der Buchstabe b ein Kontrollzeichen (Code 0-31) ist.
+Gibt wahr zurück wenn der Buchstabe b ein Leerzeichen (' '), eine neue Zeile ('\n'), ein Tabulator ('\t') oder ein Wagenrücklauf ('\r') ist.
 </pre>
 	<li>Parameter: <code>b</code></li>
 	<li>Parameter Typ: <code>Buchstabe</code></li>
@@ -12,13 +12,69 @@ Gibt wahr zurück wenn der Buchstabe b ein Kontrollzeichen (Code 0-31) ist.
 
 <h3>Aliase</h3>
 <ol>
-	<li><code>&#34;&lt;b&gt; ein Kontrollzeichen ist&#34;</code></li>
+	<li><code>&#34;&lt;b&gt; ein leeres Zeichen ist&#34;</code></li>
 </ol>
 
 <h3>Implementation</h3>
 <pre class="language-ddp" tabindex="0">
 <code class="language-ddp">
-Gib b als Zahl größer als, oder 0 ist und b als Zahl kleiner als, oder 31 ist zurück.
+Gib b gleich ' ' ist oder b gleich '\n' ist oder b gleich '\t' ist oder b gleich '\r' ist zurück.
+
+</code>
+</pre>
+</details>
+
+<details>
+<summary><h2>IstGroß</h2></summary>
+<ul>
+	<li>Parameter: <code>b</code></li>
+	<li>Parameter Typ: <code>Buchstabe</code></li>
+	<li>Rückgabe Typ: <code>Boolean</code></li>
+</ul>
+
+<h3>Aliase</h3>
+<ol>
+	<li><code>&#34;&lt;b&gt; ein großer Buchstabe ist&#34;</code></li>
+</ol>
+
+<h3>Implementation</h3>
+<pre class="language-ddp" tabindex="0">
+<code class="language-ddp">
+Die Zahl z ist b als Zahl.
+Der Boolean erg ist 
+	(z größer als, oder 65 ist und z kleiner als, oder 90 ist) oder
+	(z größer als, oder 192 ist und z kleiner als, oder 214 ist) oder
+	(z größer als, oder 216 ist und z kleiner als, oder 222 ist).
+	[... es gibt noch viel mehr ...]
+Gib erg zurück.
+
+</code>
+</pre>
+</details>
+
+<details>
+<summary><h2>IstKlein</h2></summary>
+<ul>
+	<li>Parameter: <code>b</code></li>
+	<li>Parameter Typ: <code>Buchstabe</code></li>
+	<li>Rückgabe Typ: <code>Boolean</code></li>
+</ul>
+
+<h3>Aliase</h3>
+<ol>
+	<li><code>&#34;&lt;b&gt; ein kleiner Buchstabe ist&#34;</code></li>
+</ol>
+
+<h3>Implementation</h3>
+<pre class="language-ddp" tabindex="0">
+<code class="language-ddp">
+Die Zahl z ist b als Zahl.
+Der Boolean erg ist 
+	(z größer als, oder 96 ist und z kleiner als, oder 122 ist) oder
+	(z größer als, oder 223 ist und z kleiner als, oder 246 ist) oder
+	(z größer als, oder 248 ist und z kleiner als, oder 255 ist).
+	[... es gibt noch viel mehr ...]
+Gib erg zurück.
 
 </code>
 </pre>
@@ -75,8 +131,11 @@ Gib b als Zahl größer als, oder 48 ist und b als Zahl kleiner als, oder 57 ist
 </details>
 
 <details>
-<summary><h2>IstKlein</h2></summary>
+<summary><h2>IstKontroll</h2></summary>
 <ul>
+<pre>
+Gibt wahr zurück wenn der Buchstabe b ein Kontrollzeichen (Code 0-31) ist.
+</pre>
 	<li>Parameter: <code>b</code></li>
 	<li>Parameter Typ: <code>Buchstabe</code></li>
 	<li>Rückgabe Typ: <code>Boolean</code></li>
@@ -84,19 +143,13 @@ Gib b als Zahl größer als, oder 48 ist und b als Zahl kleiner als, oder 57 ist
 
 <h3>Aliase</h3>
 <ol>
-	<li><code>&#34;&lt;b&gt; ein kleiner Buchstabe ist&#34;</code></li>
+	<li><code>&#34;&lt;b&gt; ein Kontrollzeichen ist&#34;</code></li>
 </ol>
 
 <h3>Implementation</h3>
 <pre class="language-ddp" tabindex="0">
 <code class="language-ddp">
-Die Zahl z ist b als Zahl.
-Der Boolean erg ist 
-	(z größer als, oder 96 ist und z kleiner als, oder 122 ist) oder
-	(z größer als, oder 223 ist und z kleiner als, oder 246 ist) oder
-	(z größer als, oder 248 ist und z kleiner als, oder 255 ist).
-	[... es gibt noch viel mehr ...]
-Gib erg zurück.
+Gib b als Zahl größer als, oder 0 ist und b als Zahl kleiner als, oder 31 ist zurück.
 
 </code>
 </pre>
@@ -211,59 +264,6 @@ Wenn nicht b ein deutscher Buchstabe ist oder b ein kleiner Buchstabe ist, dann:
 	Gib b zurück.
 
 Gib (b als Zahl plus 32) als Buchstabe zurück.
-
-</code>
-</pre>
-</details>
-
-<details>
-<summary><h2>IstLeer</h2></summary>
-<ul>
-<pre>
-Gibt wahr zurück wenn der Buchstabe b ein Leerzeichen (' '), eine neue Zeile ('\n'), ein Tabulator ('\t') oder ein Wagenrücklauf ('\r') ist.
-</pre>
-	<li>Parameter: <code>b</code></li>
-	<li>Parameter Typ: <code>Buchstabe</code></li>
-	<li>Rückgabe Typ: <code>Boolean</code></li>
-</ul>
-
-<h3>Aliase</h3>
-<ol>
-	<li><code>&#34;&lt;b&gt; ein leeres Zeichen ist&#34;</code></li>
-</ol>
-
-<h3>Implementation</h3>
-<pre class="language-ddp" tabindex="0">
-<code class="language-ddp">
-Gib b gleich ' ' ist oder b gleich '\n' ist oder b gleich '\t' ist oder b gleich '\r' ist zurück.
-
-</code>
-</pre>
-</details>
-
-<details>
-<summary><h2>IstGroß</h2></summary>
-<ul>
-	<li>Parameter: <code>b</code></li>
-	<li>Parameter Typ: <code>Buchstabe</code></li>
-	<li>Rückgabe Typ: <code>Boolean</code></li>
-</ul>
-
-<h3>Aliase</h3>
-<ol>
-	<li><code>&#34;&lt;b&gt; ein großer Buchstabe ist&#34;</code></li>
-</ol>
-
-<h3>Implementation</h3>
-<pre class="language-ddp" tabindex="0">
-<code class="language-ddp">
-Die Zahl z ist b als Zahl.
-Der Boolean erg ist 
-	(z größer als, oder 65 ist und z kleiner als, oder 90 ist) oder
-	(z größer als, oder 192 ist und z kleiner als, oder 214 ist) oder
-	(z größer als, oder 216 ist und z kleiner als, oder 222 ist).
-	[... es gibt noch viel mehr ...]
-Gib erg zurück.
 
 </code>
 </pre>

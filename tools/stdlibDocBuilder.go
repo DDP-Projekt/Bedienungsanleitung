@@ -4,14 +4,27 @@ import (
 	"bytes"
 	"fmt"
 	"html"
+	"html/template"
 	"os"
 	"path/filepath"
+	"sort"
 	"strings"
 
 	"github.com/DDP-Projekt/Kompilierer/src/ast"
 	"github.com/DDP-Projekt/Kompilierer/src/ddperror"
 	"github.com/DDP-Projekt/Kompilierer/src/parser"
 )
+
+func clearDirectory(dir string) {
+	err := os.RemoveAll(dir)
+	if err != nil {
+		panic(err)
+	}
+	err = os.MkdirAll(dir, os.ModeDir)
+	if err != nil {
+		panic(err)
+	}
+}
 
 func main() {
 	fmt.Printf("Argument Count: %d\n", len(os.Args))
@@ -25,20 +38,28 @@ func main() {
 		inputDir := "../../Kompilierer/lib/stdlib/Duden/"
 		outputDir := "../Artikel/DE/Programmierung/Standardbibliothek/"
 
+		// delete old articles
+		clearDirectory(outputDir)
+
 		files, err := os.ReadDir(inputDir)
 		if err != nil {
 			panic(err)
 		}
+		fileNames := make([]string, 0, len(files))
 		for _, file := range files {
 			inputPath := filepath.Join(inputDir, file.Name())
 			outputPath := filepath.Join(outputDir, strings.Replace(file.Name(), "ddp", "md", 1))
 
 			MakeMdFiles(inputPath, outputPath)
+			fileNames = append(fileNames, strings.TrimSuffix(file.Name(), ".ddp"))
 		}
+		// correct the index
+		MakeIndexHtml(fileNames, "../index.html")
 
 	} else if len(os.Args) == 3 {
 		// Args[1]: Input, Args[2]: Output
 		MakeMdFiles(os.Args[1], os.Args[2])
+		MakeIndexHtml([]string{os.Args[1]}, "../index.html")
 	}
 }
 
@@ -73,14 +94,25 @@ func MakeMdFiles(inputFilePath, outputFilePath string) {
 
 	fmt.Println("writing md file...")
 
-	for name, decl := range module.PublicDecls {
+	// turn the map into a slice
+	publicDecls := make([]ast.Declaration, 0, len(module.PublicDecls))
+	for _, decl := range module.PublicDecls {
+		publicDecls = append(publicDecls, decl)
+	}
+
+	// sort the decls by order of appereance
+	sort.Slice(publicDecls, func(i, j int) bool {
+		return publicDecls[i].GetRange().Start.IsBefore(publicDecls[j].GetRange().Start)
+	})
+
+	for _, decl := range publicDecls {
 		switch decl := decl.(type) {
 		case *ast.FuncDecl:
 			hasFuncs = true
 
 			fmt.Fprintln(funcBldr, "<details>")
 			// Funktionsname
-			fmt.Fprintf(funcBldr, "<summary><h2>%s</h2></summary>\n", name)
+			fmt.Fprintf(funcBldr, "<summary><h2>%s</h2></summary>\n", decl.Name())
 
 			fmt.Fprintln(funcBldr, "<ul>")
 			// Kommentar/Beschreibung
@@ -145,7 +177,7 @@ func MakeMdFiles(inputFilePath, outputFilePath string) {
 		case *ast.VarDecl:
 			hasVars = true
 
-			fmt.Fprintf(varBldr, "## %s\n", name)
+			fmt.Fprintf(varBldr, "## %s\n", decl.Name())
 			fmt.Fprintf(varBldr, "* Typ: `%s`\n", decl.Type)
 			fmt.Fprintln(varBldr, "")
 		}
@@ -165,4 +197,21 @@ func MakeMdFiles(inputFilePath, outputFilePath string) {
 	}
 
 	fmt.Println("done writing md file.")
+}
+
+func MakeIndexHtml(dudenFiles []string, outPath string) {
+	tmpl := template.Must(template.ParseFiles("index.gohtml"))
+	file, err := os.OpenFile(outPath, os.O_CREATE|os.O_WRONLY|os.O_TRUNC, 0700)
+	if err != nil {
+		panic(err)
+	}
+	defer file.Close()
+	err = tmpl.Execute(file, struct {
+		StdlibModules []string
+	}{
+		StdlibModules: dudenFiles,
+	})
+	if err != nil {
+		panic(err)
+	}
 }
