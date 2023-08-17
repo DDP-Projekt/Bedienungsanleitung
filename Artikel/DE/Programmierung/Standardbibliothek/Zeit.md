@@ -39,7 +39,7 @@ Implementiert in <code>"libddpstdlib.a"</code>
 </details>
 
 <details>
-<summary><h2>Warten</h2></summary>
+<summary><h2>Warte</h2></summary>
 <ul>
 <pre>
 Pausiert das Programm für eine bestimmte Dauer in Sekunden.

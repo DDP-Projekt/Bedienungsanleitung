@@ -2,6 +2,10 @@
 <details>
 <summary><h2>PI</h2></summary>
 <ul>
+<pre>
+Gibt den Wert von der Kreiszahl "PI" (π) mit 15 Nachkommastellen zurück:
+3,141592653589793
+</pre>
 </li>
 	<li>Rückgabe Typ: <code>Kommazahl</code></li>
 </ul>
@@ -14,7 +18,7 @@
 <h3>Implementation</h3>
 <pre class="language-ddp" tabindex="0">
 <code class="language-ddp">
-Gib 3,141592654 zurück.
+Gib 3,141592653589793 zurück.
 
 </code>
 </pre>
@@ -23,6 +27,10 @@ Gib 3,141592654 zurück.
 <details>
 <summary><h2>E</h2></summary>
 <ul>
+<pre>
+Gibt den Wert der Eulerschen Zahl "E" mit 15 Nachkommastellen zurück:
+2,718281828459045
+</pre>
 </li>
 	<li>Rückgabe Typ: <code>Kommazahl</code></li>
 </ul>
@@ -35,7 +43,7 @@ Gib 3,141592654 zurück.
 <h3>Implementation</h3>
 <pre class="language-ddp" tabindex="0">
 <code class="language-ddp">
-Gib 2,718281828 zurück.
+Gib 2,718281828459045 zurück.
 
 </code>
 </pre>
@@ -44,6 +52,11 @@ Gib 2,718281828 zurück.
 <details>
 <summary><h2>TAU</h2></summary>
 <ul>
+<pre>
+Gibt den Wert der alternativen Kreiszahl "TAU" (τ) mit 15 Nachkommastellen zurück:
+6,283185307179586
+Es entspricht exakt den Wert von 2 mal PI.
+</pre>
 </li>
 	<li>Rückgabe Typ: <code>Kommazahl</code></li>
 </ul>
@@ -56,7 +69,7 @@ Gib 2,718281828 zurück.
 <h3>Implementation</h3>
 <pre class="language-ddp" tabindex="0">
 <code class="language-ddp">
-Gib 6,283185307 zurück.
+Gib 6,283185307179586 zurück.
 
 </code>
 </pre>
@@ -65,6 +78,10 @@ Gib 6,283185307 zurück.
 <details>
 <summary><h2>PHI</h2></summary>
 <ul>
+<pre>
+Gibt den Wert des Goldenen Schittes "PHI" (Φ) mit 15 Nachkommastellen zurück:
+1,618033988749895
+</pre>
 </li>
 	<li>Rückgabe Typ: <code>Kommazahl</code></li>
 </ul>
@@ -77,7 +94,7 @@ Gib 6,283185307 zurück.
 <h3>Implementation</h3>
 <pre class="language-ddp" tabindex="0">
 <code class="language-ddp">
-Gib 1,618033989 zurück.
+Gib 1,618033988749895 zurück.
 
 </code>
 </pre>
@@ -86,6 +103,10 @@ Gib 1,618033989 zurück.
 <details>
 <summary><h2>max</h2></summary>
 <ul>
+<pre>
+Wenn a >= b ist wird a zurück gegeben.
+Wenn a < b ist wird b zurückgegeben.
+</pre>
 	<li>Parameter: <code>a</code>, <code>b</code></li>
 	<li>Parameter Typen: <code>Zahl</code>, <code>Zahl</code></li>
 	<li>Rückgabe Typ: <code>Zahl</code></li>
@@ -109,6 +130,10 @@ Gib b zurück.
 <details>
 <summary><h2>min</h2></summary>
 <ul>
+<pre>
+Wenn a <= b ist wird a zurückgegeben.
+Wenn a > b ist wird b zurückgegeben.
+</pre>
 	<li>Parameter: <code>a</code>, <code>b</code></li>
 	<li>Parameter Typen: <code>Zahl</code>, <code>Zahl</code></li>
 	<li>Rückgabe Typ: <code>Zahl</code></li>
@@ -132,6 +157,11 @@ Gib b zurück.
 <details>
 <summary><h2>clamp</h2></summary>
 <ul>
+<pre>
+Wenn wert > max ist, wird max zurückgegeben.
+Wenn wert < min ist, wird min zurückgegeben.
+Wenn min < wert < max ist, wird wert zurückgegeben.
+</pre>
 	<li>Parameter: <code>wert</code>, <code>max</code>, <code>min</code></li>
 	<li>Parameter Typen: <code>Zahl</code>, <code>Zahl</code>, <code>Zahl</code></li>
 	<li>Rückgabe Typ: <code>Zahl</code></li>
@@ -156,6 +186,11 @@ Gib wert zurück.
 <details>
 <summary><h2>sign</h2></summary>
 <ul>
+<pre>
+Wenn wert < 0 ist, wird -1 zurückgegeben.
+Wenn wert > 0 ist, wird 1 zurückgegeben.
+Wenn wert = 0 ist, wird 0 zurückgegeben.
+</pre>
 	<li>Parameter: <code>wert</code></li>
 	<li>Parameter Typ: <code>Zahl</code></li>
 	<li>Rückgabe Typ: <code>Zahl</code></li>
@@ -180,6 +215,9 @@ Gib 0 zurück.
 <details>
 <summary><h2>floor</h2></summary>
 <ul>
+<pre>
+Rundet wert nach unten.
+</pre>
 	<li>Parameter: <code>wert</code></li>
 	<li>Parameter Typ: <code>Kommazahl</code></li>
 	<li>Rückgabe Typ: <code>Kommazahl</code></li>
@@ -202,6 +240,9 @@ Gib wert minus (wert minus wert als Zahl) zurück.
 <details>
 <summary><h2>ceil</h2></summary>
 <ul>
+<pre>
+Rundet wert nach oben.
+</pre>
 	<li>Parameter: <code>wert</code></li>
 	<li>Parameter Typ: <code>Kommazahl</code></li>
 	<li>Rückgabe Typ: <code>Kommazahl</code></li>
@@ -224,6 +265,9 @@ Gib wert plus (1 minus (wert minus wert als Zahl)) zurück.
 <details>
 <summary><h2>trunc</h2></summary>
 <ul>
+<pre>
+Schneidet alle Kommastellen von wert ab.
+</pre>
 	<li>Parameter: <code>wert</code></li>
 	<li>Parameter Typ: <code>Kommazahl</code></li>
 	<li>Rückgabe Typ: <code>Kommazahl</code></li>
@@ -246,9 +290,6 @@ Gib (wert als Zahl) als Kommazahl zurück.
 <details>
 <summary><h2>sin</h2></summary>
 <ul>
-<pre>
-Trigonometrische Funktionen
-</pre>
 	<li>Parameter: <code>v</code></li>
 	<li>Parameter Typ: <code>Kommazahl</code></li>
 	<li>Rückgabe Typ: <code>Kommazahl</code></li>
@@ -468,6 +509,10 @@ Gib (der Betrag von (a mal b) durch (der größte gemeinsame Teiler von a und b)
 <details>
 <summary><h2>ist_teilbar</h2></summary>
 <ul>
+<pre>
+Ob der divident durch den divisor teilbar ist.
+Auch: Ob divident modulo divisor = 0 ist.
+</pre>
 	<li>Parameter: <code>dividend</code>, <code>divisor</code></li>
 	<li>Parameter Typen: <code>Zahl</code>, <code>Zahl</code></li>
 	<li>Rückgabe Typ: <code>Boolean</code></li>

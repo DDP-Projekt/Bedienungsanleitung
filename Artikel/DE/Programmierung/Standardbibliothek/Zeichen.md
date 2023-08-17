@@ -27,6 +27,9 @@ Gib b gleich ' ' ist oder b gleich '\n' ist oder b gleich '\t' ist oder b gleich
 <details>
 <summary><h2>IstGroß</h2></summary>
 <ul>
+<pre>
+Gibt wahr zurück wenn der Buchstabe b groß ist.
+</pre>
 	<li>Parameter: <code>b</code></li>
 	<li>Parameter Typ: <code>Buchstabe</code></li>
 	<li>Rückgabe Typ: <code>Boolean</code></li>
@@ -55,6 +58,9 @@ Gib erg zurück.
 <details>
 <summary><h2>IstKlein</h2></summary>
 <ul>
+<pre>
+Gibt wahr zurück wenn der Buchstabe b klein ist.
+</pre>
 	<li>Parameter: <code>b</code></li>
 	<li>Parameter Typ: <code>Buchstabe</code></li>
 	<li>Rückgabe Typ: <code>Boolean</code></li>

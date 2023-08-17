@@ -1,7 +1,40 @@
 # Duden/Texte Funktionen
 <details>
+<summary><h2>LeererText</h2></summary>
+<ul>
+<pre>
+Gibt "" zurück.
+Nutzen: Der Text t ist ein leerer Text.
+</pre>
+</li>
+	<li>Rückgabe Typ: <code>Text</code></li>
+</ul>
+
+<h3>Aliase</h3>
+<ol>
+	<li><code>&#34;ein leerer Text&#34;</code></li>
+	<li><code>&#34;einen leeren Text&#34;</code></li>
+</ol>
+
+<h3>Implementation</h3>
+<pre class="language-ddp" tabindex="0">
+<code class="language-ddp">
+Gib "" zurück.
+
+</code>
+</pre>
+</details>
+
+<details>
 <summary><h2>TrimAnfang</h2></summary>
 <ul>
+<pre>
+Entfernt alle gegebenen Buchstaben vom Anfang eines gegebenen Textes.
+z.B.: 
+Der Text t ist "aaaaaaahallo"
+Entferne alle 'a' vor t.
+t: "hallo"
+</pre>
 	<li>Parameter: <code>text</code>, <code>zeichen</code></li>
 	<li>Parameter Typen: <code>Text Referenz</code>, <code>Buchstabe</code></li>
 	<li>Rückgabe Typ: <code>nichts</code></li>
@@ -27,6 +60,9 @@ Speichere text von index bis (die Länge von text) in text.
 <details>
 <summary><h2>TrimAnfangWert</h2></summary>
 <ul>
+<pre>
+Siehe TrimAnfang
+</pre>
 	<li>Parameter: <code>text</code>, <code>zeichen</code></li>
 	<li>Parameter Typen: <code>Text</code>, <code>Buchstabe</code></li>
 	<li>Rückgabe Typ: <code>Text</code></li>
@@ -50,6 +86,13 @@ Gib text zurück.
 <details>
 <summary><h2>TrimEnde</h2></summary>
 <ul>
+<pre>
+Entfernt alle gegebenen Buchstaben vom Ende eines gegebenen Textes.
+z.B.: 
+Der Text t ist "hallo!!!!!!!!!!"
+Entferne alle '!' nach t.
+t: "hallo"
+</pre>
 	<li>Parameter: <code>text</code>, <code>zeichen</code></li>
 	<li>Parameter Typen: <code>Text Referenz</code>, <code>Buchstabe</code></li>
 	<li>Rückgabe Typ: <code>nichts</code></li>
@@ -65,7 +108,12 @@ Gib text zurück.
 <code class="language-ddp">
 Die Zahl index ist die Länge von text.
 Wenn index gleich 0 ist, verlasse die Funktion.
-Solange (text an der Stelle index) gleich zeichen ist, verringere index um 1.
+Solange (text an der Stelle index) gleich zeichen ist, mache:
+	Verringere index um 1.
+	Wenn index kleiner als 1 ist, dann:
+		Speichere "" in text.
+		Verlasse die Funktion.
+
 Speichere text von 1 bis index in text.
 
 </code>
@@ -75,6 +123,9 @@ Speichere text von 1 bis index in text.
 <details>
 <summary><h2>TrimEndeWert</h2></summary>
 <ul>
+<pre>
+Siehe TrimEnde
+</pre>
 	<li>Parameter: <code>text</code>, <code>zeichen</code></li>
 	<li>Parameter Typen: <code>Text</code>, <code>Buchstabe</code></li>
 	<li>Rückgabe Typ: <code>Text</code></li>
@@ -98,6 +149,13 @@ Gib text zurück.
 <details>
 <summary><h2>Trim</h2></summary>
 <ul>
+<pre>
+Entfernt alle gegebenen Buchstaben vom Anfang und Ende eines gegebenen Textes.
+z.B.: 
+Der Text t ist "!!!!!hallo!!!!!!!!!!"
+Entferne alle '!' vor und nach t.
+t: "hallo"
+</pre>
 	<li>Parameter: <code>text</code>, <code>zeichen</code></li>
 	<li>Parameter Typen: <code>Text Referenz</code>, <code>Buchstabe</code></li>
 	<li>Rückgabe Typ: <code>nichts</code></li>
@@ -124,6 +182,9 @@ Speichere text von startIndex bis stopIndex in text.
 <details>
 <summary><h2>TrimWert</h2></summary>
 <ul>
+<pre>
+Siehe Trim
+</pre>
 	<li>Parameter: <code>text</code>, <code>zeichen</code></li>
 	<li>Parameter Typen: <code>Text</code>, <code>Buchstabe</code></li>
 	<li>Rückgabe Typ: <code>Text</code></li>
@@ -147,6 +208,9 @@ Gib text zurück.
 <details>
 <summary><h2>EnthältBuchstabe</h2></summary>
 <ul>
+<pre>
+Gibt zurück ob der gegebenen Text den gegebenen Buchstaben enthält.
+</pre>
 	<li>Parameter: <code>text</code>, <code>zeichen</code></li>
 	<li>Parameter Typen: <code>Text</code>, <code>Buchstabe</code></li>
 	<li>Rückgabe Typ: <code>Boolean</code></li>
@@ -170,6 +234,9 @@ Gib falsch zurück.
 <details>
 <summary><h2>EnthältText</h2></summary>
 <ul>
+<pre>
+Gibt zurück ob der gegebene Text (text) den Subtext (suchText) enthält.
+</pre>
 	<li>Parameter: <code>text</code>, <code>suchText</code></li>
 	<li>Parameter Typen: <code>Text</code>, <code>Text</code></li>
 	<li>Rückgabe Typ: <code>Boolean</code></li>
@@ -202,6 +269,9 @@ Gib falsch zurück.
 <details>
 <summary><h2>BeginntMitBuchstabe</h2></summary>
 <ul>
+<pre>
+Gibt zurück ob der gegebene Text mit dem gegebenen Buchstaben anfängt.
+</pre>
 	<li>Parameter: <code>text</code>, <code>buchstabe</code></li>
 	<li>Parameter Typen: <code>Text</code>, <code>Buchstabe</code></li>
 	<li>Rückgabe Typ: <code>Boolean</code></li>
@@ -225,6 +295,9 @@ Gib (text an der Stelle 1) gleich buchstabe ist zurück.
 <details>
 <summary><h2>BeginntMitText</h2></summary>
 <ul>
+<pre>
+Gibt zurück ob der gegebene Text mit dem gegebenen Text (suchText) anfängt.
+</pre>
 	<li>Parameter: <code>text</code>, <code>suchText</code></li>
 	<li>Parameter Typen: <code>Text</code>, <code>Text</code></li>
 	<li>Rückgabe Typ: <code>Boolean</code></li>
@@ -247,6 +320,9 @@ Gib (text von 1 bis (die Länge von suchText)) gleich suchText ist zurück.
 <details>
 <summary><h2>EndetMitBuchstabe</h2></summary>
 <ul>
+<pre>
+Gibt zurück ob der gegebene Text mit dem gegebenen Buchstaben endet.
+</pre>
 	<li>Parameter: <code>text</code>, <code>buchstabe</code></li>
 	<li>Parameter Typen: <code>Text</code>, <code>Buchstabe</code></li>
 	<li>Rückgabe Typ: <code>Boolean</code></li>
@@ -270,6 +346,9 @@ Gib (text an der Stelle (die Länge von text)) gleich buchstabe ist zurück.
 <details>
 <summary><h2>EndetMitText</h2></summary>
 <ul>
+<pre>
+Gibt zurück ob der gegebene Text mit dem gegebenen Text (suchText) endet.
+</pre>
 	<li>Parameter: <code>text</code>, <code>suchText</code></li>
 	<li>Parameter Typen: <code>Text</code>, <code>Text</code></li>
 	<li>Rückgabe Typ: <code>Boolean</code></li>
@@ -292,6 +371,9 @@ Gib (text von die Länge von text minus die Länge von suchText plus 1 bis (die 
 <details>
 <summary><h2>Text_leeren</h2></summary>
 <ul>
+<pre>
+Speichert einen leeren Text in text.
+</pre>
 	<li>Parameter: <code>text</code></li>
 	<li>Parameter Typ: <code>Text Referenz</code></li>
 	<li>Rückgabe Typ: <code>nichts</code></li>
@@ -314,6 +396,10 @@ Speichere "" in text.
 <details>
 <summary><h2>Text_an_Text_fügen</h2></summary>
 <ul>
+<pre>
+Fügt zwei Texte aneinander.
+f("ha", "lo") -> "halo"
+</pre>
 	<li>Parameter: <code>text</code>, <code>elm</code></li>
 	<li>Parameter Typen: <code>Text Referenz</code>, <code>Text</code></li>
 	<li>Rückgabe Typ: <code>nichts</code></li>
@@ -336,6 +422,10 @@ Speichere text verkettet mit elm in text.
 <details>
 <summary><h2>Buchstabe_an_Text_fügen</h2></summary>
 <ul>
+<pre>
+Fügt einen Buchstaben an einen Text.
+f("may", 'o') -> "mayo"
+</pre>
 	<li>Parameter: <code>text</code>, <code>elm</code></li>
 	<li>Parameter Typen: <code>Text Referenz</code>, <code>Buchstabe</code></li>
 	<li>Rückgabe Typ: <code>nichts</code></li>
@@ -358,6 +448,9 @@ Speichere text verkettet mit elm in text.
 <details>
 <summary><h2>Text_in_Text_einfügen</h2></summary>
 <ul>
+<pre>
+Fügt einen Text
+</pre>
 	<li>Parameter: <code>text</code>, <code>index</code>, <code>elm</code></li>
 	<li>Parameter Typen: <code>Text Referenz</code>, <code>Zahl</code>, <code>Text</code></li>
 	<li>Rückgabe Typ: <code>nichts</code></li>
@@ -402,6 +495,10 @@ Speichere text von 1 bis (index minus 1) verkettet mit elm verkettet mit text vo
 <details>
 <summary><h2>Text_vor_Text_stellen</h2></summary>
 <ul>
+<pre>
+Fügt einen Text am Anfang eines Textes ein.
+f("hallo", " welt!") -> "hallo welt!"
+</pre>
 	<li>Parameter: <code>text</code>, <code>elm</code></li>
 	<li>Parameter Typen: <code>Text Referenz</code>, <code>Text</code></li>
 	<li>Rückgabe Typ: <code>nichts</code></li>
@@ -424,6 +521,10 @@ Speichere elm verkettet mit text in text.
 <details>
 <summary><h2>Buchstabe_vor_Text_stellen</h2></summary>
 <ul>
+<pre>
+Fügt einen Buchstaben am Anfang eines Textes ein.
+f("allo", 'h') -> "hallo"
+</pre>
 	<li>Parameter: <code>text</code>, <code>elm</code></li>
 	<li>Parameter Typen: <code>Text Referenz</code>, <code>Buchstabe</code></li>
 	<li>Rückgabe Typ: <code>nichts</code></li>
@@ -446,6 +547,9 @@ Speichere elm verkettet mit text in text.
 <details>
 <summary><h2>Lösche_Text</h2></summary>
 <ul>
+<pre>
+Entfernt den Buchstaben an der Stelle index vom Text
+</pre>
 	<li>Parameter: <code>text</code>, <code>index</code></li>
 	<li>Parameter Typen: <code>Text Referenz</code>, <code>Zahl</code></li>
 	<li>Rückgabe Typ: <code>nichts</code></li>
@@ -477,6 +581,9 @@ Sonst:
 <details>
 <summary><h2>Lösche_Text_Bereich</h2></summary>
 <ul>
+<pre>
+Entfernt einen Bereich vom Text
+</pre>
 	<li>Parameter: <code>text</code>, <code>start</code>, <code>end</code></li>
 	<li>Parameter Typen: <code>Text Referenz</code>, <code>Zahl</code>, <code>Zahl</code></li>
 	<li>Rückgabe Typ: <code>nichts</code></li>
@@ -502,6 +609,9 @@ Sonst:
 <details>
 <summary><h2>Fülle_Text</h2></summary>
 <ul>
+<pre>
+Füllt den Text mit dem gegebenen Buchstaben
+</pre>
 	<li>Parameter: <code>text</code>, <code>elm</code></li>
 	<li>Parameter Typen: <code>Text Referenz</code>, <code>Buchstabe</code></li>
 	<li>Rückgabe Typ: <code>nichts</code></li>
@@ -529,6 +639,9 @@ Speichere neuerText in text.
 <details>
 <summary><h2>IndexVonText</h2></summary>
 <ul>
+<pre>
+Gibt den index des gegebenen Buchstaben im Text zurück oder -1 falls es nicht gefunden wurde.
+</pre>
 	<li>Parameter: <code>text</code>, <code>elm</code></li>
 	<li>Parameter Typen: <code>Text</code>, <code>Buchstabe</code></li>
 	<li>Rückgabe Typ: <code>Zahl</code></li>
@@ -554,6 +667,9 @@ Gib -1 zurück.
 <details>
 <summary><h2>IstTextLeer</h2></summary>
 <ul>
+<pre>
+Gibt ob der gegebene Text leer ist zurück
+</pre>
 	<li>Parameter: <code>text</code></li>
 	<li>Parameter Typ: <code>Text</code></li>
 	<li>Rückgabe Typ: <code>Boolean</code></li>
@@ -577,7 +693,7 @@ Gib [wahr wenn] die Länge von text gleich 0 ist zurück.
 <summary><h2>Ist_Zahl</h2></summary>
 <ul>
 <pre>
-ob ein Text in eine Zahl umgewandelt werden kann
+Gibt zurück ob ein Text in eine Zahl umgewandelt werden kann
 </pre>
 	<li>Parameter: <code>t</code></li>
 	<li>Parameter Typ: <code>Text</code></li>
@@ -608,6 +724,9 @@ Gib wahr zurück.
 <details>
 <summary><h2>GroßschreibenWert</h2></summary>
 <ul>
+<pre>
+Wandelt jeden Buchstaben des gegebenen Textes in die groß geschriebene Variante
+</pre>
 	<li>Parameter: <code>text</code></li>
 	<li>Parameter Typ: <code>Text</code></li>
 	<li>Rückgabe Typ: <code>Text</code></li>
@@ -633,6 +752,9 @@ Gib neuerText zurück.
 <details>
 <summary><h2>Großschreiben</h2></summary>
 <ul>
+<pre>
+Wandelt jeden Buchstaben des gegebenen Textes in die groß geschriebene Variante
+</pre>
 	<li>Parameter: <code>text</code></li>
 	<li>Parameter Typ: <code>Text Referenz</code></li>
 	<li>Rückgabe Typ: <code>nichts</code></li>
@@ -655,6 +777,9 @@ Speichere text groß geschrieben in text.
 <details>
 <summary><h2>KleinschreibenWert</h2></summary>
 <ul>
+<pre>
+Wandelt jeden Buchstaben des gegebenen Textes in die klein geschriebene Variante
+</pre>
 	<li>Parameter: <code>text</code></li>
 	<li>Parameter Typ: <code>Text</code></li>
 	<li>Rückgabe Typ: <code>Text</code></li>
@@ -680,6 +805,9 @@ Gib neuerText zurück.
 <details>
 <summary><h2>Kleinschreiben</h2></summary>
 <ul>
+<pre>
+Wandelt jeden Buchstaben des gegebenen Textes in die klein geschriebene Variante
+</pre>
 	<li>Parameter: <code>text</code></li>
 	<li>Parameter Typ: <code>Text Referenz</code></li>
 	<li>Rückgabe Typ: <code>nichts</code></li>
@@ -702,6 +830,13 @@ Speichere text klein geschrieben in text.
 <details>
 <summary><h2>PolsterLinks</h2></summary>
 <ul>
+<pre>
+z.B.:
+f("hallo", ' ', 8) -> "   hallo"
+f("hey", ' ', 8) -> "     hey"
+f("programm", ' ', 8) -> "programm"
+f("", 'o', 8) -> "oooooooo"
+</pre>
 	<li>Parameter: <code>text</code>, <code>zeichen</code>, <code>endlänge</code></li>
 	<li>Parameter Typen: <code>Text</code>, <code>Buchstabe</code>, <code>Zahl</code></li>
 	<li>Rückgabe Typ: <code>Text</code></li>
@@ -733,6 +868,13 @@ Gib text zurück.
 <details>
 <summary><h2>PolsterRechts</h2></summary>
 <ul>
+<pre>
+z.B.:
+f("hallo", ' ', 8) -> "hallo   "
+f("hey", ' ', 8) -> "hey     "
+f("programm", ' ', 8) -> "programm"
+f("", 'o', 8) -> "oooooooo"
+</pre>
 	<li>Parameter: <code>text</code>, <code>zeichen</code>, <code>endlänge</code></li>
 	<li>Parameter Typen: <code>Text</code>, <code>Buchstabe</code>, <code>Zahl</code></li>
 	<li>Rückgabe Typ: <code>Text</code></li>
@@ -764,6 +906,9 @@ Gib text zurück.
 <details>
 <summary><h2>Spalte</h2></summary>
 <ul>
+<pre>
+Spaltet den gegebenen Text anhand des angegebenen Buchstaben in Teiltexte.
+</pre>
 	<li>Parameter: <code>text</code>, <code>zeichen</code></li>
 	<li>Parameter Typen: <code>Text</code>, <code>Buchstabe</code></li>
 	<li>Rückgabe Typ: <code>Text Liste</code></li>

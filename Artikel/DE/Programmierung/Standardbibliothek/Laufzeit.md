@@ -71,6 +71,7 @@ Implementiert in <code>"libddpstdlib.a"</code>
 <ul>
 <pre>
 Gibt eine Text Liste zurück die alle übergebenen Befehlszeilenargumente enthält.
+Index 1 enthält immer den Programmpfad.
 </pre>
 </li>
 	<li>Rückgabe Typ: <code>Text Liste</code></li>

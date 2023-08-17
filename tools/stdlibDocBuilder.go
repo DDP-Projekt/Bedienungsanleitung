@@ -20,7 +20,7 @@ func clearDirectory(dir string) {
 	if err != nil {
 		panic(err)
 	}
-	err = os.MkdirAll(dir, os.ModeDir)
+	err = os.MkdirAll(dir, os.ModeDir|os.ModePerm)
 	if err != nil {
 		panic(err)
 	}
@@ -38,13 +38,14 @@ func main() {
 		inputDir := "../../Kompilierer/lib/stdlib/Duden/"
 		outputDir := "../Artikel/DE/Programmierung/Standardbibliothek/"
 
-		// delete old articles
-		clearDirectory(outputDir)
-
 		files, err := os.ReadDir(inputDir)
 		if err != nil {
 			panic(err)
 		}
+
+		// delete old articles
+		clearDirectory(outputDir)
+
 		fileNames := make([]string, 0, len(files))
 		for _, file := range files {
 			inputPath := filepath.Join(inputDir, file.Name())

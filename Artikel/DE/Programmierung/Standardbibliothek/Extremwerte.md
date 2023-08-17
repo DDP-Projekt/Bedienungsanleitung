@@ -51,8 +51,7 @@ Gib 9223372036854775807 zurück.
 <summary><h2>MinKommazahl</h2></summary>
 <ul>
 <pre>
-Gibt 4,9406564584124654 * 10^-323,6 zurück.
-ACHTUNG: nicht der echte minimale Wert wegen Rundungsfehler
+Gibt -1,79769313486231 * 10^308 zurück.
 </pre>
 </li>
 	<li>Rückgabe Typ: <code>Kommazahl</code></li>
@@ -66,7 +65,7 @@ ACHTUNG: nicht der echte minimale Wert wegen Rundungsfehler
 <h3>Implementation</h3>
 <pre class="language-ddp" tabindex="0">
 <code class="language-ddp">
-Gib 4,9406564584124654 mal 10 hoch -323,6[4] zurück.
+Gib -1,7976931348623158 mal 10 hoch 308 zurück.
 
 </code>
 </pre>
@@ -77,7 +76,6 @@ Gib 4,9406564584124654 mal 10 hoch -323,6[4] zurück.
 <ul>
 <pre>
 Gibt 1,79769313486231 * 10^308 zurück.
-ACHTUNG: nicht der echte maximale Wert wegen Rundungsfehler
 </pre>
 </li>
 	<li>Rückgabe Typ: <code>Kommazahl</code></li>
@@ -91,7 +89,7 @@ ACHTUNG: nicht der echte maximale Wert wegen Rundungsfehler
 <h3>Implementation</h3>
 <pre class="language-ddp" tabindex="0">
 <code class="language-ddp">
-Gib 1,79769313486231[57] mal 10 hoch 308 zurück.
+Gib 1,7976931348623158 mal 10 hoch 308 zurück.
 
 </code>
 </pre>

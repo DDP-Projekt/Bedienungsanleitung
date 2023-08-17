@@ -2,6 +2,9 @@
 <details>
 <summary><h2>ZufallsKommazahl</h2></summary>
 <ul>
+<pre>
+Gibt eine zufällige Kommazahl zwischen a und b zurück.
+</pre>
 	<li>Parameter: <code>a</code>, <code>b</code></li>
 	<li>Parameter Typen: <code>Kommazahl</code>, <code>Kommazahl</code></li>
 	<li>Rückgabe Typ: <code>Kommazahl</code></li>
@@ -20,6 +23,9 @@ Implementiert in <code>"libddpstdlib.a"</code>
 <details>
 <summary><h2>ZufallsZahl</h2></summary>
 <ul>
+<pre>
+Gibt eine zufällige Zahl zwischen a und b zurück.
+</pre>
 	<li>Parameter: <code>a</code>, <code>b</code></li>
 	<li>Parameter Typen: <code>Zahl</code>, <code>Zahl</code></li>
 	<li>Rückgabe Typ: <code>Zahl</code></li>
@@ -38,6 +44,9 @@ Implementiert in <code>"libddpstdlib.a"</code>
 <details>
 <summary><h2>ZufallsBoolean</h2></summary>
 <ul>
+<pre>
+Gibt einen boolean Wert zurück der mit einer Wahrscheinlichkeit von p% wahr ist.
+</pre>
 	<li>Parameter: <code>p</code></li>
 	<li>Parameter Typ: <code>Kommazahl</code></li>
 	<li>Rückgabe Typ: <code>Boolean</code></li>
