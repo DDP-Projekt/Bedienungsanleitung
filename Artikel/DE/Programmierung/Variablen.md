@@ -54,7 +54,7 @@ Diese Operatoren können verwendet werden um Code lesbarer zu gestalten.
 equivalent zu  
 `Speichere <variable> plus <a> in <variable>`
 
-## Subktraktion
+## Subtraktion
 
 `Verringere <variable> um <a>`  
 equivalent zu  
