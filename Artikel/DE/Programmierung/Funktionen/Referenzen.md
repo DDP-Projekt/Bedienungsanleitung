@@ -25,7 +25,7 @@ Schreibe t. [Zeigt "neu!" in der Konsole]
 Wie man sieht, nehmen Referenz-Parameter Variablen als Argumente.
 Wenn man ihnen einen Wert, z.B. ein Literal, übergeben würde, gäbe es einen Fehler:
 
-```
+```ddp
 Verändere "Fehler". [Kompilierfehler: foo hat eine Variable erwartet]
 ```
 
