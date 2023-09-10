@@ -2,6 +2,11 @@
 <details>
 <summary><h2>TrennZeichen</h2></summary>
 <ul>
+<pre>
+Gibt den Pfad-Trennzeichen, der dem Betriebssystem entspricht zurück.
+Auf Linux: '/'
+Auf Windows: '\'
+</pre>
 </li>
 	<li>Rückgabe Typ: <code>Buchstabe</code></li>
 </ul>

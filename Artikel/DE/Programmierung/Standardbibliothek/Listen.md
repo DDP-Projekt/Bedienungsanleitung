@@ -3,7 +3,7 @@
 <summary><h2>Leere_Z</h2></summary>
 <ul>
 <pre>
-Zahlen Listen Funktionen
+Löscht alle Zahlen aus der gegebenen Zahlen Liste.
 </pre>
 	<li>Parameter: <code>liste</code></li>
 	<li>Parameter Typ: <code>Zahlen Listen Referenz</code></li>
@@ -27,6 +27,9 @@ Speichere eine leere Zahlen Liste in liste.
 <details>
 <summary><h2>Hinzufüge_Z</h2></summary>
 <ul>
+<pre>
+Fügt eine Zahl am Ende der gegeben Zahlen Liste hinzu.
+</pre>
 	<li>Parameter: <code>liste</code>, <code>elm</code></li>
 	<li>Parameter Typen: <code>Zahlen Listen Referenz</code>, <code>Zahl</code></li>
 	<li>Rückgabe Typ: <code>nichts</code></li>
@@ -50,6 +53,9 @@ Speichere liste verkettet mit elm in liste.
 <details>
 <summary><h2>EinfügenZ</h2></summary>
 <ul>
+<pre>
+Fügt eine Zahl vor einem Index in der gegebenen Zahlen Liste ein.
+</pre>
 	<li>Parameter: <code>liste</code>, <code>index</code>, <code>elm</code></li>
 	<li>Parameter Typen: <code>Zahlen Listen Referenz</code>, <code>Zahl</code>, <code>Zahl</code></li>
 	<li>Rückgabe Typ: <code>nichts</code></li>
@@ -72,6 +78,9 @@ Speichere liste von 1 bis (index minus 1) verkettet mit elm verkettet mit liste 
 <details>
 <summary><h2>Einfügen_Bereich_Z</h2></summary>
 <ul>
+<pre>
+Fügt eine Zahlen Liste vor einem Index in der gegebenen Zahlen Liste ein.
+</pre>
 	<li>Parameter: <code>liste</code>, <code>index</code>, <code>range</code></li>
 	<li>Parameter Typen: <code>Zahlen Listen Referenz</code>, <code>Zahl</code>, <code>Zahlen Liste</code></li>
 	<li>Rückgabe Typ: <code>nichts</code></li>
@@ -94,6 +103,9 @@ Speichere liste von 1 bis (index minus 1) verkettet mit range verkettet mit list
 <details>
 <summary><h2>Voranstellen_Z</h2></summary>
 <ul>
+<pre>
+Fügt eine Zahl am Anfang der gegeben Zahlen Liste hinzu.
+</pre>
 	<li>Parameter: <code>liste</code>, <code>elm</code></li>
 	<li>Parameter Typen: <code>Zahlen Listen Referenz</code>, <code>Zahl</code></li>
 	<li>Rückgabe Typ: <code>nichts</code></li>
@@ -116,6 +128,9 @@ Speichere elm verkettet mit liste in liste.
 <details>
 <summary><h2>Lösche_Z</h2></summary>
 <ul>
+<pre>
+Entfernt die Zahl an dem gegeben Index aus der gegeben Zahlen Liste.
+</pre>
 	<li>Parameter: <code>liste</code>, <code>index</code></li>
 	<li>Parameter Typen: <code>Zahlen Listen Referenz</code>, <code>Zahl</code></li>
 	<li>Rückgabe Typ: <code>nichts</code></li>
@@ -147,6 +162,9 @@ Sonst:
 <details>
 <summary><h2>Lösche_Bereich_Z</h2></summary>
 <ul>
+<pre>
+Entfernt alle Zahlen aus der Liste im gegebenen Bereich (inkusiv)
+</pre>
 	<li>Parameter: <code>liste</code>, <code>start</code>, <code>end</code></li>
 	<li>Parameter Typen: <code>Zahlen Listen Referenz</code>, <code>Zahl</code>, <code>Zahl</code></li>
 	<li>Rückgabe Typ: <code>nichts</code></li>
@@ -169,6 +187,9 @@ Speichere liste von 1 bis (start minus 1) verkettet mit liste von (end plus 1) b
 <details>
 <summary><h2>Füllen_Z</h2></summary>
 <ul>
+<pre>
+Füllt die gegebene Zahlen Liste mit der gegebenen Zahl.
+</pre>
 	<li>Parameter: <code>liste</code>, <code>elm</code></li>
 	<li>Parameter Typen: <code>Zahlen Listen Referenz</code>, <code>Zahl</code></li>
 	<li>Rückgabe Typ: <code>nichts</code></li>
@@ -192,6 +213,9 @@ Speichere neueListe in liste.
 <details>
 <summary><h2>IndexVon_Z</h2></summary>
 <ul>
+<pre>
+Gibt den Index der gegebenen Zahl aus der Liste zurück oder -1 wenn die Zahl nicht in der Liste vorhanden ist.
+</pre>
 	<li>Parameter: <code>liste</code>, <code>elm</code></li>
 	<li>Parameter Typen: <code>Zahlen Liste</code>, <code>Zahl</code></li>
 	<li>Rückgabe Typ: <code>Zahl</code></li>
@@ -215,6 +239,9 @@ Gib -1 zurück.
 <details>
 <summary><h2>Enthält_Z</h2></summary>
 <ul>
+<pre>
+Gibt zurück ob die Zahl in der Liste vorhanden ist.
+</pre>
 	<li>Parameter: <code>liste</code>, <code>elm</code></li>
 	<li>Parameter Typen: <code>Zahlen Liste</code>, <code>Zahl</code></li>
 	<li>Rückgabe Typ: <code>Boolean</code></li>
@@ -238,6 +265,9 @@ Gib falsch zurück.
 <details>
 <summary><h2>IstLeer_Z</h2></summary>
 <ul>
+<pre>
+Gibt zurück ob die Zahlen Liste leer ist.
+</pre>
 	<li>Parameter: <code>liste</code></li>
 	<li>Parameter Typ: <code>Zahlen Liste</code></li>
 	<li>Rückgabe Typ: <code>Boolean</code></li>
@@ -261,7 +291,7 @@ Gib [wahr wenn] die Länge von liste gleich 0 ist zurück.
 <summary><h2>Leere_K</h2></summary>
 <ul>
 <pre>
-Kommazahlen Listen Funktionen
+Löscht alle Kommazahlen aus der gegebenen Kommazahlen Liste.
 </pre>
 	<li>Parameter: <code>liste</code></li>
 	<li>Parameter Typ: <code>Kommazahlen Listen Referenz</code></li>
@@ -285,6 +315,9 @@ Speichere eine leere Kommazahlen Liste in liste.
 <details>
 <summary><h2>Hinzufüge_K</h2></summary>
 <ul>
+<pre>
+Fügt eine Kommazahl am Ende der gegeben Kommazahlen Liste hinzu.
+</pre>
 	<li>Parameter: <code>liste</code>, <code>elm</code></li>
 	<li>Parameter Typen: <code>Kommazahlen Listen Referenz</code>, <code>Kommazahl</code></li>
 	<li>Rückgabe Typ: <code>nichts</code></li>
@@ -308,6 +341,9 @@ Speichere liste verkettet mit elm in liste.
 <details>
 <summary><h2>EinfügenK</h2></summary>
 <ul>
+<pre>
+Fügt eine Kommazahl vor einem Index in der gegebenen Kommazahlen Liste ein.
+</pre>
 	<li>Parameter: <code>liste</code>, <code>index</code>, <code>elm</code></li>
 	<li>Parameter Typen: <code>Kommazahlen Listen Referenz</code>, <code>Zahl</code>, <code>Kommazahl</code></li>
 	<li>Rückgabe Typ: <code>nichts</code></li>
@@ -330,6 +366,9 @@ Speichere liste von 1 bis (index minus 1) verkettet mit elm verkettet mit liste 
 <details>
 <summary><h2>Einfügen_Bereich_K</h2></summary>
 <ul>
+<pre>
+Fügt eine Kommazahlen Liste vor einem Index in der gegebenen Kommazahlen Liste ein.
+</pre>
 	<li>Parameter: <code>liste</code>, <code>index</code>, <code>range</code></li>
 	<li>Parameter Typen: <code>Kommazahlen Listen Referenz</code>, <code>Zahl</code>, <code>Kommazahlen Liste</code></li>
 	<li>Rückgabe Typ: <code>nichts</code></li>
@@ -352,6 +391,9 @@ Speichere liste von 1 bis (index minus 1) verkettet mit range verkettet mit list
 <details>
 <summary><h2>Voranstellen_K</h2></summary>
 <ul>
+<pre>
+Fügt eine Kommazahl am Anfang der gegeben Kommazahlen Liste hinzu.
+</pre>
 	<li>Parameter: <code>liste</code>, <code>elm</code></li>
 	<li>Parameter Typen: <code>Kommazahlen Listen Referenz</code>, <code>Kommazahl</code></li>
 	<li>Rückgabe Typ: <code>nichts</code></li>
@@ -374,6 +416,9 @@ Speichere elm verkettet mit liste in liste.
 <details>
 <summary><h2>Lösche_K</h2></summary>
 <ul>
+<pre>
+Entfernt die Kommazahl an dem gegeben Index aus der gegeben Kommazahlen Liste.
+</pre>
 	<li>Parameter: <code>liste</code>, <code>index</code></li>
 	<li>Parameter Typen: <code>Kommazahlen Listen Referenz</code>, <code>Zahl</code></li>
 	<li>Rückgabe Typ: <code>nichts</code></li>
@@ -405,6 +450,9 @@ Sonst:
 <details>
 <summary><h2>Lösche_Bereich_K</h2></summary>
 <ul>
+<pre>
+Entfernt alle Kommazahlen aus der Liste im gegebenen Bereich (inkusiv)
+</pre>
 	<li>Parameter: <code>liste</code>, <code>start</code>, <code>end</code></li>
 	<li>Parameter Typen: <code>Kommazahlen Listen Referenz</code>, <code>Zahl</code>, <code>Zahl</code></li>
 	<li>Rückgabe Typ: <code>nichts</code></li>
@@ -427,6 +475,9 @@ Speichere liste von 1 bis (start minus 1) verkettet mit liste von (end plus 1) b
 <details>
 <summary><h2>Füllen_K</h2></summary>
 <ul>
+<pre>
+Füllt die gegebene Kommazahlen Liste mit der gegebenen Kommazahl.
+</pre>
 	<li>Parameter: <code>liste</code>, <code>elm</code></li>
 	<li>Parameter Typen: <code>Kommazahlen Listen Referenz</code>, <code>Kommazahl</code></li>
 	<li>Rückgabe Typ: <code>nichts</code></li>
@@ -450,6 +501,9 @@ Speichere neueListe in liste.
 <details>
 <summary><h2>IndexVon_K</h2></summary>
 <ul>
+<pre>
+Gibt den Index der gegebenen Kommazahl aus der Liste zurück oder -1 wenn die Kommazahl nicht in der Liste vorhanden ist.
+</pre>
 	<li>Parameter: <code>liste</code>, <code>elm</code></li>
 	<li>Parameter Typen: <code>Kommazahlen Liste</code>, <code>Kommazahl</code></li>
 	<li>Rückgabe Typ: <code>Zahl</code></li>
@@ -473,6 +527,9 @@ Gib -1 zurück.
 <details>
 <summary><h2>Enthält_K</h2></summary>
 <ul>
+<pre>
+Gibt zurück ob die Kommazahl in der Liste vorhanden ist.
+</pre>
 	<li>Parameter: <code>liste</code>, <code>elm</code></li>
 	<li>Parameter Typen: <code>Kommazahlen Liste</code>, <code>Kommazahl</code></li>
 	<li>Rückgabe Typ: <code>Boolean</code></li>
@@ -496,6 +553,9 @@ Gib falsch zurück.
 <details>
 <summary><h2>IstLeer_K</h2></summary>
 <ul>
+<pre>
+Gibt zurück ob die Kommazahlen Liste leer ist.
+</pre>
 	<li>Parameter: <code>liste</code></li>
 	<li>Parameter Typ: <code>Kommazahlen Liste</code></li>
 	<li>Rückgabe Typ: <code>Boolean</code></li>
@@ -519,7 +579,7 @@ Gib [wahr wenn] die Länge von liste gleich 0 ist zurück.
 <summary><h2>Leere_B</h2></summary>
 <ul>
 <pre>
-Boolean Listen Funktionen
+Löscht alle Booleans aus der gegebenen Boolean Liste.
 </pre>
 	<li>Parameter: <code>liste</code></li>
 	<li>Parameter Typ: <code>Boolean Listen Referenz</code></li>
@@ -543,6 +603,9 @@ Speichere eine leere Boolean Liste in liste.
 <details>
 <summary><h2>Hinzufüge_B</h2></summary>
 <ul>
+<pre>
+Fügt einen Boolean am Ende der gegeben Boolean Liste hinzu.
+</pre>
 	<li>Parameter: <code>liste</code>, <code>elm</code></li>
 	<li>Parameter Typen: <code>Boolean Listen Referenz</code>, <code>Boolean</code></li>
 	<li>Rückgabe Typ: <code>nichts</code></li>
@@ -566,6 +629,9 @@ Speichere liste verkettet mit elm in liste.
 <details>
 <summary><h2>EinfügenB</h2></summary>
 <ul>
+<pre>
+Fügt einen Boolean vor einem Index in der gegebenen Boolean Liste ein.
+</pre>
 	<li>Parameter: <code>liste</code>, <code>index</code>, <code>elm</code></li>
 	<li>Parameter Typen: <code>Boolean Listen Referenz</code>, <code>Zahl</code>, <code>Boolean</code></li>
 	<li>Rückgabe Typ: <code>nichts</code></li>
@@ -588,6 +654,9 @@ Speichere liste von 1 bis (index minus 1) verkettet mit elm verkettet mit liste 
 <details>
 <summary><h2>Einfügen_Bereich_B</h2></summary>
 <ul>
+<pre>
+Fügt eine Boolean Liste vor einem Index in der gegebenen Boolean Liste ein.
+</pre>
 	<li>Parameter: <code>liste</code>, <code>index</code>, <code>range</code></li>
 	<li>Parameter Typen: <code>Boolean Listen Referenz</code>, <code>Zahl</code>, <code>Boolean Liste</code></li>
 	<li>Rückgabe Typ: <code>nichts</code></li>
@@ -610,6 +679,9 @@ Speichere liste von 1 bis (index minus 1) verkettet mit range verkettet mit list
 <details>
 <summary><h2>Voranstellen_B</h2></summary>
 <ul>
+<pre>
+Fügt einen Boolean am Anfang der gegeben Boolean Liste hinzu.
+</pre>
 	<li>Parameter: <code>liste</code>, <code>elm</code></li>
 	<li>Parameter Typen: <code>Boolean Listen Referenz</code>, <code>Boolean</code></li>
 	<li>Rückgabe Typ: <code>nichts</code></li>
@@ -632,6 +704,9 @@ Speichere elm verkettet mit liste in liste.
 <details>
 <summary><h2>Lösche_B</h2></summary>
 <ul>
+<pre>
+Entfernt den Boolean an dem gegeben Index aus der gegeben Boolean Liste.
+</pre>
 	<li>Parameter: <code>liste</code>, <code>index</code></li>
 	<li>Parameter Typen: <code>Boolean Listen Referenz</code>, <code>Zahl</code></li>
 	<li>Rückgabe Typ: <code>nichts</code></li>
@@ -663,6 +738,9 @@ Sonst:
 <details>
 <summary><h2>Lösche_Bereich_B</h2></summary>
 <ul>
+<pre>
+Entfernt alle Booleans aus der Liste im gegebenen Bereich (inkusiv)
+</pre>
 	<li>Parameter: <code>liste</code>, <code>start</code>, <code>end</code></li>
 	<li>Parameter Typen: <code>Boolean Listen Referenz</code>, <code>Zahl</code>, <code>Zahl</code></li>
 	<li>Rückgabe Typ: <code>nichts</code></li>
@@ -685,6 +763,9 @@ Speichere liste von 1 bis (start minus 1) verkettet mit liste von (end plus 1) b
 <details>
 <summary><h2>Füllen_B</h2></summary>
 <ul>
+<pre>
+Füllt die gegebene Kommazahlen Liste mit der gegebenen Kommazahl.
+</pre>
 	<li>Parameter: <code>liste</code>, <code>elm</code></li>
 	<li>Parameter Typen: <code>Boolean Listen Referenz</code>, <code>Boolean</code></li>
 	<li>Rückgabe Typ: <code>nichts</code></li>
@@ -708,6 +789,9 @@ Speichere neueListe in liste.
 <details>
 <summary><h2>IndexVon_B</h2></summary>
 <ul>
+<pre>
+Gibt den Index des gegebenen Booleans aus der Liste zurück oder -1 wenn der Boolean nicht in der Liste vorhanden ist.
+</pre>
 	<li>Parameter: <code>liste</code>, <code>elm</code></li>
 	<li>Parameter Typen: <code>Boolean Liste</code>, <code>Boolean</code></li>
 	<li>Rückgabe Typ: <code>Zahl</code></li>
@@ -731,6 +815,9 @@ Gib -1 zurück.
 <details>
 <summary><h2>Enthält_B</h2></summary>
 <ul>
+<pre>
+Gibt zurück ob der Boolean in der Liste vorhanden ist.
+</pre>
 	<li>Parameter: <code>liste</code>, <code>elm</code></li>
 	<li>Parameter Typen: <code>Boolean Liste</code>, <code>Boolean</code></li>
 	<li>Rückgabe Typ: <code>Boolean</code></li>
@@ -754,6 +841,9 @@ Gib falsch zurück.
 <details>
 <summary><h2>IstLeer_B</h2></summary>
 <ul>
+<pre>
+Gibt zurück ob die Boolean Liste leer ist.
+</pre>
 	<li>Parameter: <code>liste</code></li>
 	<li>Parameter Typ: <code>Boolean Liste</code></li>
 	<li>Rückgabe Typ: <code>Boolean</code></li>
@@ -777,7 +867,7 @@ Gib [wahr wenn] die Länge von liste gleich 0 ist zurück.
 <summary><h2>Leere_C</h2></summary>
 <ul>
 <pre>
-Buchstaben Listen Funktionen
+Löscht alle Buchstaben aus der gegebenen Buchstaben Liste.
 </pre>
 	<li>Parameter: <code>liste</code></li>
 	<li>Parameter Typ: <code>Buchstaben Listen Referenz</code></li>
@@ -801,6 +891,9 @@ Speichere eine leere Buchstaben Liste in liste.
 <details>
 <summary><h2>Hinzufüge_C</h2></summary>
 <ul>
+<pre>
+Fügt einen Buchstaben am Ende der gegeben Buchstaben Liste hinzu.
+</pre>
 	<li>Parameter: <code>liste</code>, <code>elm</code></li>
 	<li>Parameter Typen: <code>Buchstaben Listen Referenz</code>, <code>Buchstabe</code></li>
 	<li>Rückgabe Typ: <code>nichts</code></li>
@@ -824,6 +917,9 @@ Speichere liste verkettet mit elm in liste.
 <details>
 <summary><h2>EinfügenC</h2></summary>
 <ul>
+<pre>
+Fügt einen Buchstaben vor einem Index in der gegebenen Buchstaben Liste ein.
+</pre>
 	<li>Parameter: <code>liste</code>, <code>index</code>, <code>elm</code></li>
 	<li>Parameter Typen: <code>Buchstaben Listen Referenz</code>, <code>Zahl</code>, <code>Buchstabe</code></li>
 	<li>Rückgabe Typ: <code>nichts</code></li>
@@ -846,6 +942,9 @@ Speichere liste von 1 bis (index minus 1) verkettet mit elm verkettet mit liste 
 <details>
 <summary><h2>Einfügen_Bereich_C</h2></summary>
 <ul>
+<pre>
+Fügt eine Buchstaben Liste vor einem Index in der gegebenen Buchstaben Liste ein.
+</pre>
 	<li>Parameter: <code>liste</code>, <code>index</code>, <code>range</code></li>
 	<li>Parameter Typen: <code>Buchstaben Listen Referenz</code>, <code>Zahl</code>, <code>Buchstaben Liste</code></li>
 	<li>Rückgabe Typ: <code>nichts</code></li>
@@ -868,6 +967,9 @@ Speichere liste von 1 bis (index minus 1) verkettet mit range verkettet mit list
 <details>
 <summary><h2>Voranstellen_C</h2></summary>
 <ul>
+<pre>
+Fügt einen Buchstaben am Anfang der gegeben Buchstaben Liste hinzu.
+</pre>
 	<li>Parameter: <code>liste</code>, <code>elm</code></li>
 	<li>Parameter Typen: <code>Buchstaben Listen Referenz</code>, <code>Buchstabe</code></li>
 	<li>Rückgabe Typ: <code>nichts</code></li>
@@ -890,6 +992,9 @@ Speichere elm verkettet mit liste in liste.
 <details>
 <summary><h2>Lösche_C</h2></summary>
 <ul>
+<pre>
+Entfernt den Buchstaben an dem gegeben Index aus der gegeben Buchstaben Liste.
+</pre>
 	<li>Parameter: <code>liste</code>, <code>index</code></li>
 	<li>Parameter Typen: <code>Buchstaben Listen Referenz</code>, <code>Zahl</code></li>
 	<li>Rückgabe Typ: <code>nichts</code></li>
@@ -921,6 +1026,9 @@ Sonst:
 <details>
 <summary><h2>Lösche_Bereich_C</h2></summary>
 <ul>
+<pre>
+Entfernt alle Buchstaben aus der Liste im gegebenen Bereich (inkusiv)
+</pre>
 	<li>Parameter: <code>liste</code>, <code>start</code>, <code>end</code></li>
 	<li>Parameter Typen: <code>Buchstaben Listen Referenz</code>, <code>Zahl</code>, <code>Zahl</code></li>
 	<li>Rückgabe Typ: <code>nichts</code></li>
@@ -943,6 +1051,9 @@ Speichere liste von 1 bis (start minus 1) verkettet mit liste von (end plus 1) b
 <details>
 <summary><h2>Füllen_C</h2></summary>
 <ul>
+<pre>
+Füllt die gegebene Buchstaben Liste mit dem gegebenen Buchstaben.
+</pre>
 	<li>Parameter: <code>liste</code>, <code>elm</code></li>
 	<li>Parameter Typen: <code>Buchstaben Listen Referenz</code>, <code>Buchstabe</code></li>
 	<li>Rückgabe Typ: <code>nichts</code></li>
@@ -966,6 +1077,9 @@ Speichere neueListe in liste.
 <details>
 <summary><h2>IndexVon_C</h2></summary>
 <ul>
+<pre>
+Gibt den Index des gegebenen Buchstabens aus der Liste zurück oder -1 wenn der Buchstabe nicht in der Liste vorhanden ist.
+</pre>
 	<li>Parameter: <code>liste</code>, <code>elm</code></li>
 	<li>Parameter Typen: <code>Buchstaben Liste</code>, <code>Buchstabe</code></li>
 	<li>Rückgabe Typ: <code>Zahl</code></li>
@@ -989,6 +1103,9 @@ Gib -1 zurück.
 <details>
 <summary><h2>Enthält_C</h2></summary>
 <ul>
+<pre>
+Gibt zurück ob der Buchstabe in der Liste vorhanden ist.
+</pre>
 	<li>Parameter: <code>liste</code>, <code>elm</code></li>
 	<li>Parameter Typen: <code>Buchstaben Liste</code>, <code>Buchstabe</code></li>
 	<li>Rückgabe Typ: <code>Boolean</code></li>
@@ -1012,6 +1129,9 @@ Gib falsch zurück.
 <details>
 <summary><h2>IstLeer_C</h2></summary>
 <ul>
+<pre>
+Gibt zurück ob die Buchstaben Liste leer ist.
+</pre>
 	<li>Parameter: <code>liste</code></li>
 	<li>Parameter Typ: <code>Buchstaben Liste</code></li>
 	<li>Rückgabe Typ: <code>Boolean</code></li>
@@ -1035,7 +1155,7 @@ Gib [wahr wenn] die Länge von liste gleich 0 ist zurück.
 <summary><h2>Leere_T</h2></summary>
 <ul>
 <pre>
-Text Listen Funktionen
+Löscht alle Texte aus der gegebenen Text Liste.
 </pre>
 	<li>Parameter: <code>liste</code></li>
 	<li>Parameter Typ: <code>Text Listen Referenz</code></li>
@@ -1059,6 +1179,9 @@ Speichere eine leere Text Liste in liste.
 <details>
 <summary><h2>Hinzufüge_T</h2></summary>
 <ul>
+<pre>
+Fügt einen Text am Ende der gegeben Text Liste hinzu.
+</pre>
 	<li>Parameter: <code>liste</code>, <code>elm</code></li>
 	<li>Parameter Typen: <code>Text Listen Referenz</code>, <code>Text</code></li>
 	<li>Rückgabe Typ: <code>nichts</code></li>
@@ -1082,6 +1205,9 @@ Speichere liste verkettet mit elm in liste.
 <details>
 <summary><h2>EinfügenT</h2></summary>
 <ul>
+<pre>
+Fügt einen Text vor einem Index in der gegebenen Text Liste ein.
+</pre>
 	<li>Parameter: <code>liste</code>, <code>index</code>, <code>elm</code></li>
 	<li>Parameter Typen: <code>Text Listen Referenz</code>, <code>Zahl</code>, <code>Text</code></li>
 	<li>Rückgabe Typ: <code>nichts</code></li>
@@ -1104,6 +1230,9 @@ Speichere liste von 1 bis (index minus 1) verkettet mit elm verkettet mit liste 
 <details>
 <summary><h2>Einfügen_Bereich_T</h2></summary>
 <ul>
+<pre>
+Fügt eine Text Liste vor einem Index in der gegebenen Text Liste ein.
+</pre>
 	<li>Parameter: <code>liste</code>, <code>index</code>, <code>range</code></li>
 	<li>Parameter Typen: <code>Text Listen Referenz</code>, <code>Zahl</code>, <code>Text Liste</code></li>
 	<li>Rückgabe Typ: <code>nichts</code></li>
@@ -1126,6 +1255,9 @@ Speichere liste von 1 bis (index minus 1) verkettet mit range verkettet mit list
 <details>
 <summary><h2>Voranstellen_T</h2></summary>
 <ul>
+<pre>
+Fügt einen Text am Anfang der gegeben Text Liste hinzu.
+</pre>
 	<li>Parameter: <code>liste</code>, <code>elm</code></li>
 	<li>Parameter Typen: <code>Text Listen Referenz</code>, <code>Text</code></li>
 	<li>Rückgabe Typ: <code>nichts</code></li>
@@ -1148,6 +1280,9 @@ Speichere elm verkettet mit liste in liste.
 <details>
 <summary><h2>Lösche_T</h2></summary>
 <ul>
+<pre>
+Entfernt den Text an dem gegeben Index aus der gegeben Text Liste.
+</pre>
 	<li>Parameter: <code>liste</code>, <code>index</code></li>
 	<li>Parameter Typen: <code>Text Listen Referenz</code>, <code>Zahl</code></li>
 	<li>Rückgabe Typ: <code>nichts</code></li>
@@ -1179,6 +1314,9 @@ Sonst:
 <details>
 <summary><h2>Lösche_Bereich_T</h2></summary>
 <ul>
+<pre>
+Entfernt alle Texte aus der Liste im gegebenen Bereich (inkusiv)
+</pre>
 	<li>Parameter: <code>liste</code>, <code>start</code>, <code>end</code></li>
 	<li>Parameter Typen: <code>Text Listen Referenz</code>, <code>Zahl</code>, <code>Zahl</code></li>
 	<li>Rückgabe Typ: <code>nichts</code></li>
@@ -1201,6 +1339,9 @@ Speichere liste von 1 bis (start minus 1) verkettet mit liste von (end plus 1) b
 <details>
 <summary><h2>Füllen_T</h2></summary>
 <ul>
+<pre>
+Füllt die gegebene Text Liste mit dem gegebenen Text.
+</pre>
 	<li>Parameter: <code>liste</code>, <code>elm</code></li>
 	<li>Parameter Typen: <code>Text Listen Referenz</code>, <code>Text</code></li>
 	<li>Rückgabe Typ: <code>nichts</code></li>
@@ -1224,6 +1365,9 @@ Speichere neueListe in liste.
 <details>
 <summary><h2>IndexVon_T</h2></summary>
 <ul>
+<pre>
+Gibt den Index des gegebenen Textes aus der Liste zurück oder -1 wenn der Text nicht in der Liste vorhanden ist.
+</pre>
 	<li>Parameter: <code>liste</code>, <code>elm</code></li>
 	<li>Parameter Typen: <code>Text Liste</code>, <code>Text</code></li>
 	<li>Rückgabe Typ: <code>Zahl</code></li>
@@ -1247,6 +1391,9 @@ Gib -1 zurück.
 <details>
 <summary><h2>Enthält_T</h2></summary>
 <ul>
+<pre>
+Gibt zurück ob der Text in der Liste vorhanden ist.
+</pre>
 	<li>Parameter: <code>liste</code>, <code>elm</code></li>
 	<li>Parameter Typen: <code>Text Liste</code>, <code>Text</code></li>
 	<li>Rückgabe Typ: <code>Boolean</code></li>
@@ -1270,6 +1417,9 @@ Gib falsch zurück.
 <details>
 <summary><h2>IstLeer_T</h2></summary>
 <ul>
+<pre>
+Gibt zurück ob die Text Liste leer ist.
+</pre>
 	<li>Parameter: <code>liste</code></li>
 	<li>Parameter Typ: <code>Text Liste</code></li>
 	<li>Rückgabe Typ: <code>Boolean</code></li>
@@ -1292,6 +1442,9 @@ Gib [wahr wenn] die Länge von liste gleich 0 ist zurück.
 <details>
 <summary><h2>Aneinandergehängt_C</h2></summary>
 <ul>
+<pre>
+Verkettet alle Buchstaben der gegebenen Liste zu einem Text und gibt diesen zurück.
+</pre>
 	<li>Parameter: <code>liste</code></li>
 	<li>Parameter Typ: <code>Buchstaben Liste</code></li>
 	<li>Rückgabe Typ: <code>Text</code></li>

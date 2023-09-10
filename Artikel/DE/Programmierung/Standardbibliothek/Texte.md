@@ -940,4 +940,159 @@ Gib endliste zurück.
 </pre>
 </details>
 
+<details>
+<summary><h2>VerbindenT</h2></summary>
+<ul>
+<pre>
+Verkettet alle Elemente der Liste mit dem Trennzeichen und gibt den Text zurück.
+z.B.:
+f(["hi", "", "yo"], '-') -> "hi--yo"
+</pre>
+	<li>Parameter: <code>liste</code>, <code>trennzeichen</code></li>
+	<li>Parameter Typen: <code>Text Liste</code>, <code>Buchstabe</code></li>
+	<li>Rückgabe Typ: <code>Text</code></li>
+</ul>
+
+<h3>Aliase</h3>
+<ol>
+	<li><code>&#34;&lt;liste&gt; mit dem Trennzeichen &lt;trennzeichen&gt; zum Text verbunden&#34;</code></li>
+</ol>
+
+<h3>Implementation</h3>
+<pre class="language-ddp" tabindex="0">
+<code class="language-ddp">
+Der Text ret ist ein leerer Text.
+Für jede Zahl i von 1 bis die Länge von liste, mache:
+	Wenn i kleiner als die Länge von liste ist, Speichere ret verkettet mit liste an der Stelle i verkettet mit trennzeichen in ret.
+	Sonst Speichere ret verkettet mit liste an der Stelle i in ret.
+Gib ret zurück.
+
+</code>
+</pre>
+</details>
+
+<details>
+<summary><h2>VerbindenZ</h2></summary>
+<ul>
+<pre>
+Verkettet alle Elemente der Liste mit dem Trennzeichen und gibt den Text zurück.
+z.B.:
+f([1, 234, 56789, 0], '-') -> "1-234-56789-0"
+</pre>
+	<li>Parameter: <code>liste</code>, <code>trennzeichen</code></li>
+	<li>Parameter Typen: <code>Zahlen Liste</code>, <code>Buchstabe</code></li>
+	<li>Rückgabe Typ: <code>Text</code></li>
+</ul>
+
+<h3>Aliase</h3>
+<ol>
+	<li><code>&#34;&lt;liste&gt; mit dem Trennzeichen &lt;trennzeichen&gt; zum Text verbunden&#34;</code></li>
+</ol>
+
+<h3>Implementation</h3>
+<pre class="language-ddp" tabindex="0">
+<code class="language-ddp">
+Der Text ret ist ein leerer Text.
+Für jede Zahl i von 1 bis die Länge von liste, mache:
+	Wenn i kleiner als die Länge von liste ist, Speichere ret verkettet mit (liste an der Stelle i) als Text verkettet mit trennzeichen in ret.
+	Sonst Speichere ret verkettet mit (liste an der Stelle i) als Text in ret.
+Gib ret zurück.
+
+</code>
+</pre>
+</details>
+
+<details>
+<summary><h2>VerbindenK</h2></summary>
+<ul>
+<pre>
+Verkettet alle Elemente der Liste mit dem Trennzeichen und gibt den Text zurück.
+z.B.:
+f([1,4, 0 durch 0, 23,0], '-') -> "1,4-nan-23"
+</pre>
+	<li>Parameter: <code>liste</code>, <code>trennzeichen</code></li>
+	<li>Parameter Typen: <code>Kommazahlen Liste</code>, <code>Buchstabe</code></li>
+	<li>Rückgabe Typ: <code>Text</code></li>
+</ul>
+
+<h3>Aliase</h3>
+<ol>
+	<li><code>&#34;&lt;liste&gt; mit dem Trennzeichen &lt;trennzeichen&gt; zum Text verbunden&#34;</code></li>
+</ol>
+
+<h3>Implementation</h3>
+<pre class="language-ddp" tabindex="0">
+<code class="language-ddp">
+Der Text ret ist ein leerer Text.
+Für jede Zahl i von 1 bis die Länge von liste, mache:
+	Wenn i kleiner als die Länge von liste ist, Speichere ret verkettet mit (liste an der Stelle i) als Text verkettet mit trennzeichen in ret.
+	Sonst Speichere ret verkettet mit (liste an der Stelle i) als Text in ret.
+Gib ret zurück.
+
+</code>
+</pre>
+</details>
+
+<details>
+<summary><h2>VerbindenB</h2></summary>
+<ul>
+<pre>
+Verkettet alle Elemente der Liste mit dem Trennzeichen und gibt den Text zurück.
+z.B.:
+f(['a', 'b', 'c'], '-') -> "a-b-c"
+</pre>
+	<li>Parameter: <code>liste</code>, <code>trennzeichen</code></li>
+	<li>Parameter Typen: <code>Buchstaben Liste</code>, <code>Buchstabe</code></li>
+	<li>Rückgabe Typ: <code>Text</code></li>
+</ul>
+
+<h3>Aliase</h3>
+<ol>
+	<li><code>&#34;&lt;liste&gt; mit dem Trennzeichen &lt;trennzeichen&gt; zum Text verbunden&#34;</code></li>
+</ol>
+
+<h3>Implementation</h3>
+<pre class="language-ddp" tabindex="0">
+<code class="language-ddp">
+Der Text ret ist ein leerer Text.
+Für jede Zahl i von 1 bis die Länge von liste, mache:
+	Wenn i kleiner als die Länge von liste ist, Speichere ret verkettet mit (liste an der Stelle i) verkettet mit trennzeichen in ret.
+	Sonst Speichere ret verkettet mit (liste an der Stelle i) in ret.
+Gib ret zurück.
+
+</code>
+</pre>
+</details>
+
+<details>
+<summary><h2>VerbindenBool</h2></summary>
+<ul>
+<pre>
+Verkettet alle Elemente der Liste mit dem Trennzeichen und gibt den Text zurück.
+z.B.:
+f([wahr, falsch, falsch], '-') -> "wahr-falsch-falsch"
+</pre>
+	<li>Parameter: <code>liste</code>, <code>trennzeichen</code></li>
+	<li>Parameter Typen: <code>Boolean Liste</code>, <code>Buchstabe</code></li>
+	<li>Rückgabe Typ: <code>Text</code></li>
+</ul>
+
+<h3>Aliase</h3>
+<ol>
+	<li><code>&#34;&lt;liste&gt; mit dem Trennzeichen &lt;trennzeichen&gt; zum Text verbunden&#34;</code></li>
+</ol>
+
+<h3>Implementation</h3>
+<pre class="language-ddp" tabindex="0">
+<code class="language-ddp">
+Der Text ret ist ein leerer Text.
+Für jede Zahl i von 1 bis die Länge von liste, mache:
+	Wenn i kleiner als die Länge von liste ist, Speichere ret verkettet mit (liste an der Stelle i) als Text verkettet mit trennzeichen in ret.
+	Sonst Speichere ret verkettet mit (liste an der Stelle i) als Text in ret.
+Gib ret zurück.
+
+</code>
+</pre>
+</details>
+
 

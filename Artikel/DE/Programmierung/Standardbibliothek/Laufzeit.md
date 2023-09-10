@@ -125,4 +125,29 @@ Entspricht C's `isatty` funktion.
 Implementiert in <code>"libddpstdlib.a"</code>
 </details>
 
+<details>
+<summary><h2>Macht_Nichts</h2></summary>
+<ul>
+<pre>
+Leere Funktion, die nichts macht und nichts zurückgibt.
+Nützlich in einigen wenigen Fällen.
+</pre>
+</li>
+	<li>Rückgabe Typ: <code>nichts</code></li>
+</ul>
+
+<h3>Aliase</h3>
+<ol>
+	<li><code>&#34;Tue nichts&#34;</code></li>
+	<li><code>&#34;tue nichts&#34;</code></li>
+</ol>
+
+<h3>Implementation</h3>
+<pre class="language-ddp" tabindex="0">
+<code class="language-ddp">
+
+</code>
+</pre>
+</details>
+
 

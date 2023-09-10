@@ -275,4 +275,29 @@ Gib (b als Zahl plus 32) als Buchstabe zurück.
 </pre>
 </details>
 
+<details>
+<summary><h2>ASCII_Zeichen</h2></summary>
+<ul>
+<pre>
+Gibt den Zeichen mit der gegebenen ASCII Nummer zurück.
+</pre>
+	<li>Parameter: <code>id</code></li>
+	<li>Parameter Typ: <code>Zahl</code></li>
+	<li>Rückgabe Typ: <code>Buchstabe</code></li>
+</ul>
+
+<h3>Aliase</h3>
+<ol>
+	<li><code>&#34;der ASCII Zeichen mit der Nummer &lt;id&gt;&#34;</code></li>
+</ol>
+
+<h3>Implementation</h3>
+<pre class="language-ddp" tabindex="0">
+<code class="language-ddp">
+Gib id als Buchstabe zurück.
+
+</code>
+</pre>
+</details>
+
 

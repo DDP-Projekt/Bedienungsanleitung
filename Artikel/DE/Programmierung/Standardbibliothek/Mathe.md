@@ -184,6 +184,89 @@ Gib wert zurück.
 </details>
 
 <details>
+<summary><h2>maxK</h2></summary>
+<ul>
+<pre>
+Wenn a >= b ist wird a zurück gegeben.
+Wenn a < b ist wird b zurückgegeben.
+</pre>
+	<li>Parameter: <code>a</code>, <code>b</code></li>
+	<li>Parameter Typen: <code>Kommazahl</code>, <code>Kommazahl</code></li>
+	<li>Rückgabe Typ: <code>Kommazahl</code></li>
+</ul>
+
+<h3>Aliase</h3>
+<ol>
+	<li><code>&#34;die größere Zahl von &lt;a&gt; und &lt;b&gt;&#34;</code></li>
+</ol>
+
+<h3>Implementation</h3>
+<pre class="language-ddp" tabindex="0">
+<code class="language-ddp">
+Wenn a größer als, oder b ist, gib a zurück.
+Gib b zurück.
+
+</code>
+</pre>
+</details>
+
+<details>
+<summary><h2>minK</h2></summary>
+<ul>
+<pre>
+Wenn a <= b ist wird a zurückgegeben.
+Wenn a > b ist wird b zurückgegeben.
+</pre>
+	<li>Parameter: <code>a</code>, <code>b</code></li>
+	<li>Parameter Typen: <code>Kommazahl</code>, <code>Kommazahl</code></li>
+	<li>Rückgabe Typ: <code>Kommazahl</code></li>
+</ul>
+
+<h3>Aliase</h3>
+<ol>
+	<li><code>&#34;die kleinere Zahl von &lt;a&gt; und &lt;b&gt;&#34;</code></li>
+</ol>
+
+<h3>Implementation</h3>
+<pre class="language-ddp" tabindex="0">
+<code class="language-ddp">
+Wenn a kleiner als, oder b ist, gib a zurück.
+Gib b zurück.
+
+</code>
+</pre>
+</details>
+
+<details>
+<summary><h2>clampK</h2></summary>
+<ul>
+<pre>
+Wenn wert > max ist, wird max zurückgegeben.
+Wenn wert < min ist, wird min zurückgegeben.
+Wenn min < wert < max ist, wird wert zurückgegeben.
+</pre>
+	<li>Parameter: <code>wert</code>, <code>max</code>, <code>min</code></li>
+	<li>Parameter Typen: <code>Kommazahl</code>, <code>Kommazahl</code>, <code>Kommazahl</code></li>
+	<li>Rückgabe Typ: <code>Kommazahl</code></li>
+</ul>
+
+<h3>Aliase</h3>
+<ol>
+	<li><code>&#34;&lt;wert&gt; zwischen &lt;min&gt; und &lt;max&gt;&#34;</code></li>
+</ol>
+
+<h3>Implementation</h3>
+<pre class="language-ddp" tabindex="0">
+<code class="language-ddp">
+Wenn wert größer als max ist, gib max zurück.
+Wenn wert kleiner als min ist, gib min zurück.
+Gib wert zurück.
+
+</code>
+</pre>
+</details>
+
+<details>
 <summary><h2>sign</h2></summary>
 <ul>
 <pre>
@@ -193,6 +276,35 @@ Wenn wert = 0 ist, wird 0 zurückgegeben.
 </pre>
 	<li>Parameter: <code>wert</code></li>
 	<li>Parameter Typ: <code>Zahl</code></li>
+	<li>Rückgabe Typ: <code>Zahl</code></li>
+</ul>
+
+<h3>Aliase</h3>
+<ol>
+	<li><code>&#34;das Vorzeichen von &lt;wert&gt;&#34;</code></li>
+</ol>
+
+<h3>Implementation</h3>
+<pre class="language-ddp" tabindex="0">
+<code class="language-ddp">
+Wenn wert kleiner als 0 ist, gib -1 zurück.
+Wenn aber wert größer als 0 ist, gib 1 zurück.
+Gib 0 zurück.
+
+</code>
+</pre>
+</details>
+
+<details>
+<summary><h2>signK</h2></summary>
+<ul>
+<pre>
+Wenn wert < 0 ist, wird -1 zurückgegeben.
+Wenn wert > 0 ist, wird 1 zurückgegeben.
+Wenn wert = 0 ist, wird 0 zurückgegeben.
+</pre>
+	<li>Parameter: <code>wert</code></li>
+	<li>Parameter Typ: <code>Kommazahl</code></li>
 	<li>Rückgabe Typ: <code>Zahl</code></li>
 </ul>
 
@@ -290,6 +402,9 @@ Gib (wert als Zahl) als Kommazahl zurück.
 <details>
 <summary><h2>sin</h2></summary>
 <ul>
+<pre>
+Berechnet den Sinus von v.
+</pre>
 	<li>Parameter: <code>v</code></li>
 	<li>Parameter Typ: <code>Kommazahl</code></li>
 	<li>Rückgabe Typ: <code>Kommazahl</code></li>
@@ -308,6 +423,9 @@ Implementiert in <code>"libddpstdlib.a"</code>
 <details>
 <summary><h2>cos</h2></summary>
 <ul>
+<pre>
+Berechnet den Kosinus von v.
+</pre>
 	<li>Parameter: <code>v</code></li>
 	<li>Parameter Typ: <code>Kommazahl</code></li>
 	<li>Rückgabe Typ: <code>Kommazahl</code></li>
@@ -326,6 +444,9 @@ Implementiert in <code>"libddpstdlib.a"</code>
 <details>
 <summary><h2>tan</h2></summary>
 <ul>
+<pre>
+Berechnet den Tangens von v.
+</pre>
 	<li>Parameter: <code>v</code></li>
 	<li>Parameter Typ: <code>Kommazahl</code></li>
 	<li>Rückgabe Typ: <code>Kommazahl</code></li>
@@ -344,6 +465,9 @@ Implementiert in <code>"libddpstdlib.a"</code>
 <details>
 <summary><h2>asin</h2></summary>
 <ul>
+<pre>
+Berechnet den Arkussinus von v. (sin⁻¹)
+</pre>
 	<li>Parameter: <code>v</code></li>
 	<li>Parameter Typ: <code>Kommazahl</code></li>
 	<li>Rückgabe Typ: <code>Kommazahl</code></li>
@@ -362,6 +486,9 @@ Implementiert in <code>"libddpstdlib.a"</code>
 <details>
 <summary><h2>acos</h2></summary>
 <ul>
+<pre>
+Berechnet den Arkuskosinus von v. (cos⁻¹)
+</pre>
 	<li>Parameter: <code>v</code></li>
 	<li>Parameter Typ: <code>Kommazahl</code></li>
 	<li>Rückgabe Typ: <code>Kommazahl</code></li>
@@ -380,6 +507,9 @@ Implementiert in <code>"libddpstdlib.a"</code>
 <details>
 <summary><h2>atan</h2></summary>
 <ul>
+<pre>
+Berechnet den Arkustangens von v. (tan⁻¹)
+</pre>
 	<li>Parameter: <code>v</code></li>
 	<li>Parameter Typ: <code>Kommazahl</code></li>
 	<li>Rückgabe Typ: <code>Kommazahl</code></li>
@@ -398,6 +528,9 @@ Implementiert in <code>"libddpstdlib.a"</code>
 <details>
 <summary><h2>sinh</h2></summary>
 <ul>
+<pre>
+Berechnet den Hyperbelsinus von v.
+</pre>
 	<li>Parameter: <code>v</code></li>
 	<li>Parameter Typ: <code>Kommazahl</code></li>
 	<li>Rückgabe Typ: <code>Kommazahl</code></li>
@@ -416,6 +549,9 @@ Implementiert in <code>"libddpstdlib.a"</code>
 <details>
 <summary><h2>cosh</h2></summary>
 <ul>
+<pre>
+Berechnet den Hyperbelkosinus von v.
+</pre>
 	<li>Parameter: <code>v</code></li>
 	<li>Parameter Typ: <code>Kommazahl</code></li>
 	<li>Rückgabe Typ: <code>Kommazahl</code></li>
@@ -434,6 +570,9 @@ Implementiert in <code>"libddpstdlib.a"</code>
 <details>
 <summary><h2>tanh</h2></summary>
 <ul>
+<pre>
+Berechnet den Hyperbeltangens von v.
+</pre>
 	<li>Parameter: <code>v</code></li>
 	<li>Parameter Typ: <code>Kommazahl</code></li>
 	<li>Rückgabe Typ: <code>Kommazahl</code></li>
@@ -601,6 +740,131 @@ Für jede Zahl i von z bis 1 mit Schrittgröße -1, mache:
 	Wenn z durch i teilbar ist, speichere teiler verkettet mit i in teiler.	
 
 Gib teiler zurück.
+
+</code>
+</pre>
+</details>
+
+<details>
+<summary><h2>Quadriere</h2></summary>
+<ul>
+<pre>
+Quadriert (hoch 2) die gegebene Zahl.
+</pre>
+	<li>Parameter: <code>x</code></li>
+	<li>Parameter Typ: <code>Kommazahlen Referenz</code></li>
+	<li>Rückgabe Typ: <code>nichts</code></li>
+</ul>
+
+<h3>Aliase</h3>
+<ol>
+	<li><code>&#34;Quadriere &lt;x&gt;&#34;</code></li>
+</ol>
+
+<h3>Implementation</h3>
+<pre class="language-ddp" tabindex="0">
+<code class="language-ddp">
+Vervielfache x um x.
+
+</code>
+</pre>
+</details>
+
+<details>
+<summary><h2>Quadriere_Wert</h2></summary>
+<ul>
+<pre>
+Gibt die gegebene Zahl hoch 2 zurück.
+</pre>
+	<li>Parameter: <code>x</code></li>
+	<li>Parameter Typ: <code>Kommazahl</code></li>
+	<li>Rückgabe Typ: <code>Kommazahl</code></li>
+</ul>
+
+<h3>Aliase</h3>
+<ol>
+	<li><code>&#34;&lt;x&gt; zum quadrat&#34;</code></li>
+</ol>
+
+<h3>Implementation</h3>
+<pre class="language-ddp" tabindex="0">
+<code class="language-ddp">
+Gib x mal x zurück.
+
+</code>
+</pre>
+</details>
+
+<details>
+<summary><h2>Ganze_Zahl</h2></summary>
+<ul>
+<pre>
+Gibt zurück ob die gegebene Kommazahl eine ganze Zahl ist. (...; -2,0; -1,0; 0,0; 1,0; 2,0; ...)
+</pre>
+	<li>Parameter: <code>x</code></li>
+	<li>Parameter Typ: <code>Kommazahl</code></li>
+	<li>Rückgabe Typ: <code>Boolean</code></li>
+</ul>
+
+<h3>Aliase</h3>
+<ol>
+	<li><code>&#34;&lt;x&gt; eine ganze Zahl ist&#34;</code></li>
+</ol>
+
+<h3>Implementation</h3>
+<pre class="language-ddp" tabindex="0">
+<code class="language-ddp">
+Gib (x als Zahl) als Kommazahl gleich x ist zurück.
+
+</code>
+</pre>
+</details>
+
+<details>
+<summary><h2>Gerade_Zahl</h2></summary>
+<ul>
+<pre>
+Gibt zurück ob die gegebene Zahl eine gerade Zahl ist. (x mod 2 = 0)
+</pre>
+	<li>Parameter: <code>x</code></li>
+	<li>Parameter Typ: <code>Zahl</code></li>
+	<li>Rückgabe Typ: <code>Boolean</code></li>
+</ul>
+
+<h3>Aliase</h3>
+<ol>
+	<li><code>&#34;&lt;x&gt; eine gerade Zahl ist&#34;</code></li>
+</ol>
+
+<h3>Implementation</h3>
+<pre class="language-ddp" tabindex="0">
+<code class="language-ddp">
+Gib x modulo 2 gleich 0 ist zurück.
+
+</code>
+</pre>
+</details>
+
+<details>
+<summary><h2>Gerade_Kommazahl</h2></summary>
+<ul>
+<pre>
+Gibt zurück ob die gegebene Kommazahl eine gerade Zahl ist. ((int)x mod 2 = 0)
+</pre>
+	<li>Parameter: <code>x</code></li>
+	<li>Parameter Typ: <code>Kommazahl</code></li>
+	<li>Rückgabe Typ: <code>Boolean</code></li>
+</ul>
+
+<h3>Aliase</h3>
+<ol>
+	<li><code>&#34;&lt;x&gt; eine gerade Zahl ist&#34;</code></li>
+</ol>
+
+<h3>Implementation</h3>
+<pre class="language-ddp" tabindex="0">
+<code class="language-ddp">
+Gib x als Zahl modulo 2 gleich 0 ist zurück.
 
 </code>
 </pre>
