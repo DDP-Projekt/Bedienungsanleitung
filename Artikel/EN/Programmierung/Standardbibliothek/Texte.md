@@ -1,4 +1,4 @@
-# Duden/Texte Funktionen
+# Duden/Texte functions
 <details>
 <summary><h2>LeererText</h2></summary>
 <ul>
@@ -7,10 +7,10 @@ Gibt "" zurück.
 Nutzen: Der Text t ist ein leerer Text.
 </pre>
 </li>
-	<li>Rückgabe Typ: <code>Text</code></li>
+	<li>Return type: <code>Text</code></li>
 </ul>
 
-<h3>Aliase</h3>
+<h3>Aliases</h3>
 <ol>
 	<li><code>&#34;ein leerer Text&#34;</code></li>
 	<li><code>&#34;einen leeren Text&#34;</code></li>
@@ -35,12 +35,12 @@ Der Text t ist "aaaaaaahallo"
 Entferne alle 'a' vor t.
 t: "hallo"
 </pre>
-	<li>Parameter: <code>text</code>, <code>zeichen</code></li>
-	<li>Parameter Typen: <code>Text Referenz</code>, <code>Buchstabe</code></li>
-	<li>Rückgabe Typ: <code>nichts</code></li>
+	<li>Parameters: <code>text</code>, <code>zeichen</code></li>
+	<li>Parameter types: <code>Text Referenz</code>, <code>Buchstabe</code></li>
+	<li>Return type: <code>nichts</code></li>
 </ul>
 
-<h3>Aliase</h3>
+<h3>Aliases</h3>
 <ol>
 	<li><code>&#34;Entferne alle &lt;zeichen&gt; vor &lt;text&gt;&#34;</code></li>
 </ol>
@@ -63,12 +63,12 @@ Speichere text von index bis (die Länge von text) in text.
 <pre>
 Siehe TrimAnfang
 </pre>
-	<li>Parameter: <code>text</code>, <code>zeichen</code></li>
-	<li>Parameter Typen: <code>Text</code>, <code>Buchstabe</code></li>
-	<li>Rückgabe Typ: <code>Text</code></li>
+	<li>Parameters: <code>text</code>, <code>zeichen</code></li>
+	<li>Parameter types: <code>Text</code>, <code>Buchstabe</code></li>
+	<li>Return type: <code>Text</code></li>
 </ul>
 
-<h3>Aliase</h3>
+<h3>Aliases</h3>
 <ol>
 	<li><code>&#34;&lt;text&gt; mit allen &lt;zeichen&gt; davor entfernt&#34;</code></li>
 </ol>
@@ -93,12 +93,12 @@ Der Text t ist "hallo!!!!!!!!!!"
 Entferne alle '!' nach t.
 t: "hallo"
 </pre>
-	<li>Parameter: <code>text</code>, <code>zeichen</code></li>
-	<li>Parameter Typen: <code>Text Referenz</code>, <code>Buchstabe</code></li>
-	<li>Rückgabe Typ: <code>nichts</code></li>
+	<li>Parameters: <code>text</code>, <code>zeichen</code></li>
+	<li>Parameter types: <code>Text Referenz</code>, <code>Buchstabe</code></li>
+	<li>Return type: <code>nichts</code></li>
 </ul>
 
-<h3>Aliase</h3>
+<h3>Aliases</h3>
 <ol>
 	<li><code>&#34;Entferne alle &lt;zeichen&gt; nach &lt;text&gt;&#34;</code></li>
 </ol>
@@ -126,12 +126,12 @@ Speichere text von 1 bis index in text.
 <pre>
 Siehe TrimEnde
 </pre>
-	<li>Parameter: <code>text</code>, <code>zeichen</code></li>
-	<li>Parameter Typen: <code>Text</code>, <code>Buchstabe</code></li>
-	<li>Rückgabe Typ: <code>Text</code></li>
+	<li>Parameters: <code>text</code>, <code>zeichen</code></li>
+	<li>Parameter types: <code>Text</code>, <code>Buchstabe</code></li>
+	<li>Return type: <code>Text</code></li>
 </ul>
 
-<h3>Aliase</h3>
+<h3>Aliases</h3>
 <ol>
 	<li><code>&#34;&lt;text&gt; mit allen &lt;zeichen&gt; danach entfernt&#34;</code></li>
 </ol>
@@ -156,12 +156,12 @@ Der Text t ist "!!!!!hallo!!!!!!!!!!"
 Entferne alle '!' vor und nach t.
 t: "hallo"
 </pre>
-	<li>Parameter: <code>text</code>, <code>zeichen</code></li>
-	<li>Parameter Typen: <code>Text Referenz</code>, <code>Buchstabe</code></li>
-	<li>Rückgabe Typ: <code>nichts</code></li>
+	<li>Parameters: <code>text</code>, <code>zeichen</code></li>
+	<li>Parameter types: <code>Text Referenz</code>, <code>Buchstabe</code></li>
+	<li>Return type: <code>nichts</code></li>
 </ul>
 
-<h3>Aliase</h3>
+<h3>Aliases</h3>
 <ol>
 	<li><code>&#34;Entferne alle &lt;zeichen&gt; vor und nach &lt;text&gt;&#34;</code></li>
 </ol>
@@ -185,12 +185,12 @@ Speichere text von startIndex bis stopIndex in text.
 <pre>
 Siehe Trim
 </pre>
-	<li>Parameter: <code>text</code>, <code>zeichen</code></li>
-	<li>Parameter Typen: <code>Text</code>, <code>Buchstabe</code></li>
-	<li>Rückgabe Typ: <code>Text</code></li>
+	<li>Parameters: <code>text</code>, <code>zeichen</code></li>
+	<li>Parameter types: <code>Text</code>, <code>Buchstabe</code></li>
+	<li>Return type: <code>Text</code></li>
 </ul>
 
-<h3>Aliase</h3>
+<h3>Aliases</h3>
 <ol>
 	<li><code>&#34;&lt;text&gt; mit allen &lt;zeichen&gt; davor und danach entfernt&#34;</code></li>
 </ol>
@@ -211,12 +211,12 @@ Gib text zurück.
 <pre>
 Gibt zurück ob der gegebenen Text den gegebenen Buchstaben enthält.
 </pre>
-	<li>Parameter: <code>text</code>, <code>zeichen</code></li>
-	<li>Parameter Typen: <code>Text</code>, <code>Buchstabe</code></li>
-	<li>Rückgabe Typ: <code>Boolean</code></li>
+	<li>Parameters: <code>text</code>, <code>zeichen</code></li>
+	<li>Parameter types: <code>Text</code>, <code>Buchstabe</code></li>
+	<li>Return type: <code>Boolean</code></li>
 </ul>
 
-<h3>Aliase</h3>
+<h3>Aliases</h3>
 <ol>
 	<li><code>&#34;&lt;text&gt; &lt;zeichen&gt; enthält&#34;</code></li>
 </ol>
@@ -237,12 +237,12 @@ Gib falsch zurück.
 <pre>
 Gibt zurück ob der gegebene Text (text) den Subtext (suchText) enthält.
 </pre>
-	<li>Parameter: <code>text</code>, <code>suchText</code></li>
-	<li>Parameter Typen: <code>Text</code>, <code>Text</code></li>
-	<li>Rückgabe Typ: <code>Boolean</code></li>
+	<li>Parameters: <code>text</code>, <code>suchText</code></li>
+	<li>Parameter types: <code>Text</code>, <code>Text</code></li>
+	<li>Return type: <code>Boolean</code></li>
 </ul>
 
-<h3>Aliase</h3>
+<h3>Aliases</h3>
 <ol>
 	<li><code>&#34;&lt;text&gt; &lt;suchText&gt; enthält&#34;</code></li>
 </ol>
@@ -272,12 +272,12 @@ Gib falsch zurück.
 <pre>
 Gibt zurück ob der gegebene Text mit dem gegebenen Buchstaben anfängt.
 </pre>
-	<li>Parameter: <code>text</code>, <code>buchstabe</code></li>
-	<li>Parameter Typen: <code>Text</code>, <code>Buchstabe</code></li>
-	<li>Rückgabe Typ: <code>Boolean</code></li>
+	<li>Parameters: <code>text</code>, <code>buchstabe</code></li>
+	<li>Parameter types: <code>Text</code>, <code>Buchstabe</code></li>
+	<li>Return type: <code>Boolean</code></li>
 </ul>
 
-<h3>Aliase</h3>
+<h3>Aliases</h3>
 <ol>
 	<li><code>&#34;&lt;buchstabe&gt; am Anfang von &lt;text&gt; steht&#34;</code></li>
 </ol>
@@ -298,12 +298,12 @@ Gib (text an der Stelle 1) gleich buchstabe ist zurück.
 <pre>
 Gibt zurück ob der gegebene Text mit dem gegebenen Text (suchText) anfängt.
 </pre>
-	<li>Parameter: <code>text</code>, <code>suchText</code></li>
-	<li>Parameter Typen: <code>Text</code>, <code>Text</code></li>
-	<li>Rückgabe Typ: <code>Boolean</code></li>
+	<li>Parameters: <code>text</code>, <code>suchText</code></li>
+	<li>Parameter types: <code>Text</code>, <code>Text</code></li>
+	<li>Return type: <code>Boolean</code></li>
 </ul>
 
-<h3>Aliase</h3>
+<h3>Aliases</h3>
 <ol>
 	<li><code>&#34;&lt;suchText&gt; am Anfang von &lt;text&gt; steht&#34;</code></li>
 </ol>
@@ -323,12 +323,12 @@ Gib (text von 1 bis (die Länge von suchText)) gleich suchText ist zurück.
 <pre>
 Gibt zurück ob der gegebene Text mit dem gegebenen Buchstaben endet.
 </pre>
-	<li>Parameter: <code>text</code>, <code>buchstabe</code></li>
-	<li>Parameter Typen: <code>Text</code>, <code>Buchstabe</code></li>
-	<li>Rückgabe Typ: <code>Boolean</code></li>
+	<li>Parameters: <code>text</code>, <code>buchstabe</code></li>
+	<li>Parameter types: <code>Text</code>, <code>Buchstabe</code></li>
+	<li>Return type: <code>Boolean</code></li>
 </ul>
 
-<h3>Aliase</h3>
+<h3>Aliases</h3>
 <ol>
 	<li><code>&#34;&lt;buchstabe&gt; am Ende von &lt;text&gt; steht&#34;</code></li>
 </ol>
@@ -349,12 +349,12 @@ Gib (text an der Stelle (die Länge von text)) gleich buchstabe ist zurück.
 <pre>
 Gibt zurück ob der gegebene Text mit dem gegebenen Text (suchText) endet.
 </pre>
-	<li>Parameter: <code>text</code>, <code>suchText</code></li>
-	<li>Parameter Typen: <code>Text</code>, <code>Text</code></li>
-	<li>Rückgabe Typ: <code>Boolean</code></li>
+	<li>Parameters: <code>text</code>, <code>suchText</code></li>
+	<li>Parameter types: <code>Text</code>, <code>Text</code></li>
+	<li>Return type: <code>Boolean</code></li>
 </ul>
 
-<h3>Aliase</h3>
+<h3>Aliases</h3>
 <ol>
 	<li><code>&#34;&lt;suchText&gt; am Ende von &lt;text&gt; steht&#34;</code></li>
 </ol>
@@ -374,12 +374,12 @@ Gib (text von die Länge von text minus die Länge von suchText plus 1 bis (die 
 <pre>
 Speichert einen leeren Text in text.
 </pre>
-	<li>Parameter: <code>text</code></li>
-	<li>Parameter Typ: <code>Text Referenz</code></li>
-	<li>Rückgabe Typ: <code>nichts</code></li>
+	<li>Parameters: <code>text</code></li>
+	<li>Parameter type: <code>Text Referenz</code></li>
+	<li>Return type: <code>nichts</code></li>
 </ul>
 
-<h3>Aliase</h3>
+<h3>Aliases</h3>
 <ol>
 	<li><code>&#34;Leere &lt;text&gt;&#34;</code></li>
 </ol>
@@ -400,12 +400,12 @@ Speichere "" in text.
 Fügt zwei Texte aneinander.
 f("ha", "lo") -> "halo"
 </pre>
-	<li>Parameter: <code>text</code>, <code>elm</code></li>
-	<li>Parameter Typen: <code>Text Referenz</code>, <code>Text</code></li>
-	<li>Rückgabe Typ: <code>nichts</code></li>
+	<li>Parameters: <code>text</code>, <code>elm</code></li>
+	<li>Parameter types: <code>Text Referenz</code>, <code>Text</code></li>
+	<li>Return type: <code>nichts</code></li>
 </ul>
 
-<h3>Aliase</h3>
+<h3>Aliases</h3>
 <ol>
 	<li><code>&#34;Füge &lt;elm&gt; an &lt;text&gt; an&#34;</code></li>
 </ol>
@@ -426,12 +426,12 @@ Speichere text verkettet mit elm in text.
 Fügt einen Buchstaben an einen Text.
 f("may", 'o') -> "mayo"
 </pre>
-	<li>Parameter: <code>text</code>, <code>elm</code></li>
-	<li>Parameter Typen: <code>Text Referenz</code>, <code>Buchstabe</code></li>
-	<li>Rückgabe Typ: <code>nichts</code></li>
+	<li>Parameters: <code>text</code>, <code>elm</code></li>
+	<li>Parameter types: <code>Text Referenz</code>, <code>Buchstabe</code></li>
+	<li>Return type: <code>nichts</code></li>
 </ul>
 
-<h3>Aliase</h3>
+<h3>Aliases</h3>
 <ol>
 	<li><code>&#34;Füge &lt;elm&gt; an &lt;text&gt; an&#34;</code></li>
 </ol>
@@ -451,12 +451,12 @@ Speichere text verkettet mit elm in text.
 <pre>
 Fügt einen Text
 </pre>
-	<li>Parameter: <code>text</code>, <code>index</code>, <code>elm</code></li>
-	<li>Parameter Typen: <code>Text Referenz</code>, <code>Zahl</code>, <code>Text</code></li>
-	<li>Rückgabe Typ: <code>nichts</code></li>
+	<li>Parameters: <code>text</code>, <code>index</code>, <code>elm</code></li>
+	<li>Parameter types: <code>Text Referenz</code>, <code>Zahl</code>, <code>Text</code></li>
+	<li>Return type: <code>nichts</code></li>
 </ul>
 
-<h3>Aliase</h3>
+<h3>Aliases</h3>
 <ol>
 	<li><code>&#34;Setze &lt;elm&gt; an die Stelle &lt;index&gt; von &lt;text&gt;&#34;</code></li>
 </ol>
@@ -473,12 +473,12 @@ Speichere text von 1 bis (index minus 1) verkettet mit elm verkettet mit text vo
 <details>
 <summary><h2>Buchstabe_in_Text_einfügen</h2></summary>
 <ul>
-	<li>Parameter: <code>text</code>, <code>index</code>, <code>elm</code></li>
-	<li>Parameter Typen: <code>Text Referenz</code>, <code>Zahl</code>, <code>Buchstabe</code></li>
-	<li>Rückgabe Typ: <code>nichts</code></li>
+	<li>Parameters: <code>text</code>, <code>index</code>, <code>elm</code></li>
+	<li>Parameter types: <code>Text Referenz</code>, <code>Zahl</code>, <code>Buchstabe</code></li>
+	<li>Return type: <code>nichts</code></li>
 </ul>
 
-<h3>Aliase</h3>
+<h3>Aliases</h3>
 <ol>
 	<li><code>&#34;Setze &lt;elm&gt; an die Stelle &lt;index&gt; von &lt;text&gt;&#34;</code></li>
 </ol>
@@ -499,12 +499,12 @@ Speichere text von 1 bis (index minus 1) verkettet mit elm verkettet mit text vo
 Fügt einen Text am Anfang eines Textes ein.
 f("hallo", " welt!") -> "hallo welt!"
 </pre>
-	<li>Parameter: <code>text</code>, <code>elm</code></li>
-	<li>Parameter Typen: <code>Text Referenz</code>, <code>Text</code></li>
-	<li>Rückgabe Typ: <code>nichts</code></li>
+	<li>Parameters: <code>text</code>, <code>elm</code></li>
+	<li>Parameter types: <code>Text Referenz</code>, <code>Text</code></li>
+	<li>Return type: <code>nichts</code></li>
 </ul>
 
-<h3>Aliase</h3>
+<h3>Aliases</h3>
 <ol>
 	<li><code>&#34;Stelle &lt;elm&gt; vor &lt;text&gt;&#34;</code></li>
 </ol>
@@ -525,12 +525,12 @@ Speichere elm verkettet mit text in text.
 Fügt einen Buchstaben am Anfang eines Textes ein.
 f("allo", 'h') -> "hallo"
 </pre>
-	<li>Parameter: <code>text</code>, <code>elm</code></li>
-	<li>Parameter Typen: <code>Text Referenz</code>, <code>Buchstabe</code></li>
-	<li>Rückgabe Typ: <code>nichts</code></li>
+	<li>Parameters: <code>text</code>, <code>elm</code></li>
+	<li>Parameter types: <code>Text Referenz</code>, <code>Buchstabe</code></li>
+	<li>Return type: <code>nichts</code></li>
 </ul>
 
-<h3>Aliase</h3>
+<h3>Aliases</h3>
 <ol>
 	<li><code>&#34;Stelle &lt;elm&gt; vor &lt;text&gt;&#34;</code></li>
 </ol>
@@ -550,12 +550,12 @@ Speichere elm verkettet mit text in text.
 <pre>
 Entfernt den Buchstaben an der Stelle index vom Text
 </pre>
-	<li>Parameter: <code>text</code>, <code>index</code></li>
-	<li>Parameter Typen: <code>Text Referenz</code>, <code>Zahl</code></li>
-	<li>Rückgabe Typ: <code>nichts</code></li>
+	<li>Parameters: <code>text</code>, <code>index</code></li>
+	<li>Parameter types: <code>Text Referenz</code>, <code>Zahl</code></li>
+	<li>Return type: <code>nichts</code></li>
 </ul>
 
-<h3>Aliase</h3>
+<h3>Aliases</h3>
 <ol>
 	<li><code>&#34;Lösche das Element an der Stelle &lt;index&gt; aus &lt;text&gt;&#34;</code></li>
 </ol>
@@ -584,12 +584,12 @@ Sonst:
 <pre>
 Entfernt einen Bereich vom Text
 </pre>
-	<li>Parameter: <code>text</code>, <code>start</code>, <code>end</code></li>
-	<li>Parameter Typen: <code>Text Referenz</code>, <code>Zahl</code>, <code>Zahl</code></li>
-	<li>Rückgabe Typ: <code>nichts</code></li>
+	<li>Parameters: <code>text</code>, <code>start</code>, <code>end</code></li>
+	<li>Parameter types: <code>Text Referenz</code>, <code>Zahl</code>, <code>Zahl</code></li>
+	<li>Return type: <code>nichts</code></li>
 </ul>
 
-<h3>Aliase</h3>
+<h3>Aliases</h3>
 <ol>
 	<li><code>&#34;Lösche alle Elemente von &lt;start&gt; bis &lt;end&gt; aus &lt;text&gt;&#34;</code></li>
 </ol>
@@ -612,12 +612,12 @@ Sonst:
 <pre>
 Füllt den Text mit dem gegebenen Buchstaben
 </pre>
-	<li>Parameter: <code>text</code>, <code>elm</code></li>
-	<li>Parameter Typen: <code>Text Referenz</code>, <code>Buchstabe</code></li>
-	<li>Rückgabe Typ: <code>nichts</code></li>
+	<li>Parameters: <code>text</code>, <code>elm</code></li>
+	<li>Parameter types: <code>Text Referenz</code>, <code>Buchstabe</code></li>
+	<li>Return type: <code>nichts</code></li>
 </ul>
 
-<h3>Aliase</h3>
+<h3>Aliases</h3>
 <ol>
 	<li><code>&#34;Fülle &lt;text&gt; mit &lt;elm&gt;&#34;</code></li>
 </ol>
@@ -642,12 +642,12 @@ Speichere neuerText in text.
 <pre>
 Gibt den index des gegebenen Buchstaben im Text zurück oder -1 falls es nicht gefunden wurde.
 </pre>
-	<li>Parameter: <code>text</code>, <code>elm</code></li>
-	<li>Parameter Typen: <code>Text</code>, <code>Buchstabe</code></li>
-	<li>Rückgabe Typ: <code>Zahl</code></li>
+	<li>Parameters: <code>text</code>, <code>elm</code></li>
+	<li>Parameter types: <code>Text</code>, <code>Buchstabe</code></li>
+	<li>Return type: <code>Zahl</code></li>
 </ul>
 
-<h3>Aliase</h3>
+<h3>Aliases</h3>
 <ol>
 	<li><code>&#34;der Index von &lt;elm&gt; in &lt;text&gt;&#34;</code></li>
 	<li><code>&#34;den Index von &lt;elm&gt; in &lt;text&gt;&#34;</code></li>
@@ -670,12 +670,12 @@ Gib -1 zurück.
 <pre>
 Gibt ob der gegebene Text leer ist zurück
 </pre>
-	<li>Parameter: <code>text</code></li>
-	<li>Parameter Typ: <code>Text</code></li>
-	<li>Rückgabe Typ: <code>Boolean</code></li>
+	<li>Parameters: <code>text</code></li>
+	<li>Parameter type: <code>Text</code></li>
+	<li>Return type: <code>Boolean</code></li>
 </ul>
 
-<h3>Aliase</h3>
+<h3>Aliases</h3>
 <ol>
 	<li><code>&#34;&lt;text&gt; leer ist&#34;</code></li>
 </ol>
@@ -695,12 +695,12 @@ Gib [wahr wenn] die Länge von text gleich 0 ist zurück.
 <pre>
 Gibt zurück ob ein Text in eine Zahl umgewandelt werden kann
 </pre>
-	<li>Parameter: <code>t</code></li>
-	<li>Parameter Typ: <code>Text</code></li>
-	<li>Rückgabe Typ: <code>Boolean</code></li>
+	<li>Parameters: <code>t</code></li>
+	<li>Parameter type: <code>Text</code></li>
+	<li>Return type: <code>Boolean</code></li>
 </ul>
 
-<h3>Aliase</h3>
+<h3>Aliases</h3>
 <ol>
 	<li><code>&#34;&lt;t&gt; eine Zahl ist&#34;</code></li>
 </ol>
@@ -727,12 +727,12 @@ Gib wahr zurück.
 <pre>
 Wandelt jeden Buchstaben des gegebenen Textes in die groß geschriebene Variante
 </pre>
-	<li>Parameter: <code>text</code></li>
-	<li>Parameter Typ: <code>Text</code></li>
-	<li>Rückgabe Typ: <code>Text</code></li>
+	<li>Parameters: <code>text</code></li>
+	<li>Parameter type: <code>Text</code></li>
+	<li>Return type: <code>Text</code></li>
 </ul>
 
-<h3>Aliase</h3>
+<h3>Aliases</h3>
 <ol>
 	<li><code>&#34;&lt;text&gt; groß geschrieben&#34;</code></li>
 </ol>
@@ -755,12 +755,12 @@ Gib neuerText zurück.
 <pre>
 Wandelt jeden Buchstaben des gegebenen Textes in die groß geschriebene Variante
 </pre>
-	<li>Parameter: <code>text</code></li>
-	<li>Parameter Typ: <code>Text Referenz</code></li>
-	<li>Rückgabe Typ: <code>nichts</code></li>
+	<li>Parameters: <code>text</code></li>
+	<li>Parameter type: <code>Text Referenz</code></li>
+	<li>Return type: <code>nichts</code></li>
 </ul>
 
-<h3>Aliase</h3>
+<h3>Aliases</h3>
 <ol>
 	<li><code>&#34;Schreibe &lt;text&gt; groß&#34;</code></li>
 </ol>
@@ -780,12 +780,12 @@ Speichere text groß geschrieben in text.
 <pre>
 Wandelt jeden Buchstaben des gegebenen Textes in die klein geschriebene Variante
 </pre>
-	<li>Parameter: <code>text</code></li>
-	<li>Parameter Typ: <code>Text</code></li>
-	<li>Rückgabe Typ: <code>Text</code></li>
+	<li>Parameters: <code>text</code></li>
+	<li>Parameter type: <code>Text</code></li>
+	<li>Return type: <code>Text</code></li>
 </ul>
 
-<h3>Aliase</h3>
+<h3>Aliases</h3>
 <ol>
 	<li><code>&#34;&lt;text&gt; klein geschrieben&#34;</code></li>
 </ol>
@@ -808,12 +808,12 @@ Gib neuerText zurück.
 <pre>
 Wandelt jeden Buchstaben des gegebenen Textes in die klein geschriebene Variante
 </pre>
-	<li>Parameter: <code>text</code></li>
-	<li>Parameter Typ: <code>Text Referenz</code></li>
-	<li>Rückgabe Typ: <code>nichts</code></li>
+	<li>Parameters: <code>text</code></li>
+	<li>Parameter type: <code>Text Referenz</code></li>
+	<li>Return type: <code>nichts</code></li>
 </ul>
 
-<h3>Aliase</h3>
+<h3>Aliases</h3>
 <ol>
 	<li><code>&#34;Schreibe &lt;text&gt; klein&#34;</code></li>
 </ol>
@@ -837,12 +837,12 @@ f("hey", ' ', 8) -> "     hey"
 f("programm", ' ', 8) -> "programm"
 f("", 'o', 8) -> "oooooooo"
 </pre>
-	<li>Parameter: <code>text</code>, <code>zeichen</code>, <code>endlänge</code></li>
-	<li>Parameter Typen: <code>Text</code>, <code>Buchstabe</code>, <code>Zahl</code></li>
-	<li>Rückgabe Typ: <code>Text</code></li>
+	<li>Parameters: <code>text</code>, <code>zeichen</code>, <code>endlänge</code></li>
+	<li>Parameter types: <code>Text</code>, <code>Buchstabe</code>, <code>Zahl</code></li>
+	<li>Return type: <code>Text</code></li>
 </ul>
 
-<h3>Aliase</h3>
+<h3>Aliases</h3>
 <ol>
 	<li><code>&#34;&lt;text&gt; mit &lt;endlänge&gt; &lt;zeichen&gt; links gepolstert&#34;</code></li>
 </ol>
@@ -875,12 +875,12 @@ f("hey", ' ', 8) -> "hey     "
 f("programm", ' ', 8) -> "programm"
 f("", 'o', 8) -> "oooooooo"
 </pre>
-	<li>Parameter: <code>text</code>, <code>zeichen</code>, <code>endlänge</code></li>
-	<li>Parameter Typen: <code>Text</code>, <code>Buchstabe</code>, <code>Zahl</code></li>
-	<li>Rückgabe Typ: <code>Text</code></li>
+	<li>Parameters: <code>text</code>, <code>zeichen</code>, <code>endlänge</code></li>
+	<li>Parameter types: <code>Text</code>, <code>Buchstabe</code>, <code>Zahl</code></li>
+	<li>Return type: <code>Text</code></li>
 </ul>
 
-<h3>Aliase</h3>
+<h3>Aliases</h3>
 <ol>
 	<li><code>&#34;&lt;text&gt; mit &lt;endlänge&gt; &lt;zeichen&gt; rechts gepolstert&#34;</code></li>
 </ol>
@@ -909,12 +909,12 @@ Gib text zurück.
 <pre>
 Spaltet den gegebenen Text anhand des angegebenen Buchstaben in Teiltexte.
 </pre>
-	<li>Parameter: <code>text</code>, <code>zeichen</code></li>
-	<li>Parameter Typen: <code>Text</code>, <code>Buchstabe</code></li>
-	<li>Rückgabe Typ: <code>Text Liste</code></li>
+	<li>Parameters: <code>text</code>, <code>zeichen</code></li>
+	<li>Parameter types: <code>Text</code>, <code>Buchstabe</code></li>
+	<li>Return type: <code>Text Liste</code></li>
 </ul>
 
-<h3>Aliase</h3>
+<h3>Aliases</h3>
 <ol>
 	<li><code>&#34;&lt;text&gt; an &lt;zeichen&gt; gespalten&#34;</code></li>
 </ol>
@@ -935,6 +935,161 @@ Solange endIndex ungleich -1 ist und endIndex ungleich die Länge von text ist, 
 
 Speichere endliste verkettet mit text in endliste.
 Gib endliste zurück.
+
+</code>
+</pre>
+</details>
+
+<details>
+<summary><h2>VerbindenT</h2></summary>
+<ul>
+<pre>
+Verkettet alle Elemente der Liste mit dem Trennzeichen und gibt den Text zurück.
+z.B.:
+f(["hi", "", "yo"], '-') -> "hi--yo"
+</pre>
+	<li>Parameters: <code>liste</code>, <code>trennzeichen</code></li>
+	<li>Parameter types: <code>Text Liste</code>, <code>Buchstabe</code></li>
+	<li>Return type: <code>Text</code></li>
+</ul>
+
+<h3>Aliases</h3>
+<ol>
+	<li><code>&#34;&lt;liste&gt; mit dem Trennzeichen &lt;trennzeichen&gt; zum Text verbunden&#34;</code></li>
+</ol>
+
+<h3>Implementation</h3>
+<pre class="language-ddp" tabindex="0">
+<code class="language-ddp">
+Der Text ret ist ein leerer Text.
+Für jede Zahl i von 1 bis die Länge von liste, mache:
+	Wenn i kleiner als die Länge von liste ist, Speichere ret verkettet mit liste an der Stelle i verkettet mit trennzeichen in ret.
+	Sonst Speichere ret verkettet mit liste an der Stelle i in ret.
+Gib ret zurück.
+
+</code>
+</pre>
+</details>
+
+<details>
+<summary><h2>VerbindenZ</h2></summary>
+<ul>
+<pre>
+Verkettet alle Elemente der Liste mit dem Trennzeichen und gibt den Text zurück.
+z.B.:
+f([1, 234, 56789, 0], '-') -> "1-234-56789-0"
+</pre>
+	<li>Parameters: <code>liste</code>, <code>trennzeichen</code></li>
+	<li>Parameter types: <code>Zahlen Liste</code>, <code>Buchstabe</code></li>
+	<li>Return type: <code>Text</code></li>
+</ul>
+
+<h3>Aliases</h3>
+<ol>
+	<li><code>&#34;&lt;liste&gt; mit dem Trennzeichen &lt;trennzeichen&gt; zum Text verbunden&#34;</code></li>
+</ol>
+
+<h3>Implementation</h3>
+<pre class="language-ddp" tabindex="0">
+<code class="language-ddp">
+Der Text ret ist ein leerer Text.
+Für jede Zahl i von 1 bis die Länge von liste, mache:
+	Wenn i kleiner als die Länge von liste ist, Speichere ret verkettet mit (liste an der Stelle i) als Text verkettet mit trennzeichen in ret.
+	Sonst Speichere ret verkettet mit (liste an der Stelle i) als Text in ret.
+Gib ret zurück.
+
+</code>
+</pre>
+</details>
+
+<details>
+<summary><h2>VerbindenK</h2></summary>
+<ul>
+<pre>
+Verkettet alle Elemente der Liste mit dem Trennzeichen und gibt den Text zurück.
+z.B.:
+f([1,4, 0 durch 0, 23,0], '-') -> "1,4-nan-23"
+</pre>
+	<li>Parameters: <code>liste</code>, <code>trennzeichen</code></li>
+	<li>Parameter types: <code>Kommazahlen Liste</code>, <code>Buchstabe</code></li>
+	<li>Return type: <code>Text</code></li>
+</ul>
+
+<h3>Aliases</h3>
+<ol>
+	<li><code>&#34;&lt;liste&gt; mit dem Trennzeichen &lt;trennzeichen&gt; zum Text verbunden&#34;</code></li>
+</ol>
+
+<h3>Implementation</h3>
+<pre class="language-ddp" tabindex="0">
+<code class="language-ddp">
+Der Text ret ist ein leerer Text.
+Für jede Zahl i von 1 bis die Länge von liste, mache:
+	Wenn i kleiner als die Länge von liste ist, Speichere ret verkettet mit (liste an der Stelle i) als Text verkettet mit trennzeichen in ret.
+	Sonst Speichere ret verkettet mit (liste an der Stelle i) als Text in ret.
+Gib ret zurück.
+
+</code>
+</pre>
+</details>
+
+<details>
+<summary><h2>VerbindenB</h2></summary>
+<ul>
+<pre>
+Verkettet alle Elemente der Liste mit dem Trennzeichen und gibt den Text zurück.
+z.B.:
+f(['a', 'b', 'c'], '-') -> "a-b-c"
+</pre>
+	<li>Parameters: <code>liste</code>, <code>trennzeichen</code></li>
+	<li>Parameter types: <code>Buchstaben Liste</code>, <code>Buchstabe</code></li>
+	<li>Return type: <code>Text</code></li>
+</ul>
+
+<h3>Aliases</h3>
+<ol>
+	<li><code>&#34;&lt;liste&gt; mit dem Trennzeichen &lt;trennzeichen&gt; zum Text verbunden&#34;</code></li>
+</ol>
+
+<h3>Implementation</h3>
+<pre class="language-ddp" tabindex="0">
+<code class="language-ddp">
+Der Text ret ist ein leerer Text.
+Für jede Zahl i von 1 bis die Länge von liste, mache:
+	Wenn i kleiner als die Länge von liste ist, Speichere ret verkettet mit (liste an der Stelle i) verkettet mit trennzeichen in ret.
+	Sonst Speichere ret verkettet mit (liste an der Stelle i) in ret.
+Gib ret zurück.
+
+</code>
+</pre>
+</details>
+
+<details>
+<summary><h2>VerbindenBool</h2></summary>
+<ul>
+<pre>
+Verkettet alle Elemente der Liste mit dem Trennzeichen und gibt den Text zurück.
+z.B.:
+f([wahr, falsch, falsch], '-') -> "wahr-falsch-falsch"
+</pre>
+	<li>Parameters: <code>liste</code>, <code>trennzeichen</code></li>
+	<li>Parameter types: <code>Boolean Liste</code>, <code>Buchstabe</code></li>
+	<li>Return type: <code>Text</code></li>
+</ul>
+
+<h3>Aliases</h3>
+<ol>
+	<li><code>&#34;&lt;liste&gt; mit dem Trennzeichen &lt;trennzeichen&gt; zum Text verbunden&#34;</code></li>
+</ol>
+
+<h3>Implementation</h3>
+<pre class="language-ddp" tabindex="0">
+<code class="language-ddp">
+Der Text ret ist ein leerer Text.
+Für jede Zahl i von 1 bis die Länge von liste, mache:
+	Wenn i kleiner als die Länge von liste ist, Speichere ret verkettet mit (liste an der Stelle i) als Text verkettet mit trennzeichen in ret.
+	Sonst Speichere ret verkettet mit (liste an der Stelle i) als Text in ret.
+Gib ret zurück.
 
 </code>
 </pre>

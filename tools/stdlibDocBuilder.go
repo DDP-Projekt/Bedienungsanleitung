@@ -15,6 +15,33 @@ import (
 	"github.com/DDP-Projekt/Kompilierer/src/parser"
 )
 
+var nameMap = map[string]map[string]string{
+	"DE": {
+		"params":      "Parameter",
+		"paramType":   "Parameter Typ",
+		"returnType":  "Rückgabe Typ",
+		"aliases":     "Aliase",
+		"impl":        "Implementation",
+		"externImpl":  "Implementiert in",
+		"type":        "Typ",
+		"var":         "Variablen",
+		"func":        "Funktionen",
+		"moduleEmpty": "Dieses Modul ist Leer",
+	},
+	"EN": {
+		"params":      "Parameters",
+		"paramType":   "Parameter type",
+		"returnType":  "Return type",
+		"aliases":     "Aliases",
+		"impl":        "Implementation",
+		"externImpl":  "Implemented in",
+		"type":        "Type",
+		"var":         "variables",
+		"func":        "functions",
+		"moduleEmpty": "This module is empty",
+	},
+}
+
 func clearDirectory(dir string) {
 	err := os.RemoveAll(dir)
 	if err != nil {
@@ -36,7 +63,8 @@ func main() {
 		//   - Kompilierer
 		//   - Bedienungsanleitung
 		inputDir := "../../Kompilierer/lib/stdlib/Duden/"
-		outputDir := "../Artikel/DE/Programmierung/Standardbibliothek/"
+		outputDirDe := "../Artikel/DE/Programmierung/Standardbibliothek/"
+		outputDirEn := "../Artikel/EN/Programmierung/Standardbibliothek/"
 
 		files, err := os.ReadDir(inputDir)
 		if err != nil {
@@ -44,27 +72,29 @@ func main() {
 		}
 
 		// delete old articles
-		clearDirectory(outputDir)
+		clearDirectory(outputDirDe)
 
 		fileNames := make([]string, 0, len(files))
 		for _, file := range files {
 			inputPath := filepath.Join(inputDir, file.Name())
-			outputPath := filepath.Join(outputDir, strings.Replace(file.Name(), "ddp", "md", 1))
+			outputPathDe := filepath.Join(outputDirDe, strings.Replace(file.Name(), "ddp", "md", 1))
+			outputPathEn := filepath.Join(outputDirEn, strings.Replace(file.Name(), "ddp", "md", 1))
 
-			MakeMdFiles(inputPath, outputPath)
+			MakeMdFiles(inputPath, outputPathDe, "DE")
+			MakeMdFiles(inputPath, outputPathEn, "EN")
 			fileNames = append(fileNames, strings.TrimSuffix(file.Name(), ".ddp"))
 		}
 		// correct the index
 		MakeIndexHtml(fileNames, "../index.html")
 
-	} else if len(os.Args) == 3 {
-		// Args[1]: Input, Args[2]: Output
-		MakeMdFiles(os.Args[1], os.Args[2])
+	} else if len(os.Args) == 4 {
+		// Args[1]: Input, Args[2]: Output, Args[3]: Language
+		MakeMdFiles(os.Args[1], os.Args[2], os.Args[3])
 		MakeIndexHtml([]string{os.Args[1]}, "../index.html")
 	}
 }
 
-func MakeMdFiles(inputFilePath, outputFilePath string) {
+func MakeMdFiles(inputFilePath, outputFilePath, lang string) {
 	fmt.Println("reading input file...")
 	inputFile, err := os.ReadFile(inputFilePath)
 	if err != nil {
@@ -124,7 +154,7 @@ func MakeMdFiles(inputFilePath, outputFilePath string) {
 
 			if len(decl.ParamNames) > 0 {
 				// Parameter Names
-				fmt.Fprintf(funcBldr, "\t<li>Parameter: ")
+				fmt.Fprintf(funcBldr, "\t<li>%s: ", nameMap[lang]["params"])
 				for i, paramName := range decl.ParamNames {
 					fmt.Fprintf(funcBldr, "<code>%s</code>", paramName)
 					if i < len(decl.ParamNames)-1 {
@@ -133,9 +163,13 @@ func MakeMdFiles(inputFilePath, outputFilePath string) {
 				}
 
 				// Parameter Types
-				fmt.Fprintf(funcBldr, "</li>\n\t<li>Parameter Typ")
+				fmt.Fprintf(funcBldr, "</li>\n\t<li>%s", nameMap[lang]["paramType"])
 				if len(decl.ParamNames) > 1 {
-					fmt.Fprintf(funcBldr, "en")
+					if lang == "DE" {
+						fmt.Fprintf(funcBldr, "en")
+					} else if lang == "EN" {
+						fmt.Fprintf(funcBldr, "s")
+					}
 				}
 				fmt.Fprintf(funcBldr, ": ")
 
@@ -148,20 +182,20 @@ func MakeMdFiles(inputFilePath, outputFilePath string) {
 			}
 
 			// Rückgabe Typ
-			fmt.Fprintf(funcBldr, "</li>\n\t<li>Rückgabe Typ: <code>%s</code></li>\n", decl.Type)
+			fmt.Fprintf(funcBldr, "</li>\n\t<li>%s: <code>%s</code></li>\n", nameMap[lang]["returnType"], decl.Type)
 			fmt.Fprintln(funcBldr, "</ul>")
 
 			// Aliases
-			fmt.Fprintln(funcBldr, "\n<h3>Aliase</h3>\n<ol>")
+			fmt.Fprintf(funcBldr, "\n<h3>%s</h3>\n<ol>\n", nameMap[lang]["aliases"])
 			for _, alias := range decl.Aliases {
 				fmt.Fprintf(funcBldr, "\t<li><code>%s</code></li>\n", html.EscapeString(alias.Original.Literal))
 			}
 			fmt.Fprintln(funcBldr, "</ol>")
 
 			// Implemetation
-			fmt.Fprintln(funcBldr, "\n<h3>Implementation</h3>")
+			fmt.Fprintf(funcBldr, "\n<h3>%s</h3>\n", nameMap[lang]["impl"])
 			if ast.IsExternFunc(decl) {
-				fmt.Fprintf(funcBldr, "Implementiert in <code>%s</code>\n", decl.ExternFile)
+				fmt.Fprintf(funcBldr, "%s <code>%s</code>\n", nameMap[lang]["externImpl"], decl.ExternFile)
 			} else {
 				fmt.Fprintln(funcBldr, "<pre class=\"language-ddp\" tabindex=\"0\">\n<code class=\"language-ddp\">")
 
@@ -179,22 +213,22 @@ func MakeMdFiles(inputFilePath, outputFilePath string) {
 			hasVars = true
 
 			fmt.Fprintf(varBldr, "## %s\n", decl.Name())
-			fmt.Fprintf(varBldr, "* Typ: `%s`\n", decl.Type)
+			fmt.Fprintf(varBldr, "* %s: `%s`\n", nameMap[lang]["type"], decl.Type)
 			fmt.Fprintln(varBldr, "")
 		}
 	}
 
 	fileName := strings.Replace(filepath.Base(inputFilePath), ".ddp", "", 1)
 	if hasVars {
-		fmt.Fprintf(outputFile, "# Duden/%s Variablen\n", fileName)
+		fmt.Fprintf(outputFile, "# Duden/%s %s\n", fileName, nameMap[lang]["var"])
 		fmt.Fprintln(outputFile, varBldr)
 	}
 	if hasFuncs {
-		fmt.Fprintf(outputFile, "# Duden/%s Funktionen\n", fileName)
+		fmt.Fprintf(outputFile, "# Duden/%s %s\n", fileName, nameMap[lang]["func"])
 		fmt.Fprintln(outputFile, funcBldr)
 	}
 	if !hasFuncs && !hasVars {
-		fmt.Fprintf(outputFile, "Dieses Modul ist Leer")
+		fmt.Fprintf(outputFile, nameMap[lang]["moduleEmpty"])
 	}
 
 	fmt.Println("done writing md file.")

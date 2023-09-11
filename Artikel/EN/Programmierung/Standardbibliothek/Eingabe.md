@@ -1,4 +1,4 @@
-# Duden/Eingabe Funktionen
+# Duden/Eingabe functions
 <details>
 <summary><h2>War_EOF</h2></summary>
 <ul>
@@ -6,10 +6,10 @@
 Gibt wahr zurück wenn ein EOF Zeichen gelesen wurde.
 </pre>
 </li>
-	<li>Rückgabe Typ: <code>Boolean</code></li>
+	<li>Return type: <code>Boolean</code></li>
 </ul>
 
-<h3>Aliase</h3>
+<h3>Aliases</h3>
 <ol>
 	<li><code>&#34;die Benutzereingabe zu Ende gewesen ist&#34;</code></li>
 </ol>
@@ -30,10 +30,10 @@ Gib war_eof zurück.
 Gibt wahr zurück wenn noch kein EOF Zeichen gelesen wurde.
 </pre>
 </li>
-	<li>Rückgabe Typ: <code>Boolean</code></li>
+	<li>Return type: <code>Boolean</code></li>
 </ul>
 
-<h3>Aliase</h3>
+<h3>Aliases</h3>
 <ol>
 	<li><code>&#34;die Benutzereingabe nicht vorbei ist&#34;</code></li>
 </ol>
@@ -54,10 +54,10 @@ Gib nicht war_eof zurück.
 Setzt die interne war_eof variable auf falsch.
 </pre>
 </li>
-	<li>Rückgabe Typ: <code>nichts</code></li>
+	<li>Return type: <code>nichts</code></li>
 </ul>
 
-<h3>Aliase</h3>
+<h3>Aliases</h3>
 <ol>
 	<li><code>&#34;setzte die Benutzereingabe zurück&#34;</code></li>
 	<li><code>&#34;Setzte die Benutzereingabe zurück&#34;</code></li>
@@ -83,10 +83,10 @@ und ein einzelnes darrauffolgendes Leerzeichen in
 Gepufferter_Buchstabe gespeichert
 </pre>
 </li>
-	<li>Rückgabe Typ: <code>Text</code></li>
+	<li>Return type: <code>Text</code></li>
 </ul>
 
-<h3>Aliase</h3>
+<h3>Aliases</h3>
 <ol>
 	<li><code>&#34;die nächste Eingabe&#34;</code></li>
 	<li><code>&#34;die naechste Eingabe&#34;</code></li>
@@ -122,10 +122,10 @@ wird diese zurückgegeben und Eingabe_Puffer geleert.
 Ansonsten wird die nächste Eingabe direkt zurückgegeben.
 </pre>
 </li>
-	<li>Rückgabe Typ: <code>Text</code></li>
+	<li>Return type: <code>Text</code></li>
 </ul>
 
-<h3>Aliase</h3>
+<h3>Aliases</h3>
 <ol>
 	<li><code>&#34;der nächste Text&#34;</code></li>
 	<li><code>&#34;den nächsten Text&#34;</code></li>
@@ -157,10 +157,10 @@ Lies_Token_Gepuffert als Zahl.
 Vorher sollte Hat_Zahl überprüft werden.
 </pre>
 </li>
-	<li>Rückgabe Typ: <code>Zahl</code></li>
+	<li>Return type: <code>Zahl</code></li>
 </ul>
 
-<h3>Aliase</h3>
+<h3>Aliases</h3>
 <ol>
 	<li><code>&#34;die nächste Zahl&#34;</code></li>
 	<li><code>&#34;die naechste Zahl&#34;</code></li>
@@ -184,10 +184,10 @@ Lies_Token_Gepuffert als Kommazahl.
 Vorher sollte Hat_Zahl überprüft werden.
 </pre>
 </li>
-	<li>Rückgabe Typ: <code>Kommazahl</code></li>
+	<li>Return type: <code>Kommazahl</code></li>
 </ul>
 
-<h3>Aliase</h3>
+<h3>Aliases</h3>
 <ol>
 	<li><code>&#34;die nächste Kommazahl&#34;</code></li>
 	<li><code>&#34;die naechste Kommazahl&#34;</code></li>
@@ -216,10 +216,10 @@ zurückgeben und Gepufferter_Buchstabe auf 0 gesetzt.
 Ansonsten wird das nächste Zeichen direkt gelesen.
 </pre>
 </li>
-	<li>Rückgabe Typ: <code>Buchstabe</code></li>
+	<li>Return type: <code>Buchstabe</code></li>
 </ul>
 
-<h3>Aliase</h3>
+<h3>Aliases</h3>
 <ol>
 	<li><code>&#34;der nächste Buchstabe&#34;</code></li>
 	<li><code>&#34;der naechste Buchstabe&#34;</code></li>
@@ -257,10 +257,10 @@ dann die ganze Zeile bis zu, aber ohne '\n' oder EOF zurück.
 sondern verworfen.
 </pre>
 </li>
-	<li>Rückgabe Typ: <code>Text</code></li>
+	<li>Return type: <code>Text</code></li>
 </ul>
 
-<h3>Aliase</h3>
+<h3>Aliases</h3>
 <ol>
 	<li><code>&#34;die nächste Zeile&#34;</code></li>
 	<li><code>&#34;die naechste Zeile&#34;</code></li>
@@ -299,10 +299,10 @@ Gibt an ob etwas mit einer der obigen Funktionen
 gelesen werden kann.
 </pre>
 </li>
-	<li>Rückgabe Typ: <code>Boolean</code></li>
+	<li>Return type: <code>Boolean</code></li>
 </ul>
 
-<h3>Aliase</h3>
+<h3>Aliases</h3>
 <ol>
 	<li><code>&#34;eine Eingabe vorhanden ist&#34;</code></li>
 </ol>
@@ -327,10 +327,10 @@ Gibt an ob die nächste Eingabe (direkt oder im Puffer)
 zu einer Zahl umgewandelt werden kann.
 </pre>
 </li>
-	<li>Rückgabe Typ: <code>Boolean</code></li>
+	<li>Return type: <code>Boolean</code></li>
 </ul>
 
-<h3>Aliase</h3>
+<h3>Aliases</h3>
 <ol>
 	<li><code>&#34;die nächste Eingabe eine Zahl ist&#34;</code></li>
 	<li><code>&#34;die naechste Eingabe eine Zahl ist&#34;</code></li>
@@ -353,10 +353,10 @@ Gibt an ob ein Buchstabe (direkt oder aus dem Puffer)
 gelesen werden kann.
 </pre>
 </li>
-	<li>Rückgabe Typ: <code>Boolean</code></li>
+	<li>Return type: <code>Boolean</code></li>
 </ul>
 
-<h3>Aliase</h3>
+<h3>Aliases</h3>
 <ol>
 	<li><code>&#34;ein Buchstabe vorhanden ist&#34;</code></li>
 </ol>

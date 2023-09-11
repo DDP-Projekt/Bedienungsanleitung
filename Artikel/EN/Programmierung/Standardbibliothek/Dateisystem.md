@@ -1,4 +1,4 @@
-# Duden/Dateisystem Funktionen
+# Duden/Dateisystem functions
 <details>
 <summary><h2>Schreibe_Text_Datei</h2></summary>
 <ul>
@@ -6,12 +6,12 @@
 Die Funktion Schreibe_Text_Datei schreibt einen Text (text) in die Datei an dem gegebenen Text Pfad.
 Falls möglich Fehler auftreten, werden diese in fehler gespeichert.
 </pre>
-	<li>Parameter: <code>Pfad</code>, <code>text</code>, <code>fehler</code></li>
-	<li>Parameter Typen: <code>Text</code>, <code>Text</code>, <code>Text Referenz</code></li>
-	<li>Rückgabe Typ: <code>Zahl</code></li>
+	<li>Parameters: <code>Pfad</code>, <code>text</code>, <code>fehler</code></li>
+	<li>Parameter types: <code>Text</code>, <code>Text</code>, <code>Text Referenz</code></li>
+	<li>Return type: <code>Zahl</code></li>
 </ul>
 
-<h3>Aliase</h3>
+<h3>Aliases</h3>
 <ol>
 	<li><code>&#34;Schreibe den Text &lt;text&gt; in die Datei &lt;Pfad&gt; und speichere einen möglichen Fehler in &lt;fehler&gt;&#34;</code></li>
 	<li><code>&#34;Schreibe den Text &lt;text&gt; in die Datei &lt;Pfad&gt; und speichere einen moeglichen Fehler in &lt;fehler&gt;&#34;</code></li>
@@ -20,7 +20,7 @@ Falls möglich Fehler auftreten, werden diese in fehler gespeichert.
 </ol>
 
 <h3>Implementation</h3>
-Implementiert in <code>"libddpstdlib.a"</code>
+Implemented in <code>"libddpstdlib.a"</code>
 </details>
 
 <details>
@@ -30,19 +30,19 @@ Implementiert in <code>"libddpstdlib.a"</code>
 Die Funktion Lies_Text_Datei speichert den Inhalt der Datei, die an dem gegebenen Pfad liegt, in ref und gibt die Anzahl der Bytes der gelesenen Datei zurück.
 Wenn ein Fehler auftreten sollte, ist der zurückgegebene Wert negativ und die Fehler meldung in ref geschrieben
 </pre>
-	<li>Parameter: <code>Pfad</code>, <code>ref</code></li>
-	<li>Parameter Typen: <code>Text</code>, <code>Text Referenz</code></li>
-	<li>Rückgabe Typ: <code>Zahl</code></li>
+	<li>Parameters: <code>Pfad</code>, <code>ref</code></li>
+	<li>Parameter types: <code>Text</code>, <code>Text Referenz</code></li>
+	<li>Return type: <code>Zahl</code></li>
 </ul>
 
-<h3>Aliase</h3>
+<h3>Aliases</h3>
 <ol>
 	<li><code>&#34;Lies den Text in &lt;Pfad&gt; und speichere ihn in &lt;ref&gt;&#34;</code></li>
 	<li><code>&#34;die Anzahl der Bytes, die aus &lt;Pfad&gt; gelesen und in &lt;ref&gt; gespeichert wurden&#34;</code></li>
 </ol>
 
 <h3>Implementation</h3>
-Implementiert in <code>"libddpstdlib.a"</code>
+Implemented in <code>"libddpstdlib.a"</code>
 </details>
 
 <details>
@@ -51,12 +51,12 @@ Implementiert in <code>"libddpstdlib.a"</code>
 <pre>
 Überprüft ob der gegebene Pfad existiert (egal ob als Ordner oder Datei)
 </pre>
-	<li>Parameter: <code>Pfad</code></li>
-	<li>Parameter Typ: <code>Text</code></li>
-	<li>Rückgabe Typ: <code>Boolean</code></li>
+	<li>Parameters: <code>Pfad</code></li>
+	<li>Parameter type: <code>Text</code></li>
+	<li>Return type: <code>Boolean</code></li>
 </ul>
 
-<h3>Aliase</h3>
+<h3>Aliases</h3>
 <ol>
 	<li><code>&#34;die Datei &lt;Pfad&gt; existiert&#34;</code></li>
 	<li><code>&#34;der Ordner &lt;Pfad&gt; existiert&#34;</code></li>
@@ -64,7 +64,7 @@ Implementiert in <code>"libddpstdlib.a"</code>
 </ol>
 
 <h3>Implementation</h3>
-Implementiert in <code>"libddpstdlib.a"</code>
+Implemented in <code>"libddpstdlib.a"</code>
 </details>
 
 <details>
@@ -73,18 +73,18 @@ Implementiert in <code>"libddpstdlib.a"</code>
 <pre>
 Überprüft ob der gegebene Pfad ein Ordner ist
 </pre>
-	<li>Parameter: <code>Pfad</code></li>
-	<li>Parameter Typ: <code>Text</code></li>
-	<li>Rückgabe Typ: <code>Boolean</code></li>
+	<li>Parameters: <code>Pfad</code></li>
+	<li>Parameter type: <code>Text</code></li>
+	<li>Return type: <code>Boolean</code></li>
 </ul>
 
-<h3>Aliase</h3>
+<h3>Aliases</h3>
 <ol>
 	<li><code>&#34;&lt;Pfad&gt; ein Ordner ist&#34;</code></li>
 </ol>
 
 <h3>Implementation</h3>
-Implementiert in <code>"libddpstdlib.a"</code>
+Implemented in <code>"libddpstdlib.a"</code>
 </details>
 
 <details>
@@ -93,12 +93,12 @@ Implementiert in <code>"libddpstdlib.a"</code>
 <pre>
 Überprüft ob der gegebene Pfad eine Datei ist
 </pre>
-	<li>Parameter: <code>Pfad</code></li>
-	<li>Parameter Typ: <code>Text</code></li>
-	<li>Rückgabe Typ: <code>Boolean</code></li>
+	<li>Parameters: <code>Pfad</code></li>
+	<li>Parameter type: <code>Text</code></li>
+	<li>Return type: <code>Boolean</code></li>
 </ul>
 
-<h3>Aliase</h3>
+<h3>Aliases</h3>
 <ol>
 	<li><code>&#34;&lt;Pfad&gt; eine Datei ist&#34;</code></li>
 </ol>
@@ -122,19 +122,19 @@ Rekursiv -> alle benötigten zwischen Ordner werden ebenfalls erstellt.
 
 Gibt zurück ob das Erstellen erfolgreich war.
 </pre>
-	<li>Parameter: <code>Pfad</code></li>
-	<li>Parameter Typ: <code>Text</code></li>
-	<li>Rückgabe Typ: <code>Boolean</code></li>
+	<li>Parameters: <code>Pfad</code></li>
+	<li>Parameter type: <code>Text</code></li>
+	<li>Return type: <code>Boolean</code></li>
 </ul>
 
-<h3>Aliase</h3>
+<h3>Aliases</h3>
 <ol>
 	<li><code>&#34;Erstelle den Ordner &lt;Pfad&gt;&#34;</code></li>
 	<li><code>&#34;der Ordner &lt;Pfad&gt; erfolgreich erstellt wurde&#34;</code></li>
 </ol>
 
 <h3>Implementation</h3>
-Implementiert in <code>"libddpstdlib.a"</code>
+Implemented in <code>"libddpstdlib.a"</code>
 </details>
 
 <details>
@@ -148,12 +148,12 @@ Im Falle eines Ordners wird rekursiv das gesamte Verzeichnis gelöscht.
 
 Gibt zurück ob das Löschen erfolgreich war.
 </pre>
-	<li>Parameter: <code>Pfad</code></li>
-	<li>Parameter Typ: <code>Text</code></li>
-	<li>Rückgabe Typ: <code>Boolean</code></li>
+	<li>Parameters: <code>Pfad</code></li>
+	<li>Parameter type: <code>Text</code></li>
+	<li>Return type: <code>Boolean</code></li>
 </ul>
 
-<h3>Aliase</h3>
+<h3>Aliases</h3>
 <ol>
 	<li><code>&#34;Lösche &lt;Pfad&gt;&#34;</code></li>
 	<li><code>&#34;&lt;Pfad&gt; erfolgreich gelöscht wurde&#34;</code></li>
@@ -164,7 +164,7 @@ Gibt zurück ob das Löschen erfolgreich war.
 </ol>
 
 <h3>Implementation</h3>
-Implementiert in <code>"libddpstdlib.a"</code>
+Implemented in <code>"libddpstdlib.a"</code>
 </details>
 
 <details>
@@ -178,19 +178,19 @@ Kann auch zum Umbenennen benutzt werden.
 
 Gibt zurück ob das Umbenennen erfolgreich war.
 </pre>
-	<li>Parameter: <code>Pfad</code>, <code>NeuerName</code></li>
-	<li>Parameter Typen: <code>Text</code>, <code>Text</code></li>
-	<li>Rückgabe Typ: <code>Boolean</code></li>
+	<li>Parameters: <code>Pfad</code>, <code>NeuerName</code></li>
+	<li>Parameter types: <code>Text</code>, <code>Text</code></li>
+	<li>Return type: <code>Boolean</code></li>
 </ul>
 
-<h3>Aliase</h3>
+<h3>Aliases</h3>
 <ol>
 	<li><code>&#34;Verschiebe &lt;Pfad&gt; nach &lt;NeuerName&gt;&#34;</code></li>
 	<li><code>&#34;&lt;Pfad&gt; erfolgreich nach &lt;NeuerName&gt; verschoben wurde&#34;</code></li>
 </ol>
 
 <h3>Implementation</h3>
-Implementiert in <code>"libddpstdlib.a"</code>
+Implemented in <code>"libddpstdlib.a"</code>
 </details>
 
 

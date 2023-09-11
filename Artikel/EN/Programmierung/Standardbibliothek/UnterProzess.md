@@ -1,4 +1,4 @@
-# Duden/UnterProzess Funktionen
+# Duden/UnterProzess functions
 <details>
 <summary><h2>Programm_Ausfuehren</h2></summary>
 <ul>
@@ -26,12 +26,12 @@ vielleicht nicht in der reihenfolge in der sie ausgegeben wurden.
 Sollten <StandardAusgabe>, <StandardFehlerAusgabe> oder <Fehler>
 nicht gebraucht werden bleiben sie unverändert.
 </pre>
-	<li>Parameter: <code>ProgrammName</code>, <code>Argumente</code>, <code>Fehler</code>, <code>StandardEingabe</code>, <code>StandardAusgabe</code>, <code>StandardFehlerAusgabe</code></li>
-	<li>Parameter Typen: <code>Text</code>, <code>Text Liste</code>, <code>Text Referenz</code>, <code>Text</code>, <code>Text Referenz</code>, <code>Text Referenz</code></li>
-	<li>Rückgabe Typ: <code>Zahl</code></li>
+	<li>Parameters: <code>ProgrammName</code>, <code>Argumente</code>, <code>Fehler</code>, <code>StandardEingabe</code>, <code>StandardAusgabe</code>, <code>StandardFehlerAusgabe</code></li>
+	<li>Parameter types: <code>Text</code>, <code>Text Liste</code>, <code>Text Referenz</code>, <code>Text</code>, <code>Text Referenz</code>, <code>Text Referenz</code></li>
+	<li>Return type: <code>Zahl</code></li>
 </ul>
 
-<h3>Aliase</h3>
+<h3>Aliases</h3>
 <ol>
 	<li><code>&#34;Führe das Programm &lt;ProgrammName&gt; mit den Argumenten &lt;Argumente&gt; und der Eingabe &lt;StandardEingabe&gt; aus, und speichere das Ergebniss in &lt;StandardAusgabe&gt; und &lt;StandardFehlerAusgabe&gt; und mögliche Fehler in &lt;Fehler&gt;&#34;</code></li>
 	<li><code>&#34;der Rückgabe Wert vom &lt;ProgrammName&gt; mit den Argumenten &lt;Argumente&gt;, der Eingabe &lt;StandardEingabe&gt;, der Ausgabe &lt;StandardAusgabe&gt; und &lt;StandardFehlerAusgabe&gt; und dem Fehler &lt;Fehler&gt;&#34;</code></li>
@@ -40,7 +40,7 @@ nicht gebraucht werden bleiben sie unverändert.
 </ol>
 
 <h3>Implementation</h3>
-Implementiert in <code>"libddpstdlib.a"</code>
+Implemented in <code>"libddpstdlib.a"</code>
 </details>
 
 <details>
@@ -49,12 +49,12 @@ Implementiert in <code>"libddpstdlib.a"</code>
 <pre>
 Wrapper für Programm_Ausfuehren ohne Stdin, Stdout und Stderr.
 </pre>
-	<li>Parameter: <code>ProgrammName</code>, <code>Argumente</code>, <code>Fehler</code></li>
-	<li>Parameter Typen: <code>Text</code>, <code>Text Liste</code>, <code>Text Referenz</code></li>
-	<li>Rückgabe Typ: <code>Zahl</code></li>
+	<li>Parameters: <code>ProgrammName</code>, <code>Argumente</code>, <code>Fehler</code></li>
+	<li>Parameter types: <code>Text</code>, <code>Text Liste</code>, <code>Text Referenz</code></li>
+	<li>Return type: <code>Zahl</code></li>
 </ul>
 
-<h3>Aliase</h3>
+<h3>Aliases</h3>
 <ol>
 	<li><code>&#34;Führe das Programm &lt;ProgrammName&gt; mit den Argumenten &lt;Argumente&gt; und einem möglichen Fehler &lt;Fehler&gt; aus&#34;</code></li>
 	<li><code>&#34;der Rückgabe Wert von &lt;ProgrammName&gt; mit den Argumenten &lt;Argumente&gt; und einem möglichen Fehler &lt;Fehler&gt;&#34;</code></li>
@@ -82,12 +82,12 @@ zurück.
 <pre>
 Wrapper für Programm_Ausfuehren, der die Kombinierte Ausgabe (Stdout + Stderr) zurückgibt.
 </pre>
-	<li>Parameter: <code>ProgrammName</code>, <code>Argumente</code>, <code>Eingabe</code>, <code>Fehler</code></li>
-	<li>Parameter Typen: <code>Text</code>, <code>Text Liste</code>, <code>Text</code>, <code>Text Referenz</code></li>
-	<li>Rückgabe Typ: <code>Text</code></li>
+	<li>Parameters: <code>ProgrammName</code>, <code>Argumente</code>, <code>Eingabe</code>, <code>Fehler</code></li>
+	<li>Parameter types: <code>Text</code>, <code>Text Liste</code>, <code>Text</code>, <code>Text Referenz</code></li>
+	<li>Return type: <code>Text</code></li>
 </ul>
 
-<h3>Aliase</h3>
+<h3>Aliases</h3>
 <ol>
 	<li><code>&#34;die Ausgabe von &lt;ProgrammName&gt; mit den Argumenten &lt;Argumente&gt;, der Eingabe &lt;Eingabe&gt; und dem möglichen Fehler &lt;Fehler&gt;&#34;</code></li>
 	<li><code>&#34;der Ausgabe von &lt;ProgrammName&gt; mit den Argumenten &lt;Argumente&gt;, der Eingabe &lt;Eingabe&gt; und dem möglichen Fehler &lt;Fehler&gt;&#34;</code></li>
@@ -109,12 +109,12 @@ Gib out zurück.
 <details>
 <summary><h2>Programm_Ausfuehren_Einfach</h2></summary>
 <ul>
-	<li>Parameter: <code>ProgrammName</code>, <code>Argumente</code></li>
-	<li>Parameter Typen: <code>Text</code>, <code>Text Liste</code></li>
-	<li>Rückgabe Typ: <code>Zahl</code></li>
+	<li>Parameters: <code>ProgrammName</code>, <code>Argumente</code></li>
+	<li>Parameter types: <code>Text</code>, <code>Text Liste</code></li>
+	<li>Return type: <code>Zahl</code></li>
 </ul>
 
-<h3>Aliase</h3>
+<h3>Aliases</h3>
 <ol>
 	<li><code>&#34;Führe das Programm &lt;ProgrammName&gt; mit den Argumenten &lt;Argumente&gt; aus&#34;</code></li>
 	<li><code>&#34;der Rückgabe Wert von &lt;ProgrammName&gt; mit den Argumenten &lt;Argumente&gt;&#34;</code></li>

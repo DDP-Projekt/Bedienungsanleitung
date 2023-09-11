@@ -1,4 +1,4 @@
-# Duden/Extremwerte Funktionen
+# Duden/Extremwerte functions
 <details>
 <summary><h2>MinZahl</h2></summary>
 <ul>
@@ -6,10 +6,10 @@
 Gibt -9223372036854775807 zurück.
 </pre>
 </li>
-	<li>Rückgabe Typ: <code>Zahl</code></li>
+	<li>Return type: <code>Zahl</code></li>
 </ul>
 
-<h3>Aliase</h3>
+<h3>Aliases</h3>
 <ol>
 	<li><code>&#34;der minimale Wert einer Zahl&#34;</code></li>
 </ol>
@@ -30,10 +30,10 @@ Gib -9223372036854775807 zurück.
 Gibt 9223372036854775807 zurück.
 </pre>
 </li>
-	<li>Rückgabe Typ: <code>Zahl</code></li>
+	<li>Return type: <code>Zahl</code></li>
 </ul>
 
-<h3>Aliase</h3>
+<h3>Aliases</h3>
 <ol>
 	<li><code>&#34;der maximale Wert einer Zahl&#34;</code></li>
 </ol>
@@ -54,10 +54,10 @@ Gib 9223372036854775807 zurück.
 Gibt -1,79769313486231 * 10^308 zurück.
 </pre>
 </li>
-	<li>Rückgabe Typ: <code>Kommazahl</code></li>
+	<li>Return type: <code>Kommazahl</code></li>
 </ul>
 
-<h3>Aliase</h3>
+<h3>Aliases</h3>
 <ol>
 	<li><code>&#34;der minimale Wert einer Kommazahl&#34;</code></li>
 </ol>
@@ -78,10 +78,10 @@ Gib -1,7976931348623158 mal 10 hoch 308 zurück.
 Gibt 1,79769313486231 * 10^308 zurück.
 </pre>
 </li>
-	<li>Rückgabe Typ: <code>Kommazahl</code></li>
+	<li>Return type: <code>Kommazahl</code></li>
 </ul>
 
-<h3>Aliase</h3>
+<h3>Aliases</h3>
 <ol>
 	<li><code>&#34;der maximale Wert einer Kommazahl&#34;</code></li>
 </ol>
@@ -102,10 +102,10 @@ Gib 1,7976931348623158 mal 10 hoch 308 zurück.
 Gibt Unendlich (1 durch 0) zurück.
 </pre>
 </li>
-	<li>Rückgabe Typ: <code>Kommazahl</code></li>
+	<li>Return type: <code>Kommazahl</code></li>
 </ul>
 
-<h3>Aliase</h3>
+<h3>Aliases</h3>
 <ol>
 	<li><code>&#34;Unendlich&#34;</code></li>
 </ol>
@@ -126,10 +126,10 @@ Gib 1 durch 0 zurück.
 Gibt NaN (0 durch 0) zurück.
 </pre>
 </li>
-	<li>Rückgabe Typ: <code>Kommazahl</code></li>
+	<li>Return type: <code>Kommazahl</code></li>
 </ul>
 
-<h3>Aliase</h3>
+<h3>Aliases</h3>
 <ol>
 	<li><code>&#34;keine Zahl&#34;</code></li>
 </ol>

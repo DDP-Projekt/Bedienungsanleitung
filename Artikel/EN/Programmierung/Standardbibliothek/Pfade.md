@@ -1,12 +1,17 @@
-# Duden/Pfade Funktionen
+# Duden/Pfade functions
 <details>
 <summary><h2>TrennZeichen</h2></summary>
 <ul>
+<pre>
+Gibt den Pfad-Trennzeichen, der dem Betriebssystem entspricht zurück.
+Auf Linux: '/'
+Auf Windows: '\'
+</pre>
 </li>
-	<li>Rückgabe Typ: <code>Buchstabe</code></li>
+	<li>Return type: <code>Buchstabe</code></li>
 </ul>
 
-<h3>Aliase</h3>
+<h3>Aliases</h3>
 <ol>
 	<li><code>&#34;Pfad-Trennzeichen&#34;</code></li>
 	<li><code>&#34;den Pfad-Trennzeichen&#34;</code></li>
@@ -29,12 +34,12 @@ Gib '/' zurück.
 <pre>
 Gibt zurück ob der gegebene UNIX Pfad ein absoluter oder relativer Pfad ist
 </pre>
-	<li>Parameter: <code>t</code></li>
-	<li>Parameter Typ: <code>Text</code></li>
-	<li>Rückgabe Typ: <code>Boolean</code></li>
+	<li>Parameters: <code>t</code></li>
+	<li>Parameter type: <code>Text</code></li>
+	<li>Return type: <code>Boolean</code></li>
 </ul>
 
-<h3>Aliase</h3>
+<h3>Aliases</h3>
 <ol>
 	<li><code>&#34;&lt;t&gt; ein Absoluter Pfad ist&#34;</code></li>
 </ol>
@@ -56,12 +61,12 @@ Gibt den Pfad ohne den letzen Element zurück.
 Falls der Pfad leer ist, wird ein "." zurück gegeben.
 Falls der Pfad nur aus "/" gefolg von nicht-"/" Zeichen, wird "/" zurückgegeben.
 </pre>
-	<li>Parameter: <code>t</code></li>
-	<li>Parameter Typ: <code>Text</code></li>
-	<li>Rückgabe Typ: <code>Text</code></li>
+	<li>Parameters: <code>t</code></li>
+	<li>Parameter type: <code>Text</code></li>
+	<li>Return type: <code>Text</code></li>
 </ul>
 
-<h3>Aliase</h3>
+<h3>Aliases</h3>
 <ol>
 	<li><code>&#34;den Ordnerpfad von &lt;t&gt;&#34;</code></li>
 </ol>
@@ -91,12 +96,12 @@ Gib "." zurück.
 <pre>
 Gibt den letzten Element eines Pfades zurück. Falls der Pfad leer ist, wird "." ausgegeben.
 </pre>
-	<li>Parameter: <code>t</code></li>
-	<li>Parameter Typ: <code>Text</code></li>
-	<li>Rückgabe Typ: <code>Text</code></li>
+	<li>Parameters: <code>t</code></li>
+	<li>Parameter type: <code>Text</code></li>
+	<li>Return type: <code>Text</code></li>
 </ul>
 
-<h3>Aliase</h3>
+<h3>Aliases</h3>
 <ol>
 	<li><code>&#34;den Basispfad von &lt;t&gt;&#34;</code></li>
 	<li><code>&#34;der Basispfad von &lt;t&gt;&#34;</code></li>
@@ -124,12 +129,12 @@ Gib "." zurück.
 Gibt die Erweiterung einer Datei zurück. Wenn der Pfad eines Ordners gegeben wurde 
 oder der Parameter t leer ist, wird einen leeren Text zurück gegeben.
 </pre>
-	<li>Parameter: <code>t</code></li>
-	<li>Parameter Typ: <code>Text</code></li>
-	<li>Rückgabe Typ: <code>Text</code></li>
+	<li>Parameters: <code>t</code></li>
+	<li>Parameter type: <code>Text</code></li>
+	<li>Return type: <code>Text</code></li>
 </ul>
 
-<h3>Aliase</h3>
+<h3>Aliases</h3>
 <ol>
 	<li><code>&#34;die Erweiterung der Datei bei &lt;t&gt;&#34;</code></li>
 </ol>
@@ -154,12 +159,12 @@ Gib "" zurück.
 <pre>
 Gibt den Dateinamen einer Datei zurück.
 </pre>
-	<li>Parameter: <code>t</code></li>
-	<li>Parameter Typ: <code>Text</code></li>
-	<li>Rückgabe Typ: <code>Text</code></li>
+	<li>Parameters: <code>t</code></li>
+	<li>Parameter type: <code>Text</code></li>
+	<li>Return type: <code>Text</code></li>
 </ul>
 
-<h3>Aliase</h3>
+<h3>Aliases</h3>
 <ol>
 	<li><code>&#34;den Dateinamen von &lt;t&gt;&#34;</code></li>
 	<li><code>&#34;der Dateiname von &lt;t&gt;&#34;</code></li>
@@ -194,12 +199,12 @@ Ein leerer Pfad gibt "." zurück.
 Entspricht Go's path.clean funktion
 https://pkg.go.dev/path#Clean
 </pre>
-	<li>Parameter: <code>t</code></li>
-	<li>Parameter Typ: <code>Text</code></li>
-	<li>Rückgabe Typ: <code>Text</code></li>
+	<li>Parameters: <code>t</code></li>
+	<li>Parameter type: <code>Text</code></li>
+	<li>Return type: <code>Text</code></li>
 </ul>
 
-<h3>Aliase</h3>
+<h3>Aliases</h3>
 <ol>
 	<li><code>&#34;der Pfad &lt;t&gt; gesäubert&#34;</code></li>
 </ol>
@@ -264,12 +269,12 @@ Gib path zurück.
 <pre>
 Verbindet zwei UNIX Pfade mit einem '/' und säubert zuletzt.
 </pre>
-	<li>Parameter: <code>a</code>, <code>b</code></li>
-	<li>Parameter Typen: <code>Text</code>, <code>Text</code></li>
-	<li>Rückgabe Typ: <code>Text</code></li>
+	<li>Parameters: <code>a</code>, <code>b</code></li>
+	<li>Parameter types: <code>Text</code>, <code>Text</code></li>
+	<li>Return type: <code>Text</code></li>
 </ul>
 
-<h3>Aliase</h3>
+<h3>Aliases</h3>
 <ol>
 	<li><code>&#34;die Pfade &lt;a&gt; und &lt;b&gt; verbunden&#34;</code></li>
 </ol>

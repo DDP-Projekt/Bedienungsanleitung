@@ -1,16 +1,16 @@
-# Duden/Zeichen Funktionen
+# Duden/Zeichen functions
 <details>
 <summary><h2>IstLeer</h2></summary>
 <ul>
 <pre>
 Gibt wahr zurück wenn der Buchstabe b ein Leerzeichen (' '), eine neue Zeile ('\n'), ein Tabulator ('\t') oder ein Wagenrücklauf ('\r') ist.
 </pre>
-	<li>Parameter: <code>b</code></li>
-	<li>Parameter Typ: <code>Buchstabe</code></li>
-	<li>Rückgabe Typ: <code>Boolean</code></li>
+	<li>Parameters: <code>b</code></li>
+	<li>Parameter type: <code>Buchstabe</code></li>
+	<li>Return type: <code>Boolean</code></li>
 </ul>
 
-<h3>Aliase</h3>
+<h3>Aliases</h3>
 <ol>
 	<li><code>&#34;&lt;b&gt; ein leeres Zeichen ist&#34;</code></li>
 </ol>
@@ -30,12 +30,12 @@ Gib b gleich ' ' ist oder b gleich '\n' ist oder b gleich '\t' ist oder b gleich
 <pre>
 Gibt wahr zurück wenn der Buchstabe b groß ist.
 </pre>
-	<li>Parameter: <code>b</code></li>
-	<li>Parameter Typ: <code>Buchstabe</code></li>
-	<li>Rückgabe Typ: <code>Boolean</code></li>
+	<li>Parameters: <code>b</code></li>
+	<li>Parameter type: <code>Buchstabe</code></li>
+	<li>Return type: <code>Boolean</code></li>
 </ul>
 
-<h3>Aliase</h3>
+<h3>Aliases</h3>
 <ol>
 	<li><code>&#34;&lt;b&gt; ein großer Buchstabe ist&#34;</code></li>
 </ol>
@@ -61,12 +61,12 @@ Gib erg zurück.
 <pre>
 Gibt wahr zurück wenn der Buchstabe b klein ist.
 </pre>
-	<li>Parameter: <code>b</code></li>
-	<li>Parameter Typ: <code>Buchstabe</code></li>
-	<li>Rückgabe Typ: <code>Boolean</code></li>
+	<li>Parameters: <code>b</code></li>
+	<li>Parameter type: <code>Buchstabe</code></li>
+	<li>Return type: <code>Boolean</code></li>
 </ul>
 
-<h3>Aliase</h3>
+<h3>Aliases</h3>
 <ol>
 	<li><code>&#34;&lt;b&gt; ein kleiner Buchstabe ist&#34;</code></li>
 </ol>
@@ -92,12 +92,12 @@ Gib erg zurück.
 <pre>
 Gibt wahr zurück wenn der Buchstabe b ein Leerzeichen (' ') ist.
 </pre>
-	<li>Parameter: <code>b</code></li>
-	<li>Parameter Typ: <code>Buchstabe</code></li>
-	<li>Rückgabe Typ: <code>Boolean</code></li>
+	<li>Parameters: <code>b</code></li>
+	<li>Parameter type: <code>Buchstabe</code></li>
+	<li>Return type: <code>Boolean</code></li>
 </ul>
 
-<h3>Aliase</h3>
+<h3>Aliases</h3>
 <ol>
 	<li><code>&#34;&lt;b&gt; ein Leerzeichen ist&#34;</code></li>
 </ol>
@@ -117,12 +117,12 @@ Gib b gleich ' ' ist zurück.
 <pre>
 Gibt wahr zurück wenn der Buchstabe b eine Zahl (Code 48-57) ist.
 </pre>
-	<li>Parameter: <code>b</code></li>
-	<li>Parameter Typ: <code>Buchstabe</code></li>
-	<li>Rückgabe Typ: <code>Boolean</code></li>
+	<li>Parameters: <code>b</code></li>
+	<li>Parameter type: <code>Buchstabe</code></li>
+	<li>Return type: <code>Boolean</code></li>
 </ul>
 
-<h3>Aliase</h3>
+<h3>Aliases</h3>
 <ol>
 	<li><code>&#34;&lt;b&gt; eine Zahl ist&#34;</code></li>
 </ol>
@@ -142,12 +142,12 @@ Gib b als Zahl größer als, oder 48 ist und b als Zahl kleiner als, oder 57 ist
 <pre>
 Gibt wahr zurück wenn der Buchstabe b ein Kontrollzeichen (Code 0-31) ist.
 </pre>
-	<li>Parameter: <code>b</code></li>
-	<li>Parameter Typ: <code>Buchstabe</code></li>
-	<li>Rückgabe Typ: <code>Boolean</code></li>
+	<li>Parameters: <code>b</code></li>
+	<li>Parameter type: <code>Buchstabe</code></li>
+	<li>Return type: <code>Boolean</code></li>
 </ul>
 
-<h3>Aliase</h3>
+<h3>Aliases</h3>
 <ol>
 	<li><code>&#34;&lt;b&gt; ein Kontrollzeichen ist&#34;</code></li>
 </ol>
@@ -167,12 +167,12 @@ Gib b als Zahl größer als, oder 0 ist und b als Zahl kleiner als, oder 31 ist 
 <pre>
 Gibt wahr zurück wenn der Buchstabe b ein deutscher Buchstabe (a-Z, äöü, ÄÖÜ und ß) ist.
 </pre>
-	<li>Parameter: <code>b</code></li>
-	<li>Parameter Typ: <code>Buchstabe</code></li>
-	<li>Rückgabe Typ: <code>Boolean</code></li>
+	<li>Parameters: <code>b</code></li>
+	<li>Parameter type: <code>Buchstabe</code></li>
+	<li>Return type: <code>Boolean</code></li>
 </ul>
 
-<h3>Aliase</h3>
+<h3>Aliases</h3>
 <ol>
 	<li><code>&#34;&lt;b&gt; ein deutscher Buchstabe ist&#34;</code></li>
 </ol>
@@ -200,12 +200,12 @@ Gib
 <pre>
 Gibt wahr zurück wenn der Buchstabe b ein deutscher Buchstabe oder eine Zahl ist.
 </pre>
-	<li>Parameter: <code>b</code></li>
-	<li>Parameter Typ: <code>Buchstabe</code></li>
-	<li>Rückgabe Typ: <code>Boolean</code></li>
+	<li>Parameters: <code>b</code></li>
+	<li>Parameter type: <code>Buchstabe</code></li>
+	<li>Return type: <code>Boolean</code></li>
 </ul>
 
-<h3>Aliase</h3>
+<h3>Aliases</h3>
 <ol>
 	<li><code>&#34;&lt;b&gt; ein deutscher Buchstabe oder eine Zahl ist&#34;</code></li>
 </ol>
@@ -225,12 +225,12 @@ Gib b ein deutscher Buchstabe ist oder b eine Zahl ist zurück.
 <pre>
 Gibt wahr zurück wenn der Buchstabe b ein großer deutscher Buchstabe ist.
 </pre>
-	<li>Parameter: <code>b</code></li>
-	<li>Parameter Typ: <code>Buchstabe</code></li>
-	<li>Rückgabe Typ: <code>Buchstabe</code></li>
+	<li>Parameters: <code>b</code></li>
+	<li>Parameter type: <code>Buchstabe</code></li>
+	<li>Return type: <code>Buchstabe</code></li>
 </ul>
 
-<h3>Aliase</h3>
+<h3>Aliases</h3>
 <ol>
 	<li><code>&#34;&lt;b&gt; als großer Buchstabe&#34;</code></li>
 </ol>
@@ -253,12 +253,12 @@ Gib (b als Zahl logisch und 223) als Buchstabe zurück.
 <pre>
 Gibt wahr zurück wenn der Buchstabe b ein kleiner deutscher Buchstabe ist.
 </pre>
-	<li>Parameter: <code>b</code></li>
-	<li>Parameter Typ: <code>Buchstabe</code></li>
-	<li>Rückgabe Typ: <code>Buchstabe</code></li>
+	<li>Parameters: <code>b</code></li>
+	<li>Parameter type: <code>Buchstabe</code></li>
+	<li>Return type: <code>Buchstabe</code></li>
 </ul>
 
-<h3>Aliase</h3>
+<h3>Aliases</h3>
 <ol>
 	<li><code>&#34;&lt;b&gt; als kleiner Buchstabe&#34;</code></li>
 </ol>
@@ -270,6 +270,31 @@ Wenn nicht b ein deutscher Buchstabe ist oder b ein kleiner Buchstabe ist, dann:
 	Gib b zurück.
 
 Gib (b als Zahl plus 32) als Buchstabe zurück.
+
+</code>
+</pre>
+</details>
+
+<details>
+<summary><h2>ASCII_Zeichen</h2></summary>
+<ul>
+<pre>
+Gibt den Zeichen mit der gegebenen ASCII Nummer zurück.
+</pre>
+	<li>Parameters: <code>id</code></li>
+	<li>Parameter type: <code>Zahl</code></li>
+	<li>Return type: <code>Buchstabe</code></li>
+</ul>
+
+<h3>Aliases</h3>
+<ol>
+	<li><code>&#34;der ASCII Zeichen mit der Nummer &lt;id&gt;&#34;</code></li>
+</ol>
+
+<h3>Implementation</h3>
+<pre class="language-ddp" tabindex="0">
+<code class="language-ddp">
+Gib id als Buchstabe zurück.
 
 </code>
 </pre>
