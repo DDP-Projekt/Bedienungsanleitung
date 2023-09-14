@@ -21,7 +21,7 @@ func main() {
 		})
 	})
 
-	r.GET("/p/*page", func(c *gin.Context) {
+	r.GET("/DE/*page", func(c *gin.Context) {
 		p, _ := url.PathUnescape(c.Param("page"))
 		if p == "/" {
 			p = "Startseite"
@@ -31,13 +31,7 @@ func main() {
 		})
 	})
 
-	r.GET("/EN/", func(c *gin.Context) {
-		c.HTML(http.StatusOK, "en.gohtml", gin.H{
-			"page": "Startseite",
-		})
-	})
-
-	r.GET("/EN/p/*page", func(c *gin.Context) {
+	r.GET("/EN/*page", func(c *gin.Context) {
 		p, _ := url.PathUnescape(c.Param("page"))
 		if p == "/" {
 			p = "Startseite"
