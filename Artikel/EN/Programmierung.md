@@ -14,7 +14,7 @@ An expression is a piece of source code that produces a value.
 The mathematical expression `2 * pi * radius` produces the circumference of a circle.
 In DDP this expression would look like this: `2 mal pi mal radius`.
 Expressions can take multiple arguments of different types and produce a value of the same or different type.
-The different data types are described in the article [data types](?p=Programmierung/Datentypen).
+The different data types are described in the article [data types](/p/Programmierung/Datentypen).
 
 ## Statements
 
@@ -38,7 +38,7 @@ Schreibe den Text "I'm not in the statement block.".
 ```
 The statement block ends when the next character is indented the same or less than the colon.
 
-statement blocks are often separated into [branches](?p=Programmierung/Verzweigungen%20und%20Schleifen#verzweigungen), [loops](?p=Programmierung/Verzweigungen%20und%20Schleifen#schleifen) or [functions](?p=Programmierung/Funktionen) used.
+statement blocks are often separated into [branches](/EN/p/Programmierung/Verzweigungen%20und%20Schleifen#verzweigungen), [loops](/EN/p/Programmierung/Verzweigungen%20und%20Schleifen#schleifen) or [functions](/EN/p/Programmierung/Funktionen) used.
 More on this in the following articles.
 
 ## Comments

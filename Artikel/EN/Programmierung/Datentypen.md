@@ -45,7 +45,7 @@ Lists are collections of values of any size.
 Since DDP is statically typed, a list can only contain values of the same data type.
 The type name of a list is generally the element type name declined with *list* appended (number -> number list, text -> text list).
 A list can grow and shrink at runtime.
-How to work with lists is described in the article Operators under [List Operators](?p=Programmierung/Operatoren#listen-und-text-operatoren).
+How to work with lists is described in the article Operators under [List Operators](/EN/p/Programmierung/Operatoren#listen-und-text-operatoren).
 
 ### List literals
 

@@ -52,4 +52,4 @@ Eine fertige DDP Installation kann zwischen 20mb und etwa 1,1Gb groß sein, je n
 
 ## 4. Testen
 
-Um die Installation zu testen, siehe [Erstes Programm](?p=Einstieg/Erstes%20Programm)
+Um die Installation zu testen, siehe [Erstes Programm](/p/Einstieg/Erstes%20Programm)
