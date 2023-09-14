@@ -6,12 +6,12 @@
 /* fonts */
 @font-face {
 	font-family: 'Trump Bold';
-	src: url('./fonts/FetteTrumpDeutsch.ttf');
+	src: url('/static/fonts/FetteTrumpDeutsch.ttf');
 }
 
 @font-face {
 	font-family: 'Futura';
-	src: url('./fonts/Futura.ttf');
+	src: url('/static/fonts/Futura.ttf');
 }
 
 /* screen width larger than 830px (desktop/tablet) */
@@ -155,7 +155,7 @@ a:hover {
 	font-size: min(2em, 4vw);
 	margin-bottom: 0;
 	line-height: 1;
-	background: bottom url("img/de-flagge.png") no-repeat;
+	background: bottom url("/static/img/de-flagge.png") no-repeat;
 	background-size: 100% 2px;
 	padding-bottom: 2px;
 

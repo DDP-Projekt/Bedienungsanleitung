@@ -1,15 +1,10 @@
 'use strict'
 
 const searchParams = new URLSearchParams(window.location.search);
-if (searchParams.get('p') === null) {
+/*if (searchParams.get('p') === null) {
 	searchParams.set('p', 'Startseite');
 	window.location.search = searchParams.toString();
-}
-
-if (searchParams.get('lang') === null) {
-	searchParams.set('lang', 'DE');
-	window.location.search = searchParams.toString();
-}
+}*/
 
 customElements.define('to-do', TODOElement);
 document.addEventListener("DOMContentLoaded", () => {
@@ -19,11 +14,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	closeNav(); // automatically close nav
 
-	changeLangSelectFlag();
+	//populateListItems();
 
-	populateListItems();
-
-	populateMDElement();
+	//populateMDElement();
 
 	const md = document.getElementById("md"); // zero-md element
 	// apply syntax highlighting once zero-md and Prism.js are loaded
@@ -130,19 +123,6 @@ function applySyntaxHighlighting() {
 	};
 }
 
-function changeLangSelectFlag() {
-	const searchParams = new URLSearchParams(window.location.search);
-	const lang = searchParams.get("lang");
-
-	const elm = document.getElementById('sprach-toggle');
-	if (lang === "DE") {
-		elm.setAttribute('src', 'img/flags/EN.png');
-	}
-	else {
-		elm.setAttribute('src', 'img/flags/DE.png');
-	}
-}
-
 let sidebarHidden = false;
 
 function openNav() {
@@ -179,19 +159,6 @@ function toggleNav() {
 	else {
 		closeNav();
 	}
-}
-
-function toggleLang() {
-	const searchParams = new URLSearchParams(window.location.search);
-	const lang = searchParams.get("lang");
-
-	if (lang === "DE") {
-		searchParams.set("lang", "EN");
-	}
-	else {
-		searchParams.set("lang", "DE");
-	}
-	window.location.search = searchParams.toString();
 }
 
 function toggleDarkMode() {
