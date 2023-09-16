@@ -56,42 +56,39 @@ func clearDirectory(dir string) {
 func main() {
 	fmt.Printf("Argument Count: %d\n", len(os.Args))
 
-	if len(os.Args) == 1 {
-
-		// Folder structure:
-		// - Parentfolder
-		//   - Kompilierer
-		//   - Bedienungsanleitung
-		inputDir := "../../Kompilierer/lib/stdlib/Duden/"
-		outputDirDe := "../Artikel/DE/Programmierung/Standardbibliothek/"
-		outputDirEn := "../Artikel/EN/Programmierung/Standardbibliothek/"
-
-		files, err := os.ReadDir(inputDir)
-		if err != nil {
-			panic(err)
-		}
-
-		// delete old articles
-		clearDirectory(outputDirDe)
-
-		fileNames := make([]string, 0, len(files))
-		for _, file := range files {
-			inputPath := filepath.Join(inputDir, file.Name())
-			outputPathDe := filepath.Join(outputDirDe, strings.Replace(file.Name(), "ddp", "md", 1))
-			outputPathEn := filepath.Join(outputDirEn, strings.Replace(file.Name(), "ddp", "md", 1))
-
-			MakeMdFiles(inputPath, outputPathDe, "DE")
-			MakeMdFiles(inputPath, outputPathEn, "EN")
-			fileNames = append(fileNames, strings.TrimSuffix(file.Name(), ".ddp"))
-		}
-		// correct the index
-		MakeIndexHtml(fileNames, "../index.html")
-
-	} else if len(os.Args) == 4 {
-		// Args[1]: Input, Args[2]: Output, Args[3]: Language
-		MakeMdFiles(os.Args[1], os.Args[2], os.Args[3])
-		MakeIndexHtml([]string{os.Args[1]}, "../index.html")
+	if len(os.Args) != 1 {
+		return
 	}
+	// Folder structure:
+	// - Parentfolder
+	//   - Kompilierer
+	//   - Bedienungsanleitung
+	inputDir := "../../Kompilierer/lib/stdlib/Duden/"
+	outputDirDe := "../Artikel/DE/Programmierung/Standardbibliothek/"
+	outputDirEn := "../Artikel/EN/Programmierung/Standardbibliothek/"
+
+	files, err := os.ReadDir(inputDir)
+	if err != nil {
+		panic(err)
+	}
+
+	// delete old articles
+	clearDirectory(outputDirDe)
+
+	fileNames := make([]string, 0, len(files))
+	for _, file := range files {
+		inputPath := filepath.Join(inputDir, file.Name())
+		outputPathDe := filepath.Join(outputDirDe, strings.Replace(file.Name(), "ddp", "md", 1))
+		outputPathEn := filepath.Join(outputDirEn, strings.Replace(file.Name(), "ddp", "md", 1))
+
+		MakeMdFiles(inputPath, outputPathDe, "DE")
+		MakeMdFiles(inputPath, outputPathEn, "EN")
+		fileNames = append(fileNames, strings.TrimSuffix(file.Name(), ".ddp"))
+	}
+
+	// correct the index
+	MakeIndexHtml(fileNames, "de-template.gohtml", "../server/html/de.gohtml")
+	MakeIndexHtml(fileNames, "en-template.gohtml", "../server/html/en.gohtml")
 }
 
 func MakeMdFiles(inputFilePath, outputFilePath, lang string) {
@@ -234,14 +231,16 @@ func MakeMdFiles(inputFilePath, outputFilePath, lang string) {
 	fmt.Println("done writing md file.")
 }
 
-func MakeIndexHtml(dudenFiles []string, outPath string) {
-	tmpl := template.Must(template.ParseFiles("index.gohtml"))
+func MakeIndexHtml(dudenFiles []string, templateFile, outPath string) {
+	tmpl := template.Must(template.New("index.gohtml").Delims("[[", "]]").ParseFiles(templateFile))
+
 	file, err := os.OpenFile(outPath, os.O_CREATE|os.O_WRONLY|os.O_TRUNC, 0700)
 	if err != nil {
 		panic(err)
 	}
 	defer file.Close()
-	err = tmpl.Execute(file, struct {
+
+	err = tmpl.ExecuteTemplate(file, templateFile, struct {
 		StdlibModules []string
 	}{
 		StdlibModules: dudenFiles,

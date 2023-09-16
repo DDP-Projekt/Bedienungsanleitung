@@ -1,15 +1,6 @@
 'use strict'
 
 const searchParams = new URLSearchParams(window.location.search);
-if (searchParams.get('p') === null) {
-	searchParams.set('p', 'Startseite');
-	window.location.search = searchParams.toString();
-}
-
-if (searchParams.get('lang') === null) {
-	searchParams.set('lang', 'DE');
-	window.location.search = searchParams.toString();
-}
 
 customElements.define('to-do', TODOElement);
 document.addEventListener("DOMContentLoaded", () => {
@@ -18,12 +9,6 @@ document.addEventListener("DOMContentLoaded", () => {
 	loadLightDarkModeState();
 
 	closeNav(); // automatically close nav
-
-	changeLangSelectFlag();
-
-	populateListItems();
-
-	populateMDElement();
 
 	const md = document.getElementById("md"); // zero-md element
 	// apply syntax highlighting once zero-md and Prism.js are loaded
@@ -55,56 +40,6 @@ function loadLightDarkModeState() {
 	}
 }
 
-function populateListItems() {
-	const anchors = document.querySelectorAll('#artikel-links a');
-
-	anchors.forEach(function(anchor) {
-		const parentPath = getParentPath(anchor);
-		const content = anchor.textContent.trim();
-		let href = '';
-
-		if (parentPath !== "Die Deutsche Programmiersprache") {
-			href = `?p=${parentPath}/${content}`;
-		} else {
-			href = `?p=${content}`;
-		}
-
-		anchor.setAttribute('href', href + `&lang=${searchParams.get('lang')}`);
-	});
-}
-
-function getParentPath(element) {
-	if (!element || !element.parentNode) {
-		return '';
-	}
-
-	let parent = element.parentNode;
-	let parentPath = '';
-
-	while (parent) {
-		if (parent.nodeName === 'OL') {
-			const parentAnchor = parent.previousElementSibling.querySelector('a');
-			const parentContent = parentAnchor ? parentAnchor.textContent.trim() : '';
-			const grandParentPath = getParentPath(parentAnchor);
-			parentPath = grandParentPath ? `${grandParentPath}/${parentContent}` : parentContent;
-			break;
-		}
-
-		parent = parent.parentNode;
-	}
-
-	return parentPath;
-}
-
-function populateMDElement() {
-	const searchParams = new URLSearchParams(window.location.search);
-	const destinationPage = "Artikel/" + searchParams.get('lang') + '/' + searchParams.get('p') + ".md";
-
-	const md = document.getElementById("md"); // zero-md element
-	// point source to the correct md file using the query contents. If the query is empty, use the start page.
-	md.setAttribute("src", searchParams.get('p') === null ? "Startseite" : destinationPage);
-}
-
 function applySyntaxHighlighting() {
 	// regex rules for syntax highlighting
 	Prism.languages['ddp'] = {
@@ -128,19 +63,6 @@ function applySyntaxHighlighting() {
 		'option': /(\w+)/,
 		'string-literal': /".*"/,
 	};
-}
-
-function changeLangSelectFlag() {
-	const searchParams = new URLSearchParams(window.location.search);
-	const lang = searchParams.get("lang");
-
-	const elm = document.getElementById('sprach-toggle');
-	if (lang === "DE") {
-		elm.setAttribute('src', 'img/flags/EN.png');
-	}
-	else {
-		elm.setAttribute('src', 'img/flags/DE.png');
-	}
 }
 
 let sidebarHidden = false;
@@ -181,19 +103,6 @@ function toggleNav() {
 	}
 }
 
-function toggleLang() {
-	const searchParams = new URLSearchParams(window.location.search);
-	const lang = searchParams.get("lang");
-
-	if (lang === "DE") {
-		searchParams.set("lang", "EN");
-	}
-	else {
-		searchParams.set("lang", "DE");
-	}
-	window.location.search = searchParams.toString();
-}
-
 function toggleDarkMode() {
 	let isDark = document.querySelector('#dark').media === 'all';
 	if (isDark) {
@@ -215,7 +124,7 @@ function goToSurroundingLink(dir) {
 
 	// Find the index of the current position
 	anchors.forEach(function(anchor, index) {
-		if (anchor.getAttribute('href') === decodeURIComponent(window.location.search)) {
+		if (anchor.href === window.location.href) {
 			currentIndex = index;
 		}
 	});

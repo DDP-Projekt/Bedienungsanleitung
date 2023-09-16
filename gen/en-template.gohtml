@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>DDP Bedienungsanleitung</title>
+	<base href="/Bedienungsanleitung/">
+
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="msapplication-config" content="static/img/favicon/browserconfig.xml">
+	<meta name="theme-color" content="#ffffff">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf8">
+
+	<link rel="apple-touch-icon" sizes="180x180" href="static/img/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="static/img/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="static/img/favicon/favicon-16x16.png">
+	<link rel="manifest" href="static/img/favicon/site.webmanifest">
+	<link rel="mask-icon" href="static/img/favicon/safari-pinned-tab.svg" color="#000000">
+	<link rel="shortcut icon" href="static/img/favicon/favicon.ico">
+
+	<link rel="stylesheet" href="static/css/style.css">
+	<link id="dark" rel="stylesheet" href="static/css/dark-mode.css" media="all">
+	<link id="light" rel="stylesheet" href="static/css/light-mode.css" media="not all">
+
+	<script src="static/js/todoElement.js"></script>
+	<script src="static/js/script.js"></script>
+	
+	<script type="module" src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@2/dist/zero-md.min.js"></script>
+</head>
+
+<body>
+	<span id="hamburger" class="btn" onclick="toggleNav()">≡</span>
+	<nav id="seitenleiste">
+		<h2 id="überschrift">Table of Contents</h2>
+		
+		<a href="EN/Startseite">Die Deutsche Programmiersprache</a>
+		<ol id="artikel-links">
+			<li><details id="d1">
+				<summary><a href="EN/Einstieg">Einstieg</a></summary>
+				<ol>
+					<li><a href="EN/Einstieg/Entwicklungs-umgebung%20einrichten">Entwicklungs-umgebung einrichten</a></li>
+					<li><a href="EN/Einstieg/Installieren">Installieren</a></li>
+					<li><a href="EN/Einstieg/Erstes%20Programm">Erstes Programm</a></li>
+				</ol>
+			</details></li>
+			<li><details id="d2">
+				<summary><a href="EN/Programmierung">Programmierung</a></summary>
+				<ol>
+					<li><a href="EN/Programmierung/Datentypen">Datentypen</a></li>
+					<li><a href="EN/Programmierung/Typkonvertierung">Typkonvertierung</a></li>
+					<li><a href="EN/Programmierung/Operatoren">Operatoren</a></li>
+					<li><a href="EN/Programmierung/Variablen">Variablen</a></li>
+					<li><a href="EN/Programmierung/Verzweigungen%20und%20Schleifen">Verzweigungen und Schleifen</a></li>
+					<li><details id="d3">
+						<summary><a href="EN/Programmierung/Funktionen">Funktionen</a></summary>
+						<ol>
+							<li><a href="EN/Programmierung/Funktionen/Anwendung">Anwendung</a></li>
+							<li><a href="EN/Programmierung/Funktionen/Referenzen">Referenzen</a></li>
+							<li><a href="EN/Programmierung/Funktionen/Externe%20Funktionen">Externe Funktionen</a></li>
+							<li><a href="EN/Programmierung/Funktionen/Beispiele">Beispiele</a></li>
+						</ol>
+					</details></li>
+					<li><a href="EN/Programmierung/Module">Module</a></li>
+					<li><details id="d4">
+						<summary><a href="EN/Programmierung/Standardbibliothek">Standardbibliothek</a></summary>
+						<ol>
+							[[range .StdlibModules]]<li><a href="EN/Programmierung/Standardbibliothek/[[.]]">[[.]]</a></li>
+							[[end]]
+						</ol>
+					</details></li>
+				</ol>
+			</details></li>
+			<li><a href="EN/Beispielprogramme">Beispielprogramme</a></li>
+			<li><a href="EN/Der%20Kompilierer">Der Kompilierer</a></li>
+			<li><a href="EN/Fehlermeldungen">Fehlermeldungen</a></li>
+		</ol>
+	</nav>
+	<main id="inhalt" onclick="closeNav()">
+		<div id="kopf">
+			<h1>Die Deutsche Programmiersprache</h1>
+			<div id="untertitel">
+				<hr class="linie">
+				<h4>Bedienungsanleitung</h4>
+				<hr class="linie">
+			</div>
+			<div id="toggles">
+				<a href="DE/{{.page}}"><img id="sprach-toggle" src="static/img/flags/DE.png"></a>
+				<img src="static/img/theme-light-dark.svg" id="dark-mode-toggle" class="btn" onclick="toggleDarkMode()">
+			</div>
+		</div>
+		<article id="artikel">	
+			<zero-md id="md" src="Artikel/EN/{{.page}}.md">
+				<template>
+					<link rel="stylesheet" href="static/css/md-style.css" />
+				</template>
+				<script
+					type="text/markdown"><h1 align=center>Diese Seite konnte nicht gefunden werde!</h1><h3 align=center>This page could not be found!</h3>
+				</script>
+			</zero-md>
+		</article>
+		<div id="artikel-navigation">
+			<div onclick="goToSurroundingLink(-1)" class="btn">&lt;</div>
+			<div onclick="goToSurroundingLink(1)" class="btn">&gt;</div>
+		</div>
+	</main>
+</body>
+
+</html>

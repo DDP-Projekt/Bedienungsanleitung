@@ -41,5 +41,5 @@ Mit den Optionen --gcc_optionen und --externe_gcc_optionen können weitere Argum
 
 Die Argumente aus --gcc_optionen werden beim finalen Link-Schritt übergeben und werden Benutzt wenn man z.B. zu externen Bibliotheken linken möchte (zu einer Grafikbibliothek o.ä.).
 
-Die Argumente aus --externe_gcc_optionen werden nur benutzt falls es [externe Funktionen](?p=Programmierung/Funktionen/Externe%20Funktionen) gibt, die in .c Dateien definiert werden. Sollte das der Fall sein, wird jede angegebene .c Datei seperat mit GCC kompiliert, und dabei werden die Argumente aus --externe_gcc_optionen übergeben.
+Die Argumente aus --externe_gcc_optionen werden nur benutzt falls es [externe Funktionen](/Bedienungsanleitung/DE/Programmierung/Funktionen/Externe%20Funktionen) gibt, die in .c Dateien definiert werden. Sollte das der Fall sein, wird jede angegebene .c Datei seperat mit GCC kompiliert, und dabei werden die Argumente aus --externe_gcc_optionen übergeben.
 Das ist nützlich, wenn man Include-Verzeichnisse (wie die DDP-Runtime) oder C-Präprozessor Direktiven angeben muss/möchte.

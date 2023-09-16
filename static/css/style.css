@@ -1,17 +1,18 @@
 :root {
 	--sidebar-size: 250px;
 	--content-size: calc(100% - var(--sidebar-size));
+	--de-underline-flag-url: url("/Bedienungsanleitung/static/img/de-flagge.png");
 }
 
 /* fonts */
 @font-face {
 	font-family: 'Trump Bold';
-	src: url('./fonts/FetteTrumpDeutsch.ttf');
+	src: url('/Bedienungsanleitung/static/fonts/FetteTrumpDeutsch.ttf');
 }
 
 @font-face {
 	font-family: 'Futura';
-	src: url('./fonts/Futura.ttf');
+	src: url('/Bedienungsanleitung/static/fonts/Futura.ttf');
 }
 
 /* screen width larger than 830px (desktop/tablet) */
@@ -67,6 +68,10 @@ html, body {
 	background-color: var(--bg-color);
 	color: var(--text-color);
 	overflow: hidden;
+}
+
+.btn {
+	cursor: pointer;
 }
 
 .language-picker {
@@ -155,7 +160,7 @@ a:hover {
 	font-size: min(2em, 4vw);
 	margin-bottom: 0;
 	line-height: 1;
-	background: bottom url("img/de-flagge.png") no-repeat;
+	background: bottom var(--de-underline-flag-url) no-repeat;
 	background-size: 100% 2px;
 	padding-bottom: 2px;
 
