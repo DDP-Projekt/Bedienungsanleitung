@@ -14,7 +14,7 @@ An expression is a piece of source code that produces a value.
 The mathematical expression `2 * pi * radius` produces the circumference of a circle.
 In DDP this expression would look like this: `2 mal pi mal radius`.
 Expressions can take multiple arguments of different types and produce a value of the same or different type.
-The different data types are described in the article [data types](/EN/Programmierung/Datentypen).
+The different data types are described in the article [data types](/Bedienungsanleitung/EN/Programmierung/Datentypen).
 
 ## Statements
 
@@ -38,7 +38,7 @@ Schreibe den Text "I'm not in the statement block.".
 ```
 The statement block ends when the next character is indented the same or less than the colon.
 
-statement blocks are often separated into [branches](/EN/Programmierung/Verzweigungen%20und%20Schleifen#verzweigungen), [loops](/EN/Programmierung/Verzweigungen%20und%20Schleifen#schleifen) or [functions](/EN/Programmierung/Funktionen) used.
+statement blocks are often separated into [branches](/Bedienungsanleitung/EN/Programmierung/Verzweigungen%20und%20Schleifen#verzweigungen), [loops](/Bedienungsanleitung/EN/Programmierung/Verzweigungen%20und%20Schleifen#schleifen) or [functions](/Bedienungsanleitung/EN/Programmierung/Funktionen) used.
 More on this in the following articles.
 
 ## Comments
@@ -71,4 +71,4 @@ und kann so benutzt werden:
 ## literals
 
 A literal is a notation in the source code that represents a value (constant in DDP).
-A list of literals for the corresponding data types can be found in the [data types](/EN/Programmierung/Datentypen) article.
+A list of literals for the corresponding data types can be found in the [data types](/Bedienungsanleitung/EN/Programmierung/Datentypen) article.

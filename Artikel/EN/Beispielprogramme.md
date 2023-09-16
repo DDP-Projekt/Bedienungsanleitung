@@ -1,4 +1,4 @@
-# Beispielprogramme
+# Example programs
 ## Fizzbuzz
 ```ddp
 Binde "Duden/Ausgabe" ein.

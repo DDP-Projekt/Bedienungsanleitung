@@ -36,16 +36,19 @@ func main() {
 	r := gin.Default()
 
 	r.LoadHTMLGlob("server/html/*")
-	r.StaticFS("/Artikel", http.Dir("Artikel"))
-	r.StaticFS("/static", http.Dir("static"))
 
-	r.GET("/", func(c *gin.Context) {
+	g := r.Group("Bedienungsanleitung")
+
+	g.StaticFS("/Artikel", http.Dir("Artikel"))
+	g.StaticFS("/static", http.Dir("static"))
+
+	g.GET("/", func(c *gin.Context) {
 		c.HTML(http.StatusOK, "de.gohtml", gin.H{
 			"page": "Startseite",
 		})
 	})
 
-	r.GET("/DE/*page", func(c *gin.Context) {
+	g.GET("/DE/*page", func(c *gin.Context) {
 		p, _ := url.PathUnescape(c.Param("page"))
 		if p == "/" {
 			p = "Startseite"
@@ -55,7 +58,7 @@ func main() {
 		})
 	})
 
-	r.GET("/EN/*page", func(c *gin.Context) {
+	g.GET("/EN/*page", func(c *gin.Context) {
 		p, _ := url.PathUnescape(c.Param("page"))
 		if p == "/" {
 			p = "Startseite"
