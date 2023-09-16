@@ -15,11 +15,11 @@ Die einzelnen Artikel liegen im Ordner "Artikel" und sind Markdown Dateien. Ein 
 
 ### Konfiguration
 Die Standardkonfiguration sieht so aus:
-````json
+```json
 {
 	"port": "8080",
 	"useHTTPS": false,
 	"certPath": "",
 	"keyPath": ""
 }
-``
+```
