@@ -24,3 +24,4 @@ Alternativ kann man den Befehl `kddp starte` benutzen:
 ```terminal
 $ kddp starte HalloWelt.ddp
 ```
+welcher einfach die beiden obigen Befehle ausführt.
