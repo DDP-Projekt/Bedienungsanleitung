@@ -44,7 +44,7 @@ Fügt eine Zahl am Ende der gegeben Zahlen Liste hinzu.
 <h3>Implementation</h3>
 <pre class="language-ddp" tabindex="0">
 <code class="language-ddp">
-Speichere liste verkettet mit elm in liste.
+efficient_list_append_int liste elm (die Größe von elm).
 
 </code>
 </pre>
@@ -55,6 +55,7 @@ Speichere liste verkettet mit elm in liste.
 <ul>
 <pre>
 Fügt eine Zahl vor einem Index in der gegebenen Zahlen Liste ein.
+Es wird nicht überprüft ob der Index valide ist.
 </pre>
 	<li>Parameter: <code>liste</code>, <code>index</code>, <code>elm</code></li>
 	<li>Parameter Typen: <code>Zahlen Listen Referenz</code>, <code>Zahl</code>, <code>Zahl</code></li>
@@ -69,7 +70,7 @@ Fügt eine Zahl vor einem Index in der gegebenen Zahlen Liste ein.
 <h3>Implementation</h3>
 <pre class="language-ddp" tabindex="0">
 <code class="language-ddp">
-Speichere liste von 1 bis (index minus 1) verkettet mit elm verkettet mit liste von index  bis (die Länge von liste) in liste.
+efficient_list_insert_int liste (index minus 1) elm (die Größe von elm).
 
 </code>
 </pre>
@@ -94,7 +95,7 @@ Fügt eine Zahlen Liste vor einem Index in der gegebenen Zahlen Liste ein.
 <h3>Implementation</h3>
 <pre class="language-ddp" tabindex="0">
 <code class="language-ddp">
-Speichere liste von 1 bis (index minus 1) verkettet mit range verkettet mit liste von index  bis (die Länge von liste) in liste.
+efficient_list_insert_range_int liste (index minus 1) range (die Größe von 0).
 
 </code>
 </pre>
@@ -119,7 +120,8 @@ Fügt eine Zahl am Anfang der gegeben Zahlen Liste hinzu.
 <h3>Implementation</h3>
 <pre class="language-ddp" tabindex="0">
 <code class="language-ddp">
-Speichere elm verkettet mit liste in liste.
+[Speichere elm verkettet mit liste in liste.]
+efficient_list_prepend_int liste elm (die Größe von elm).
 
 </code>
 </pre>
@@ -144,16 +146,8 @@ Entfernt die Zahl an dem gegeben Index aus der gegeben Zahlen Liste.
 <h3>Implementation</h3>
 <pre class="language-ddp" tabindex="0">
 <code class="language-ddp">
-Wenn die Länge von liste gleich 0 ist, verlasse die Funktion.
-
-Wenn index gleich 1 ist und die Länge von liste größer als 1 ist, dann:
-	Speichere eine leere Zahlen Liste in liste.
-Wenn aber index gleich 1 ist, dann:
-	Speichere liste von 2 bis (die Länge von liste) in liste.
-Wenn aber index gleich die Länge von liste ist, dann:
-	Speichere liste von 1 bis (die Länge von liste minus 1) in liste.
-Sonst:
-	Speichere liste von 1 bis (index minus 1) verkettet mit liste von (index plus 1) bis (die Länge von liste) in liste.
+Speichere index minus 1 in index.
+efficient_list_delete_range_int liste index index (die Größe von 0).
 
 </code>
 </pre>
@@ -163,7 +157,7 @@ Sonst:
 <summary><h2>Lösche_Bereich_Z</h2></summary>
 <ul>
 <pre>
-Entfernt alle Zahlen aus der Liste im gegebenen Bereich (inkusiv)
+Entfernt alle Zahlen aus der Liste im Bereich [start, end] (inklusiv)
 </pre>
 	<li>Parameter: <code>liste</code>, <code>start</code>, <code>end</code></li>
 	<li>Parameter Typen: <code>Zahlen Listen Referenz</code>, <code>Zahl</code>, <code>Zahl</code></li>
@@ -178,7 +172,7 @@ Entfernt alle Zahlen aus der Liste im gegebenen Bereich (inkusiv)
 <h3>Implementation</h3>
 <pre class="language-ddp" tabindex="0">
 <code class="language-ddp">
-Speichere liste von 1 bis (start minus 1) verkettet mit liste von (end plus 1) bis (die Länge von liste) in liste.
+efficient_list_delete_range_int liste (start minus 1) (end minus 1) (die Größe von 0).
 
 </code>
 </pre>
@@ -332,7 +326,7 @@ Fügt eine Kommazahl am Ende der gegeben Kommazahlen Liste hinzu.
 <h3>Implementation</h3>
 <pre class="language-ddp" tabindex="0">
 <code class="language-ddp">
-Speichere liste verkettet mit elm in liste.
+efficient_list_append_float liste elm (die Größe von elm).
 
 </code>
 </pre>
@@ -343,6 +337,7 @@ Speichere liste verkettet mit elm in liste.
 <ul>
 <pre>
 Fügt eine Kommazahl vor einem Index in der gegebenen Kommazahlen Liste ein.
+Es wird nicht überprüft ob der Index valide ist.
 </pre>
 	<li>Parameter: <code>liste</code>, <code>index</code>, <code>elm</code></li>
 	<li>Parameter Typen: <code>Kommazahlen Listen Referenz</code>, <code>Zahl</code>, <code>Kommazahl</code></li>
@@ -357,7 +352,7 @@ Fügt eine Kommazahl vor einem Index in der gegebenen Kommazahlen Liste ein.
 <h3>Implementation</h3>
 <pre class="language-ddp" tabindex="0">
 <code class="language-ddp">
-Speichere liste von 1 bis (index minus 1) verkettet mit elm verkettet mit liste von index  bis (die Länge von liste) in liste.
+efficient_list_insert_float liste (index minus 1) elm (die Größe von elm).
 
 </code>
 </pre>
@@ -382,7 +377,7 @@ Fügt eine Kommazahlen Liste vor einem Index in der gegebenen Kommazahlen Liste 
 <h3>Implementation</h3>
 <pre class="language-ddp" tabindex="0">
 <code class="language-ddp">
-Speichere liste von 1 bis (index minus 1) verkettet mit range verkettet mit liste von index  bis (die Länge von liste) in liste.
+efficient_list_insert_range_float liste (index minus 1) range (die Größe von 0,0).
 
 </code>
 </pre>
@@ -407,7 +402,8 @@ Fügt eine Kommazahl am Anfang der gegeben Kommazahlen Liste hinzu.
 <h3>Implementation</h3>
 <pre class="language-ddp" tabindex="0">
 <code class="language-ddp">
-Speichere elm verkettet mit liste in liste.
+[Speichere elm verkettet mit liste in liste.]
+efficient_list_prepend_float liste elm (die Größe von elm).
 
 </code>
 </pre>
@@ -432,16 +428,8 @@ Entfernt die Kommazahl an dem gegeben Index aus der gegeben Kommazahlen Liste.
 <h3>Implementation</h3>
 <pre class="language-ddp" tabindex="0">
 <code class="language-ddp">
-Wenn die Länge von liste gleich 0 ist, verlasse die Funktion.
-
-Wenn index gleich 1 ist und die Länge von liste größer als 1 ist, dann:
-	Speichere eine leere Kommazahlen Liste in liste.
-Wenn aber index gleich 1 ist, dann:
-	Speichere liste von 2 bis (die Länge von liste) in liste.
-Wenn aber index gleich die Länge von liste ist, dann:
-	Speichere liste von 1 bis (die Länge von liste minus 1) in liste.
-Sonst:
-	Speichere liste von 1 bis (index minus 1) verkettet mit liste von (index plus 1) bis (die Länge von liste) in liste.
+Speichere index minus 1 in index.
+efficient_list_delete_range_float liste index index (die Größe von 0,0).
 
 </code>
 </pre>
@@ -451,7 +439,7 @@ Sonst:
 <summary><h2>Lösche_Bereich_K</h2></summary>
 <ul>
 <pre>
-Entfernt alle Kommazahlen aus der Liste im gegebenen Bereich (inkusiv)
+Entfernt alle Kommazahlen aus der Liste im Bereich [start, end] (inklusiv)
 </pre>
 	<li>Parameter: <code>liste</code>, <code>start</code>, <code>end</code></li>
 	<li>Parameter Typen: <code>Kommazahlen Listen Referenz</code>, <code>Zahl</code>, <code>Zahl</code></li>
@@ -466,7 +454,7 @@ Entfernt alle Kommazahlen aus der Liste im gegebenen Bereich (inkusiv)
 <h3>Implementation</h3>
 <pre class="language-ddp" tabindex="0">
 <code class="language-ddp">
-Speichere liste von 1 bis (start minus 1) verkettet mit liste von (end plus 1) bis (die Länge von liste) in liste.
+efficient_list_delete_range_float liste (start minus 1) (end minus 1) (die Größe von 0,0).
 
 </code>
 </pre>
@@ -620,7 +608,7 @@ Fügt einen Boolean am Ende der gegeben Boolean Liste hinzu.
 <h3>Implementation</h3>
 <pre class="language-ddp" tabindex="0">
 <code class="language-ddp">
-Speichere liste verkettet mit elm in liste.
+efficient_list_append_bool liste elm (die Größe von elm).
 
 </code>
 </pre>
@@ -645,7 +633,7 @@ Fügt einen Boolean vor einem Index in der gegebenen Boolean Liste ein.
 <h3>Implementation</h3>
 <pre class="language-ddp" tabindex="0">
 <code class="language-ddp">
-Speichere liste von 1 bis (index minus 1) verkettet mit elm verkettet mit liste von index  bis (die Länge von liste) in liste.
+efficient_list_insert_bool liste (index minus 1) elm (die Größe von elm).
 
 </code>
 </pre>
@@ -656,6 +644,7 @@ Speichere liste von 1 bis (index minus 1) verkettet mit elm verkettet mit liste 
 <ul>
 <pre>
 Fügt eine Boolean Liste vor einem Index in der gegebenen Boolean Liste ein.
+Es wird nicht überprüft ob der Index valide ist.
 </pre>
 	<li>Parameter: <code>liste</code>, <code>index</code>, <code>range</code></li>
 	<li>Parameter Typen: <code>Boolean Listen Referenz</code>, <code>Zahl</code>, <code>Boolean Liste</code></li>
@@ -670,7 +659,7 @@ Fügt eine Boolean Liste vor einem Index in der gegebenen Boolean Liste ein.
 <h3>Implementation</h3>
 <pre class="language-ddp" tabindex="0">
 <code class="language-ddp">
-Speichere liste von 1 bis (index minus 1) verkettet mit range verkettet mit liste von index  bis (die Länge von liste) in liste.
+efficient_list_insert_range_bool liste (index minus 1) range (die Größe von wahr).
 
 </code>
 </pre>
@@ -695,7 +684,8 @@ Fügt einen Boolean am Anfang der gegeben Boolean Liste hinzu.
 <h3>Implementation</h3>
 <pre class="language-ddp" tabindex="0">
 <code class="language-ddp">
-Speichere elm verkettet mit liste in liste.
+[Speichere elm verkettet mit liste in liste.]
+efficient_list_prepend_bool liste elm (die Größe von elm).
 
 </code>
 </pre>
@@ -720,16 +710,8 @@ Entfernt den Boolean an dem gegeben Index aus der gegeben Boolean Liste.
 <h3>Implementation</h3>
 <pre class="language-ddp" tabindex="0">
 <code class="language-ddp">
-Wenn die Länge von liste gleich 0 ist, verlasse die Funktion.
-
-Wenn index gleich 1 ist und die Länge von liste größer als 1 ist, dann:
-	Speichere eine leere Boolean Liste in liste.
-Wenn aber index gleich 1 ist, dann:
-	Speichere liste von 2 bis (die Länge von liste) in liste.
-Wenn aber index gleich die Länge von liste ist, dann:
-	Speichere liste von 1 bis (die Länge von liste minus 1) in liste.
-Sonst:
-	Speichere liste von 1 bis (index minus 1) verkettet mit liste von (index plus 1) bis (die Länge von liste) in liste.
+Speichere index minus 1 in index.
+efficient_list_delete_range_bool liste index index (die Größe von wahr).
 
 </code>
 </pre>
@@ -739,7 +721,7 @@ Sonst:
 <summary><h2>Lösche_Bereich_B</h2></summary>
 <ul>
 <pre>
-Entfernt alle Booleans aus der Liste im gegebenen Bereich (inkusiv)
+Entfernt alle Booleans aus der Liste im Bereich [start, end] (inklusiv)
 </pre>
 	<li>Parameter: <code>liste</code>, <code>start</code>, <code>end</code></li>
 	<li>Parameter Typen: <code>Boolean Listen Referenz</code>, <code>Zahl</code>, <code>Zahl</code></li>
@@ -754,7 +736,7 @@ Entfernt alle Booleans aus der Liste im gegebenen Bereich (inkusiv)
 <h3>Implementation</h3>
 <pre class="language-ddp" tabindex="0">
 <code class="language-ddp">
-Speichere liste von 1 bis (start minus 1) verkettet mit liste von (end plus 1) bis (die Länge von liste) in liste.
+efficient_list_delete_range_bool liste (start minus 1) (end minus 1) (die Größe von wahr).
 
 </code>
 </pre>
@@ -908,7 +890,7 @@ Fügt einen Buchstaben am Ende der gegeben Buchstaben Liste hinzu.
 <h3>Implementation</h3>
 <pre class="language-ddp" tabindex="0">
 <code class="language-ddp">
-Speichere liste verkettet mit elm in liste.
+efficient_list_append_char liste elm (die Größe von elm).
 
 </code>
 </pre>
@@ -919,6 +901,7 @@ Speichere liste verkettet mit elm in liste.
 <ul>
 <pre>
 Fügt einen Buchstaben vor einem Index in der gegebenen Buchstaben Liste ein.
+Es wird nicht überprüft ob der Index valide ist.
 </pre>
 	<li>Parameter: <code>liste</code>, <code>index</code>, <code>elm</code></li>
 	<li>Parameter Typen: <code>Buchstaben Listen Referenz</code>, <code>Zahl</code>, <code>Buchstabe</code></li>
@@ -933,7 +916,7 @@ Fügt einen Buchstaben vor einem Index in der gegebenen Buchstaben Liste ein.
 <h3>Implementation</h3>
 <pre class="language-ddp" tabindex="0">
 <code class="language-ddp">
-Speichere liste von 1 bis (index minus 1) verkettet mit elm verkettet mit liste von index  bis (die Länge von liste) in liste.
+efficient_list_insert_char liste (index minus 1) elm (die Größe von elm).
 
 </code>
 </pre>
@@ -958,7 +941,7 @@ Fügt eine Buchstaben Liste vor einem Index in der gegebenen Buchstaben Liste ei
 <h3>Implementation</h3>
 <pre class="language-ddp" tabindex="0">
 <code class="language-ddp">
-Speichere liste von 1 bis (index minus 1) verkettet mit range verkettet mit liste von index  bis (die Länge von liste) in liste.
+efficient_list_insert_range_char liste (index minus 1) range (die Größe von ' ').
 
 </code>
 </pre>
@@ -983,7 +966,8 @@ Fügt einen Buchstaben am Anfang der gegeben Buchstaben Liste hinzu.
 <h3>Implementation</h3>
 <pre class="language-ddp" tabindex="0">
 <code class="language-ddp">
-Speichere elm verkettet mit liste in liste.
+[Speichere elm verkettet mit liste in liste.]
+efficient_list_prepend_char liste elm (die Größe von elm).
 
 </code>
 </pre>
@@ -1008,16 +992,8 @@ Entfernt den Buchstaben an dem gegeben Index aus der gegeben Buchstaben Liste.
 <h3>Implementation</h3>
 <pre class="language-ddp" tabindex="0">
 <code class="language-ddp">
-Wenn die Länge von liste gleich 0 ist, verlasse die Funktion.
-
-Wenn index gleich 1 ist und die Länge von liste größer als 1 ist, dann:
-	Speichere eine leere Buchstaben Liste in liste.
-Wenn aber index gleich 1 ist, dann:
-	Speichere liste von 2 bis (die Länge von liste) in liste.
-Wenn aber index gleich die Länge von liste ist, dann:
-	Speichere liste von 1 bis (die Länge von liste minus 1) in liste.
-Sonst:
-	Speichere liste von 1 bis (index minus 1) verkettet mit liste von (index plus 1) bis (die Länge von liste) in liste.
+Speichere index minus 1 in index.
+efficient_list_delete_range_char liste index index (die Größe von ' ').
 
 </code>
 </pre>
@@ -1027,7 +1003,7 @@ Sonst:
 <summary><h2>Lösche_Bereich_C</h2></summary>
 <ul>
 <pre>
-Entfernt alle Buchstaben aus der Liste im gegebenen Bereich (inkusiv)
+Entfernt alle Buchstaben aus der Liste im Bereich [start, end] (inklusiv)
 </pre>
 	<li>Parameter: <code>liste</code>, <code>start</code>, <code>end</code></li>
 	<li>Parameter Typen: <code>Buchstaben Listen Referenz</code>, <code>Zahl</code>, <code>Zahl</code></li>
@@ -1042,7 +1018,7 @@ Entfernt alle Buchstaben aus der Liste im gegebenen Bereich (inkusiv)
 <h3>Implementation</h3>
 <pre class="language-ddp" tabindex="0">
 <code class="language-ddp">
-Speichere liste von 1 bis (start minus 1) verkettet mit liste von (end plus 1) bis (die Länge von liste) in liste.
+efficient_list_delete_range_char liste (start minus 1) (end minus 1) (die Größe von ' ').
 
 </code>
 </pre>
@@ -1196,7 +1172,7 @@ Fügt einen Text am Ende der gegeben Text Liste hinzu.
 <h3>Implementation</h3>
 <pre class="language-ddp" tabindex="0">
 <code class="language-ddp">
-Speichere liste verkettet mit elm in liste.
+efficient_list_append_string liste elm (die Größe von elm).
 
 </code>
 </pre>
@@ -1221,7 +1197,7 @@ Fügt einen Text vor einem Index in der gegebenen Text Liste ein.
 <h3>Implementation</h3>
 <pre class="language-ddp" tabindex="0">
 <code class="language-ddp">
-Speichere liste von 1 bis (index minus 1) verkettet mit elm verkettet mit liste von index  bis (die Länge von liste) in liste.
+efficient_list_insert_string liste (index minus 1) elm (die Größe von elm).
 
 </code>
 </pre>
@@ -1232,6 +1208,7 @@ Speichere liste von 1 bis (index minus 1) verkettet mit elm verkettet mit liste 
 <ul>
 <pre>
 Fügt eine Text Liste vor einem Index in der gegebenen Text Liste ein.
+Es wird nicht überprüft ob der Index valide ist.
 </pre>
 	<li>Parameter: <code>liste</code>, <code>index</code>, <code>range</code></li>
 	<li>Parameter Typen: <code>Text Listen Referenz</code>, <code>Zahl</code>, <code>Text Liste</code></li>
@@ -1246,7 +1223,7 @@ Fügt eine Text Liste vor einem Index in der gegebenen Text Liste ein.
 <h3>Implementation</h3>
 <pre class="language-ddp" tabindex="0">
 <code class="language-ddp">
-Speichere liste von 1 bis (index minus 1) verkettet mit range verkettet mit liste von index  bis (die Länge von liste) in liste.
+efficient_list_insert_range_string liste (index minus 1) range (die Größe von "").
 
 </code>
 </pre>
@@ -1271,7 +1248,8 @@ Fügt einen Text am Anfang der gegeben Text Liste hinzu.
 <h3>Implementation</h3>
 <pre class="language-ddp" tabindex="0">
 <code class="language-ddp">
-Speichere elm verkettet mit liste in liste.
+[Speichere elm verkettet mit liste in liste.]
+efficient_list_prepend_string liste elm (die Größe von elm).
 
 </code>
 </pre>
@@ -1296,16 +1274,8 @@ Entfernt den Text an dem gegeben Index aus der gegeben Text Liste.
 <h3>Implementation</h3>
 <pre class="language-ddp" tabindex="0">
 <code class="language-ddp">
-Wenn die Länge von liste gleich 0 ist, verlasse die Funktion.
-
-Wenn index gleich 1 ist und die Länge von liste größer als 1 ist, dann:
-	Speichere eine leere Text Liste in liste.
-Wenn aber index gleich 1 ist, dann:
-	Speichere liste von 2 bis (die Länge von liste) in liste.
-Wenn aber index gleich die Länge von liste ist, dann:
-	Speichere liste von 1 bis (die Länge von liste minus 1) in liste.
-Sonst:
-	Speichere liste von 1 bis (index minus 1) verkettet mit liste von (index plus 1) bis (die Länge von liste) in liste.
+Speichere index minus 1 in index.
+efficient_list_delete_range_string liste index index (die Größe von "").
 
 </code>
 </pre>
@@ -1315,7 +1285,7 @@ Sonst:
 <summary><h2>Lösche_Bereich_T</h2></summary>
 <ul>
 <pre>
-Entfernt alle Texte aus der Liste im gegebenen Bereich (inkusiv)
+Entfernt alle Texte aus der Liste im Bereich [start, end] (inklusiv)
 </pre>
 	<li>Parameter: <code>liste</code>, <code>start</code>, <code>end</code></li>
 	<li>Parameter Typen: <code>Text Listen Referenz</code>, <code>Zahl</code>, <code>Zahl</code></li>
@@ -1330,7 +1300,7 @@ Entfernt alle Texte aus der Liste im gegebenen Bereich (inkusiv)
 <h3>Implementation</h3>
 <pre class="language-ddp" tabindex="0">
 <code class="language-ddp">
-Speichere liste von 1 bis (start minus 1) verkettet mit liste von (end plus 1) bis (die Länge von liste) in liste.
+efficient_list_delete_range_string liste (start minus 1) (end minus 1) (die Größe von "").
 
 </code>
 </pre>
