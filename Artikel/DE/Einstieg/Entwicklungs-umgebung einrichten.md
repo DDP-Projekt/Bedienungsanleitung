@@ -5,7 +5,7 @@ Allerdings empfehlen wir trotzdem einen der vielen Text-Editoren zu benutzen, di
 Falls du keinen Editor möchtest/brauchst kannst du mit dem Schritt [Installation](/Bedienungsanleitung/DE/Einstieg/Installation) weitermachen.
 
 Im Moment unterstützt DDP nur [Visual Studio Code](https://code.visualstudio.com/) mit einer offiziellen Erweiterung.
-Es gibt allerdings einen Sprach-Server (Language Server) für DDP, genannt DDPLS. Mit diesem ist es möglich viele Features Editor-unabhängig zu nutzen. Wer möchte kann DDPLS gerne nutzen um Erweiterungen oder Plugins für andere Editoren als VSCode zu schreiben.
+Es gibt allerdings einen Sprach-Server (Language Server) für DDP, genannt [DDPLS](https://github.com/DDP-Projekt/DDPLS). Mit diesem ist es möglich viele Features Editor-unabhängig zu nutzen. Wer möchte kann DDPLS gerne nutzen um Erweiterungen oder Plugins für andere Editoren als VSCode zu schreiben.
 
 ## Visual Studio Code Download
 
