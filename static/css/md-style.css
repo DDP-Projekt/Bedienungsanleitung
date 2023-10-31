@@ -1,6 +1,6 @@
 /* links */
 .markdown-body a {
-	text-decoration: none;
+	text-decoration: underline;
 	color: var(--md-link-color);
 }
 

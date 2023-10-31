@@ -8,11 +8,13 @@
 @font-face {
 	font-family: 'Trump Bold';
 	src: url('/Bedienungsanleitung/static/fonts/FetteTrumpDeutsch.ttf');
+	font-display: swap;
 }
 
 @font-face {
 	font-family: 'Futura';
 	src: url('/Bedienungsanleitung/static/fonts/Futura.ttf');
+	font-display: swap;
 }
 
 /* screen width larger than 830px (desktop/tablet) */
@@ -188,7 +190,7 @@ a:hover {
 	background-color: rgba(250, 235, 215, 0.5);
 }
 
-#kopf h4 {
+#kopf p {
 	margin: 5px 0 5px 0;
 }
 

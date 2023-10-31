@@ -5,6 +5,7 @@
 	<title>DDP Bedienungsanleitung</title>
 	<base href="/Bedienungsanleitung/">
 
+	<meta name="description" content="The documentation for DDP.">
 	<meta name="msapplication-TileColor" content="#da532c">
 	<meta name="msapplication-config" content="static/img/favicon/browserconfig.xml">
 	<meta name="theme-color" content="#ffffff">
@@ -22,8 +23,8 @@
 	<link id="dark" rel="stylesheet" href="static/css/dark-mode.css" media="all">
 	<link id="light" rel="stylesheet" href="static/css/light-mode.css" media="not all">
 
-	<script src="static/js/todoElement.js"></script>
-	<script src="static/js/script.js"></script>
+	<script src="static/js/todoElement.js" defer></script>
+	<script src="static/js/script.js" defer></script>
 	
 	<script type="module" src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@2/dist/zero-md.min.js"></script>
 </head>
@@ -81,12 +82,12 @@
 			<h1>Die Deutsche Programmiersprache</h1>
 			<div id="untertitel">
 				<hr class="linie">
-				<h4>Bedienungsanleitung</h4>
+				<p>Bedienungsanleitung</p>
 				<hr class="linie">
 			</div>
 			<div id="toggles">
-				<a href="DE/{{.page}}"><img id="sprach-toggle" src="static/img/flags/DE.png"></a>
-				<img src="static/img/theme-light-dark.svg" id="dark-mode-toggle" class="btn" onclick="toggleDarkMode()">
+				<a href="DE/{{.page}}"><img id="sprach-toggle" alt="switch language" src="static/img/flags/de.svg"></a>
+				<img src="static/img/theme-light-dark.svg" id="dark-mode-toggle" alt="toggle dark mode" class="btn" onclick="toggleDarkMode()">
 			</div>
 		</div>
 		<article id="artikel">	

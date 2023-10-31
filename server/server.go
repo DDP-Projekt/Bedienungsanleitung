@@ -39,6 +39,15 @@ func main() {
 
 	g := r.Group("Bedienungsanleitung")
 
+	g.Use(func(c *gin.Context) {
+		// Apply the Cache-Control header to the static files
+		if strings.HasPrefix(c.Request.URL.Path, "/Bedienungsanleitung/static/") {
+			c.Header("Cache-Control", "private, max-age=86400")
+		}
+
+		c.Next() // Continue to the next middleware or handler
+	})
+
 	g.StaticFS("/Artikel", http.Dir("Artikel"))
 	g.StaticFS("/static", http.Dir("static"))
 
