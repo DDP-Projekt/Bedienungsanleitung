@@ -5,3 +5,5 @@ DDP (german: The german programming language) is a (joke) programming language b
 DDP belongs to a class of programming languages called "esoteric languages". The goal of such languages is not to be particularly efficient or simple, but to comment on the medium itself with their sometimes absurd syntax.
 
 The source code of the compiler and this website can be found on [Github](https://github.com/DDP-Projekt).
+
+You can try out DDP directly in your browser using the [Spielplatz](https://ddp.le0n.dev/Spielplatz) (playground)! 
