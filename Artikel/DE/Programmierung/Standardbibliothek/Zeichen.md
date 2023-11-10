@@ -223,7 +223,8 @@ Gib b ein deutscher Buchstabe ist oder b eine Zahl ist zurück.
 <summary><h2>Großgeschrieben</h2></summary>
 <ul>
 <pre>
-Gibt wahr zurück wenn der Buchstabe b ein großer deutscher Buchstabe ist.
+Gibt den gegebenen Buchstaben als großgeschriebe Variante zurück. 
+Gibt den selben Buchstaben zurück wenn es schon großgeschrieben ist oder kein deutscher Buchstabe (siehe IstDeutscherBuchstabe) ist.
 </pre>
 	<li>Parameter: <code>b</code></li>
 	<li>Parameter Typ: <code>Buchstabe</code></li>
@@ -251,7 +252,8 @@ Gib (b als Zahl logisch und 223) als Buchstabe zurück.
 <summary><h2>Kleingeschrieben</h2></summary>
 <ul>
 <pre>
-Gibt wahr zurück wenn der Buchstabe b ein kleiner deutscher Buchstabe ist.
+Gibt den gegebenen Buchstaben als kleingeschriebene Variante zurück. 
+Gibt den selben Buchstaben zurück wenn es schon kleingeschrieben ist oder kein deutscher Buchstabe (siehe IstDeutscherBuchstabe) ist.
 </pre>
 	<li>Parameter: <code>b</code></li>
 	<li>Parameter Typ: <code>Buchstabe</code></li>

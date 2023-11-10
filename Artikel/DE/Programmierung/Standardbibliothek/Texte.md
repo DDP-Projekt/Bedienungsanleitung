@@ -50,7 +50,11 @@ t: "hallo"
 <code class="language-ddp">
 Wenn die Länge von text gleich 0 ist, verlasse die Funktion.
 Die Zahl index ist 1.
-Solange (text an der Stelle index) gleich zeichen ist, erhöhe index um 1.
+Solange (text an der Stelle index) gleich zeichen ist, mache:
+	Erhöhe index um 1.
+	Wenn index größer als die Länge von text ist, dann:
+		Speichere "" in text.
+		Verlasse die Funktion.
 Speichere text von index bis (die Länge von text) in text.
 
 </code>
@@ -106,6 +110,8 @@ t: "hallo"
 <h3>Implementation</h3>
 <pre class="language-ddp" tabindex="0">
 <code class="language-ddp">
+Wenn die Länge von text gleich 0 ist, verlasse die Funktion.
+
 Die Zahl index ist die Länge von text.
 Wenn index gleich 0 ist, verlasse die Funktion.
 Solange (text an der Stelle index) gleich zeichen ist, mache:
@@ -169,10 +175,16 @@ t: "hallo"
 <h3>Implementation</h3>
 <pre class="language-ddp" tabindex="0">
 <code class="language-ddp">
+Wenn die Länge von text gleich 0 ist, verlasse die Funktion.
+
 Die Zahl startIndex ist 1.
 Die Zahl stopIndex ist die Länge von text.
-Solange (text an der Stelle startIndex) gleich zeichen ist, erhöhe startIndex um 1.
-Solange (text an der Stelle stopIndex) gleich zeichen ist, verringere stopIndex um 1.
+Solange (text an der Stelle startIndex) gleich zeichen ist und startIndex kleiner als die Länge von text ist, erhöhe startIndex um 1.
+Solange (text an der Stelle stopIndex) gleich zeichen ist und stopIndex ungleich 1 ist, verringere stopIndex um 1.
+Wenn startIndex gleich die Länge von text ist und stopIndex gleich 1 ist, dann:
+  	Speichere "" in text.
+	Verlasse die Funktion.
+
 Speichere text von startIndex bis stopIndex in text.
 
 </code>
@@ -250,8 +262,11 @@ Gibt zurück ob der gegebene Text (text) den Subtext (suchText) enthält.
 <h3>Implementation</h3>
 <pre class="language-ddp" tabindex="0">
 <code class="language-ddp">
+Wenn text gleich suchText ist, gib wahr zurück.
+
 Die Zahl startIndex ist 0.
 Die Zahl endIndex ist die Länge von suchText.
+Wenn endIndex gleich 0 ist, gib falsch zurück.
 
 Solange endIndex kleiner als, oder die Länge von text ist, mache:
 	Der Text subtext ist text von startIndex bis endIndex.
@@ -311,6 +326,7 @@ Gibt zurück ob der gegebene Text mit dem gegebenen Text (suchText) anfängt.
 <h3>Implementation</h3>
 <pre class="language-ddp" tabindex="0">
 <code class="language-ddp">
+Wenn die Länge von text gleich 0 ist oder die Länge von suchText gleich 0 ist, gib falsch zurück.
 Gib (text von 1 bis (die Länge von suchText)) gleich suchText ist zurück.
 
 </code>
@@ -362,6 +378,7 @@ Gibt zurück ob der gegebene Text mit dem gegebenen Text (suchText) endet.
 <h3>Implementation</h3>
 <pre class="language-ddp" tabindex="0">
 <code class="language-ddp">
+Wenn die Länge von text gleich 0 ist oder die Länge von suchText gleich 0 ist, gib falsch zurück.
 Gib (text von die Länge von text minus die Länge von suchText plus 1 bis (die Länge von text)) gleich suchText ist zurück.
 
 </code>
