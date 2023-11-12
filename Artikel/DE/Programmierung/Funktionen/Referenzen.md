@@ -29,7 +29,7 @@ Wenn man ihnen einen Wert, z.B. ein Literal, übergeben würde, gäbe es einen F
 Verändere "Fehler". [Kompilierfehler: foo hat eine Variable erwartet]
 ```
 
-Man kann aus jedem Typnamen einen Referenz-Typ machen, indem man "Referenz" an den Typnamen anhängt.
-Aus `Zahlen Liste` wird also `Zahlen Listen Referenz`, aus `Boolean` wird `Boolean Referenz`, etc.
+Man kann aus jedem Typnamen einen Referenz-Typ machen, indem man "Referenz" an den Typnamen anhängt und ihn entsprechend dekliniert.
+Aus `Zahlen Liste` wird also `Zahlen Listen Referenz`, aus `Boolean` wird `Boolean Referenz`, aus `Zahl` wird `Zahlen Referenz`, etc..
 
 Normale Variablen können keine Referenz-Typen sein, nur Funktions-Parameter.
