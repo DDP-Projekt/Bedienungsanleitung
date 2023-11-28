@@ -144,8 +144,8 @@ func MakeMdFiles(inputFilePath, outputFilePath, lang string) {
 
 			fmt.Fprintln(funcBldr, "<ul>")
 			// Kommentar/Beschreibung
-			if decl.Comment != nil {
-				descr := strings.Replace(strings.Trim(decl.Comment.String(), "[] \r\n"), "\t", "", -1)
+			if decl.Comment() != nil {
+				descr := strings.Replace(strings.Trim(decl.Comment().String(), "[] \r\n"), "\t", "", -1)
 				fmt.Fprintf(funcBldr, "<pre>\n%s\n</pre>\n", descr)
 			}
 
@@ -153,7 +153,7 @@ func MakeMdFiles(inputFilePath, outputFilePath, lang string) {
 				// Parameter Names
 				fmt.Fprintf(funcBldr, "\t<li>%s: ", nameMap[lang]["params"])
 				for i, paramName := range decl.ParamNames {
-					fmt.Fprintf(funcBldr, "<code>%s</code>", paramName)
+					fmt.Fprintf(funcBldr, "<code>%s</code>", paramName.String())
 					if i < len(decl.ParamNames)-1 {
 						fmt.Fprintf(funcBldr, ", ")
 					}
@@ -192,7 +192,7 @@ func MakeMdFiles(inputFilePath, outputFilePath, lang string) {
 			// Implemetation
 			fmt.Fprintf(funcBldr, "\n<h3>%s</h3>\n", nameMap[lang]["impl"])
 			if ast.IsExternFunc(decl) {
-				fmt.Fprintf(funcBldr, "%s <code>%s</code>\n", nameMap[lang]["externImpl"], decl.ExternFile)
+				fmt.Fprintf(funcBldr, "%s <code>%s</code>\n", nameMap[lang]["externImpl"], decl.ExternFile.String())
 			} else {
 				fmt.Fprintln(funcBldr, "<pre class=\"language-ddp\" tabindex=\"0\">\n<code class=\"language-ddp\">")
 

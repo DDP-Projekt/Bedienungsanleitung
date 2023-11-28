@@ -2,7 +2,7 @@ module github.com/DDP-Projekt/Bedienungsanleitung
 
 go 1.19
 
-require github.com/DDP-Projekt/Kompilierer v0.0.0-20230607170541-f5b9607339c8
+require github.com/DDP-Projekt/Kompilierer v0.0.1-alpha.0.20231118084147-eaa552f5eb39
 
 require (
 	github.com/bytedance/sonic v1.9.1 // indirect
