@@ -4,7 +4,6 @@ import (
 	"bytes"
 	"fmt"
 	"html"
-	"html/template"
 	"os"
 	"path/filepath"
 	"sort"
@@ -59,13 +58,10 @@ func main() {
 	if len(os.Args) != 1 {
 		return
 	}
-	// Folder structure:
-	// - Parentfolder
-	//   - Kompilierer
-	//   - Bedienungsanleitung
-	inputDir := "../../Kompilierer/lib/stdlib/Duden/"
-	outputDirDe := "../Artikel/DE/Programmierung/Standardbibliothek/"
-	outputDirEn := "../Artikel/EN/Programmierung/Standardbibliothek/"
+
+	inputDir := os.Getenv("DDPPATH") + "Duden/"
+	outputDirDe := "../content/DE/Programmierung/Standardbibliothek/gen"
+	outputDirEn := "../content/EN/Programmierung/Standardbibliothek/gen"
 
 	files, err := os.ReadDir(inputDir)
 	if err != nil {
@@ -75,7 +71,6 @@ func main() {
 	// delete old articles
 	clearDirectory(outputDirDe)
 
-	fileNames := make([]string, 0, len(files))
 	for _, file := range files {
 		inputPath := filepath.Join(inputDir, file.Name())
 		outputPathDe := filepath.Join(outputDirDe, strings.Replace(file.Name(), "ddp", "md", 1))
@@ -83,12 +78,7 @@ func main() {
 
 		MakeMdFiles(inputPath, outputPathDe, "DE")
 		MakeMdFiles(inputPath, outputPathEn, "EN")
-		fileNames = append(fileNames, strings.TrimSuffix(file.Name(), ".ddp"))
 	}
-
-	// correct the index
-	MakeIndexHtml(fileNames, "de-template.gohtml", "../server/html/de.gohtml")
-	MakeIndexHtml(fileNames, "en-template.gohtml", "../server/html/en.gohtml")
 }
 
 func MakeMdFiles(inputFilePath, outputFilePath, lang string) {
@@ -216,6 +206,7 @@ func MakeMdFiles(inputFilePath, outputFilePath, lang string) {
 	}
 
 	fileName := strings.Replace(filepath.Base(inputFilePath), ".ddp", "", 1)
+	fmt.Fprintf(outputFile, "+++\ntitle = \"%s\"\nweight = 1\n+++\n", fileName)
 	if hasVars {
 		fmt.Fprintf(outputFile, "# Duden/%s %s\n", fileName, nameMap[lang]["var"])
 		fmt.Fprintln(outputFile, varBldr)
@@ -229,23 +220,4 @@ func MakeMdFiles(inputFilePath, outputFilePath, lang string) {
 	}
 
 	fmt.Println("done writing md file.")
-}
-
-func MakeIndexHtml(dudenFiles []string, templateFile, outPath string) {
-	tmpl := template.Must(template.New("index.gohtml").Delims("[[", "]]").ParseFiles(templateFile))
-
-	file, err := os.OpenFile(outPath, os.O_CREATE|os.O_WRONLY|os.O_TRUNC, 0700)
-	if err != nil {
-		panic(err)
-	}
-	defer file.Close()
-
-	err = tmpl.ExecuteTemplate(file, templateFile, struct {
-		StdlibModules []string
-	}{
-		StdlibModules: dudenFiles,
-	})
-	if err != nil {
-		panic(err)
-	}
 }

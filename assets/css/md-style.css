@@ -1,0 +1,174 @@
+#artikel h1 {
+	font-size: 2em;
+}
+
+/* links */
+#artikel a {
+	text-decoration: underline;
+	color: var(--md-link-color);
+}
+
+#artikel a:hover {
+	font-weight: bold;
+	color: var(--md-link-hover-color);
+}
+
+/* Code blocks */
+#artikel pre {
+	padding: 16px;
+	overflow: auto;
+	line-height: 1.45;
+	border-radius: 6px;
+	background-color: var(--md-code-bg-color);
+}
+
+/* inline code block */
+#artikel :not(pre)>code {
+	padding: 4px;
+	line-height: 1.85em;
+	white-space: nowrap;
+    background-color: var(--md-code-bg-color);
+    border-radius: 3px;
+}
+
+/*table code taken from github*/
+#artikel * {
+	box-sizing: border-box;
+}
+
+#artikel table {
+	border-spacing: 0;
+    border-collapse: collapse;
+	width: max-content;
+	overflow: auto;
+	max-width: 100%;
+	display: block;
+}
+
+#artikel th {
+	font-weight: 600;
+	padding: 6px 13px;
+    border: 1px solid var(--table-border-color);
+}
+
+#artikel tr {
+	background-color: var(--table-fill-dark);
+    border-top: 1px solid var(--table-fill-dark);
+	display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+
+#artikel table tr:nth-child(2n) {
+    background-color: var(--table-fill-light);
+}
+
+#artikel tbody {
+	display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+#artikel td {
+	padding: 6px 13px;
+    border: 1px solid var(--table-border-color);
+	display: table-cell;
+    vertical-align: inherit;
+}
+
+/* Syntax Highlighting */
+
+/* light-mode readability fix */
+#artikel .language-ddp code span,
+#artikel .language-terminal code span {
+	filter: var(--light-mode-filter);
+}
+
+/* DDP */
+#artikel .language-ddp span.token.control-statement {
+	color: #d38ecd;
+}
+#artikel .language-ddp span.token.number {
+	color: #B5CEA8;
+}
+#artikel .language-ddp span.token.comment {
+	color: #5b8449;
+}
+#artikel .language-ddp span.token.operator {
+	color: #cdd8ff;
+}
+#artikel .language-ddp span.token.placeholder {
+	color: #d7a09d;
+}
+#artikel .language-ddp span.token.boolean-literal {
+	color: #569CD6;
+}
+#artikel .language-ddp span.token.string-literal {
+	color: #ecb878;
+}
+#artikel .language-ddp span.token.char-literal {
+	color: #f7a94b;
+}
+#artikel .language-ddp span.token.type {
+	color: #80bc80;
+}
+#artikel .language-ddp span.token.builtins {
+	color:#f7f774;
+}
+
+/* terminal */
+#artikel .language-terminal span.token.command {
+	color: #d38ecd;
+}
+
+#artikel .language-terminal span.token.option {
+	color: #569CD6;
+}
+
+#artikel .language-terminal span.token.file {
+	color: #80bc80;
+}
+
+#artikel .language-terminal span.token.placeholder {
+	color: #d7a09d;
+}
+
+#artikel .language-terminal span.token.string-literal {
+	color: #ecb878;
+}
+
+/* scrollbar */
+#artikel ::-webkit-scrollbar {
+	width: 5px;
+	height: 5px;
+}
+
+/* Track */
+#artikel ::-webkit-scrollbar-track {
+	background: var(--scrollbar-track-bg-color);
+	border-radius: 10px;
+}
+
+/* Handle */
+#artikel ::-webkit-scrollbar-thumb {
+	background: var(--scrollbar-thumb-bg-color);
+	border-radius: 10px;
+}
+
+/* Handle on hover */
+#artikel ::-webkit-scrollbar-thumb:hover {
+	background: var(--scrollbar-thumb-hover-bg-color);
+}
+
+/* summary header inlined */
+#artikel summary h2 {
+	display: inline;
+}
+
+#artikel details {
+	padding: 5px;
+}
+
+details summary {
+	cursor: pointer;
+}

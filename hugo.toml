@@ -1,0 +1,28 @@
+baseURL = 'https://ddp.le0n.dev/Bedienungsanleitung/'
+disablePathToLower = true
+disableKinds = ['taxonomy', 'term']
+disableHugoGeneratorInject = true
+defaultContentLanguage = 'de'
+
+defaultContentLanguageInSubdir = true
+[languages]
+	[languages.de]
+		contentDir = 'content/DE'
+		disabled = false
+		languageCode = 'de-DE'
+		languageDirection = 'ltr'
+		languageName = 'Deutsch'
+		title = 'DDP Bedienungsanleitung'
+		weight = 1
+		[languages.de.params]
+			subtitle = 'Die Dokumentation der Deutschen Programmiersprache.'
+	[languages.en]
+		contentDir = 'content/EN'
+		disabled = false
+		languageCode = 'en-US'
+		languageDirection = 'ltr'
+		languageName = 'English'
+		title = 'DDP Bedienungsanleitung - Documentation'
+		weight = 2
+		[languages.en.params]
+			subtitle = 'The documentation for DDP.'
