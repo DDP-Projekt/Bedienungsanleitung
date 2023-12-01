@@ -10,7 +10,7 @@ Hugo nutzt die Markdown Dateien um die Website zu generieren.
 2. Go
 
 ### Starten
-1. Git Repository clonen
+1. Git Repository Klonen
 2. `cd gen` 
 3. `go run .` - Artikel für die Standardbibliothek generieren
 4. `cd ..`

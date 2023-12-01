@@ -61,11 +61,13 @@ Vergleichsoperatoren haben alle ein "ist" am Ende um der Grammatik in jedem Kont
 
 # Listen und Text Operatoren
 
-| Funktion              | Verwendung          | C Equivalent | Typ vom 1. Operanden | Typ vom 2. Operanden | Typ vom 3. Operanden | Rückgabetyp           | Beispiel                        | Ergebnis       |
-| --------------------- | ------------------- | ------------ | -------------------- | -------------------- | -------------------- | --------------------- | ------------------------------- | -------------- |
-| Verkettung            | `a verkettet mit b` | -            | Text/Liste/Buchstabe | Text/Liste/Buchstabe | -                    | Text/Liste            | `"Hallo" verkettet mit " Welt"` | `"Hallo Welt"` |
-| Indizierung           | `a an der Stelle b` | `a[b]`       | Text/Liste           | Zahl                 | -                    | Buchstabe/Element Typ | `"Hallo" an der Stelle 1`       | 'H'            |
-| `... von ... bis ...` | `a von b bis c`     | -            | Text/Liste           | Zahl                 | Zahl                 | Text/Liste            | `"Hallo Welt" von 1 bis 5`      | "Hallo"        |
+| Funktion              | Verwendung                 | C Equivalent | Typ vom 1. Operanden | Typ vom 2. Operanden | Typ vom 3. Operanden | Rückgabetyp           | Beispiel                          | Ergebnis       |
+| --------------------- | -------------------------- | ------------ | -------------------- | -------------------- | -------------------- | --------------------- | --------------------------------- | -------------- |
+| Verkettung            | `a verkettet mit b`        | -            | Text/Liste/Buchstabe | Text/Liste/Buchstabe | -                    | Text/Liste            | `"Hallo" verkettet mit " Welt"`   | `"Hallo Welt"` |
+| Indizierung           | `a an der Stelle b`        | `a[b]`       | Text/Liste           | Zahl                 | -                    | Buchstabe/Element Typ | `"Hallo" an der Stelle 1`         | 'H'            |
+| `... von ... bis ...` | `a im Bereich von b bis c` | -            | Text/Liste           | Zahl                 | Zahl                 | Text/Liste            | `"Hallo Welt" von 1 bis 5`        | "Hallo"        |
+| `... ab dem ...`      | `a ab dem b. Element`      | -            | Text/Liste           | Zahl                 | -                    | Text/Liste            | `"Hallo Welt" ab dem 7. Element`  | "Welt"         |
+| `... bis zum ...`     | `a bis zum b. Element`     | -            | Text/Liste           | Zahl                 | -                    | Text/Liste            | `"Hallo Welt" bis zum 5. Element` | "Hallo"        |
 
 ## Bemerkungen
 
@@ -84,6 +86,9 @@ Bei `von ... bis` gibt es keine Laufzeitfehler bei zu kleinen oder zu großen In
 Die Indizes werden automatisch in den Bereich [1, Länge der Liste/Text] gebracht.
 Sollte danach der 2. Index kleiner als der 1. sein, so gibt es einen Laufzeitfehler.
 Wenn also beide Indizes größer als die Länge der Liste sind, so ist das Ergebnis also das Letzte Element der Liste.
+
+`... ab dem ...` und `... bis zum ...` sind nur Kurzschreibweisen von `von ... bis` mit dem zweiten bzw. ersten Operanden
+auf die Länge der Liste bzw. 1 gesetzt ist.
 
 ## Beispiele
 
@@ -110,23 +115,25 @@ Hier ist eine Tabelle mit allen Operatoren und ihrer Priorisierung (hoch prioris
 | Rang | Operator                                          |
 | ---- | ------------------------------------------------- |
 | 1    | Funktionsaufruf                                   |
-| 2    | Klammern                                          |
-| 3    | Typkonvertierungen                                |
-| 4    | Indizierung, `von ... bis`                        |
-| 5    | Literale, Konstante                               |
-| 6    | Potenzieren, Wurzelziehen, Logarithmus            |
-| 7    | Negation,                                         |
-| 8    | Betrag, Größe, Länge, Logisches-/Bool'sches nicht |
-| 9    | Multiplikation, Division, Rest,                   |
-| 10   | Addition, Subtrakion, Verkettung,                 |
-| 11   | Bit-Verschiebung                                  |
-| 12   | Größen Vergleich (kleiner, größer, ect.)          |
-| 13   | Gleichheit (gleich und ungleich)                  |
-| 14   | Logische UND Verknüpfung                          |
-| 15   | Logische XOR Verknüpfung                          |
-| 16   | Logische ODER Verknüpfung                         |
-| 17   | Bool'sches UND                                    |
-| 18   | Bool'sches ODER                                   |
+| 2    | Literale, Konstante                               |
+| 3    | Klammern                                          |
+| 4    | Typkonvertierungen                                |
+| 5    | Feld Zugriff von Strukturen                       |
+| 6    | Indizierung                                       |
+| 7    | `von ... bis`, `ab ... dem`, `bis ... zum`        |
+| 8    | Potenzieren, Wurzelziehen, Logarithmus            |
+| 9    | Negation,                                         |
+| 10   | Betrag, Größe, Länge, Logisches-/Bool'sches nicht |
+| 11   | Multiplikation, Division, Rest,                   |
+| 12   | Addition, Subtrakion, Verkettung,                 |
+| 13   | Bit-Verschiebung                                  |
+| 14   | Größen Vergleich (kleiner, größer, ect.)          |
+| 15   | Gleichheit (gleich und ungleich)                  |
+| 16   | Logische UND Verknüpfung                          |
+| 17   | Logische XOR Verknüpfung                          |
+| 18   | Logische ODER Verknüpfung                         |
+| 19   | Bool'sches UND                                    |
+| 20   | Bool'sches ODER                                   |
 
 ## Operator Priorisierung Beispiel
 

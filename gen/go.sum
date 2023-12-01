@@ -40,6 +40,8 @@ github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03
 github.com/BurntSushi/xgb v0.0.0-20160522181843-27f122750802/go.mod h1:IVnqGOEym/WlBOVXweHU+Q+/VP0lqqI8lqeDx9IjBqo=
 github.com/DDP-Projekt/Kompilierer v0.0.0-20230607170541-f5b9607339c8 h1:SLsTKSvbuI1fR6S6dgDoWNM1hqoBXbP9w/UIcatXcVk=
 github.com/DDP-Projekt/Kompilierer v0.0.0-20230607170541-f5b9607339c8/go.mod h1:sPkL3qyjb1JhIEQU8OxkmPj9EsxNsnZOMD2vH+64dtM=
+github.com/DDP-Projekt/Kompilierer v0.0.1-alpha.0.20231118084147-eaa552f5eb39 h1:TONfMck2KtIW2C4m1QX5BP33p9Q2a66KmeJ2oZRKeDQ=
+github.com/DDP-Projekt/Kompilierer v0.0.1-alpha.0.20231118084147-eaa552f5eb39/go.mod h1:OVRSCZNQ8LVV8ZH5TuAGTaf0skO06bgV5Y7Wgvdb+NY=
 github.com/bytedance/sonic v1.5.0/go.mod h1:ED5hyg4y6t3/9Ku1R6dU/4KyJ48DZ4jPhfY1O2AihPM=
 github.com/bytedance/sonic v1.9.1 h1:6iJ6NqdoxCDr6mbY8h18oSO+cShGSMRGCEo7F2h0x8s=
 github.com/bytedance/sonic v1.9.1/go.mod h1:i736AoUSYt75HyZLoJW9ERYxcy6eaN6h4BZXU064P/U=
