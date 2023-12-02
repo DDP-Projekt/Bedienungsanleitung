@@ -56,13 +56,9 @@ jobs:
         with:
           submodules: recursive
           fetch-depth: 0
-      - name: test
-        run: |
-             ls
-             echo $DDPPATH
-             ls $DDPPATH
       - name: Generate stdlib articles
-        run: cd gen && go run . && cd ..
+        working-directory: ./gen
+        run: go run .
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v3
