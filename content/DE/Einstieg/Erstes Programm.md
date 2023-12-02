@@ -1,6 +1,7 @@
 +++
 title = "Erstes Programm"
 weight = 3
+type = "article"
 +++
 
 # Erstes Programm

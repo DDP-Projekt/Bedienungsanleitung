@@ -1,6 +1,7 @@
 +++
 title = "Set up development environment"
 weight = 1
+type = "article"
 +++
 
 # Set up development environment

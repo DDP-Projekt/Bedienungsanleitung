@@ -1,6 +1,7 @@
 +++
 title = "Fehlermeldungen"
 weight = 5
+type = "article"
 +++
 
 # Fehlermeldungen

@@ -1,6 +1,7 @@
 +++
 title = "Branches and Loops"
 weight = 5
+type = "article"
 +++
 
 # Branches

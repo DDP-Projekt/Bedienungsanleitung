@@ -1,3 +1,9 @@
++++
+title = "Homepage"
+type = "article"
+layout = "single"
++++
+
 # Die Deutsche Programmiersprache (DDP)
 
 DDP (german: The german programming language) is a (joke) programming language by NotLe0n and bafto, which was designed in such a way that programs written in it can be read like nearly correct German.

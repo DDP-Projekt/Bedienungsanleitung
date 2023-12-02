@@ -214,7 +214,7 @@ func MakeMdFiles(inputFilePath, outputFilePath, lang string) {
 	}
 
 	fileName := strings.Replace(filepath.Base(inputFilePath), ".ddp", "", 1)
-	fmt.Fprintf(outputFile, "+++\ntitle = \"%s\"\nweight = 1\n+++\n", fileName)
+	fmt.Fprintf(outputFile, "+++\ntitle = \"%s\"\nweight = 1\ntype = \"article\"\n+++\n", fileName)
 	if hasVars {
 		fmt.Fprintf(outputFile, "# Duden/%s %s\n", fileName, nameMap[lang]["var"])
 		fmt.Fprintln(outputFile, varBldr)

@@ -1,3 +1,9 @@
++++
+title = "Startseite"
+type = "article"
+layout = "single"
++++
+
 # Die Deutsche Programmiersprache (DDP)
 
 ist eine (Witz-)Programmiersprache von NotLe0n und bafto, die so entworfen wurde, dass in ihr geschriebene Programme so gelesen werden können wie annähernd korrektes Deutsch.

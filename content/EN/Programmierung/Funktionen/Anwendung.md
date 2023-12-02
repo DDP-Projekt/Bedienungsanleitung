@@ -1,6 +1,7 @@
 +++
 title = "Function declarations"
 weight = 1
+type = "article"
 +++
 
 # Function declarations

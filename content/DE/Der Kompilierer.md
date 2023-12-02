@@ -1,6 +1,7 @@
 +++
 title = "Der Kompilierer"
 weight = 4
+type = "article"
 +++
 
 # Der Kompilierer

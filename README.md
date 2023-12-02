@@ -11,12 +11,10 @@ Hugo nutzt die Markdown Dateien um die Website zu generieren.
 
 ### Starten
 1. Git Repository Klonen
-2. `cd gen` 
-3. `go run .` - Artikel für die Standardbibliothek generieren
-4. `cd ..`
-5. `hugo serve` - Webserver starten
+2. `go run ./gen` - Artikel für die Standardbibliothek generieren
+3. `hugo serve` - Webserver starten
 
-Mit dem Befehl `hugo` generiert man alle html Dateien welche im Ordner `/public` gespeichert werden.
+Mit dem Befehl `hugo` generiert man alle html Dateien, welche im Ordner `/public` gespeichert werden.
 
 ## Mitwirken
 Über Issues oder Pull-Requests kannst du uns helfen Fehler in der Dokumenation zu beheben.
@@ -24,30 +22,52 @@ Mit dem Befehl `hugo` generiert man alle html Dateien welche im Ordner `/public`
 ### Artikel erstellen
 Um Artikel zu erstellen benutzt man den `hugo new content <pfad>` Befehl.
 
-Alle Pfade gehen von /content/DE/ aus, also würde `hugo new content hallo.md` die Datei `/content/DE/hallo.md` erstellen.
+Alle Pfade gehen von `/content/DE/` aus, also würde `hugo new content hallo.md` die Datei `/content/DE/hallo.md` erstellen.
 
-Jeder Artikel hat einen header der so aussieht:
-```toml
+Jeder Artikel hat einen front-matter der so aussieht:
+```js
 +++
 title = ""
 weight = 1
+type = "article"
 +++
 ```
 
-Das Feld "title" gibt den Text an, der in der Seitenleiste für den Artikel angezeigt wird. "weight" bestimmt die Reihenfolge. Diese Felder müssen immer ausgefüllt werden.
+Das Feld `title` gibt den Text an, der in der Seitenleiste für den Artikel angezeigt wird. `weight` bestimmt die Reihenfolge. `type` muss auf "article" bleiben. Diese Felder müssen immer ausgefüllt werden.
 
 Der Pfad der Datei bestimmt die URL des Artikels.
 
-## Die Website selbst
+### Sections erstellen
+Eine Section enthält mehrere Artikel. In der Sidebar werden Sections als dropdown menü angezeigt.
+
+Jede Section hat einen speziellen Artikel mit dem Namen: "`_index.md`".
+Diese Datei hat einen front-matter, welches so aussieht:
+```js
++++
+title = ""
+weight = 1
+type = "article"
+layout = "single"
++++
+```
+
+### Die Website selbst
 Das HTML für die Website außerhalb der Artikel befindet sich im [`/layouts`](/layouts/) Verzeichnis.
 
-[`/layouts/_default`](/layouts/_default/) enthält das Layout für jeden Seiten Typ. [`list.html`](/layouts/_default/list.html) und [`single.html`](/layouts/_default/single.html) sind identisch und zeigen nur den Artikel an.
-[`baseof.html`](/layouts/_default/baseof.html) ist das Kern der Website und bindet alle partials ein.
+[`/_default/baseof.html`](/layouts/_default/baseof.html) ist das Kern der Website und bindet alle partials ein.
 
-[`/layouts/partials`](/layouts/partials/) enthält kleinere Teile der Website:
+[`/article/single.html`](/layouts/article/single.html) enthält das Layout für Artikel.
+
+[`/partials`](/layouts/partials/) enthält kleinere Teile der Website:
 - [`artikel.html`](/layouts/partials/artikel.html)
 - [`head.html`](/layouts/partials/head.html)
 - [`header.html`](/layouts/partials/header.html)
 - [`sidebar.html`](/layouts/partials/sidebar.html)
 
 [`/layouts/404.html`](/layouts/404.html) definiert die Fehlermeldung falls eine Seite nicht gefunden wurde.
+
+Bilder, Fonts, CSS und JS Dateien befinden sich in [`/assets`](/assets/) ihren jeweiligen Ordnern.
+
+Das favicon liegt in [`/static/favicon`](/static/favicon/).
+
+Übersetzungsschlüssel für jede Sprache findet man in [`/i18n`](/i18n/).

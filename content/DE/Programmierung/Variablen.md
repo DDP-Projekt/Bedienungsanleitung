@@ -1,6 +1,7 @@
 +++
 title = "Variablen"
 weight = 4
+type = "article"
 +++
 
 # Variablen

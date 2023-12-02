@@ -1,6 +1,8 @@
 +++
 title = "Standard library"
 weight = 8
+type = "article"
+layout = "single"
 +++
 
 # Standard library

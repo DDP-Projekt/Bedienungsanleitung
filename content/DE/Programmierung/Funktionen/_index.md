@@ -1,6 +1,8 @@
 +++
 title = "Funktionen"
 weight = 6
+type = "article"
+layout = "single"
 +++
 
 # Funktionen

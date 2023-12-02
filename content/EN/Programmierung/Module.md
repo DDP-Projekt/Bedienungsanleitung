@@ -1,6 +1,7 @@
 +++
 title = "Modules"
 weight = 7
+type = "article"
 +++
 
 # Modules

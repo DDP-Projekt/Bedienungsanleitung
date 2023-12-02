@@ -1,6 +1,7 @@
 +++
 title = "Updates"
 weight = 4
+type = "article"
 +++
 
 # Updates

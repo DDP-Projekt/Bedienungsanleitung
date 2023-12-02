@@ -1,6 +1,8 @@
 +++
 title = "Getting Started"
 weight = 1
+type = "article"
+layout = "single"
 +++
 
 # Getting Started

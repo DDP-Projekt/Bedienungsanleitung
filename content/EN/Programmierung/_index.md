@@ -1,6 +1,8 @@
 +++
 title = "Programming"
 weight = 2
+type = "article"
+layout = "single"
 +++
 
 # Programming

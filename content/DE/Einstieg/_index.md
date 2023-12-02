@@ -1,6 +1,8 @@
 +++
 title = "Einstieg"
 weight = 1
+type = "article"
+layout = "single"
 +++
 
 # Einstieg

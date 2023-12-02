@@ -1,6 +1,7 @@
 +++
 title = "Strukturen"
 weight = 7
+type = "article"
 +++
 
 # Strukturen

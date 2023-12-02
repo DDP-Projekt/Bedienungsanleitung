@@ -1,6 +1,7 @@
 +++
 title = "Beispielprogramme"
 weight = 4
+type = "article"
 +++
 
 # Beispielprogramme
