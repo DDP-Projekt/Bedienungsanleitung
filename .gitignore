@@ -12,4 +12,7 @@ hugo.darwin
 hugo.linux
 
 # Temporary lock file while building
-/.hugo_build.lock
+*.lock
+
+content/EN/Programmierung/Standardbibliothek/gen/
+content/DE/Programmierung/Standardbibliothek/gen/
