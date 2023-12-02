@@ -26,3 +26,6 @@ defaultContentLanguageInSubdir = true
 		weight = 2
 		[languages.en.params]
 			subtitle = 'The documentation for DDP.'
+
+[markup.goldmark.renderer]
+	unsafe= true

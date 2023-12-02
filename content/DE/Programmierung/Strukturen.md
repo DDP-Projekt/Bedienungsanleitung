@@ -1,3 +1,8 @@
++++
+title = "Strukturen"
+weight = 7
++++
+
 # Strukturen
 
 Strukturen sind ein wichtiges Feature der meisten Programmiersprachen.

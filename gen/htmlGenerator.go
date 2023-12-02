@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"fmt"
 	"html"
+	"io/fs"
 	"os"
 	"path/filepath"
 	"sort"
@@ -43,11 +44,14 @@ var nameMap = map[string]map[string]string{
 }
 
 func clearDirectory(dir string) {
-	err := os.RemoveAll(dir)
-	if err != nil {
-		panic(err)
-	}
-	err = os.MkdirAll(dir, os.ModeDir|os.ModePerm)
+	err := filepath.WalkDir(dir, func(path string, d fs.DirEntry, err error) error {
+		if path == dir || d.Name() == "_index.md" {
+			return nil
+		}
+
+		return os.Remove(path)
+	})
+
 	if err != nil {
 		panic(err)
 	}
@@ -61,8 +65,8 @@ func main() {
 	}
 
 	inputDir := ddppath.Duden
-	outputDirDe := "../content/DE/Programmierung/Standardbibliothek/gen"
-	outputDirEn := "../content/EN/Programmierung/Standardbibliothek/gen"
+	outputDirDe := "../content/DE/Programmierung/Standardbibliothek"
+	outputDirEn := "../content/EN/Programmierung/Standardbibliothek"
 
 	files, err := os.ReadDir(inputDir)
 	if err != nil {

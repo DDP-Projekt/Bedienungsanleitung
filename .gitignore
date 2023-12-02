@@ -14,5 +14,7 @@ hugo.linux
 # Temporary lock file while building
 *.lock
 
-content/EN/Programmierung/Standardbibliothek/gen/
-content/DE/Programmierung/Standardbibliothek/gen/
+/content/DE/Programmierung/Standardbibliothek/
+!/content/DE/Programmierung/Standardbibliothek/_index.md
+/content/EN/Programmierung/Standardbibliothek/
+!/content/EN/Programmierung/Standardbibliothek/_index.md
