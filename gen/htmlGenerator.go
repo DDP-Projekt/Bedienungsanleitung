@@ -11,6 +11,7 @@ import (
 
 	"github.com/DDP-Projekt/Kompilierer/src/ast"
 	"github.com/DDP-Projekt/Kompilierer/src/ddperror"
+	"github.com/DDP-Projekt/Kompilierer/src/ddppath"
 	"github.com/DDP-Projekt/Kompilierer/src/parser"
 )
 
@@ -59,7 +60,7 @@ func main() {
 		return
 	}
 
-	inputDir := os.Getenv("DDPPATH") + "Duden/"
+	inputDir := ddppath.Duden
 	outputDirDe := "../content/DE/Programmierung/Standardbibliothek/gen"
 	outputDirEn := "../content/EN/Programmierung/Standardbibliothek/gen"
 
@@ -89,6 +90,7 @@ func MakeMdFiles(inputFilePath, outputFilePath, lang string) {
 	}
 
 	fmt.Println("creating output file...")
+	os.MkdirAll(filepath.Dir(outputFilePath), os.ModeDir|os.ModePerm)
 	outputFile, err := os.Create(outputFilePath)
 	if err != nil {
 		panic(err)
@@ -202,6 +204,8 @@ func MakeMdFiles(inputFilePath, outputFilePath, lang string) {
 			fmt.Fprintf(varBldr, "## %s\n", decl.Name())
 			fmt.Fprintf(varBldr, "* %s: `%s`\n", nameMap[lang]["type"], decl.Type)
 			fmt.Fprintln(varBldr, "")
+		case *ast.StructDecl:
+			panic("TODO: implement struct decl")
 		}
 	}
 
