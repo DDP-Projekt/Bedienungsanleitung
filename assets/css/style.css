@@ -1,0 +1,256 @@
+:root {
+	--sidebar-size: 250px;
+	--content-size: calc(100% - var(--sidebar-size));
+	--de-underline-flag-url: url("/Bedienungsanleitung/img/de-flagge.png");
+}
+
+/* fonts */
+@font-face {
+	font-family: 'Trump Bold';
+	src: url('/Bedienungsanleitung/fonts/FetteTrumpDeutsch.ttf');
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Futura';
+	src: url('/Bedienungsanleitung/fonts/Futura.ttf');
+	font-display: swap;
+}
+
+/* screen width larger than 830px (desktop/tablet) */
+@media screen and (min-width: 830px) {
+	#hamburger {
+		display: none; /* eat hamburger */
+	}
+	#seitenleiste {
+		display: flex !important; /* make sidebar reappear */
+		padding: 10px !important;
+		max-width: var(--sidebar-size);
+		min-width: var(--sidebar-size);
+		box-shadow: unset !important;
+	}
+}
+
+/* screen width smaller than 830px (phone) */
+@media screen and (max-width: 830px) {
+	#hamburger {
+		position: absolute;
+		left: calc(var(--sidebar-size) - 10px);
+		font-size: 1.5em;
+		width: 30px;
+		height: 30px;
+		text-align: center;
+		background-color: black;
+		z-index: 2; /* make the hamburger on top of everything */
+		font-weight: normal; /* to prevent the hamburger from going bold on click*/
+		transition: left 350ms ease-in-out;
+	}
+	#hamburger.opened {
+		left: calc(var(--sidebar-size) - 10px);
+	}
+	#hamburger:not(.opened) {
+		left: 0;
+	}
+	#seitenleiste {
+		position: absolute; /* make sidebar an overlay */
+		z-index: 1; /* make sidebar on top of content */
+	}
+	:root{
+		--content-size: 100%;
+	}
+}
+
+html, body {
+	display: flex;
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	font-family: 'Futura', sans-serif;
+	font-size: medium;
+	background-color: var(--bg-color);
+	color: var(--text-color);
+	overflow: hidden;
+}
+
+.btn {
+	cursor: pointer;
+}
+
+.language-picker {
+	position: absolute;
+	right: 50px;
+	top: 10px;
+}
+
+#seitenleiste h2#überschrift {
+	margin-bottom: 40px;
+	text-decoration: underline;
+}
+
+#seitenleiste {
+	display: flex;
+	background-color: var(--sidebar-color);
+	width: var(--sidebar-size);
+	height: 100%;
+	padding: 10px;
+	flex-direction: column;
+	overflow: auto;
+	transition: width 350ms ease-in-out, padding 350ms ease-in-out;
+}
+
+#seitenleiste.opened {
+	padding: 10px;
+	width: var(--sidebar-size);
+	box-shadow: 0 0 0 100vmax rgba(16, 16, 16, 0.6);
+}
+
+#seitenleiste:not(.opened) {
+	padding: 0;
+	width: 0;
+}
+
+/* Für 1.1, 1.2, 1.3, ect. Nummerierung in ol's*/
+#seitenleiste ol {
+	padding-inline-start: 10px;
+}
+
+#seitenleiste li {
+	padding: 3px;
+	margin-left: 12px;
+	counter-increment: item;
+}
+
+#seitenleiste li::marker {
+	font-weight: bolder;
+	content: counters(item, ".") ". ";
+}
+
+#seitenleiste details {
+	counter-reset: item;
+	list-style-type: none;
+}
+
+details summary {
+	cursor: pointer;
+}
+
+a {
+	text-decoration: none;
+	color: var(--text-color);
+}
+
+a:hover {
+	font-weight: bold;
+	color: var(--link-hover-color);
+}
+
+#inhalt {
+	width: 100%;
+	left: 20%;
+	overflow: auto;
+	padding: 10px 10px 40px;
+}
+
+#kopf {
+	font-family: 'Trump Bold', serif;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#kopf h1 {
+	font-size: min(2em, 4vw);
+	margin-bottom: 0;
+	line-height: 1;
+	background: bottom var(--de-underline-flag-url) no-repeat;
+	background-size: 100% 2px;
+	padding-bottom: 2px;
+
+	/* um den unterstrich bei buchstaben, die drüber gehen würden abzubrechen */
+	text-shadow:
+		2px 2px var(--bg-color),
+		2px -2px var(--bg-color),
+		-2px 2px var(--bg-color),
+		-2px -2px var(--bg-color);
+}
+
+/* "Bedienungsanleitung" */
+#untertitel {
+	font-size: min(1em, 2.5vw);
+	display: flex;
+	align-items: center;
+}
+
+/* dünne linien neben dem Untertitel */
+.linie {
+	width: 3vmin;
+	height: 1px;
+	border: none;
+	margin: 0.5em;
+	background-color: rgba(250, 235, 215, 0.5);
+}
+
+#kopf p {
+	margin: 5px 0 5px 0;
+}
+
+#kopf #toggles * {
+	width: 30px;
+	height: 20px;
+}
+
+#artikel {
+	width: auto;
+}
+
+#artikel-navigation {
+	position: fixed;
+	display: flex;
+	bottom: 0;
+	width: var(--content-size);
+	height: 40px;
+	margin-left: -10px;
+	background-color: var(--article-nav-bg-color);
+	justify-content: space-around;
+	align-items: center;
+}
+
+#artikel-navigation div {
+	width: 50%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: large;
+	font-weight: 900;
+	transition: background-color 200ms;
+}
+
+#artikel-navigation div:hover {
+	background-color: var(--article-nav-hover-bg-color)
+}
+
+/* scrollbar */
+
+/* width */
+::-webkit-scrollbar {
+	width: 5px;
+	height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	background: var(--scrollbar-track-bg-color);
+	border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: var(--scrollbar-thumb-bg-color);
+	border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: var(--scrollbar-thumb-hover-bg-color);
+}

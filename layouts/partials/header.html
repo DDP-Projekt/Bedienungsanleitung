@@ -1,0 +1,16 @@
+<header id="kopf">
+	<h1><a href="https://ddp.le0n.dev">Die Deutsche Programmiersprache</a></h1>
+	<div id="untertitel">
+		<hr class="linie">
+		<p>Bedienungsanleitung</p>
+		<hr class="linie">
+	</div>
+	<div id="toggles">
+		{{- if eq .Language.Lang "de" }} 
+			<a href="{{ (index .Translations 0).Permalink}}"><img id="sprach-toggle" alt="sprach-toggle" src="img/en.svg" title="to German site"></a>
+		{{- else }}
+			<a href="{{ (index .Translations 0).Permalink}}"><img id="sprach-toggle" alt="sprach-toggle" src="img/de.svg" title="zur Englischen Seite"></a>
+		{{- end }}
+		<img src="img/theme-light-dark.svg" alt="dark mode toggeln" id="dark-mode-toggle" class="btn" onclick="toggleDarkMode()" title="light/dark mode">
+	</div>
+</header>

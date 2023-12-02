@@ -1,0 +1,6 @@
+github.com/DDP-Projekt/Kompilierer v0.0.0-20230607170541-f5b9607339c8 h1:SLsTKSvbuI1fR6S6dgDoWNM1hqoBXbP9w/UIcatXcVk=
+github.com/DDP-Projekt/Kompilierer v0.0.0-20230607170541-f5b9607339c8/go.mod h1:sPkL3qyjb1JhIEQU8OxkmPj9EsxNsnZOMD2vH+64dtM=
+github.com/DDP-Projekt/Kompilierer v0.1.0-alpha h1:+ypGLaIz7vw5G6M2prOn86No4PfXEylkP8Py+vzZVlY=
+github.com/DDP-Projekt/Kompilierer v0.1.0-alpha/go.mod h1:OVRSCZNQ8LVV8ZH5TuAGTaf0skO06bgV5Y7Wgvdb+NY=
+github.com/kardianos/osext v0.0.0-20190222173326-2bc1f35cddc0 h1:iQTw/8FWTuc7uiaSepXwyf3o52HaUYcV+Tu66S3F5GA=
+github.com/kardianos/osext v0.0.0-20190222173326-2bc1f35cddc0/go.mod h1:1NbS8ALrpOvjt0rHPNLyCIeMtbizbir8U//inJ+zuB8=

@@ -1,3 +1,20 @@
 .idea/
-config.json
-server/html/*.gohtml
+
+# Generated files by hugo
+/public/
+/resources/_gen/
+/assets/jsconfig.json
+hugo_stats.json
+
+# Executable may be added to repository
+hugo.exe
+hugo.darwin
+hugo.linux
+
+# Temporary lock file while building
+*.lock
+
+/content/DE/Programmierung/Standardbibliothek/
+!/content/DE/Programmierung/Standardbibliothek/_index.md
+/content/EN/Programmierung/Standardbibliothek/
+!/content/EN/Programmierung/Standardbibliothek/_index.md
