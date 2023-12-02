@@ -58,12 +58,6 @@ func clearDirectory(dir string) {
 }
 
 func main() {
-	fmt.Printf("Argument Count: %d\n", len(os.Args))
-
-	if len(os.Args) != 1 {
-		return
-	}
-
 	inputDir := ddppath.Duden
 	outputDirDe := "../content/DE/Programmierung/Standardbibliothek"
 	outputDirEn := "../content/EN/Programmierung/Standardbibliothek"
