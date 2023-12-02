@@ -34,6 +34,10 @@ jobs:
     env:
       HUGO_VERSION: 0.120.2
     steps:
+      - name: Setup Go environment
+        uses: actions/setup-go@v4.1.0
+      - name: test
+      - run: ls
       - name: Generate stdlib articles
         run: cd gen && go run . && cd ..
       - name: Install Hugo CLI
