@@ -57,8 +57,7 @@ jobs:
           submodules: recursive
           fetch-depth: 0
       - name: Generate stdlib articles
-        working-directory: ./gen
-        run: go run .
+        run: go run ./gen
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v3

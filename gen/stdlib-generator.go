@@ -46,8 +46,8 @@ func clearDirectory(dir string) {
 
 func main() {
 	inputDir := ddppath.Duden
-	outputDirDe := "../content/DE/Programmierung/Standardbibliothek"
-	outputDirEn := "../content/EN/Programmierung/Standardbibliothek"
+	outputDirDe := "content/DE/Programmierung/Standardbibliothek"
+	outputDirEn := "content/EN/Programmierung/Standardbibliothek"
 
 	files, err := os.ReadDir(inputDir)
 	if err != nil {
