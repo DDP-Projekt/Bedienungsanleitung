@@ -2,7 +2,7 @@ module github.com/DDP-Projekt/Bedienungsanleitung/gen
 
 go 1.19
 
-require github.com/DDP-Projekt/Kompilierer v0.1.0-alpha
+require github.com/DDP-Projekt/Kompilierer v0.1.0-alpha.0.20231204192905-7f9b0948acb0
 
 require (
 	github.com/ProtonMail/go-crypto v0.0.0-20230217124315-7d5c6f04bbb8 // indirect
