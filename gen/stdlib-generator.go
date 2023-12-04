@@ -2,6 +2,7 @@ package main
 
 import (
 	"bytes"
+	"context"
 	"fmt"
 	"io/fs"
 	"os"
@@ -11,8 +12,9 @@ import (
 
 	"github.com/DDP-Projekt/Kompilierer/src/ast"
 	"github.com/DDP-Projekt/Kompilierer/src/ddperror"
-	"github.com/DDP-Projekt/Kompilierer/src/ddppath"
 	"github.com/DDP-Projekt/Kompilierer/src/parser"
+
+	"github.com/google/go-github/v55/github"
 )
 
 var nameMap = map[string]map[string]string{
@@ -30,74 +32,60 @@ var nameMap = map[string]map[string]string{
 	},
 }
 
-func clearDirectory(dir string) {
-	err := filepath.WalkDir(dir, func(path string, d fs.DirEntry, err error) error {
+func panicIfErr(err error) {
+	if err != nil {
+		panic(err)
+	}
+}
+
+func clearDirectory(dir string) error {
+	return filepath.WalkDir(dir, func(path string, d fs.DirEntry, err error) error {
 		if path == dir || d.Name() == "_index.md" {
 			return nil
 		}
 
 		return os.Remove(path)
 	})
-
-	if err != nil {
-		panic(err)
-	}
 }
 
 func main() {
-	inputDir := ddppath.Duden
 	outputDirDe := "content/DE/Programmierung/Standardbibliothek"
 	outputDirEn := "content/EN/Programmierung/Standardbibliothek"
 
-	files, err := os.ReadDir(inputDir)
-	if err != nil {
-		panic(err)
-	}
-
 	// delete old articles
-	clearDirectory(outputDirDe)
+	panicIfErr(clearDirectory(outputDirDe))
 
-	for _, file := range files {
-		inputPath := filepath.Join(inputDir, file.Name())
-		outputPathDe := filepath.Join(outputDirDe, strings.Replace(file.Name(), "ddp", "md", 1))
-		outputPathEn := filepath.Join(outputDirEn, strings.Replace(file.Name(), "ddp", "md", 1))
+	gh := github.NewClient(nil)
+	_, dir, _, err := gh.Repositories.GetContents(context.Background(), "DDP-Projekt", "Kompilierer", "lib/stdlib/Duden", nil)
+	panicIfErr(err)
 
-		MakeMdFiles(inputPath, outputPathDe, "DE")
-		MakeMdFiles(inputPath, outputPathEn, "EN")
+	for _, entry := range dir {
+		outputPathDe := filepath.Join(outputDirDe, strings.Replace(entry.GetName(), "ddp", "md", 1))
+		outputPathEn := filepath.Join(outputDirEn, strings.Replace(entry.GetName(), "ddp", "md", 1))
+
+		file, _, _, err := gh.Repositories.GetContents(context.Background(), "DDP-Projekt", "Kompilierer", entry.GetPath(), nil)
+		panicIfErr(err)
+		inputFile, err := file.GetContent()
+		panicIfErr(err)
+
+		MakeMdFiles(inputFile, outputPathDe, "DE")
+		MakeMdFiles(inputFile, outputPathEn, "EN")
 	}
 }
 
-func MakeMdFiles(inputFilePath, outputFilePath, lang string) {
-	fmt.Println("reading input file...")
-	inputFile, err := os.ReadFile(inputFilePath)
-	if err != nil {
-		panic(err)
-	}
-
-	fmt.Println("creating output file...")
+func MakeMdFiles(inputFile, outputFilePath, lang string) {
+	fmt.Printf("creating output file '%s'...\n", outputFilePath)
 	os.MkdirAll(filepath.Dir(outputFilePath), os.ModeDir|os.ModePerm)
 	outputFile, err := os.Create(outputFilePath)
-	if err != nil {
-		panic(err)
-	}
+	panicIfErr(err)
 	defer outputFile.Close()
 
-	fmt.Printf("parsing module '%s'...\n", inputFilePath)
+	fmt.Printf("parsing module...\n")
 	module, err := parser.Parse(parser.Options{
-		FileName:     inputFilePath,
-		Source:       inputFile,
+		Source:       []byte(inputFile),
 		ErrorHandler: ddperror.EmptyHandler,
 	})
-	if err != nil {
-		panic(err)
-	}
-
-	funcBldr := &bytes.Buffer{}
-	varBldr := &bytes.Buffer{}
-
-	hasVars, hasFuncs := false, false
-
-	fmt.Println("writing md file...")
+	panicIfErr(err)
 
 	// turn the map into a slice
 	publicDecls := make([]ast.Declaration, 0, len(module.PublicDecls))
@@ -109,6 +97,20 @@ func MakeMdFiles(inputFilePath, outputFilePath, lang string) {
 	sort.Slice(publicDecls, func(i, j int) bool {
 		return publicDecls[i].GetRange().Start.IsBefore(publicDecls[j].GetRange().Start)
 	})
+
+	fmt.Println("writing md file...")
+
+	writeMD(inputFile, outputFile, publicDecls, lang)
+
+	fmt.Println("done writing md file.")
+	fmt.Println()
+}
+
+func writeMD(inputFile string, outputFile *os.File, publicDecls []ast.Declaration, lang string) {
+	funcBldr := &bytes.Buffer{}
+	varBldr := &bytes.Buffer{}
+
+	hasVars, hasFuncs := false, false
 
 	for _, decl := range publicDecls {
 		switch decl := decl.(type) {
@@ -150,7 +152,7 @@ func MakeMdFiles(inputFilePath, outputFilePath, lang string) {
 			if ast.IsExternFunc(decl) {
 				impl = strings.Trim(decl.ExternFile.String(), "\"")
 			} else {
-				file := strings.Trim(string(inputFile), "\r\n")
+				file := strings.Trim(inputFile, "\r\n")
 				inputStr := strings.Split(file, "\n")
 				lines := inputStr[decl.Body.Range.Start.Line:decl.Body.Range.End.Line]
 
@@ -174,7 +176,7 @@ func MakeMdFiles(inputFilePath, outputFilePath, lang string) {
 		}
 	}
 
-	fileName := strings.Replace(filepath.Base(inputFilePath), ".ddp", "", 1)
+	fileName := strings.Replace(filepath.Base(outputFile.Name()), ".md", "", 1)
 	fmt.Fprintf(outputFile, "+++\ntitle = \"%s\"\nweight = 1\ntype = \"article\"\n+++\n", fileName)
 	if hasVars {
 		fmt.Fprintf(outputFile, "# Duden/%s %s\n", fileName, nameMap[lang]["var"])
@@ -187,6 +189,4 @@ func MakeMdFiles(inputFilePath, outputFilePath, lang string) {
 	if !hasFuncs && !hasVars {
 		fmt.Fprintf(outputFile, nameMap[lang]["moduleEmpty"])
 	}
-
-	fmt.Println("done writing md file.")
 }
