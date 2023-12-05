@@ -1,42 +1,9 @@
 'use strict'
 
-const searchParams = new URLSearchParams(window.location.search);
-
 customElements.define('to-do', TODOElement);
 document.addEventListener("DOMContentLoaded", () => {
 	closeNav(); // automatically close nav
-
-	//const md = document.getElementById("md"); // zero-md element
-	// apply syntax highlighting once zero-md and Prism.js are loaded
-	/*md.addEventListener('zero-md-ready', () => {
-		applySyntaxHighlighting();
-	});*/
 });
-
-function applySyntaxHighlighting() {
-	// regex rules for syntax highlighting
-	Prism.languages['ddp'] = {
-		'placeholder': /<[^<>]+>/,
-		'comment': /\[[\s\S]*?]/,
-		'builtins': /Schreibe\s*(den|die)?\s*(Zahl(en)?|Kommazahl(en)?|Buchstaben?|Texte?)?|auf eine Zeile/,
-		'string-literal': /".*"/,
-		'char-literal': /'.*'/,
-		'boolean-literal': /wahr|falsch/,
-		'number': /-?\d+(,\d)?/,
-		'control-statement': /[Ww]enn|aber|dann|Sonst|[Ss]olange|[Mm]ache|[Ww]iederhole|Für|jede|mit Schrittgröße|[Gg]ibt?|zurück|macht|einen?|mit den Parametern|vom|[Uu]nd kann so benutzt werden|Binde|ein/,
-		'punctuation': /[.:]/,
-		'operator': /\b(ist|sind|oder|und|nicht|plus|minus|mal|durch|modulo|hoch|. wurzel von|logisch|kontra|gleich|ungleich|kleiner als|größer als|kleiner als, oder|größer als, oder|natürlicher Logarithmus von|Betrag|Stück|von|bis|als|an der Stelle)\b/,
-		'type': /nichts|Typ|Funktion|Zahl(en)?|Kommazahl(en)?|Wahrheitswert|Texte?|Buchstaben?|[Dd]er|[Dd]ie|[Dd]as/,
-	};
-
-	Prism.languages['terminal'] = {
-		'placeholder': /<[^<>]+>/,
-		'file': /(\w+)\.(\w+)/,
-		'command': /(?<=\$\s+)(\w+)|\.\/(\w+)/,
-		'option': /(\w+)/,
-		'string-literal': /".*"/,
-	};
-}
 
 let sidebarHidden = false;
 

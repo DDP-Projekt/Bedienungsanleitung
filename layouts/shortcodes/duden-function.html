@@ -33,7 +33,7 @@
 
 	<h3>{{ i18n "impl" }}</h3>
 	{{ if eq (.Get "extern") "false" }}
-		<pre class="language-ddp" tabindex="0"><code class="language-ddp">{{ replace (.Get "impl" | plainify) "&emsp;" "    " }}</code></pre>
+		{{ replace (.Get "impl" | plainify) "&emsp;" "    " }}
 	{{ else }}
 		<p>{{ i18n "externImpl" }} <code>{{ .Get "impl" }}</code></p>
 	{{ end }}

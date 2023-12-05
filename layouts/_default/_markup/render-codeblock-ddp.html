@@ -1,0 +1,15 @@
+<pre class="language-ddp">
+	{{- .Inner 
+		| replaceRE `<([^<>]+)>` "<span class='placeholder'>&lt;$1&gt;</span>" | safeHTML
+		| replaceRE `\[[\s\S]*?]` "<span class='comment'>$0</span>" | safeHTML
+		| replaceRE `'.'` "<span class='char-literal'>$0</span>" | safeHTML
+		| replaceRE `\b(wahr|falsch)\b` "<span class='boolean-literal'>$1</span>" | safeHTML 
+		| replaceRE `Schreibe\s*(den|die)?\s*(Zahl(en)?|Kommazahl(en)?|Buchstaben?|Texte?)?|auf eine Zeile` "<span class='builtins'>$0</span>" | safeHTML
+		| replaceRE `-?\d+(,\d)?` "<span class='number'>$0</span>" | safeHTML 
+		| replaceRE `\b([Ww]enn|aber|dann|Sonst|[Ss]olange|[Mm]ache|[Ww]iederhole|Für jeden?|mit Schrittgröße|[Gg]ibt?|zurück|macht|einen?|mit den Parametern|mit dem Parameter|vom Typ|[Uu]nd kann so benutzt werden|Binde|ein|in|definiert|Der Alias|steht für die Funktion|Wir\s+nennen\s+die(\s+öffentliche)?\s+Kombination\s+aus|und\s+erstellen\s+sie\s+so|aus)\b` "<span class='control-statement'>$1</span>" | safeHTML
+		| replaceRE `[.:(),]` "<span class='punctuation'>$0</span>" | safeHTML 
+		| replaceRE `\b(ist|sind|oder|und|nicht|plus|minus|mal|durch|modulo|hoch|. wurzel von|logisch|kontra|gleich|ungleich|kleiner als|größer als|kleiner als, oder|größer als, oder|natürlicher Logarithmus von|Betrag|Stück|von|bis|als|an der Stelle|[Ss]peichere|verkettet mit|Erhöhe|Vervielfache|Teile|Negiere|Verschiebe|ab dem|bis zum|um|Bit nach (Links|Rechts)|verschoben)\b` "<span class='operator'>$1</span>" | safeHTML 
+		| replaceRE `\b(nichts|Die Funktion|Zahl(en)?|Kommazahl(en)?|Wahrheitswert|Texte?|Buchstaben?|[Dd]er\s+(Buchstabe|Text|Wahrheitswert)|[Dd]ie\s+(Zahl(en)?|Kommazahl(en)?|Text|Buchstaben|Wahrheitswert)|[Dd]as|Referenz|Liste)\b` "<span class='type'>$1</span>" | safeHTML 
+		| replaceRE `".*?"` "<span class='string-literal'>$0</span>" | safeHTML
+	-}}
+</pre>

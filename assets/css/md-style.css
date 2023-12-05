@@ -85,55 +85,61 @@
 }
 
 /* DDP */
-#artikel .language-ddp span.token.control-statement {
-	color: #d38ecd;
+#artikel .language-ddp {
+	color: #88d7f6;
 }
-#artikel .language-ddp span.token.number {
-	color: #B5CEA8;
-}
-#artikel .language-ddp span.token.comment {
+#artikel .language-ddp>span.comment {
 	color: #5b8449;
 }
-#artikel .language-ddp span.token.operator {
-	color: #cdd8ff;
+#artikel .language-ddp>span.control-statement {
+	color: #d38ecd;
 }
-#artikel .language-ddp span.token.placeholder {
+#artikel .language-ddp>span.number {
+	color: #B5CEA8;
+}
+#artikel .language-ddp>span.operator {
+	color: #72bbf3;
+}
+#artikel .language-ddp>span.placeholder {
 	color: #d7a09d;
 }
-#artikel .language-ddp span.token.boolean-literal {
+#artikel .language-ddp>span.boolean-literal {
 	color: #569CD6;
 }
-#artikel .language-ddp span.token.string-literal {
-	color: #ecb878;
-}
-#artikel .language-ddp span.token.char-literal {
+#artikel .language-ddp>span.char-literal {
 	color: #f7a94b;
 }
-#artikel .language-ddp span.token.type {
+#artikel .language-ddp>span.type {
 	color: #80bc80;
 }
-#artikel .language-ddp span.token.builtins {
+#artikel .language-ddp>span.builtins {
 	color:#f7f774;
+}
+#artikel .language-ddp>span.string-literal {
+	color: #ecb878;
+}
+#artikel .language-ddp>span.punctuation {
+	color: var(--text-color);
 }
 
 /* terminal */
-#artikel .language-terminal span.token.command {
+#artikel .language-terminal>span.command {
 	color: #d38ecd;
 }
 
-#artikel .language-terminal span.token.option {
+#artikel .language-terminal>span.option {
 	color: #569CD6;
 }
 
-#artikel .language-terminal span.token.file {
+#artikel .language-terminal span.file {
 	color: #80bc80;
 }
 
-#artikel .language-terminal span.token.placeholder {
+#artikel .language-terminal span.placeholder {
 	color: #d7a09d;
 }
 
-#artikel .language-terminal span.token.string-literal {
+#artikel .language-terminal span.string-literal {
 	color: #ecb878;
 }
 
@@ -171,4 +177,16 @@
 
 details summary {
 	cursor: pointer;
+}
+
+to-do {
+	display: flex;
+	padding: 5px;
+	margin: 5px;
+	border: 5px solid #df5e5e;
+	background-color: var(--md-code-bg-color);
+	justify-content: center;
+	align-content: center;
+	text-align: center;
+	border-radius: 15px;
 }

@@ -25,7 +25,7 @@ You can find a list of all data types in the article [data types](/Bedienungsanl
 
 ## Examples:
 
-```dpp
+```ddp
 Die Zahl a ist 10.
 Die Kommazahl b ist 4,32.
 Der Text c ist "Hallo!".
@@ -56,39 +56,69 @@ These operators can be used to make code more readable.
 
 ## Addition
 
-`Erhöhe <variable> um <a>`  
+```ddp
+Erhöhe <variable> um <a>
+```  
 equivalent to  
-`Speichere <variable> plus <a> in <variable>`
+```ddp
+Speichere <variable> plus <a> in <variable>
+```
 
 ## Subtraction
 
-`Verringere <variable> um <a>`  
+```ddp
+Verringere <variable> um <a>
+```  
 equivalent to  
-`Speichere <variable> minus <a> in <variable>`
+```ddp
+Speichere <variable> minus <a> in <variable>
+```
 
 ## Multiplication
 
-`Vervielfache <variable> um <a>.`  
+```ddp
+Vervielfache <variable> um <a>.
+```
 equivalent to  
-`Speichere <variable> mal <a> in <variable>`
+```ddp
+Speichere <variable> mal <a> in <variable>
+```
 
 ## Division
 
-`Teile <variable> durch <a>.`  
+```ddp
+Teile <variable> durch <a>.
+```
 equivalent to  
-`Speichere <variable> durch <a> in <variable>`
+```ddp
+Speichere <variable> durch <a> in <variable>
+```
 
 ## Negation
 
-`Negiere <variable>.`  
+```ddp
+Negiere <variable>.
+```
 equivalent to  
-`Speichere -<variable> in <variable>` resp.  
-`Speichere nicht <variable> in <variable>`
+```ddp
+Speichere -<variable> in <variable>
+```
+or
+```ddp
+Speichere nicht <variable> in <variable>
+```
 
 ## Bitshift
-
-`Verschiebe <variable> um <a> Bit nach Links`  
-`Verschiebe <variable> um <a> Bit nach Rechts`  
+```ddp
+Verschiebe <variable> um <a> Bit nach Links
+```
+```ddp
+Verschiebe <variable> um <a> Bit nach Rechts
+```
 equivalent to  
-`Speichere <variable> um <a> Bit nach Links verschoben in <variable>`  
-`Speichere <variable> um <a> Bit nach Rechts verschoben in <variable>`
+```ddp
+Speichere <variable> um <a> Bit nach Links verschoben in <variable>
+```
+```ddp
+Speichere <variable> um <a> Bit nach Rechts verschoben in <variable>
+```
