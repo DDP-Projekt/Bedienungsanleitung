@@ -76,6 +76,28 @@
     vertical-align: inherit;
 }
 
+#artikel .duden-func  {
+	border-bottom: 1px solid #aaa;
+	padding: 0.5em;
+	padding-right: 0;
+	margin-bottom: 1rem;
+}
+
+#artikel .duden-func blockquote {
+	white-space: pre;
+	margin: 0 0 0 4px;
+	border-left: #aaa solid 1px;
+	border-bottom: #aaa solid 1px;
+	padding: 1rem 0 1rem 1rem;
+	border-bottom-left-radius: 1rem;
+}
+
+#artikel .duden-func-inner {
+	margin: -2rem 0 0 4px;
+	padding: 2rem 0 0 1rem;
+	border-left: #aaa solid 1px;
+}
+
 /* Syntax Highlighting */
 
 /* light-mode readability fix */

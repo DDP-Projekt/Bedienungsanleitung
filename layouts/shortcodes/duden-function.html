@@ -1,8 +1,9 @@
-<details>
-	<summary><h2>{{ .Get "name" }}</h2></summary>
+<details class="duden-func">
+	<summary id="{{ .Get "name" }}"><h2>{{ .Get "name" }}</h2></summary>
 	{{ with .Get "desc" }}
-		<pre>{{ . | plainify }}</pre>
+		<blockquote>{{ . | safeHTML }}</blockquote>
 	{{ end }}
+	<div class="duden-func-inner">
 	<ul>
 		{{ with .Get "params" }}
 			<li>{{ i18n "params"}}: 
@@ -33,9 +34,9 @@
 
 	<h3>{{ i18n "impl" }}</h3>
 	{{ if eq (.Get "extern") "false" }}
-		{{ replace (.Get "impl" | plainify) "&emsp;" "    " }}
+		<pre><code>{{ replace (.Get "impl" | plainify) "&emsp;" "    " }}</code></pre>
 	{{ else }}
 		<p>{{ i18n "externImpl" }} <code>{{ .Get "impl" }}</code></p>
 	{{ end }}
-
+	</div>
 </details>

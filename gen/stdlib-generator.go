@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
+	"html"
 	"io"
 	"io/fs"
 	"net/http"
@@ -132,6 +133,7 @@ func writeMD(inputFile string, outputFile *os.File, publicDecls []ast.Declaratio
 			descr := ""
 			if decl.Comment() != nil {
 				descr = strings.Replace(strings.Trim(decl.Comment().String(), "[] \r\n"), "\t", "", -1)
+				descr = html.EscapeString(descr)
 				descr = strings.ReplaceAll(descr, "\r", "")
 				descr = strings.ReplaceAll(descr, "\n", "<br>")
 				descr = strings.ReplaceAll(descr, "\"", "\\\"")
