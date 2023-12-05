@@ -50,6 +50,7 @@ welche man nicht normalerweise in Text- oder Buchstabenliterale schreiben kann.
 Listen sind beliebig große Ansammlungen von Werten.
 Da DDP statisch typisiert ist kann eine Liste nur Werte desselben Datentyps enthalten.
 Der Typname einer Liste ist im Allgemeinen der Element-Typname entsprechend dekliniert mit *Liste* angehängt (Zahl -> Zahlen Liste, Text -> Text Liste).
+Bei Benutzerdefinierten Typen ([Strukturen](/Bedienungsanleitung/de/Programmierung/Strukturen)) kann die richtige Deklination (noch) nicht geparset werden, deshalb wird nicht dekliniert, sondern einfach nur *Liste* angehängt (siehe [Struktur Listen](/Bedienungsanleitung/de/Programmierung/Strukturen#struktur-listen))
 Eine Liste kann zur Laufzeit wachsen und schrumpfen.
 Wie man mit Listen arbeitet, wird in dem Artikel Operatoren unter [Listen Operatoren](/Bedienungsanleitung/de/Programmierung/Operatoren#listen-und-text-operatoren) beschrieben.
 

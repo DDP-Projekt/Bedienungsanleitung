@@ -80,3 +80,18 @@ Schreibe (x von vek). [2]
 Schreibe (y von vek). [0]
 ```
 
+## Struktur Listen
+
+Natürlich kann man auch Listen von Strukturen haben.
+Angenommen, man hat eine Struktur `Vektor` definiert, dann sieht eine Vektoren Liste so aus:
+
+```ddp
+Die Vektor Liste vektoren ist eine leere Vektoren Liste.
+
+Der Vektor vek1 ist vektoren an der Stelle 1.
+Die Zahl x ist x von (vektoren an der Stelle 1).
+```
+
+Bei Benutzerdefinierten Strukturen ist es leider (noch) nicht möglich den Typnamen entsprechend zu deklinieren, also ist es anders als bei eingebauten Typen (Zahl -> Zahl*en* Liste vs. Vektor -> Vektor Liste).
+
+Wie man sieht hat der `von` Operator auch Vorrang vor dem `an der Stelle` Operator, so wie es in der [Priorisierung von Operatoren](/Bedienungsanleitung/de/Programmierung/Operatoren/#operator-priorisierung) festgelegt ist.
