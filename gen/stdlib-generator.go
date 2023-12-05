@@ -2,9 +2,11 @@ package main
 
 import (
 	"bytes"
-	"context"
+	"encoding/json"
 	"fmt"
+	"io"
 	"io/fs"
+	"net/http"
 	"os"
 	"path/filepath"
 	"sort"
@@ -13,8 +15,6 @@ import (
 	"github.com/DDP-Projekt/Kompilierer/src/ast"
 	"github.com/DDP-Projekt/Kompilierer/src/ddperror"
 	"github.com/DDP-Projekt/Kompilierer/src/parser"
-
-	"github.com/google/go-github/v55/github"
 )
 
 var nameMap = map[string]map[string]string{
@@ -48,6 +48,11 @@ func clearDirectory(dir string) error {
 	})
 }
 
+type GitHubDir struct {
+	Name string `json:"name"`
+	Path string `json:"path"`
+}
+
 func main() {
 	outputDirDe := "content/DE/Programmierung/Standardbibliothek"
 	outputDirEn := "content/EN/Programmierung/Standardbibliothek"
@@ -55,17 +60,23 @@ func main() {
 	// delete old articles
 	panicIfErr(clearDirectory(outputDirDe))
 
-	gh := github.NewClient(nil)
-	_, dir, _, err := gh.Repositories.GetContents(context.Background(), "DDP-Projekt", "Kompilierer", "lib/stdlib/Duden", nil)
+	// get all files in directory
+	resp, err := http.Get("https://api.github.com/repos/DDP-Projekt/Kompilierer/contents/lib/stdlib/Duden/")
 	panicIfErr(err)
+	defer resp.Body.Close()
 
+	dir := make([]GitHubDir, 0)
+	json.NewDecoder(resp.Body).Decode(&dir)
+
+	// iterate through all files and generate MD files
 	for _, entry := range dir {
-		outputPathDe := filepath.Join(outputDirDe, strings.Replace(entry.GetName(), "ddp", "md", 1))
-		outputPathEn := filepath.Join(outputDirEn, strings.Replace(entry.GetName(), "ddp", "md", 1))
+		outputPathDe := filepath.Join(outputDirDe, strings.Replace(entry.Name, "ddp", "md", 1))
+		outputPathEn := filepath.Join(outputDirEn, strings.Replace(entry.Name, "ddp", "md", 1))
 
-		file, _, _, err := gh.Repositories.GetContents(context.Background(), "DDP-Projekt", "Kompilierer", entry.GetPath(), nil)
+		resp, err := http.Get("https://raw.githubusercontent.com/DDP-Projekt/Kompilierer/master/" + entry.Path)
 		panicIfErr(err)
-		inputFile, err := file.GetContent()
+		defer resp.Body.Close()
+		inputFile, err := io.ReadAll(resp.Body)
 		panicIfErr(err)
 
 		MakeMdFiles(inputFile, outputPathDe, "DE")
@@ -73,8 +84,9 @@ func main() {
 	}
 }
 
-func MakeMdFiles(inputFile, outputFilePath, lang string) {
+func MakeMdFiles(inputFile []byte, outputFilePath, lang string) {
 	fmt.Printf("creating output file '%s'...\n", outputFilePath)
+
 	os.MkdirAll(filepath.Dir(outputFilePath), os.ModeDir|os.ModePerm)
 	outputFile, err := os.Create(outputFilePath)
 	panicIfErr(err)
@@ -82,7 +94,7 @@ func MakeMdFiles(inputFile, outputFilePath, lang string) {
 
 	fmt.Printf("parsing module...\n")
 	module, err := parser.Parse(parser.Options{
-		Source:       []byte(inputFile),
+		Source:       inputFile,
 		ErrorHandler: ddperror.EmptyHandler,
 	})
 	panicIfErr(err)
@@ -100,7 +112,7 @@ func MakeMdFiles(inputFile, outputFilePath, lang string) {
 
 	fmt.Println("writing md file...")
 
-	writeMD(inputFile, outputFile, publicDecls, lang)
+	writeMD(string(inputFile), outputFile, publicDecls, lang)
 
 	fmt.Println("done writing md file.")
 	fmt.Println()
