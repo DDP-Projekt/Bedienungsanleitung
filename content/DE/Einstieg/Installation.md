@@ -13,8 +13,8 @@ Wenn du kddp schon installiert hast und es zu einer neueren Version updaten will
 ## 1. Download
 
 Gehe zum [Github-Repo des DDP Kompilierers](https://github.com/DDP-Projekt/Kompilierer) und lade den neusten [Release](https://github.com/DDP-Projekt/Kompilierer/releases) für dein System herunter.
-Für Windows ist das DDP-&lt;Version&gt;-&lt;Betriebssystem&gt;-&lt;CPU-Architektur&gt;.zip und für Linux DDP-&lt;Version&gt;-&lt;Betriebssystem&gt;-&lt;CPU-Architektur&gt;.tar.gz.
-Für Windows Benutzer, die gcc bereits installiert haben gibt es auch -no-mingw Varianten.
+Für Windows ist das `DDP-<Version>-<Betriebssystem>-<CPU-Architektur>.zip` und für Linux `DDP-<Version>-<Betriebssystem>-<CPU-Architektur>.tar.gz`.
+Für Windows Benutzer, die gcc bereits installiert haben gibt es auch `-no-mingw` Varianten.
 
 Beispielhafte Dateinamen:
 - DDP-0.0.1-windows-amd64.zip
@@ -29,8 +29,8 @@ Diese Stelle, also der Pfad und Ordner-Name, sollte nach der Installation nicht 
 Auf Windows einfach auf das Archiv rechts-klicken und "Alle Extrahieren" wählen.
 Auf Linux den `$tar` Befehl verwenden.
 
-Nach dem extrahieren solltest du den enstprechend entpackten Ordner sehen. Es kann sein, dass dieser geschachtelt ist (also DDP-0.0.1-windows-amd64/DDP-0.0.1-windows-amd64). Falls das passiert ist verschiebe den Ordner VOR DER INSTALLATION an die richtige Stelle.
-Der Name des Ordners ist egal, du kannst ihn also gerne von DDP-0.0.1-windows-amd64 zu schlichtweg DDP umbenennen.
+Nach dem extrahieren solltest du den enstprechend entpackten Ordner sehen. Es kann sein, dass dieser geschachtelt ist (also z.B. `DDP-0.0.1-windows-amd64/DDP-0.0.1-windows-amd64`). Falls das passiert ist verschiebe den Ordner **VOR DER INSTALLATION** an die richtige Stelle.
+Der Name des Ordners ist egal, du kannst ihn also gerne von `DDP-0.0.1-windows-amd64` zu schlichtweg `DDP` umbenennen.
 
 ## 3. Installieren
 
@@ -61,7 +61,7 @@ Das Setup wird
 * auf Windows falls nötig Mingw64 entpacken (aber nicht dem PATH hinzufügen),
 * die kddp Version mit der (installierten) GCC Version abgleichen und
 * falls nötig die DDP-runtime/stdlib neu kompilieren,
-* die Umgebungsvariable DDPPATH setzen (diese MUSS gesetzt sein, sonst funktioniert der Kompilierer nicht),
+* die Umgebungsvariable 'DDPPATH' setzen (diese **MUSS** gesetzt sein, sonst funktioniert der Kompilierer nicht),
 * kddp deinem PATH hinzufügen (bzw. den gesamten DDP/bin Ordner, der auch DDPLS enthalten wird),
 * den DDP Sprachserver (DDPLS) installieren,
 * vscode-ddp (die DDP-Erweiterung für Visual Studio Code) installieren, falls VSCode installiert ist

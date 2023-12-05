@@ -13,8 +13,8 @@ If you have already installed kddp and want to update it to a newer version, see
 ## 1. Download
 
 Go to the [DDP compiler Github repo](https://github.com/DDP-Projekt/Kompilierer) and download the latest [release](https://github.com/DDP-Projekt/Kompilierer/releases) for your system.
-For Windows the DDP-&lt;Version&gt;-&lt;Operating System&gt;-&lt;CPU Architecture&gt;.zip and for Linux DDP-&lt;Version&gt;-&lt;Operating System&gt;-&lt;CPU Architecture&gt;.tar.gz.
-For Windows users who already have gcc installed, there are also -no-mingw variants.
+For Windows the `DDP-<Version>-<Operating System>-<CPU Architecture>.zip` and for Linux `DDP-<Version>-<Operating System>-<CPU Architecture>.tar.gz`.
+For Windows users who already have gcc installed, there are also `-no-mingw` variants.
 
 Example file names:
 - DDP-0.0.1-windows-amd64.zip
@@ -29,8 +29,8 @@ This location, i.e. the path and folder name, should not be changed after the in
 On Windows, simply right-click on the archive and select "Extract All".
 On Linux use the `$tar` command.
 
-After extracting, you should see the correspondingly unzipped folder. It may be that it's nested (i.e. DDP-0.0.1-windows-amd64/DDP-0.0.1-windows-amd64). If this happened, move the folder to the correct location BEFORE INSTALLING.
-The name of the folder doesn't matter, so feel free to rename it from DDP-0.0.1-windows-amd64 to just DDP.
+After extracting, you should see the correspondingly unzipped folder. It may be that it's nested (i.e. `DDP-0.0.1-windows-amd64/DDP-0.0.1-windows-amd64`). If this happened, move the folder to the correct location **BEFORE INSTALLING**.
+The name of the folder doesn't matter, so feel free to rename it from `DDP-0.0.1-windows-amd64` to just `DDP`.
 
 ## 3. Install
 
@@ -61,7 +61,7 @@ The setup will
 * on Windows, unpack Mingw64 if necessary (but won't add it to the PATH),
 * compare the kddp version with the (installed) GCC version and
 * if necessary, recompile the DDP runtime/stdlib,
-* set the environment variable DDPPATH (this MUST be set, otherwise the compiler will not work),
+* set the environment variable 'DDPPATH' (this **MUST** be set, otherwise the compiler will not work),
 * add kddp to your PATH (or the entire DDP/bin folder, which will also contain DDPLS),
 * install the DDP language server (DDPLS),
 * install vscode-ddp (the DDP extension for Visual Studio Code). If VSCode is installed

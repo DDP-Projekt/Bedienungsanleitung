@@ -36,7 +36,7 @@ If everything worked without errors, you should restart the terminal and be able
 
 A DDP version consists of 4 parts:
 
-&gt;Major&lt;.&gt;Minor&lt;.&gt;Patch&lt;-&gt;Addition&lt;
+`<Major>.<Minor>.<Patch>-<Addition>`
 
 Example: 1.2.3-alpha
 
