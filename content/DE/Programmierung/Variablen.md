@@ -21,7 +21,7 @@ Wenn man solche Variablen mit einem Ausdruck deklarieren will, sollte man stattd
 ```ddp
 Der Boolean <Variablenname> ist <wahr oder falsch>, wenn <Ausdruck>. 
 ```
-Eine Liste von allen Datentypen findest du im Artikel [Datentypen](/Bedienungsanleitung/DE/Programmierung/Datentypen)
+Eine Liste von allen Datentypen findest du im Artikel [Datentypen](/Bedienungsanleitung/de/Programmierung/Datentypen)
 
 ## Beispiele:
 

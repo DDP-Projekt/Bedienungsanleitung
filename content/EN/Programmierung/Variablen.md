@@ -21,7 +21,7 @@ If you want to declare such variables with an expression, you should use this sy
 ```ddp
 Der Boolean <variable name> ist <true or false>, wenn <expression>.
 ```
-You can find a list of all data types in the article [data types](/Bedienungsanleitung/EN/Programmierung/Datentypen)
+You can find a list of all data types in the article [data types](/Bedienungsanleitung/en/Programmierung/Datentypen)
 
 ## Examples:
 

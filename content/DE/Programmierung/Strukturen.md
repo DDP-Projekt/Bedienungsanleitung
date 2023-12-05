@@ -39,7 +39,7 @@ einen Vektor2, und erstellen sie so:
 ```
 
 Hier wird ein zweidimensionaler Vektor, der aus zwei Zahlen (x und y) besteht definiert.
-Die Struktur selbst und das Feld y sind öffentlich, können also auch in anderen Modulen benutzt werden (mehr dazu im Artikel [Module](Bedienungsanleitung/DE/Programmierung/Module)).
+Die Struktur selbst und das Feld y sind öffentlich, können also auch in anderen Modulen benutzt werden (mehr dazu im Artikel [Module](/Bedienungsanleitung/de/Programmierung/Module)).
 
 Diese Schreibweise kling zwar sehr mathematisch, aber ermöglicht etwas sehr wichtiges.
 Durch den unbestimmten Artikel (einer, eine oder ein) wird das grammatikalische Geschlecht (maskulin, feminin oder neutrum) des Typ-Namens erkennbar.

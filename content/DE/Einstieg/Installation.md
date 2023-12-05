@@ -8,7 +8,7 @@ type = "article"
 
 In diesem Artikel wird beschrieben wie man den Kompilierer (kddp) installiert.
 
-Wenn du kddp schon installiert hast und es zu einer neueren Version updaten willst, siehe [Updates](/Bedienungsanleitung/DE/Einstieg/Updates)
+Wenn du kddp schon installiert hast und es zu einer neueren Version updaten willst, siehe [Updates](/Bedienungsanleitung/de/Einstieg/Updates)
 
 ## 1. Download
 
@@ -71,4 +71,4 @@ Eine fertige DDP Installation kann zwischen 20mb und etwa 1,1Gb groß sein, je n
 
 ## 4. Testen
 
-Um die Installation zu testen, siehe [Erstes Programm](/Bedienungsanleitung/DE/Einstieg/Erstes%20Programm)
+Um die Installation zu testen, siehe [Erstes Programm](/Bedienungsanleitung/de/Einstieg/Erstes-Programm)
