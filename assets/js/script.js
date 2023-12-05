@@ -26,7 +26,7 @@ function applySyntaxHighlighting() {
 		'control-statement': /[Ww]enn|aber|dann|Sonst|[Ss]olange|[Mm]ache|[Ww]iederhole|Für|jede|mit Schrittgröße|[Gg]ibt?|zurück|macht|einen?|mit den Parametern|vom|[Uu]nd kann so benutzt werden|Binde|ein/,
 		'punctuation': /[.:]/,
 		'operator': /\b(ist|sind|oder|und|nicht|plus|minus|mal|durch|modulo|hoch|. wurzel von|logisch|kontra|gleich|ungleich|kleiner als|größer als|kleiner als, oder|größer als, oder|natürlicher Logarithmus von|Betrag|Stück|von|bis|als|an der Stelle)\b/,
-		'type': /nichts|Typ|Funktion|Zahl(en)?|Kommazahl(en)?|Booleans?|Texte?|Buchstaben?|[Dd]er|[Dd]ie|[Dd]as/,
+		'type': /nichts|Typ|Funktion|Zahl(en)?|Kommazahl(en)?|Wahrheitswert|Texte?|Buchstaben?|[Dd]er|[Dd]ie|[Dd]as/,
 	};
 
 	Prism.languages['terminal'] = {

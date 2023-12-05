@@ -36,6 +36,6 @@ Verändere "Fehler". [Kompilierfehler: foo hat eine Variable erwartet]
 ```
 
 Man kann aus jedem Typnamen einen Referenz-Typ machen, indem man "Referenz" an den Typnamen anhängt und ihn entsprechend dekliniert.
-Aus `Zahlen Liste` wird also `Zahlen Listen Referenz`, aus `Boolean` wird `Boolean Referenz`, aus `Zahl` wird `Zahlen Referenz`, etc..
+Aus `Zahlen Liste` wird also `Zahlen Listen Referenz`, aus `Wahrheitswert` wird `Wahrheitswert Referenz`, aus `Zahl` wird `Zahlen Referenz`, etc..
 
 Normale Variablen können keine Referenz-Typen sein, nur Funktions-Parameter.

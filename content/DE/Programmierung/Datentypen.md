@@ -16,7 +16,7 @@ Der Typ von Variablen, Funktionen und Ausdrücken kann sich nicht zur Laufzeit �
 | --------- | --------------------------------------------------------- | ---------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------- |
 | Zahl      | Eine 64 Bit große, ganze Zahl                             | *-2.147.483.648* bis *2.147.483.647*                                               | Eine Abfolge von Ziffern, z.B. 42                                                     | `Die Zahl x ist 69.`, <br>`1 plus -7`                         |
 | Kommazahl | Eine 64 Bit große, gleitkomma Zahl                        | *-1,79769313486232x10^308* bis <br>*1,79769313486232x10^308* mit 16 Dezimalstellen | Ein Zahlenliteral mit Nachkommastellen, z.B. 3,1415                                   | `Die Kommazahl x ist 6,5.`, <br>`2 durch 0,5`                 |
-| Boolean   | Ein Wahrheitswert (8 Bit groß)                            | *wahr* oder *falsch*                                                               | *wahr* oder *falsch*                                                                  | `Der Boolean x ist wahr.`, <br>`1 plus 1 gleich 2`            |
+| Wahrheitswert   | Ein Wahrheitswert (8 Bit groß)                            | *wahr* oder *falsch*                                                               | *wahr* oder *falsch*                                                                  | `Der Wahrheitswert x ist wahr.`, <br>`1 plus 1 gleich 2`            |
 | Buchstabe | Ein 4 Byte großes, mit utf-8 kodiertes Zeichen            | *0* - *65535*                                                                      | Ein utf8 Zeichen zwischen einfachen Anführungszeichen, z.B. 'a' oder '\n'             | `Der Buchstabe x ist 'd'.`                                    |
 | Text      | Eine utf-8 kodierte Aneinanderreihung mehrerer Buchstaben | *beliebig groß*                                                                    | Beliebig viele Buchstaben zwischen <br>(englischen) Anführungszeichen, z.B. "Hallo\n" | `Der Text x ist "abc".`, <br>`"Hallo" verkettet mit " du da"` |
 
@@ -78,7 +78,7 @@ Die Text Liste t2 ist "Hallo" als Text Liste.
 | ----------------- | -------------------------- | --------------------------------------- | --------------------------------------------------------------------------- |
 | Zahlen Liste      | Eine Liste von Zahlen      | Ein Listen Literal wie oben beschrieben | `Die Zahlen Liste z ist eine Liste, die aus 1, 2, 3 besteht.`               |
 | Kommazahlen Liste | Eine Liste von Kommazahlen | Ein Listen Literal wie oben beschrieben | `Die Kommazahlen Liste z ist eine Liste, die aus 1,2, 3,2, 3,1415 besteht.` |
-| Boolean Liste     | Eine Liste von Booleans    | Ein Listen Literal wie oben beschrieben | `Die Boolean Liste b ist eine Liste, die aus wahr, falsch, wahr besteht.`   |
+| Wahrheitswert Liste     | Eine Liste von Wahrheitswerten    | Ein Listen Literal wie oben beschrieben | `Die Wahrheitswert Liste b ist eine Liste, die aus wahr, falsch, wahr besteht.`   |
 | Buchstaben Liste  | Eine Liste von Buchstaben  | Ein Listen Literal wie oben beschrieben | `Die Buchstaben Liste b ist eine Liste, die aus 'b', 'h', 'z' besteht.`     |
 | Text Liste        | Eine Liste von Texten      | Ein Listen Literal wie oben beschrieben | `Die Text Liste t ist eine Liste, die aus "Hallo", "du", "da" besteht.`     |
 ***

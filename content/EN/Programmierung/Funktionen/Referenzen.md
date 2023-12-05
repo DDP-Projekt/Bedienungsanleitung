@@ -36,6 +36,6 @@ Verändere "Fehler". [compile error: foo expected a variable]
 ```
 
 Any type name can be made a reference type by appending "Referenz" to the type name.
-So `Zahlen Liste` becomes `Zahlen Listen Referenz`, `Boolean` becomes `Boolean Referenz`, etc.
+So `Zahlen Liste` becomes `Zahlen Listen Referenz`, `Wahrheitswert` becomes `Wahrheitswert Referenz`, etc.
 
 Normal variables cannot be reference types, only function parameters.

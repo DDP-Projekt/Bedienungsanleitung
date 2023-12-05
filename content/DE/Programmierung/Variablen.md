@@ -16,10 +16,10 @@ Variablen können folgendermaßen erstellt (oder deklariert) werden:
 <Datentyp mit Artikel> <Variablenname> ist <Ausdruck>.
 ```
 
-Es gibt eine Besonderheit bei Variablen mit dem Datentyp "Boolean".\
+Es gibt eine Besonderheit bei Variablen mit dem Datentyp "Wahrheitswert".\
 Wenn man solche Variablen mit einem Ausdruck deklarieren will, sollte man stattdessen diese Syntax benutzen:
 ```ddp
-Der Boolean <Variablenname> ist <wahr oder falsch>, wenn <Ausdruck>. 
+Der Wahrheitswert <Variablenname> ist <wahr oder falsch>, wenn <Ausdruck>. 
 ```
 Eine Liste von allen Datentypen findest du im Artikel [Datentypen](/Bedienungsanleitung/de/Programmierung/Datentypen)
 
@@ -29,8 +29,8 @@ Eine Liste von allen Datentypen findest du im Artikel [Datentypen](/Bedienungsan
 Die Zahl a ist 10.
 Die Kommazahl b ist 4,32.
 Der Text c ist "Hallo!".
-Der Boolean d ist wahr.
-Der Boolean e ist falsch wenn 1 gleich 1 ist. 
+Der Wahrheitswert d ist wahr.
+Der Wahrheitswert e ist falsch wenn 1 gleich 1 ist. 
 ```
 
 # Zuweisung

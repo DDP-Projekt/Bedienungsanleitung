@@ -16,10 +16,10 @@ Variables can be created (or declared) as follows:
 <data type with article> <variable name> ist <expression>.
 ```
 
-There is a special feature for variables with the data type "Boolean".\
+There is a special feature for variables with the data type "Wahrheitswert".\
 If you want to declare such variables with an expression, you should use this syntax instead:
 ```ddp
-Der Boolean <variable name> ist <true or false>, wenn <expression>.
+Der Wahrheitswert <variable name> ist <true or false>, wenn <expression>.
 ```
 You can find a list of all data types in the article [data types](/Bedienungsanleitung/en/Programmierung/Datentypen)
 
@@ -29,8 +29,8 @@ You can find a list of all data types in the article [data types](/Bedienungsanl
 Die Zahl a ist 10.
 Die Kommazahl b ist 4,32.
 Der Text c ist "Hallo!".
-Der Boolean d ist wahr.
-Der Boolean e ist falsch wenn 1 gleich 1 ist. 
+Der Wahrheitswert d ist wahr.
+Der Wahrheitswert e ist falsch wenn 1 gleich 1 ist. 
 ```
 
 # Assignment
