@@ -27,8 +27,8 @@
 	padding: 4px;
 	line-height: 1.85em;
 	white-space: nowrap;
-    background-color: var(--md-code-bg-color);
-    border-radius: 3px;
+	background-color: var(--md-code-bg-color);
+	border-radius: 3px;
 }
 
 /*table code taken from github*/
@@ -38,7 +38,7 @@
 
 #artikel table {
 	border-spacing: 0;
-    border-collapse: collapse;
+	border-collapse: collapse;
 	width: max-content;
 	overflow: auto;
 	max-width: 100%;
@@ -48,32 +48,32 @@
 #artikel th {
 	font-weight: 600;
 	padding: 6px 13px;
-    border: 1px solid var(--table-border-color);
+	border: 1px solid var(--table-border-color);
 }
 
 #artikel tr {
 	background-color: var(--table-fill-dark);
-    border-top: 1px solid var(--table-fill-dark);
+	border-top: 1px solid var(--table-fill-dark);
 	display: table-row;
-    vertical-align: inherit;
-    border-color: inherit;
+	vertical-align: inherit;
+	border-color: inherit;
 }
 
 #artikel table tr:nth-child(2n) {
-    background-color: var(--table-fill-light);
+	background-color: var(--table-fill-light);
 }
 
 #artikel tbody {
 	display: table-row-group;
-    vertical-align: middle;
-    border-color: inherit;
+	vertical-align: middle;
+	border-color: inherit;
 }
 
 #artikel td {
 	padding: 6px 13px;
-    border: 1px solid var(--table-border-color);
+	border: 1px solid var(--table-border-color);
 	display: table-cell;
-    vertical-align: inherit;
+	vertical-align: inherit;
 }
 
 #artikel .duden-func {
