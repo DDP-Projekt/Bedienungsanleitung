@@ -30,7 +30,7 @@
 	
 			<h3>{{ i18n "impl" }}</h3>
 			{{ if eq (.Get "extern") "false" }}
-				<pre><code>{{ replace (.Get "impl" | plainify) "&emsp;" "    " }}</code></pre>
+				{{ (printf "```ddp\n%s\n```" (.Get "impl" | htmlUnescape )) | .Page.RenderString }}
 			{{ else }}
 				<p>{{ i18n "externImpl" }} <code>{{ .Get "impl" }}</code></p>
 			{{ end }}

@@ -170,11 +170,11 @@ func writeMD(inputFile string, outputFile *os.File, publicDecls []ast.Declaratio
 				inputStr := strings.Split(file, "\n")
 				lines := inputStr[decl.Body.Range.Start.Line:decl.Body.Range.End.Line]
 
-				impl = strings.Join(lines, "<br>")
+				impl = strings.Join(lines, "&#10;")
 				impl = strings.ReplaceAll(impl, "\r", "")
-				impl = strings.ReplaceAll(impl, "\n", "<br>")
+				impl = strings.ReplaceAll(impl, "\n", "&#10;")
 				impl = strings.ReplaceAll(impl, "\"", "\\\"")
-				impl = strings.ReplaceAll(impl, "\t", "&emsp;")
+				impl = strings.ReplaceAll(impl, "\t", "    ")
 			}
 
 			fmt.Fprintf(funcBldr, "{{< duden-function name=\"%s\" desc=\"%s\" params=\"%s\" paramTypes=\"%s\" ret=\"%s\" impl=\"%s\" extern=\"%t\" aliases=\"%s\" >}}\n\n", // }}"
