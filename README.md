@@ -1,4 +1,6 @@
-# Bedienungsanleitung
+# Bedienungsanleitung 
+[![Deploy Hugo site to Pages](https://github.com/DDP-Projekt/Bedienungsanleitung/actions/workflows/hugo.yaml/badge.svg)](https://github.com/DDP-Projekt/Bedienungsanleitung/actions/workflows/hugo.yaml)
+
 Die Dokumentation für [die Deutsche Programmiersprache](https://github.com/DDP-Projekt/Kompilierer)
 
 Die einzelnen Artikel liegen im Ordner "[content](content)" und sind Markdown Dateien.
@@ -6,8 +8,8 @@ Hugo nutzt die Markdown Dateien um die Website zu generieren.
 
 ## Lokal Ausführen
 ### Vorraussetzungen
-1. Hugo
-2. Go
+1. [Hugo](https://gohugo.io/installation/)
+2. [Go](https://go.dev/dl/)
 
 ### Starten
 1. Git Repository Klonen
@@ -24,8 +26,8 @@ Um Artikel zu erstellen benutzt man den `hugo new content <pfad>` Befehl.
 
 Alle Pfade gehen von `/content/DE/` aus, also würde `hugo new content hallo.md` die Datei `/content/DE/hallo.md` erstellen.
 
-Jeder Artikel hat einen front-matter der so aussieht:
-```js
+Jeder Artikel beginnt mit einem front-matter der so aussieht:
+```
 +++
 title = ""
 weight = 1
@@ -38,11 +40,11 @@ Das Feld `title` gibt den Text an, der in der Seitenleiste für den Artikel ange
 Der Pfad der Datei bestimmt die URL des Artikels.
 
 ### Sections erstellen
-Eine Section enthält mehrere Artikel. In der Sidebar werden Sections als dropdown menü angezeigt.
+Sections sind Verzeichnisse die mehrere Artikel enthalten. In der Sidebar werden Sections als dropdown menü angezeigt.
 
 Jede Section hat einen speziellen Artikel mit dem Namen: "`_index.md`".
-Diese Datei hat einen front-matter, welches so aussieht:
-```js
+Diese Datei beginnt mit einem front-matter, welches so aussieht:
+```
 +++
 title = ""
 weight = 1
