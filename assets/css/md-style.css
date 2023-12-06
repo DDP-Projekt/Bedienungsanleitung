@@ -112,8 +112,8 @@
 /* Syntax Highlighting */
 
 /* light-mode readability fix */
-#artikel .language-ddp code span,
-#artikel .language-terminal code span {
+#artikel .language-ddp span,
+#artikel .language-terminal span {
 	filter: var(--light-mode-filter);
 }
 
