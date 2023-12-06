@@ -1,42 +1,39 @@
 <details class="duden-func">
-	<summary id="{{ .Get "name" }}"><h2>{{ .Get "name" }}</h2></summary>
-	{{ with .Get "desc" }}
-		<blockquote>{{ . | safeHTML }}</blockquote>
-	{{ end }}
+	{{ $name := .Get "name" }}
+	<summary id="{{ $name }}"><h2>{{ .Get "name" }}</h2></summary>
 	<div class="duden-func-inner">
-	<ul>
-		{{ with .Get "params" }}
-			<li>{{ i18n "params"}}: 
-				{{ $params := strings.Split . "," }}
-				<code>{{ delimit $params "</code>, <code>" }}</code>
-			</li>
+		{{ with .Get "desc" }}
+			<blockquote>{{ . | safeHTML }}</blockquote>
 		{{ end }}
-		{{ with .Get "paramTypes" }}
-			<li>{{ i18n "paramType"}}: 
-				{{ $params := strings.Split . "," }}
-				<code>{{ delimit $params "</code>, <code>" }}</code>
-			</li>
-		{{ end }}
-		<li>{{ i18n "returnType"}}:  <code>{{ .Get "ret" }}</code></li>
-	</ul>
-
-	<h3>{{ i18n "aliases" }}</h3>
-	<ol>
-		{{ with .Get "aliases" }}
-			{{ $aliases := split . "\"" }} <!--"}}-->
-			{{ range $aliases}}
-				<li><code>{{ . }}</code></li>
+		<div class="duden-func-data">
+			<ul>
+				{{ with .Get "params" }}
+					<li>{{ i18n "params"}}: {{ . | safeHTML }}</li>
+				{{ end }}
+				{{ with .Get "paramTypes" }}
+					<li>{{ i18n "paramType"}}: {{ . | safeHTML }}</li>
+				{{ end }}
+				<li>{{ i18n "returnType"}}: <code>{{ .Get "ret" }}</code></li>
+			</ul>
+	
+			<h3>{{ i18n "aliases" }}</h3>
+			<ol>
+				{{ with .Get "aliases" }}
+					{{ $aliases := split . "\"" }} <!--"}}-->
+					{{ range $aliases}}
+						<li><code>{{ . }}</code></li>
+					{{ end }}
+				{{ else}}
+					<p>Keine Aliase definiert</p>
+				{{ end}}
+			</ol>
+	
+			<h3>{{ i18n "impl" }}</h3>
+			{{ if eq (.Get "extern") "false" }}
+				<pre><code>{{ replace (.Get "impl" | plainify) "&emsp;" "    " }}</code></pre>
+			{{ else }}
+				<p>{{ i18n "externImpl" }} <code>{{ .Get "impl" }}</code></p>
 			{{ end }}
-		{{ else}}
-			<p>Keine Aliase definiert</p>
-		{{ end}}
-	</ol>
-
-	<h3>{{ i18n "impl" }}</h3>
-	{{ if eq (.Get "extern") "false" }}
-		<pre><code>{{ replace (.Get "impl" | plainify) "&emsp;" "    " }}</code></pre>
-	{{ else }}
-		<p>{{ i18n "externImpl" }} <code>{{ .Get "impl" }}</code></p>
-	{{ end }}
+		</div>
 	</div>
 </details>
