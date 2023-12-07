@@ -119,7 +119,7 @@ Hier ist eine Tabelle mit allen Operatoren und ihrer Priorisierung (hoch prioris
 | 2    | Literale, Konstante                               |
 | 3    | Klammern                                          |
 | 4    | Typkonvertierungen                                |
-| 5    | Feld Zugriff von Strukturen                       |
+| 5    | Feld Zugriff von Kombinationen                    |
 | 6    | Indizierung                                       |
 | 7    | `von ... bis`, `ab ... dem`, `bis ... zum`        |
 | 8    | Potenzieren, Wurzelziehen, Logarithmus            |

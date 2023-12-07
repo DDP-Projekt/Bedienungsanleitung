@@ -50,7 +50,7 @@ welche man nicht normalerweise in Text- oder Buchstabenliterale schreiben kann.
 Listen sind beliebig große Ansammlungen von Werten.
 Da DDP statisch typisiert ist kann eine Liste nur Werte desselben Datentyps enthalten.
 Der Typname einer Liste ist im Allgemeinen der Element-Typname entsprechend dekliniert mit *Liste* angehängt (Zahl -> Zahlen Liste, Text -> Text Liste).
-Bei Benutzerdefinierten Typen ([Strukturen](/Bedienungsanleitung/de/Programmierung/Strukturen)) kann die richtige Deklination (noch) nicht geparset werden, deshalb wird nicht dekliniert, sondern einfach nur *Liste* angehängt (siehe [Struktur Listen](/Bedienungsanleitung/de/Programmierung/Strukturen#struktur-listen))
+Bei Benutzerdefinierten Typen ([Kombinationen](/Bedienungsanleitung/de/Programmierung/Kombinationen)) kann die richtige Deklination (noch) nicht geparset werden, deshalb wird nicht dekliniert, sondern einfach nur *Liste* angehängt (siehe [Kombinationslisten](/Bedienungsanleitung/de/Programmierung/Kombinationen#kombinationslisten))
 Eine Liste kann zur Laufzeit wachsen und schrumpfen.
 Wie man mit Listen arbeitet, wird in dem Artikel Operatoren unter [Listen Operatoren](/Bedienungsanleitung/de/Programmierung/Operatoren#listen-und-text-operatoren) beschrieben.
 
@@ -87,7 +87,7 @@ Die Text Liste t2 ist "Hallo" als Text Liste.
 
 Eigentlich würde man ja erwarten, dass in der Aufzählung eines Listen Literals noch ein 'und' vorkommen müsste (`eine Liste, die aus 1, 2 und 3 besteht`). Das würde aber zu Mehrdeutigkeiten in Boolschen Ausdrücken führen (`eine Liste, die aus wahr und falsch besteht`), und da die Aufzählung, grammatisch gesehen, kein 'und' braucht wird es in Listen Literalen weggelassen.
 
-## Strukturen
+## Kombinationen
 
-Strukturen (structs in C) sind benutzerdefinierte zusammengesetzte Datentypen, die eine oder mehrere Variablen in einem Typ zusammenfassen.
-Mehr zu Strukturen ist im Artikel [Strukturen](/Bedienungsanleitung/de/Programmierung/Strukturen) zu finden.
+Kombinationen (structs in C) sind benutzerdefinierte zusammengesetzte Datentypen, die eine oder mehrere Variablen in einem Typ zusammenfassen.
+Mehr zu Kombinationen ist im Artikel [Kombinationen](/Bedienungsanleitung/de/Programmierung/Kombinationen) zu finden.
