@@ -163,6 +163,32 @@ Für jede Zahl element in liste, mache:
 	<Anweisungen>.
 ```
 
+## Abbrechen/Fortführen von Schleifen
+
+Schleifen können auch abgebrochen bzw. zur nächsten Iteration geführt werden (in anderen Sprachen entspricht das den Schlüsselwörtern `break` und `continue`).
+
+### Abbrechen
+
+```ddp
+[Schreibt "1 2" in die Konsole]
+Für jede Zahl i von 1 bis 5, mache:
+	Wenn i gleich 3 ist, dann:
+    	Verlasse die Schleife. [break]
+    Schreibe i.
+    Schreibe ' '.
+```
+
+### Fortführen
+
+```ddp
+[Schreibt "1 2 4 5" in die Konsole]
+Für jede Zahl i von 1 bis 5, mache:
+	Wenn i gleich 3 ist, dann:
+    	Fahre mit der Schleife fort. [continue]
+    Schreibe i.
+    Schreibe ' '.
+```
+
 # Tipp
 Fast jede der hier aufgelisteten Verzweigungen und Schleifen kann auch auf einer einzigen Zeile geschrieben werden,
 falls nur eine Anweisung ausgeführt werden muss.

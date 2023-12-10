@@ -162,6 +162,32 @@ Für jede Zahl element in liste, mache:
 	<instructions>.
 ```
 
+## Cancelation/Continuation of loops
+
+Loops can also be canceled or advanced to the next iteration (in other languages, this corresponds to the keywords `break` and `continue`).
+
+### Break
+
+```ddp
+[Prints "1 2" to the console]
+Für jede Zahl i von 1 bis 5, mache:
+	Wenn i gleich 3 ist, dann:
+    	Verlasse die Schleife. [break]
+    Schreibe i.
+    Schreibe ' '.
+```
+
+### Fortführen
+
+```ddp
+[Prints "1 2 4 5" to the console]
+Für jede Zahl i von 1 bis 5, mache:
+	Wenn i gleich 3 ist, dann:
+    	Fahre mit der Schleife fort. [continue]
+    Schreibe i.
+    Schreibe ' '.
+```
+
 # Tip
 Almost any of the branches and loops listed here can also be written on a single line, if only one statement needs to be executed.
 
