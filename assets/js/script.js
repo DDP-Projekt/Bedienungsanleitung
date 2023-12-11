@@ -1,17 +1,15 @@
 'use strict'
 
 customElements.define('to-do', TODOElement);
-document.addEventListener("DOMContentLoaded", () => {
-	closeNav(); // automatically close nav
-});
-
 let sidebarHidden = false;
+const sidebar = document.getElementById("seitenleiste");
+
+closeNav(); // automatically close nav on mobile
 
 function openNav() {
 	// show sidebar
 	sidebarHidden = false;
 
-	const sidebar = document.getElementById("seitenleiste");
 	sidebar.classList.toggle('opened', true);
 
 	const burger = document.getElementById("hamburger");
@@ -27,7 +25,6 @@ function closeNav() {
 	// hide sidebar
 	sidebarHidden = true;
 
-	const sidebar = document.getElementById("seitenleiste");
 	sidebar.classList.toggle('opened', false);
 
 	const burger = document.getElementById("hamburger");
