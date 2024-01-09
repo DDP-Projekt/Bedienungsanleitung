@@ -30,7 +30,7 @@ in diesen und späteren Tabellen jeweils der C-Operator dabei.
 | Rest                         | `a modulo b`                            | `a % b`               | Zahl               | Zahl               | Zahl        | `16 modulo 12`                         | 4        |
 | Potenzieren                  | `a hoch b`                              | `pow(a, b)`           | numerisch          | numerisch          | Kommazahl   | `2 hoch 8`                             | 256,0    |
 | Wurzelziehen                 | `die a. Wurzel von b`                   | `pow(a, 1/b)`         | numerisch          | numerisch          | Kommazahl   | `die 2. Wurzel von 9`                  | 3,0      |
-| Logarithmus                  | `der Logarithmus mit der Basis a von b` | `log10(b) / log10(a)` | numerisch          | numerisch          | Kommazahl   | `der Logarithmus von 100 zur Basis 10` | 2,0      |
+| Logarithmus                  | `der Logarithmus von b zur Basis a` | `log10(b) / log10(a)` | numerisch          | numerisch          | Kommazahl   | `der Logarithmus von 100 zur Basis 10` | 2,0      |
 | Bit-Verschiebung nach links  | `a um b Bit nach links verschoben`      | `a << b`              | Zahl               | Zahl               | Zahl        | `7 um 3 Bit nach links verschoben`     | 56       |
 | Bit-Verschiebung nach rechts | `a um b Bit nach rechts verschoben`     | `a >> b`              | Zahl               | Zahl               | Zahl        | `70 um 2 Bit nach rechts verschoben`   | 17       |
 | Logische UND verknüpfung     | `a logisch und b`                       | `a&b`                 | Zahl               | Zahl               | Zahl        | `5 logisch und 2`                      | 0        |

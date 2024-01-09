@@ -23,12 +23,14 @@ var nameMap = map[string]map[string]string{
 		"type":        "Typ",
 		"var":         "Variablen",
 		"func":        "Funktionen",
+		"comb":        "Kombinationen",
 		"moduleEmpty": "Dieses Modul ist Leer",
 	},
 	"EN": {
 		"type":        "Type",
 		"var":         "variables",
 		"func":        "functions",
+		"comb":        "combinations",
 		"moduleEmpty": "This module is empty",
 	},
 }
@@ -62,7 +64,8 @@ func main() {
 	panicIfErr(clearDirectory(outputDirDe))
 
 	// get all files in directory
-	resp, err := http.Get("https://api.github.com/repos/DDP-Projekt/Kompilierer/contents/lib/stdlib/Duden/")
+	branch := "master"
+	resp, err := http.Get("https://api.github.com/repos/DDP-Projekt/Kompilierer/contents/lib/stdlib/Duden?ref=" + branch)
 	panicIfErr(err)
 	defer resp.Body.Close()
 
@@ -74,7 +77,7 @@ func main() {
 		outputPathDe := filepath.Join(outputDirDe, strings.Replace(entry.Name, "ddp", "md", 1))
 		outputPathEn := filepath.Join(outputDirEn, strings.Replace(entry.Name, "ddp", "md", 1))
 
-		resp, err := http.Get("https://raw.githubusercontent.com/DDP-Projekt/Kompilierer/master/" + entry.Path)
+		resp, err := http.Get("https://raw.githubusercontent.com/DDP-Projekt/Kompilierer/" + branch + "/" + entry.Path)
 		panicIfErr(err)
 		defer resp.Body.Close()
 		inputFile, err := io.ReadAll(resp.Body)
@@ -122,8 +125,9 @@ func MakeMdFiles(inputFile []byte, outputFilePath, lang string) {
 func writeMD(inputFile string, outputFile *os.File, publicDecls []ast.Declaration, lang string) {
 	funcBldr := &bytes.Buffer{}
 	varBldr := &bytes.Buffer{}
+	structBldr := &bytes.Buffer{}
 
-	hasVars, hasFuncs := false, false
+	hasStructs, hasVars, hasFuncs := false, false, false
 
 	for _, decl := range publicDecls {
 		switch decl := decl.(type) {
@@ -183,15 +187,54 @@ func writeMD(inputFile string, outputFile *os.File, publicDecls []ast.Declaratio
 			hasVars = true
 
 			fmt.Fprintf(varBldr, "## %s\n", decl.Name())
-			fmt.Fprintf(varBldr, "* %s: `%s`\n", nameMap[lang]["type"], decl.Type)
+			fmt.Fprintf(varBldr, "* %s: <code>%s</code>\n", nameMap[lang]["type"], decl.Type)
 			fmt.Fprintln(varBldr, "")
 		case *ast.StructDecl:
-			panic("TODO: implement struct decl")
+			hasStructs = true
+
+			fields := ""
+			for _, field := range decl.Fields {
+				switch field := field.(type) {
+				case *ast.VarDecl:
+					if field.Public() {
+						inputStr := strings.Split(inputFile, "\n")
+						declRange := field.GetRange()
+						declCode := inputStr[declRange.Start.Line-1][declRange.Start.Column-1 : declRange.End.Column]
+						fields += html.EscapeString(declCode) + "|"
+					}
+				default:
+				}
+			}
+			fields = strings.TrimRight(fields, "|")
+
+			descr := ""
+			if decl.Comment() != nil {
+				descr = strings.Replace(strings.Trim(decl.Comment().String(), "[] \r\n"), "\t", "", -1)
+				descr = html.EscapeString(descr)
+				descr = strings.ReplaceAll(descr, "\r", "")
+				descr = strings.ReplaceAll(descr, "\n", "<br>")
+				descr = strings.ReplaceAll(descr, "\"", "\\\"")
+			}
+
+			aliases := ""
+			for i, alias := range decl.Aliases {
+				aliases += strings.Trim(alias.Original.Literal, "\"\n")
+				if i+1 < len(decl.Aliases) {
+					aliases += "\\\""
+				}
+			}
+
+			fmt.Fprintf(structBldr, "{{< duden-combination name=\"%s\" desc=\"%s\" fields=\"%s\" aliases=\"%s\" >}}\n\n", // }}"
+				decl.Name(), descr, fields, aliases)
 		}
 	}
 
 	fileName := strings.Replace(filepath.Base(outputFile.Name()), ".md", "", 1)
 	fmt.Fprintf(outputFile, "+++\ntitle = \"%s\"\nweight = 1\ntype = \"article\"\n+++\n", fileName)
+	if hasStructs {
+		fmt.Fprintf(outputFile, "# Duden/%s %s\n", fileName, nameMap[lang]["comb"])
+		fmt.Fprintln(outputFile, structBldr)
+	}
 	if hasVars {
 		fmt.Fprintf(outputFile, "# Duden/%s %s\n", fileName, nameMap[lang]["var"])
 		fmt.Fprintln(outputFile, varBldr)

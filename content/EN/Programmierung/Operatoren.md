@@ -29,7 +29,7 @@ To make finding a specific operator easier for readers who already know a progra
 | Remainder       | `a modulo b`                            | `a % b`               | Zahl                | Zahl                | Zahl        | `16 modulo 12`                        | 4      |
 | Exponentiation  | `a hoch b`                              | `pow(a, b)`           | numeric             | numeric             | Kommazahl   | `2 hoch 8`                            | 256    |
 | Root            | `die a. Wurzel von b`                   | `pow(a, 1/b)`         | numeric             | numeric             | Kommazahl   | `die 2. Wurzel von 9`                 | 3      |
-| Logarithm       | `der Logarithmus mit der Basis a von b` | `log10(b) / log10(a)` | numeric             | numeric             | Kommazahl   | `der Logarithmus von 100 zur Basis 10`| 2      |
+| Logarithm       | `der Logarithmus von b zur Basis a` | `log10(b) / log10(a)` | numeric             | numeric             | Kommazahl   | `der Logarithmus von 100 zur Basis 10`| 2      |
 | Left Bit-Shift  | `a um b Bit nach links verschoben`      | `a << b`              | Zahl                | Zahl                | Zahl        | `7 um 3 Bit nach links verschoben`    | 56     |
 | Right Bit-Shift | `a um b Bit nach rechts verschoben`     | `a >> b`              | Zahl                | Zahl                | Zahl        | `70 um 2 Bit nach rechts verschoben`  | 17     |
 | AND gate        | `a logisch und b`                       | `a&b`                 | Zahl                | Zahl                | Zahl        | `5 logisch und 2`                     | 0      |

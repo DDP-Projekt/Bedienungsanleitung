@@ -7,13 +7,12 @@
 		{{ end }}
 		<div class="duden-obj-data">
 			<ul>
-				{{ with .Get "params" }}
-					<li>{{ i18n "params"}}: {{ . | safeHTML }}</li>
+				{{ with .Get "fields" }}
+					{{ $fields := split . "|"}}
+					{{ range $fields }}
+						<li><code>{{ . | htmlUnescape }}</code></li>
+					{{ end }}
 				{{ end }}
-				{{ with .Get "paramTypes" }}
-					<li>{{ i18n "paramType"}}: {{ . | safeHTML }}</li>
-				{{ end }}
-				<li>{{ i18n "returnType"}}: <code>{{ .Get "ret" }}</code></li>
 			</ul>
 	
 			<h3>{{ i18n "aliases" }}</h3>
@@ -27,13 +26,6 @@
 					<p>Keine Aliase definiert</p>
 				{{ end}}
 			</ol>
-	
-			<h3>{{ i18n "impl" }}</h3>
-			{{ if eq (.Get "extern") "false" }}
-				{{ (printf "```ddp\n%s\n```" (.Get "impl" | htmlUnescape )) | .Page.RenderString }}
-			{{ else }}
-				<p>{{ i18n "externImpl" }} <code>{{ .Get "impl" }}</code></p>
-			{{ end }}
 		</div>
 	</div>
 </details>

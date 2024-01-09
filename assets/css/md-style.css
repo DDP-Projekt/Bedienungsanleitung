@@ -76,25 +76,25 @@
 	vertical-align: inherit;
 }
 
-#artikel .duden-func {
+#artikel .duden-obj {
 	border-bottom: 1px solid #aaa;
 	padding: 0.5em;
 	padding-right: 0;
 	margin-bottom: 1rem;
 }
 
-#artikel .duden-func[open] {
+#artikel .duden-obj[open] {
 	border: none;
 }
 
-#artikel .duden-func-inner {
+#artikel .duden-obj-inner {
 	margin-left: 5px;
 	border-left: #aaa solid 1px;
 	border-bottom: 1px solid #aaa;
 	border-bottom-left-radius: 1rem;
 }
 
-#artikel .duden-func blockquote {
+#artikel .duden-obj blockquote {
 	white-space: pre;
 	margin: 0 0 0 -1px;
 	border-left: #aaa solid 1px;
@@ -104,7 +104,7 @@
 	text-wrap: wrap;
 }
 
-#artikel .duden-func-data {
+#artikel .duden-obj-data {
 	overflow-x: auto;
 	margin: 0 0 1rem 1rem
 }
