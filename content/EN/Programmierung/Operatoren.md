@@ -12,11 +12,12 @@ To make finding a specific operator easier for readers who already know a progra
 
 ## Unary operators
 
-| Function                  | Usage             | C equivalent | Type of operand   | return type | Example                 | Result   |
-|---------------------------|-------------------|--------------|-------------------|-------------|-------------------------|----------|
-| not gate                  | `logisch nicht a` | `~a`         | Zahl              | Zahl        | `logisch nicht 1`       | -2       |
-| list/Text/Character count | `die Länge von a` | -            | Liste, Text       | Zahl        | `Die Länge von "Hallo"` | 5        |
-| Byte Size                 | `die Größe von a` | `sizeof(a)`  | all               | Zahl        | `Die Größe von 1`       | 8        |
+| Function                  | Usage              | C equivalent | Type of operand   | return type | Example                 | Result   |
+|---------------------------|--------------------|--------------|-------------------|-------------|-------------------------|----------|
+| NOT gate                  | `logisch nicht a`  | `~a`         | Zahl              | Zahl        | `logisch nicht 1`       | -2       |
+| list/Text/Character count | `die Länge von a`  | -            | Liste, Text       | Zahl        | `Die Länge von "Hallo"` | 5        |
+| Byte Size                 | `die Größe von a`  | `sizeof(a)`  | all               | Zahl        | `Die Größe von 1`       | 8        |
+| Absolute value            | `der Betrag von a` | `abs(a)`     | numeric           | numeric     | `der Betrag von -5`     | 5        |
 
 ## Binary operators
 

@@ -13,11 +13,12 @@ in diesen und späteren Tabellen jeweils der C-Operator dabei.
 
 ## Unäre Operatoren
 
-| Funktion                              | Verwendung        | C Equivalent | Typ vom Operanden | Rückgabetyp | Beispiel                | Ergebnis |
-| ------------------------------------- | ----------------- | ------------ | ----------------- | ----------- | ----------------------- | -------- |
-| Logische NICHT verknüpfung            | `logisch nicht a` | `~a`         | Zahl              | Zahl        | `logisch nicht 1`       | -2       |
-| Listen/Text Element/Buchstaben Anzahl | `die Länge von a` | -            | Liste, Text       | Zahl        | `Die Länge von "Hallo"` | 5        |
-| Byte Größe                            | `die Größe von a` | `sizeof(a)`  | alles             | Zahl        | `Die Größe von 1`       | 8        |
+| Funktion                              | Verwendung         | C Equivalent | Typ vom Operanden | Rückgabetyp | Beispiel                | Ergebnis |
+| ------------------------------------- | ------------------ | ------------ | ----------------- | ----------- | ----------------------- | -------- |
+| Logische NICHT verknüpfung            | `logisch nicht a`  | `~a`         | Zahl              | Zahl        | `logisch nicht 1`       | -2       |
+| Listen/Text Element/Buchstaben Anzahl | `die Länge von a`  | -            | Liste, Text       | Zahl        | `Die Länge von "Hallo"` | 5        |
+| Byte Größe                            | `die Größe von a`  | `sizeof(a)`  | alles             | Zahl        | `Die Größe von 1`       | 8        |
+| Betrag                                | `der Betrag von a` | `abs(a)`     | numerisch         | numerisch   | `der Betrag von -5`     | 5        |
 
 ## Binäre Operatoren
 
