@@ -63,13 +63,13 @@ Vergleichsoperatoren haben alle ein "ist" am Ende um der Grammatik in jedem Kont
 
 # Listen und Text Operatoren
 
-| Funktion              | Verwendung                 | C Equivalent | Typ vom 1. Operanden | Typ vom 2. Operanden | Typ vom 3. Operanden | Rückgabetyp           | Beispiel                          | Ergebnis       |
-| --------------------- | -------------------------- | ------------ | -------------------- | -------------------- | -------------------- | --------------------- | --------------------------------- | -------------- |
-| Verkettung            | `a verkettet mit b`        | -            | Text/Liste/Buchstabe | Text/Liste/Buchstabe | -                    | Text/Liste            | `"Hallo" verkettet mit " Welt"`   | `"Hallo Welt"` |
-| Indizierung           | `a an der Stelle b`        | `a[b]`       | Text/Liste           | Zahl                 | -                    | Buchstabe/Element Typ | `"Hallo" an der Stelle 1`         | 'H'            |
-| `... von ... bis ...` | `a im Bereich von b bis c` | -            | Text/Liste           | Zahl                 | Zahl                 | Text/Liste            | `"Hallo Welt" von 1 bis 5`        | "Hallo"        |
-| `... ab dem ...`      | `a ab dem b. Element`      | -            | Text/Liste           | Zahl                 | -                    | Text/Liste            | `"Hallo Welt" ab dem 7. Element`  | "Welt"         |
-| `... bis zum ...`     | `a bis zum b. Element`     | -            | Text/Liste           | Zahl                 | -                    | Text/Liste            | `"Hallo Welt" bis zum 5. Element` | "Hallo"        |
+| Funktion              | Verwendung                 | C Equivalent | Typ vom 1. Operanden | Typ vom 2. Operanden | Typ vom 3. Operanden | Rückgabetyp           | Beispiel                              | Ergebnis       |
+| --------------------- | -------------------------- | ------------ | -------------------- | -------------------- | -------------------- | --------------------- | ------------------------------------- | -------------- |
+| Verkettung            | `a verkettet mit b`        | -            | Text/Liste/Buchstabe | Text/Liste/Buchstabe | -                    | Text/Liste            | `"Hallo" verkettet mit " Welt"`       | `"Hallo Welt"` |
+| Indizierung           | `a an der Stelle b`        | `a[b]`       | Text/Liste           | Zahl                 | -                    | Buchstabe/Element Typ | `"Hallo" an der Stelle 1`             | 'H'            |
+| Bereich               | `a im Bereich von b bis c` | -            | Text/Liste           | Zahl                 | Zahl                 | Text/Liste            | `"Hallo Welt" im Bereich von 1 bis 5` | "Hallo"        |
+| `... ab dem ...`      | `a ab dem b. Element`      | -            | Text/Liste           | Zahl                 | -                    | Text/Liste            | `"Hallo Welt" ab dem 7. Element`      | "Welt"         |
+| `... bis zum ...`     | `a bis zum b. Element`     | -            | Text/Liste           | Zahl                 | -                    | Text/Liste            | `"Hallo Welt" bis zum 5. Element`     | "Hallo"        |
 
 ## Bemerkungen
 

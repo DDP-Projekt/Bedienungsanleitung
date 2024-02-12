@@ -41,7 +41,7 @@ To make finding a specific operator easier for readers who already know a progra
 
 With the help of Boolean operators, complex conditions can be expressed and summarized and for example used for branches or loops.
 
-| operator | Description | C equivalent | Example | Result |
+| Operator | Description | C equivalent | Example | Result |
 | -------- | ----------- | ------------ | ------- | ------ |
 | und      | True if both arguments are true. | `true && false` | `wahr und wahr`<br>`wahr und falsch`<br>`falsch und wahr`<br>`falsch und falsch` | `wahr`<br>`falsch`<br>`falsch`<br>`falsch` |
 | oder     | True if either argument is true. | `true \|\| false` | `wahr oder wahr`<br>`wahr oder falsch`<br>`falsch oder wahr`<br>`falsch oder falsch` | `wahr`<br>`wahr`<br>`wahr`<br>`falsch` |
@@ -49,7 +49,7 @@ With the help of Boolean operators, complex conditions can be expressed and summ
 
 # Comparison operators
 
-| operator          | Description                                                               | C equivalent | Example                                          | Result |
+| Operator          | Description                                                               | C equivalent | Example                                          | Result |
 |-------------------|---------------------------------------------------------------------------|-----------|----------------------------------------------------------------------------------------------|------------------------------|
 | gleich            | True if both arguments have the same value.                               | `1 == 1`  | `1 gleich 1 ist`<br>`1 gleich 2 ist`                                                         | `wahr`<br>`falsch`           |
 | ungleich          | True if the two arguments have different values.                          | `1 != 1`  | `1 ungleich 1 ist`<br>`1 ungleich 2 ist`                                                     | `wahr`<br>`falsch`           |
@@ -62,11 +62,13 @@ Relational operators all have an "ist" at the end to conform to the grammar in a
 
 # List and text operators
 
-| function | Usage | C equivalent | Type of 1st operand | Type of 2nd operand | Type of 3rd operand | return type | Example | Result |
-|---------------------------|-----------------------------------------|-----------------------|--------------------|--------------------|----------------|---------------------------------------|----------|--------|
-| Concationation            | `a verkettet mit b`                     | -               | Text/Liste/Buchstabe | Text/Liste/Buchstabe |   -  | Text/Liste                 | `"Hallo" verkettet mit " Welt"`     | `"Hallo Welt"`    |
-| Indexing                  | `a an der Stelle b`                     | `a[b]`          | Text/Liste           | Zahl                 | -    | Buchstabe/Element Typ      | `"Hallo" an der Stelle 1`           | 'H'   |
-| `... von ... bis ...`     | `a von b bis c`                         | -               | Text/Liste           | Zahl                 | Zahl |  Text/Liste                | `"Hallo Welt" von 1 bis 5`          | "Hallo"   |
+| Function          | Usage                      | C equivalent | Type of 1st operand  | Type of 2nd operand  | Type of 3rd operand | return type           | Example                               | Result         |
+|-------------------|----------------------------|--------------|----------------------|----------------------|---------------------|-----------------------|---------------------------------------|----------------|
+| Concationation    | `a verkettet mit b`        | -            | Text/Liste/Buchstabe | Text/Liste/Buchstabe | -                   | Text/Liste            | `"Hallo" verkettet mit " Welt"`       | `"Hallo Welt"` |
+| Indexing          | `a an der Stelle b`        | `a[b]`       | Text/Liste           | Zahl                 | -                   | Buchstabe/Element Typ | `"Hallo" an der Stelle 1`             | 'H'            |
+| Range             | `a im Bereich von b bis c` | -            | Text/Liste           | Zahl                 | Zahl                | Text/Liste            | `"Hallo Welt" im Bereich von 1 bis 5` | "Hallo"        |
+| `... ab dem ...`  | `a ab dem b. Element`      | -            | Text/Liste           | Zahl                 | -                   | Text/Liste            | `"Hallo Welt" ab dem 7. Element`      | "Welt"         |
+| `... bis zum ...` | `a bis zum b. Element`     | -            | Text/Liste           | Zahl                 | -                   | Text/Liste            | `"Hallo Welt" bis zum 5. Element`     | "Hallo"        |
 
 ## Remarks
 
@@ -108,26 +110,28 @@ Powers take precedence over multiplication and division.
 With the mathematical operators, DDP largely adheres to the mathematical order.
 Here is a table with all operators and their prioritization (high priority operators above):
 
-| rank | operator |
-|------|--------------------------------------------------|
-| 1    | function call |
-| 2    | brackets |
-| 3    | Type Conversions |
-| 4    | Indexing, `from ... to` |
-| 5    | literals, constants |
-| 6    | Exponentiation, square root, logarithm |
-| 7    | negation, |
-| 8    | Abs, Size, Length, Logical/Boolean not |
-| 9    | multiplication, division, remainder, |
-| 10   | Addition, subtraction, concatenation, |
-| 11   | Bit Shift |
-| 12   | Size comparison (smaller, larger, ect.) |
-| 13   | Equality (equal and unequal) |
-| 14   | Logical AND operation |
-| 15   | Logical XOR operation |
-| 16   | Logical OR operation |
-| 17   | Boolean AND |
-| 18   | Boolean OR |
+| Rank | Operator                                   |
+| ---- | ------------------------------------------ |
+| 1    | Function call                              |
+| 2    | Literals, Constants                        |
+| 3    | Grouping                                   |
+| 4    | Type conversions                           |
+| 5    | Field access on Combinations               |
+| 6    | Indexing                                   |
+| 7    | `von ... bis`, `ab ... dem`, `bis ... zum` |
+| 8    | Exponentiation, Root, Logarithm            |
+| 9    | Negation,                                  |
+| 10   | Absolute Value, Size, Length, NOT Gate     |
+| 11   | Multiplication, Division, Modulo           |
+| 12   | Addition, Subtraction, Concatination       |
+| 13   | Bit-Shifting                               |
+| 14   | Comparison (`kleiner`, `größer`, ect.)     |
+| 15   | Equivalence (`gleich` und `ungleich`)      |
+| 16   | Logical AND Gate                           |
+| 17   | Logical XOR Gate                           |
+| 18   | Logical OR Gate                            |
+| 19   | Boolean AND                                |
+| 20   | Boolean OR                                 |
 
 ## Operator prioritization example
 
