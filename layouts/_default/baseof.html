@@ -8,8 +8,29 @@
 
 			{{ block "main" . -}}{{ end }}
 			<div id="artikel-navigation">
-				<div onclick="goToSurroundingLink(-1)" class="btn" title="{{ T "prev" }}">&lt;</div>
-				<div onclick="goToSurroundingLink(1)" class="btn" title="{{ T "next" }}">&gt;</div>
+				{{ $next := .CurrentSection.Pages.Prev . }}
+				{{ $prev := .CurrentSection.Pages.Next . }}
+
+				{{ if or .IsSection (.Eq (.GetPage "/")) }}
+					{{ $next = index .Pages 0 }}
+				{{ else if .Eq (index ((.GetPage "/").Pages | last 1) 0) }}
+					{{ $next = .GetPage "/" }}
+				{{ end }}
+				{{ if eq $next nil }}
+					{{ with .CurrentSection.Parent }}
+						{{ with .Pages.Prev $.CurrentSection }}
+							{{ $next = . }}
+						{{ else }}
+							{{ $next = .Parent.Pages.Prev . }}
+						{{ end }}
+					{{ end }}
+				{{ end }}
+
+				{{ if .Eq (index .CurrentSection.Pages 0) }}
+					{{ $prev = .CurrentSection }}
+				{{ end }}
+				<a href="{{ with $prev }} {{ .RelPermalink }} {{ end }}" class="btn" title="{{ T "prev" }}">&lt;</a>
+				<a href="{{ with $next }} {{ .RelPermalink }} {{ end }}" class="btn" title="{{ T "next" }}">&gt;</div>
 			</div>
 		</main>
 	</body>

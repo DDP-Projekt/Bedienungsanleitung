@@ -215,7 +215,7 @@ a:hover {
 	align-items: center;
 }
 
-#artikel-navigation div {
+#artikel-navigation a {
 	width: 50%;
 	height: 100%;
 	display: flex;
@@ -226,7 +226,7 @@ a:hover {
 	transition: background-color 200ms;
 }
 
-#artikel-navigation div:hover {
+#artikel-navigation a:hover {
 	background-color: var(--article-nav-hover-bg-color)
 }
 
