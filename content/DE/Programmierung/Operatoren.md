@@ -50,14 +50,15 @@ Mithilfe von Bool'schen Operatoren können komplexe Bedingungen ausgedrückt und
 
 # Vergleichsoperatoren
 
-| Operator          | Beschreibung                                                                          | C Equivalent | Beispiel                                                                                     | Ergebnis                     |
-| ----------------- | ------------------------------------------------------------------------------------- | ------------ | -------------------------------------------------------------------------------------------- | ---------------------------- |
-| gleich            | Wahr, wenn beide Argumente den gleichen Wert haben.                                   | `1 == 1`     | `1 gleich 1 ist`<br>`1 gleich 2 ist`                                                         | `wahr`<br>`falsch`           |
-| ungleich          | Wahr, wenn die Beiden Argumente verschiedene Werte haben.                             | `1 != 1`     | `1 ungleich 1 ist`<br>`1 ungleich 2 ist`                                                     | `wahr`<br>`falsch`           |
-| kleiner als       | Wahr, wenn das Linke Argument einen kleineren Wert als das Rechte hat.                | `5 < 10`     | `5 kleiner als 10 ist`<br>`30 kleiner als 15 ist`                                            | `wahr`<br>`falsch`           |
-| größer als        | Wahr, wenn das Linke Argument einen größeren Wert als das Rechte hat.                 | `7 > 3`      | `7 größer als 3 ist`<br>`5 größer als 8 ist`                                                 | `wahr`<br>`falsch`           |
-| kleiner als, oder | Wahr, wenn das Linke Argument einen kleineren oder denselben Wert wie das Rechte hat. | `5 <= 10`    | `5 kleiner als, oder 10 ist`<br>`30 kleiner als, oder 15 ist`<br>`5 kleiner als, oder 5 ist` | `wahr`<br>`falsch`<br>`wahr` |
-| größer als, oder  | Wahr, wenn das Linke Argument einen größeren oder denselben Wert wie das Rechte hat.  | `7 >= 3`     | `7 größer als, oder 3 ist`<br>`5 größer als, oder 8 ist`<br>`5 größer als, oder 5 ist`       | `wahr`<br>`falsch`<br>`wahr` |
+| Operator          | Beschreibung                                                                          | C Equivalent           | Beispiel                                                                                     | Ergebnis                     |
+| ----------------- | ------------------------------------------------------------------------------------- | ---------------------- | -------------------------------------------------------------------------------------------- | ---------------------------- |
+| gleich            | Wahr, wenn beide Argumente den gleichen Wert haben.                                   | `1 == 1`               | `1 gleich 1 ist`<br>`1 gleich 2 ist`                                                         | `wahr`<br>`falsch`           |
+| ungleich          | Wahr, wenn die Beiden Argumente verschiedene Werte haben.                             | `1 != 1`               | `1 ungleich 1 ist`<br>`1 ungleich 2 ist`                                                     | `wahr`<br>`falsch`           |
+| kleiner als       | Wahr, wenn das Linke Argument einen kleineren Wert als das Rechte hat.                | `5 < 10`               | `5 kleiner als 10 ist`<br>`30 kleiner als 15 ist`                                            | `wahr`<br>`falsch`           |
+| größer als        | Wahr, wenn das Linke Argument einen größeren Wert als das Rechte hat.                 | `7 > 3`                | `7 größer als 3 ist`<br>`5 größer als 8 ist`                                                 | `wahr`<br>`falsch`           |
+| kleiner als, oder | Wahr, wenn das Linke Argument einen kleineren oder denselben Wert wie das Rechte hat. | `5 <= 10`              | `5 kleiner als, oder 10 ist`<br>`30 kleiner als, oder 15 ist`<br>`5 kleiner als, oder 5 ist` | `wahr`<br>`falsch`<br>`wahr` |
+| größer als, oder  | Wahr, wenn das Linke Argument einen größeren oder denselben Wert wie das Rechte hat.  | `7 >= 3`               | `7 größer als, oder 3 ist`<br>`5 größer als, oder 8 ist`<br>`5 größer als, oder 5 ist`       | `wahr`<br>`falsch`<br>`wahr` |
+| zwischen          | Wahr, wenn das Linke Argument zwischen den beiden Rechten liegt.                      | `(4 < 5 && 4 > 3)`     | `4 zwischen 3 und 5 ist`                                                                     | `wahr`<br>`falsch`           |
 
 Vergleichsoperatoren haben alle ein "ist" am Ende um der Grammatik in jedem Kontext gerecht zu werden.
 
