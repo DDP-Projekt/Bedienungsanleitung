@@ -6,11 +6,11 @@ type = "article"
 
 # Kombinationen
 
-Verbundtypen, auch Strukturen oder Records gennant, sind einer der Wichtigesten Datentypen der meisten Programmiersprachen
+Verbundtypen, auch Strukturen oder Records gennant, sind einer der Wichtigesten Datentypen der meisten Programmiersprachen.
 Sie ermöglichen es zusammengesetzte Datentypen zu definieren und so auch komplexere Daten modellieren zu können.
 In DDP nennen wir sie Kombinationen.
 
-Ähnlich wie bei Funktionen steht bei Kombinationen in DDP auch die Lesbarkeit im Vordergrund, allerdings nicht ganz so extrem, da sie auch Nutzbar sein sollen
+Ähnlich wie bei Funktionen steht bei Kombinationen in DDP auch die Lesbarkeit im Vordergrund, allerdings nicht ganz so extrem, da sie auch Nutzbar sein sollen.
 
 ## Deklaration
 
