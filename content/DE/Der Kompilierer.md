@@ -15,10 +15,66 @@ KDDP ist ein Konsolen Programm, das über eine Befehlszeile (wie Powershell, bas
 Die Nutzung des kddp Befehls sieht allgemein so aus:
 
 ```terminal
-$ kddp <Befehl> <Eingabedatei> <Optionen>
+$ kddp <Befehl> [Optionen] [Argumente]
 ```
 
+wobei [Argumente] meistens eine Eingabedatei ist, die vom Befehl verarbeitet wird.
 Nicht alle Befehle brauchen eine Eingabedatei, und die möglichen Optionen sind immer optional.
+
+## Hilfe
+
+Um alle möglichen Befehle und Optionen zu sehen, kann kddp selbst benutzt werden:
+
+```terminal
+$ kddp
+Der Kompilierer der deutschen Programmiersprache (DDP)
+
+Nutzung:
+  kddp <Befehl> [Optionen] [Argumente]
+
+Verfügbare Befehle:
+  kompiliere     Kompiliert eine .ddp Datei
+  parse          Parst eine .ddp Datei in einen Abstrakten Syntaxbaum
+  starte         Kompiliert und führt die angegebene .ddp Datei aus
+  update         Aktualisiert kddp
+  version        Zeigt Versionsinformationen des Kompilierers
+
+Optionen:
+  -h, --hilfe       Zeigt Informationen zum Befehl
+  -v, --version     Zeigt die Version des Kompilierers
+  -w, --wortreich   Gibt wortreiche Informationen aus
+
+Probiere "kddp hilfe <Befehl>" oder "kddp <Befehl> [-h | --hilfe]" für mehr Informationen zu einem Befehl.
+```
+
+Beispiel hilfe für den kompiliere Befehl:
+
+```terminal
+$ kddp hilfe kompiliere
+Kompiliert eine .ddp Datei in eine ausführbare, llvm oder objekt Datei.
+
+Nutzung:
+  kddp kompiliere [-o Ausgabe-Datei [--main main.o] [--gcc-flags GCC-Flags] [--extern-gcc-flags Externe-GCC-Flags] [--nodeletes] [--verbose] [--link-modules] [--link-list-defs] [--gcc-executable Pfad-zu-GCC>] <Datei>
+
+Optionen:
+  -o, --ausgabe string                Optionaler Pfad der Ausgabedatei (.exe, .ll, .o, .obj, .s, .asm).
+      --externe-gcc-optionen string   Benutzerdefinierte Optionen, die gcc für jede externe .c Datei übergeben werden
+      --gcc-executable string         Pfad zur gcc executable, die genutzt werden soll (default "gcc")
+      --gcc-optionen string           Benutzerdefinierte Optionen, die gcc übergeben werden
+  -h, --hilfe                         Zeigt Informationen zum Befehl
+      --list-defs-linken              Ob die eingebauten Listen Definitionen in das Hauptmodul gelinkt werden sollen (default true)
+      --main string                   Optionaler Pfad zur main.o Datei
+      --module-linken                 Ob alle Module in das Hauptmodul gelinkt werden sollen (default true)
+      --nichts-loeschen               Keine temporären Dateien löschen
+  -O, --optimierungs-stufe uint       Menge und Art der Optimierungen, die angewandt werden (default 1)
+
+Globale Optionen:
+  -w, --wortreich   Gibt wortreiche Informationen aus
+```
+
+## Detailierte Erklärung zu einigen Optionen
+
+<to-do></to-do>
 
 Hier ist eine Liste aller Befehle und Optionen mit einer kurzen Erklärung.
 Details folgen unten.

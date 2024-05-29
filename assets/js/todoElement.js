@@ -3,7 +3,6 @@ class TODOElement extends HTMLElement {
 		// Always call super first in constructor
 		super();
 
-
 		this.attachShadow({mode: 'open'});
 
 		const div = document.createElement('div');

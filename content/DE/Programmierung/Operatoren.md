@@ -13,12 +13,12 @@ in diesen und späteren Tabellen jeweils der C-Operator dabei.
 
 ## Unäre Operatoren
 
-| Funktion                              | Verwendung         | C Equivalent | Typ vom Operanden | Rückgabetyp | Beispiel                | Ergebnis |
-| ------------------------------------- | ------------------ | ------------ | ----------------- | ----------- | ----------------------- | -------- |
-| Logische NICHT verknüpfung            | `logisch nicht a`  | `~a`         | Zahl              | Zahl        | `logisch nicht 1`       | -2       |
-| Listen/Text Element/Buchstaben Anzahl | `die Länge von a`  | -            | Liste, Text       | Zahl        | `Die Länge von "Hallo"` | 5        |
-| Byte Größe                            | `die Größe von a`  | `sizeof(a)`  | alles             | Zahl        | `Die Größe von 1`       | 8        |
-| Betrag                                | `der Betrag von a` | `abs(a)`     | numerisch         | numerisch   | `der Betrag von -5`     | 5        |
+| Funktion                              | Verwendung                         | C Equivalent | Typ vom Operanden | Rückgabetyp | Beispiel                   | Ergebnis |
+| ------------------------------------- | ---------------------------------- | ------------ | ----------------- | ----------- | -------------------------- | -------- |
+| Logische NICHT verknüpfung            | `logisch nicht a`                  | `~a`         | Zahl              | Zahl        | `logisch nicht 1`          | -2       |
+| Listen/Text Element/Buchstaben Anzahl | `die Länge von a`                  | -            | Liste, Text       | Zahl        | `Die Länge von "Hallo"`    | 5        |
+| Byte Größe                            | `die Größe einem/einer <Typname>`  | `sizeof(a)`  | Typename          | Zahl        | `Die Größe von einer Zahl` | 8        |
+| Betrag                                | `der Betrag von a`                 | `abs(a)`     | numerisch         | numerisch   | `der Betrag von -5`        | 5        |
 
 ## Binäre Operatoren
 
@@ -31,7 +31,7 @@ in diesen und späteren Tabellen jeweils der C-Operator dabei.
 | Rest                         | `a modulo b`                            | `a % b`               | Zahl               | Zahl               | Zahl        | `16 modulo 12`                         | 4        |
 | Potenzieren                  | `a hoch b`                              | `pow(a, b)`           | numerisch          | numerisch          | Kommazahl   | `2 hoch 8`                             | 256,0    |
 | Wurzelziehen                 | `die a. Wurzel von b`                   | `pow(a, 1/b)`         | numerisch          | numerisch          | Kommazahl   | `die 2. Wurzel von 9`                  | 3,0      |
-| Logarithmus                  | `der Logarithmus von b zur Basis a` | `log10(b) / log10(a)` | numerisch          | numerisch          | Kommazahl   | `der Logarithmus von 100 zur Basis 10` | 2,0      |
+| Logarithmus                  | `der Logarithmus von b zur Basis a`     | `log10(b) / log10(a)` | numerisch          | numerisch          | Kommazahl   | `der Logarithmus von 100 zur Basis 10` | 2,0      |
 | Bit-Verschiebung nach links  | `a um b Bit nach links verschoben`      | `a << b`              | Zahl               | Zahl               | Zahl        | `7 um 3 Bit nach links verschoben`     | 56       |
 | Bit-Verschiebung nach rechts | `a um b Bit nach rechts verschoben`     | `a >> b`              | Zahl               | Zahl               | Zahl        | `70 um 2 Bit nach rechts verschoben`   | 17       |
 | Logische UND verknüpfung     | `a logisch und b`                       | `a&b`                 | Zahl               | Zahl               | Zahl        | `5 logisch und 2`                      | 0        |
@@ -50,14 +50,15 @@ Mithilfe von Bool'schen Operatoren können komplexe Bedingungen ausgedrückt und
 
 # Vergleichsoperatoren
 
-| Operator          | Beschreibung                                                                          | C Equivalent | Beispiel                                                                                     | Ergebnis                     |
-| ----------------- | ------------------------------------------------------------------------------------- | ------------ | -------------------------------------------------------------------------------------------- | ---------------------------- |
-| gleich            | Wahr, wenn beide Argumente den gleichen Wert haben.                                   | `1 == 1`     | `1 gleich 1 ist`<br>`1 gleich 2 ist`                                                         | `wahr`<br>`falsch`           |
-| ungleich          | Wahr, wenn die Beiden Argumente verschiedene Werte haben.                             | `1 != 1`     | `1 ungleich 1 ist`<br>`1 ungleich 2 ist`                                                     | `wahr`<br>`falsch`           |
-| kleiner als       | Wahr, wenn das Linke Argument einen kleineren Wert als das Rechte hat.                | `5 < 10`     | `5 kleiner als 10 ist`<br>`30 kleiner als 15 ist`                                            | `wahr`<br>`falsch`           |
-| größer als        | Wahr, wenn das Linke Argument einen größeren Wert als das Rechte hat.                 | `7 > 3`      | `7 größer als 3 ist`<br>`5 größer als 8 ist`                                                 | `wahr`<br>`falsch`           |
-| kleiner als, oder | Wahr, wenn das Linke Argument einen kleineren oder denselben Wert wie das Rechte hat. | `5 <= 10`    | `5 kleiner als, oder 10 ist`<br>`30 kleiner als, oder 15 ist`<br>`5 kleiner als, oder 5 ist` | `wahr`<br>`falsch`<br>`wahr` |
-| größer als, oder  | Wahr, wenn das Linke Argument einen größeren oder denselben Wert wie das Rechte hat.  | `7 >= 3`     | `7 größer als, oder 3 ist`<br>`5 größer als, oder 8 ist`<br>`5 größer als, oder 5 ist`       | `wahr`<br>`falsch`<br>`wahr` |
+| Operator          | Beschreibung                                                                          | C Equivalent           | Beispiel                                                                                     | Ergebnis                     |
+| ----------------- | ------------------------------------------------------------------------------------- | ---------------------- | -------------------------------------------------------------------------------------------- | ---------------------------- |
+| gleich            | Wahr, wenn beide Argumente den gleichen Wert haben.                                   | `1 == 1`               | `1 gleich 1 ist`<br>`1 gleich 2 ist`                                                         | `wahr`<br>`falsch`           |
+| ungleich          | Wahr, wenn die Beiden Argumente verschiedene Werte haben.                             | `1 != 1`               | `1 ungleich 1 ist`<br>`1 ungleich 2 ist`                                                     | `wahr`<br>`falsch`           |
+| kleiner als       | Wahr, wenn das Linke Argument einen kleineren Wert als das Rechte hat.                | `5 < 10`               | `5 kleiner als 10 ist`<br>`30 kleiner als 15 ist`                                            | `wahr`<br>`falsch`           |
+| größer als        | Wahr, wenn das Linke Argument einen größeren Wert als das Rechte hat.                 | `7 > 3`                | `7 größer als 3 ist`<br>`5 größer als 8 ist`                                                 | `wahr`<br>`falsch`           |
+| kleiner als, oder | Wahr, wenn das Linke Argument einen kleineren oder denselben Wert wie das Rechte hat. | `5 <= 10`              | `5 kleiner als, oder 10 ist`<br>`30 kleiner als, oder 15 ist`<br>`5 kleiner als, oder 5 ist` | `wahr`<br>`falsch`<br>`wahr` |
+| größer als, oder  | Wahr, wenn das Linke Argument einen größeren oder denselben Wert wie das Rechte hat.  | `7 >= 3`               | `7 größer als, oder 3 ist`<br>`5 größer als, oder 8 ist`<br>`5 größer als, oder 5 ist`       | `wahr`<br>`falsch`<br>`wahr` |
+| zwischen          | Wahr, wenn das Linke Argument zwischen den beiden Rechten liegt.                      | `(4 < 5 && 4 > 3)`     | `4 zwischen 3 und 5 ist`                                                                     | `wahr`<br>`falsch`           |
 
 Vergleichsoperatoren haben alle ein "ist" am Ende um der Grammatik in jedem Kontext gerecht zu werden.
 

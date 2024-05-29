@@ -65,6 +65,10 @@ Leere Listen können so erstellt werden: `eine[r] leere[n] (Typname) Liste`.
 
 Listen mit einem einzigen Element können auch einfach durch `(Wert) als (Typname)` erstellt werden.
 
+Es gibt auch noch einen weiteren Sonderfall: Listen können bei der Variablen Deklaration auch mit der `Die (Typname) Liste (Variablenname) ist <Zahl> Mal <Wert>` Syntax erstellt werden.
+Dabei wird die Liste mit dem Wert initialisiert, der so oft in der Liste vorkommt, wie die Zahl angibt.
+Das ist besonders nützlich um relativ große Listen mit einem Standardwert zu erstellen, da bei dieser Syntax nur ein Mal der ganze Speicher allokiert wird, anstatt für jedes Element einzeln.
+
 ### Beispiele
 ```ddp
 Die Zahlen Liste z ist eine Liste, die aus 1, 2, 3 besteht.

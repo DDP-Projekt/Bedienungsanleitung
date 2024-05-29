@@ -1,20 +1,11 @@
 'use strict'
 
 customElements.define('to-do', TODOElement);
-let sidebarHidden = false;
 const sidebar = document.getElementById("seitenleiste");
+const burger = document.getElementById("hamburger");
 
-closeNav(); // automatically close nav on mobile
-
-function openNav() {
-	// show sidebar
-	sidebarHidden = false;
-
-	sidebar.classList.toggle('opened', true);
-
-	const burger = document.getElementById("hamburger");
-	burger.classList.toggle('opened', true);
-}
+// automatically close nav on mobile
+closeNav();
 
 function closeNav() {
 	// only close nav if on mobile
@@ -23,21 +14,13 @@ function closeNav() {
 	}
 
 	// hide sidebar
-	sidebarHidden = true;
-
 	sidebar.classList.toggle('opened', false);
-
-	const burger = document.getElementById("hamburger");
 	burger.classList.toggle('opened', false);
 }
 
 function toggleNav() {
-	if (sidebarHidden) {
-		openNav();
-	}
-	else {
-		closeNav();
-	}
+	sidebar.classList.toggle('opened');
+	burger.classList.toggle('opened');
 }
 
 // -1 = prev, 1 = next
