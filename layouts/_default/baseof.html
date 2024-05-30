@@ -8,29 +8,45 @@
 
 			{{ block "main" . -}}{{ end }}
 			<div id="artikel-navigation">
-				{{ $next := .CurrentSection.Pages.Prev . }}
-				{{ $prev := .CurrentSection.Pages.Next . }}
+				<!-- Find next and previous page -->
 
-				{{ if or .IsSection (.Eq (.GetPage "/")) }}
+				{{ $root := .GetPage "/" }}
+				
+				<!-- Next -->
+				{{ $next := .CurrentSection.Pages.Prev . }}
+				<!-- Section -> Child -->
+				{{ if or .IsSection (.Eq $root) }}
 					{{ $next = index .Pages 0 }}
-				{{ else if .Eq (index ((.GetPage "/").Pages | last 1) 0) }}
-					{{ $next = .GetPage "/" }}
 				{{ end }}
 				{{ if eq $next nil }}
 					{{ with .CurrentSection.Parent }}
+						<!-- Beispiele -> Kombinationen -->
 						{{ with .Pages.Prev $.CurrentSection }}
 							{{ $next = . }}
+						<!-- Zufall -> Beispielprogramme -->
 						{{ else }}
 							{{ $next = .Parent.Pages.Prev . }}
 						{{ end }}
 					{{ end }}
 				{{ end }}
 
+				<!-- Previous -->
+				{{ $prev := .CurrentSection.Pages.Next . }}
+				<!-- Funktionen -> Verzweigungen -->
+				{{ if .IsSection }}
+					{{ $prev = .Parent.Pages.Next . }}
+				{{ end }}
+				
+				<!-- Datentypen -> Programmierung -->
 				{{ if .Eq (index .CurrentSection.Pages 0) }}
 					{{ $prev = .CurrentSection }}
+				<!-- Kombinationen -> Beispiele -->
+				{{ else if and $prev $prev.IsSection }}
+					{{ $prev = index ($prev.Pages | last 1) 0 }}
 				{{ end }}
-				<a href="{{ with $prev }} {{ .RelPermalink }} {{ end }}" class="btn" title="{{ T "prev" }}">&lt;</a>
-				<a href="{{ with $next }} {{ .RelPermalink }} {{ end }}" class="btn" title="{{ T "next" }}">&gt;</div>
+				
+				<a href="{{ with or $prev $root }} {{ .RelPermalink }} {{ end }} " class="btn" title="{{ T "prev" }}">&lt;</a>
+				<a href="{{ with or $next $root }} {{ .RelPermalink }} {{ end }}" class="btn" title="{{ T "next" }}">&gt;</a>
 			</div>
 		</main>
 	</body>
