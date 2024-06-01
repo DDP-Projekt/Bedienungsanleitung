@@ -6,13 +6,13 @@
 
 	<ol id="artikel-links">
 		{{- define "links" -}}
-			{{- range .Pages -}}
+			{{- range .page.Pages -}}
 				{{- if .IsSection -}}
 					<li>
-						<details id="Section-{{ .Title }}">
+						<details id="Section-{{ .Title }}" {{ if (in $.ancestors .) }} open {{ end }}>
 							<summary><a href="{{ .RelPermalink }}">{{ .Title }}</a></summary>
 							<ol>
-								{{- template "links" . -}}
+								{{- template "links" (dict "page" . "ancestors" $.ancestors) -}}
 							</ol>
 						</details>
 					</li>
@@ -22,7 +22,7 @@
 			{{- end -}}
 		{{- end -}}
 
-		{{- template "links" (.GetPage "") -}}
+		{{- template "links" (dict "page" (.GetPage "") "ancestors" .Ancestors) -}}
 		<script>
 			const details = document.querySelectorAll('#artikel-links details');
 			for (const detail of details) {
