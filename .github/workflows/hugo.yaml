@@ -43,8 +43,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4.1.6
         with:
-          submodules: recursive
-          fetch-depth: 0
+          fetch-depth: 1
       - name: Generate stdlib articles
         run: go run ./gen
       - name: Setup Pages
