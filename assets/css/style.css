@@ -1,14 +1,6 @@
 :root {
 	--sidebar-size: 250px;
 	--content-size: calc(100% - var(--sidebar-size));
-	--de-underline-flag-url: url("/Bedienungsanleitung/img/de-flagge.png");
-}
-
-/* fonts */
-@font-face {
-	font-family: 'Trump Bold';
-	src: url('/Bedienungsanleitung/fonts/FetteTrumpDeutsch.ttf');
-	font-display: swap;
 }
 
 @font-face {
@@ -152,46 +144,15 @@ a:hover {
 }
 
 #kopf {
-	font-family: 'Trump Bold', serif;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
 
-#kopf h1 {
-	font-size: min(2em, 4vw);
-	margin-bottom: 0;
-	line-height: 1;
-	background: bottom var(--de-underline-flag-url) no-repeat;
-	background-size: 100% 2px;
-	padding-bottom: 2px;
-
-	/* um den unterstrich bei buchstaben, die drüber gehen würden abzubrechen */
-	text-shadow:
-		2px 2px var(--bg-color),
-		2px -2px var(--bg-color),
-		-2px 2px var(--bg-color),
-		-2px -2px var(--bg-color);
-}
-
-/* "Bedienungsanleitung" */
-#untertitel {
-	font-size: min(1em, 2.5vw);
-	display: flex;
-	align-items: center;
-}
-
-/* dünne linien neben dem Untertitel */
-.linie {
-	width: 3vmin;
-	height: 1px;
-	border: none;
-	margin: 0.5em;
-	background-color: rgba(250, 235, 215, 0.5);
-}
-
-#kopf p {
-	margin: 5px 0 5px 0;
+#kopf #titel {
+	width: clamp(310px, 60vw, 550px);
+	padding-top: 1rem;
+	padding-bottom: 5px;
 }
 
 #kopf #toggles * {

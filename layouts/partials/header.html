@@ -1,10 +1,9 @@
 <header id="kopf">
-	<h1><a href="https://ddp.le0n.dev">Die Deutsche Programmiersprache</a></h1>
-	<div id="untertitel">
-		<hr class="linie">
-		<p>Bedienungsanleitung</p>
-		<hr class="linie">
-	</div>
+	<a href="https://ddp.le0n.dev"><img src="img/title.svg" alt="titel" id="titel"/></a>
+	<script>
+		let isDark = document.querySelector('#dark').media === 'all';	
+		document.querySelector('#titel').src = !isDark ? 'img/title-dark.svg' : 'img/title.svg';
+	</script>
 	<div id="toggles">
 		{{- if eq .Language.Lang "de" }} 
 			<a href="{{ (index .Translations 0).Permalink}}"><img id="sprach-toggle" alt="sprach-toggle" src="img/en.svg" title="to German site"></a>
