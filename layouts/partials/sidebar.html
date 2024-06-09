@@ -1,41 +1,43 @@
 <span id="hamburger" class="btn" onclick="toggleNav()">≡</span>
 <nav id="seitenleiste">
-	<h2 id="überschrift">{{ T "toc" }}</h2>
+	<div style="margin: 10px;">
+		<h2 id="überschrift">{{ T "toc" }}</h2>
 
-	<a href="/Bedienungsanleitung">Die Deutsche<br>Programmiersprache</a>
+		<a href="/Bedienungsanleitung">Die Deutsche<br>Programmiersprache</a>
 
-	<ol id="artikel-links">
-		{{- define "links" -}}
-			{{- range .page.Pages -}}
-				{{- if .IsSection -}}
-					<li>
-						<details id="Section-{{ .Title }}" {{ if (in $.ancestors .) }} open {{ end }}>
-							<summary><a href="{{ .RelPermalink }}">{{ .Title }}</a></summary>
-							<ol>
-								{{- template "links" (dict "page" . "ancestors" $.ancestors) -}}
-							</ol>
-						</details>
-					</li>
-				{{- else -}}
-					<li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+		<ol id="artikel-links">
+			{{- define "links" -}}
+				{{- range .page.Pages -}}
+					{{- if .IsSection -}}
+						<li>
+							<details id="Section-{{ .Title }}" {{ if (in $.ancestors .) }} open {{ end }}>
+								<summary><a href="{{ .RelPermalink }}">{{ .Title }}</a></summary>
+								<ol>
+									{{- template "links" (dict "page" . "ancestors" $.ancestors) -}}
+								</ol>
+							</details>
+						</li>
+					{{- else -}}
+						<li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+					{{- end -}}
 				{{- end -}}
 			{{- end -}}
-		{{- end -}}
 
-		{{- template "links" (dict "page" (.GetPage "") "ancestors" .Ancestors) -}}
-		<script>
-			const details = document.querySelectorAll('#artikel-links details');
-			for (const detail of details) {
-				detail.addEventListener('toggle', (event) => {
-					window.localStorage.setItem(event.target.id, event.target.open);
-				})
-		
-				if (window.localStorage.getItem(detail.id) === "true") {
-					detail.open = true;
+			{{- template "links" (dict "page" (.GetPage "") "ancestors" .Ancestors) -}}
+			<script>
+				const details = document.querySelectorAll('#artikel-links details');
+				for (const detail of details) {
+					detail.addEventListener('toggle', (event) => {
+						window.localStorage.setItem(event.target.id, event.target.open);
+					})
+			
+					if (window.localStorage.getItem(detail.id) === "true") {
+						detail.open = true;
+					}
 				}
-			}
-		</script>
-	</ol>
+			</script>
+		</ol>
+	</div>
 </nav>
 <script>
 	const sb = document.getElementById("seitenleiste");

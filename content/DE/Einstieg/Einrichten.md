@@ -1,5 +1,5 @@
 +++
-title = "Entwicklungsumgebung einrichten"
+title = "Einrichten"
 weight = 1
 type = "article"
 +++

@@ -9,5 +9,5 @@ layout = "single"
 
 The following articles will introduce you to DDP development by showing you how to
 * [install the DDP compiler](/Bedienungsanleitung/en/Einstieg/Installation), 
-* [set up a development environment](/Bedienungsanleitung/en/Einstieg/Entwicklungs-umgebung-einrichten) und 
+* [set up a development environment](/Bedienungsanleitung/en/Einstieg/Einrichten) und 
 * [write your first program](/Bedienungsanleitung/en/Einstieg/Erstes-Programm).
