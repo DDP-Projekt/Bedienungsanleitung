@@ -13,3 +13,5 @@ class TODOElement extends HTMLElement {
 		this.shadowRoot.append(div);
 	}
 }
+
+customElements.define('to-do', TODOElement);

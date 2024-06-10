@@ -25,15 +25,10 @@
 	
 	{{- $style := resources.Get "css/style.css" | fingerprint }}
 	{{- $mdStyle := resources.Get "css/md-style.css" | fingerprint }}
-	{{- $darkStyle := resources.Get "css/dark-mode.css" | fingerprint }}
-	{{- $lightStyle := resources.Get "css/light-mode.css"  | fingerprint }}
 	
 	<link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="$style.Data.Integrity">
 	<link rel="stylesheet" href="{{ $mdStyle.RelPermalink }}" integrity="$mdStyle.Data.Integrity">
-	<link id="dark" rel="stylesheet" href="{{ $darkStyle.RelPermalink }}" integrity="$darkStyle.Data.Integrity" media="all">
-	<link id="light" rel="stylesheet" href="{{ $lightStyle.RelPermalink }}" integrity="$lightStyle.Data.Integrity" media="not all">
 	<script src="js/darkmode-toggle.js"></script>
 	
 	<script src="js/todoElement.js" defer></script>
-	<script src="js/script.js" defer></script>
 </head>

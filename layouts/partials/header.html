@@ -1,8 +1,9 @@
 <header id="kopf">
 	<a href="https://ddp.le0n.dev"><img src="img/title.svg" alt="titel" id="titel"/></a>
 	<script>
-		let isDark = document.querySelector('#dark').media === 'all';	
-		document.querySelector('#titel').src = !isDark ? 'img/title-dark.svg' : 'img/title.svg';
+		if (document.querySelector('html').getAttribute('data-theme') === 'light') {
+			document.querySelector('#titel').src = 'img/title-dark.svg';
+		}
 	</script>
 	<div id="toggles">
 		{{- if eq .Language.Lang "de" }} 

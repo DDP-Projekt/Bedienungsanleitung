@@ -1,24 +1,19 @@
 if (window.localStorage.getItem("dark-mode") === "false") {
-	document.querySelector('#dark').media = 'not all';
-	document.querySelector('#light').media = 'all';
+	document.querySelector('html').setAttribute("data-theme", "light");
 	window.localStorage.setItem("dark-mode", "false");
 } else {
-	document.querySelector('#dark').media = 'all';
-	document.querySelector('#light').media = 'not all';
+	document.querySelector('html').setAttribute("data-theme", "dark");
 	window.localStorage.setItem("dark-mode", "true");
 }
 
 function toggleDarkMode() {
-	let isDark = document.querySelector('#dark').media === 'all';
-	if (isDark) {
-		document.querySelector('#dark').media = 'not all';
-		document.querySelector('#light').media = 'all';
+	if (document.querySelector('html').getAttribute('data-theme') === 'dark') {
+		document.querySelector('html').setAttribute("data-theme", "light");
 		document.querySelector('#titel').src = 'img/title-dark.svg';
 		window.localStorage.setItem("dark-mode", "false");
 	}
 	else {
-		document.querySelector('#dark').media = 'all';
-		document.querySelector('#light').media = 'not all';
+		document.querySelector('html').setAttribute("data-theme", "dark");
 		document.querySelector('#titel').src = 'img/title.svg';
 		window.localStorage.setItem("dark-mode", "true");
 	}

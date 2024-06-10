@@ -3,6 +3,48 @@
 	--content-size: calc(100% - var(--sidebar-size));
 }
 
+[data-theme="dark"] {
+	--text-color: antiquewhite;
+	--link-hover-color: aliceblue;
+	--bg-color: #444;
+	--sidebar-color: #3d3d3d;
+	--article-nav-bg-color: #303336;
+	--article-nav-hover-bg-color: #3b3d41;
+	--table-border-color: #303336;
+	--table-fill-dark: #3b3c3e;
+	--table-fill-light: #3f4043;
+	--md-link-color: #86ccff;
+	--md-link-hover-color: #cce9ff;
+	--md-code-bg-color: rgba(27,31,35,.5);
+	--light-mode-filter: none;
+	--scrollbar-track-bg-color: #333;
+	--scrollbar-thumb-bg-color: #666;
+	--scrollbar-thumb-hover-bg-color: #555;
+	--hamburger-background: black;
+}
+
+[data-theme="dark"] #dark-mode-toggle { filter: invert(); }
+
+[data-theme="light"] {
+	--text-color: #454545;
+	--link-hover-color: #212121;
+	--bg-color: #fafafa;
+	--sidebar-color: #eeeeee;
+	--article-nav-bg-color: #e6e6e6;
+	--article-nav-hover-bg-color: #d9d9d9;
+	--table-border-color: #d0d7de;
+	--table-fill-dark: #f4f4f5;
+	--table-fill-light: #f8f8f8;
+	--md-link-color: #3452c5;
+	--md-link-hover-color: #0a95ff;
+	--md-code-bg-color: rgb(220 221 223 / 50%);
+	--light-mode-filter: brightness(60%) saturate(350%) drop-shadow(0px 0px gray);
+	--scrollbar-track-bg-color: #d7d7d7;
+	--scrollbar-thumb-bg-color: #b4b4b4;
+	--scrollbar-thumb-hover-bg-color: #808080;
+	--hamburger-background: #d8dbdc;
+}
+
 @font-face {
 	font-family: 'Futura';
 	src: url('/Bedienungsanleitung/fonts/Futura.ttf');
@@ -11,40 +53,44 @@
 
 /* screen width larger than 830px (desktop/tablet) */
 @media screen and (min-width: 831px) {
-	#hamburger {
+	.hamburger-btn {
 		display: none; /* eat hamburger */
 	}
 }
 
 /* screen width smaller than 830px (phone) */
 @media screen and (max-width: 830px) {
-	#hamburger {
+	.hamburger-btn {
 		position: absolute;
 		left: 0;
 		font-size: 1.5em;
 		width: 30px;
 		height: 30px;
 		text-align: center;
-		background-color: black;
+		background-color: var(--hamburger-background);
 		z-index: 2; /* make the hamburger on top of everything */
 		font-weight: normal; /* to prevent the hamburger from going bold on click*/
 		transition: left 350ms ease-in-out;
 	}
-	#hamburger.opened {
-		left: calc(var(--sidebar-size) - 35px);
+	#hamburger {
+		display: none;
+		margin: 0;
 	}
 	#seitenleiste {
 		position: absolute; /* make sidebar an overlay */
 		z-index: 1; /* make sidebar on top of content */
 		transition: width 350ms ease-in-out;
 	}
-	#seitenleiste:not(.opened) {
+	#hamburger:checked, #hamburger:checked ~ label[for=hamburger] {
+		left: calc(var(--sidebar-size) - 35px);
+	}
+	#hamburger:not(:checked) ~ #seitenleiste {
 		width: 0;
 	}
-	#seitenleiste.opened {
+	#hamburger:checked ~ #seitenleiste {
 		box-shadow: 0 0 0 100vmax rgba(16, 16, 16, 0.6);
 	}
-	:root{
+	:root {
 		--content-size: 100%;
 	}
 }
@@ -124,7 +170,6 @@ a:hover {
 
 #inhalt {
 	width: 100%;
-	left: 20%;
 	overflow: auto;
 	padding: 10px 10px 40px;
 }
@@ -144,7 +189,7 @@ a:hover {
 	margin-top: 1rem;
 }
 
-#kopf #toggles * {
+#kopf #toggles img {
 	width: 30px;
 	height: 20px;
 }
