@@ -83,36 +83,36 @@ func main() {
 		inputFile, err := io.ReadAll(resp.Body)
 		panicIfErr(err)
 
-		MakeMdFiles(inputFile, outputPathDe, "DE")
-		MakeMdFiles(inputFile, outputPathEn, "EN")
+		fmt.Printf("parsing module %s...\n", entry.Name)
+		module, err := parser.Parse(parser.Options{
+			Source:       inputFile,
+			ErrorHandler: ddperror.EmptyHandler,
+		})
+		panicIfErr(err)
+
+		// turn the map into a slice
+		publicDecls := make([]ast.Declaration, 0, len(module.PublicDecls))
+		for _, decl := range module.PublicDecls {
+			publicDecls = append(publicDecls, decl)
+		}
+
+		// sort the decls by order of appereance
+		sort.Slice(publicDecls, func(i, j int) bool {
+			return publicDecls[i].GetRange().Start.IsBefore(publicDecls[j].GetRange().Start)
+		})
+
+		MakeMdFiles(publicDecls, inputFile, outputPathDe, "DE")
+		MakeMdFiles(publicDecls, inputFile, outputPathEn, "EN")
 	}
 }
 
-func MakeMdFiles(inputFile []byte, outputFilePath, lang string) {
+func MakeMdFiles(publicDecls []ast.Declaration, inputFile []byte, outputFilePath, lang string) {
 	fmt.Printf("creating output file '%s'...\n", outputFilePath)
 
 	os.MkdirAll(filepath.Dir(outputFilePath), os.ModeDir|os.ModePerm)
 	outputFile, err := os.Create(outputFilePath)
 	panicIfErr(err)
 	defer outputFile.Close()
-
-	fmt.Printf("parsing module...\n")
-	module, err := parser.Parse(parser.Options{
-		Source:       inputFile,
-		ErrorHandler: ddperror.EmptyHandler,
-	})
-	panicIfErr(err)
-
-	// turn the map into a slice
-	publicDecls := make([]ast.Declaration, 0, len(module.PublicDecls))
-	for _, decl := range module.PublicDecls {
-		publicDecls = append(publicDecls, decl)
-	}
-
-	// sort the decls by order of appereance
-	sort.Slice(publicDecls, func(i, j int) bool {
-		return publicDecls[i].GetRange().Start.IsBefore(publicDecls[j].GetRange().Start)
-	})
 
 	fmt.Println("writing md file...")
 
