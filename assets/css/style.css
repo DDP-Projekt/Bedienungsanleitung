@@ -181,7 +181,7 @@ a:hover {
 
 #kopf #titel {
 	background-color: var(--text-color);
-	mask: url(/Bedienungsanleitung/img/title2.svg) no-repeat center / contain;
+	mask: url(/Bedienungsanleitung/img/title.svg) no-repeat center / contain;
 	display: block;
 	width: clamp(310px, 60vw, 550px);
 	aspect-ratio: 9/1;
