@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ or site.Language.LanguageCode site.Language.Lang }}" dir="{{ or site.Language.LanguageDirection `ltr` }}" data-theme="dark">
+<html lang="{{ or site.Language.LanguageCode site.Language.Lang }}" dir="{{ or site.Language.LanguageDirection `ltr` }}">
 	{{ partial "head.html" . -}}
 	<body>
 		{{ partial "sidebar.html" . }}
@@ -11,4 +11,10 @@
 			{{ partial "navigation.html" . }}
 		</main>
 	</body>
+	<script>
+		window.addEventListener("beforeunload", () => {
+			localStorage.setItem("sidebar-scroll", document.getElementById("seitenleiste").scrollTop);
+			localStorage.setItem("dark-mode", document.querySelector('#dark-mode-check').checked);
+		});
+	</script>
 </html>

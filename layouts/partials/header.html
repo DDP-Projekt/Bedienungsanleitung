@@ -1,16 +1,18 @@
 <header id="kopf">
-	<a href="https://ddp.le0n.dev"><img src="img/title.svg" alt="titel" id="titel"/></a>
-	<script>
-		if (document.querySelector('html').getAttribute('data-theme') === 'light') {
-			document.querySelector('#titel').src = 'img/title-dark.svg';
-		}
-	</script>
+	<s id="linie"><a href="https://ddp.le0n.dev" alt="titel" id="titel"></a></s>
 	<div id="toggles">
 		{{- if eq .Language.Lang "de" }} 
-			<a href="{{ (index .Translations 0).Permalink}}"><img id="sprach-toggle" alt="sprach-toggle" src="img/en.svg" title="to German site"></a>
+			<a href="{{ (index .Translations 0).Permalink}}"><img id="sprach-toggle" alt="sprach-toggle" src="img/en.svg" title="to German site" width="30" height="20"></a>
 		{{- else }}
-			<a href="{{ (index .Translations 0).Permalink}}"><img id="sprach-toggle" alt="sprach-toggle" src="img/de.svg" title="zur Englischen Seite"></a>
+			<a href="{{ (index .Translations 0).Permalink}}"><img id="sprach-toggle" alt="sprach-toggle" src="img/de.svg" title="zur Englischen Seite" width="30" height="20"></a>
 		{{- end }}
-		<img src="img/theme-light-dark.svg" alt="dark mode toggeln" id="dark-mode-toggle" class="btn" onclick="toggleDarkMode()" title="light/dark mode">
+		<input type="checkbox" id="dark-mode-check" title="light/dark mode" checked>
 	</div>
+	<script>
+		if (window.localStorage.getItem("dark-mode") === "false") {
+			document.querySelector('#dark-mode-check').checked = false;
+		} else {
+			document.querySelector('#dark-mode-check').checked = true;
+		}
+	</script>
 </header>

@@ -3,7 +3,7 @@
 	--content-size: calc(100% - var(--sidebar-size));
 }
 
-[data-theme="dark"] {
+:has(#dark-mode-check:checked) {
 	--text-color: antiquewhite;
 	--link-hover-color: aliceblue;
 	--bg-color: #444;
@@ -23,9 +23,7 @@
 	--hamburger-background: black;
 }
 
-[data-theme="dark"] #dark-mode-toggle { filter: invert(); }
-
-[data-theme="light"] {
+:has(#dark-mode-check:not(:checked)) {
 	--text-color: #454545;
 	--link-hover-color: #212121;
 	--bg-color: #fafafa;
@@ -182,16 +180,32 @@ a:hover {
 }
 
 #kopf #titel {
+	background-color: var(--text-color);
+	mask: url(/Bedienungsanleitung/img/title2.svg) no-repeat center / contain;
+	display: block;
 	width: clamp(310px, 60vw, 550px);
+	aspect-ratio: 9/1;
+}
+
+#linie {
+	background: url(/Bedienungsanleitung/img/line.svg) no-repeat center / contain;
 }
 
 #kopf #toggles {
 	margin-top: 1rem;
 }
 
-#kopf #toggles img {
+#kopf #toggles #dark-mode-check {
+	background: url(/Bedienungsanleitung/img/theme-light-dark.svg) no-repeat center;
 	width: 30px;
 	height: 20px;
+	appearance: none;
+	cursor: pointer;
+	margin: 0;
+}
+
+#dark-mode-check:checked {
+	filter: invert();
 }
 
 #artikel {

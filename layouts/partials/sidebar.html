@@ -41,11 +41,8 @@
 	</div>
 </nav>
 <script>
-	const sb = document.getElementById("seitenleiste");
 	const sbtop = localStorage.getItem("sidebar-scroll");
 	if (sbtop !== null) {
-		sb.scrollTop = parseInt(sbtop, 10);
+		document.getElementById("seitenleiste").scrollTop = parseInt(sbtop, 10);
 	}
-
-	window.addEventListener("beforeunload", () => localStorage.setItem("sidebar-scroll", sb.scrollTop));
 </script>
