@@ -12,7 +12,8 @@
 		</main>
 	</body>
 	<script>
-		window.addEventListener("beforeunload", () => {
+		window.addEventListener("visibilitychange", () => {
+			if (!document.hidden) return;
 			localStorage.setItem("sidebar-scroll", document.getElementById("seitenleiste").scrollTop);
 			localStorage.setItem("dark-mode", document.querySelector('#dark-mode-check').checked);
 		});

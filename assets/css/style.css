@@ -3,7 +3,7 @@
 	--content-size: calc(100% - var(--sidebar-size));
 }
 
-:has(#dark-mode-check:checked) {
+:root:has(#dark-mode-check:checked) {
 	--text-color: antiquewhite;
 	--link-hover-color: aliceblue;
 	--bg-color: #444;
@@ -23,7 +23,7 @@
 	--hamburger-background: black;
 }
 
-:has(#dark-mode-check:not(:checked)) {
+:root:has(#dark-mode-check:not(:checked)) {
 	--text-color: #454545;
 	--link-hover-color: #212121;
 	--bg-color: #fafafa;
@@ -69,6 +69,7 @@
 		z-index: 2; /* make the hamburger on top of everything */
 		font-weight: normal; /* to prevent the hamburger from going bold on click*/
 		transition: left 350ms ease-in-out;
+		cursor: pointer;
 	}
 	#hamburger {
 		display: none;
@@ -103,16 +104,6 @@ html, body {
 	background-color: var(--bg-color);
 	color: var(--text-color);
 	overflow: hidden;
-}
-
-.btn {
-	cursor: pointer;
-}
-
-.language-picker {
-	position: absolute;
-	right: 50px;
-	top: 10px;
 }
 
 #seitenleiste h2#überschrift {
@@ -208,10 +199,6 @@ a:hover {
 	filter: invert();
 }
 
-#artikel {
-	width: auto;
-}
-
 #artikel-navigation {
 	position: fixed;
 	display: flex;
@@ -233,6 +220,7 @@ a:hover {
 	font-size: large;
 	font-weight: 900;
 	transition: background-color 200ms;
+	cursor: pointer;
 }
 
 #artikel-navigation a:hover {

@@ -2,7 +2,7 @@
 	<title>DDP Bedienungsanleitung</title>
 	<base href="/Bedienungsanleitung/">
 	
-	<meta name="description" content="{{ T "desc"}}">
+	<meta name="description" content='{{ T "desc"}}'>
 	<meta name="msapplication-TileColor" content="#da532c">
 	<meta name="msapplication-config" content="favicon/browserconfig.xml">
 	<meta name="theme-color" content="#ffffff">
@@ -20,14 +20,29 @@
 		{{.Publish}}
 		<link rel="preload" as="font" href="{{ .RelPermalink }}" type="font/ttf" crossorigin>
 	{{ end }}
+	
 	{{- range resources.Match "img/*" -}} {{.Publish}} {{ end }}
-	{{- range resources.Match "js/*" -}} {{.Publish}} {{ end }}
 	
 	{{- $style := resources.Get "css/style.css" | fingerprint }}
-	{{- $mdStyle := resources.Get "css/md-style.css" | fingerprint }}
+	<link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}">
 	
-	<link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="$style.Data.Integrity">
-	<link rel="stylesheet" href="{{ $mdStyle.RelPermalink }}" integrity="$mdStyle.Data.Integrity">
-	
-	<script src="js/todoElement.js" defer></script>
+	<script defer>
+		class TODOElement extends HTMLElement {
+			constructor() {
+				// Always call super first in constructor
+				super();
+
+				this.attachShadow({mode: 'open'});
+
+				const div = document.createElement('div');
+				const text = document.createElement('p');
+				text.innerHTML = "An diesem Artikel muss noch gearbeitet werden!";
+				div.appendChild(text);
+
+				this.shadowRoot.append(div);
+			}
+		}
+
+		customElements.define('to-do', TODOElement);
+	</script>
 </head>

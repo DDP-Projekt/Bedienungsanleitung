@@ -1,18 +1,12 @@
 <header id="kopf">
-	<s id="linie"><a href="https://ddp.le0n.dev" alt="titel" id="titel"></a></s>
+	<s id="linie"><a href="https://ddp.le0n.dev" alt="titel" id="titel" title="homepage"></a></s>
 	<div id="toggles">
-		{{- if eq .Language.Lang "de" }} 
-			<a href="{{ (index .Translations 0).Permalink}}"><img id="sprach-toggle" alt="sprach-toggle" src="img/en.svg" title="to German site" width="30" height="20"></a>
-		{{- else }}
-			<a href="{{ (index .Translations 0).Permalink}}"><img id="sprach-toggle" alt="sprach-toggle" src="img/de.svg" title="zur Englischen Seite" width="30" height="20"></a>
-		{{- end }}
-		<input type="checkbox" id="dark-mode-check" title="light/dark mode" checked>
+		<a href="{{ (index .Translations 0).Permalink}}">
+			<img id="sprach-toggle" alt="sprach-toggle" src='img/{{ T "otherFlag" }}' title='{{ T "siteLink" }}' width="30" height="20">
+		</a>
+		<input type="checkbox" id="dark-mode-check" title='{{ T "ldMode" }}' checked>
 	</div>
 	<script>
-		if (window.localStorage.getItem("dark-mode") === "false") {
-			document.querySelector('#dark-mode-check').checked = false;
-		} else {
-			document.querySelector('#dark-mode-check').checked = true;
-		}
+		document.querySelector('#dark-mode-check').checked = window.localStorage.getItem("dark-mode") !== "false";
 	</script>
 </header>

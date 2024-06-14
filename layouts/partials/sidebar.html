@@ -1,5 +1,5 @@
 <input type="checkbox" id="hamburger" class="hamburger-btn">
-<label for="hamburger" class="hamburger-btn btn">≡</label>
+<label for="hamburger" class="hamburger-btn">≡</label>
 <nav id="seitenleiste">
 	<div style="margin: 10px;">
 		<h2 id="überschrift">{{ T "toc" }}</h2>
@@ -28,13 +28,11 @@
 			<script>
 				const details = document.querySelectorAll('#artikel-links details');
 				for (const detail of details) {
+					detail.open = window.localStorage.getItem(detail.id) === "true";
+
 					detail.addEventListener('toggle', (event) => {
 						window.localStorage.setItem(event.target.id, event.target.open);
 					})
-			
-					if (window.localStorage.getItem(detail.id) === "true") {
-						detail.open = true;
-					}
 				}
 			</script>
 		</ol>
