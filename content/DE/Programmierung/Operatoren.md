@@ -13,12 +13,13 @@ in diesen und späteren Tabellen jeweils der C-Operator dabei.
 
 ## Unäre Operatoren
 
-| Funktion                              | Verwendung                         | C Equivalent | Typ vom Operanden | Rückgabetyp | Beispiel                   | Ergebnis |
-| ------------------------------------- | ---------------------------------- | ------------ | ----------------- | ----------- | -------------------------- | -------- |
-| Logische NICHT verknüpfung            | `logisch nicht a`                  | `~a`         | Zahl              | Zahl        | `logisch nicht 1`          | -2       |
-| Listen/Text Element/Buchstaben Anzahl | `die Länge von a`                  | -            | Liste, Text       | Zahl        | `Die Länge von "Hallo"`    | 5        |
-| Byte Größe                            | `die Größe einem/einer <Typname>`  | `sizeof(a)`  | Typename          | Zahl        | `Die Größe von einer Zahl` | 8        |
-| Betrag                                | `der Betrag von a`                 | `abs(a)`     | numerisch         | numerisch   | `der Betrag von -5`        | 5        |
+| Funktion                              | Verwendung                                   | C Equivalent | Typ vom Operanden | Rückgabetyp                 | Beispiel                              | Ergebnis |
+| ------------------------------------- | -------------------------------------------- | ------------ | ----------------- | --------------------------- | ------------------------------------- | -------- |
+| Logische NICHT verknüpfung            | `logisch nicht a`                            | `~a`         | Zahl              | Zahl                        | `logisch nicht 1`                     | -2       |
+| Listen/Text Element/Buchstaben Anzahl | `die Länge von a`                            | -            | Liste, Text       | Zahl                        | `Die Länge von "Hallo"`               | 5        |
+| Byte Größe                            | `die Größe von einem/einer <Typname>`        | `sizeof(a)`  | Typename          | Zahl                        | `Die Größe von einer Zahl`            | 8        |
+| Standardwert                          | `der Standardwert von einem/einer <Typname>` | -            | Typename          | passend zum Typnamen        | `Der Standardwert von einer Zahl`     | 0        |
+| Betrag                                | `der Betrag von a`                           | `abs(a)`     | numerisch         | numerisch                   | `Der Betrag von -5`                   | 5        |
 
 ## Binäre Operatoren
 
@@ -42,11 +43,12 @@ in diesen und späteren Tabellen jeweils der C-Operator dabei.
 
 Mithilfe von Bool'schen Operatoren können komplexe Bedingungen ausgedrückt und zusammengefasst werden und z.B. für Verzweigungen oder Schleifen verwendet werden.
 
-| Operator | Beschreibung                                    | C Equivalent      | Beispiel                                                                             | Ergebnis                                   |
-| -------- | ----------------------------------------------- | ----------------- | ------------------------------------------------------------------------------------ | ------------------------------------------ |
-| und      | Wahr, wenn beide Argumente wahr sind.           | `true && false`   | `wahr und wahr`<br>`wahr und falsch`<br>`falsch und wahr`<br>`falsch und falsch`     | `wahr`<br>`falsch`<br>`falsch`<br>`falsch` |
-| oder     | Wahr, wenn eines der Beiden Argumente wahr ist. | `true \|\| false` | `wahr oder wahr`<br>`wahr oder falsch`<br>`falsch oder wahr`<br>`falsch oder falsch` | `wahr`<br>`wahr`<br>`wahr`<br>`falsch`     |
-| nicht    | Der Wert des Arguments wird umgekehrt.          | `!true`           | `nicht wahr` <br>`nicht falsch`                                                      | `falsch`<br>`wahr`                         |
+| Operator            | Beschreibung                                          | C Equivalent      | Beispiel                                                                                                                  | Ergebnis                                   |
+| ------------------- | ----------------------------------------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------ |
+| und                 | Wahr, wenn beide Argumente wahr sind.                 | `true && false`   | `wahr und wahr`<br>`wahr und falsch`<br>`falsch und wahr`<br>`falsch und falsch`                                          | `wahr`<br>`falsch`<br>`falsch`<br>`falsch` |
+| oder                | Wahr, wenn eines der Beiden Argumente wahr ist.       | `true \|\| false` | `wahr oder wahr`<br>`wahr oder falsch`<br>`falsch oder wahr`<br>`falsch oder falsch`                                      | `wahr`<br>`wahr`<br>`wahr`<br>`falsch`     |
+| `entweder ... oder` | Wahr, wenn *nur* eines der Beiden Argumente wahr ist. | `true != false`   | `entweder wahr oder wahr`<br>`entweder wahr oder falsch`<br>`entweder falsch oder wahr`<br>` entweder falsch oder falsch` | `falsch`<br>`wahr`<br>`wahr`<br>`falsch`   |
+| nicht               | Der Wert des Arguments wird umgekehrt.                | `!true`           | `nicht wahr` <br>`nicht falsch`                                                                                           | `falsch`<br>`wahr`                         |
 
 # Vergleichsoperatoren
 
@@ -61,6 +63,11 @@ Mithilfe von Bool'schen Operatoren können komplexe Bedingungen ausgedrückt und
 | zwischen          | Wahr, wenn das Linke Argument zwischen den beiden Rechten liegt.                      | `(4 < 5 && 4 > 3)`     | `4 zwischen 3 und 5 ist`                                                                     | `wahr`<br>`falsch`           |
 
 Vergleichsoperatoren haben alle ein "ist" am Ende um der Grammatik in jedem Kontext gerecht zu werden.
+Falls das zu mehreren "ist"s hintereinander führen sollte reicht ein einziges aus:
+```ddp
+2 größer als 2 ist gleich 4 größer als 4 ist ist. [hässlich]
+2 größer als 2 ist gleich 4 größer als 4 ist. [schön]
+```
 
 # Listen und Text Operatoren
 
@@ -81,16 +88,16 @@ Die Operanden Typen einer Verkettung können nicht beliebig kombiniert werden.
 - Verkettet man einen Text mit einem Buchstaben oder umgekehrt entsteht ein Text.
 - Verkettet man eine Liste und einen beliebigen Wert vom Element Typ der Liste oder umgekehrt entsteht eine Liste.
 
-Bei Indizierungen und `von ... bis` sind die Indizes immer inklusiv und fangen bei 1 an.
+Bei Indizierungen und `im Bereich von ... bis` sind die Indizes immer inklusiv und fangen bei 1 an.
 Eine Liste von 1 bis 5 sind also das erste, das fünfte und alle Element dazwischen.
 Eine Liste an der Stelle 0 wäre ein Laufzeitfehler, genauso wie ein Index, der die Länge der Liste überschreitet.
 
-Bei `von ... bis` gibt es keine Laufzeitfehler bei zu kleinen oder zu großen Indizes.
+Bei `im Bereich von ... bis` gibt es keine Laufzeitfehler bei zu kleinen oder zu großen Indizes.
 Die Indizes werden automatisch in den Bereich [1, Länge der Liste/Text] gebracht.
 Sollte danach der 2. Index kleiner als der 1. sein, so gibt es einen Laufzeitfehler.
 Wenn also beide Indizes größer als die Länge der Liste sind, so ist das Ergebnis also das Letzte Element der Liste.
 
-`... ab dem ...` und `... bis zum ...` sind nur Kurzschreibweisen von `von ... bis` mit dem zweiten bzw. ersten Operanden
+`... ab dem ...` und `... bis zum ...` sind nur Kurzschreibweisen von `im Bereich von ... bis` mit dem zweiten bzw. ersten Operanden
 auf die Länge der Liste bzw. 1 gesetzt ist.
 
 ## Beispiele
@@ -106,6 +113,14 @@ Schreibe ("Hallo" von 1 bis 3 verkettet mit 'ö'). [Zeigt "Halö" in der Konsole
 Schreibe ('b' verkettet mit 'a'). [Zeigt "b, a" in der Konsole]
 ```
 
+# Falls
+
+Der `Falls` Operator entspricht dem Ternary Operator (`a ? b : c`) in anderen Sprachen.
+Seine Parameter sind ein Wahrheitswert und 2 Ausdrücke beliebigen (aber des gleich) Typs:
+```ddp
+Der Text t ist "2 > 3", falls 2 größer als 3 ist, ansonsten "2" verkettet mit " < " verkettet mit "3".
+```
+
 # Operator Priorisierung
 
 Verschiedene Operatoren werden verschieden Priorisiert.
@@ -115,28 +130,30 @@ Potenzen haben wiederrum Vorrang vor Multiplikationen und Divisionen.
 Bei den mathemathischen Operatoren hält DDP sich weitestgehend an die mathemathische Reihenfolge.
 Hier ist eine Tabelle mit allen Operatoren und ihrer Priorisierung (hoch priorisierte Operatoren oben):
 
-| Rang | Operator                                          |
-| ---- | ------------------------------------------------- |
-| 1    | Funktionsaufruf                                   |
-| 2    | Literale, Konstante                               |
-| 3    | Klammern                                          |
-| 4    | Typkonvertierungen                                |
-| 5    | Feld Zugriff von Kombinationen                    |
-| 6    | Indizierung                                       |
-| 7    | `von ... bis`, `ab ... dem`, `bis ... zum`        |
-| 8    | Potenzieren, Wurzelziehen, Logarithmus            |
-| 9    | Negation,                                         |
-| 10   | Betrag, Größe, Länge, Logisches-/Bool'sches nicht |
-| 11   | Multiplikation, Division, Rest,                   |
-| 12   | Addition, Subtrakion, Verkettung,                 |
-| 13   | Bit-Verschiebung                                  |
-| 14   | Größen Vergleich (kleiner, größer, ect.)          |
-| 15   | Gleichheit (gleich und ungleich)                  |
-| 16   | Logische UND Verknüpfung                          |
-| 17   | Logische XOR Verknüpfung                          |
-| 18   | Logische ODER Verknüpfung                         |
-| 19   | Bool'sches UND                                    |
-| 20   | Bool'sches ODER                                   |
+| Rang | Operator                                                        |
+| ---- | --------------------------------------------------------------- |
+| 1    | Funktionsaufruf                                                 |
+| 2    | Literale, Konstante                                             |
+| 3    | Klammern                                                        |
+| 4    | Typkonvertierungen                                              |
+| 5    | Feld Zugriff von Kombinationen                                  |
+| 6    | Indizierung                                                     |
+| 7    | `von ... bis`, `ab ... dem`, `bis ... zum`                      |
+| 8    | Potenzieren, Wurzelziehen, Logarithmus                          |
+| 9    | Negation,                                                       |
+| 10   | Betrag, Größe, Länge, Standardwert, Logisches-/Bool'sches nicht |
+| 11   | Multiplikation, Division, Rest,                                 |
+| 12   | Addition, Subtrakion, Verkettung,                               |
+| 13   | Bit-Verschiebung                                                |
+| 14   | Größen Vergleich (kleiner, größer, ect.)                        |
+| 15   | Gleichheit (gleich und ungleich)                                |
+| 16   | Logische UND Verknüpfung                                        |
+| 17   | Logische XOR Verknüpfung                                        |
+| 18   | Logische ODER Verknüpfung                                       |
+| 19   | Bool'sches UND                                                  |
+| 20   | Bool'sches ODER                                                 |
+| 21   | `entweder ... oder`                                             |
+| 22   | Falls                                                           |
 
 ## Operator Priorisierung Beispiel
 

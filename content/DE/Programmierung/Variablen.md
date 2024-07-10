@@ -21,6 +21,15 @@ Wenn man solche Variablen mit einem Ausdruck deklarieren will, sollte man stattd
 ```ddp
 Der Wahrheitswert <Variablenname> ist <wahr oder falsch>, wenn <Ausdruck>. 
 ```
+
+Diese Syntax funktioniert auch mit Rückgaben in [Funktionen](/Bedienungsanleitung/de/Programmierung/Funktionen):
+```ddp
+Die öffentliche Funktion Ist_Leer_Text mit dem Parameter liste vom Typ Text Liste, gibt einen Wahrheitswert zurück, macht:
+	Gib wahr, wenn die Länge von liste gleich 0 ist zurück.
+Und kann so benutzt werden:
+	"<liste> leer ist"
+```
+
 Eine Liste von allen Datentypen findest du im Artikel [Datentypen](/Bedienungsanleitung/de/Programmierung/Datentypen)
 
 ## Beispiele:
@@ -45,6 +54,30 @@ a ist 30.
 Um einer Variable das Ergebnis eines Ausdrucks zuzuweisen, muss `Speichere ... in` verwendet werden:
 ```ddp
 Speichere pi durch 2 in b.
+```
+
+# Extern sichtbare Variablen
+
+Der DDP Kompilierer benutzt eine Technik namens [name mangling](https://en.wikipedia.org/wiki/Name_mangling). Das heißt, die Namen von Funktionen und Variablen
+sind im Quellcode nicht dieselben wie in der entstehenden Binärdatei.
+
+Wenn man also eine Variable zwischen DDP und C Quellcode teilen will muss man das name mangling ausschalten, indem man die Variable als "extern sichtbar" markiert:
+```ddp
+[test.ddp]
+Die extern sichtbare Zahl z ist 22.
+```
+
+```c
+// test.c
+#include "ddptypes.h"
+#include <stdio.h>
+
+extern ddpint z;
+
+int main(void) {
+    printf("%ld", z);
+    return 0;
+}
 ```
 
 # Spezielle Zuweisungen
