@@ -83,6 +83,26 @@ Und kann so benutzt werden:
 Das Komma und 'oder' können darin synonym verwendet werden.
 Wenn eine Funktion Parameter besitzt, müssen diese alle im Alias vorhanden sein in der Form `<parameter-name>`.
 
+### Aliasnegationen
+
+Für Funktionen, die einen Wahrheitswert zurückgeben gibt es spezielle Syntax um die Funktion zu negieren:
+```ddp
+Die öffentliche Funktion Ist_Text_Leer mit dem Parameter text vom Typ Text, gibt einen Wahrheitswert zurück, macht:
+	Gib wahr, wenn die Länge von text gleich 0 ist zurück.
+Und kann so benutzt werden:
+	"<text> <!nicht> leer ist"
+
+Schreibe ("" leer ist). [wahr]
+Schreibe ("" nicht leer ist). [falsch]
+
+[ Eine Aliasnegation entspricht einem zusätzlichen "nicht" Operator ]
+Schreibe ( ("" nicht leer ist) gleich (nicht "" leer ist) ). [wahr]
+```
+
+Wenn das Token mit dem Ausrufezeichen (`!`) aus dem Alias vorhanden ist, wird vor dem Funktionsaufruf ein `nicht` eingefügt.
+
+### Nachträgliche Aliase
+
 Aliase können auch außerhalb der Funktionsdeklaration definiert werden, mit der Form:
 ```ddp
 Der Alias "<Alias>" steht für die Funktion <Funktionsname>.
