@@ -7,11 +7,13 @@ import (
 	"html"
 	"io"
 	"io/fs"
+	"log"
 	"net/http"
 	"os"
 	"path/filepath"
 	"sort"
 	"strings"
+	"sync"
 
 	"github.com/DDP-Projekt/Kompilierer/src/ast"
 	"github.com/DDP-Projekt/Kompilierer/src/ddperror"
@@ -72,54 +74,63 @@ func main() {
 	dir := make([]GitHubDir, 0)
 	json.NewDecoder(resp.Body).Decode(&dir)
 
+	wg := sync.WaitGroup{}
+	log.SetFlags(log.LstdFlags | log.Lmicroseconds)
+
 	// iterate through all files and generate MD files
 	for _, entry := range dir {
-		outputPathDe := filepath.Join(outputDirDe, strings.Replace(entry.Name, "ddp", "md", 1))
-		outputPathEn := filepath.Join(outputDirEn, strings.Replace(entry.Name, "ddp", "md", 1))
+		entry := entry // wtf???
+		wg.Add(1)
+		go func() {
+			outputPathDe := filepath.Join(outputDirDe, strings.Replace(entry.Name, "ddp", "md", 1))
+			outputPathEn := filepath.Join(outputDirEn, strings.Replace(entry.Name, "ddp", "md", 1))
 
-		resp, err := http.Get("https://raw.githubusercontent.com/DDP-Projekt/Kompilierer/" + branch + "/" + entry.Path)
-		panicIfErr(err)
-		defer resp.Body.Close()
-		inputFile, err := io.ReadAll(resp.Body)
-		panicIfErr(err)
+			resp, err := http.Get("https://raw.githubusercontent.com/DDP-Projekt/Kompilierer/" + branch + "/" + entry.Path)
+			panicIfErr(err)
+			defer resp.Body.Close()
+			inputFile, err := io.ReadAll(resp.Body)
+			panicIfErr(err)
 
-		fmt.Printf("parsing module %s...\n", entry.Name)
-		module, err := parser.Parse(parser.Options{
-			Source:       inputFile,
-			ErrorHandler: ddperror.EmptyHandler,
-		})
-		panicIfErr(err)
+			log.Printf("parsing module %s...\n", entry.Name)
+			module, err := parser.Parse(parser.Options{
+				Source:       inputFile,
+				ErrorHandler: ddperror.EmptyHandler,
+			})
+			panicIfErr(err)
 
-		// turn the map into a slice
-		publicDecls := make([]ast.Declaration, 0, len(module.PublicDecls))
-		for _, decl := range module.PublicDecls {
-			publicDecls = append(publicDecls, decl)
-		}
+			// turn the map into a slice
+			publicDecls := make([]ast.Declaration, 0, len(module.PublicDecls))
+			for _, decl := range module.PublicDecls {
+				publicDecls = append(publicDecls, decl)
+			}
 
-		// sort the decls by order of appereance
-		sort.Slice(publicDecls, func(i, j int) bool {
-			return publicDecls[i].GetRange().Start.IsBefore(publicDecls[j].GetRange().Start)
-		})
+			// sort the decls by order of appereance
+			sort.Slice(publicDecls, func(i, j int) bool {
+				return publicDecls[i].GetRange().Start.IsBefore(publicDecls[j].GetRange().Start)
+			})
 
-		MakeMdFiles(publicDecls, inputFile, outputPathDe, "DE")
-		MakeMdFiles(publicDecls, inputFile, outputPathEn, "EN")
+			makeMdFiles(publicDecls, inputFile, outputPathDe, "DE")
+			makeMdFiles(publicDecls, inputFile, outputPathEn, "EN")
+
+			wg.Done()
+		}()
 	}
+	wg.Wait()
 }
 
-func MakeMdFiles(publicDecls []ast.Declaration, inputFile []byte, outputFilePath, lang string) {
-	fmt.Printf("creating output file '%s'...\n", outputFilePath)
+func makeMdFiles(publicDecls []ast.Declaration, inputFile []byte, outputFilePath, lang string) {
+	log.Printf("creating output file '%s'...\n", outputFilePath)
 
 	os.MkdirAll(filepath.Dir(outputFilePath), os.ModeDir|os.ModePerm)
 	outputFile, err := os.Create(outputFilePath)
 	panicIfErr(err)
 	defer outputFile.Close()
 
-	fmt.Println("writing md file...")
+	log.Printf("writing '%s' file...\n", outputFilePath)
 
 	writeMD(string(inputFile), outputFile, publicDecls, lang)
 
-	fmt.Println("done writing md file.")
-	fmt.Println()
+	log.Printf("done writing '%s' file...\n", outputFilePath)
 }
 
 func writeMD(inputFile string, outputFile *os.File, publicDecls []ast.Declaration, lang string) {
