@@ -145,12 +145,12 @@ func writeMD(inputFile string, outputFile *os.File, publicDecls []ast.Declaratio
 
 			params := ""
 			paramTypes := ""
-			if len(decl.ParamNames) > 0 {
-				names := make([]string, 0, len(decl.ParamNames))
-				types := make([]string, 0, len(decl.ParamTypes))
-				for i := range decl.ParamNames {
-					names = append(names, "<code>"+decl.ParamNames[i].String()+"</code>")
-					types = append(types, "<code>"+decl.ParamTypes[i].String()+"</code>")
+			if len(decl.Parameters) > 0 {
+				names := make([]string, 0, len(decl.Parameters))
+				types := make([]string, 0, len(decl.Parameters))
+				for _, param := range decl.Parameters {
+					names = append(names, "<code>"+param.Name.String()+"</code>")
+					types = append(types, "<code>"+param.Type.String()+"</code>")
 				}
 
 				params = strings.Join(names, ", ")
