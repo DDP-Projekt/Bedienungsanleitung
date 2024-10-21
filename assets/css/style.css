@@ -46,12 +46,6 @@
 	--hamburger-background: #d8dbdc;
 }
 
-@font-face {
-	font-family: 'Futura';
-	src: url('/Bedienungsanleitung/fonts/Futura.ttf');
-	font-display: swap;
-}
-
 /* screen width larger than 830px (desktop/tablet) */
 @media screen and (min-width: 831px) {
 	.hamburger-btn {
@@ -102,7 +96,7 @@ html, body {
 	height: 100%;
 	width: 100%;
 	margin: 0;
-	font-family: 'Futura', sans-serif;
+	font-family: sans-serif;
 	font-size: medium;
 	background-color: var(--bg-color);
 	color: var(--text-color);
