@@ -20,6 +20,9 @@
 		<link rel="preload" as="font" href="{{ .RelPermalink }}" type="font/ttf" crossorigin>
 	{{ end }}
 
+	{{- range resources.Match "img/*" -}}
+		{{ .Publish }}
+	{{ end }}
 	<link rel="preload" href="/Bedienungsanleitung/img/line.svg" as="image" type="image/svg+xml">
 	<link rel="preload" href="/Bedienungsanleitung/img/theme-light-dark.svg" as="image" type="image/svg+xml">
 	<link rel="preload" href="/Bedienungsanleitung/img/title.svg" as="image" type="image/svg+xml" crossorigin>
