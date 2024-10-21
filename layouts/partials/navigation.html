@@ -36,6 +36,9 @@
         {{ $prev = index ($prev.Pages | last 1) 0 }}
     {{ end }}
     
+	<link rel="prefetch" href="{{ with or $prev $root }} {{ .RelPermalink }} {{ end }}" as="document">
+	<link rel="prefetch" href="{{ with or $next $root }} {{ .RelPermalink }} {{ end }}" as="document">
+
     <a href="{{ with or $prev $root }} {{ .RelPermalink }} {{ end }} " title='{{ T "prev" }}'>&lt;</a>
     <a href="{{ with or $next $root }} {{ .RelPermalink }} {{ end }}" title='{{ T "next" }}'>&gt;</a>
 </nav>
