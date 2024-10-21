@@ -9,7 +9,7 @@
 }
 
 #artikel a:hover {
-	font-weight: bold;
+	font-weight: normal;
 	color: var(--md-link-hover-color);
 }
 

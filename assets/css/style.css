@@ -165,6 +165,7 @@ a:hover {
 	flex-direction: column;
 	align-items: center;
 	margin: .5rem;
+	gap: 1rem;
 }
 
 #kopf #titel {
@@ -177,10 +178,6 @@ a:hover {
 
 #linie {
 	background: var(--line-img) no-repeat center / contain;
-}
-
-#kopf #toggles {
-	margin-top: 1rem;
 }
 
 #kopf #toggles #dark-mode-check {
