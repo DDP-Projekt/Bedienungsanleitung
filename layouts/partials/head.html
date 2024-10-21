@@ -20,8 +20,8 @@
 		{{ .Publish }}
 	{{ end }}
 	<link rel="preload" href="/Bedienungsanleitung/img/line.svg" as="image" type="image/svg+xml">
-	<link rel="preload" href="/Bedienungsanleitung/img/theme-light-dark.svg" as="image" type="image/svg+xml">
-	<link rel="preload" href="/Bedienungsanleitung/img/title.svg" as="image" type="image/svg+xml" crossorigin>
+	<link rel="preload" href="/Bedienungsanleitung/img/theme-light-dark.svg" as="image" type="image/svg+xml" fetchpriority="high">
+	<link rel="preload" href="/Bedienungsanleitung/img/title.svg" as="image" type="image/svg+xml" crossorigin fetchpriority="high">
 
 	{{- $mdStyle := resources.Get "css/md-style.css" | fingerprint }}
 	<link rel="preload" as="style" href="{{ $mdStyle.RelPermalink }}" integrity="{{ $mdStyle.Data.Integrity }}">
