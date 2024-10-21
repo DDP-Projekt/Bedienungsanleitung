@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 30" width="1000" height="600">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 30" width="30" height="20">
 	<clipPath id="t">
 		<path d="M25,15h25v15zv15h-25zh-25v-15zv-15h25z"/>
 	</clipPath>

@@ -1,6 +1,9 @@
 :root {
 	--sidebar-size: 280px;
 	--content-size: calc(100% - var(--sidebar-size));
+	--theme-toggle-img: url(/Bedienungsanleitung/img/theme-light-dark.svg);
+	--title-img: url(/Bedienungsanleitung/img/title.svg);
+	--line-img: url(/Bedienungsanleitung/img/line.svg);
 }
 
 :root:has(#dark-mode-check:checked) {
@@ -172,14 +175,14 @@ a:hover {
 
 #kopf #titel {
 	background-color: var(--text-color);
-	mask: url(/Bedienungsanleitung/img/title.svg) no-repeat center / contain;
+	mask: var(--title-img) no-repeat center / contain;
 	display: block;
 	width: clamp(310px, 60vw, 550px);
 	aspect-ratio: 9/1;
 }
 
 #linie {
-	background: url(/Bedienungsanleitung/img/line.svg) no-repeat center / contain;
+	background: var(--line-img) no-repeat center / contain;
 }
 
 #kopf #toggles {
@@ -187,7 +190,7 @@ a:hover {
 }
 
 #kopf #toggles #dark-mode-check {
-	background: url(/Bedienungsanleitung/img/theme-light-dark.svg) no-repeat center;
+	background: var(--theme-toggle-img) no-repeat center;
 	width: 30px;
 	height: 20px;
 	appearance: none;

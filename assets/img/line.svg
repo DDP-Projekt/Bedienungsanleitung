@@ -1,70 +1,13 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-
-<svg
-   width="52.544846mm"
-   height="0.26458332mm"
-   viewBox="0 0 52.544846 0.26458332"
-   version="1.1"
-   id="svg1"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:xlink="http://www.w3.org/1999/xlink"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg">
-  <sodipodi:namedview
-     id="namedview1"
-     pagecolor="#ffffff"
-     bordercolor="#000000"
-     borderopacity="0.25"
-     inkscape:showpageshadow="2"
-     inkscape:pageopacity="0.0"
-     inkscape:pagecheckerboard="0"
-     inkscape:deskcolor="#d1d1d1"
-     inkscape:document-units="mm" />
-  <defs
-     id="defs1">
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient2"
-       id="linearGradient3"
-       x1="73.850891"
-       y1="46.117413"
-       x2="126.55341"
-       y2="46.117413"
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(0.99685268,0,0.04153553,0.6759094,42.209635,112.36264)"
-       spreadMethod="pad" />
-    <linearGradient
-       id="linearGradient2"
-       inkscape:collect="always">
-      <stop
-         style="stop-color:#000000;stop-opacity:1;"
-         offset="0.3010101"
-         id="stop2" />
-      <stop
-         style="stop-color:#c80000;stop-opacity:1;"
-         offset="0.3010101"
-         id="stop5" />
-      <stop
-         style="stop-color:#c80000;stop-opacity:1;"
-         offset="0.70303029"
-         id="stop3" />
-      <stop
-         style="stop-color:#febf00;stop-opacity:1;"
-         offset="0.70303029"
-         id="stop4" />
-    </linearGradient>
-  </defs>
-  <g
-     inkscape:label="Ebene 1"
-     inkscape:groupmode="layer"
-     id="layer1"
-     transform="translate(-117.73964,-143.40417)">
-    <path
-       id="rect2"
-       style="fill:url(#linearGradient3);stroke-width:0.347989"
-       inkscape:label="rect2"
-       d="m 117.80214,143.40417 h 52.40364 c 0.0369,0 0.0683,0.0296 0.0706,0.0664 l 0.008,0.12659 c 0.002,0.0368 -0.0256,0.0664 -0.0624,0.0664 h -52.40364 c -0.0368,0 -0.0683,-0.0296 -0.0706,-0.0664 l -0.008,-0.12659 c -0.002,-0.0368 0.0256,-0.0664 0.0624,-0.0664 z" />
-  </g>
+<svg width="52.5mm" height=".265mm" version="1.1" viewBox="0 0 52.5 .265" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <linearGradient id="linearGradient3" x1="73.9" x2="127" y1="46.1" y2="46.1" gradientTransform="matrix(.997 0 .0415 .676 42.2 112)" gradientUnits="userSpaceOnUse">
+   <stop offset=".301"/>
+   <stop stop-color="#c80000" offset=".301"/>
+   <stop stop-color="#c80000" offset=".703"/>
+   <stop stop-color="#febf00" offset=".703"/>
+  </linearGradient>
+ </defs>
+ <g transform="translate(-118 -143)">
+  <path d="m118 143h52.4c0.0369 0 0.0683 0.0296 0.0706 0.0664l8e-3 0.127c2e-3 0.0368-0.0256 0.0664-0.0624 0.0664h-52.4c-0.0368 0-0.0683-0.0296-0.0706-0.0664l-8e-3 -0.127c-2e-3 -0.0368 0.0256-0.0664 0.0624-0.0664z" fill="url(#linearGradient3)" stroke-width=".348"/>
+ </g>
 </svg>
