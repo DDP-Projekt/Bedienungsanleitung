@@ -6,7 +6,7 @@
 		<main id="inhalt" onclick="document.getElementById('hamburger').checked = false;">
 			{{ partial "header.html" . }}
 
-			{{ block "main" . -}}{{ end }}
+			{{ block "main" . }}{{ end }}
 
 			{{ partial "navigation.html" . }}
 		</main>

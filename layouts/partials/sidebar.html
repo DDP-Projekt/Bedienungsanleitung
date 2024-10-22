@@ -7,18 +7,18 @@
 		<a href="/Bedienungsanleitung">Die Deutsche<br>Programmiersprache</a>
 
 		<ol id="artikel-links">
-			{{- define "links" -}}
+			{{ define "links" -}}
 				{{- range .page.Pages -}}
 					{{- if .IsSection -}}
 						<li>
 							<details id="Section-{{ .Title }}" {{ if (in $.ancestors .) }} open {{ end }}>
 								<summary><a href="{{ .RelPermalink }}">{{ .Title }}</a></summary>
 								<ol>
-									{{- template "links" (dict "page" . "ancestors" $.ancestors) -}}
+									{{ template "links" (dict "page" . "ancestors" $.ancestors) }}
 								</ol>
 							</details>
 						</li>
-					{{- else -}}
+					{{ else }}
 						<li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
 					{{- end -}}
 				{{- end -}}

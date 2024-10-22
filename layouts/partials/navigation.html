@@ -1,44 +1,44 @@
 <nav id="artikel-navigation">
     <!-- Find next and previous page -->
 
-    {{ $root := .GetPage "/" }}
+    {{- $root := .GetPage "/" -}}
     
     <!-- Next -->
-    {{ $next := .CurrentSection.Pages.Prev . }}
+    {{- $next := .CurrentSection.Pages.Prev . -}}
     <!-- Section -> Child -->
-    {{ if or .IsSection (.Eq $root) }}
-        {{ $next = index .Pages 0 }}
-    {{ end }}
-    {{ if eq $next nil }}
-        {{ with .CurrentSection.Parent }}
+    {{- if or .IsSection (.Eq $root) -}}
+        {{- $next = index .Pages 0 -}}
+    {{- end -}}
+    {{- if eq $next nil -}}
+        {{- with .CurrentSection.Parent -}}
             <!-- Beispiele -> Kombinationen -->
-            {{ with .Pages.Prev $.CurrentSection }}
-                {{ $next = . }}
+            {{- with .Pages.Prev $.CurrentSection -}}
+                {{- $next = . -}}
             <!-- Zufall -> Beispielprogramme -->
-            {{ else }}
-                {{ $next = .Parent.Pages.Prev . }}
-            {{ end }}
-        {{ end }}
-    {{ end }}
+            {{- else -}}
+                {{- $next = .Parent.Pages.Prev . -}}
+            {{- end -}}
+        {{- end -}}
+    {{- end -}}
 
     <!-- Previous -->
-    {{ $prev := .CurrentSection.Pages.Next . }}
+    {{- $prev := .CurrentSection.Pages.Next . -}}
     <!-- Funktionen -> Verzweigungen -->
-    {{ if .IsSection }}
-        {{ $prev = .Parent.Pages.Next . }}
-    {{ end }}
+    {{- if .IsSection -}}
+        {{- $prev = .Parent.Pages.Next . -}}
+    {{- end -}}
     
     <!-- Datentypen -> Programmierung -->
-    {{ if .Eq (index .CurrentSection.Pages 0) }}
-        {{ $prev = .CurrentSection }}
+    {{- if .Eq (index .CurrentSection.Pages 0) -}}
+        {{- $prev = .CurrentSection -}}
     <!-- Kombinationen -> Beispiele -->
-    {{ else if and $prev $prev.IsSection }}
-        {{ $prev = index ($prev.Pages | last 1) 0 }}
-    {{ end }}
+    {{- else if and $prev $prev.IsSection -}}
+        {{- $prev = index ($prev.Pages | last 1) 0 -}}
+    {{- end -}}
     
-	<link rel="prefetch" href="{{ with or $prev $root }} {{ .RelPermalink }} {{ end }}" as="document">
-	<link rel="prefetch" href="{{ with or $next $root }} {{ .RelPermalink }} {{ end }}" as="document">
+	<link rel="prefetch" href="{{- with or $prev $root -}} {{- .RelPermalink -}} {{- end -}}" as="document">
+	<link rel="prefetch" href="{{- with or $next $root -}} {{- .RelPermalink -}} {{- end -}}" as="document">
 
-    <a href="{{ with or $prev $root }} {{ .RelPermalink }} {{ end }} " title='{{ T "prev" }}'>&lt;</a>
-    <a href="{{ with or $next $root }} {{ .RelPermalink }} {{ end }}" title='{{ T "next" }}'>&gt;</a>
+    <a href="{{- with or $prev $root -}} {{- .RelPermalink -}} {{- end -}} " title='{{- T "prev" -}}'>&lt;</a>
+    <a href="{{- with or $next $root -}} {{- .RelPermalink -}} {{- end -}}" title='{{- T "next" -}}'>&gt;</a>
 </nav>
