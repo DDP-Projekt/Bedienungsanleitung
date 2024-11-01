@@ -95,3 +95,8 @@ Eigentlich würde man ja erwarten, dass in der Aufzählung eines Listen Literals
 
 Kombinationen (structs in C) sind benutzerdefinierte zusammengesetzte Datentypen, die eine oder mehrere Variablen in einem Typ zusammenfassen.
 Mehr zu Kombinationen ist im Artikel [Kombinationen](/Bedienungsanleitung/de/Programmierung/Kombinationen) zu finden.
+
+## Typ-Aliase und Typ-Definitionen
+
+Typ-Aliase (typedefs in C) und Typ-Definitionen sind Kurzschreibweisen um neue Typen auf Basis eines bereits existierenden Typs 
+zu erstellen. Mehr zu Typ-Aliasen und -Definitionen ist im Artikel [Typ-Aliase und Typ-Definitionen](/Bedienungsanleitung/de/Programmierung/Typ-Aliase%20und%20Typ-Definitionen)
