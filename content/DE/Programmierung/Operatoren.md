@@ -167,3 +167,9 @@ Es wird erst `z an der Stelle 2` ausgewertet und dann das Ergebnis mit 3 potenzi
 Hätte der `hoch` Operator Vorrang vor `an der Stelle`, würde erst `2 hoch 3` ausgerechnet werden
 und dann das Element an der Stelle 8 von z benutzt, was zu einem Laufzeitfehler führen würde, da z
 nur 3 Elemente besitzt.
+
+# Operator Überladung
+
+Operatoren können auch Überladen werden um Funktionen anstelle von Operatoren auszuführen und trotzdem
+von Operator Priorisierung zu Profitieren.
+Mehr dazu im Artikel [Operatoren Überladung](/Bedienungsanleitung/de/Programmierung/Funktionen/Operatoren-Ueberladung).

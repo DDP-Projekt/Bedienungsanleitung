@@ -99,4 +99,4 @@ Mehr zu Kombinationen ist im Artikel [Kombinationen](/Bedienungsanleitung/de/Pro
 ## Typ-Aliase und Typ-Definitionen
 
 Typ-Aliase (typedefs in C) und Typ-Definitionen sind Kurzschreibweisen um neue Typen auf Basis eines bereits existierenden Typs 
-zu erstellen. Mehr zu Typ-Aliasen und -Definitionen ist im Artikel [Typ-Aliase und Typ-Definitionen](/Bedienungsanleitung/de/Programmierung/Typ-Aliase%20und%20Typ-Definitionen)
+zu erstellen. Mehr zu Typ-Aliasen und -Definitionen ist im Artikel [Typ-Aliase und Typ-Definitionen](/Bedienungsanleitung/de/Programmierung/Typ-Aliase-und-Typ-Definitionen)

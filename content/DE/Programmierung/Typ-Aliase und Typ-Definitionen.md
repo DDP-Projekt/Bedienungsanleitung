@@ -1,6 +1,6 @@
 +++
 title = "Typ-Aliase und Typ-Definitionen"
-weight = 7
+weight = 8
 type = "article"
 +++
 
