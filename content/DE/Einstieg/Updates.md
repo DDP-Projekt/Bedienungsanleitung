@@ -47,7 +47,7 @@ Beispiel: 1.2.3-alpha
 
 ## Wie es funktioniert
 
-`kddp update` schaut einfach in den [Github-Releases](https://github.com/DDP-Projekt/Kompilierer/releases) vom Kompilierer repo nach, ob es einen Release gibt, dessen Tag neuer als die aktuell installierte Version ist.
+`kddp update` schaut einfach in den [Github-Releases](https://github.com/DDP-Projekt/Kompilierer/releases) vom Kompilierer Repository nach, ob es einen Release gibt, dessen Tag neuer als die aktuell installierte Version ist.
 Sollte das der Fall sein lädt es die entsprechende Archiv-Datei herunter und updatet sich damit.
 
 Sollte die `--pre_release` Option angegeben sein werden auch als "Pre-Release" markierte Releases in die Suche miteinbezogen.

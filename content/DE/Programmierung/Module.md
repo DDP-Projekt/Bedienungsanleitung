@@ -13,7 +13,7 @@ DDP stellt hierfür Module zur Verfügung.
 ## Prinzip
 
 Jede DDP-Datei stellt ein DDP-Modul dar.
-Jedes DDP-Module kann von einem anderen Eingebunden werden.
+Jedes DDP-Module kann von einem anderen eingebunden werden.
 Dafür muss es aber ein nach außen sichtbares (öffentliches) Interface preisgeben.
 Dies ist mit dem Schlüsselwort "öffentliche" möglich.
 Das öffentliche Interface eines DDP-Modules ist die Menge aller als "öffentliche" deklarierten Variablen und Funktionen.
