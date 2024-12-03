@@ -1,5 +1,5 @@
 <article id="artikel">
-	{{- $mdStyle := resources.Get "css/md-style.css" | fingerprint }}
+	{{- $mdStyle := resources.Get "css/md-style.css" | minify | fingerprint }}
 	<link rel="stylesheet" href="{{ $mdStyle.RelPermalink }}" integrity="{{ $mdStyle.Data.Integrity }}">
 
 	{{ .Content -}}

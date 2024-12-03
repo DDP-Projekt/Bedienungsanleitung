@@ -1,9 +1,9 @@
 :root {
 	--sidebar-size: 280px;
 	--content-size: calc(100% - var(--sidebar-size));
-	--theme-toggle-img: url(/Bedienungsanleitung/img/theme-light-dark.svg);
-	--title-img: url(/Bedienungsanleitung/img/title.svg);
-	--line-img: url(/Bedienungsanleitung/img/line.svg);
+	--theme-toggle-img: url(/Bedienungsanleitung/svg/theme-light-dark.min.svg);
+	--title-img: url(/Bedienungsanleitung/svg/title.min.svg);
+	--line-img: url(/Bedienungsanleitung/svg/line.min.svg);
 }
 
 :root:has(#dark-mode-check:checked) {

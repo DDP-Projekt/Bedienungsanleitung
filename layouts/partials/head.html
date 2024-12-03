@@ -16,17 +16,17 @@
 	<link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#000000">
 	<link rel="shortcut icon" href="favicon/favicon.ico">
 	
-	{{- range resources.Match "img/*" -}}
-		{{ .Publish }}
+	{{- range resources.Match "svg/*" -}}
+		{{ (. | minify).Publish }}
 	{{ end }}
-	<link rel="preload" href="/Bedienungsanleitung/img/line.svg" as="image" type="image/svg+xml">
-	<link rel="preload" href="/Bedienungsanleitung/img/theme-light-dark.svg" as="image" type="image/svg+xml" fetchpriority="high">
-	<link rel="preload" href="/Bedienungsanleitung/img/title.svg" as="image" type="image/svg+xml" crossorigin fetchpriority="high">
+	<link rel="preload" href="/Bedienungsanleitung/svg/line.min.svg" as="image" type="image/svg+xml">
+	<link rel="preload" href="/Bedienungsanleitung/svg/theme-light-dark.min.svg" as="image" type="image/svg+xml" fetchpriority="high">
+	<link rel="preload" href="/Bedienungsanleitung/svg/title.min.svg" as="image" type="image/svg+xml" crossorigin fetchpriority="high">
 
-	{{- $mdStyle := resources.Get "css/md-style.css" | fingerprint }}
+	{{- $mdStyle := resources.Get "css/md-style.css" | minify | fingerprint }}
 	<link rel="preload" as="style" href="{{ $mdStyle.RelPermalink }}" integrity="{{ $mdStyle.Data.Integrity }}">
 
-	{{- $style := resources.Get "css/style.css" | fingerprint }}
+	{{- $style := resources.Get "css/style.css" | minify | fingerprint }}
 	<link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}">
 
 	<script defer>
