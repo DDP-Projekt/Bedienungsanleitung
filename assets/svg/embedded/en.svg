@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 30" width="30" height="20">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 30" width="33.33" height="20">
 	<clipPath id="t"><path d="M25,15h25v15zv15h-25zh-25v-15zv-15h25z"/></clipPath>
 	<path d="M0,0v30h50v-30z" fill="#012169"/>
 	<path d="M0,0 50,30M50,0 0,30" stroke="#fff" stroke-width="6"/>
