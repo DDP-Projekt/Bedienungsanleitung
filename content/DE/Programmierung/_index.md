@@ -8,14 +8,14 @@ layout = "single"
 # Programmierung
 
 Viele, wenn nicht gar alle, der Features die in den nachfolgenden Artikeln beschrieben werden sollten jedem, der schon einmal programmiert hat, bereits bekannt sein.
-Dennoch lohnt es sich, wenn auch nur für die Syntax, alles genaustens zu lesen, da DDP oftmals einige Details abändert, um der Deutschen Sprache gerecht zu werden.
+Dennoch lohnt es sich, wenn auch nur für die Syntax, alles genaustens zu lesen, da DDP oftmals einige Details abändert, um der deutschen Sprache gerecht zu werden.
 
 Um einen groben Überblick über die Sprache zu bekommen reicht es vermutlich aus sich hauptsächlich die Tabellen und Code-Beispiele
 anzusehen. Wer jedoch die Details kennen will, und nicht von komischer Syntax überrascht werden möchte, sollte sich alle Artikel
 ganz durchlesen.
 
 Die nachfolgenden Artikel beschreiben die einzelnen Features und Eigenschaften der Deutschen Programmiersprache und wie man sie benutzt.
-In diesen Artikeln wird eine Fachbezogene Terminologie benutzt, die hier erklärt werden soll.
+In diesen Artikeln wird eine fachbezogene Terminologie benutzt, die hier erklärt werden soll.
 
 ## Ausdrücke
 

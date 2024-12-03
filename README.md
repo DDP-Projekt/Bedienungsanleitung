@@ -7,19 +7,19 @@ Die einzelnen Artikel liegen im Ordner "[content](content)" und sind Markdown Da
 Hugo nutzt die Markdown Dateien um die Website zu generieren.
 
 ## Lokal Ausführen
-### Vorraussetzungen
+### Voraussetzungen
 1. [Hugo](https://gohugo.io/installation/)
 2. [Go](https://go.dev/dl/)
 
 ### Starten
-1. Git Repository Klonen
+1. Git Repository klonen
 2. `go run ./gen` - Artikel für die Standardbibliothek generieren
 3. `hugo serve` - Webserver starten
 
 Mit dem Befehl `hugo` generiert man alle html Dateien, welche im Ordner `/public` gespeichert werden.
 
 ## Mitwirken
-Über Issues oder Pull-Requests kannst du uns helfen Fehler in der Dokumenation zu beheben.
+Über Issues oder Pull-Requests kannst du uns helfen Fehler in der Dokumentation zu beheben.
 
 ### Artikel erstellen
 Um Artikel zu erstellen benutzt man den `hugo new content <pfad>` Befehl.
@@ -40,7 +40,7 @@ Das Feld `title` gibt den Text an, der in der Seitenleiste für den Artikel ange
 Der Pfad der Datei bestimmt die URL des Artikels.
 
 ### Sections erstellen
-Sections sind Verzeichnisse die mehrere Artikel enthalten. In der Sidebar werden Sections als dropdown menü angezeigt.
+Sections sind Verzeichnisse die mehrere Artikel enthalten. In der Sidebar werden Sections als Dropdown-Menü angezeigt.
 
 Jede Section hat einen speziellen Artikel mit dem Namen: "`_index.md`".
 Diese Datei beginnt mit einem front-matter, welches so aussieht:
