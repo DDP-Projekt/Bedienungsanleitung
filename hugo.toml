@@ -1,4 +1,4 @@
-baseURL = 'https://ddp.le0n.dev/Bedienungsanleitung/'
+baseURL = 'http://doku.ddp.im
 disablePathToLower = true
 disableKinds = ['taxonomy', 'term']
 disableHugoGeneratorInject = true
