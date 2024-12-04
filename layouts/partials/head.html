@@ -20,7 +20,7 @@
 		{{ (. | minify).Publish }}
 	{{ end }}
 	<link rel="preload" href="/Bedienungsanleitung/svg/line.min.svg" as="image" type="image/svg+xml">
-	<link rel="preload" href="/Bedienungsanleitung/svg/theme-light-dark.min.svg" as="image" type="image/svg+xml" fetchpriority="high">
+	<link rel="preload" href="/Bedienungsanleitung/svg/theme-light-dark.min.svg" as="image" type="image/svg+xml" fetchpriority="high" media="screen">
 	<link rel="preload" href="/Bedienungsanleitung/svg/title.min.svg" as="image" type="image/svg+xml" crossorigin fetchpriority="high">
 
 	{{- $mdStyle := resources.Get "css/md-style.css" | minify | fingerprint }}

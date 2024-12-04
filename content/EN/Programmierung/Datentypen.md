@@ -12,13 +12,13 @@ The type of variables, functions and expressions cannot change at runtime, it is
 
 ## Simple data types
 
-| type name | Description                         | range of values                                                                    | literal                                                           | Example                                                       |
-| --------- | ----------------------------------- | ---------------------------------------------------------------------------------- | ----------------------------------------------------------------- | ------------------------------------------------------------- |
-| Zahl      | A 64-bit integer                    | *-2,147,483,648* to *2,147,483,647*                                                | A sequence of digits, e.g. 42                                     | `Die Zahl x ist 69.`, <br>`1 plus -7`                         |
-| Kommazahl | A 64-bit floating point number      | *-1.79769313486232x10^308* to <br>*1.79769313486232x10^308* with 16 decimal places | A number literal with decimal places, e.g. 3.1415                 | `Die Kommazahl x ist 6,5.`, <br>`2 durch 0,5`                 |
-| Wahrheitswert   | A logical value (8 bits in size)    | *true* or *false*                                                                  | *true* or *false*                                                 | `Der Wahrheitswert x ist wahr.`, <br>`1 plus 1 gleich 2`            |
-| Buchstabe | A 4-byte UTF-8 encoded character    | *0* - *65535*                                                                      | A utf8 character between single quotes, e.g. 'a' or '\n'          | `Der Buchstabe x ist 'd'.`                                    |
-| Text      | A utf-8 encoded sequence of letters | *any size*                                                                         | Any number of letters between <br>quotation marks, e.g. "Hello\n" | `Der Text x ist "abc".`, <br>`"Hallo" verkettet mit " du da"` |
+| type name    | Description                         | range of values                                                         | literal                                                       | Example                                                       |
+| ------------ | ----------------------------------- | ----------------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- |
+| Zahl         | A 64-bit integer                    | *-2^63* to *2^63*                                                       | A sequence of digits, e.g. 42                                 | `Die Zahl x ist 69.`, <br>`1 plus -7`                         |
+| Kommazahl    | A 64-bit floating point number      | aprox. *-1.797x10^308* to <br>*1.797x10^308* with 16 decimal places | A number literal with decimal places, e.g. 3.1415             | `Die Kommazahl x ist 6,5.`, <br>`2 durch 0,5`                 |
+| Wahrheitswer | A logical value (8 bits in size)    | *true* or *false*                                                       | *true* or *false*                                             | `Der Wahrheitswert x ist wahr.`, <br>`2 gleich 2`             |
+| Buchstabe    | A 4-byte UTF-8 encoded character    | *0* - *65535*                                                           | A utf8 character between single quotes, e.g. 'a' or '\n'      | `Der Buchstabe x ist 'd'.`                                    |
+| Text         | A utf-8 encoded sequence of letters | *any size*                                                              | Any number of letters between quotation marks, e.g. "Hello\n" | `Der Text x ist "abc".`, <br>`"Hallo" verkettet mit " du da"` |
 
 ### Unlike in other programming languages:
 
@@ -43,7 +43,6 @@ which one cannot normally write in text or letter literals.
 *: Only within a letter literal.\
 **: Only within a text literal.
 
-***
 
 ## Lists
 
@@ -73,15 +72,13 @@ Die Zahlen Liste z2 ist eine leere Zahlen Liste.
 Die Text Liste t2 ist "Hallo" als Text Liste.
 ```
 
-| type name         | Description          | literal                           | Example                                                                     |
-| ----------------- | -------------------- | --------------------------------- | --------------------------------------------------------------------------- |
-| Zahlen Liste      | A list of numbers    | A list literal as described above | `Die Zahlen Liste z ist eine Liste, die aus 1, 2, 3 besteht.`               |
-| Kommazahlen Liste | A list of floats     | A list literal as described above | `Die Kommazahlen Liste z ist eine Liste, die aus 1,2, 3,2, 3,1415 besteht.` |
-| Wahrheitswert Liste     | A list of booleans   | A list literal as described above | `Die Wahrheitswert Liste b ist eine Liste, die aus wahr, falsch, wahr besteht.`   |
-| Buchstaben Liste  | A list of characters | A list literal as described above | `Die Buchstaben Liste b ist eine Liste, die aus 'b', 'h', 'z' besteht.`     |
-| Text Liste        | A list of strings    | A list literal as described above | `Die Text Liste t ist eine Liste, die aus "Hallo", "du", "da" besteht.`     |
-
-***
+| type name           | Example                                                                         |
+| ------------------- | ------------------------------------------------------------------------------- |
+| Zahlen Liste        | `Die Zahlen Liste z ist eine Liste, die aus 1, 2, 3 besteht.`                   |
+| Kommazahlen Liste   | `Die Kommazahlen Liste z ist eine Liste, die aus 1,2, 3,2, 3,1415 besteht.`     |
+| Wahrheitswert Liste | `Die Wahrheitswert Liste b ist eine Liste, die aus wahr, falsch, wahr besteht.` |
+| Buchstaben Liste    | `Die Buchstaben Liste b ist eine Liste, die aus 'b', 'h', 'z' besteht.`         |
+| Text Liste          | `Die Text Liste t ist eine Liste, die aus "Hallo", "du", "da" besteht.`         |
 
 ## Remark
 

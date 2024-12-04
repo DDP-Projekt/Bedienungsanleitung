@@ -18,4 +18,6 @@
 			localStorage.setItem("dark-mode", document.querySelector('#dark-mode-check').checked);
 		});
 	</script>
+	{{- $print := resources.Get "css/print.css" | minify | fingerprint }}
+	<link rel="stylesheet" href="{{ $print.RelPermalink }}" integrity="{{ $print.Data.Integrity }}" media="print">
 </html>
