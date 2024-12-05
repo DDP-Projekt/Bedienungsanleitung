@@ -8,6 +8,6 @@ layout = "single"
 # Getting Started
 
 The following articles will introduce you to DDP development by showing you how to
-* [install the DDP compiler](/Bedienungsanleitung/en/Einstieg/Installation), 
-* [set up a development environment](/Bedienungsanleitung/en/Einstieg/Einrichten) und 
-* [write your first program](/Bedienungsanleitung/en/Einstieg/Erstes-Programm).
+* [install the DDP compiler](/en/Einstieg/Installation), 
+* [set up a development environment](/en/Einstieg/Einrichten) und 
+* [write your first program](/en/Einstieg/Erstes-Programm).

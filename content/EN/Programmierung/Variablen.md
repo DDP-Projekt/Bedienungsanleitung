@@ -21,7 +21,7 @@ If you want to declare such variables with an expression, you should use this sy
 ```ddp
 Der Wahrheitswert <variable name> ist <true or false>, wenn <expression>.
 ```
-You can find a list of all data types in the article [data types](/Bedienungsanleitung/en/Programmierung/Datentypen)
+You can find a list of all data types in the article [data types](/en/Programmierung/Datentypen)
 
 ## Examples:
 

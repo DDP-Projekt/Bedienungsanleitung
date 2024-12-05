@@ -24,7 +24,7 @@ Der mathematische Ausdruck `2 * pi * radius` produziert den Umfang eines Kreises
 In DDP sähe dieser Ausdruck so aus: `2 mal pi mal radius`.
 Ausdrücke können mehrere Argumente von verschiedenen Typen annehmen und produzieren draus einen Wert
 vom gleichen oder anderen Typ.
-Die verschiedenen Datentypen sind im Artikel [Datentypen](/Bedienungsanleitung/de/Programmierung/Datentypen) beschrieben.
+Die verschiedenen Datentypen sind im Artikel [Datentypen](/de/Programmierung/Datentypen) beschrieben.
 
 ## Anweisungen
 
@@ -50,7 +50,7 @@ Schreibe den Text "Ich bin nicht mehr in einem Anweisungsblock".
 ```
 Der Anweisungsblock endet wenn das nächste Zeichen genauso oder weniger tief wie der Doppelpunkt eingerückt ist.
 
-Anweisungsblöcke werden häufig in [Verzweigungen](/Bedienungsanleitung/de/Programmierung/Verzweigungen-und-Schleifen#verzweigungen), [Schleifen](/Bedienungsanleitung/de/Programmierung/Verzweigungen-und-Schleifen#schleifen) oder [Funktionen](/Bedienungsanleitung/de/Programmierung/Funktionen) benutzt.
+Anweisungsblöcke werden häufig in [Verzweigungen](/de/Programmierung/Verzweigungen-und-Schleifen#verzweigungen), [Schleifen](/de/Programmierung/Verzweigungen-und-Schleifen#schleifen) oder [Funktionen](/de/Programmierung/Funktionen) benutzt.
 Mehr dazu in den nachfolgenden Artikeln.
 
 ## Kommentare
@@ -83,4 +83,4 @@ und kann so benutzt werden:
 ## Literale
 
 Ein Literal ist eine Schreibweise im Quellcode die einen (in DDP konstanten) Wert repräsentiert.
-Eine Liste von Literalen für die entsprechenden Datentypen kann im Artikel [Datentypen](/Bedienungsanleitung/de/Programmierung/Datentypen) gefunden werden.
+Eine Liste von Literalen für die entsprechenden Datentypen kann im Artikel [Datentypen](/de/Programmierung/Datentypen) gefunden werden.

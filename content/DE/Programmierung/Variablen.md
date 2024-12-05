@@ -22,7 +22,7 @@ Wenn man solche Variablen mit einem Ausdruck deklarieren will, sollte man stattd
 Der Wahrheitswert <Variablenname> ist <wahr oder falsch>, wenn <Ausdruck>. 
 ```
 
-Diese Syntax funktioniert auch mit Rückgaben in [Funktionen](/Bedienungsanleitung/de/Programmierung/Funktionen):
+Diese Syntax funktioniert auch mit Rückgaben in [Funktionen](/de/Programmierung/Funktionen):
 ```ddp
 Die öffentliche Funktion Ist_Leer_Text mit dem Parameter liste vom Typ Text Liste, gibt einen Wahrheitswert zurück, macht:
 	Gib wahr, wenn die Länge von liste gleich 0 ist zurück.
@@ -30,7 +30,7 @@ Und kann so benutzt werden:
 	"<liste> leer ist"
 ```
 
-Eine Liste von allen Datentypen findest du im Artikel [Datentypen](/Bedienungsanleitung/de/Programmierung/Datentypen)
+Eine Liste von allen Datentypen findest du im Artikel [Datentypen](/de/Programmierung/Datentypen)
 
 ## Beispiele:
 

@@ -40,7 +40,7 @@ einen Vektor2, und erstellen sie so:
 ```
 
 Here a two-dimensional vector consisting of two numbers (x and y) is defined.
-The combination itself and the field y are public, so they can also be used in other modules (more on this in the article [Module](/Bedienungsanleitung/en/Programmierung/Module/)).
+The combination itself and the field y are public, so they can also be used in other modules (more on this in the article [Module](/en/Programmierung/Module/)).
 
 This notation sounds very mathematical, but it enables something very important.
 The indefinite article (einer, eine or ein) indicates the grammatical gender (masculine, feminine or neuter) of the type name.
@@ -94,4 +94,4 @@ Die Zahl x ist x von (vektoren an der Stelle 1).
 ```
 Unfortunately, with user-defined combinations it is not (yet) possible to decline the type name accordingly, so it is different than with built-in types (Zahl -> Zahl*en* Liste vs. Vektor -> Vektor Liste).
 
-As you can see, the `von` operator also has priority over the `an der Stelle` operator, as specified in the [prioritization of operators](/Bedienungsanleitung/en/Programmierung/Operatoren/#operator-prioritization).
+As you can see, the `von` operator also has priority over the `an der Stelle` operator, as specified in the [prioritization of operators](/en/Programmierung/Operatoren/#operator-prioritization).

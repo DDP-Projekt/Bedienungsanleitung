@@ -1,9 +1,9 @@
 :root {
 	--sidebar-size: 280px;
 	--content-size: calc(100% - var(--sidebar-size));
-	--theme-toggle-img: url(svg/theme-light-dark.min.svg);
-	--title-img: url(svg/title.min.svg);
-	--line-img: url(svg/line.min.svg);
+	--theme-toggle-img: url(/svg/theme-light-dark.min.svg);
+	--title-img: url(/svg/title.min.svg);
+	--line-img: url(/svg/line.min.svg);
 }
 
 :root:has(#dark-mode-check:checked) {
