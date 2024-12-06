@@ -6,7 +6,7 @@ type = "article"
 
 # Kombinationen
 
-Verbundtypen, auch Strukturen oder Records gennant, sind einer der Wichtigesten Datentypen der meisten Programmiersprachen.
+Verbundtypen, auch Strukturen oder Records genannt, sind einer der wichtigsten Datentypen der meisten Programmiersprachen.
 Sie ermöglichen es zusammengesetzte Datentypen zu definieren und so auch komplexere Daten modellieren zu können.
 In DDP nennen wir sie Kombinationen.
 
@@ -40,7 +40,7 @@ einen Vektor2, und erstellen sie so:
 ```
 
 Hier wird ein zweidimensionaler Vektor, der aus zwei Zahlen (x und y) besteht definiert.
-Die Kombination selbst und das Feld y sind öffentlich, können also auch in anderen Modulen benutzt werden (mehr dazu im Artikel [Module](/Bedienungsanleitung/de/Programmierung/Module)).
+Die Kombination selbst und das Feld y sind öffentlich, können also auch in anderen Modulen benutzt werden (mehr dazu im Artikel [Module](/de/Programmierung/Module)).
 
 Diese Schreibweise kling zwar sehr mathematisch, aber ermöglicht etwas sehr wichtiges.
 Durch den unbestimmten Artikel (einer, eine oder ein) wird das grammatikalische Geschlecht (maskulin, feminin oder neutrum) des Typ-Namens erkennbar.
@@ -95,4 +95,4 @@ Die Zahl x ist x von (vektoren an der Stelle 1).
 
 Bei Benutzerdefinierten Kombinationen ist es leider (noch) nicht möglich den Typnamen entsprechend zu deklinieren, also ist es anders als bei eingebauten Typen (Zahl -> Zahl*en* Liste vs. Vektor -> Vektor Liste).
 
-Wie man sieht hat der `von` Operator auch Vorrang vor dem `an der Stelle` Operator, so wie es in der [Priorisierung von Operatoren](/Bedienungsanleitung/de/Programmierung/Operatoren/#operator-priorisierung) festgelegt ist.
+Wie man sieht hat der `von` Operator auch Vorrang vor dem `an der Stelle` Operator, so wie es in der [Priorisierung von Operatoren](/de/Programmierung/Operatoren/#operator-priorisierung) festgelegt ist.

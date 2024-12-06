@@ -8,7 +8,7 @@ type = "article"
 
 Zur Vereinfachung werden in diesem Artikel die Typen *Zahl* und *Kommazahl* als *Numerisch* zusammengefasst.
 
-Um das Finden eines bestimmten Operators für Leser, die bereits eine Programmiersprache beherschen einfacher zu machen ist
+Um das Finden eines bestimmten Operators für Leser, die bereits eine Programmiersprache beherrschen einfacher zu machen ist
 in diesen und späteren Tabellen jeweils der C-Operator dabei.
 
 ## Unäre Operatoren
@@ -46,8 +46,8 @@ Mithilfe von Bool'schen Operatoren können komplexe Bedingungen ausgedrückt und
 | Operator            | Beschreibung                                          | C Equivalent      | Beispiel                                                                                                                  | Ergebnis                                   |
 | ------------------- | ----------------------------------------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------ |
 | und                 | Wahr, wenn beide Argumente wahr sind.                 | `true && false`   | `wahr und wahr`<br>`wahr und falsch`<br>`falsch und wahr`<br>`falsch und falsch`                                          | `wahr`<br>`falsch`<br>`falsch`<br>`falsch` |
-| oder                | Wahr, wenn eines der Beiden Argumente wahr ist.       | `true \|\| false` | `wahr oder wahr`<br>`wahr oder falsch`<br>`falsch oder wahr`<br>`falsch oder falsch`                                      | `wahr`<br>`wahr`<br>`wahr`<br>`falsch`     |
-| `entweder ... oder` | Wahr, wenn *nur* eines der Beiden Argumente wahr ist. | `true != false`   | `entweder wahr oder wahr`<br>`entweder wahr oder falsch`<br>`entweder falsch oder wahr`<br>` entweder falsch oder falsch` | `falsch`<br>`wahr`<br>`wahr`<br>`falsch`   |
+| oder                | Wahr, wenn eines der beiden Argumente wahr ist.       | `true \|\| false` | `wahr oder wahr`<br>`wahr oder falsch`<br>`falsch oder wahr`<br>`falsch oder falsch`                                      | `wahr`<br>`wahr`<br>`wahr`<br>`falsch`     |
+| `entweder ... oder` | Wahr, wenn *nur* eines der beiden Argumente wahr ist. | `true != false`   | `entweder wahr oder wahr`<br>`entweder wahr oder falsch`<br>`entweder falsch oder wahr`<br>` entweder falsch oder falsch` | `falsch`<br>`wahr`<br>`wahr`<br>`falsch`   |
 | nicht               | Der Wert des Arguments wird umgekehrt.                | `!true`           | `nicht wahr` <br>`nicht falsch`                                                                                           | `falsch`<br>`wahr`                         |
 
 # Vergleichsoperatoren
@@ -55,7 +55,7 @@ Mithilfe von Bool'schen Operatoren können komplexe Bedingungen ausgedrückt und
 | Operator          | Beschreibung                                                                          | C Equivalent           | Beispiel                                                                                     | Ergebnis                     |
 | ----------------- | ------------------------------------------------------------------------------------- | ---------------------- | -------------------------------------------------------------------------------------------- | ---------------------------- |
 | gleich            | Wahr, wenn beide Argumente den gleichen Wert haben.                                   | `1 == 1`               | `1 gleich 1 ist`<br>`1 gleich 2 ist`                                                         | `wahr`<br>`falsch`           |
-| ungleich          | Wahr, wenn die Beiden Argumente verschiedene Werte haben.                             | `1 != 1`               | `1 ungleich 1 ist`<br>`1 ungleich 2 ist`                                                     | `wahr`<br>`falsch`           |
+| ungleich          | Wahr, wenn die beiden Argumente verschiedene Werte haben.                             | `1 != 1`               | `1 ungleich 1 ist`<br>`1 ungleich 2 ist`                                                     | `wahr`<br>`falsch`           |
 | kleiner als       | Wahr, wenn das Linke Argument einen kleineren Wert als das Rechte hat.                | `5 < 10`               | `5 kleiner als 10 ist`<br>`30 kleiner als 15 ist`                                            | `wahr`<br>`falsch`           |
 | größer als        | Wahr, wenn das Linke Argument einen größeren Wert als das Rechte hat.                 | `7 > 3`                | `7 größer als 3 ist`<br>`5 größer als 8 ist`                                                 | `wahr`<br>`falsch`           |
 | kleiner als, oder | Wahr, wenn das Linke Argument einen kleineren oder denselben Wert wie das Rechte hat. | `5 <= 10`              | `5 kleiner als, oder 10 ist`<br>`30 kleiner als, oder 15 ist`<br>`5 kleiner als, oder 5 ist` | `wahr`<br>`falsch`<br>`wahr` |
@@ -143,7 +143,7 @@ Hier ist eine Tabelle mit allen Operatoren und ihrer Priorisierung (hoch prioris
 | 9    | Negation,                                                       |
 | 10   | Betrag, Größe, Länge, Standardwert, Logisches-/Bool'sches nicht |
 | 11   | Multiplikation, Division, Rest,                                 |
-| 12   | Addition, Subtrakion, Verkettung,                               |
+| 12   | Addition, Subtraktion, Verkettung,                               |
 | 13   | Bit-Verschiebung                                                |
 | 14   | Größen Vergleich (kleiner, größer, ect.)                        |
 | 15   | Gleichheit (gleich und ungleich)                                |

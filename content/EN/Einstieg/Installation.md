@@ -8,7 +8,7 @@ type = "article"
 
 This article describes how to install the compiler (kddp).
 
-If you have already installed kddp and want to update it to a newer version, see [Updates](/Bedienungsanleitung/en/Einstieg/Updates)
+If you have already installed kddp and want to update it to a newer version, see [Updates](/en/Einstieg/Updates)
 
 ## 1. Download
 
@@ -71,4 +71,4 @@ A finished DDP installation can be between 20MB and around 1.1GB in size, depend
 
 ## 4. Testing
 
-To test the installation, see [First Program](/Bedienungsanleitung/en/Einstieg/Erstes-Programm)
+To test the installation, see [First Program](/en/Einstieg/Erstes-Programm)

@@ -8,7 +8,7 @@ type = "article"
 
 In diesem Artikel wird beschrieben wie man den Kompilierer (kddp) installiert.
 
-Wenn du kddp schon installiert hast und es zu einer neueren Version updaten willst, siehe [Updates](/Bedienungsanleitung/de/Einstieg/Updates)
+Wenn du kddp schon installiert hast und es zu einer neueren Version updaten willst, siehe [Updates](/de/Einstieg/Updates)
 
 ## 1. Download
 
@@ -29,13 +29,13 @@ Diese Stelle, also der Pfad und Ordner-Name, sollte nach der Installation nicht 
 Auf Windows einfach auf das Archiv rechts-klicken und "Alle Extrahieren" wählen.
 Auf Linux den `$tar` Befehl verwenden.
 
-Nach dem extrahieren solltest du den enstprechend entpackten Ordner sehen. Es kann sein, dass dieser geschachtelt ist (also z.B. `DDP-0.0.1-windows-amd64/DDP-0.0.1-windows-amd64`). Falls das passiert ist verschiebe den Ordner **VOR DER INSTALLATION** an die richtige Stelle.
+Nach dem extrahieren solltest du den entsprechend entpackten Ordner sehen. Es kann sein, dass dieser geschachtelt ist (also z.B. `DDP-0.0.1-windows-amd64/DDP-0.0.1-windows-amd64`). Falls das passiert ist verschiebe den Ordner **VOR DER INSTALLATION** an die richtige Stelle.
 Der Name des Ordners ist egal, du kannst ihn also gerne von `DDP-0.0.1-windows-amd64` zu schlichtweg `DDP` umbenennen.
 
 ## 3. Installieren
 
 Gehe in das DDP Verzeichnis, das gerade erstellt wurde und führe die Datei `ddp-setup.exe` (bzw. `ddp-setup` auf Linux) aus. 
-Es sollte sich ein Konsolen Fenster öffnen, das dich durch die Installation führt.
+Es sollte sich ein Konsolenfenster öffnen, das dich durch die Installation führt.
 
 Im Moment ist das Setup nur auf Englisch um es allen zugänglich zu machen, also nicht wundern.
 
@@ -49,7 +49,7 @@ Das führt dazu, dass jede Frage des Setups automatisch mit "ja" beantwortet wir
 Ohne die `--force` flag wird das Setup ganz normal fortfahren
 
 Das Setup wird dir Fragen stellen (blau) und dir Warnungen (gelb) und Fehler (rot) melden.
-Die Fragen sind ja/nein fragen, die mit y/n (yes/no) benatwortet werden können.
+Die Fragen sind ja/nein fragen, die mit y/n (yes/no) beantwortet werden können.
 Warnungen sollten gelesen werden, können aber unter Umständen ignoriert werden.
 
 Sollte ein Fehler auftreten ist es sehr wahrscheinlich, dass die gesamte Installation fehlgeschlagen ist.
@@ -67,8 +67,8 @@ Das Setup wird
 * vscode-ddp (die DDP-Erweiterung für Visual Studio Code) installieren, falls VSCode installiert ist
 * am Ende nicht mehr benötigte Dateien löschen um Platz zu sparen
 
-Eine fertige DDP Installation kann zwischen 20mb und etwa 1,1Gb groß sein, je nach Betriebssystem und je nachdem ob mingw64 extra installiert werden musste oder nicht.
+Eine fertige DDP Installation kann zwischen 20 MB und etwa 1,1 GB groß sein, je nach Betriebssystem und je nachdem ob mingw64 extra installiert werden musste oder nicht.
 
 ## 4. Testen
 
-Um die Installation zu testen, siehe [Erstes Programm](/Bedienungsanleitung/de/Einstieg/Erstes-Programm)
+Um die Installation zu testen, siehe [Erstes Programm](/de/Einstieg/Erstes-Programm)

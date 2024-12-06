@@ -34,7 +34,7 @@ Sonst:
 	<Anweisungen>.
 ```
 
-### Bespiel:
+### Beispiel:
 ```ddp
 Wenn 1 gleich 2 ist, dann:
 	Schreibe den Text "Bedingung erfüllt!".
@@ -123,7 +123,7 @@ Für jede Zahl i von 1 bis 100, mache:
 	Schreibe die Zahl i.
 ```
 ### Runterzählende Schleife
-Eine Runterzählende Schleife funktioniert wie die Hochzählende, bloß mit dem Unterschied, dass eine Schrittgröße von -1 (oder irgendeinem negativen Wert) spezifiziert wird. Dadurch wird der Zähler am Ende nicht um 1 sondern um die angegebene Schrittgrößer erhöht (bzw. verringert).
+Eine Runterzählende Schleife funktioniert wie die Hochzählende, bloß mit dem Unterschied, dass eine Schrittgröße von -1 (oder irgendeinem negativen Wert) spezifiziert wird. Dadurch wird der Zähler am Ende nicht um 1 sondern um die angegebene Schrittgröße erhöht (bzw. verringert).
 Natürlich muss hierbei der Startwert größer als der Endwert sein, da es sonst eine Endlosschleife wird.
 
 ### Aufbau

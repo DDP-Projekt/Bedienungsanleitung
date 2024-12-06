@@ -119,7 +119,7 @@
 
 /* DDP */
 #artikel .language-ddp {
-	color: #88d7f6;
+	color: var(--md-link-hover-color);
 }
 #artikel .language-ddp>span.comment {
 	color: #5b8449;

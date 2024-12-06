@@ -22,7 +22,7 @@ Wenn man solche Variablen mit einem Ausdruck deklarieren will, sollte man stattd
 Der Wahrheitswert <Variablenname> ist <wahr oder falsch>, wenn <Ausdruck>. 
 ```
 
-Diese Syntax funktioniert auch mit Rückgaben in [Funktionen](/Bedienungsanleitung/de/Programmierung/Funktionen):
+Diese Syntax funktioniert auch mit Rückgaben in [Funktionen](/de/Programmierung/Funktionen):
 ```ddp
 Die öffentliche Funktion Ist_Leer_Text mit dem Parameter liste vom Typ Text Liste, gibt einen Wahrheitswert zurück, macht:
 	Gib wahr, wenn die Länge von liste gleich 0 ist zurück.
@@ -30,7 +30,7 @@ Und kann so benutzt werden:
 	"<liste> leer ist"
 ```
 
-Eine Liste von allen Datentypen findest du im Artikel [Datentypen](/Bedienungsanleitung/de/Programmierung/Datentypen)
+Eine Liste von allen Datentypen findest du im Artikel [Datentypen](/de/Programmierung/Datentypen)
 
 ## Beispiele:
 
@@ -44,7 +44,7 @@ Der Wahrheitswert e ist falsch wenn 1 gleich 1 ist.
 
 # Zuweisung
 
-Die Zuweisung ist die änderung des Wertes einer Variable. In DDP gibt es mehrere Wege Variablen zu ändern.
+Die Zuweisung ist die Änderung des Wertes einer Variable. In DDP gibt es mehrere Wege Variablen zu ändern.
 
 Mit dem Schlüsselwort `ist` kann man Variablen nur einem Literal zuweisen:
 ```ddp
@@ -82,9 +82,9 @@ int main(void) {
 
 # Spezielle Zuweisungen
 
-Es gibt noch eineige Zuweisungsoperatoren mit deren Hilfe Variablen direkt verändert werden können,
+Es gibt noch einige Zuweisungsoperatoren mit deren Hilfe Variablen direkt verändert werden können,
 ohne sie selbst in einem Ausdruck verwenden zu müssen.
-In anderen Sprachen sind das sogennatne "compound assignements" also Operatoren wie `+=, -=, *=, etc.` .
+In anderen Sprachen sind das sogenannte "compound assignements" also Operatoren wie `+=, -=, *=, etc.` .
 Diese Operatoren können verwendet werden um Code lesbarer zu gestalten.
 
 ## Addition

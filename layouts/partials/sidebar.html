@@ -4,14 +4,14 @@
 	<div style="margin: 10px;">
 		<h2 id="überschrift">{{ T "toc" }}</h2>
 
-		<a href="/Bedienungsanleitung">Die Deutsche<br>Programmiersprache</a>
+		<a href="/">Die Deutsche<br>Programmiersprache</a>
 
 		<ol id="artikel-links">
 			{{ define "links" -}}
 				{{- range .page.Pages -}}
 					{{- if .IsSection -}}
 						<li>
-							<details id="Section-{{ .Title }}" {{ if (in $.ancestors .) }} open {{ end }}>
+							<details id='Section-{{ replace .Title " " "_" }}' {{ if (in $.ancestors .) }} open {{ end }}>
 								<summary><a href="{{ .RelPermalink }}">{{ .Title }}</a></summary>
 								<ol>
 									{{ template "links" (dict "page" . "ancestors" $.ancestors) }}

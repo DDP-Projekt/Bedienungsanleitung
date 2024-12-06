@@ -1,7 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 30" width="30" height="20">
-	<clipPath id="t">
-		<path d="M25,15h25v15zv15h-25zh-25v-15zv-15h25z"/>
-	</clipPath>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 30" width="33.33" height="20">
+	<clipPath id="t"><path d="M0,0 L25,15 L0,30 Z M50,0 L25,15 L50,30 Z"/></clipPath>
 	<path d="M0,0v30h50v-30z" fill="#012169"/>
 	<path d="M0,0 50,30M50,0 0,30" stroke="#fff" stroke-width="6"/>
 	<path d="M0,0 50,30M50,0 0,30" clip-path="url(#t)" stroke="#C8102E" stroke-width="4"/>
