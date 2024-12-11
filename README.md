@@ -31,11 +31,10 @@ Jeder Artikel beginnt mit einem front-matter der so aussieht:
 +++
 title = ""
 weight = 1
-type = "article"
 +++
 ```
 
-Das Feld `title` gibt den Text an, der in der Seitenleiste für den Artikel angezeigt wird. `weight` bestimmt die Reihenfolge. `type` muss auf "article" bleiben. Diese Felder müssen immer ausgefüllt werden.
+Das Feld `title` gibt den Text an, der in der Seitenleiste für den Artikel angezeigt wird. `weight` bestimmt die Reihenfolge. Diese Felder müssen immer ausgefüllt werden.
 
 Der Pfad der Datei bestimmt die URL des Artikels.
 
@@ -48,8 +47,6 @@ Diese Datei beginnt mit einem front-matter, welches so aussieht:
 +++
 title = ""
 weight = 1
-type = "article"
-layout = "single"
 +++
 ```
 
@@ -58,13 +55,12 @@ Das HTML für die Website außerhalb der Artikel befindet sich im [`/layouts`](/
 
 [`/_default/baseof.html`](/layouts/_default/baseof.html) ist das Kern der Website und bindet alle partials ein.
 
-[`/article/single.html`](/layouts/article/single.html) enthält das Layout für Artikel.
-
 [`/partials`](/layouts/partials/) enthält kleinere Teile der Website:
-- [`artikel.html`](/layouts/partials/artikel.html)
-- [`head.html`](/layouts/partials/head.html)
-- [`header.html`](/layouts/partials/header.html)
-- [`sidebar.html`](/layouts/partials/sidebar.html)
+- [`artikel.html`](/layouts/partials/artikel.html): Fügt das Markdown ein.
+- [`head.html`](/layouts/partials/head.html): HTML head
+- [`header.html`](/layouts/partials/header.html): Der Header über jedem Artikel.
+- [`sidebar.html`](/layouts/partials/sidebar.html): Die Seitenleiste mit allen links.
+- [`navigation.html`](/layouts/partials/navigation.html): Die Navigation am unteren der Seite.
 
 [`/layouts/404.html`](/layouts/404.html) definiert die Fehlermeldung falls eine Seite nicht gefunden wurde.
 

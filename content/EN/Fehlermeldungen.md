@@ -1,7 +1,6 @@
 +++
 title = "Errorcodes"
 weight = 5
-type = "article"
 +++
 
 # Errorcodes

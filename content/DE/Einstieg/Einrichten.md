@@ -1,7 +1,6 @@
 +++
 title = "Einrichten"
 weight = 1
-type = "article"
 +++
 
 # Entwicklungsumgebung einrichten

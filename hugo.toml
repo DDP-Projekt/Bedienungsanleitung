@@ -1,6 +1,6 @@
 baseURL = 'http://doku.ddp.im'
 disablePathToLower = true
-disableKinds = ['taxonomy', 'term']
+disableKinds = ['taxonomy', 'term', 'home']
 disableHugoGeneratorInject = true
 defaultContentLanguage = 'de'
 

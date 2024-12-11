@@ -1,8 +1,6 @@
 +++
 title = "Functions"
 weight = 6
-type = "article"
-layout = "single"
 +++
 
 # Functions

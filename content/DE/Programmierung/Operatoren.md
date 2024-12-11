@@ -1,7 +1,6 @@
 +++
 title = "Operatoren" 
 weight = 3
-type = "article"
 +++
 
 # Mathematische Operatoren

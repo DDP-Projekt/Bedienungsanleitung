@@ -1,7 +1,5 @@
 +++
 title = "Homepage"
-type = "article"
-layout = "single"
 +++
 
 # Die Deutsche Programmiersprache (DDP)
