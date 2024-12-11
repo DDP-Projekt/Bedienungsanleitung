@@ -241,7 +241,7 @@ func writeMD(inputFile string, outputFile *os.File, publicDecls []ast.Declaratio
 	}
 
 	fileName := strings.Replace(filepath.Base(outputFile.Name()), ".md", "", 1)
-	fmt.Fprintf(outputFile, "+++\ntitle = \"%s\"\nweight = 1\ntype = \"article\"\n+++\n", fileName)
+	fmt.Fprintf(outputFile, "+++\ntitle = \"%s\"\nweight = 1\n+++\n", fileName)
 	if hasStructs {
 		fmt.Fprintf(outputFile, "# Duden/%s %s\n", fileName, nameMap[lang]["comb"])
 		fmt.Fprintln(outputFile, structBldr)
