@@ -1,6 +1,6 @@
-<input type="checkbox" id="hamburger" class="hamburger-btn">
-<label for="hamburger" class="hamburger-btn">≡</label>
-<nav id="seitenleiste">
+<button class="hamburger-btn" popovertarget="seitenleiste" popovertargetaction="show">≡</button>
+<nav id="seitenleiste" popover>
+	<button class="hamburger-btn close" popovertarget="seitenleiste" popovertargetaction="hide">≡</button>
 	<div style="margin: 10px;">
 		<h2>{{ T "toc" }}</h2>
 

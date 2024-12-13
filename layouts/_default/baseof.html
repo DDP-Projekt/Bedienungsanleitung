@@ -3,7 +3,7 @@
 	{{ partial "head.html" . -}}
 	<body>
 		{{ partial "sidebar.html" . }}
-		<main id="inhalt" onclick="document.getElementById('hamburger').checked = false;">
+		<main id="inhalt">
 			{{ partial "header.html" . }}
 
 			{{ block "main" . }}{{ end }}

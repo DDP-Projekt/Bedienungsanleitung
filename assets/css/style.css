@@ -48,6 +48,12 @@
 
 /* screen width larger than 830px (desktop/tablet) */
 @media screen and (min-width: 831px) {
+	#seitenleiste {
+		display: flex;
+		position: relative;
+		transform: translate(0) !important;
+	}
+
 	.hamburger-btn {
 		display: none; /* eat hamburger */
 	}
@@ -57,36 +63,23 @@
 @media screen and (max-width: 830px) {
 	.hamburger-btn {
 		position: absolute;
+		top: 0;
 		left: 0;
 		font-size: 1.5em;
 		width: 30px;
 		height: 30px;
 		text-align: center;
+		color: white;
 		background-color: var(--hamburger-background);
-		z-index: 2; /* make the hamburger on top of everything */
 		font-weight: normal; /* to prevent the hamburger from going bold on click*/
 		transition: left 350ms ease-in-out;
 		cursor: pointer;
-	}
-	#hamburger {
-		display: none;
-		margin: 0;
+		border: none;
 
-		&:checked, &:checked ~ label[for=hamburger] {
-			left: calc(var(--sidebar-size) - 35px);
+		&.close {
+			left: unset;
+			right: 0;
 		}
-
-		&:not(:checked) ~ #seitenleiste {
-			width: 0;
-		}
-		&:checked ~ #seitenleiste {
-			box-shadow: 0 0 0 100vmax rgba(16, 16, 16, 0.6);
-		}
-	}
-	#seitenleiste {
-		position: absolute; /* make sidebar an overlay */
-		z-index: 1; /* make sidebar on top of content */
-		transition: width 350ms ease-in-out;
 	}
 	
 	:root {
@@ -111,14 +104,31 @@ details > summary {
 }
 
 #seitenleiste {
-	display: flex;
-	flex: 0 0 auto;
+	margin: 0;
+	border: none;
+	flex: none;
+	color: var(--text-color);
 	background-color: var(--sidebar-color);
 	width: var(--sidebar-size);
 	height: 100%;
-	flex-direction: column;
-	overflow: hidden auto;
-	text-wrap: nowrap;
+	transition: display 340ms, transform 350ms;
+	transition-behavior: allow-discrete;
+	transform: translate(-280px);
+	z-index: 1;
+
+	&:popover-open {
+		display: flex;
+		flex-direction: column;
+		transform: translate(0);
+
+		@starting-style {
+			transform: translate(-280px);
+		}
+	}
+
+	&::backdrop {
+		background: rgb(0 0 0 / 35%);
+	}
 
 	h2 {
 		margin-bottom: 40px;
@@ -160,14 +170,13 @@ a {
 #inhalt {
 	width: 100%;
 	overflow: auto;
-	padding: 10px 10px 40px;
 }
 
 #kopf {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	margin: .5rem;
+	margin: 1rem;
 	gap: 1rem;
 }
 
@@ -197,13 +206,12 @@ a {
 }
 
 #artikel-navigation {
-	position: fixed;
+	position: absolute;
+	bottom: 0;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	bottom: 0;
 	width: var(--content-size);
 	height: 40px;
-	margin-left: -10px;
 	background-color: var(--article-nav-bg-color);
 	text-align: center;
 
