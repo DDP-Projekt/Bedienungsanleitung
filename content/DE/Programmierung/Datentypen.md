@@ -47,9 +47,9 @@ welche man nicht normalerweise in Text- oder Buchstabenliterale schreiben kann.
 Listen sind beliebig große Ansammlungen von Werten.
 Da DDP statisch typisiert ist kann eine Liste nur Werte desselben Datentyps enthalten.
 Der Typname einer Liste ist im Allgemeinen der Element-Typname entsprechend dekliniert mit *Liste* angehängt (Zahl -> Zahlen Liste, Text -> Text Liste).
-Bei Benutzerdefinierten Typen ([Kombinationen](/de/Programmierung/Kombinationen)) kann die richtige Deklination (noch) nicht geparset werden, deshalb wird nicht dekliniert, sondern einfach nur *Liste* angehängt (siehe [Kombinationslisten](/de/Programmierung/Kombinationen#kombinationslisten))
+Bei Benutzerdefinierten Typen ([Kombinationen](/Programmierung/Kombinationen)) kann die richtige Deklination (noch) nicht geparset werden, deshalb wird nicht dekliniert, sondern einfach nur *Liste* angehängt (siehe [Kombinationslisten](/Programmierung/Kombinationen#kombinationslisten))
 Eine Liste kann zur Laufzeit wachsen und schrumpfen.
-Wie man mit Listen arbeitet, wird in dem Artikel Operatoren unter [Listen Operatoren](/de/Programmierung/Operatoren#listen-und-text-operatoren) beschrieben.
+Wie man mit Listen arbeitet, wird in dem Artikel Operatoren unter [Listen Operatoren](/Programmierung/Operatoren#listen-und-text-operatoren) beschrieben.
 
 ### Listen Literale
 
@@ -90,4 +90,4 @@ Eigentlich würde man ja erwarten, dass in der Aufzählung eines Listen Literals
 ## Kombinationen
 
 Kombinationen (structs in C) sind benutzerdefinierte zusammengesetzte Datentypen, die eine oder mehrere Variablen in einem Typ zusammenfassen.
-Mehr zu Kombinationen ist im Artikel [Kombinationen](/de/Programmierung/Kombinationen) zu finden.
+Mehr zu Kombinationen ist im Artikel [Kombinationen](/Programmierung/Kombinationen) zu finden.
