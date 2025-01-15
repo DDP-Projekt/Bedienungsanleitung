@@ -4,46 +4,34 @@
 	--theme-toggle-img: url(/svg/theme-light-dark.min.svg);
 	--title-img: url(/svg/title.min.svg);
 	--line-img: url(/svg/line.min.svg);
+	color-scheme: dark light;
+
+	--text-color: light-dark(#454545, antiquewhite);
+	--link-hover-color: light-dark(#212121, aliceblue);
+	--bg-color: light-dark(#fafafa, #444);
+	--sidebar-color: light-dark(#eeeeee, #3d3d3d);
+	--article-nav-bg-color: light-dark(#e6e6e6, #303336);
+	--article-nav-hover-bg-color: light-dark(#d9d9d9, #3b3d41);
+	--table-border-color: light-dark(#d0d7de, #303336);
+	--table-fill-dark: light-dark(#f4f4f5, #3b3c3e);
+	--table-fill-light: light-dark(#f8f8f8, #3f4043);
+	--md-link-color: light-dark(#3452c5, #86ccff);
+	--md-link-hover-color: light-dark(#0a95ff, #cce9ff);
+	--md-code-bg-color: light-dark(rgb(220 221 223 / 50%), rgba(27, 31, 35, 0.5));
+	--scrollbar-track-bg-color: light-dark(#d7d7d7, #333);
+	--scrollbar-thumb-bg-color: light-dark(#b4b4b4, #666);
+	--scrollbar-thumb-hover-bg-color: light-dark(#808080, #555);
+	--hamburger-background: light-dark(#d8dbdc, black);
 }
 
 :root:has(#dark-mode-check:checked) {
-	--text-color: antiquewhite;
-	--link-hover-color: aliceblue;
-	--bg-color: #444;
-	--sidebar-color: #3d3d3d;
-	--article-nav-bg-color: #303336;
-	--article-nav-hover-bg-color: #3b3d41;
-	--table-border-color: #303336;
-	--table-fill-dark: #3b3c3e;
-	--table-fill-light: #3f4043;
-	--md-link-color: #86ccff;
-	--md-link-hover-color: #cce9ff;
-	--md-code-bg-color: rgba(27,31,35,.5);
+	color-scheme: dark;
 	--light-mode-filter: none;
-	--scrollbar-track-bg-color: #333;
-	--scrollbar-thumb-bg-color: #666;
-	--scrollbar-thumb-hover-bg-color: #555;
-	--hamburger-background: black;
 }
 
 :root:has(#dark-mode-check:not(:checked)) {
-	--text-color: #454545;
-	--link-hover-color: #212121;
-	--bg-color: #fafafa;
-	--sidebar-color: #eeeeee;
-	--article-nav-bg-color: #e6e6e6;
-	--article-nav-hover-bg-color: #d9d9d9;
-	--table-border-color: #d0d7de;
-	--table-fill-dark: #f4f4f5;
-	--table-fill-light: #f8f8f8;
-	--md-link-color: #3452c5;
-	--md-link-hover-color: #0a95ff;
-	--md-code-bg-color: rgb(220 221 223 / 50%);
+	color-scheme: light;
 	--light-mode-filter: brightness(60%) saturate(350%) drop-shadow(0px 0px gray);
-	--scrollbar-track-bg-color: #d7d7d7;
-	--scrollbar-thumb-bg-color: #b4b4b4;
-	--scrollbar-thumb-hover-bg-color: #808080;
-	--hamburger-background: #d8dbdc;
 }
 
 /* screen width larger than 830px (desktop/tablet) */
@@ -216,6 +204,10 @@ a {
 		&:hover {
 			background-color: var(--article-nav-hover-bg-color)
 		}
+	}
+
+	svg {
+		fill: var(--text-color);
 	}
 }
 
