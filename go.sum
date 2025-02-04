@@ -1,2 +1,10 @@
-github.com/DDP-Projekt/Kompilierer v0.4.0-alpha h1:zQadWm8wLjOTN3/pWDLDLfNBM/I4Apx8GaxWGNRZfvE=
-github.com/DDP-Projekt/Kompilierer v0.4.0-alpha/go.mod h1:wIQjgAVockUlLS3bRd2WSuJlPUFC+ZTZizIQ1rsEeP4=
+github.com/DDP-Projekt/Kompilierer v0.6.0 h1:EkNnWt8v47ma+Nda5lZaT23GUh4iGQY+Kn/IWDjRg2A=
+github.com/DDP-Projekt/Kompilierer v0.6.0/go.mod h1:FL5eYp6AuDeKh15doNtcOyESwUg7JmVOhOi4J/EepFY=
+github.com/davecgh/go-spew v1.1.0 h1:ZDRjVQ15GmhC3fiQ8ni8+OwkZQO4DARzQgrnXU1Liz8=
+github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
+github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=
+github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
+github.com/stretchr/testify v1.7.0 h1:nwc3DEeHmmLAfoZucVR881uASk0Mfjw8xYJ99tb5CcY=
+github.com/stretchr/testify v1.7.0/go.mod h1:6Fq8oRcR53rry900zMqJjRRixrwX3KX962/h/Wwjteg=
+gopkg.in/yaml.v3 v3.0.1 h1:fxVm/GzAzEWqLHuvctI91KS9hhNmmWOoWu0XTYJS7CA=
+gopkg.in/yaml.v3 v3.0.1/go.mod h1:K4uyk7z7BCEPqu6E+C64Yfv1cQ7kz7rIZviUmN+EgEM=
