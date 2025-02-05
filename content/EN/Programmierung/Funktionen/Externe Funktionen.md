@@ -1,7 +1,6 @@
 +++
 title = "External functions"
 weight = 3
-type = "article"
 +++
 
 # External functions

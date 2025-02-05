@@ -1,7 +1,6 @@
 +++
 title = "Funktionsdeklarationen"
 weight = 1
-type = "article"
 +++
 
 # Funktionsdeklarationen

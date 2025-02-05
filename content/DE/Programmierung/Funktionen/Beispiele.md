@@ -1,7 +1,6 @@
 +++
 title = "Beispiele"
-weight = 5
-type = "article"
+weight = 4
 +++
 
 # Beispiele

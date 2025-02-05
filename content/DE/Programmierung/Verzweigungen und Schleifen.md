@@ -1,7 +1,6 @@
 +++
 title = "Verzweigungen"
 weight = 5
-type = "article"
 +++
 
 # Verzweigungen

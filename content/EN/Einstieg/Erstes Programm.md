@@ -1,7 +1,6 @@
 +++
 title = "First program"
 weight = 3
-type = "article"
 +++
 
 # First program

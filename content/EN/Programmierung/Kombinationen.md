@@ -1,7 +1,6 @@
 +++
 title = "Combinations"
 weight = 7
-type = "article"
 +++
 
 # Combinations

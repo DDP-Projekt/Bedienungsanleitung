@@ -1,7 +1,6 @@
 +++
 title = "Example programs"
 weight = 4
-type = "article"
 +++
 
 # Example programs

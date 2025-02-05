@@ -1,7 +1,6 @@
 +++
 title = "Module"
 weight = 8
-type = "article"
 +++
 
 # Module

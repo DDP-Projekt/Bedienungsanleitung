@@ -23,14 +23,18 @@ import (
 var nameMap = map[string]map[string]string{
 	"DE": {
 		"type":        "Typ",
+		"value":       "Wert",
 		"var":         "Variablen",
+		"const":       "Konstante",
 		"func":        "Funktionen",
 		"comb":        "Kombinationen",
 		"moduleEmpty": "Dieses Modul ist Leer",
 	},
 	"EN": {
 		"type":        "Type",
+		"value":       "Value",
 		"var":         "variables",
+		"const":       "constants",
 		"func":        "functions",
 		"comb":        "combinations",
 		"moduleEmpty": "This module is empty",
@@ -134,11 +138,9 @@ func makeMdFiles(publicDecls []ast.Declaration, inputFile []byte, outputFilePath
 }
 
 func writeMD(inputFile string, outputFile *os.File, publicDecls []ast.Declaration, lang string) {
-	funcBldr := &bytes.Buffer{}
-	varBldr := &bytes.Buffer{}
-	structBldr := &bytes.Buffer{}
+	funcBldr, varBldr, constBldr, structBldr := &bytes.Buffer{}, &bytes.Buffer{}, &bytes.Buffer{}, &bytes.Buffer{}
 
-	hasStructs, hasVars, hasFuncs := false, false, false
+	hasStructs, hasVars, hasConsts, hasFuncs := false, false, false, false
 
 	for _, decl := range publicDecls {
 		switch decl := decl.(type) {
@@ -161,7 +163,7 @@ func writeMD(inputFile string, outputFile *os.File, publicDecls []ast.Declaratio
 				types := make([]string, 0, len(decl.Parameters))
 				for _, param := range decl.Parameters {
 					names = append(names, "<code>"+param.Name.String()+"</code>")
-					types = append(types, "<code>"+param.Type.String()+"</code>")
+					types = append(types, "<code>"+param.Type.Type.String()+"</code>")
 				}
 
 				params = strings.Join(names, ", ")
@@ -193,13 +195,20 @@ func writeMD(inputFile string, outputFile *os.File, publicDecls []ast.Declaratio
 			}
 
 			fmt.Fprintf(funcBldr, "{{< duden-function name=\"%s\" desc=\"%s\" params=\"%s\" paramTypes=\"%s\" ret=\"%s\" impl=\"%s\" extern=\"%t\" aliases=\"%s\" >}}\n\n", // }}"
-				decl.Name(), descr, params, paramTypes, decl.Type.String(), impl, isExtern, aliases)
+				decl.Name(), descr, params, paramTypes, decl.ReturnType.String(), impl, isExtern, aliases)
 		case *ast.VarDecl:
 			hasVars = true
 
 			fmt.Fprintf(varBldr, "## %s\n", decl.Name())
 			fmt.Fprintf(varBldr, "* %s: <code>%s</code>\n", nameMap[lang]["type"], decl.Type)
 			fmt.Fprintln(varBldr, "")
+		case *ast.ConstDecl:
+			hasConsts = true
+
+			fmt.Fprintf(constBldr, "## %s\n", decl.Name())
+			fmt.Fprintf(constBldr, "* %s: <code>%s</code>\n", nameMap[lang]["type"], decl.Type)
+			fmt.Fprintf(constBldr, "* %s: <code>%s</code>\n", nameMap[lang]["value"], decl.Val.Token().Literal)
+			fmt.Fprintln(constBldr, "")
 		case *ast.StructDecl:
 			hasStructs = true
 
@@ -241,7 +250,7 @@ func writeMD(inputFile string, outputFile *os.File, publicDecls []ast.Declaratio
 	}
 
 	fileName := strings.Replace(filepath.Base(outputFile.Name()), ".md", "", 1)
-	fmt.Fprintf(outputFile, "+++\ntitle = \"%s\"\nweight = 1\ntype = \"article\"\n+++\n", fileName)
+	fmt.Fprintf(outputFile, "+++\ntitle = \"%s\"\nweight = 1\n+++\n", fileName)
 	if hasStructs {
 		fmt.Fprintf(outputFile, "# Duden/%s %s\n", fileName, nameMap[lang]["comb"])
 		fmt.Fprintln(outputFile, structBldr)
@@ -250,11 +259,15 @@ func writeMD(inputFile string, outputFile *os.File, publicDecls []ast.Declaratio
 		fmt.Fprintf(outputFile, "# Duden/%s %s\n", fileName, nameMap[lang]["var"])
 		fmt.Fprintln(outputFile, varBldr)
 	}
+	if hasConsts {
+		fmt.Fprintf(outputFile, "# Duden/%s %s\n", fileName, nameMap[lang]["const"])
+		fmt.Fprintln(outputFile, constBldr)
+	}
 	if hasFuncs {
 		fmt.Fprintf(outputFile, "# Duden/%s %s\n", fileName, nameMap[lang]["func"])
 		fmt.Fprintln(outputFile, funcBldr)
 	}
-	if !hasFuncs && !hasVars {
-		fmt.Fprintf(outputFile, nameMap[lang]["moduleEmpty"])
+	if !hasFuncs && !hasVars && hasConsts && !hasStructs {
+		fmt.Fprint(outputFile, nameMap[lang]["moduleEmpty"])
 	}
 }

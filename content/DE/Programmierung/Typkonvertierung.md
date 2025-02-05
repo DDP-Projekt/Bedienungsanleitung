@@ -1,7 +1,6 @@
 +++
 title = "Typkonvertierung"
 weight = 2
-type = "article"
 +++
 
 # Typkonvertierung

@@ -3,8 +3,8 @@ disablePathToLower = true
 disableKinds = ['taxonomy', 'term']
 disableHugoGeneratorInject = true
 defaultContentLanguage = 'de'
+enableRobotsTXT = true
 
-defaultContentLanguageInSubdir = true
 [languages]
 	[languages.de]
 		contentDir = 'content/DE'

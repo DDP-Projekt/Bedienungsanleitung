@@ -1,7 +1,6 @@
 +++
 title = "Data types"
 weight = 1
-type = "article"
 +++
 
 # Data types

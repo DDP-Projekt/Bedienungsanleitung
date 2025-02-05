@@ -1,7 +1,6 @@
 +++
 title = "Referenzen"
 weight = 2
-type = "article"
 +++
 
 # Referenzen

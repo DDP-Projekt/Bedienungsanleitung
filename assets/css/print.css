@@ -36,35 +36,32 @@ body {
 	print-color-adjust: exact;
 }
 
-#artikel a {
-	text-decoration: none !important;
-}
+#artikel {
+	a {
+		text-decoration: none !important;
+	}
+	table {
+		overflow: visible !important;
+	}
+	table code, pre {
+		white-space: pre-wrap !important;
+	}
+	:is(h1,h2,h3) {
+		break-before: auto !important;
+		break-after: avoid-page;
+	}
+	:is(pre, ol, ul, table) {
+		break-before: avoid-page;
+		break-after: auto;
+		break-inside: avoid-page;
+	}
+	.duden-obj {
+		break-inside: avoid-page;
+		border: none !important;
+		margin-bottom: 2rem !important;
 
-#artikel table {
-	overflow: visible !important;
-}
-
-#artikel table code, pre {
-	white-space: pre-wrap !important;
-}
-
-#artikel :is(h1,h2,h3) {
-	break-before: auto !important;
-	break-after: avoid-page;
-}
-
-#artikel :is(pre, ol, ul, table) {
-	break-before: avoid-page;
-	break-after: auto;
-	break-inside: avoid-page;
-}
-
-#artikel .duden-obj {
-	break-inside: avoid-page;
-	border: none !important;
-	margin-bottom: 2rem !important;
-}
-
-#artikel .duden-obj::details-content {
-	display: contents;
+		&::details-content {
+			display: contents;
+		}
+	}
 }

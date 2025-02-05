@@ -3,7 +3,7 @@
 	
 	<meta name="description" content='{{ T "desc"}}'>
 	<meta name="msapplication-TileColor" content="#da532c">
-	<meta name="msapplication-config" content="favicon/browserconfig.xml">
+	<meta name="msapplication-config" content="/favicon/browserconfig.xml">
 	<meta name="theme-color" content="#ffffff">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta charset="utf8">
@@ -22,11 +22,11 @@
 	<link rel="preload" href="/svg/theme-light-dark.min.svg" as="image" type="image/svg+xml" fetchpriority="high" media="screen">
 	<link rel="preload" href="/svg/title.min.svg" as="image" type="image/svg+xml" crossorigin fetchpriority="high">
 
-	{{- $mdStyle := resources.Get "css/md-style.css" | minify | fingerprint }}
+	{{- $mdStyle := resources.Get "/css/md-style.css" | minify | fingerprint }}
 	<link rel="preload" as="style" href="{{ $mdStyle.RelPermalink }}" integrity="{{ $mdStyle.Data.Integrity }}">
 
 	<!-- Directly inject css to prevent blocking network request, prinf because vscode is stupid -->
-	{{- $style := resources.Get "css/style.css" | minify }}
+	{{- $style := resources.Get "/css/style.css" | minify }}
 	{{ (printf "<%s>%s</style>" "style" ($style.Content | safeCSS)) | safeHTML }}
 
 	<script defer>
