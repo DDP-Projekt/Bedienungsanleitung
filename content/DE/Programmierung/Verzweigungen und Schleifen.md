@@ -162,6 +162,16 @@ Für jede Zahl element in liste, mache:
 	<Anweisungen>.
 ```
 
+Bei solchen Schleifen kann man auch einen Index mit angeben.
+```ddp
+Die Text Liste liste ist eine Liste, die aus "hi", "Hallo", "Tschüss" besteht.
+
+[Ausgabe:  hi 1 Hallo 2 Tschüss 3]
+Für jeden Text element mit Index i in liste, mache:
+	Schreibe (' ' verkettet mit element verkettet mit ' ').
+	Schreibe index.
+```
+
 ## Abbrechen/Fortführen von Schleifen
 
 Schleifen können auch abgebrochen bzw. zur nächsten Iteration geführt werden (in anderen Sprachen entspricht das den Schlüsselwörtern `break` und `continue`).

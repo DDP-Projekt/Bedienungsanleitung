@@ -116,3 +116,22 @@ Bei dieser Datei-Struktur:
 		- B.ddp
 
 müsste in B.ddp also `Binde "../Ordner1/A" ein.` stehen, um A.ddp einzubinden.
+
+
+## Ordner Einbindungen
+
+Der Einfachheit halber kann man auch alle Module in einem Ordner einbinden.
+
+- root
+	- Ordner1
+		- A.ddp
+        - B.ddp
+	- Ordner2
+        - C.ddp
+        - Ordner3
+            - D.ddp
+
+```ddp
+Binde alle Module aus "Ordner1" ein. [Binde A.ddp und B.ddp ein]
+Binde rekursiv alle Module aus "Ordner2" ein. [Binde C.ddp und D.ddp ein]
+```

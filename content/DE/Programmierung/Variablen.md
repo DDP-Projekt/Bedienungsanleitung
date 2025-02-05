@@ -79,6 +79,19 @@ int main(void) {
 }
 ```
 
+# Konstanten
+
+Zusätzlich zu Variablen kann man auch Konstanten deklarieren.
+Konstanten können nicht verändert werden und dienen eigentlich nur als alias-name für einen Wert.
+
+```ddp
+Die Konstante pi ist 3,1415.
+```
+
+Konstanten können nur Literale sein (also z.B. `1`, `""` oder `1,5` aber NICHT `1 plus 1`) und können nicht verändert werden.
+Der Typ einer Konstante wird aus ihrem Wert abgeleitet.
+
+
 # Spezielle Zuweisungen
 
 Es gibt noch einige Zuweisungsoperatoren mit deren Hilfe Variablen direkt verändert werden können,
