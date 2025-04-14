@@ -54,6 +54,21 @@ Für jeden [nicht jede oder jedes!!] Vektor2 vek in vektoren, mache:
     ...
 ```
 
+Aus praktischen Gründen (vor allem in Hinsicht auf generische Typen) sind die Aliase und Standardwerte bei Kombinationen jeweils Optional.
+Das heißt statt dem obigen Beispiel, könnte man einen Vektor auch so definieren:
+
+```ddp
+Wir nennen die öffentliche Kombination aus
+	der Zahl x,
+	der öffentlichen Zahl y,
+einen Vektor2.
+
+Der Vektor2 v ist der Standardwert von einem Vektor2. [ x = 0, y = 0 ]
+```
+
+Wie man sieht kann man eine Kombination in diesem Fall nur mithilfe des "Standardwert" Operators erstellen.
+Felder, die keinen expliziten Standardwert haben, werden ebenfalls auf ihren Standardwert gesetzt.
+
 ### Aliase
 
 Kombinationen werden genau wie Funktionen über Aliase erstellt.
