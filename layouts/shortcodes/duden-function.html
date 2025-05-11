@@ -10,6 +10,9 @@
 				{{ with .Get "params" }}
 					<li>{{ i18n "params"}}: {{ . | safeHTML }}</li>
 				{{ end }}
+				{{ with .Get "genericTypes" }}
+					<li>{{ i18n "genericTypes"}}: {{ . | safeHTML }}</li>
+				{{ end}}
 				{{ with .Get "paramTypes" }}
 					<li>{{ i18n "paramType"}}: {{ . | safeHTML }}</li>
 				{{ end }}

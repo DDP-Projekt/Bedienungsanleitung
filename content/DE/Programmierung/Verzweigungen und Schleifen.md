@@ -100,7 +100,7 @@ Wiederhole:
 
 ## Zählende Schleife
 Zählende Schleifen ermöglichen es ebenfalls Code mehrmals auszuführen, wobei gleichzeitig ein Zähler gegeben wird, der anderweitig genutzt werden kann.
-Bei jeder Zählenden Schleife muss ein Zähler benannt werden (Eine Variable vom Typ 'Zahl') und ein Start- und Endwert.
+Bei jeder Zählenden Schleife muss ein Zähler benannt werden (eine Variable vom Typ `Zahl`, `Byte` oder `Kommazahl`) und ein Start- und Endwert.
 Optional kann auch eine Schrittgröße angegeben werden, mit der gezählt wird.
 
 ### Hochzählende Schleife

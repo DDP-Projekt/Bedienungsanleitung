@@ -15,11 +15,11 @@ For example: `x als Text.`
 ## Conversion table
 Only certain types can be converted to others.
 
-| input type  | output type                                     | Notes                                                         |
-|-------------|-------------------------------------------------|---------------------------------------------------------------|
-| Zahl        | Kommazahl <br> Text <br> Wahrheitswert <br> Buchstabe | -<br>-<br> 0 => falsch; nicht 0 => wahr <br> uses ASCII value |
-| Kommazahl   | Zahl <br> Text                                  | truncated <br> -                                              |
-| Wahrheitswert     | Zahl                                            | falsch => 0; wahr => 1                                        |
-| Text        | Zahl <br> Kommazahl <br> Buchstaben             | -<br>-<br>-<br>                                               |
-| Buchstabe   | Zahl <br> Text                                  | utf8 bytes in decimal <br> -                                  |
-| Buchstaben  | Text                                            | -                                                             |
+| input type             | output type                                | Notes                                                         |
+|------------------------|--------------------------------------------|---------------------------------------------------------------|
+| Zahl                   | Byte <br> Kommazahl <br> Text <br> Wahrheitswert <br> Buchstabe | Numbers outside the range get mapped accordingly<br>-<br>-<br> 0 => falsch; nicht 0 => wahr <br> uses ASCII value |
+| Kommazahl              | Zahl, Byte <br> Text                       | truncated <br> -                                              |
+| Wahrheitswert          | Zahl, Byte                                 | falsch => 0; wahr => 1                                        |
+| Text                   | Zahl, Byte <br> Kommazahl <br> Buchstaben  | Numerical value gets parsed<br>Text has to be in `\d+(,\d+)?` format<br>-<br>                                               |
+| Buchstabe              | Zahl, Byte <br> Text                       | utf8 bytes in decimal <br> -                                  |
+| Buchstaben Liste       | Text                                       | -                                                             |

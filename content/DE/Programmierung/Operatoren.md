@@ -5,7 +5,7 @@ weight = 3
 
 # Mathematische Operatoren
 
-Zur Vereinfachung werden in diesem Artikel die Typen *Zahl* und *Kommazahl* als *Numerisch* zusammengefasst.
+Zur Vereinfachung werden in diesem Artikel die Typen *Zahl*, *Byte* und *Kommazahl* als *Numerisch* zusammengefasst.
 
 Um das Finden eines bestimmten Operators für Leser, die bereits eine Programmiersprache beherrschen einfacher zu machen ist
 in diesen und späteren Tabellen jeweils der C-Operator dabei.
@@ -14,7 +14,7 @@ in diesen und späteren Tabellen jeweils der C-Operator dabei.
 
 | Funktion                              | Verwendung                                   | C Equivalent | Typ vom Operanden | Rückgabetyp                 | Beispiel                              | Ergebnis |
 | ------------------------------------- | -------------------------------------------- | ------------ | ----------------- | --------------------------- | ------------------------------------- | -------- |
-| Logische NICHT verknüpfung            | `logisch nicht a`                            | `~a`         | Zahl              | Zahl                        | `logisch nicht 1`                     | -2       |
+| Logische NICHT verknüpfung            | `logisch nicht a`                            | `~a`         | Zahl, Byte        | Zahl, Byte                  | `logisch nicht 1`                     | -2       |
 | Listen/Text Element/Buchstaben Anzahl | `die Länge von a`                            | -            | Liste, Text       | Zahl                        | `Die Länge von "Hallo"`               | 5        |
 | Byte Größe                            | `die Größe von einem/einer <Typname>`        | `sizeof(a)`  | Typename          | Zahl                        | `Die Größe von einer Zahl`            | 8        |
 | Standardwert                          | `der Standardwert von einem/einer <Typname>` | -            | Typename          | passend zum Typnamen        | `Der Standardwert von einer Zahl`     | 0        |
@@ -28,15 +28,15 @@ in diesen und späteren Tabellen jeweils der C-Operator dabei.
 | Subtraktion                  | `a minus b`                             | `a - b`               | numerisch          | numerisch          | numerisch   | `1 minus 2`                            | -1       |
 | Multiplikation               | `a mal b`                               | `a * b`               | numerisch          | numerisch          | numerisch   | `5 mal 3`                              | 15       |
 | Division                     | `a durch b`                             | `a / b`               | numerisch          | numerisch          | Kommazahl   | `6 durch 2`                            | 3,0      |
-| Rest                         | `a modulo b`                            | `a % b`               | Zahl               | Zahl               | Zahl        | `16 modulo 12`                         | 4        |
+| Rest                         | `a modulo b`                            | `a % b`               | Zahl, Byte         | Zahl, Byte         | Zahl, Byte  | `16 modulo 12`                         | 4        |
 | Potenzieren                  | `a hoch b`                              | `pow(a, b)`           | numerisch          | numerisch          | Kommazahl   | `2 hoch 8`                             | 256,0    |
 | Wurzelziehen                 | `die a. Wurzel von b`                   | `pow(a, 1/b)`         | numerisch          | numerisch          | Kommazahl   | `die 2. Wurzel von 9`                  | 3,0      |
 | Logarithmus                  | `der Logarithmus von b zur Basis a`     | `log10(b) / log10(a)` | numerisch          | numerisch          | Kommazahl   | `der Logarithmus von 100 zur Basis 10` | 2,0      |
-| Bit-Verschiebung nach links  | `a um b Bit nach links verschoben`      | `a << b`              | Zahl               | Zahl               | Zahl        | `7 um 3 Bit nach links verschoben`     | 56       |
-| Bit-Verschiebung nach rechts | `a um b Bit nach rechts verschoben`     | `a >> b`              | Zahl               | Zahl               | Zahl        | `70 um 2 Bit nach rechts verschoben`   | 17       |
-| Logische UND verknüpfung     | `a logisch und b`                       | `a&b`                 | Zahl               | Zahl               | Zahl        | `5 logisch und 2`                      | 0        |
-| Logische ODER verknüpfung    | `a logisch oder b`                      | `a\| b`               | Zahl               | Zahl               | Zahl        | `5 logisch oder 2`                     | 7        |
-| Logische XOR verknüpfung     | `a logisch kontra b`                    | `a^b`                 | Zahl               | Zahl               | Zahl        | `8 logisch kontra 5`                   | 13       |
+| Bit-Verschiebung nach links  | `a um b Bit nach links verschoben`      | `a << b`              | Zahl, Byte         | Zahl, Byte         | Zahl, Byte  | `7 um 3 Bit nach links verschoben`     | 56       |
+| Bit-Verschiebung nach rechts | `a um b Bit nach rechts verschoben`     | `a >> b`              | Zahl, Byte         | Zahl, Byte         | Zahl, Byte  | `70 um 2 Bit nach rechts verschoben`   | 17       |
+| Logische UND verknüpfung     | `a logisch und b`                       | `a&b`                 | Zahl, Byte         | Zahl, Byte         | Zahl, Byte  | `5 logisch und 2`                      | 0        |
+| Logische ODER verknüpfung    | `a logisch oder b`                      | `a\| b`               | Zahl, Byte         | Zahl, Byte         | Zahl, Byte  | `5 logisch oder 2`                     | 7        |
+| Logische XOR verknüpfung     | `a logisch kontra b`                    | `a^b`                 | Zahl, Byte         | Zahl, Byte         | Zahl, Byte  | `8 logisch kontra 5`                   | 13       |
 
 # Bool'sche Operatoren
 
@@ -73,10 +73,10 @@ Falls das zu mehreren "ist"s hintereinander führen sollte reicht ein einziges a
 | Funktion              | Verwendung                 | C Equivalent | Typ vom 1. Operanden | Typ vom 2. Operanden | Typ vom 3. Operanden | Rückgabetyp           | Beispiel                              | Ergebnis       |
 | --------------------- | -------------------------- | ------------ | -------------------- | -------------------- | -------------------- | --------------------- | ------------------------------------- | -------------- |
 | Verkettung            | `a verkettet mit b`        | -            | Text/Liste/Buchstabe | Text/Liste/Buchstabe | -                    | Text/Liste            | `"Hallo" verkettet mit " Welt"`       | `"Hallo Welt"` |
-| Indizierung           | `a an der Stelle b`        | `a[b]`       | Text/Liste           | Zahl                 | -                    | Buchstabe/Element Typ | `"Hallo" an der Stelle 1`             | 'H'            |
-| Bereich               | `a im Bereich von b bis c` | -            | Text/Liste           | Zahl                 | Zahl                 | Text/Liste            | `"Hallo Welt" im Bereich von 1 bis 5` | "Hallo"        |
-| `... ab dem ...`      | `a ab dem b. Element`      | -            | Text/Liste           | Zahl                 | -                    | Text/Liste            | `"Hallo Welt" ab dem 7. Element`      | "Welt"         |
-| `... bis zum ...`     | `a bis zum b. Element`     | -            | Text/Liste           | Zahl                 | -                    | Text/Liste            | `"Hallo Welt" bis zum 5. Element`     | "Hallo"        |
+| Indizierung           | `a an der Stelle b`        | `a[b]`       | Text/Liste           | Zahl, Byte           | -                    | Buchstabe/Element Typ | `"Hallo" an der Stelle 1`             | 'H'            |
+| Bereich               | `a im Bereich von b bis c` | -            | Text/Liste           | Zahl, Byte           | Zahl, Byte           | Text/Liste            | `"Hallo Welt" im Bereich von 1 bis 5` | "Hallo"        |
+| `... ab dem ...`      | `a ab dem b. Element`      | -            | Text/Liste           | Zahl, Byte           | -                    | Text/Liste            | `"Hallo Welt" ab dem 7. Element`      | "Welt"         |
+| `... bis zum ...`     | `a bis zum b. Element`     | -            | Text/Liste           | Zahl, Byte           | -                    | Text/Liste            | `"Hallo Welt" bis zum 5. Element`     | "Hallo"        |
 
 ## Bemerkungen
 

@@ -13,8 +13,9 @@ Der Typ von Variablen, Funktionen und Ausdrücken kann sich nicht zur Laufzeit �
 
 | Typname       | Beschreibung                                              | Wertebereich                                                        | Literal                                                                           | Beispiel                                                      |
 | ------------- | --------------------------------------------------------- | ------------------------------------------------------------------- | --------------------------------------------------------------------------------- | ------------------------------------------------------------- |
-| Zahl          | Eine 64 Bit große, ganze Zahl                             | *-2^63* bis *+2^63*                                                 | Eine Reihe von Ziffern, z.B. 42                                                   | `Die Zahl x ist 69.`, <br>`1 plus -7`                         |
-| Kommazahl     | Eine 64 Bit große, gleitkomma Zahl                        | *ca. -1,797x10^308* bis <br>*1,797x10^308* mit 16 Dezimalstellen | Ein Zahlenliteral mit Nachkommastellen, z.B. 3,1415                               | `Die Kommazahl x ist 6,5.`, <br>`2 durch 0,5`                 |
+| Zahl          | Eine 64 Bit große, ganze Zahl                             | *-2^63* bis *+2^63*                                                 | Eine Reihe von Ziffern, z.B. 42                                                   | `Die Zahl x ist 75.`, <br>`1 plus -7`                         |
+| Kommazahl     | Eine 64 Bit große, gleitkomma Zahl                        | *ca. -1,797x10^308* bis <br>*1,797x10^308* mit 16 Dezimalstellen    | Ein Zahlenliteral mit Nachkommastellen, z.B. 3,1415                               | `Die Kommazahl x ist 6,5.`, <br>`2 durch 0,5`                 |
+| Byte          | Eine 8 Bit große, ganze, positive Zahl                    | *0 bis 255*                                                         | Eine Reihe von Ziffern, z.B. 16                                                   | `Die Zahl x ist 128.`, <br>`1 plus 5`                         |
 | Wahrheitswert | Ein Wahrheitswert (8 Bit groß)                            | *wahr* oder *falsch*                                                | *wahr* oder *falsch*                                                              | `Der Wahrheitswert x ist wahr.`, <br>`2 gleich 2`             |
 | Buchstabe     | Ein 4 Byte großes, mit utf-8 kodiertes Zeichen            | *0* - *65535*                                                       | Ein utf8 Zeichen zwischen einfachen Anführungszeichen, z.B. 'a' oder '\n'         | `Der Buchstabe x ist 'd'.`                                    |
 | Text          | Eine utf-8 kodierte Aneinanderreihung mehrerer Buchstaben | *beliebig groß*                                                     | Beliebig viele Buchstaben zwischen (englischen) Anführungszeichen, z.B. "Hallo\n" | `Der Text x ist "abc".`, <br>`"Hallo" verkettet mit " du da"` |
@@ -79,7 +80,8 @@ Die Text Liste t2 ist "Hallo" als Text Liste.
 | ------------------- | ------------------------------------------------------------------------------- |
 | Zahlen Liste        | `Die Zahlen Liste z ist eine Liste, die aus 1, 2, 3 besteht.`                   |
 | Kommazahlen Liste   | `Die Kommazahlen Liste z ist eine Liste, die aus 1,2, 3,2, 3,1415 besteht.`     |
-| Wahrheitswert Liste | `Die Wahrheitswert Liste b ist eine Liste, die aus wahr, falsch, wahr besteht.` |
+| Byte Liste          | `Die Byte Liste by ist eine Liste, die aus 5, 12, 255 besteht.`                 |
+| Wahrheitswert Liste | `Die Wahrheitswert Liste w ist eine Liste, die aus wahr, falsch, wahr besteht.` |
 | Buchstaben Liste    | `Die Buchstaben Liste b ist eine Liste, die aus 'b', 'h', 'z' besteht.`         |
 | Text Liste          | `Die Text Liste t ist eine Liste, die aus "Hallo", "du", "da" besteht.`         |
 

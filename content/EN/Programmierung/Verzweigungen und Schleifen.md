@@ -99,7 +99,7 @@ Wiederhole:
 
 ## Counting loop
 Counting loops also allow code to be run multiple times while giving a counter that can be used elsewhere.
-For each counting loop, a counter must be named (a variable of type 'Zahl') and a start and end value.
+For each counting loop, a counter must be named (a variable of type `Zahl`, `Byte` or `Kommazahl`) and a start and end value.
 Optionally, a step size can also be specified, which is used for counting.
 
 ### Countup loop

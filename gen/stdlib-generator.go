@@ -8,9 +8,11 @@ import (
 	"io"
 	"io/fs"
 	"log"
+	"maps"
 	"net/http"
 	"os"
 	"path/filepath"
+	"slices"
 	"sort"
 	"strings"
 	"sync"
@@ -180,12 +182,21 @@ func writeMD(inputFile string, outputFile *os.File, publicDecls []ast.Declaratio
 
 			impl := ""
 			isExtern := ast.IsExternFunc(decl)
-			if ast.IsExternFunc(decl) {
+			genericTypes := ""
+			if isExtern {
 				impl = strings.Trim(decl.ExternFile.String(), "\"")
 			} else {
 				file := strings.Trim(inputFile, "\r\n")
 				inputStr := strings.Split(file, "\n")
-				lines := inputStr[decl.Body.Range.Start.Line:decl.Body.Range.End.Line]
+
+				var start, end uint
+				if !ast.IsGeneric(decl) {
+					start, end = decl.Body.Range.Start.Line, decl.Body.Range.End.Line
+				} else {
+					genericTypes = "<code>" + strings.Join(slices.Collect(maps.Keys(decl.Generic.Types)), "</code>, <code>") + "</code>"
+					start, end = decl.Generic.Tokens[0].Range.Start.Line, decl.Generic.Tokens[len(decl.Generic.Tokens)-1].Range.End.Line
+				}
+				lines := inputStr[start:end]
 
 				impl = strings.Join(lines, "&#10;")
 				impl = strings.ReplaceAll(impl, "\r", "")
@@ -194,8 +205,8 @@ func writeMD(inputFile string, outputFile *os.File, publicDecls []ast.Declaratio
 				impl = strings.ReplaceAll(impl, "\t", "    ")
 			}
 
-			fmt.Fprintf(funcBldr, "{{< duden-function name=\"%s\" desc=\"%s\" params=\"%s\" paramTypes=\"%s\" ret=\"%s\" impl=\"%s\" extern=\"%t\" aliases=\"%s\" >}}\n\n", // }}"
-				decl.Name(), descr, params, paramTypes, decl.ReturnType.String(), impl, isExtern, aliases)
+			fmt.Fprintf(funcBldr, "{{< duden-function name=\"%s\" desc=\"%s\" params=\"%s\" paramTypes=\"%s\" genericTypes=\"%s\" ret=\"%s\" impl=\"%s\" extern=\"%t\" aliases=\"%s\" >}}\n\n", // }}"
+				decl.Name(), descr, params, paramTypes, genericTypes, decl.ReturnType.String(), impl, isExtern, aliases)
 		case *ast.VarDecl:
 			hasVars = true
 

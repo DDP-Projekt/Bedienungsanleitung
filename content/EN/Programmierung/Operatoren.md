@@ -5,7 +5,7 @@ weight = 3
 
 # Mathematical operators
 
-For the sake of simplicity, the *Nummer* and *Kommazahl* types are grouped together as *Numeric* in this article.
+For the sake of simplicity, the *Zahl*, *Byte* and *Kommazahl* types are grouped together as *Numeric* in this article.
 
 To make finding a specific operator easier for readers who already know a programming language the C operator is included in this and later tables.
 
@@ -13,7 +13,7 @@ To make finding a specific operator easier for readers who already know a progra
 
 | Function                  | Usage              | C equivalent | Type of operand   | return type | Example                 | Result   |
 |---------------------------|--------------------|--------------|-------------------|-------------|-------------------------|----------|
-| NOT gate                  | `logisch nicht a`  | `~a`         | Zahl              | Zahl        | `logisch nicht 1`       | -2       |
+| NOT gate                  | `logisch nicht a`  | `~a`         | Zahl, Byte        | Zahl, Byte  | `logisch nicht 1`       | -2       |
 | list/Text/Character count | `die Länge von a`  | -            | Liste, Text       | Zahl        | `Die Länge von "Hallo"` | 5        |
 | Byte Size                 | `die Größe von a`  | `sizeof(a)`  | all               | Zahl        | `Die Größe von 1`       | 8        |
 | Absolute value            | `der Betrag von a` | `abs(a)`     | numeric           | numeric     | `der Betrag von -5`     | 5        |
@@ -26,15 +26,15 @@ To make finding a specific operator easier for readers who already know a progra
 | Subtraction     | `a minus b`                             | `a - b`               | numeric             | numeric             | numeric     | `1 minus 2`                           | -1     |
 | Multiplication  | `a mal b`                               | `a * b`               | numeric             | numeric             | numeric     | `5 mal 3`                             | 15     |
 | Division        | `a durch b`                             | `a / b`               | numeric             | numeric             | Kommazahl   | `6 durch 2`                           | 3      |
-| Remainder       | `a modulo b`                            | `a % b`               | Zahl                | Zahl                | Zahl        | `16 modulo 12`                        | 4      |
+| Remainder       | `a modulo b`                            | `a % b`               | Zahl, Byte          | Zahl, Byte          | Zahl, Byte  | `16 modulo 12`                        | 4      |
 | Exponentiation  | `a hoch b`                              | `pow(a, b)`           | numeric             | numeric             | Kommazahl   | `2 hoch 8`                            | 256    |
 | Root            | `die a. Wurzel von b`                   | `pow(a, 1/b)`         | numeric             | numeric             | Kommazahl   | `die 2. Wurzel von 9`                 | 3      |
-| Logarithm       | `der Logarithmus von b zur Basis a` | `log10(b) / log10(a)` | numeric             | numeric             | Kommazahl   | `der Logarithmus von 100 zur Basis 10`| 2      |
-| Left Bit-Shift  | `a um b Bit nach links verschoben`      | `a << b`              | Zahl                | Zahl                | Zahl        | `7 um 3 Bit nach links verschoben`    | 56     |
-| Right Bit-Shift | `a um b Bit nach rechts verschoben`     | `a >> b`              | Zahl                | Zahl                | Zahl        | `70 um 2 Bit nach rechts verschoben`  | 17     |
-| AND gate        | `a logisch und b`                       | `a&b`                 | Zahl                | Zahl                | Zahl        | `5 logisch und 2`                     | 0      |
-| OR gate         | `a logisch oder b`                      | `a\| b`               | Zahl                | Zahl                | Zahl        | `5 logisch oder 2`                    | 7      |
-| XOR gate        | `a logisch kontra b`                    | `a^b`                 | Zahl                | Zahl                | Zahl        | `8 logisch kontra 5`                  | 13     |
+| Logarithm       | `der Logarithmus von b zur Basis a`     | `log10(b) / log10(a)` | numeric             | numeric             | Kommazahl   | `der Logarithmus von 100 zur Basis 10`| 2      |
+| Left Bit-Shift  | `a um b Bit nach links verschoben`      | `a << b`              | Zahl, Byte          | Zahl, Byte          | Zahl, Byte  | `7 um 3 Bit nach links verschoben`    | 56     |
+| Right Bit-Shift | `a um b Bit nach rechts verschoben`     | `a >> b`              | Zahl, Byte          | Zahl, Byte          | Zahl, Byte  | `70 um 2 Bit nach rechts verschoben`  | 17     |
+| AND gate        | `a logisch und b`                       | `a&b`                 | Zahl, Byte          | Zahl, Byte          | Zahl, Byte  | `5 logisch und 2`                     | 0      |
+| OR gate         | `a logisch oder b`                      | `a\| b`               | Zahl, Byte          | Zahl, Byte          | Zahl, Byte  | `5 logisch oder 2`                    | 7      |
+| XOR gate        | `a logisch kontra b`                    | `a^b`                 | Zahl, Byte          | Zahl, Byte          | Zahl, Byte  | `8 logisch kontra 5`                  | 13     |
 
 # Boolean operators
 
@@ -64,10 +64,10 @@ Relational operators all have an "ist" at the end to conform to the grammar in a
 | Function          | Usage                      | C equivalent | Type of 1st operand  | Type of 2nd operand  | Type of 3rd operand | return type           | Example                               | Result         |
 |-------------------|----------------------------|--------------|----------------------|----------------------|---------------------|-----------------------|---------------------------------------|----------------|
 | Concationation    | `a verkettet mit b`        | -            | Text/Liste/Buchstabe | Text/Liste/Buchstabe | -                   | Text/Liste            | `"Hallo" verkettet mit " Welt"`       | `"Hallo Welt"` |
-| Indexing          | `a an der Stelle b`        | `a[b]`       | Text/Liste           | Zahl                 | -                   | Buchstabe/Element Typ | `"Hallo" an der Stelle 1`             | 'H'            |
-| Range             | `a im Bereich von b bis c` | -            | Text/Liste           | Zahl                 | Zahl                | Text/Liste            | `"Hallo Welt" im Bereich von 1 bis 5` | "Hallo"        |
-| `... ab dem ...`  | `a ab dem b. Element`      | -            | Text/Liste           | Zahl                 | -                   | Text/Liste            | `"Hallo Welt" ab dem 7. Element`      | "Welt"         |
-| `... bis zum ...` | `a bis zum b. Element`     | -            | Text/Liste           | Zahl                 | -                   | Text/Liste            | `"Hallo Welt" bis zum 5. Element`     | "Hallo"        |
+| Indexing          | `a an der Stelle b`        | `a[b]`       | Text/Liste           | Zahl, Byte           | -                   | Buchstabe/Element Typ | `"Hallo" an der Stelle 1`             | 'H'            |
+| Range             | `a im Bereich von b bis c` | -            | Text/Liste           | Zahl, Byte           | Zahl, Byte          | Text/Liste            | `"Hallo Welt" im Bereich von 1 bis 5` | "Hallo"        |
+| `... ab dem ...`  | `a ab dem b. Element`      | -            | Text/Liste           | Zahl, Byte           | -                   | Text/Liste            | `"Hallo Welt" ab dem 7. Element`      | "Welt"         |
+| `... bis zum ...` | `a bis zum b. Element`     | -            | Text/Liste           | Zahl, Byte           | -                   | Text/Liste            | `"Hallo Welt" bis zum 5. Element`     | "Hallo"        |
 
 ## Remarks
 

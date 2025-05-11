@@ -22,6 +22,11 @@ Der Wahrheitswert <variable name> ist <true or false>, wenn <expression>.
 ```
 You can find a list of all data types in the article [data types](/en/Programmierung/Datentypen)
 
+It is also possible to assign to a numerical variable a value of a different numerical type. The value gets casted accordingly. For example here, we assign a Kommazahl a literal value of Type Zahl.
+```ddp
+Die Kommazahl k ist 5.
+```
+
 ## Examples:
 
 ```ddp

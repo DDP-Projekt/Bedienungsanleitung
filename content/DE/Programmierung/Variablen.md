@@ -55,6 +55,11 @@ Um einer Variable das Ergebnis eines Ausdrucks zuzuweisen, muss `Speichere ... i
 Speichere pi durch 2 in b.
 ```
 
+Es ist auch möglich einer numerischen Variabiable einen Wert eines anderen numerischen Typs zuzuweisen. Der Wert wird dann entsprechend [umgewandelt](/Programmierung/Typkonvertierung). Zum Beispiel wird hier einer Kommazahl eine Zahl zugewiesen: 
+```ddp
+Die Kommazahl k ist 5.
+```
+
 # Extern sichtbare Variablen
 
 Der DDP Kompilierer benutzt eine Technik namens [name mangling](https://en.wikipedia.org/wiki/Name_mangling). Das heißt, die Namen von Funktionen und Variablen
