@@ -94,3 +94,6 @@ Die Zahl x ist x von (vektoren an der Stelle 1).
 Unfortunately, with user-defined combinations it is not (yet) possible to decline the type name accordingly, so it is different than with built-in types (Zahl -> Zahl*en* Liste vs. Vektor -> Vektor Liste).
 
 As you can see, the `von` operator also has priority over the `an der Stelle` operator, as specified in the [prioritization of operators](/en/Programmierung/Operatoren/#operator-prioritization).
+
+## Generic combinations
+<to-do></to-do>

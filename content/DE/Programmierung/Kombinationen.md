@@ -110,3 +110,6 @@ Die Zahl x ist x von (vektoren an der Stelle 1).
 Bei Benutzerdefinierten Kombinationen ist es leider (noch) nicht möglich den Typnamen entsprechend zu deklinieren, also ist es anders als bei eingebauten Typen (Zahl -> Zahl*en* Liste vs. Vektor -> Vektor Liste).
 
 Wie man sieht hat der `von` Operator auch Vorrang vor dem `an der Stelle` Operator, so wie es in der [Priorisierung von Operatoren](/Programmierung/Operatoren/#operator-priorisierung) festgelegt ist.
+
+## Generische Kombinationen
+<to-do></to-do>
