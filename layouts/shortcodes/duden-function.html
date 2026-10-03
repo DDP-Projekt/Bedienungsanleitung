@@ -18,7 +18,7 @@
 				{{ end }}
 				<li>{{ i18n "returnType"}}: <code>{{ .Get "ret" }}</code></li>
 			</ul>
-	
+
 			<h3>{{ i18n "aliases" }}</h3>
 			<ol>
 				{{ with .Get "aliases" }}
@@ -30,7 +30,7 @@
 					<p>Keine Aliase definiert</p>
 				{{ end}}
 			</ol>
-	
+
 			<h3>{{ i18n "impl" }}</h3>
 			{{ if eq (.Get "extern") "false" }}
 				{{ (printf "```ddp\n%s\n```" (.Get "impl" | htmlUnescape )) | .Page.RenderString }}

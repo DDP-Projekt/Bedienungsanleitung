@@ -2,7 +2,7 @@
     <!-- Find next and previous page -->
 
     {{- $root := .GetPage "/" -}}
-    
+
     <!-- Next -->
     {{- $next := .CurrentSection.Pages.Prev . -}}
     <!-- Section -> Child -->
@@ -27,7 +27,7 @@
     {{- if .IsSection -}}
         {{- $prev = .Parent.Pages.Next . -}}
     {{- end -}}
-    
+
     <!-- Datentypen -> Programmierung -->
     {{- if .Eq (index .CurrentSection.Pages 0) -}}
         {{- $prev = .CurrentSection -}}
@@ -35,7 +35,7 @@
     {{- else if and $prev $prev.IsSection -}}
         {{- $prev = index ($prev.Pages | last 1) 0 -}}
     {{- end -}}
-    
+
 	<link rel="prefetch" href="{{- with or $prev $root -}} {{- .RelPermalink -}} {{- end -}}" as="document">
 	<link rel="prefetch" href="{{- with or $next $root -}} {{- .RelPermalink -}} {{- end -}}" as="document">
 

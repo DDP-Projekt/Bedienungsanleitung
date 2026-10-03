@@ -1,15 +1,59 @@
-<pre class="language-ddp">
-	{{- .Inner 
-		| replaceRE `<([^<>]+)>` "<span class='placeholder'>&lt;$1&gt;</span>" | safeHTML
-		| replaceRE `\[[\s\S]*?]` "<span class='comment'>$0</span>" | safeHTML
-		| replaceRE `'.'` "<span class='char-literal'>$0</span>" | safeHTML
-		| replaceRE `\b(wahr|falsch)\b` "<span class='boolean-literal'>$1</span>" | safeHTML 
-		| replaceRE `Schreibe\s*(den|die)?\s*(Zahl(en)?|Kommazahl(en)?|Buchstaben?|Texte?)?|auf eine Zeile` "<span class='builtins'>$0</span>" | safeHTML
-		| replaceRE `-?\d+(,\d)?` "<span class='number'>$0</span>" | safeHTML 
-		| replaceRE `\b([Ww]enn|aber|dann|Sonst|[Ss]olange|[Mm]ache|[Ww]iederhole|Für jeden?|mit Schrittgröße|[Gg]ibt?|zurück|macht|einen?|mit den Parametern|mit dem Parameter|vom Typ|[Uu]nd kann so benutzt werden|Binde|ein|in|definiert|Der Alias|steht für die Funktion|Wir\s+nennen\s+die(\s+öffentliche)?\s+Kombination\s+aus|und\s+erstellen\s+sie\s+so|aus)\b` "<span class='control-statement'>$1</span>" | safeHTML
-		| replaceRE `[.:(),]` "<span class='punctuation'>$0</span>" | safeHTML 
-		| replaceRE `\b(ist|sind|oder|und|nicht|plus|minus|mal|durch|modulo|hoch|. wurzel von|logisch|kontra|gleich|ungleich|kleiner als|größer als|kleiner als, oder|größer als, oder|natürlicher Logarithmus von|Betrag|Stück|von|bis|als|an der Stelle|[Ss]peichere|verkettet mit|[Ee]rhöhe|[Vv]erringere|[Vv]ervielfache|[Tt]eile|[Nn]egiere|[Vv]erschiebe|ab dem|bis zum|um|Bit nach (Links|Rechts)|verschoben|die Länge von|Wurzel)\b` "<span class='operator'>$1</span>" | safeHTML 
-		| replaceRE `\b(nichts|Die Funktion|Zahl(en)?|Kommazahl(en)?|Wahrheitswert|Texte?|Buchstaben?|[Dd]er\s+(Buchstabe|Text|Wahrheitswert)|[Dd]ie\s+(Zahl(en)?|Kommazahl(en)?|Text|Buchstaben|Wahrheitswert)|[Dd]as|Referenz|Liste)\b` "<span class='type'>$1</span>" | safeHTML 
-		| replaceRE `".*?"` "<span class='string-literal'>$0</span>" | safeHTML
-	-}}
-</pre>
+{{- $tokens := slice
+	(dict "class" "string-literal" "re" `"(?:\\.|[^"\\\n])*"`)
+	(dict "class" "comment" "re" `\[(?:[^\[\]]|\[(?:[^\[\]]|\[[^\[\]]*\])*\])*\]`)
+	(dict "class" "char-literal" "re" `'(?:\\.|[^'\\\n])'`)
+	(dict "class" "placeholder" "re" `&lt;[^\n]*?&gt;`)
+	(dict "class" "boolean-literal" "re" `\b(?:wahr|falsch)\b`)
+	(dict "class" "number" "re" `\b\d+(?:,\d+)?\b`)
+	(dict "class" "builtins" "re" `\bSchreibe(?:\s+(?:den|die)\s+(?:Zahlen|Zahl|Kommazahlen|Kommazahl|Buchstaben|Buchstabe|Texte|Text|Wahrheitswerte|Wahrheitswert))?\b|\bauf eine Zeile\b`)
+	(dict "class" "control-statement" "re" (delimit (slice
+		`\b[Ww]ir nennen die(?:\s+(?:öffentliche|generische))*\s+Kombination aus\b`
+		`\b[Ww]ir nennen\b` `\b[Ww]ir definieren\b` `\bund erstellen sie so\b` `\bauch\b`
+		`\b[Uu]nd kann so benutzt werden\b` `\b[Uu]nd überlädt den\b` `\bOperator\b`
+		`\bwird später definiert\b` `\bist extern sichtbar\b` `\bextern sichtbare?\b` `\bist in\b` `\bdefiniert\b`
+		`\bDer Alias\b` `\bsteht für die Funktion\b`
+		`\bBinde\b` `\brekursiv\b` `\balle Module\b`
+		`öffentlich(?:e[nr]?)?\b` `\bgenerische\b`
+		`\bmit den Parametern\b` `\bmit dem Parameter\b` `\bvom Typ\b` `\bmit Standardwert\b`
+		`\b[Ww]enn aber\b` `\b[Ww]enn\b` `\bdann\b` `\b[Ss]onst\b` `\b[Ss]olange\b` `\b[Mm]ache\b` `\bmacht\b` `\b[Ww]iederhole\b`
+		`\bFür (?:jeden|jede|jedes)\b` `\bmit Index\b` `\bmit Schrittgröße\b`
+		`\bVerlasse die (?:Schleife|Funktion)\b` `\bFahre mit der Schleife fort\b`
+		`\b[Gg]ib\b` `\bgibt\b` `\bzurück\b` `\bMal\b`
+		`\bleeren?\b` `\bbesteht\b` `\beine[rmns]?\b` `\bein\b` `\bin\b` `\baus\b`
+		`\.\.\.`
+	) "|"))
+	(dict "class" "operator" "re" (delimit (slice
+		`\bkleiner als, oder\b` `\bgrößer als, oder\b` `\bkleiner als\b` `\bgrößer als\b`
+		`\b[Dd]ie Länge von\b` `\b[Dd]ie Größe von\b` `\b[Dd]e[rnm] Betrag von\b` `\b[Dd]e[rnm] Standardwert von\b` `\b[Dd]er Logarithmus von\b` `\bzur Basis\b` `\bWurzel von\b`
+		`\bverkettet mit\b` `\ban der Stelle\b` `\bim Bereich von\b` `\bab dem\b` `\bbis zum\b` `\bElement\b`
+		`\blogisch (?:und|oder|kontra|nicht)\b` `\bBit nach (?:[Ll]inks|[Rr]echts)\b` `\bverschoben\b`
+		`\b[Ss]peichere\b` `\b[Ee]rhöhe\b` `\b[Vv]erringere\b` `\b[Vv]ervielfache\b` `\b[Tt]eile\b` `\b[Nn]egiere\b` `\b[Vv]erschiebe\b`
+		`\bentweder\b` `\bfalls\b` `\bansonsten\b` `\bzwischen\b`
+		`\bungleich\b` `\bgleich\b` `\bkeine?\b` `\bist\b` `\bnicht\b` `\bund\b` `\boder\b`
+		`\bplus\b` `\bminus\b` `\bmal\b` `\bdurch\b` `\bmodulo\b` `\bhoch\b`
+		`\bvon\b` `\bbis\b` `\bals\b` `\bum\b`
+	) "|"))
+	(dict "class" "type" "re" (delimit (slice
+		`\b[Dd](?:er|ie|as|en|em)(?:\s+(?:öffentliche[nr]?|generische|extern sichtbare))*\s+(?:Funktion|Konstante)\b`
+		`\b[Dd](?:er|ie|as|en|em)(?:\s+(?:öffentliche[nr]?|extern sichtbare))*\s+(?:Zahlen|Zahl|Kommazahlen|Kommazahl|Byte|Wahrheitswert|Buchstaben|Buchstabe|Texte|Text|Variablen|Variable)\b`
+		`\bZahlen\b` `\bZahl\b` `\bKommazahlen\b` `\bKommazahl\b` `\bByte\b` `\bWahrheitswert\b`
+		`\bBuchstaben\b` `\bBuchstabe\b` `\bTexte\b` `\bText\b` `\bVariablen\b` `\bVariable\b`
+		`\bListen\b` `\bListe\b` `\bReferenz\b` `\bKombination\b` `\bnichts\b`
+	) "|"))
+	(dict "class" "punctuation" "re" `[.:(),]`)
+-}}
+
+{{- $regex := slice -}}
+{{- $replacement := "" -}}
+{{- range $i, $token := $tokens -}}
+	{{- $regex = $regex | append (printf "(%s)" $token.re) -}}
+	{{- $replacement = printf "%s<span class='%s'>${%d}</span>" $replacement $token.class (add $i 1) -}}
+{{- end -}}
+
+{{- $code := replace .Inner "&" "&amp;" -}}
+{{- $code = replace $code "<" "&lt;" -}}
+{{- $code = replace $code ">" "&gt;" -}}
+{{- $code = replaceRE (delimit $regex "|") $replacement $code -}}
+{{- $code = replaceRE `<span class='[a-z-]+'></span>` "" $code -}}
+
+<pre class="language-ddp">{{ $code | safeHTML }}</pre>
