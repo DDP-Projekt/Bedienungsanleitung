@@ -113,6 +113,50 @@ In such late alias declarations, any parameters must have the same name as in th
 So if you want to add an alias to a function from the Duden, for example, you have to look up the names of the function's parameters.
 
 
+## Forward declarations
+
+A function can only be used after it was declared.
+But sometimes two functions call each other. Then one of them must be used before it was declared.
+
+For such cases there are forward declarations.
+Instead of `macht:` and the function body, you write `wird später definiert` (will be defined later).
+Later in the same module, the function is then defined with `Die Funktion <name> macht:`:
+
+```ddp
+Die Funktion Ist_Gerade mit dem Parameter n vom Typ Zahl, gibt einen Wahrheitswert zurück,
+wird später definiert
+und kann so benutzt werden:
+	"<n> gerade ist"
+
+Die Funktion Ist_Ungerade mit dem Parameter n vom Typ Zahl, gibt einen Wahrheitswert zurück, macht:
+	Wenn n gleich 0 ist, gib falsch zurück.
+	Gib (n minus 1) gerade ist zurück.
+Und kann so benutzt werden:
+	"<n> ungerade ist"
+
+Die Funktion Ist_Gerade macht:
+	Wenn n gleich 0 ist, gib wahr zurück.
+	Gib (n minus 1) ungerade ist zurück.
+
+Schreibe (7 ungerade ist) auf eine Zeile. [wahr]
+```
+
+In the definition, the parameters, the return type and the aliases are not repeated.
+Every function that was declared with `wird später definiert` must also be defined.
+
+## Public functions
+
+With `öffentliche`, functions can also be used in other modules:
+
+```ddp
+Die öffentliche Funktion Hallo gibt nichts zurück, macht:
+	Schreibe "Hello!" auf eine Zeile.
+Und kann so benutzt werden:
+	"Sag Hallo"
+```
+
+More about this in the article [Modules](/en/Programmierung/Module).
+
 # Function calls
 
 Functions are called exclusively through their aliases.<br>

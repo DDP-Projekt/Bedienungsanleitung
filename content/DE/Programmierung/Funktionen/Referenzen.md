@@ -38,3 +38,23 @@ Man kann aus jedem Typnamen einen Referenz-Typ machen, indem man "Referenz" an d
 Aus `Zahlen Liste` wird also `Zahlen Listen Referenz`, aus `Wahrheitswert` wird `Wahrheitswert Referenz`, aus `Zahl` wird `Zahlen Referenz`, etc..
 
 Normale Variablen können keine Referenz-Typen sein, nur Funktions-Parameter.
+
+## Typumwandlungen als Referenzen
+
+Bei [Typ-Aliasen und Typ-Definitionen](/Programmierung/Typ-Aliase-und-Typ-Definitionen) kann man eine Variable mit `als` umwandeln und trotzdem als Referenz übergeben.
+Das funktioniert nur, wenn der Typ dabei eigentlich gleich bleibt, also zum Beispiel bei einer Typ-Definition und ihrem Basistyp:
+
+```ddp
+Wir definieren eine Hausnummer als eine Zahl.
+
+Die Funktion Erhöhe_Zahl mit dem Parameter z vom Typ Zahlen Referenz, gibt nichts zurück, macht:
+	Erhöhe z um 1.
+Und kann so benutzt werden:
+	"Zähle <z> hoch"
+
+Die Hausnummer h ist 41 als Hausnummer.
+Zähle (h als Zahl) hoch.
+Schreibe (h als Zahl) auf eine Zeile. [42]
+```
+
+Andere Umwandlungen, wie zum Beispiel von einer Zahl in eine Kommazahl, können nicht als Referenz übergeben werden.

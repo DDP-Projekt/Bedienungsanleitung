@@ -8,6 +8,7 @@ weight = 1
 Da die Deutsche Programmiersprache statisch typisiert ist, hat jeder Ausdruck (z.B. mathematische Ausdrücke), jede Variable und jede Funktion einen festen Datentyp.
 
 Der Typ von Variablen, Funktionen und Ausdrücken kann sich nicht zur Laufzeit ändern, er wird zur Kompilierzeit festgelegt.
+Eine Ausnahme ist der Typ [Variable](#variable).
 
 ## Einfache Datentypen
 
@@ -15,7 +16,7 @@ Der Typ von Variablen, Funktionen und Ausdrücken kann sich nicht zur Laufzeit �
 | ------------- | --------------------------------------------------------- | ------------------------------------------------------------------- | --------------------------------------------------------------------------------- | ------------------------------------------------------------- |
 | Zahl          | Eine 64 Bit große, ganze Zahl                             | *-2^63* bis *2^63-1*                                                 | Eine Reihe von Ziffern, z.B. 42                                                   | `Die Zahl x ist 75.`, <br>`1 plus -7`                         |
 | Kommazahl     | Eine 64 Bit große, gleitkomma Zahl                        | *ca. -1,797x10^308* bis <br>*1,797x10^308* mit 16 Dezimalstellen    | Ein Zahlenliteral mit Nachkommastellen, z.B. 3,1415                               | `Die Kommazahl x ist 6,5.`, <br>`2 durch 0,5`                 |
-| Byte          | Eine 8 Bit große, ganze, positive Zahl                    | *0 bis 255*                                                         | Eine Reihe von Ziffern, z.B. 16                                                   | `Das Byte x ist 128.`, <br>`1 plus 5`                         |
+| Byte          | Eine 8 Bit große, ganze, positive Zahl                    | *0 bis 255*                                                         | Eine Reihe von Ziffern, z.B. 16                                                   | `Der Byte x ist 128.`, <br>`1 plus 5`                         |
 | Wahrheitswert | Ein Wahrheitswert (8 Bit groß)                            | *wahr* oder *falsch*                                                | *wahr* oder *falsch*                                                              | `Der Wahrheitswert x ist wahr.`, <br>`2 gleich 2`             |
 | Buchstabe     | Ein 4 Byte großes Unicode-Zeichen            | *0* - *1114111*                                                     | Ein utf8 Zeichen zwischen einfachen Anführungszeichen, z.B. 'a' oder '\n'         | `Der Buchstabe x ist 'd'.`                                    |
 | Text          | Eine utf-8 kodierte Aneinanderreihung mehrerer Buchstaben | *beliebig groß*                                                     | Beliebig viele Buchstaben zwischen (englischen) Anführungszeichen, z.B. "Hallo\n" | `Der Text x ist "abc".`, <br>`"Hallo" verkettet mit " du da"` |
@@ -88,6 +89,40 @@ Die Text Liste t2 ist "Hallo" als Text Liste.
 ### Bemerkung
 
 Eigentlich würde man ja erwarten, dass in der Aufzählung eines Listen Literals noch ein 'und' vorkommen müsste (`eine Liste, die aus 1, 2 und 3 besteht`). Das würde aber zu Mehrdeutigkeiten in Boolschen Ausdrücken führen (`eine Liste, die aus wahr und falsch besteht`), und da die Aufzählung, grammatisch gesehen, kein 'und' braucht wird es in Listen Literalen weggelassen.
+
+## Variable
+
+Der Typ `Variable` ist ein besonderer Typ. Eine Variable vom Typ `Variable` kann einen Wert von jedem anderen Typ speichern.
+Welcher Typ das gerade ist, kann sich zur Laufzeit ändern.
+
+```ddp
+Die Variable v ist 5.
+Speichere "Hallo" in v.
+Speichere wahr in v.
+```
+
+Um mit dem Wert zu arbeiten, muss man ihn mit dem `als` Operator in seinen eigentlichen Typ [umwandeln](/Programmierung/Typkonvertierung).
+Ist der Wert nicht von diesem Typ, gibt es einen Laufzeitfehler.
+
+```ddp
+Die Variable v ist 5.
+Die Zahl z ist v als Zahl. [5]
+```
+
+Mit `ein`, `eine`, `kein` oder `keine` kann man prüfen, welchen Typ der Wert gerade hat:
+
+```ddp
+Die Variable v ist "Hallo".
+Wenn v ein Text ist, Schreibe "v ist ein Text" auf eine Zeile.
+Wenn v keine Zahl ist, Schreibe "v ist keine Zahl" auf eine Zeile.
+```
+
+Es gibt auch Listen vom Typ `Variable`. Ihr Typname ist `Variablen Liste`:
+
+```ddp
+Die Variablen Liste l ist eine Liste, die aus 1 als Variable, "zwei" als Variable besteht.
+Schreibe ((l an der Stelle 2) als Text) auf eine Zeile. [zwei]
+```
 
 ## Kombinationen
 

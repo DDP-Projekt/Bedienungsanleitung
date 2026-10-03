@@ -112,4 +112,67 @@ Bei Benutzerdefinierten Kombinationen ist es leider (noch) nicht möglich den Ty
 Wie man sieht hat der `von` Operator auch Vorrang vor dem `an der Stelle` Operator, so wie es in der [Priorisierung von Operatoren](/Programmierung/Operatoren/#operator-priorisierung) festgelegt ist.
 
 ## Generische Kombinationen
-<to-do></to-do>
+
+Genau wie es [generische Funktionen](/Programmierung/Funktionen/Generische-Funktionen) gibt, gibt es auch generische Kombinationen.
+Dabei steht das Wort `generische` vor `Kombination`, und die Felder können Typparameter wie `T` als Typ haben:
+
+```ddp
+Wir nennen die generische Kombination aus
+	dem T erstes,
+	dem R zweites,
+ein Paar, und erstellen sie so:
+	"ein Paar aus <erstes> und <zweites>"
+```
+
+Typparameter sind grammatikalisch sächlich. Deshalb steht hier `dem T` und nicht `der T`.
+
+Wenn man eine generische Kombination benutzt, schreibt man die Typen für die Typparameter mit Bindestrichen vor den Namen.
+Die Reihenfolge ist dabei die Reihenfolge, in der die Typparameter in den Feldern zum ersten Mal vorkommen.
+Bei `Paar` ist also zuerst `T` und dann `R` dran:
+
+```ddp
+Das Zahl-Text-Paar p ist ein Paar aus 1 und "eins".
+Schreibe (erstes von p) auf eine Zeile. [1]
+Schreibe (zweites von p) auf eine Zeile. [eins]
+
+Die Zahl-Text-Paar Liste liste ist eine leere Zahl-Text-Paar Liste.
+```
+
+Ist einer der Typen selbst ein generischer Typ, setzt man ihn in Klammern, zum Beispiel `(Zahl-Paar)-Text-Paar`.
+
+### Aliase von generischen Kombinationen
+
+Bei einem Alias muss der Kompilierer alle Typparameter herausfinden können.
+Das geht über die Argumente des Alias oder über die Standardwerte der Felder:
+
+```ddp
+Wir nennen die generische Kombination aus
+	dem T x mit Standardwert 0,
+	dem T y mit Standardwert 0,
+einen Punkt, und erstellen sie so:
+	"der Ursprung",
+	"ein Punkt bei <x> und <y>"
+
+Der Zahl-Punkt u ist der Ursprung. [T ist eine Zahl wegen der Standardwerte]
+Der Kommazahl-Punkt k ist ein Punkt bei 1,5 und 2,5. [T ist eine Kommazahl wegen der Argumente]
+```
+
+Hätten die Felder keine Standardwerte, wäre der Alias `"der Ursprung"` nicht erlaubt, denn dann ist nicht klar, welcher Typ `T` ist.
+Ohne Aliase kann man eine generische Kombination immer mit dem `Standardwert` Operator erstellen:
+
+```ddp
+Das Zahl-Text-Paar p ist der Standardwert von einem Zahl-Text-Paar.
+```
+
+### Generische Kombinationen in Funktionen
+
+Generische Funktionen können generische Kombinationen als Parameter haben:
+
+```ddp
+Die generische Funktion Summe mit dem Parameter p vom Typ T-Punkt, gibt ein T zurück, macht:
+	Gib x von p plus y von p zurück.
+Und kann so benutzt werden:
+	"die Summe von <p>"
+
+Schreibe (die Summe von k) auf eine Zeile. [4]
+```

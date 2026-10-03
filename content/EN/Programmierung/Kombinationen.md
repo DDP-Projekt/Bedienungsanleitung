@@ -112,4 +112,67 @@ Unfortunately, for user-defined combinations it is not (yet) possible to decline
 As you can see, the `von` operator also takes precedence over the `an der Stelle` operator, as specified in the [operator prioritization](/en/Programmierung/Operatoren/#operator-prioritization).
 
 ## Generic combinations
-<to-do></to-do>
+
+Just like there are [generic functions](/en/Programmierung/Funktionen/Generische-Funktionen), there are also generic combinations.
+For these, the word `generische` is written before `Kombination`, and the fields can have type parameters like `T` as their type:
+
+```ddp
+Wir nennen die generische Kombination aus
+	dem T erstes,
+	dem R zweites,
+ein Paar, und erstellen sie so:
+	"ein Paar aus <erstes> und <zweites>"
+```
+
+Type parameters are grammatically neuter. That's why it says `dem T` here and not `der T`.
+
+When you use a generic combination, you write the types for the type parameters with hyphens in front of the name.
+The order is the order in which the type parameters first appear in the fields.
+So for `Paar`, `T` comes first and then `R`:
+
+```ddp
+Das Zahl-Text-Paar p ist ein Paar aus 1 und "one".
+Schreibe (erstes von p) auf eine Zeile. [1]
+Schreibe (zweites von p) auf eine Zeile. [one]
+
+Die Zahl-Text-Paar Liste liste ist eine leere Zahl-Text-Paar Liste.
+```
+
+If one of the types is a generic type itself, you put it in parentheses, for example `(Zahl-Paar)-Text-Paar`.
+
+### Aliases of generic combinations
+
+For an alias, the compiler must be able to find out all type parameters.
+This works through the arguments of the alias or through the default values of the fields:
+
+```ddp
+Wir nennen die generische Kombination aus
+	dem T x mit Standardwert 0,
+	dem T y mit Standardwert 0,
+einen Punkt, und erstellen sie so:
+	"der Ursprung",
+	"ein Punkt bei <x> und <y>"
+
+Der Zahl-Punkt u ist der Ursprung. [T is a Zahl because of the default values]
+Der Kommazahl-Punkt k ist ein Punkt bei 1,5 und 2,5. [T is a Kommazahl because of the arguments]
+```
+
+If the fields had no default values, the alias `"der Ursprung"` would not be allowed, because then it is not clear which type `T` is.
+Without aliases, you can always create a generic combination with the `Standardwert` operator:
+
+```ddp
+Das Zahl-Text-Paar p ist der Standardwert von einem Zahl-Text-Paar.
+```
+
+### Generic combinations in functions
+
+Generic functions can have generic combinations as parameters:
+
+```ddp
+Die generische Funktion Summe mit dem Parameter p vom Typ T-Punkt, gibt ein T zurück, macht:
+	Gib x von p plus y von p zurück.
+Und kann so benutzt werden:
+	"die Summe von <p>"
+
+Schreibe (die Summe von k) auf eine Zeile. [4]
+```

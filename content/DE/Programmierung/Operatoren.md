@@ -18,6 +18,7 @@ in diesen und späteren Tabellen jeweils der C-Operator dabei.
 | Listen/Text Element/Buchstaben Anzahl | `die Länge von a`                            | -            | Liste, Text       | Zahl                        | `Die Länge von "Hallo"`               | 5        |
 | Byte Größe                            | `die Größe von einem/einer <Typname>`        | `sizeof(a)`  | Typename          | Zahl                        | `Die Größe von einer Zahl`            | 8        |
 | Standardwert                          | `der Standardwert von einem/einer <Typname>` | -            | Typename          | passend zum Typnamen        | `Der Standardwert von einer Zahl`     | 0        |
+| Negation                              | `-a`                                         | `-a`         | numerisch         | Zahl, Kommazahl             | `-(2 plus 3)`                         | -5       |
 | Betrag                                | `der Betrag von a`                           | `abs(a)`     | numerisch         | numerisch                   | `Der Betrag von -5`                   | 5        |
 
 ## Binäre Operatoren
@@ -46,7 +47,7 @@ Mithilfe von Bool'schen Operatoren können komplexe Bedingungen ausgedrückt und
 | ------------------- | ----------------------------------------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------ |
 | und                 | Wahr, wenn beide Argumente wahr sind.                 | `true && false`   | `wahr und wahr`<br>`wahr und falsch`<br>`falsch und wahr`<br>`falsch und falsch`                                          | `wahr`<br>`falsch`<br>`falsch`<br>`falsch` |
 | oder                | Wahr, wenn eines der beiden Argumente wahr ist.       | `true \|\| false` | `wahr oder wahr`<br>`wahr oder falsch`<br>`falsch oder wahr`<br>`falsch oder falsch`                                      | `wahr`<br>`wahr`<br>`wahr`<br>`falsch`     |
-| `entweder ... oder` | Wahr, wenn *nur* eines der beiden Argumente wahr ist. | `true != false`   | `entweder wahr oder wahr`<br>`entweder wahr oder falsch`<br>`entweder falsch oder wahr`<br>` entweder falsch oder falsch` | `falsch`<br>`wahr`<br>`wahr`<br>`falsch`   |
+| `entweder ..., oder` | Wahr, wenn *nur* eines der beiden Argumente wahr ist. | `true != false`   | `entweder wahr, oder wahr`<br>`entweder wahr, oder falsch`<br>`entweder falsch, oder wahr`<br>`entweder falsch, oder falsch` | `falsch`<br>`wahr`<br>`wahr`<br>`falsch`   |
 | nicht               | Der Wert des Arguments wird umgekehrt.                | `!true`           | `nicht wahr` <br>`nicht falsch`                                                                                           | `falsch`<br>`wahr`                         |
 
 # Vergleichsoperatoren
@@ -67,6 +68,16 @@ Falls das zu mehreren "ist"s hintereinander führen sollte reicht ein einziges a
 2 größer als 2 ist gleich 4 größer als 4 ist ist. [hässlich]
 2 größer als 2 ist gleich 4 größer als 4 ist. [schön]
 ```
+
+# Typ-Prüfung
+
+Bei Werten vom Typ [Variable](/Programmierung/Datentypen#variable) kann man prüfen, welchen Typ der gespeicherte Wert gerade hat.
+Dafür schreibt man `ein`, `eine`, `kein` oder `keine` und den Typnamen. Der Artikel muss zum Typ passen.
+
+| Operator           | Beschreibung                                   | Beispiel                                                 | Ergebnis           |
+| ------------------ | ---------------------------------------------- | -------------------------------------------------------- | ------------------ |
+| `ein(e) ... ist`   | Wahr, wenn der Wert diesen Typ hat.            | `(5 als Variable) eine Zahl ist`<br>`(5 als Variable) ein Text ist` | `wahr`<br>`falsch` |
+| `kein(e) ... ist`  | Wahr, wenn der Wert diesen Typ *nicht* hat.    | `(5 als Variable) keine Zahl ist`<br>`(5 als Variable) kein Text ist` | `falsch`<br>`wahr` |
 
 # Listen und Text Operatoren
 
@@ -145,13 +156,13 @@ Hier ist eine Tabelle mit allen Operatoren und ihrer Priorisierung (hoch prioris
 | 12   | Addition, Subtraktion, Verkettung,                               |
 | 13   | Bit-Verschiebung                                                |
 | 14   | Größen Vergleich (kleiner, größer, ect.)                        |
-| 15   | Gleichheit (gleich und ungleich)                                |
+| 15   | Gleichheit (gleich und ungleich), Typ-Prüfung (`ein ... ist`)   |
 | 16   | Logische UND Verknüpfung                                        |
 | 17   | Logische XOR Verknüpfung                                        |
 | 18   | Logische ODER Verknüpfung                                       |
 | 19   | Bool'sches UND                                                  |
 | 20   | Bool'sches ODER                                                 |
-| 21   | `entweder ... oder`                                             |
+| 21   | `entweder ..., oder`                                            |
 | 22   | Falls                                                           |
 
 ## Operator Priorisierung Beispiel

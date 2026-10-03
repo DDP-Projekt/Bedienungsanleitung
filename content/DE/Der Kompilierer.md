@@ -4,7 +4,6 @@ weight = 4
 +++
 
 # Der Kompilierer
-<to-do></to-do>
 
 In diesem Artikel wird der Kompilierer der Deutschen Programmiersprache (kurz kddp) und seine Nutzung erklärt.
 
@@ -75,9 +74,7 @@ Globale Optionen:
   -t, --zeitmessen   Gibt in Kombination mit --wortreich Zeitmessungen aus
 ```
 
-## Detaillierte Erklärung zu einigen Optionen
-
-<to-do></to-do>
+## Befehle und Optionen
 
 Hier ist eine Liste aller Befehle und Optionen mit einer kurzen Erklärung.
 Details folgen unten.
@@ -112,3 +109,55 @@ Die Argumente aus --gcc-optionen werden beim finalen Link-Schritt übergeben und
 
 Die Argumente aus --externe-gcc-optionen werden nur benutzt falls es [externe Funktionen](/Programmierung/Funktionen/Externe-Funktionen/) gibt, die in .c Dateien definiert werden. Sollte das der Fall sein, wird jede angegebene .c Datei separat mit GCC kompiliert, und dabei werden die Argumente aus --externe-gcc-optionen übergeben.
 Das ist nützlich, wenn man Include-Verzeichnisse (wie die DDP-Runtime) oder C-Präprozessor Direktiven angeben muss/möchte.
+
+Mit der Option `-O` (oder `--optimierungs-stufe`) kann man einstellen, wie stark das Programm optimiert wird:
+- `0`: keine Optimierungen
+- `1`: nur die Optimierungen von LLVM (Standard)
+- `2`: alle Optimierungen
+
+Mit `--nichts-loeschen` werden die temporären Dateien, die beim Kompilieren entstehen, nicht gelöscht.
+Das ist vor allem bei der Fehlersuche nützlich.
+
+### starte
+
+`$ kddp starte <Eingabedatei> <Optionen>` kompiliert die Eingabedatei in einen temporären Ordner und führt das Programm danach direkt aus.
+Die ausführbare Datei wird anschließend wieder gelöscht.
+
+Alle Argumente nach der Eingabedatei werden an das Programm weitergegeben:
+
+```terminal
+$ kddp starte Programm.ddp hallo 42
+```
+
+Hier bekommt das Programm die Befehlszeilenargumente `hallo` und `42`.
+Wie man diese im Programm benutzt, steht im Artikel zum Duden Modul [Befehlszeile](/Programmierung/Standardbibliothek/Befehlszeile).
+
+### formatiere
+
+`$ kddp formatiere <Eingabedatei>` formatiert eine .ddp Datei, also zum Beispiel die Einrückung.
+Die Datei wird dabei direkt überschrieben.
+
+Standardmäßig wird mit Tabs eingerückt. Mit der Option `--leerzeichen` werden stattdessen Leerzeichen benutzt.
+
+### parse
+
+`$ kddp parse <Eingabedatei>` liest die Eingabedatei ein und gibt den abstrakten Syntaxbaum aus.
+Das ist vor allem für die Entwicklung des Kompilierers nützlich.
+Mit der Option `-o` wird der Syntaxbaum in eine Datei geschrieben, anstatt ihn in der Konsole anzuzeigen.
+
+### update
+
+`$ kddp update` aktualisiert kddp auf die neuste Version.
+Mehr dazu im Artikel [Updates](/Einstieg/Updates).
+
+### version
+
+`$ kddp version` zeigt die Version von kddp an.
+Mit `--wortreich` werden zusätzlich die Versionen von GCC, LLVM und Go angezeigt.
+Die Option `--go-build-info` zeigt noch mehr Informationen darüber, wie kddp gebaut wurde.
+
+### Globale Optionen
+
+Die Option `--wortreich` (oder `-w`) kann bei jedem Befehl benutzt werden.
+Dann gibt kddp aus, was es gerade macht.
+Zusammen mit `--zeitmessen` (oder `-t`) wird außerdem angezeigt, wie lange die einzelnen Schritte gedauert haben.

@@ -31,6 +31,21 @@ For example, `1 plus 1.` is evaluated, but the result is never used.
 
 A DDP program consists of any number of statements that are executed one after the other (in the source code from left to right and from top to bottom).
 
+### Placeholder
+
+Sometimes you want to write a program where one part is still missing.
+For this there is the statement `...` as a placeholder:
+
+```ddp
+Die Funktion Berechne gibt eine Zahl zurück, macht:
+	...
+Und kann so benutzt werden:
+	"das Ergebnis"
+```
+
+The compiler then prints a warning, but still compiles the program.
+If the placeholder is reached while running, there is a runtime error.
+
 ## Statement-block
 
 A statement block is a sequence of statements that are executed one after the other.

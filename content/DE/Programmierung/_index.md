@@ -35,6 +35,21 @@ Ausdrücke mit einem nachfolgenden Punkt sind auch Anweisungen. Ihr Ergebnis wir
 Ein DDP Programm besteht aus beliebig vielen Anweisungen, die nacheinander (im Quelltext von links nach rechts 
 und von Oben nach Unten) ausgeführt werden.
 
+### Platzhalter
+
+Manchmal möchte man ein Programm schreiben, bei dem ein Teil noch fehlt.
+Dafür gibt es die Anweisung `...` als Platzhalter:
+
+```ddp
+Die Funktion Berechne gibt eine Zahl zurück, macht:
+	...
+Und kann so benutzt werden:
+	"das Ergebnis"
+```
+
+Der Kompilierer gibt dann eine Warnung aus, kompiliert das Programm aber trotzdem.
+Wird der Platzhalter beim Ausführen erreicht, gibt es einen Laufzeitfehler.
+
 ## Anweisungsblock
 
 Ein Anweisungsblock ist eine Folge von Anweisungen, die nacheinander ausgeführt werden.

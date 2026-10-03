@@ -8,6 +8,7 @@ weight = 1
 Since DDP is statically typed, every expression (e.g. mathematical expressions), every variable and every function has a fixed data type.
 
 The type of variables, functions and expressions cannot change at runtime, it is determined at compile time.
+The only exception is the type [Variable](#variable).
 
 ## Simple data types
 
@@ -15,7 +16,7 @@ The type of variables, functions and expressions cannot change at runtime, it is
 | ------------- | ----------------------------------- | -------------------------------------------------------------------- | ------------------------------------------------------------------------ | ------------------------------------------------------------- |
 | Zahl          | A 64-bit integer                    | *-2^63* to *2^63-1*                                                  | A sequence of digits, e.g. 42                                            | `Die Zahl x ist 75.`, <br>`1 plus -7`                         |
 | Kommazahl     | A 64-bit floating point number      | approx. *-1,797x10^308* to <br>*1,797x10^308* with 16 decimal places | A number literal with decimal places, e.g. 3,1415                        | `Die Kommazahl x ist 6,5.`, <br>`2 durch 0,5`                 |
-| Byte          | An 8-bit positive integer           | *0* to *255*                                                         | A sequence of digits, e.g. 16                                            | `Das Byte x ist 128.`, <br>`1 plus 5`                         |
+| Byte          | An 8-bit positive integer           | *0* to *255*                                                         | A sequence of digits, e.g. 16                                            | `Der Byte x ist 128.`, <br>`1 plus 5`                         |
 | Wahrheitswert | A boolean value (8 bits in size)    | *wahr* or *falsch*                                                   | *wahr* or *falsch*                                                       | `Der Wahrheitswert x ist wahr.`, <br>`2 gleich 2`             |
 | Buchstabe     | A 4-byte Unicode character          | *0* - *1114111*                                                      | A utf8 character between single quotes, e.g. 'a' or '\n'                 | `Der Buchstabe x ist 'd'.`                                    |
 | Text          | A utf-8 encoded sequence of letters | *any size*                                                           | Any number of letters between (English) quotation marks, e.g. "Hello\n" | `Der Text x ist "abc".`, <br>`"Hello" verkettet mit " you there"` |
@@ -88,6 +89,40 @@ Die Text Liste t2 ist "Hello" als Text Liste.
 ### Remark
 
 Actually, one would expect that an 'und' would have to occur in the enumeration of a list literal (`eine Liste, die aus 1, 2 und 3 besteht`). However, this would lead to ambiguities in boolean expressions (`eine Liste, die aus wahr und falsch besteht`), and since the enumeration grammatically does not need an 'und', it is omitted in list literals.
+
+## Variable
+
+The type `Variable` is a special type. A variable of type `Variable` can store a value of any other type.
+Which type that is at the moment can change at runtime.
+
+```ddp
+Die Variable v ist 5.
+Speichere "Hello" in v.
+Speichere wahr in v.
+```
+
+To work with the value, you have to [convert](/en/Programmierung/Typkonvertierung) it into its actual type with the `als` operator.
+If the value is not of that type, there is a runtime error.
+
+```ddp
+Die Variable v ist 5.
+Die Zahl z ist v als Zahl. [5]
+```
+
+With `ein`, `eine`, `kein` or `keine` you can check which type the value currently has:
+
+```ddp
+Die Variable v ist "Hello".
+Wenn v ein Text ist, Schreibe "v is a Text" auf eine Zeile.
+Wenn v keine Zahl ist, Schreibe "v is not a Zahl" auf eine Zeile.
+```
+
+There are also lists of type `Variable`. Their type name is `Variablen Liste`:
+
+```ddp
+Die Variablen Liste l ist eine Liste, die aus 1 als Variable, "two" als Variable besteht.
+Schreibe ((l an der Stelle 2) als Text) auf eine Zeile. [two]
+```
 
 ## Combinations
 

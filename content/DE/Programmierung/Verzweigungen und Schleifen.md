@@ -172,6 +172,13 @@ Für jeden Text element mit Index i in liste, mache:
 	Schreibe i.
 ```
 
+Genauso kann man mit einer Schleife durch jeden Buchstaben eines Textes laufen:
+```ddp
+[Ausgabe: Hallo]
+Für jeden Buchstaben b in "Hallo", mache:
+	Schreibe b.
+```
+
 ## Abbrechen/Fortführen von Schleifen
 
 Schleifen können auch abgebrochen bzw. zur nächsten Iteration geführt werden (in anderen Sprachen entspricht das den Schlüsselwörtern `break` und `continue`).
@@ -201,6 +208,13 @@ Für jede Zahl i von 1 bis 5, mache:
 # Tipp
 Fast jede der hier aufgelisteten Verzweigungen und Schleifen kann auch auf einer einzigen Zeile geschrieben werden,
 falls nur eine Anweisung ausgeführt werden muss.
+
+Eine einzelne Anweisung, wie zum Beispiel ein Funktionsaufruf oder eine Zuweisung, kann auch mit `<Anzahl> Mal` enden.
+Dann wird sie so oft wiederholt, wie die Anzahl angibt:
+```ddp
+Schreibe den Text "Hi!" 5 Mal.
+Erhöhe x um 2 3 Mal. [x wird um 6 erhöht]
+```
 
 ## Beispiele
 ```ddp

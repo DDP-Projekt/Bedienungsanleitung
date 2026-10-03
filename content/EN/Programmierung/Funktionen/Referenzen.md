@@ -38,3 +38,23 @@ Any type name can be made a reference type by appending "Referenz" to the type n
 So `Zahlen Liste` becomes `Zahlen Listen Referenz`, `Wahrheitswert` becomes `Wahrheitswert Referenz`, etc.
 
 Normal variables cannot be reference types, only function parameters.
+
+## Type conversions as references
+
+With [type aliases and type definitions](/en/Programmierung/Typ-Aliase-und-Typ-Definitionen), you can convert a variable with `als` and still pass it as a reference.
+This only works if the type actually stays the same, for example with a type definition and its base type:
+
+```ddp
+Wir definieren eine Hausnummer als eine Zahl.
+
+Die Funktion Erhöhe_Zahl mit dem Parameter z vom Typ Zahlen Referenz, gibt nichts zurück, macht:
+	Erhöhe z um 1.
+Und kann so benutzt werden:
+	"Zähle <z> hoch"
+
+Die Hausnummer h ist 41 als Hausnummer.
+Zähle (h als Zahl) hoch.
+Schreibe (h als Zahl) auf eine Zeile. [42]
+```
+
+Other conversions, for example from a Zahl to a Kommazahl, cannot be passed as a reference.

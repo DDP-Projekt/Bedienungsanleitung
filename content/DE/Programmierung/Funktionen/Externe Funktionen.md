@@ -55,3 +55,29 @@ int main(void) {
     return 0;
 }
 ```
+
+## Generische externe Funktionen
+
+Auch [generische Funktionen](/Programmierung/Funktionen/Generische-Funktionen) können extern definiert werden.
+Da es in C keine Typparameter gibt, gelten dabei ein paar Regeln:
+
+- Parameter, deren Typ einen Typparameter enthält, müssen Listen oder Referenzen sein.
+- Der Rückgabetyp muss eine Liste sein oder darf keinen Typparameter enthalten.
+
+In C benutzt man für generische Listen den Typ `ddpgenericlist` und für generische Referenzen den Typ `ddpgenericref` aus `DDP/ddptypes.h`:
+
+```ddp
+Die generische Funktion Laenge_Von mit dem Parameter liste vom Typ T Liste, gibt eine Zahl zurück,
+ist in "laenge.c" definiert
+und kann so benutzt werden:
+	"die Länge der Liste <liste>"
+```
+
+```c
+// laenge.c
+#include "DDP/ddptypes.h"
+
+ddpint Laenge_Von(ddpgenericlist *liste) {
+    return liste->len;
+}
+```

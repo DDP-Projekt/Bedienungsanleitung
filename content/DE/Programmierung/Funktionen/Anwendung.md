@@ -113,6 +113,50 @@ In solchen späten Aliasdeklarationen, müssen eventuelle Parameter denselben Na
 Möchte man also z.B. einer Funktion aus dem Duden einen Alias hinzufügen, muss man nachschauen wie die Parameter der Funktion heißen.
 
 
+## Vorwärts-Deklarationen
+
+Eine Funktion kann erst benutzt werden, nachdem sie deklariert wurde.
+Manchmal rufen sich aber zwei Funktionen gegenseitig auf. Dann muss eine der beiden benutzt werden, bevor sie deklariert wurde.
+
+Für solche Fälle gibt es Vorwärts-Deklarationen.
+Dabei schreibt man statt `macht:` und dem Funktionskörper `wird später definiert`.
+Später im selben Modul wird die Funktion dann mit `Die Funktion <Name> macht:` definiert:
+
+```ddp
+Die Funktion Ist_Gerade mit dem Parameter n vom Typ Zahl, gibt einen Wahrheitswert zurück,
+wird später definiert
+und kann so benutzt werden:
+	"<n> gerade ist"
+
+Die Funktion Ist_Ungerade mit dem Parameter n vom Typ Zahl, gibt einen Wahrheitswert zurück, macht:
+	Wenn n gleich 0 ist, gib falsch zurück.
+	Gib (n minus 1) gerade ist zurück.
+Und kann so benutzt werden:
+	"<n> ungerade ist"
+
+Die Funktion Ist_Gerade macht:
+	Wenn n gleich 0 ist, gib wahr zurück.
+	Gib (n minus 1) ungerade ist zurück.
+
+Schreibe (7 ungerade ist) auf eine Zeile. [wahr]
+```
+
+Bei der Definition werden die Parameter, der Rückgabetyp und die Aliase nicht noch einmal angegeben.
+Jede Funktion, die mit `wird später definiert` deklariert wurde, muss auch definiert werden.
+
+## Öffentliche Funktionen
+
+Funktionen können mit `öffentliche` auch in anderen Modulen benutzt werden:
+
+```ddp
+Die öffentliche Funktion Hallo gibt nichts zurück, macht:
+	Schreibe "Hallo!" auf eine Zeile.
+Und kann so benutzt werden:
+	"Sag Hallo"
+```
+
+Mehr dazu im Artikel [Module](/Programmierung/Module).
+
 # Funktionsaufrufe
 
 Funktionen werden ausschließlich durch ihre Aliase aufgerufen.<br>

@@ -172,6 +172,13 @@ Für jeden Text element mit Index i in liste, mache:
 	Schreibe i.
 ```
 
+In the same way, you can use a loop to go through every letter of a text:
+```ddp
+[Output: Hello]
+Für jeden Buchstaben b in "Hello", mache:
+	Schreibe b.
+```
+
 ## Breaking/continuing loops
 
 Loops can also be exited or skipped to the next iteration (in other languages this corresponds to the keywords `break` and `continue`).
@@ -201,6 +208,13 @@ Für jede Zahl i von 1 bis 5, mache:
 # Tip
 Almost every branch and loop listed here can also be written on a single line
 if only one statement needs to be executed.
+
+A single statement, for example a function call or an assignment, can also end with `<count> Mal`.
+It is then repeated as often as the count says:
+```ddp
+Schreibe den Text "Hi!" 5 Mal.
+Erhöhe x um 2 3 Mal. [x is increased by 6]
+```
 
 ## Examples
 ```ddp

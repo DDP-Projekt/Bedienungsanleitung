@@ -17,6 +17,7 @@ To make finding a specific operator easier for readers who already know a progra
 | List/Text element count | `die Länge von a`                            | -            | Liste, Text     | Zahl                   | `Die Länge von "Hello"`           | 5      |
 | Byte size               | `die Größe von einem/einer <type name>`        | `sizeof(a)`  | type name       | Zahl                   | `Die Größe von einer Zahl`        | 8      |
 | Default value           | `der Standardwert von einem/einer <type name>` | -            | type name       | matching the type name | `Der Standardwert von einer Zahl` | 0      |
+| Negation                | `-a`                                         | `-a`         | numeric         | Zahl, Kommazahl        | `-(2 plus 3)`                     | -5     |
 | Absolute value          | `der Betrag von a`                           | `abs(a)`     | numeric         | numeric                | `Der Betrag von -5`               | 5      |
 
 ## Binary operators
@@ -45,7 +46,7 @@ With the help of boolean operators, complex conditions can be expressed and comb
 | ------------------- | -------------------------------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------ |
 | und                 | True if both arguments are true.             | `true && false`   | `wahr und wahr`<br>`wahr und falsch`<br>`falsch und wahr`<br>`falsch und falsch`                                         | `wahr`<br>`falsch`<br>`falsch`<br>`falsch` |
 | oder                | True if either argument is true.             | `true \|\| false` | `wahr oder wahr`<br>`wahr oder falsch`<br>`falsch oder wahr`<br>`falsch oder falsch`                                     | `wahr`<br>`wahr`<br>`wahr`<br>`falsch`     |
-| `entweder ... oder` | True if *only* one of the arguments is true. | `true != false`   | `entweder wahr oder wahr`<br>`entweder wahr oder falsch`<br>`entweder falsch oder wahr`<br>`entweder falsch oder falsch` | `falsch`<br>`wahr`<br>`wahr`<br>`falsch`   |
+| `entweder ..., oder` | True if *only* one of the arguments is true. | `true != false`   | `entweder wahr, oder wahr`<br>`entweder wahr, oder falsch`<br>`entweder falsch, oder wahr`<br>`entweder falsch, oder falsch` | `falsch`<br>`wahr`<br>`wahr`<br>`falsch`   |
 | nicht               | The value of the argument is reversed.       | `!true`           | `nicht wahr` <br>`nicht falsch`                                                                                          | `falsch`<br>`wahr`                         |
 
 # Comparison operators
@@ -66,6 +67,16 @@ If that leads to several "ist"s in a row, a single one is enough:
 2 größer als 2 ist gleich 4 größer als 4 ist ist. [ugly]
 2 größer als 2 ist gleich 4 größer als 4 ist. [nice]
 ```
+
+# Type check
+
+For values of type [Variable](/en/Programmierung/Datentypen#variable) you can check which type the stored value currently has.
+To do this, you write `ein`, `eine`, `kein` or `keine` and the type name. The article must match the type.
+
+| Operator           | Description                                    | Example                                                  | Result             |
+| ------------------ | ---------------------------------------------- | -------------------------------------------------------- | ------------------ |
+| `ein(e) ... ist`   | True if the value has this type.               | `(5 als Variable) eine Zahl ist`<br>`(5 als Variable) ein Text ist` | `wahr`<br>`falsch` |
+| `kein(e) ... ist`  | True if the value does *not* have this type.   | `(5 als Variable) keine Zahl ist`<br>`(5 als Variable) kein Text ist` | `falsch`<br>`wahr` |
 
 # List and text operators
 
@@ -144,13 +155,13 @@ Here is a table with all operators and their prioritization (high priority opera
 | 12   | Addition, subtraction, concatenation                                  |
 | 13   | Bit shift                                                             |
 | 14   | Comparison (`kleiner`, `größer`, etc.)                                |
-| 15   | Equality (`gleich` and `ungleich`)                                    |
+| 15   | Equality (`gleich` and `ungleich`), type check (`ein ... ist`)        |
 | 16   | Logical AND gate                                                      |
 | 17   | Logical XOR gate                                                      |
 | 18   | Logical OR gate                                                       |
 | 19   | Boolean AND                                                           |
 | 20   | Boolean OR                                                            |
-| 21   | `entweder ... oder`                                                   |
+| 21   | `entweder ..., oder`                                                  |
 | 22   | Falls                                                                 |
 
 ## Operator prioritization example
