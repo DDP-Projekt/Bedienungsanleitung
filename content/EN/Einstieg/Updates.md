@@ -27,8 +27,8 @@ If everything worked without errors, you should restart the terminal and be able
 `kddp update` takes several optional command line options:
 
 * `--wortreich`: tells you everything that happens during the update
-* `--vergleiche_version`: checks whether a new version is available without installing it
-* `--pre_release`: includes Github pre-releases in the search (explained below)
+* `--vergleiche-version`: checks whether a new version is available without installing it
+* `--pre-release`: includes Github pre-releases in the search (explained below)
 * `--jetzt`: immediately downloads and installs a new version, if available, without asking
 
 ## Versions
@@ -49,4 +49,4 @@ Example: 1.2.3-alpha
 `kddp update` simply looks in the [Github-Releases](https://github.com/DDP-Projekt/Kompilierer/releases) from the compiler repo to see if there is a release whose tag is newer than the currently installed version .
 If this is the case, it downloads the corresponding archive file and updates itself with it.
 
-If the `--pre_release` option is specified, releases marked as "pre-release" will also be included in the search.
+If the `--pre-release` option is specified, releases marked as "pre-release" will also be included in the search.

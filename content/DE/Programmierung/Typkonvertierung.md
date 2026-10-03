@@ -17,9 +17,13 @@ Es können nur bestimmte Typen in andere Umgewandelt werden.
 
 | Eingangstyp        | Ausgangstyp                                           | Besonderheiten                                                  |
 |--------------------|-------------------------------------------------------|-----------------------------------------------------------------|
-| Zahl               | Byte <br> Kommazahl <br> Text <br> Wahrheitswert <br> Buchstabe | Zahlen außerhalb des Wertebereichs werden angepasst<br>-<br>-<br> 0 => falsch; nicht 0 => wahr <br> benutzt ASCII wert |
+| Zahl               | Byte <br> Kommazahl <br> Text <br> Wahrheitswert <br> Buchstabe | Es werden nur die unteren 8 Bit behalten (Zahlen außerhalb von 0 bis 255 laufen über)<br>-<br>-<br> 0 => falsch; nicht 0 => wahr <br> Die Zahl wird als Unicode Codepoint interpretiert |
+| Byte               | Zahl <br> Kommazahl <br> Text <br> Wahrheitswert <br> Buchstabe | -<br>-<br>-<br> 0 => falsch; nicht 0 => wahr <br> Der Byte wird als Unicode Codepoint interpretiert |
 | Kommazahl          | Zahl, Byte <br> Text                                  | Nachkommastellen werden abgeschnitten <br> -                    |
-| Wahrheitswert      | Zahl, Byte                                            | falsch => 0; wahr => 1                                          |
-| Text               | Zahl, Byte <br> Kommazahl <br> Buchstaben             | Numerischer Text Wert wird als Ziffer interpretiert<br>Text muss im Format `\d+(,\d+)?` sein<br>-<br>                                                 |
-| Buchstabe          | Zahl, Byte <br> Text                                  | utf8 bytes in Dezimal <br> -                                    |
-| Buchstaben Liste   | Text                                                  | -                                                               |
+| Wahrheitswert      | Zahl <br> Text                                        | falsch => 0; wahr => 1 <br> -                                   |
+| Text               | Zahl <br> Kommazahl                                   | Die Ziffern am Anfang des Textes werden als Zahl gelesen, ist der Text keine Zahl ergibt sich 0<br>Der Text muss eine Kommazahl mit Komma als Dezimaltrennzeichen sein (z.B. `"3,14"`), ansonsten ergibt sich 0 |
+| Buchstabe          | Zahl <br> Text                                        | Der Unicode Codepoint des Buchstabens <br> -                    |
+
+Außerdem kann jeder Wert in eine Liste seines Typs umgewandelt werden, die nur diesen Wert enthält (z.B. `5 als Zahlen Liste`),
+und jeder Wert kann in eine `Variable` und eine `Variable` zurück in ihren eigentlichen Typ umgewandelt werden.
+Typ-Definitionen können in ihren Basistyp und zurück umgewandelt werden (siehe [Typ-Aliase und Typ-Definitionen](/Programmierung/Typ-Aliase-und-Typ-Definitionen)).

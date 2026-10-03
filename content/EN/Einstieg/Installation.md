@@ -52,7 +52,7 @@ The questions are yes/no questions that can be answered with y/n (yes/no).
 Warnings should be read, but may be ignored in some circumstances.
 
 If an error occurs it is very likely that the entire installation has failed.
-In this case, you should first read the error to see if you can change something obvious, otherwise feel free to create an [Issue](https://github.com/DDP-Projekt/Installer/issues) with all the necessary information.
+In this case, you should first read the error to see if you can change something obvious, otherwise feel free to create an [Issue](https://github.com/DDP-Projekt/Kompilierer/issues) with all the necessary information.
 
 The setup is designed so that by default you should answer every question with yes (y) to ensure that everything works as well as possible.
 

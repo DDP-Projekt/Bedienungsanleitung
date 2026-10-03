@@ -15,7 +15,7 @@ Each DDP file represents a DDP module.
 Each DDP module can be linked by another one.
 To do this, however, it must reveal an externally visible (public) interface.
 This is possible with the keyword "public".
-The public interface of a DDP module is the set of all variables and functions declared as "public".
+The public interface of a DDP module is the set of all variables, constants, functions, combinations, type aliases and type definitions declared as "public".
 
 When a DDP module integrates another, it gets access to its public functions and variables and can use them yourself.
 
@@ -61,7 +61,7 @@ Speichere 2 in z. [sets z from A.ddp to 2]
 	bar and zz are not recognized as a function or variable, since they are not declared as public in A.ddp.
 ]
 bar. 
-Speichere 2 in zz. [sets z from A.ddp to 2]
+Speichere 2 in zz.
 
 [
 	Error:
@@ -87,7 +87,7 @@ Speichere 2 in z.
 	since they are not declared as public in A.ddp.
 ]
 bar. 
-Speichere 2 in zz. [setzt z aus A.ddp auf 2]
+Speichere 2 in zz.
 ```
 
 ## Explanation

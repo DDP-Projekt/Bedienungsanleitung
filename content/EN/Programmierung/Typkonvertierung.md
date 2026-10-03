@@ -17,9 +17,12 @@ Only certain types can be converted to others.
 
 | input type             | output type                                | Notes                                                         |
 |------------------------|--------------------------------------------|---------------------------------------------------------------|
-| Zahl                   | Byte <br> Kommazahl <br> Text <br> Wahrheitswert <br> Buchstabe | Numbers outside the range get mapped accordingly<br>-<br>-<br> 0 => falsch; nicht 0 => wahr <br> uses ASCII value |
+| Zahl                   | Byte <br> Kommazahl <br> Text <br> Wahrheitswert <br> Buchstabe | Only the lowest 8 bits are kept (numbers outside of 0 to 255 overflow)<br>-<br>-<br> 0 => falsch; nicht 0 => wahr <br> The number is interpreted as a Unicode code point |
+| Byte                   | Zahl <br> Kommazahl <br> Text <br> Wahrheitswert <br> Buchstabe | -<br>-<br>-<br> 0 => falsch; nicht 0 => wahr <br> The byte is interpreted as a Unicode code point |
 | Kommazahl              | Zahl, Byte <br> Text                       | truncated <br> -                                              |
-| Wahrheitswert          | Zahl, Byte                                 | falsch => 0; wahr => 1                                        |
-| Text                   | Zahl, Byte <br> Kommazahl <br> Buchstaben  | Numerical value gets parsed<br>Text has to be in `\d+(,\d+)?` format<br>-<br>                                               |
-| Buchstabe              | Zahl, Byte <br> Text                       | utf8 bytes in decimal <br> -                                  |
-| Buchstaben Liste       | Text                                       | -                                                             |
+| Wahrheitswert          | Zahl <br> Text                             | falsch => 0; wahr => 1 <br> -                                 |
+| Text                   | Zahl <br> Kommazahl                        | The leading digits of the text are parsed, if the text is not a number the result is 0<br>The text must be a decimal number with a comma as decimal separator (e.g. `"3,14"`), otherwise the result is 0 |
+| Buchstabe              | Zahl <br> Text                             | The Unicode code point of the character <br> -                |
+
+Additionally, every value can be converted into a list of its type that contains only that value (e.g. `5 als Zahlen Liste`),
+and every value can be converted into a `Variable` and a `Variable` back into its actual type.

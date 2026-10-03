@@ -13,11 +13,11 @@ The type of variables, functions and expressions cannot change at runtime, it is
 
 | type name    | Description                         | range of values                                                         | literal                                                       | Example                                                       |
 | ------------ | ----------------------------------- | ----------------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- |
-| Zahl         | A 64-bit integer                    | *-2^63* to *2^63*                                                       | A sequence of digits, e.g. 42                                 | `Die Zahl x ist 75.`, <br>`1 plus -7`                         |
+| Zahl         | A 64-bit integer                    | *-2^63* to *2^63-1*                                                     | A sequence of digits, e.g. 42                                 | `Die Zahl x ist 75.`, <br>`1 plus -7`                         |
 | Kommazahl    | A 64-bit floating point number      | aprox. *-1.797x10^308* to <br>*1.797x10^308* with 16 decimal places | A number literal with decimal places, e.g. 3.1415                 | `Die Kommazahl x ist 6,5.`, <br>`2 durch 0,5`                 |
-| Byte         | A 8-bit positive integer            | *0* to *255*                                                            | A sequence of digits, e.g. 42                                 | `Die Zahl x ist 128.`, <br>`1 plus 5`                         | 
+| Byte         | A 8-bit positive integer            | *0* to *255*                                                            | A sequence of digits, e.g. 42                                 | `Das Byte x ist 128.`, <br>`1 plus 5`                         | 
 | Wahrheitswer | A logical value (8 bits in size)    | *true* or *false*                                                       | *true* or *false*                                             | `Der Wahrheitswert x ist wahr.`, <br>`2 gleich 2`             |
-| Buchstabe    | A 4-byte UTF-8 encoded character    | *0* - *65535*                                                           | A utf8 character between single quotes, e.g. 'a' or '\n'      | `Der Buchstabe x ist 'd'.`                                    |
+| Buchstabe    | A 4-byte Unicode character          | *0* - *1114111*                                                         | A utf8 character between single quotes, e.g. 'a' or '\n'      | `Der Buchstabe x ist 'd'.`                                    |
 | Text         | A utf-8 encoded sequence of letters | *any size*                                                              | Any number of letters between quotation marks, e.g. "Hello\n" | `Der Text x ist "abc".`, <br>`"Hallo" verkettet mit " du da"` |
 
 ### Unlike in other programming languages:

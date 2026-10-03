@@ -122,7 +122,7 @@ Für jede Zahl i von 1 bis 100, mache:
 ```
 ### Countdown loop
 A countdown loop works like the countup loop, except that a step size of -1 (or some negative value) is specified. This means that the counter is not increased (or decreased) by 1 at the end, but by the specified increment.
-Of course, the start value must be greater than the end value, otherwise it becomes an endless loop.
+Of course, the start value must be greater than the end value, otherwise the loop body is not executed at all.
 
 ### Syntax
 ```ddp

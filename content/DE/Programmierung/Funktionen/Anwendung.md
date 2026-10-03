@@ -87,7 +87,7 @@ Wenn eine Funktion Parameter besitzt, müssen diese alle im Alias vorhanden sein
 Für Funktionen, die einen Wahrheitswert zurückgeben gibt es spezielle Syntax um die Funktion zu negieren:
 ```ddp
 Die öffentliche Funktion Ist_Text_Leer mit dem Parameter text vom Typ Text, gibt einen Wahrheitswert zurück, macht:
-	Gib wahr, wenn die Länge von text gleich 0 ist zurück.
+	Gib wahr, wenn die Länge von text gleich 0 ist, zurück.
 Und kann so benutzt werden:
 	"<text> <!nicht> leer ist"
 

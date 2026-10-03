@@ -34,7 +34,7 @@ Die Zahl a ist 10.
 Die Kommazahl b ist 4,32.
 Der Text c ist "Hallo!".
 Der Wahrheitswert d ist wahr.
-Der Wahrheitswert e ist falsch wenn 1 gleich 1 ist. 
+Der Wahrheitswert e ist falsch, wenn 1 gleich 1 ist. 
 ```
 
 # Assignment

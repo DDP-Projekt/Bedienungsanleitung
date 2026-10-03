@@ -32,6 +32,8 @@ Nutzung:
   kddp <Befehl> [Optionen] [Argumente]
 
 Verfügbare Befehle:
+  formatiere     Formatiert eine .ddp Datei
+  hilfe          Zeigt Informationen zu einem Befehl
   kompiliere     Kompiliert eine .ddp Datei
   parse          Parst eine .ddp Datei in einen Abstrakten Syntaxbaum
   starte         Kompiliert und führt die angegebene .ddp Datei aus
@@ -39,9 +41,10 @@ Verfügbare Befehle:
   version        Zeigt Versionsinformationen des Kompilierers
 
 Optionen:
-  -h, --hilfe       Zeigt Informationen zum Befehl
-  -v, --version     Zeigt die Version des Kompilierers
-  -w, --wortreich   Gibt wortreiche Informationen aus
+  -h, --hilfe        Zeigt Informationen zum Befehl
+  -v, --version      Zeigt die Version des Kompilierers
+  -w, --wortreich    Gibt wortreiche Informationen aus
+  -t, --zeitmessen   Gibt in Kombination mit --wortreich Zeitmessungen aus
 
 Probiere "kddp hilfe <Befehl>" oder "kddp <Befehl> [-h | --hilfe]" für mehr Informationen zu einem Befehl.
 ```
@@ -68,7 +71,8 @@ Optionen:
   -O, --optimierungs-stufe uint       Menge und Art der Optimierungen, die angewandt werden (default 1)
 
 Globale Optionen:
-  -w, --wortreich   Gibt wortreiche Informationen aus
+  -w, --wortreich    Gibt wortreiche Informationen aus
+  -t, --zeitmessen   Gibt in Kombination mit --wortreich Zeitmessungen aus
 ```
 
 ## Detaillierte Erklärung zu einigen Optionen
@@ -78,13 +82,17 @@ Globale Optionen:
 Hier ist eine Liste aller Befehle und Optionen mit einer kurzen Erklärung.
 Details folgen unten.
 
-| Befehlsname | Befehlssyntax                          | Befehlsbeschreibung                                            | Befehlsoptionen                                                                                            | Optionsbeschreibungen                                                                                                                                                                                                                                                        |
-| ----------- | -------------------------------------- | -------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| hilfe       | `hilfe <Befehl>`                       | Zeigt Nutzungsinformationen über den Befehl                    | -                                                                                                          | -                                                                                                                                                                                                                                                                            |
-| kompiliere  | `kompiliere <Eingabedatei> <Optionen>` | Kompiliert die gegebene .ddp Datei zu einer ausführbaren Datei | `-o <Ausgabepfad>`<hr>`--wortreich`<hr>`--nichts_loeschen`<hr>`--gcc_optionen`<hr>`--externe_gcc_optionen` | Optionaler Pfad der Ausgabedatei<hr>Gibt wortreiche Informationen während des Befehls<hr>Temporäre Dateien werden nicht gelöscht<hr>Benutzerdefinierte Optionen, die gcc übergeben werden<hr>Benutzerdefinierte Optionen, die gcc für jede externe .c Datei übergeben werden |
-| parse       | `parse <Eingabedatei> <Optionen>`      | Parse die Eingabedatei zu einem Abstrakten Syntaxbaum          | `-o <Ausgabepfad>`                                                                                         | Optionaler Pfad der Ausgabedatei                                                                                                                                                                                                                                             |
-| version     | `version <Optionen>`                   | Zeige Informationen zu dieser DDP Version                      | `--wortreich`<hr>`--go_build_info`                                                                         | Zeige wortreiche Informationen<hr>Zeige Go build Informationen                                                                                                                                                                                                               |
-| starte      | `starte <Eingabedatei> <Optionen>`     | Kompiliert und führt die gegebene .ddp Datei aus               | `--wortreich`<hr>`--gcc_optionen`<hr>`--externe_gcc_optionen`                                              | Gibt wortreiche Informationen während des Befehls<hr>Benutzerdefinierte Optionen, die gcc übergeben werden<hr>Benutzerdefinierte Optionen, die gcc für jede externe .c Datei übergeben werden                                                                                |
+| Befehlsname | Befehlssyntax                          | Befehlsbeschreibung                                            | Befehlsoptionen | Optionsbeschreibungen |
+| ----------- | -------------------------------------- | -------------------------------------------------------------- | --------------- | --------------------- |
+| hilfe       | `hilfe <Befehl>`                       | Zeigt Nutzungsinformationen über den Befehl                    | - | - |
+| kompiliere  | `kompiliere <Eingabedatei> <Optionen>` | Kompiliert die gegebene .ddp Datei zu einer ausführbaren Datei | `-o, --ausgabe <Ausgabepfad>`<hr>`-O, --optimierungs-stufe <Stufe>`<hr>`--nichts-loeschen`<hr>`--gcc-optionen`<hr>`--externe-gcc-optionen`<hr>`--gcc-executable <Pfad>`<hr>`--main <Pfad>`<hr>`--module-linken`<hr>`--list-defs-linken` | Optionaler Pfad der Ausgabedatei<hr>Menge und Art der Optimierungen, die angewandt werden (Standard: 1)<hr>Temporäre Dateien werden nicht gelöscht<hr>Benutzerdefinierte Optionen, die gcc übergeben werden<hr>Benutzerdefinierte Optionen, die gcc für jede externe .c Datei übergeben werden<hr>Pfad zur gcc executable, die genutzt werden soll<hr>Optionaler Pfad zur main.o Datei<hr>Ob alle Module in das Hauptmodul gelinkt werden sollen (Standard: wahr)<hr>Ob die eingebauten Listen Definitionen in das Hauptmodul gelinkt werden sollen (Standard: wahr) |
+| starte      | `starte <Eingabedatei> <Optionen>`     | Kompiliert und führt die gegebene .ddp Datei aus               | `--gcc-optionen`<hr>`--externe-gcc-optionen` | Benutzerdefinierte Optionen, die gcc übergeben werden<hr>Benutzerdefinierte Optionen, die gcc für jede externe .c Datei übergeben werden |
+| formatiere  | `formatiere <Eingabedatei> <Optionen>` | Formatiert die gegebene .ddp Datei                             | `--leerzeichen` | Leerzeichen statt Tabs für die Einrückung benutzen |
+| parse       | `parse <Eingabedatei> <Optionen>`      | Parse die Eingabedatei zu einem Abstrakten Syntaxbaum          | `-o, --ausgabe <Ausgabepfad>` | Optionaler Pfad der Ausgabedatei |
+| update      | `update <Optionen>`                    | Aktualisiert kddp (siehe [Updates](/Einstieg/Updates))          | `--jetzt`<hr>`--vergleiche-version`<hr>`--pre-release` | Aktualisiert sofort ohne zu fragen<hr>Vergleicht neue Version mit der installierten<hr>Aktualisiert auf eine Vorabversion |
+| version     | `version <Optionen>`                   | Zeige Informationen zu dieser DDP Version                      | `--go-build-info` | Zeige Go build Informationen |
+
+Die globalen Optionen `-w, --wortreich` (gibt wortreiche Informationen während des Befehls aus) und `-t, --zeitmessen` (gibt zusammen mit `--wortreich` Zeitmessungen aus) können bei jedem Befehl angegeben werden.
 
 ### kompiliere
 
@@ -98,9 +106,9 @@ Wenn die Erweiterung .ll angegeben wird, wird llvm-ir ausgegeben. Das könnte in
 Bei den Erweiterungen .s oder .asm wird assembler-Sprache ausgegeben.
 Bei den Erweiterungen .o oder .obj werden Objektdateien ausgegeben, falls man andere Programme zu diesen linken möchte.
 
-Mit den Optionen --gcc_optionen und --externe_gcc_optionen können weitere Argumente angegeben werden, die beim Linken an GCC übergeben werden.
+Mit den Optionen --gcc-optionen und --externe-gcc-optionen können weitere Argumente angegeben werden, die beim Linken an GCC übergeben werden.
 
-Die Argumente aus --gcc_optionen werden beim finalen Link-Schritt übergeben und werden Benutzt wenn man z.B. zu externen Bibliotheken linken möchte (zu einer Grafikbibliothek o.ä.).
+Die Argumente aus --gcc-optionen werden beim finalen Link-Schritt übergeben und werden Benutzt wenn man z.B. zu externen Bibliotheken linken möchte (zu einer Grafikbibliothek o.ä.).
 
-Die Argumente aus --externe_gcc_optionen werden nur benutzt falls es [externe Funktionen](/Programmierung/Funktionen/Externe-Funktionen/) gibt, die in .c Dateien definiert werden. Sollte das der Fall sein, wird jede angegebene .c Datei separat mit GCC kompiliert, und dabei werden die Argumente aus --externe_gcc_optionen übergeben.
+Die Argumente aus --externe-gcc-optionen werden nur benutzt falls es [externe Funktionen](/Programmierung/Funktionen/Externe-Funktionen/) gibt, die in .c Dateien definiert werden. Sollte das der Fall sein, wird jede angegebene .c Datei separat mit GCC kompiliert, und dabei werden die Argumente aus --externe-gcc-optionen übergeben.
 Das ist nützlich, wenn man Include-Verzeichnisse (wie die DDP-Runtime) oder C-Präprozessor Direktiven angeben muss/möchte.

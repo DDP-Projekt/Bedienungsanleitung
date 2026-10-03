@@ -52,7 +52,7 @@ Die Fragen sind ja/nein fragen, die mit y/n (yes/no) beantwortet werden können.
 Warnungen sollten gelesen werden, können aber unter Umständen ignoriert werden.
 
 Sollte ein Fehler auftreten ist es sehr wahrscheinlich, dass die gesamte Installation fehlgeschlagen ist.
-In diesem Falle sollte erst der Fehler gelesen werden um zu sehen ob man etwas offensichtliches ändern kann, ansonsten gerne einen [Issue](https://github.com/DDP-Projekt/Installer/issues) mit allen nötigen Informationen erstellen.
+In diesem Falle sollte erst der Fehler gelesen werden um zu sehen ob man etwas offensichtliches ändern kann, ansonsten gerne einen [Issue](https://github.com/DDP-Projekt/Kompilierer/issues) mit allen nötigen Informationen erstellen.
 
 Das Setup ist so ausgelegt, dass du Standardmäßig jede Frage mit ja (y) beantworten solltest um sicherzustellen, dass alles möglichst gut funktioniert.
 

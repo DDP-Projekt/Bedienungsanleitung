@@ -123,7 +123,7 @@ Für jede Zahl i von 1 bis 100, mache:
 ```
 ### Runterzählende Schleife
 Eine Runterzählende Schleife funktioniert wie die Hochzählende, bloß mit dem Unterschied, dass eine Schrittgröße von -1 (oder irgendeinem negativen Wert) spezifiziert wird. Dadurch wird der Zähler am Ende nicht um 1 sondern um die angegebene Schrittgröße erhöht (bzw. verringert).
-Natürlich muss hierbei der Startwert größer als der Endwert sein, da es sonst eine Endlosschleife wird.
+Natürlich muss hierbei der Startwert größer als der Endwert sein, sonst wird der Schleifenkörper kein einziges Mal ausgeführt.
 
 ### Aufbau
 ```ddp
@@ -169,7 +169,7 @@ Die Text Liste liste ist eine Liste, die aus "hi", "Hallo", "Tschüss" besteht.
 [Ausgabe:  hi 1 Hallo 2 Tschüss 3]
 Für jeden Text element mit Index i in liste, mache:
 	Schreibe (' ' verkettet mit element verkettet mit ' ').
-	Schreibe index.
+	Schreibe i.
 ```
 
 ## Abbrechen/Fortführen von Schleifen

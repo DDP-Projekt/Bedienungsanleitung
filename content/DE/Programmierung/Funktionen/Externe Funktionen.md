@@ -40,7 +40,7 @@ sind im Quellcode nicht dieselben wie in der entstehenden Binärdatei.
 Wenn man also eine nicht-externe DDP Funktion aus C-Code benutzen will, muss man das name-mangling ausschalten:
 ```ddp
 [test.ddp]
-Die Funktion ddp_funktion gibt nichts zurück, macht:
+Die Funktion ddp_funktion gibt nichts zurück, ist extern sichtbar, macht:
     Schreibe "Ich bin eine DDP Funktion" auf eine Zeile.
 Und kann so benutzt werden:
     "ddp_funktion"

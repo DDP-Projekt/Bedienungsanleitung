@@ -27,8 +27,8 @@ Wenn das alles fehlerfrei geklappt hat solltest du das Terminal neustarten und m
 `kddp update` nimmt mehrere optionale Kommandozeilen Optionen:
 
 * `--wortreich`: sagt dir alles was während des Updates passiert
-* `--vergleiche_version`: überprüft ob eine neue Version vorhanden ist, ohne diese zu installieren
-* `--pre_release`: bezieht Github pre-releases in die Suche mit ein (wird unten erklärt)
+* `--vergleiche-version`: überprüft ob eine neue Version vorhanden ist, ohne diese zu installieren
+* `--pre-release`: bezieht Github pre-releases in die Suche mit ein (wird unten erklärt)
 * `--jetzt`: lädt eine neue Version, falls vorhanden, ohne zu fragen sofort runter und installiert sie
 
 ## Versionen
@@ -49,4 +49,4 @@ Beispiel: 1.2.3-alpha
 `kddp update` schaut einfach in den [Github-Releases](https://github.com/DDP-Projekt/Kompilierer/releases) vom Kompilierer Repository nach, ob es einen Release gibt, dessen Tag neuer als die aktuell installierte Version ist.
 Sollte das der Fall sein lädt es die entsprechende Archiv-Datei herunter und updatet sich damit.
 
-Sollte die `--pre_release` Option angegeben sein werden auch als "Pre-Release" markierte Releases in die Suche miteinbezogen.
+Sollte die `--pre-release` Option angegeben sein werden auch als "Pre-Release" markierte Releases in die Suche miteinbezogen.

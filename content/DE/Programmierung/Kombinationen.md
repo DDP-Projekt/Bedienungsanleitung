@@ -80,7 +80,7 @@ Die Felder, die bei einem Kombinationsalias fehlen werden einfach auf den Standa
 Nehmen wir an wir haben die obige Vektor2 Kombination deklariert und einen Vektor2 erstellt:
 
 ```ddp
-Der Vektor2 vek ist der Nullvektor.
+Der Vektor2 vek ist der Nullvektor2.
 ```
 
 Auf die einzelnen Felder von vek wird mit dem `von` Operator (`.` in anderen Sprachen) zugegriffen:
@@ -98,10 +98,10 @@ Schreibe (y von vek). [0]
 ## Kombinationslisten
 
 Natürlich kann man auch Listen von Kombinationen haben.
-Angenommen, man hat eine Kombination `Vektor` definiert, dann sieht eine Vektoren Liste so aus:
+Angenommen, man hat eine Kombination `Vektor` definiert, dann sieht eine Vektor Liste so aus:
 
 ```ddp
-Die Vektor Liste vektoren ist eine leere Vektoren Liste.
+Die Vektor Liste vektoren ist eine leere Vektor Liste.
 
 Der Vektor vek1 ist vektoren an der Stelle 1.
 Die Zahl x ist x von (vektoren an der Stelle 1).

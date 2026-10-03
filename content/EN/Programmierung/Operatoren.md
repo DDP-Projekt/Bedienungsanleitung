@@ -28,7 +28,7 @@ To make finding a specific operator easier for readers who already know a progra
 | Division        | `a durch b`                             | `a / b`               | numeric             | numeric             | Kommazahl   | `6 durch 2`                           | 3      |
 | Remainder       | `a modulo b`                            | `a % b`               | Zahl, Byte          | Zahl, Byte          | Zahl, Byte  | `16 modulo 12`                        | 4      |
 | Exponentiation  | `a hoch b`                              | `pow(a, b)`           | numeric             | numeric             | Kommazahl   | `2 hoch 8`                            | 256    |
-| Root            | `die a. Wurzel von b`                   | `pow(a, 1/b)`         | numeric             | numeric             | Kommazahl   | `die 2. Wurzel von 9`                 | 3      |
+| Root            | `die a. Wurzel von b`                   | `pow(b, 1/a)`         | numeric             | numeric             | Kommazahl   | `die 2. Wurzel von 9`                 | 3      |
 | Logarithm       | `der Logarithmus von b zur Basis a`     | `log10(b) / log10(a)` | numeric             | numeric             | Kommazahl   | `der Logarithmus von 100 zur Basis 10`| 2      |
 | Left Bit-Shift  | `a um b Bit nach links verschoben`      | `a << b`              | Zahl, Byte          | Zahl, Byte          | Zahl, Byte  | `7 um 3 Bit nach links verschoben`    | 56     |
 | Right Bit-Shift | `a um b Bit nach rechts verschoben`     | `a >> b`              | Zahl, Byte          | Zahl, Byte          | Zahl, Byte  | `70 um 2 Bit nach rechts verschoben`  | 17     |
@@ -51,7 +51,7 @@ With the help of Boolean operators, complex conditions can be expressed and summ
 | Operator          | Description                                                               | C equivalent | Example                                          | Result |
 |-------------------|---------------------------------------------------------------------------|-----------|----------------------------------------------------------------------------------------------|------------------------------|
 | gleich            | True if both arguments have the same value.                               | `1 == 1`  | `1 gleich 1 ist`<br>`1 gleich 2 ist`                                                         | `wahr`<br>`falsch`           |
-| ungleich          | True if the two arguments have different values.                          | `1 != 1`  | `1 ungleich 1 ist`<br>`1 ungleich 2 ist`                                                     | `wahr`<br>`falsch`           |
+| ungleich          | True if the two arguments have different values.                          | `1 != 1`  | `1 ungleich 1 ist`<br>`1 ungleich 2 ist`                                                     | `falsch`<br>`wahr`            |
 | kleiner als       | True if the left argument has a smaller value than the right.             | `5 < 10`  | `5 kleiner als 10 ist`<br>`30 kleiner als 15 ist`                                            | `wahr`<br>`falsch`           |
 | größer als        | True if the left argument has a greater value than the right.             | `7 > 3`   | `7 größer als 3 ist`<br>`5 größer als 8 ist`                                                 | `wahr`<br>`falsch`           |
 | kleiner als, oder | True if the left argument is less than or the same value as the right.    | `5 <= 10` | `5 kleiner als, oder 10 ist`<br>`30 kleiner als, oder 15 ist`<br>`5 kleiner als, oder 5 ist` | `wahr`<br>`falsch`<br>`wahr` |
@@ -78,11 +78,11 @@ The operand types of a chain cannot be combined in any way.
 - If you concatenate a text with a letter or vice versa, a text is created.
 - Concatenating a list and any value of the element type of the list or vice versa creates a list.
 
-With indices and `von ... bis` the indices are always inclusive and start with 1.
+With indices and `im Bereich von ... bis` the indices are always inclusive and start with 1.
 So a list from 1 to 5 is the first, the fifth and everything in between.
 A list at position 0 would be a run-time error, as would an index that exceeds the length of the list.
 
-With `von ... bis` there are no runtime errors if indices are too small or too large.
+With `im Bereich von ... bis` there are no runtime errors if indices are too small or too large.
 The indices are automatically brought into the range [1, length of the list/text].
 If the 2nd index is then smaller than the 1st, there is a runtime error.
 So if both indices are greater than the length of the list, the result is the last element of the list.
@@ -92,11 +92,11 @@ So if both indices are greater than the length of the list, the result is the la
 ```ddp
 Die Zahlen Liste z ist eine Liste, die aus 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 besteht.
 Schreibe (z an der Stelle 5). [Zeigt 5 in der Konsole]
-Schreibe (z von 3 bis 7). [Zeigt "3, 4, 5, 6, 7" in der Konsole]
-Schreibe (z von 3 bis 7 verkettet mit z von 1 bis 4). [Zeigt "3, 4, 5, 6, 7, 1, 2, 3, 4" in der Konsole]
+Schreibe (z im Bereich von 3 bis 7). [Zeigt "3, 4, 5, 6, 7" in der Konsole]
+Schreibe (z im Bereich von 3 bis 7 verkettet mit z im Bereich von 1 bis 4). [Zeigt "3, 4, 5, 6, 7, 1, 2, 3, 4" in der Konsole]
 
 Schreibe ("Hallo" verkettet mit 'Ü'). [Zeigt "HalloÜ" in der Konsole]
-Schreibe ("Hallo" von 1 bis 3 verkettet mit 'ö'). [Zeigt "Halö" in der Konsole]
+Schreibe ("Hallo" im Bereich von 1 bis 3 verkettet mit 'ö'). [Zeigt "Halö" in der Konsole]
 Schreibe ('b' verkettet mit 'a'). [Zeigt "b, a" in der Konsole]
 ```
 
@@ -117,7 +117,7 @@ Here is a table with all operators and their prioritization (high priority opera
 | 4    | Type conversions                           |
 | 5    | Field access on Combinations               |
 | 6    | Indexing                                   |
-| 7    | `von ... bis`, `ab ... dem`, `bis ... zum` |
+| 7    | `im Bereich von ... bis`, `ab dem ... Element`, `bis zum ... Element` |
 | 8    | Exponentiation, Root, Logarithm            |
 | 9    | Negation,                                  |
 | 10   | Absolute Value, Size, Length, NOT Gate     |

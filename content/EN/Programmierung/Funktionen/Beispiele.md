@@ -76,7 +76,7 @@ und kann so benutzt werden:
 ```
 ### C:
 ```c
-#include "DDP-Runtime/include/ddptypes.h"
+#include "DDP/ddptypes.h"
 #include <math.h>
 
 ddpfloat Arkushyperbelsinus(ddpfloat wert) {

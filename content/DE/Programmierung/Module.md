@@ -15,7 +15,7 @@ Jede DDP-Datei stellt ein DDP-Modul dar.
 Jedes DDP-Module kann von einem anderen eingebunden werden.
 Dafür muss es aber ein nach außen sichtbares (öffentliches) Interface preisgeben.
 Dies ist mit dem Schlüsselwort "öffentliche" möglich.
-Das öffentliche Interface eines DDP-Modules ist die Menge aller als "öffentliche" deklarierten Variablen und Funktionen.
+Das öffentliche Interface eines DDP-Modules ist die Menge aller als "öffentliche" deklarierten Variablen, Konstanten, Funktionen, Kombinationen, Typ-Aliase und Typ-Definitionen.
 
 Wenn ein DDP-Modul ein anderes einbindet erhält es Zugriff auf dessen öffentliche Funktionen und Variablen und kann diese
 selber benutzen.
@@ -64,7 +64,7 @@ Speichere 2 in z. [setzt z aus A.ddp auf 2]
 	da sie in A.ddp nicht als öffentlich deklariert sind.
 ]
 bar. 
-Speichere 2 in zz. [setzt z aus A.ddp auf 2]
+Speichere 2 in zz.
 
 [
 	Fehler:
@@ -92,7 +92,7 @@ Speichere 2 in z.
 	da sie in A.ddp nicht als öffentlich deklariert sind.
 ]
 bar. 
-Speichere 2 in zz. [setzt z aus A.ddp auf 2]
+Speichere 2 in zz.
 ```
 
 ## Erläuterung

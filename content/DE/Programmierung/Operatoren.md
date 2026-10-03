@@ -30,7 +30,7 @@ in diesen und späteren Tabellen jeweils der C-Operator dabei.
 | Division                     | `a durch b`                             | `a / b`               | numerisch          | numerisch          | Kommazahl   | `6 durch 2`                            | 3,0      |
 | Rest                         | `a modulo b`                            | `a % b`               | Zahl, Byte         | Zahl, Byte         | Zahl, Byte  | `16 modulo 12`                         | 4        |
 | Potenzieren                  | `a hoch b`                              | `pow(a, b)`           | numerisch          | numerisch          | Kommazahl   | `2 hoch 8`                             | 256,0    |
-| Wurzelziehen                 | `die a. Wurzel von b`                   | `pow(a, 1/b)`         | numerisch          | numerisch          | Kommazahl   | `die 2. Wurzel von 9`                  | 3,0      |
+| Wurzelziehen                 | `die a. Wurzel von b`                   | `pow(b, 1/a)`         | numerisch          | numerisch          | Kommazahl   | `die 2. Wurzel von 9`                  | 3,0      |
 | Logarithmus                  | `der Logarithmus von b zur Basis a`     | `log10(b) / log10(a)` | numerisch          | numerisch          | Kommazahl   | `der Logarithmus von 100 zur Basis 10` | 2,0      |
 | Bit-Verschiebung nach links  | `a um b Bit nach links verschoben`      | `a << b`              | Zahl, Byte         | Zahl, Byte         | Zahl, Byte  | `7 um 3 Bit nach links verschoben`     | 56       |
 | Bit-Verschiebung nach rechts | `a um b Bit nach rechts verschoben`     | `a >> b`              | Zahl, Byte         | Zahl, Byte         | Zahl, Byte  | `70 um 2 Bit nach rechts verschoben`   | 17       |
@@ -54,12 +54,12 @@ Mithilfe von Bool'schen Operatoren können komplexe Bedingungen ausgedrückt und
 | Operator          | Beschreibung                                                                          | C Equivalent           | Beispiel                                                                                     | Ergebnis                     |
 | ----------------- | ------------------------------------------------------------------------------------- | ---------------------- | -------------------------------------------------------------------------------------------- | ---------------------------- |
 | gleich            | Wahr, wenn beide Argumente den gleichen Wert haben.                                   | `1 == 1`               | `1 gleich 1 ist`<br>`1 gleich 2 ist`                                                         | `wahr`<br>`falsch`           |
-| ungleich          | Wahr, wenn die beiden Argumente verschiedene Werte haben.                             | `1 != 1`               | `1 ungleich 1 ist`<br>`1 ungleich 2 ist`                                                     | `wahr`<br>`falsch`           |
+| ungleich          | Wahr, wenn die beiden Argumente verschiedene Werte haben.                             | `1 != 1`               | `1 ungleich 1 ist`<br>`1 ungleich 2 ist`                                                     | `falsch`<br>`wahr`            |
 | kleiner als       | Wahr, wenn das Linke Argument einen kleineren Wert als das Rechte hat.                | `5 < 10`               | `5 kleiner als 10 ist`<br>`30 kleiner als 15 ist`                                            | `wahr`<br>`falsch`           |
 | größer als        | Wahr, wenn das Linke Argument einen größeren Wert als das Rechte hat.                 | `7 > 3`                | `7 größer als 3 ist`<br>`5 größer als 8 ist`                                                 | `wahr`<br>`falsch`           |
 | kleiner als, oder | Wahr, wenn das Linke Argument einen kleineren oder denselben Wert wie das Rechte hat. | `5 <= 10`              | `5 kleiner als, oder 10 ist`<br>`30 kleiner als, oder 15 ist`<br>`5 kleiner als, oder 5 ist` | `wahr`<br>`falsch`<br>`wahr` |
 | größer als, oder  | Wahr, wenn das Linke Argument einen größeren oder denselben Wert wie das Rechte hat.  | `7 >= 3`               | `7 größer als, oder 3 ist`<br>`5 größer als, oder 8 ist`<br>`5 größer als, oder 5 ist`       | `wahr`<br>`falsch`<br>`wahr` |
-| zwischen          | Wahr, wenn das Linke Argument zwischen den beiden Rechten liegt.                      | `(4 < 5 && 4 > 3)`     | `4 zwischen 3 und 5 ist`                                                                     | `wahr`<br>`falsch`           |
+| zwischen          | Wahr, wenn das Linke Argument zwischen den beiden Rechten liegt.                      | `(4 < 5 && 4 > 3)`     | `4 zwischen 3 und 5 ist`<br>`6 zwischen 3 und 5 ist`                                                                     | `wahr`<br>`falsch`           |
 
 Vergleichsoperatoren haben alle ein "ist" am Ende um der Grammatik in jedem Kontext gerecht zu werden.
 Falls das zu mehreren "ist"s hintereinander führen sollte reicht ein einziges aus:
@@ -104,11 +104,11 @@ auf die Länge der Liste bzw. 1 gesetzt ist.
 ```ddp
 Die Zahlen Liste z ist eine Liste, die aus 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 besteht.
 Schreibe (z an der Stelle 5). [Zeigt 5 in der Konsole]
-Schreibe (z von 3 bis 7). [Zeigt "3, 4, 5, 6, 7" in der Konsole]
-Schreibe (z von 3 bis 7 verkettet mit z von 1 bis 4). [Zeigt "3, 4, 5, 6, 7, 1, 2, 3, 4" in der Konsole]
+Schreibe (z im Bereich von 3 bis 7). [Zeigt "3, 4, 5, 6, 7" in der Konsole]
+Schreibe (z im Bereich von 3 bis 7 verkettet mit z im Bereich von 1 bis 4). [Zeigt "3, 4, 5, 6, 7, 1, 2, 3, 4" in der Konsole]
 
 Schreibe ("Hallo" verkettet mit 'Ü'). [Zeigt "HalloÜ" in der Konsole]
-Schreibe ("Hallo" von 1 bis 3 verkettet mit 'ö'). [Zeigt "Halö" in der Konsole]
+Schreibe ("Hallo" im Bereich von 1 bis 3 verkettet mit 'ö'). [Zeigt "Halö" in der Konsole]
 Schreibe ('b' verkettet mit 'a'). [Zeigt "b, a" in der Konsole]
 ```
 
@@ -137,7 +137,7 @@ Hier ist eine Tabelle mit allen Operatoren und ihrer Priorisierung (hoch prioris
 | 4    | Typkonvertierungen                                              |
 | 5    | Feld Zugriff von Kombinationen                                  |
 | 6    | Indizierung                                                     |
-| 7    | `von ... bis`, `ab ... dem`, `bis ... zum`                      |
+| 7    | `im Bereich von ... bis`, `ab dem ... Element`, `bis zum ... Element`                      |
 | 8    | Potenzieren, Wurzelziehen, Logarithmus                          |
 | 9    | Negation,                                                       |
 | 10   | Betrag, Größe, Länge, Standardwert, Logisches-/Bool'sches nicht |
@@ -171,4 +171,4 @@ nur 3 Elemente besitzt.
 
 Operatoren können auch Überladen werden um Funktionen anstelle von Operatoren auszuführen und trotzdem
 von Operator Priorisierung zu Profitieren.
-Mehr dazu im Artikel [Operatoren Überladung](/Bedienungsanleitung/de/Programmierung/Funktionen/Operatoren-Ueberladung).
+Mehr dazu im Artikel [Operatoren Überladung](/Programmierung/Funktionen/Operatoren-Ueberladung).

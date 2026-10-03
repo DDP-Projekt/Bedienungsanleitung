@@ -65,7 +65,7 @@ The fields that are missing from a combination alias are simply set to the defau
 Let's assume we declared the above Vektor2 combination and created a Vektor2:
 
 ```ddp
-Der Vektor2 vek ist der Nullvektor.
+Der Vektor2 vek ist der Nullvektor2.
 ```
 
 The individual fields of vek are accessed using the `von` operator (`.` in other languages):
@@ -86,7 +86,7 @@ Of course you can also have lists of combinations.
 Assuming you have defined a combination `Vektor`, then a Vektor list looks like this:
 
 ```ddp
-Die Vektor Liste vektoren ist eine leere Vektoren Liste.
+Die Vektor Liste vektoren ist eine leere Vektor Liste.
 
 Der Vektor vek1 ist vektoren an der Stelle 1.
 Die Zahl x ist x von (vektoren an der Stelle 1).

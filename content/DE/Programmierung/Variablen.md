@@ -24,7 +24,7 @@ Der Wahrheitswert <Variablenname> ist <wahr oder falsch>, wenn <Ausdruck>.
 Diese Syntax funktioniert auch mit Rückgaben in [Funktionen](/Programmierung/Funktionen):
 ```ddp
 Die öffentliche Funktion Ist_Leer_Text mit dem Parameter liste vom Typ Text Liste, gibt einen Wahrheitswert zurück, macht:
-	Gib wahr, wenn die Länge von liste gleich 0 ist zurück.
+	Gib wahr, wenn die Länge von liste gleich 0 ist, zurück.
 Und kann so benutzt werden:
 	"<liste> leer ist"
 ```
@@ -38,7 +38,7 @@ Die Zahl a ist 10.
 Die Kommazahl b ist 4,32.
 Der Text c ist "Hallo!".
 Der Wahrheitswert d ist wahr.
-Der Wahrheitswert e ist falsch wenn 1 gleich 1 ist. 
+Der Wahrheitswert e ist falsch, wenn 1 gleich 1 ist. 
 ```
 
 # Zuweisung
@@ -73,7 +73,7 @@ Die extern sichtbare Zahl z ist 22.
 
 ```c
 // test.c
-#include "ddptypes.h"
+#include "DDP/ddptypes.h"
 #include <stdio.h>
 
 extern ddpint z;
