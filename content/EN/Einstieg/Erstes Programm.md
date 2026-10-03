@@ -12,7 +12,7 @@ This is what a typical "Hello World" program looks like:
 ```ddp
 Binde "Duden/Ausgabe" ein.
 
-Schreibe den Text "Hallo Welt!".
+Schreibe den Text "Hello World!".
 ```
 <h6 style="margin-top: 0; margin-left: 10px">File: HelloWorld.ddp </h6>
 
@@ -21,11 +21,11 @@ This must now be saved as a `.ddp` file.
 
 Finally, to run the program, use these commands:
 ```terminal
-$ kddp kompiliere HalloWelt.ddp
-$ ./HalloWelt
+$ kddp kompiliere HelloWorld.ddp
+$ ./HelloWorld
 ```
 
 Alternatively, you can use the `kddp starte` command:
 ```terminal
-$ kddp starte HalloWelt.ddp
+$ kddp starte HelloWorld.ddp
 ```

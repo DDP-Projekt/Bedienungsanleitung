@@ -31,7 +31,7 @@ As you can see, reference parameters take variables as arguments.
 If you passed them a value, e.g. a literal, there would be an error:
 
 ```ddp
-Verändere "Fehler". [compile error: foo expected a variable]
+Verändere "error". [compile error: foo expected a variable]
 ```
 
 Any type name can be made a reference type by appending "Referenz" to the type name.

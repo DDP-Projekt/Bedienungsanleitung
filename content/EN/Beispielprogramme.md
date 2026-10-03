@@ -51,7 +51,7 @@ Und kann so benutzt werden:
 
 Die Funktion momentane_Spieler gibt eine Zahl zurück, macht:
     Wenn Spieler 1 dran ist, gib 1 zurück.
-    [Ansonsten] Gib 2 zurück.
+    [otherwise] Gib 2 zurück.
 Und kann so benutzt werden:
     "die Zahl für den aktuellen Spieler"
 
@@ -76,7 +76,7 @@ Und kann so benutzt werden:
 
 Die Funktion spiel_unentschieden gibt einen Wahrheitswert zurück, macht:
     Für jede Zahl feld in Spielfeld, wenn feld gleich 0 ist, gib falsch zurück.
-    [ Falls alle felder belegt sind ] Gib wahr zurück.
+    [ if all fields are occupied ] Gib wahr zurück.
 Und kann so benutzt werden:
     "das Spiel unentschieden ist"
 
@@ -95,26 +95,26 @@ Die Funktion schreibe_spielfeld gibt nichts zurück, macht:
 Und kann so benutzt werden:
     "Zeige das Spielfeld"
 
-[ Programm anfang ]
+[ program start ]
 Solange das Spiel nicht gewonnen ist, mache:
     Wenn das Spiel unentschieden ist, dann:
         Zeige das Spielfeld.
-        Schreibe den Text "Das Spiel ist unentschieden" auf eine Zeile.
+        Schreibe den Text "The game is a draw" auf eine Zeile.
         Beende das Programm.
 
-    Schreibe den Text "Bitte nehme einen Zug, Spieler ".
+    Schreibe den Text "Please make a move, player ".
     Schreibe (die Zahl für den aktuellen Spieler) auf eine Zeile.
-    Schreibe den Text "Das Spielfeld sieht so aus:" auf eine Zeile.
+    Schreibe den Text "The board looks like this:" auf eine Zeile.
     Zeige das Spielfeld.
-    Schreibe den Text "Schreibe die Position, wo du dein Zeichen setzen willst. [1-9]" auf eine Zeile.
+    Schreibe den Text "Enter the position where you want to place your mark. [1-9]" auf eine Zeile.
 
-    [Nutzereingabe validieren]
+    [validate user input]
     Die Zahl Eingabe ist die nächste Zahl.
     Solange Eingabe kleiner als 1 ist oder Eingabe größer als 9 ist, mache:
-        Schreibe den Text "Ungültige Eingabe! Bitte schreibe nur Zahlen von 1 bis 9!" auf eine Zeile.
+        Schreibe den Text "Invalid input! Please only enter numbers from 1 to 9!" auf eine Zeile.
         Speichere die nächste  Zahl in Eingabe.
 
-    [Spielfeld aktualisieren und Spieler welchseln]
+    [update the board and switch players]
     Wenn Spielfeld an der Stelle Eingabe gleich 0 ist, dann:
         Speichere (die Zahl für den aktuellen Spieler) in Spielfeld an der Stelle Eingabe.
         Wechsel den Spieler.
@@ -122,7 +122,7 @@ Solange das Spiel nicht gewonnen ist, mache:
 Zeige das Spielfeld.
 
 Wechsel den Spieler.
-Schreibe den Text "Spieler ".
+Schreibe den Text "Player ".
 Schreibe (die Zahl für den aktuellen Spieler).
-Schreibe den Text " hat gewonnen!" auf eine Zeile.
+Schreibe den Text " has won!" auf eine Zeile.
 ```

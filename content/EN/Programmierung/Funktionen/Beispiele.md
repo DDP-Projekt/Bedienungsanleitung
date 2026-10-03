@@ -8,7 +8,7 @@ weight = 4
 ## no parameters, without return value
 ```ddp
 Die Funktion mache_nichts gibt nichts zurück, macht:
-	[ nichts ]
+	[ nothing ]
 Und kann so benutzt werden:
 	"Mache nichts"
 ```
@@ -26,7 +26,7 @@ Und kann so benutzt werden:
 Die Funktion Warten mit dem Parameter sekunden vom Typ Kommazahl, gibt nichts zurück, macht:
 	Die Zahl start_zeit ist die Zeit seit Programmstart.
 	Solange (die Zeit seit Programmstart) kleiner als start_zeit plus (sekunden mal 1000) ist, mache:
-		[ nichts ]
+		[ nothing ]
 Und kann so benutzt werden:
 	"Warte <sekunden> Sekunden"
 ```
@@ -70,7 +70,7 @@ Und kann so benutzt werden:
 ### DDP:
 ```ddp
 Die Funktion Arkushyperbelsinus mit dem Parameter wert vom Typ Kommazahl, gibt eine Kommazahl zurück,
-ist in "datei.c" definiert
+ist in "file.c" definiert
 und kann so benutzt werden:
 	"Arkushyperbelsinus von <wert>"
 ```

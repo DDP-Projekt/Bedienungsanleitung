@@ -1,36 +1,37 @@
 +++
 title = "Modules"
-weight = 7
+weight = 8
 +++
 
 # Modules
 
-Larger and more complex programs often consist of several source files to which the program code is distributed.
+Larger and more complex programs often consist of several source files across which the program code is distributed.
 
 DDP provides modules for this purpose.
 
 ## Principle
 
-Each DDP file represents a DDP module.
-Each DDP module can be linked by another one.
-To do this, however, it must reveal an externally visible (public) interface.
-This is possible with the keyword "public".
-The public interface of a DDP module is the set of all variables, constants, functions, combinations, type aliases and type definitions declared as "public".
+Every DDP file is a DDP module.
+Every DDP module can be included by another one.
+To do this, however, it must expose an externally visible (public) interface.
+This is possible with the keyword "öffentliche" (public).
+The public interface of a DDP module is the set of all variables, constants, functions, combinations, type aliases and type definitions declared as "öffentliche".
 
-When a DDP module integrates another, it gets access to its public functions and variables and can use them yourself.
+When a DDP module includes another one, it gets access to its public functions and variables and can use them itself.
 
 In other languages, this feature is often implemented using the "import" keyword (or "#include" in C), and restricting the visibility of names is called encapsulation.
 
-## syntax
+## Syntax
 
 ```ddp
-Binde "<relativer Pfad>" ein.
-Binde "Duden/<Datei aus der Standardbibliothek>" ein.
-Binde a aus "<relativer Pfad>" ein.
-Binde a, b und c aus "<relativer Pfad>" ein.
+Binde "<relative path>" ein.
+Binde "Duden/<file from the standard library>" ein.
+Binde a aus "<relative path>" ein.
+Binde a, b und c aus "<relative path>" ein.
 ```
 
 ### Concrete example
+
 A.ddp:
 ```ddp
 Binde "Duden/Ausgabe" ein.
@@ -54,20 +55,22 @@ B.ddp:
 ```ddp
 Binde "A" ein.
 
-foo. [calls foo form A.ddp]
+foo. [calls foo from A.ddp]
 Speichere 2 in z. [sets z from A.ddp to 2]
 
 [
-	bar and zz are not recognized as a function or variable, since they are not declared as public in A.ddp.
+	bar and zz are not recognized as a function or variable,
+	since they are not declared as public in A.ddp.
 ]
 bar. 
 Speichere 2 in zz.
 
 [
 	Error:
-	"Duden/Output" was included in A.ddp, but not in B.ddp, so the 'Schreibe' function is not available
+	"Duden/Ausgabe" was included in A.ddp, but not in B.ddp,
+	so the Schreibe function is not available.
 ]
-Schreibe "Hallo Welt" auf eine Zeile.
+Schreibe "Hello World" auf eine Zeile.
 ```
 
 C.ddp:
@@ -92,21 +95,41 @@ Speichere 2 in zz.
 
 ## Explanation
 
-As you can see in the example, you either enter a relative path to another .DDP file (without the .ddp ending) when embedding, or a path to a file from the standard library. The files from the standard library are always included with `Duden/<File>`.
+As you can see in the example, when including you either specify a relative path to another .ddp file (without the .ddp extension),
+or a path to a file from the standard library. Files from the standard library are always included with `Duden/<file>`.
 
-Either all public names or just a few special ones can be included.
-This is useful for not including too many unnecessary function aliases that might cause trouble.
+Either all public names or just some specific ones can be included.
+This is useful to avoid including too many unnecessary function aliases that might cause trouble.
 
-Also, includes are not "inherited" between files.
-So if B.ddp includes A.ddp, B.ddp does not accept A.ddp's inclusions (as in the "Duden/Output" example).
+Includes are also not "inherited" between files.
+So if B.ddp includes A.ddp, B.ddp does not take over A.ddp's includes (like "Duden/Ausgabe" in the example).
 
-To navigate through directories one can use unix file paths.
+To navigate through directories, you can use unix file paths.
 
 With this file structure:
 - root
-	- Ordner1
+	- Folder1
 		- A.ddp
-	- Ordner2
+	- Folder2
 		- B.ddp
 
-B.ddp would have to contain `Binde "../Ordner1/A" ein.` to include A.ddp.
+B.ddp would have to contain `Binde "../Folder1/A" ein.` to include A.ddp.
+
+
+## Directory includes
+
+For convenience, you can also include all modules in a directory.
+
+- root
+	- Folder1
+		- A.ddp
+        - B.ddp
+	- Folder2
+        - C.ddp
+        - Folder3
+            - D.ddp
+
+```ddp
+Binde alle Module aus "Folder1" ein. [includes A.ddp and B.ddp]
+Binde rekursiv alle Module aus "Folder2" ein. [includes C.ddp and D.ddp]
+```

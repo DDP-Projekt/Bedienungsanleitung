@@ -7,112 +7,113 @@ weight = 5
 Branches are used to execute statements based on conditions.
 
 ## If branch
-With a If branch, a block of statements is executed only if the specified condition evaluates to `wahr`, otherwise nothing is done and subsequent statements are executed.
+In an if branch, a statement block is only executed if the given condition evaluates to `wahr`; otherwise nothing is done and the following statements are executed.
 
 ### Syntax:
 ```ddp
 Wenn <condition>, dann:
-	<instructions>.
+	<statements>.
 ```
 
 ### Example:
 ```ddp
 Wenn 1 gleich 1 ist, dann:
-	Schreibe den Text "condition true!".
+	Schreibe den Text "Condition met!".
 ```
-    
+
 ## If-Else branch
-A If-Else branch works like the one-way branch, except that there is an `Sonst`.
-If the condition evaluates to `falsch`, the code in the `Sonst` block is executed.
+An if-else branch works like the if branch, with the difference that a `sonst` is present.
+If the condition evaluates to `falsch`, the code in the `sonst` block is executed.
 
 ### Syntax:
 ```ddp
 Wenn <condition>, dann:
-	<instructions>.
+	<statements>.
 Sonst:
-	<instructions>.
+	<statements>.
 ```
 
 ### Example:
 ```ddp
 Wenn 1 gleich 2 ist, dann:
-	Schreibe den Text "condition true!".
+	Schreibe den Text "Condition met!".
 Sonst:
-	Schreibe den Text "condition false!".
+	Schreibe den Text "Condition not met!".
 ```
 
 ## If-ElseIf-Else branch
-If-ElseIf-Else branches extend the If-Else branch by any number of branches.
-Any number of 'Wenn aber' blocks can be added after the 'Wenn' block.
-If the first condition in the `Wenn` block is `falsch` then the condition in the first `Wenn aber` block is checked, if it is `falsch` the next one is checked and so on.
-If all conditions are false, the `Sonst` block, if any, is executed.
-Once a block has been executed, all following blocks are skipped.
+If-ElseIf-Else branches extend the if-else branch with any number of branches.
+Any number of `Wenn aber` blocks can be appended after the `Wenn` block.
+If the first condition in the `Wenn` block evaluates to `falsch`, the condition in the first `Wenn aber` block is checked; if that one is `falsch` too, the next one is checked and so on.
+If all conditions are false, the `sonst` block is executed, if present.
+As soon as one block has been executed, all following blocks are skipped.
 
 ### Syntax:
 ```ddp
 Wenn <condition>, dann:
-	<instructions>
+	<statements>
 Wenn aber <2nd condition>, dann:
-	<instructions>.
+	<statements>.
 Sonst:
-	<instructions>.
+	<statements>.
 ```
 
 ### Example:
 ```ddp
 Wenn 1 gleich 2 ist, dann:
-	Schreibe den Text "condition true!".
+	Schreibe den Text "Condition met!".
 Wenn aber 2 gleich 2 ist, dann:
-	Schreibe den Text "2nd condition true!".
+	Schreibe den Text "2nd condition met!".
 Sonst:
-	Schreibe den Text "condition false!".
+	Schreibe den Text "Condition not met!".
 ```
 
 # Loops
-Loops are used to run code multiple times based on conditions.
+Loops are used to execute code multiple times based on conditions.
 
 ## While loop
-While loops are the simplest type of loop.
-If the condition evaluates to true, the code block is executed.
-This is repeated as long as the condition is 'true'.
+While loops are the simplest kind of loop.
+If the condition evaluates to 'wahr', the code block is executed.
+This is repeated as long as the condition evaluates to 'wahr'.
 ```ddp
 Solange <condition>, mache:
-	<instructions>.
+	<statements>.
 ```
 
 ## Do-While loop
-Do-While loops are very similar to While loops, with the only difference being that the block of code is executed at least once before the condition testing begins.
+Do-while loops are very similar to while loops, with the only difference that the code block is executed at least once, and only then the condition starts being checked.
 ```ddp
 Mache:
-	<instructions>.
+	<statements>.
 Solange <condition>.
 ```
 
 ## Repetition
-Repetition are used to run a block of code multiple times.
-They are an abbreviated version of counting loops, saving text and increasing code readability if you don't need the counter variable.
+Repetitions are used to execute a code block several times.
+They are a shortened version of counting loops, save text and improve the readability of the code
+if you don't need the counter variable.
 ```ddp
 Wiederhole:
-	<instructions>.
-<number> Mal.
+	<statements>.
+<count> Mal.
 ```
 
 ## Counting loop
-Counting loops also allow code to be run multiple times while giving a counter that can be used elsewhere.
-For each counting loop, a counter must be named (a variable of type `Zahl`, `Byte` or `Kommazahl`) and a start and end value.
-Optionally, a step size can also be specified, which is used for counting.
+Counting loops also allow code to be executed multiple times, while at the same time providing a counter that can be used otherwise.
+For every counting loop, a counter must be named (a variable of type `Zahl`, `Byte` or `Kommazahl`) together with a start and end value.
+Optionally, a step size to count with can be specified as well.
 
 ### Countup loop
-First the counter is named and initialized with the start value.
-Then (as with every iteration) it is checked whether the value of the counter is less than or equal to the final value.
-If this condition is met, the code block is executed and then the counter is increased by 1.
-This is repeated as long as the counter does not exceed the final value.
-In the code block, the counter can be used like a normal local variable.
+First, the counter is named and initialized with the start value.
+Then (as in every iteration) it is checked whether the value of the counter is less than or equal to the end value.
+If this condition is met, the code block is executed, and afterwards the counter is incremented by 1.
+This is repeated as long as the counter does not exceed the end value.
+Inside the code block, the counter can be used like a normal local variable.
 
 ### Syntax
 ```ddp
 Für jede Zahl <counter> von <start value> bis <end value>, mache:
-	<instructions>.
+	<statements>.
 ```
 
 ### Example
@@ -121,13 +122,13 @@ Für jede Zahl i von 1 bis 100, mache:
 	Schreibe die Zahl i.
 ```
 ### Countdown loop
-A countdown loop works like the countup loop, except that a step size of -1 (or some negative value) is specified. This means that the counter is not increased (or decreased) by 1 at the end, but by the specified increment.
+A countdown loop works like the countup loop, except that a step size of -1 (or any other negative value) is specified. Because of that, the counter is not incremented by 1 at the end, but by the given step size (i.e. decremented).
 Of course, the start value must be greater than the end value, otherwise the loop body is not executed at all.
 
 ### Syntax
 ```ddp
 Für jede Zahl <counter> von <start value> bis <end value> mit Schrittgröße -1, mache:
-	<instructions>.
+	<statements>.
 ```
 
 ### Example
@@ -136,39 +137,49 @@ Für jede Zahl i von 100 bis 1 mit Schrittgröße -1, mache:
 	Schreibe die Zahl i.
 ```
 ### Custom step size
-As mentioned above, any step size n can also be specified. This ensures that the specified value is added to the counter instead of 1.
+As mentioned above, any step size n can be specified. This causes the given value, instead of 1, to be added to the counter.
 
 `mit Schrittgröße n` is optional. By default, the step size is +1.
 
 ### Syntax
 ```ddp
 Für jede Zahl <counter> von <start value> bis <end value> mit Schrittgröße <n>, mache:
-	<instructions>.
+	<statements>.
 ```
 
 ### Example
 ```ddp
 Für jede Zahl i von 1 bis 100 mit Schrittgröße 5, mache:
-	<instructions>.
+	<statements>.
 ```
 
 ## Iterating loops
-It is also possible with loops to iterate through each element of a list.
+It is also possible to use loops to go through every element of a list.
 ```ddp
 Die Zahlen Liste liste ist eine leere Zahlen Liste.
 
 Für jede Zahl element in liste, mache:
-	<instructions>.
+	<statements>.
 ```
 
-## Cancelation/Continuation of loops
+In such loops you can also specify an index.
+```ddp
+Die Text Liste liste ist eine Liste, die aus "hi", "hello", "bye" besteht.
 
-Loops can also be canceled or advanced to the next iteration (in other languages, this corresponds to the keywords `break` and `continue`).
+[Output:  hi 1 hello 2 bye 3]
+Für jeden Text element mit Index i in liste, mache:
+	Schreibe (' ' verkettet mit element verkettet mit ' ').
+	Schreibe i.
+```
+
+## Breaking/continuing loops
+
+Loops can also be exited or skipped to the next iteration (in other languages this corresponds to the keywords `break` and `continue`).
 
 ### Break
 
 ```ddp
-[Prints "1 2" to the console]
+[Writes "1 2" to the console]
 Für jede Zahl i von 1 bis 5, mache:
 	Wenn i gleich 3 ist, dann:
     	Verlasse die Schleife. [break]
@@ -176,10 +187,10 @@ Für jede Zahl i von 1 bis 5, mache:
     Schreibe ' '.
 ```
 
-### Fortführen
+### Continue
 
 ```ddp
-[Prints "1 2 4 5" to the console]
+[Writes "1 2 4 5" to the console]
 Für jede Zahl i von 1 bis 5, mache:
 	Wenn i gleich 3 ist, dann:
     	Fahre mit der Schleife fort. [continue]
@@ -188,18 +199,19 @@ Für jede Zahl i von 1 bis 5, mache:
 ```
 
 # Tip
-Almost any of the branches and loops listed here can also be written on a single line, if only one statement needs to be executed.
+Almost every branch and loop listed here can also be written on a single line
+if only one statement needs to be executed.
 
 ## Examples
 ```ddp
-Wenn 1 gleich 1 ist, Schreibe den Text "Bedingung erfüllt!".
+Wenn 1 gleich 1 ist, Schreibe den Text "Condition met!".
 
-Wenn 1 gleich 2 ist, Schreibe den Text "Bedingung erfüllt!".
-Sonst Schreibe den Text "Bedingung nicht erfüllt".
+Wenn 1 gleich 2 ist, Schreibe den Text "Condition met!".
+Sonst Schreibe den Text "Condition not met".
 
-Wenn 1 gleich 2 ist, Schreibe den Text "Bedingung erfüllt!".
-Wenn aber 1 kleiner als 2 ist, Schreibe den Text "Zweite Bedingung erfüllt!".
-Sonst Schreibe den Text "Bedingung nicht erfüllt".
+Wenn 1 gleich 2 ist, Schreibe den Text "Condition met!".
+Wenn aber 1 kleiner als 2 ist, Schreibe den Text "Second condition met!".
+Sonst Schreibe den Text "Condition not met".
 
 
 Solange i gleich 5 ist, Rufe eine Funktion auf, die i erhöht.

@@ -26,3 +26,4 @@ Only certain types can be converted to others.
 
 Additionally, every value can be converted into a list of its type that contains only that value (e.g. `5 als Zahlen Liste`),
 and every value can be converted into a `Variable` and a `Variable` back into its actual type.
+Type definitions can be converted into their base type and back (see [Type aliases and type definitions](/en/Programmierung/Typ-Aliase-und-Typ-Definitionen)).

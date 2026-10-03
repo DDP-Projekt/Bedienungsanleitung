@@ -25,8 +25,8 @@ The different data types are described in the article [data types](/en/Programmi
 
 A statement is a piece of source code that does something.
 Statements usually end with a period (.).
-For example, the statement `Schreibe den Text "Hallo".` outputs "Hallo" to the console.
-Expressions followed by a period are also statements. Your result will be discarded.
+For example, the statement `Schreibe den Text "Hello".` outputs "Hello" to the console.
+Expressions followed by a period are also statements. Their result is discarded.
 For example, `1 plus 1.` is evaluated, but the result is never used.
 
 A DDP program consists of any number of statements that are executed one after the other (in the source code from left to right and from top to bottom).
@@ -43,7 +43,7 @@ Schreibe den Text "I'm not in the statement block.".
 ```
 The statement block ends when the next character is indented the same or less than the colon.
 
-statement blocks are often separated into [branches](/en/Programmierung/Verzweigungen-und-Schleifen#verzweigungen), [loops](/en/Programmierung/Verzweigungen-und-Schleifen#schleifen) or [functions](/en/Programmierung/Funktionen) used.
+Statement blocks are often used in [branches](/en/Programmierung/Verzweigungen-und-Schleifen#branches), [loops](/en/Programmierung/Verzweigungen-und-Schleifen#loops) or [functions](/en/Programmierung/Funktionen).
 More on this in the following articles.
 
 ## Comments
@@ -63,17 +63,17 @@ Wenn x [wahr ist], Schreibe den Text "x ist wahr".
 Also, comments can span multiple lines.
 ```ddp
 [
-	Task: This function writes "Hello world!" into the console.
+	Task: This function writes "Hello World!" into the console.
 	Parameters: no parameters.
 	Return: no return.
 ]
 Die Funktion hi gibt nichts zurück, macht:
-	Schreibe den Text "Hallo Welt!" auf eine Zeile.
+	Schreibe den Text "Hello World!" auf eine Zeile.
 und kann so benutzt werden:
 	"Schreibe Hallo Welt"
 ```
 
-## literals
+## Literals
 
 A literal is a notation in the source code that represents a value (constant in DDP).
 A list of literals for the corresponding data types can be found in the [data types](/en/Programmierung/Datentypen) article.
