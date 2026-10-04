@@ -9,9 +9,9 @@ enableRobotsTXT = true
 	[languages.de]
 		contentDir = 'content/DE'
 		disabled = false
-		languageCode = 'de-DE'
-		languageDirection = 'ltr'
-		languageName = 'Deutsch'
+		locale = 'de-DE'
+		direction = 'ltr'
+		label = 'Deutsch'
 		title = 'DDP Bedienungsanleitung'
 		weight = 1
 		[languages.de.params]
@@ -19,9 +19,9 @@ enableRobotsTXT = true
 	[languages.en]
 		contentDir = 'content/EN'
 		disabled = false
-		languageCode = 'en-US'
-		languageDirection = 'ltr'
-		languageName = 'English'
+		locale = 'en-US'
+		direction = 'ltr'
+		label = 'English'
 		title = 'DDP Bedienungsanleitung - Documentation'
 		weight = 2
 		[languages.en.params]

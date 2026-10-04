@@ -2,7 +2,7 @@
 	h1 {
 		font-size: 2em;
 	}
-	
+
 	a {
 		text-decoration: underline;
 		color: var(--md-link-color);
@@ -79,7 +79,7 @@
 			border: none;
 		}
 	}
-	
+
 	.duden-obj-inner {
 		margin-left: 5px;
 		border-left: #aaa solid 1px;

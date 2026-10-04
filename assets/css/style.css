@@ -76,7 +76,7 @@
 		z-index: 1; /* make sidebar on top of content */
 		transition: width 350ms ease-in-out;
 	}
-	
+
 	:root {
 		--content-size: 100%;
 	}
@@ -122,7 +122,7 @@ details > summary {
 		padding: 3px;
 		margin-left: 12px;
 		counter-increment: item;
-	
+
 		&::marker {
 			font-weight: bolder;
 			content: counters(item, ".") ". ";
