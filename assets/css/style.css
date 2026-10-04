@@ -1,5 +1,5 @@
 :root {
-	--sidebar-size: 280px;
+	--sidebar-size: 300px;
 	--content-size: calc(100% - var(--sidebar-size));
 	--theme-toggle-img: url(/svg/theme-light-dark.min.svg);
 	--title-img: url(/svg/title.min.svg);
@@ -140,7 +140,7 @@ a {
 	color: var(--text-color);
 
 	&:hover {
-		font-weight: bold;
+		text-decoration: underline;
 		color: var(--link-hover-color);
 	}
 }

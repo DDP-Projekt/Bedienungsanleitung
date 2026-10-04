@@ -8,8 +8,8 @@ Hugo nutzt die Markdown Dateien um die Website zu generieren.
 
 ## Lokal Ausführen
 ### Voraussetzungen
-1. [Hugo](https://gohugo.io/installation/)
-2. [Go](https://go.dev/dl/)
+1. [Hugo](https://gohugo.io/installation/) (mindestens v0.167.0)
+2. [Go](https://go.dev/dl/) (mindestens v1.24.0)
 
 ### Starten
 1. Git Repository klonen
@@ -55,7 +55,7 @@ Das HTML für die Website außerhalb der Artikel befindet sich im [`/layouts`](/
 
 [`/baseof.html`](/layouts/baseof.html) ist das Kern der Website und bindet alle partials ein.
 
-[`/partials`](/layouts/_partials/) enthält kleinere Teile der Website:
+[`/_partials`](/layouts/_partials/) enthält kleinere Teile der Website:
 - [`artikel.html`](/layouts/_partials/artikel.html): Fügt das Markdown ein.
 - [`head.html`](/layouts/_partials/head.html): HTML head
 - [`header.html`](/layouts/_partials/header.html): Der Header über jedem Artikel.
