@@ -53,14 +53,14 @@ weight = 1
 ### Die Website selbst
 Das HTML für die Website außerhalb der Artikel befindet sich im [`/layouts`](/layouts/) Verzeichnis.
 
-[`/_default/baseof.html`](/layouts/_default/baseof.html) ist das Kern der Website und bindet alle partials ein.
+[`/baseof.html`](/layouts/baseof.html) ist das Kern der Website und bindet alle partials ein.
 
-[`/partials`](/layouts/partials/) enthält kleinere Teile der Website:
-- [`artikel.html`](/layouts/partials/artikel.html): Fügt das Markdown ein.
-- [`head.html`](/layouts/partials/head.html): HTML head
-- [`header.html`](/layouts/partials/header.html): Der Header über jedem Artikel.
-- [`sidebar.html`](/layouts/partials/sidebar.html): Die Seitenleiste mit allen links.
-- [`navigation.html`](/layouts/partials/navigation.html): Die Navigation am unteren der Seite.
+[`/partials`](/layouts/_partials/) enthält kleinere Teile der Website:
+- [`artikel.html`](/layouts/_partials/artikel.html): Fügt das Markdown ein.
+- [`head.html`](/layouts/_partials/head.html): HTML head
+- [`header.html`](/layouts/_partials/header.html): Der Header über jedem Artikel.
+- [`sidebar.html`](/layouts/_partials/sidebar.html): Die Seitenleiste mit allen links.
+- [`navigation.html`](/layouts/_partials/navigation.html): Die Navigation am unteren der Seite.
 
 [`/layouts/404.html`](/layouts/404.html) definiert die Fehlermeldung falls eine Seite nicht gefunden wurde.
 
