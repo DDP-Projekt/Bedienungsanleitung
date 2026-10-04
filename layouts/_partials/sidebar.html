@@ -7,19 +7,43 @@
 		<a href="/">Die Deutsche Programmiersprache</a>
 
 		<ol id="artikel-links">
+			<script>
+				let prefetchTimeout = undefined;
+				function prefetchHover(ev, href) {
+					prefetchTimeout = setTimeout(() => {
+						let link = document.createElement("link");
+						link.setAttribute("rel", "prefetch");
+						link.setAttribute("as", "document");
+						link.setAttribute("href", href);
+						ev.target.appendChild(link);
+					}, 250);
+				}
+
+				function cancelPrefetchHover() {
+					clearTimeout(prefetchTimeout)
+				}
+			</script>
 			{{ define "links" -}}
 				{{- range .page.Pages -}}
 					{{- if .IsSection -}}
 						<li>
 							<details id='Section-{{ replace .Title " " "_" }}' {{ if (in $.ancestors .) }} open {{ end }}>
-								<summary><a href="{{ .RelPermalink }}">{{ .Title }}</a></summary>
+								<summary>
+									<a onmouseenter="prefetchHover(event, {{ .RelPermalink }})"
+										onmouseleave="cancelPrefetchHover()"
+										href="{{ .RelPermalink }}">{{ .Title }}</a>
+								</summary>
 								<ol>
 									{{ template "links" (dict "page" . "ancestors" $.ancestors) }}
 								</ol>
 							</details>
 						</li>
 					{{ else }}
-						<li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+						<li>
+							<a onmouseenter="prefetchHover(event, {{ .RelPermalink }})"
+								onmouseleave="cancelPrefetchHover()"
+								href="{{ .RelPermalink }}">{{ .Title }}</a>
+						</li>
 					{{- end -}}
 				{{- end -}}
 			{{- end -}}
