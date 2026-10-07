@@ -25,6 +25,10 @@
 	{{- $mdStyle := resources.Get "/css/md-style.css" | minify | fingerprint }}
 	<link rel="preload" as="style" href="{{ $mdStyle.RelPermalink }}" integrity="{{ $mdStyle.Data.Integrity }}">
 
+	{{- range resources.Match "fonts/*.woff2" -}}
+	    <link rel="preload" href="{{ .RelPermalink }}" as="font" type="font/woff2" crossorigin>
+	{{ end }}
+
 	<!-- Directly inject css to prevent blocking network request, prinf because vscode is stupid -->
 	{{- $style := resources.Get "/css/style.css" | minify }}
 	{{ (printf "<%s>%s</style>" "style" ($style.Content | safeCSS)) | safeHTML }}
